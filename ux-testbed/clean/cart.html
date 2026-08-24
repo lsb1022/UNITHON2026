@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>장바구니 — MOJI STORE</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">본문 바로가기</a>
+
+<div class="topbar">5만원 이상 구매 시 무료배송 · 30일 이내 무료 반품</div>
+
+<header class="header">
+  <div class="wrap header__inner">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="메뉴 열기">☰</button>
+    <a class="logo" href="index.html">MOJI</a>
+    <nav class="nav" id="main-nav" aria-label="주 메뉴">
+      <a href="index.html">홈</a>
+      <a href="list.html">전체 상품</a>
+      <a href="list.html?cat=상의">상의</a>
+      <a href="list.html?cat=하의">하의</a>
+      <a href="list.html?cat=신발">신발</a>
+      <a href="list.html?cat=액세서리">액세서리</a>
+    </nav>
+    <div class="header__actions">
+      <a class="icon-btn" href="cart.html">
+        <span aria-hidden="true">🛒</span>
+        <span aria-hidden="true">장바구니</span>
+        <span class="cart-count" data-cart-count hidden aria-hidden="true">0</span>
+        <span class="sr-only" data-cart-label>장바구니 (비어 있음)</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <nav class="crumbs" aria-label="현재 위치">
+    <a href="index.html">홈</a> › <span aria-current="page">장바구니</span>
+  </nav>
+
+  <h1>장바구니</h1>
+
+  <div id="cart-root"></div>
+</main>
+
+<dialog class="confirm" id="confirm-dialog" aria-labelledby="confirm-title">
+  <h2 id="confirm-title">이 상품을 삭제할까요?</h2>
+  <p id="confirm-body">장바구니에서 제거됩니다. 삭제 후에도 되돌릴 수 있습니다.</p>
+  <div class="row">
+    <button class="btn btn--ghost" type="button" id="confirm-cancel">취소</button>
+    <button class="btn btn--primary" type="button" id="confirm-ok">삭제</button>
+  </div>
+</dialog>
+
+<footer class="footer">
+  <div class="wrap">
+    <p class="footer__legal" style="margin-top:0; border:0; padding:0;">
+      (주)모지스토어 · 본 사이트는 UX 검증 서비스 테스트를 위한 가상의 쇼핑몰입니다.
+    </p>
+  </div>
+</footer>
+
+<script src="../shared/products.js"></script>
+<script src="assets/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const root = document.getElementById("cart-root");
+  const dialog = document.getElementById("confirm-dialog");
+  let pendingKey = null;
+  let lastRemoved = null;   // 실행취소용
+
+  function render() {
+    const cart = getCart();
+
+    if (cart.length === 0) {
+      root.innerHTML = `
+        <div class="empty">
+          <p style="font-size:44px; margin:0;" aria-hidden="true">🛒</p>
+          <h2>장바구니가 비어 있습니다</h2>
+          <p>마음에 드는 상품을 담아 보세요. 5만원 이상 구매하시면 배송비가 무료입니다.</p>
+          <a class="btn btn--primary btn--lg" href="list.html">상품 보러 가기</a>
+        </div>`;
+      return;
+    }
+
+    const subtotal = cartSubtotal();
+    const ship = shippingFee(subtotal);
+    const remain = FREE_SHIP_OVER - subtotal;
+
+    root.innerHTML = `
+    <div class="cart-layout">
+      <section aria-labelledby="cart-items-title">
+        <h2 id="cart-items-title" class="sr-only">담은 상품 목록</h2>
+        <p style="color:#5b6270; margin:8px 0 0;">담은 상품 ${cart.length}종 · 총 ${cartCount()}개</p>
+        <ul class="cart-list">
+          ${cart.map((l) => `
+          <li class="cart-item">
+            <img src="../shared/img/p${l.id}.svg" alt="${l.name} 상품 사진" width="96" height="120">
+            <div>
+              <h3 class="cart-item__name"><a href="product.html?id=${l.id}">${l.name}</a></h3>
+              <p class="cart-item__opt">${l.color} / ${l.size}</p>
+              <div class="qty">
+                <button type="button" data-act="dec" data-key="${l.key}" aria-label="${l.name} 수량 1개 줄이기">−</button>
+                <input type="number" value="${l.qty}" min="1" max="99" inputmode="numeric"
+                       data-act="set" data-key="${l.key}" aria-label="${l.name} 수량">
+                <button type="button" data-act="inc" data-key="${l.key}" aria-label="${l.name} 수량 1개 늘리기">+</button>
+              </div>
+            </div>
+            <div class="cart-item__right">
+              <span class="cart-item__price">${won(l.price * l.qty)}</span>
+              <button class="btn btn--danger-text" type="button" data-act="del" data-key="${l.key}">삭제</button>
+            </div>
+          </li>`).join("")}
+        </ul>
+      </section>
+
+      <aside class="summary" aria-labelledby="summary-title">
+        <h2 id="summary-title">결제 예상 금액</h2>
+        <dl>
+          <dt>상품 금액</dt><dd>${won(subtotal)}</dd>
+          <dt>배송비</dt><dd>${ship === 0 ? "무료" : won(ship)}</dd>
+        </dl>
+        ${remain > 0
+          ? `<p class="hint" style="margin-top:-8px;">${won(remain)} 더 담으면 배송비가 무료입니다.</p>`
+          : `<p class="hint" style="margin-top:-8px; color:#0f6b3f;">무료배송 조건을 충족했습니다.</p>`}
+        <div class="summary__total">
+          <span>총 결제 금액</span>
+          <strong>${won(subtotal + ship)}</strong>
+        </div>
+        <a class="btn btn--primary btn--block btn--lg" href="checkout.html">${won(subtotal + ship)} 결제하기</a>
+        <p class="summary__note">다음 단계에서 배송지를 입력합니다. 아직 결제되지 않습니다.</p>
+      </aside>
+    </div>`;
+  }
+
+  root.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-act]");
+    if (!btn) return;
+    const key = btn.dataset.key;
+    const line = getCart().find((l) => l.key === key);
+    if (!line) return;
+
+    if (btn.dataset.act === "inc") { updateQty(key, line.qty + 1); render(); }
+    if (btn.dataset.act === "dec") { updateQty(key, line.qty - 1); render(); }
+    if (btn.dataset.act === "del") {
+      pendingKey = key;
+      document.getElementById("confirm-body").textContent =
+        `"${line.name} (${line.color} / ${line.size})"를 장바구니에서 삭제합니다.`;
+      dialog.showModal();
+    }
+  });
+
+  root.addEventListener("change", (e) => {
+    const input = e.target.closest('input[data-act="set"]');
+    if (!input) return;
+    updateQty(input.dataset.key, parseInt(input.value, 10) || 1);
+    render();
+  });
+
+  document.getElementById("confirm-cancel").addEventListener("click", () => dialog.close());
+
+  document.getElementById("confirm-ok").addEventListener("click", () => {
+    lastRemoved = getCart().find((l) => l.key === pendingKey);
+    removeLine(pendingKey);
+    dialog.close();
+    render();
+    toast(`${lastRemoved.name}을(를) 삭제했습니다.`);
+    // 실행취소 링크를 토스트에 직접 붙인다
+    const t = document.querySelector(".toast-area .toast:last-child");
+    if (t) {
+      const undo = document.createElement("button");
+      undo.className = "btn btn--ghost";
+      undo.style.cssText = "margin-left:auto; min-height:34px; padding:0 12px; font-size:14px;";
+      undo.textContent = "실행취소";
+      undo.addEventListener("click", () => {
+        const cart = getCart();
+        cart.push(lastRemoved);
+        saveCart(cart);
+        render();
+        t.remove();
+      });
+      t.appendChild(undo);
+    }
+  });
+
+  render();
+});
+</script>
+</body>
+</html>

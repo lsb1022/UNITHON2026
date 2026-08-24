@@ -1,0 +1,42 @@
+/* 두 버전(clean / flawed)이 공유하는 상품 데이터.
+   같은 데이터 위에서 UI만 달라야 A/B 비교가 성립한다. */
+window.PRODUCTS = [
+  { id: 1,  name: "오버사이즈 코튼 셔츠",   price: 39000, listPrice: 49000, cat: "상의",      rating: 4.6, reviews: 128, soldOut: false, badge: "BEST",
+    desc: "두께감 있는 20수 코튼으로 만든 오버사이즈 셔츠입니다. 어깨선을 낮춰 편안한 실루엣을 완성했습니다.",
+    colors: ["아이보리", "블랙", "라이트블루"], sizes: ["S", "M", "L", "XL"], hue: 32 },
+  { id: 2,  name: "라이트 워시 데님 팬츠",   price: 59000, listPrice: 59000, cat: "하의",      rating: 4.4, reviews: 92,  soldOut: false, badge: "",
+    desc: "은은한 워싱을 준 스트레이트 핏 데님. 신축성 있는 원단으로 하루 종일 편안합니다.",
+    colors: ["라이트블루", "인디고"], sizes: ["28", "30", "32", "34"], hue: 210 },
+  { id: 3,  name: "미니멀 레더 스니커즈",   price: 89000, listPrice: 119000, cat: "신발",     rating: 4.8, reviews: 341, soldOut: false, badge: "SALE",
+    desc: "장식을 덜어낸 소가죽 스니커즈. 어떤 옷차림에도 무리 없이 어울립니다.",
+    colors: ["화이트", "블랙"], sizes: ["240", "250", "260", "270", "280"], hue: 0 },
+  { id: 4,  name: "캐시미어 블렌드 니트",   price: 79000, listPrice: 79000, cat: "상의",      rating: 4.7, reviews: 76,  soldOut: false, badge: "NEW",
+    desc: "캐시미어 30%를 섞어 부드럽고 가벼운 크루넥 니트입니다.",
+    colors: ["오트밀", "차콜", "버건디"], sizes: ["M", "L", "XL"], hue: 25 },
+  { id: 5,  name: "와이드 슬랙스",          price: 49000, listPrice: 62000, cat: "하의",      rating: 4.3, reviews: 54,  soldOut: false, badge: "SALE",
+    desc: "군더더기 없는 라인의 와이드 슬랙스. 구김이 잘 가지 않는 원단을 사용했습니다.",
+    colors: ["블랙", "베이지", "차콜"], sizes: ["S", "M", "L"], hue: 220 },
+  { id: 6,  name: "캔버스 토트백",          price: 29000, listPrice: 29000, cat: "액세서리",  rating: 4.5, reviews: 210, soldOut: false, badge: "",
+    desc: "16온스 두꺼운 캔버스로 제작해 형태가 무너지지 않는 데일리 토트백입니다.",
+    colors: ["내추럴", "블랙"], sizes: ["FREE"], hue: 45 },
+  { id: 7,  name: "워시드 후디",            price: 55000, listPrice: 55000, cat: "상의",      rating: 4.2, reviews: 38,  soldOut: true,  badge: "",
+    desc: "빈티지한 워싱 가공을 준 헤비웨이트 후디. 기모 없이 사계절 착용 가능합니다.",
+    colors: ["그레이", "블랙"], sizes: ["M", "L", "XL"], hue: 200 },
+  { id: 8,  name: "테이퍼드 치노 팬츠",     price: 45000, listPrice: 45000, cat: "하의",      rating: 4.1, reviews: 61,  soldOut: false, badge: "",
+    desc: "발목으로 갈수록 좁아지는 테이퍼드 핏 치노. 캐주얼과 세미정장 모두 소화합니다.",
+    colors: ["베이지", "올리브", "네이비"], sizes: ["28", "30", "32", "34"], hue: 90 },
+  { id: 9,  name: "스웨이드 첼시 부츠",     price: 129000, listPrice: 159000, cat: "신발",    rating: 4.9, reviews: 187, soldOut: false, badge: "BEST",
+    desc: "양가죽 스웨이드에 신축 밴드를 더해 신고 벗기 편한 첼시 부츠입니다.",
+    colors: ["브라운", "블랙"], sizes: ["250", "260", "270", "280"], hue: 15 },
+  { id: 10, name: "니트 비니",              price: 19000, listPrice: 19000, cat: "액세서리",  rating: 4.4, reviews: 143, soldOut: false, badge: "",
+    desc: "울 혼방 립 조직 비니. 늘어남이 적어 오래 착용해도 형태가 유지됩니다.",
+    colors: ["블랙", "그레이", "머스타드"], sizes: ["FREE"], hue: 340 },
+  { id: 11, name: "린넨 하프 셔츠",         price: 42000, listPrice: 42000, cat: "상의",      rating: 4.0, reviews: 27,  soldOut: false, badge: "NEW",
+    desc: "통기성 좋은 린넨 55% 혼방 반팔 셔츠. 여름철 데일리 아이템입니다.",
+    colors: ["화이트", "세이지"], sizes: ["S", "M", "L"], hue: 150 },
+  { id: 12, name: "레더 벨트",              price: 35000, listPrice: 35000, cat: "액세서리",  rating: 4.6, reviews: 88,  soldOut: true,  badge: "",
+    desc: "이탈리아산 베지터블 가죽 벨트. 사용할수록 자연스러운 색이 배어납니다.",
+    colors: ["브라운", "블랙"], sizes: ["FREE"], hue: 20 }
+];
+
+window.CATEGORIES = ["전체", "상의", "하의", "신발", "액세서리"];

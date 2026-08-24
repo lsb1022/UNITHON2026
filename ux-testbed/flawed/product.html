@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>쇼핑몰</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="topbar">이벤트 진행중</div>
+
+<div class="header">
+  <div class="wrap header-inner">
+    <span class="logo">MOJI</span>
+    <div class="nav">
+      <a href="index.html">홈</a>
+      <a href="list.html">전체</a>
+      <a href="list.html?cat=상의">상의</a>
+      <a href="list.html?cat=하의">하의</a>
+      <a href="list.html?cat=신발">신발</a>
+      <a href="list.html?cat=액세서리">액세서리</a>
+    </div>
+    <a class="cart-link" href="cart.html">cart</a>
+  </div>
+</div>
+
+<div class="wrap">
+  <div id="pdp"></div>
+</div>
+
+<div class="footer">
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="#">이용약관</a>
+      <a href="#">개인정보처리방침</a>
+      <a href="#">고객센터</a>
+    </div>
+    <p>(주)모지스토어 · 본 사이트는 UX 검증 서비스 테스트를 위한 가상의 쇼핑몰입니다.</p>
+  </div>
+</div>
+
+<script src="../shared/products.js"></script>
+<script src="assets/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const id = new URLSearchParams(location.search).get("id");
+  const p  = productById(id);
+  const root = document.getElementById("pdp");
+
+  /* [D-49] 잘못된 상품 ID로 접근하면 아무것도 렌더링하지 않는다.
+     오류 안내도, 돌아갈 링크도 없는 빈 화면이 된다. */
+  if (!p) return;
+
+  const selected = { color: null, size: null };
+
+  root.innerHTML = `
+  <div class="pdp">
+    <div>
+      <!-- [D-37] alt 없음 -->
+      <img src="../shared/img/p${p.id}.svg">
+    </div>
+    <div>
+      <h1>${p.name}</h1>
+      <!-- [D-16] 통화 단위 없음  [D-17] 정가와 판매가가 같은 스타일로 나란히 표시됨 -->
+      <div class="pdp-price">
+        <span>${num(p.price)}</span>
+        ${p.listPrice > p.price ? `<span>${num(p.listPrice)}</span>` : ""}
+      </div>
+
+      <!-- [D-33] 배송비 안내가 어디에도 없다. 결제 마지막 단계에서 5000이 추가된다. -->
+      <!-- [D-50] 별점·리뷰 수 등 구매 판단 정보가 상세 페이지에 전혀 없다 -->
+
+      ${p.soldOut ? `<!-- [D-18] 품절 안내가 9px 회색 한 줄 -->
+        <div class="soldout">sold out</div>` : ""}
+
+      <!-- [D-51] 옵션에 label/legend가 없다. 무엇을 고르는 항목인지 알 수 없다.
+           [D-52] 기본 선택값이 없고, 선택하지 않아도 담기가 진행된다. -->
+      <div style="margin:10px 0">
+        <div id="colors"></div>
+      </div>
+      <div style="margin:10px 0">
+        <div id="sizes"></div>
+      </div>
+
+      <div class="qty" style="margin:10px 0">
+        <!-- [D-21] 18×14px 버튼, 2px 간격  [D-53] 버튼에 접근 가능한 이름이 없다 -->
+        <button id="minus">-</button>
+        <input id="qty" value="1">
+        <button id="plus">+</button>
+      </div>
+
+      <!-- [D-13] "확인"과 "구매" — 어느 쪽이 장바구니이고 어느 쪽이 결제인지 불명확
+           [D-14] 품절 상품에서도 버튼이 동일하게 활성으로 보인다 -->
+      <div style="margin-top:14px">
+        <div class="fake-btn" id="add">확인</div>
+        <div class="fake-btn" id="buy">구매</div>
+      </div>
+
+      <!-- [D-54] 상품 설명이 접힘 없이 잘린 채로 노출되고, 펼칠 방법이 없다 -->
+      <div style="margin-top:16px; font-size:10px; color:#cccccc; height:26px; overflow:hidden">
+        ${p.desc} 세탁 시 단독 세탁을 권장하며, 건조기 사용은 피해 주세요.
+        소재 특성상 초기 이염이 발생할 수 있습니다.
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:20px 0">
+    <span style="font-size:12px; color:#c0c0c0">관련상품</span>
+    <ul class="grid" id="related" style="margin-top:8px"></ul>
+  </div>`;
+
+  document.getElementById("colors").innerHTML =
+    p.colors.map((c) => `<span class="opt" data-color="${c}">${c}</span>`).join("");
+  document.getElementById("sizes").innerHTML =
+    p.sizes.map((s) => `<span class="opt" data-size="${s}">${s}</span>`).join("");
+
+  root.addEventListener("click", (e) => {
+    const c = e.target.closest("[data-color]");
+    if (c) {
+      selected.color = c.dataset.color;
+      $$("[data-color]").forEach((el) => el.classList.toggle("selected", el === c));
+    }
+    const s = e.target.closest("[data-size]");
+    if (s) {
+      selected.size = s.dataset.size;
+      $$("[data-size]").forEach((el) => el.classList.toggle("selected", el === s));
+    }
+  });
+
+  const qty = document.getElementById("qty");
+  /* [D-36] 하한 검증이 없어 0, -1까지 내려간다 */
+  document.getElementById("minus").addEventListener("click", () => { qty.value = +qty.value - 1; });
+  document.getElementById("plus") .addEventListener("click", () => { qty.value = +qty.value + 1; });
+
+  document.getElementById("add").addEventListener("click", () => {
+    /* [D-52] 옵션 미선택 상태에서도 그대로 담긴다 → 장바구니에 "null / null"로 남는다
+       [D-35] 성공/실패 어느 쪽도 알려주지 않는다 */
+    addToCart({ id: p.id, color: selected.color, size: selected.size, qty: +qty.value });
+  });
+
+  document.getElementById("buy").addEventListener("click", () => {
+    addToCart({ id: p.id, color: selected.color, size: selected.size, qty: +qty.value });
+    location.href = "cart.html";
+  });
+
+  const related = PRODUCTS.filter((x) => x.cat === p.cat && x.id !== p.id).slice(0, 4);
+  renderGrid(document.getElementById("related"),
+             related.length ? related : PRODUCTS.filter((x) => x.id !== p.id).slice(0, 4));
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>주문/결제 — MOJI STORE</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">본문 바로가기</a>
+
+<div class="topbar">5만원 이상 구매 시 무료배송 · 30일 이내 무료 반품</div>
+
+<header class="header">
+  <div class="wrap header__inner">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="메뉴 열기">☰</button>
+    <a class="logo" href="index.html">MOJI</a>
+    <nav class="nav" id="main-nav" aria-label="주 메뉴">
+      <a href="index.html">홈</a>
+      <a href="list.html">전체 상품</a>
+      <a href="cart.html">장바구니</a>
+    </nav>
+    <div class="header__actions">
+      <a class="icon-btn" href="cart.html">
+        <span aria-hidden="true">🛒</span>
+        <span aria-hidden="true">장바구니</span>
+        <span class="cart-count" data-cart-count hidden aria-hidden="true">0</span>
+        <span class="sr-only" data-cart-label>장바구니 (비어 있음)</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <nav class="crumbs" aria-label="현재 위치">
+    <a href="index.html">홈</a> › <a href="cart.html">장바구니</a> › <span aria-current="page">주문/결제</span>
+  </nav>
+
+  <p class="steps">장바구니 › <b>주문/결제 (2/3)</b> › 주문 완료</p>
+  <h1>주문/결제</h1>
+
+  <div id="checkout-root"></div>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p class="footer__legal" style="margin-top:0; border:0; padding:0;">
+      (주)모지스토어 · 본 사이트는 UX 검증 서비스 테스트를 위한 가상의 쇼핑몰입니다. 실제 결제는 이루어지지 않습니다.
+    </p>
+  </div>
+</footer>
+
+<script src="../shared/products.js"></script>
+<script src="assets/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const root = document.getElementById("checkout-root");
+  const cart = getCart();
+
+  if (cart.length === 0) {
+    root.innerHTML = `
+      <div class="empty">
+        <h2>주문할 상품이 없습니다</h2>
+        <p>장바구니에 상품을 담은 뒤 다시 시도해 주세요.</p>
+        <a class="btn btn--primary btn--lg" href="list.html">상품 보러 가기</a>
+      </div>`;
+    return;
+  }
+
+  const subtotal = cartSubtotal();
+  const ship = shippingFee(subtotal);
+  const total = subtotal + ship;
+
+  root.innerHTML = `
+  <div class="checkout-layout">
+    <form id="order-form" novalidate>
+      <div id="error-summary" class="error-summary" hidden tabindex="-1" role="alert">
+        <h2>입력하신 내용을 확인해 주세요</h2>
+        <ul id="error-list"></ul>
+      </div>
+
+      <fieldset class="fieldset-block" style="margin:0 0 22px;">
+        <h2>주문 방식</h2>
+        <div class="check">
+          <input type="radio" id="mode-guest" name="mode" value="guest" checked>
+          <div>
+            <label for="mode-guest">비회원으로 주문하기</label>
+            <p class="hint">회원가입 없이 바로 주문할 수 있습니다. 주문번호로 배송 조회가 가능합니다.</p>
+          </div>
+        </div>
+        <div class="check">
+          <input type="radio" id="mode-member" name="mode" value="member">
+          <div>
+            <label for="mode-member">회원으로 주문하기</label>
+            <p class="hint">적립금 1%가 쌓이고 배송지가 저장됩니다.</p>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="fieldset-block">
+        <h2>주문자 정보</h2>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">이름<span class="req" aria-hidden="true">*</span></label>
+            <input class="input" id="name" name="name" type="text" autocomplete="name" required>
+            <p class="error-msg" id="name-error" hidden></p>
+          </div>
+          <div class="form-field">
+            <label for="phone">휴대폰 번호<span class="req" aria-hidden="true">*</span></label>
+            <input class="input" id="phone" name="phone" type="tel" inputmode="numeric"
+                   maxlength="13" autocomplete="tel" placeholder="010-1234-5678"
+                   aria-describedby="phone-hint" required>
+            <p class="hint" id="phone-hint">입력하시면 자동으로 하이픈이 들어갑니다.</p>
+            <p class="error-msg" id="phone-error" hidden></p>
+          </div>
+          <div class="form-field form-field--full">
+            <label for="email">이메일<span class="req" aria-hidden="true">*</span></label>
+            <input class="input" id="email" name="email" type="email" autocomplete="email"
+                   aria-describedby="email-hint" required>
+            <p class="hint" id="email-hint">주문 확인 메일과 주문번호를 이 주소로 보내드립니다.</p>
+            <p class="error-msg" id="email-error" hidden></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="fieldset-block">
+        <h2>배송지</h2>
+        <div class="form-field">
+          <label for="zip">우편번호<span class="req" aria-hidden="true">*</span></label>
+          <div class="zip-row">
+            <input class="input" id="zip" name="zip" type="text" inputmode="numeric"
+                   maxlength="5" autocomplete="postal-code" placeholder="06234" required>
+            <button class="btn btn--ghost" type="button" id="zip-search">우편번호 찾기</button>
+          </div>
+          <p class="error-msg" id="zip-error" hidden></p>
+        </div>
+        <div class="form-field">
+          <label for="addr1">주소<span class="req" aria-hidden="true">*</span></label>
+          <input class="input" id="addr1" name="addr1" type="text"
+                 autocomplete="address-line1" required>
+          <p class="error-msg" id="addr1-error" hidden></p>
+        </div>
+        <div class="form-field">
+          <label for="addr2">상세 주소 (선택)</label>
+          <input class="input" id="addr2" name="addr2" type="text"
+                 autocomplete="address-line2" placeholder="동, 호수 등">
+        </div>
+        <div class="form-field">
+          <label for="memo">배송 메모 (선택)</label>
+          <select class="input" id="memo" name="memo">
+            <option value="">선택하지 않음</option>
+            <option>부재 시 경비실에 맡겨주세요</option>
+            <option>부재 시 문 앞에 놓아주세요</option>
+            <option>배송 전 연락 주세요</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="fieldset-block">
+        <h2>결제 수단</h2>
+        <div class="check">
+          <input type="radio" id="pay-card" name="pay" value="card" checked>
+          <label for="pay-card">신용/체크카드</label>
+        </div>
+        <div class="check">
+          <input type="radio" id="pay-bank" name="pay" value="bank">
+          <label for="pay-bank">무통장 입금</label>
+        </div>
+        <div class="check">
+          <input type="radio" id="pay-easy" name="pay" value="easy">
+          <label for="pay-easy">간편결제</label>
+        </div>
+      </div>
+
+      <div class="fieldset-block">
+        <h2>약관 동의</h2>
+        <div class="check">
+          <input type="checkbox" id="agree-required" name="agreeRequired">
+          <div>
+            <label for="agree-required">(필수) 주문 내용을 확인했으며 결제에 동의합니다<span class="req" aria-hidden="true">*</span></label>
+            <p class="error-msg" id="agree-required-error" hidden></p>
+          </div>
+        </div>
+        <div class="check">
+          <input type="checkbox" id="agree-marketing" name="agreeMarketing">
+          <div>
+            <label for="agree-marketing">(선택) 할인 소식을 문자로 받아볼래요</label>
+            <p class="hint">언제든 수신을 해지할 수 있습니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn--primary btn--block btn--lg" type="submit" id="pay-btn">
+        <span id="pay-btn-label">${won(total)} 결제하기</span>
+      </button>
+    </form>
+
+    <aside class="summary" aria-labelledby="order-summary-title">
+      <h2 id="order-summary-title">주문 요약</h2>
+      <ul style="list-style:none; padding:0; margin:0 0 18px;">
+        ${cart.map((l) => `
+          <li style="display:flex; gap:12px; padding:10px 0; border-bottom:1px solid #e3e6ec;">
+            <img src="../shared/img/p${l.id}.svg" alt="${l.name} 상품 사진"
+                 width="48" height="60" style="width:48px; height:60px; object-fit:cover; border-radius:6px;">
+            <div style="font-size:14px; min-width:0;">
+              <p style="margin:0 0 2px; font-weight:600;">${l.name}</p>
+              <p style="margin:0; color:#5b6270;">${l.color} / ${l.size} · ${l.qty}개</p>
+            </div>
+            <span style="margin-left:auto; font-size:14px; font-weight:600; white-space:nowrap;">${won(l.price * l.qty)}</span>
+          </li>`).join("")}
+      </ul>
+      <dl>
+        <dt>상품 금액</dt><dd>${won(subtotal)}</dd>
+        <dt>배송비</dt><dd>${ship === 0 ? "무료" : won(ship)}</dd>
+      </dl>
+      <div class="summary__total">
+        <span>총 결제 금액</span>
+        <strong>${won(total)}</strong>
+      </div>
+      <a class="btn btn--ghost btn--block" href="cart.html">장바구니로 돌아가기</a>
+    </aside>
+  </div>`;
+
+  /* ---------- 전화번호 자동 포맷 ---------- */
+  const phone = document.getElementById("phone");
+  phone.addEventListener("input", () => {
+    const d = phone.value.replace(/\D/g, "").slice(0, 11);
+    phone.value = d.length < 4 ? d
+                : d.length < 8 ? `${d.slice(0,3)}-${d.slice(3)}`
+                : `${d.slice(0,3)}-${d.slice(3,7)}-${d.slice(7)}`;
+  });
+
+  document.getElementById("zip-search").addEventListener("click", () => {
+    // 실제 서비스라면 주소 검색 팝업이 열린다. 테스트용으로 예시 값을 채운다.
+    document.getElementById("zip").value = "06234";
+    document.getElementById("addr1").value = "서울특별시 강남구 테헤란로 152";
+    document.getElementById("addr2").focus();
+    toast("주소를 불러왔습니다. 상세 주소를 입력해 주세요.");
+  });
+
+  /* ---------- 검증 ---------- */
+  const RULES = {
+    name:  (v) => v.trim().length >= 2 || "이름을 2자 이상 입력해 주세요.",
+    phone: (v) => /^01\d-\d{3,4}-\d{4}$/.test(v) || "휴대폰 번호를 010-1234-5678 형식으로 입력해 주세요.",
+    email: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) || "이메일 주소를 정확히 입력해 주세요. 예: name@example.com",
+    zip:   (v) => /^\d{5}$/.test(v) || "우편번호 5자리를 입력해 주세요.",
+    addr1: (v) => v.trim().length >= 5 || "주소를 입력해 주세요."
+  };
+
+  function showError(id, message) {
+    const field = document.getElementById(id);
+    const msg = document.getElementById(id + "-error");
+    field.setAttribute("aria-invalid", "true");
+    field.setAttribute("aria-describedby",
+      [field.getAttribute("aria-describedby"), id + "-error"].filter(Boolean).join(" "));
+    msg.textContent = "⚠ " + message;
+    msg.hidden = false;
+  }
+  function clearError(id) {
+    const field = document.getElementById(id);
+    const msg = document.getElementById(id + "-error");
+    field.removeAttribute("aria-invalid");
+    msg.hidden = true;
+  }
+
+  Object.keys(RULES).forEach((id) => {
+    const el = document.getElementById(id);
+    el.addEventListener("blur", () => {
+      const res = RULES[id](el.value);
+      if (res === true) clearError(id); else showError(id, res);
+    });
+    el.addEventListener("input", () => {
+      if (el.getAttribute("aria-invalid") === "true" && RULES[id](el.value) === true) clearError(id);
+    });
+  });
+
+  const form = document.getElementById("order-form");
+  const btn = document.getElementById("pay-btn");
+  const label = document.getElementById("pay-btn-label");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const errors = [];
+
+    Object.keys(RULES).forEach((id) => {
+      const el = document.getElementById(id);
+      const res = RULES[id](el.value);
+      if (res === true) { clearError(id); }
+      else { showError(id, res); errors.push({ id, message: res }); }
+    });
+
+    const agree = document.getElementById("agree-required");
+    if (!agree.checked) {
+      const msg = document.getElementById("agree-required-error");
+      msg.textContent = "⚠ 결제 진행을 위해 필수 항목에 동의해 주세요.";
+      msg.hidden = false;
+      errors.push({ id: "agree-required", message: "결제 필수 동의에 체크해 주세요." });
+    } else {
+      document.getElementById("agree-required-error").hidden = true;
+    }
+
+    const summary = document.getElementById("error-summary");
+    if (errors.length) {
+      document.getElementById("error-list").innerHTML =
+        errors.map((er) => `<li><a href="#${er.id}">${er.message}</a></li>`).join("");
+      summary.hidden = false;
+      summary.focus();
+      summary.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
+    summary.hidden = true;
+
+    // 로딩 상태를 명확히 노출한다 — 사용자가 결제 버튼을 다시 누르지 않도록
+    btn.classList.add("is-loading");
+    btn.disabled = true;
+    label.innerHTML = `<span class="spinner" aria-hidden="true"></span> 결제 처리 중입니다…`;
+
+    setTimeout(() => {
+      const order = {
+        no: "MOJI-" + String(100000 + Math.floor(Math.random() * 899999)),
+        name: document.getElementById("name").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        addr: `${document.getElementById("addr1").value} ${document.getElementById("addr2").value}`.trim(),
+        total: total,
+        count: cartCount()
+      };
+      sessionStorage.setItem("moji_last_order", JSON.stringify(order));
+      saveCart([]);
+      location.href = "complete.html";
+    }, 1200);
+  });
+});
+</script>
+</body>
+</html>

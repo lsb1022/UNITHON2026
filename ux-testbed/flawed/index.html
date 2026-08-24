@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- [D-38] 한국어 페이지인데 lang="en" — 스크린리더가 영어로 읽는다 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- [D-28] viewport 메타 태그 없음 — 모바일에서 데스크톱 폭으로 축소 렌더링됨 -->
+<!-- [D-40] title이 "쇼핑몰"로 모든 페이지에서 동일, meta description 없음 -->
+<title>쇼핑몰</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- [D-41] 본문 바로가기 링크 없음 -->
+
+<div class="topbar">이벤트 진행중</div>
+
+<div class="header">
+  <div class="wrap header-inner">
+    <!-- [D-03] 로고가 span — 클릭해도 홈으로 이동하지 않는다 -->
+    <span class="logo">MOJI</span>
+    <!-- [D-02] 햄버거 메뉴 없음 + .header에 overflow:hidden → 좁은 화면에서 메뉴가 잘림
+         [D-04] 현재 페이지 표시(aria-current) 없음, 링크 높이 20px -->
+    <div class="nav">
+      <a href="index.html">홈</a>
+      <a href="list.html">전체</a>
+      <a href="list.html?cat=상의">상의</a>
+      <a href="list.html?cat=하의">하의</a>
+      <a href="list.html?cat=신발">신발</a>
+      <a href="list.html?cat=액세서리">액세서리</a>
+    </div>
+    <!-- [D-01] 수량 배지 없음  [D-11] 22×16px 터치 타깃 -->
+    <a class="cart-link" href="cart.html">cart</a>
+  </div>
+</div>
+
+<!-- [D-39] main 랜드마크 없이 div — 보조기술이 본문 영역을 식별할 수 없다 -->
+<div class="hero">
+  <div class="wrap">
+    <!-- [D-32] h1이 15px로 카드 제목과 비슷한 크기 — 시각적 위계 없음 -->
+    <h1>신상품 입고</h1>
+    <p>지금 확인해보세요</p>
+    <!-- [D-13] CTA 문구가 "여기를 클릭" — 목적지를 알 수 없다 -->
+    <a class="btn btn-primary" href="list.html">여기를 클릭</a>
+  </div>
+</div>
+
+<div class="wrap" style="padding:20px 0">
+  <!-- [D-42] 섹션 제목이 굵은 span — 헤딩 구조가 없어 목차 탐색이 불가능 -->
+  <span style="font-size:12px; color:#c0c0c0">인기상품</span>
+  <ul class="grid" id="best-grid" style="margin-top:8px"></ul>
+</div>
+
+<div class="wrap" style="padding:20px 0">
+  <span style="font-size:12px; color:#c0c0c0">신상품</span>
+  <ul class="grid" id="new-grid" style="margin-top:8px"></ul>
+</div>
+
+<div class="footer">
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="#">이용약관</a>
+      <a href="#">개인정보처리방침</a>
+      <a href="#">고객센터</a>
+    </div>
+    <!-- [D-27] 대비 1.3:1 — 법적 고지가 사실상 읽히지 않는다 -->
+    <p>(주)모지스토어 · 대표 홍길동 · 사업자등록번호 000-00-00000 · 통신판매업신고 제2026-서울-0000호<br>
+       본 사이트는 UX 검증 서비스 테스트를 위한 가상의 쇼핑몰입니다.</p>
+  </div>
+</div>
+
+<script src="../shared/products.js"></script>
+<script src="assets/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const best = [...PRODUCTS].sort((a, b) => b.reviews - a.reviews).slice(0, 4);
+  const fresh = PRODUCTS.filter((p) => p.badge === "NEW" || p.id > 9).slice(0, 4);
+  renderGrid(document.getElementById("best-grid"), best);
+  renderGrid(document.getElementById("new-grid"), fresh);
+});
+</script>
+</body>
+</html>

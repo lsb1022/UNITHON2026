@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UX 검증 테스트베드 — MOJI STORE</title>
+<style>
+  :root { --ink:#16181d; --soft:#5b6270; --line:#e3e6ec; }
+  * { box-sizing: border-box; }
+  body {
+    margin:0; padding:56px 20px 80px;
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", system-ui, sans-serif;
+    color:var(--ink); background:#f6f7f9; line-height:1.6;
+  }
+  .wrap { width:min(880px, 100%); margin-inline:auto; }
+  h1 { font-size:28px; margin:0 0 10px; }
+  .lede { color:var(--soft); margin:0 0 36px; font-size:16px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:20px; }
+  .card {
+    background:#fff; border:1px solid var(--line); border-radius:14px; padding:26px;
+    box-shadow:0 1px 2px rgba(16,18,25,.05), 0 10px 26px rgba(16,18,25,.05);
+  }
+  .card h2 { font-size:19px; margin:0 0 6px; }
+  .tag { display:inline-block; font-size:12px; font-weight:700; padding:4px 9px; border-radius:6px; margin-bottom:12px; }
+  .tag--a { background:#e6f4ec; color:#0f6b3f; }
+  .tag--b { background:#fdecea; color:#b3261e; }
+  .card p { color:var(--soft); font-size:15px; margin:0 0 18px; }
+  .card ul { margin:0 0 20px; padding-left:18px; color:var(--soft); font-size:14px; }
+  .btn {
+    display:inline-flex; align-items:center; justify-content:center;
+    min-height:46px; padding:0 20px; border-radius:10px;
+    font-size:15px; font-weight:600; text-decoration:none;
+    background:#1f4ed8; color:#fff;
+  }
+  .btn--ghost { background:#fff; color:var(--ink); border:1px solid #c9cfd9; }
+  .row { display:flex; gap:10px; flex-wrap:wrap; }
+  .note { margin-top:36px; background:#fff; border:1px solid var(--line); border-radius:14px; padding:22px 26px; }
+  .note h3 { font-size:15px; margin:0 0 10px; }
+  .note code { background:#f0f2f5; padding:2px 6px; border-radius:5px; font-size:13px; }
+  .note ol { margin:0; padding-left:20px; color:var(--soft); font-size:15px; }
+  a { color:#1f4ed8; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>MOJI STORE — UX 검증 테스트베드</h1>
+  <p class="lede">
+    동일한 상품 데이터·동일한 구매 플로우 위에 만든 두 개의 쇼핑몰입니다.
+    UX 검증 서비스가 무엇을 잡아내고 무엇을 놓치는지, 그리고 멀쩡한 화면을 문제로 오탐하지는 않는지
+    한 번에 측정하기 위한 A/B 픽스처입니다.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <span class="tag tag--a">CLEAN — 기준선</span>
+      <h2>정상 쇼핑몰</h2>
+      <p>UX 베스트프랙티스를 지켜 만든 버전. 여기서 나오는 지적은 대부분 오탐(false positive)으로 봐야 합니다.</p>
+      <ul>
+        <li>WCAG AA 대비 충족, 16px 본문</li>
+        <li>44px 이상 터치 타깃, 가시적 포커스 링</li>
+        <li>인라인 검증 + 에러 요약, 로딩 상태</li>
+        <li>배송비 사전 고지, 비회원 구매 지원</li>
+      </ul>
+      <div class="row">
+        <a class="btn" href="clean/index.html">CLEAN 열기</a>
+        <a class="btn btn--ghost" href="clean/list.html">상품 목록</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="tag tag--b">FLAWED — 탐지 대상</span>
+      <h2>결함 쇼핑몰</h2>
+      <p>실무에서 자주 발견되는 UX 결함 67개를 의도적으로 심었습니다. 각 결함은 소스에 <code>[D-xx]</code>로 주석 처리되어 있습니다.</p>
+      <ul>
+        <li>대비 1.9:1, 본문 11px, 포커스 링 제거</li>
+        <li>20px 터치 타깃, div로 만든 가짜 버튼</li>
+        <li>피드백·에러 메시지 없는 조용한 실패</li>
+        <li>숨은 배송비, 기본 체크된 마케팅 동의</li>
+      </ul>
+      <div class="row">
+        <a class="btn" href="flawed/index.html">FLAWED 열기</a>
+        <a class="btn btn--ghost" href="flawed/list.html">상품 목록</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">
+    <h3>검증 시나리오 (두 버전에 동일하게 적용)</h3>
+    <ol>
+      <li>홈 → 카테고리 필터 → 상품 상세 진입</li>
+      <li>색상·사이즈 선택 후 장바구니 담기 (결과 피드백이 있는가?)</li>
+      <li>장바구니에서 수량 변경 · 항목 삭제 (되돌릴 수 있는가?)</li>
+      <li>결제 화면에서 빈 값으로 제출 (무엇이 잘못됐는지 알려주는가?)</li>
+      <li>정상 입력 후 결제 → 주문 완료 (총액이 앞 단계와 일치하는가?)</li>
+      <li>품절 상품(워시드 후디 / 레더 벨트) 담기 시도</li>
+      <li>존재하지 않는 상품 ID로 접근: <code>product.html?id=999</code></li>
+      <li>375px 폭 모바일 뷰포트로 전체 플로우 재실행</li>
+      <li>마우스 없이 Tab 키만으로 결제까지 완주 시도</li>
+    </ol>
+    <p style="margin:16px 0 0; color:#5b6270; font-size:15px;">
+      정답지는 <a href="DEFECTS.md">DEFECTS.md</a>, 실행 방법과 크롤러 연결은 <a href="README.md">README.md</a>를 참고하세요.
+    </p>
+  </div>
+</div>
+</body>
+</html>

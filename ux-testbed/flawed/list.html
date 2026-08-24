@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>쇼핑몰</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="topbar">이벤트 진행중</div>
+
+<div class="header">
+  <div class="wrap header-inner">
+    <span class="logo">MOJI</span>
+    <div class="nav">
+      <a href="index.html">홈</a>
+      <a href="list.html">전체</a>
+      <a href="list.html?cat=상의">상의</a>
+      <a href="list.html?cat=하의">하의</a>
+      <a href="list.html?cat=신발">신발</a>
+      <a href="list.html?cat=액세서리">액세서리</a>
+    </div>
+    <a class="cart-link" href="cart.html">cart</a>
+  </div>
+</div>
+
+<!-- [D-46] 브레드크럼 없음 — 현재 위치를 알 수 없다 -->
+<div class="wrap" style="padding:14px 0">
+
+  <!-- [D-48] 페이지에 h1이 없다 (문서 제목 자체가 없음) -->
+
+  <!-- [D-10] 필터 칩이 div — 키보드 접근 불가, aria-pressed 등 상태 정보 없음
+       [D-19] 20×16px 크기 -->
+  <div id="chips" style="margin-bottom:10px"></div>
+
+  <!-- [D-44] 결과 개수 표시 없음  [D-45] 정렬 기능 없음 -->
+
+  <ul class="grid" id="product-grid"></ul>
+
+  <!-- [D-47] 결과가 0건이어도 안내 문구가 없다 — 그냥 흰 화면이 된다 -->
+</div>
+
+<div class="footer">
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="#">이용약관</a>
+      <a href="#">개인정보처리방침</a>
+      <a href="#">고객센터</a>
+    </div>
+    <p>(주)모지스토어 · 본 사이트는 UX 검증 서비스 테스트를 위한 가상의 쇼핑몰입니다.</p>
+  </div>
+</div>
+
+<script src="../shared/products.js"></script>
+<script src="assets/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(location.search);
+  let cat = params.get("cat") || "전체";
+
+  const grid = document.getElementById("product-grid");
+  const chipsEl = document.getElementById("chips");
+
+  // "세일" 카테고리는 매칭되는 상품이 하나도 없다 → 빈 화면 상태를 재현하기 위한 항목
+  const CATS = ["전체", "상의", "하의", "신발", "액세서리", "세일"];
+
+  chipsEl.innerHTML = CATS.map((c) => `<div class="opt" data-cat="${c}">${c}</div>`).join("");
+
+  function apply() {
+    const list = PRODUCTS.filter((p) => cat === "전체" || p.cat === cat);
+    renderGrid(grid, list);
+    /* [D-43] 선택한 필터를 URL에 반영하지 않는다.
+       새로고침·뒤로가기·링크 공유 시 필터 상태가 사라진다. */
+    /* [D-20] 선택된 칩의 시각적 표시가 거의 없다 */
+    $$(".opt", chipsEl).forEach((el) => el.classList.toggle("selected", el.dataset.cat === cat));
+  }
+
+  chipsEl.addEventListener("click", (e) => {
+    const el = e.target.closest(".opt");
+    if (!el) return;
+    cat = el.dataset.cat;
+    apply();
+  });
+
+  apply();
+});
+</script>
+</body>
+</html>

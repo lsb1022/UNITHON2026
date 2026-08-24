@@ -1,0 +1,171 @@
+/* ============================================================
+   MOJI STORE — FLAWED 버전 스타일시트
+   ⚠ 이 파일은 의도적으로 UX/접근성 결함을 포함합니다.
+   각 결함에는 [D-xx] 번호가 붙어 있으며 DEFECTS.md의 정답지와 대응합니다.
+   검증 서비스가 무엇을 잡아내는지 측정하기 위한 테스트 픽스처입니다.
+   ============================================================ */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Malgun Gothic", sans-serif;
+  /* [D-06] 본문 폰트 11px — 모바일 최소 권장(16px)에 크게 미달 */
+  font-size: 11px;
+  /* [D-07] 행간 1.15 — 한글 본문 가독성 저하 */
+  line-height: 1.15;
+  /* [D-05] 본문 텍스트 #b9b9b9 on #fff = 대비 1.9:1 (WCAG AA 4.5:1 미달) */
+  color: #b9b9b9;
+  background: #fff;
+}
+
+/* [D-09] 포커스 링 전역 제거 — 키보드 사용자가 현재 위치를 알 수 없음 */
+*:focus { outline: none; }
+a, button, input, select { outline: none !important; }
+
+img { display: block; border: 0; }
+
+/* [D-31] 링크가 본문과 같은 회색, 밑줄 없음 → 링크임을 인지할 수 없음 */
+a { color: #b9b9b9; text-decoration: none; }
+a:hover { color: #aaa; }
+
+/* [D-29] 고정 폭 1180px — 뷰포트가 좁아도 줄어들지 않아 가로 스크롤 발생 */
+.wrap { width: 1180px; margin: 0 auto; }
+
+/* ---------- 헤더 ---------- */
+.topbar {
+  background: #f2f2f2;
+  /* [D-05b] 안내 문구 #cfcfcf on #f2f2f2 = 대비 1.3:1 — 사실상 안 보임 */
+  color: #cfcfcf;
+  font-size: 10px; text-align: center; padding: 4px 0;
+}
+
+.header {
+  border-bottom: 1px solid #f0f0f0;
+  height: 52px;
+  /* [D-02] overflow hidden — 항목이 많으면 조용히 잘려나감 */
+  overflow: hidden;
+}
+.header-inner { display: flex; align-items: center; height: 52px; }
+
+/* [D-03] 로고가 링크가 아닌 span — 클릭해도 홈으로 가지 않음 */
+.logo { font-size: 16px; font-weight: bold; color: #999; letter-spacing: .1em; margin-right: 26px; }
+
+.nav { display: flex; gap: 14px; margin-right: auto; white-space: nowrap; }
+/* [D-04] 현재 페이지 표시 없음 + 터치 타깃 높이 20px */
+.nav a { font-size: 11px; color: #c2c2c2; height: 20px; line-height: 20px; }
+
+/* [D-11] 헤더 장바구니 링크 22×16px — 최소 터치 타깃(44px)의 절반 미만 */
+.cart-link { font-size: 10px; color: #c2c2c2; width: 22px; height: 16px; overflow: hidden; }
+
+/* ---------- 히어로 ---------- */
+.hero { background: #fafafa; padding: 26px 0; }
+/* [D-32] h1이 h3보다 작음 — 시각적 위계와 문서 구조가 어긋남 */
+.hero h1 { font-size: 15px; color: #c4c4c4; margin: 0 0 6px; font-weight: normal; }
+.hero p { font-size: 11px; color: #d0d0d0; margin: 0 0 12px; }
+
+/* ---------- 버튼 ---------- */
+/* [D-12] 기본 버튼 24×20px — 손가락으로 정확히 누를 수 없는 크기 */
+.btn {
+  display: inline-block;
+  height: 20px; line-height: 20px; padding: 0 6px;
+  font-size: 10px; font-family: inherit;
+  border: 1px solid #e6e6e6; background: #fff; color: #bdbdbd;
+  cursor: pointer; border-radius: 2px;
+}
+/* [D-13] 주요 CTA와 보조 버튼이 시각적으로 동일 — 무엇이 다음 단계인지 알 수 없음 */
+.btn-primary { background: #fff; color: #bdbdbd; border-color: #e6e6e6; }
+/* [D-14] 비활성 버튼이 활성 버튼과 구분되지 않음 */
+.btn[disabled] { background: #fff; color: #bdbdbd; cursor: pointer; }
+
+/* [D-10] div로 만든 가짜 버튼 — role/tabindex 없음, 키보드로 도달 불가 */
+.fake-btn {
+  display: inline-block; height: 20px; line-height: 20px; padding: 0 6px;
+  font-size: 10px; border: 1px solid #e6e6e6; color: #bdbdbd; cursor: pointer;
+  border-radius: 2px; user-select: none;
+}
+
+/* ---------- 상품 그리드 ---------- */
+/* [D-30] 고정 4열 그리드 — 화면 폭과 무관하게 유지되어 좁은 화면에서 깨짐 */
+.grid {
+  display: grid; grid-template-columns: repeat(4, 272px);
+  /* [D-15] 카드 간 간격 4px — 카드 경계가 붙어 어디까지가 한 상품인지 불분명 */
+  gap: 4px;
+  list-style: none; padding: 0; margin: 0;
+}
+.card { position: relative; }
+.card img { width: 272px; height: 340px; object-fit: cover; background: #f5f5f5; }
+.card-name { font-size: 11px; color: #bcbcbc; margin: 5px 0 2px; font-weight: normal; }
+/* [D-16] 가격에 통화 단위 없음 — "39000"이 원인지 개수인지 알 수 없음 */
+.card-price { font-size: 11px; color: #c0c0c0; }
+/* [D-17] 정가/할인가가 동일한 스타일 — 어느 쪽이 실제 결제 금액인지 불명확 */
+.card-list-price { font-size: 11px; color: #c0c0c0; }
+/* [D-18] 품절 표시가 회색 소문자 한 줄 — 정상 상품과 구분되지 않음 */
+.soldout { font-size: 9px; color: #d6d6d6; }
+.badge { font-size: 9px; color: #d6d6d6; }
+
+/* ---------- 상품 상세 ---------- */
+.pdp { display: grid; grid-template-columns: 560px 560px; gap: 60px; padding: 16px 0 40px; }
+.pdp img { width: 560px; }
+.pdp h1 { font-size: 14px; color: #bfbfbf; margin: 0 0 6px; font-weight: normal; }
+.pdp-price { font-size: 13px; color: #c0c0c0; margin: 0 0 10px; }
+
+/* [D-19] 옵션 버튼 20×16px, 간격 1px — 오탭이 사실상 보장됨 */
+.opt {
+  display: inline-block; min-width: 20px; height: 16px; line-height: 16px;
+  padding: 0 3px; margin-right: 1px;
+  border: 1px solid #eee; font-size: 9px; color: #c5c5c5; cursor: pointer;
+}
+/* [D-20] 선택된 옵션의 표시가 테두리 색 미세 변화뿐 — 무엇을 골랐는지 알 수 없음 */
+.opt.selected { border-color: #e2e2e2; }
+
+/* [D-21] 수량 +/- 버튼 18×14px, 서로 2px 간격 */
+.qty button { width: 18px; height: 14px; font-size: 9px; border: 1px solid #eee; background: #fff; color: #c5c5c5; margin: 0 2px; cursor: pointer; }
+.qty input { width: 26px; height: 14px; border: 1px solid #eee; text-align: center; font-size: 9px; color: #c5c5c5; }
+
+/* ---------- 장바구니 / 표 ---------- */
+.cart-table { width: 100%; border-collapse: collapse; font-size: 11px; color: #c0c0c0; }
+.cart-table th, .cart-table td { padding: 6px 4px; border-bottom: 1px solid #f2f2f2; text-align: left; }
+.cart-table img { width: 44px; height: 55px; object-fit: cover; }
+/* [D-22] 삭제 버튼이 8px 'x' 한 글자 — 확인 절차 없이 한 번에 삭제됨 */
+.del-x { font-size: 8px; color: #d8d8d8; cursor: pointer; padding: 1px; }
+
+.total-row { text-align: right; font-size: 12px; color: #bfbfbf; padding: 10px 0; }
+
+/* ---------- 폼 ---------- */
+/* [D-08] label 요소 없이 placeholder만 사용 (HTML에서), 입력 시 힌트가 사라짐 */
+.inp {
+  width: 100%; height: 22px; padding: 2px 5px;
+  border: 1px solid #ededed; font-size: 11px; color: #b9b9b9;
+  font-family: inherit; background: #fff;
+}
+/* [D-23] placeholder가 입력값보다 진해서 이미 입력된 것처럼 보임 */
+.inp::placeholder { color: #a9a9a9; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 6px; }
+.form-full { grid-column: 1 / -1; }
+
+/* [D-24] 체크박스 10px — 누르기 어렵고 상태 확인도 어려움 */
+.chk { width: 10px; height: 10px; vertical-align: middle; }
+.chk-row { font-size: 10px; color: #c8c8c8; padding: 3px 0; }
+/* [D-25] 마케팅 수신 동의가 기본 체크 + 회색 처리로 눈에 띄지 않음 (다크 패턴) */
+.chk-row.muted { color: #dcdcdc; }
+
+/* ---------- 팝업 ---------- */
+.popup {
+  position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 460px; background: #fff; border: 1px solid #e2e2e2;
+  padding: 26px; z-index: 99; box-shadow: 0 6px 40px rgba(0,0,0,.18);
+}
+.popup h2 { font-size: 13px; color: #b5b5b5; margin: 0 0 8px; font-weight: normal; }
+.popup p { font-size: 10px; color: #cbcbcb; margin: 0 0 14px; }
+/* [D-26] 닫기 버튼 8px, 배경과 거의 같은 색 — 팝업을 닫기 어려움 */
+.popup-close { position: absolute; right: 6px; top: 4px; font-size: 8px; color: #ececec; cursor: pointer; }
+.popup-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 98; }
+
+/* ---------- 푸터 ---------- */
+.footer { border-top: 1px solid #f2f2f2; padding: 16px 0 30px; margin-top: 24px; }
+.footer-links { display: flex; gap: 10px; font-size: 10px; }
+/* [D-27] 푸터 텍스트 #dcdcdc on #fff = 대비 1.3:1 — 법적 고지가 읽히지 않음 */
+.footer p { font-size: 9px; color: #dcdcdc; margin: 8px 0 0; }
+
+/* [D-28] 반응형 처리 없음: 미디어 쿼리가 하나도 없고 뷰포트 메타 태그도 없음 */

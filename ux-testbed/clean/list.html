@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>전체 상품 — MOJI STORE</title>
+<meta name="description" content="MOJI STORE 전체 상품 목록. 카테고리와 정렬로 원하는 상품을 찾아보세요.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">본문 바로가기</a>
+
+<div class="topbar">5만원 이상 구매 시 무료배송 · 30일 이내 무료 반품</div>
+
+<header class="header">
+  <div class="wrap header__inner">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="메뉴 열기">☰</button>
+    <a class="logo" href="index.html">MOJI</a>
+    <nav class="nav" id="main-nav" aria-label="주 메뉴">
+      <a href="index.html">홈</a>
+      <a href="list.html" aria-current="page">전체 상품</a>
+      <a href="list.html?cat=상의">상의</a>
+      <a href="list.html?cat=하의">하의</a>
+      <a href="list.html?cat=신발">신발</a>
+      <a href="list.html?cat=액세서리">액세서리</a>
+    </nav>
+    <div class="header__actions">
+      <a class="icon-btn" href="cart.html">
+        <span aria-hidden="true">🛒</span>
+        <span aria-hidden="true">장바구니</span>
+        <span class="cart-count" data-cart-count hidden aria-hidden="true">0</span>
+        <span class="sr-only" data-cart-label>장바구니 (비어 있음)</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+  <nav class="crumbs" aria-label="현재 위치">
+    <a href="index.html">홈</a> ›
+    <span aria-current="page" id="crumb-current">전체 상품</span>
+  </nav>
+
+  <h1 id="list-title">전체 상품</h1>
+
+  <div class="filters">
+    <div class="opts" role="group" aria-label="카테고리 필터" id="chips"></div>
+    <div class="filters__meta">
+      <label class="sr-only" for="sort">정렬 기준</label>
+      <select class="input" id="sort" style="min-height:44px; width:auto; display:inline-block;">
+        <option value="popular">인기순</option>
+        <option value="low">낮은 가격순</option>
+        <option value="high">높은 가격순</option>
+        <option value="rating">별점순</option>
+      </select>
+    </div>
+  </div>
+
+  <p id="result-count" role="status" aria-live="polite" style="color:#5b6270; margin:0 0 20px;"></p>
+
+  <ul class="grid" id="product-grid"></ul>
+
+  <div id="no-result" hidden class="empty">
+    <h2>조건에 맞는 상품이 없습니다</h2>
+    <p>다른 카테고리를 선택해 보세요.</p>
+    <a class="btn btn--ghost" href="list.html">전체 상품 보기</a>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__cols">
+      <div>
+        <h3>고객센터</h3>
+        <ul>
+          <li><a href="#">1588-0000 (평일 10-18시)</a></li>
+          <li><a href="#">1:1 문의하기</a></li>
+          <li><a href="#">자주 묻는 질문</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>쇼핑 정보</h3>
+        <ul>
+          <li><a href="#">배송 안내</a></li>
+          <li><a href="#">교환 / 반품 안내</a></li>
+          <li><a href="#">사이즈 가이드</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>회사</h3>
+        <ul>
+          <li><a href="#">브랜드 소개</a></li>
+          <li><a href="#">채용</a></li>
+          <li><a href="#">공지사항</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>약관</h3>
+        <ul>
+          <li><a href="#">이용약관</a></li>
+          <li><a href="#">개인정보처리방침</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__legal">
+      (주)모지스토어 · 대표 홍길동 · 사업자등록번호 000-00-00000<br>
+      본 사이트는 UX 검증 서비스 테스트를 위한 가상의 쇼핑몰입니다.
+    </p>
+  </div>
+</footer>
+
+<script src="../shared/products.js"></script>
+<script src="assets/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(location.search);
+  let cat  = params.get("cat")  || "전체";
+  let sort = params.get("sort") || "popular";
+  if (!CATEGORIES.includes(cat)) cat = "전체";
+
+  const grid     = document.getElementById("product-grid");
+  const noResult = document.getElementById("no-result");
+  const countEl  = document.getElementById("result-count");
+  const chipsEl  = document.getElementById("chips");
+  const sortEl   = document.getElementById("sort");
+
+  sortEl.value = sort;
+
+  chipsEl.innerHTML = CATEGORIES.map((c) => `
+    <button type="button" class="chip" data-cat="${c}"
+            aria-pressed="${c === cat}">${c}</button>`).join("");
+
+  function apply() {
+    const list = PRODUCTS.filter((p) => cat === "전체" || p.cat === cat);
+    const sorters = {
+      popular: (a, b) => b.reviews - a.reviews,
+      low:     (a, b) => a.price - b.price,
+      high:    (a, b) => b.price - a.price,
+      rating:  (a, b) => b.rating - a.rating
+    };
+    list.sort(sorters[sort]);
+
+    renderGrid(grid, list);
+    countEl.textContent = `${cat} · 상품 ${list.length}개`;
+    grid.hidden = list.length === 0;
+    noResult.hidden = list.length !== 0;
+
+    document.getElementById("list-title").textContent = cat === "전체" ? "전체 상품" : cat;
+    document.getElementById("crumb-current").textContent = cat === "전체" ? "전체 상품" : cat;
+    document.title = (cat === "전체" ? "전체 상품" : cat) + " — MOJI STORE";
+
+    // 필터 상태를 URL에 반영해 새로고침·공유·뒤로가기에서 그대로 재현되게 한다
+    const url = new URL(location.href);
+    url.searchParams.set("cat", cat);
+    url.searchParams.set("sort", sort);
+    history.replaceState(null, "", url);
+  }
+
+  chipsEl.addEventListener("click", (e) => {
+    const btn = e.target.closest(".chip");
+    if (!btn) return;
+    cat = btn.dataset.cat;
+    $$(".chip", chipsEl).forEach((c) => c.setAttribute("aria-pressed", String(c === btn)));
+    apply();
+  });
+
+  sortEl.addEventListener("change", () => { sort = sortEl.value; apply(); });
+
+  apply();
+});
+</script>
+</body>
+</html>

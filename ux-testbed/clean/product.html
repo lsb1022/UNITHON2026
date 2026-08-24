@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>상품 상세 — MOJI STORE</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">본문 바로가기</a>
+
+<div class="topbar">5만원 이상 구매 시 무료배송 · 30일 이내 무료 반품</div>
+
+<header class="header">
+  <div class="wrap header__inner">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="메뉴 열기">☰</button>
+    <a class="logo" href="index.html">MOJI</a>
+    <nav class="nav" id="main-nav" aria-label="주 메뉴">
+      <a href="index.html">홈</a>
+      <a href="list.html">전체 상품</a>
+      <a href="list.html?cat=상의">상의</a>
+      <a href="list.html?cat=하의">하의</a>
+      <a href="list.html?cat=신발">신발</a>
+      <a href="list.html?cat=액세서리">액세서리</a>
+    </nav>
+    <div class="header__actions">
+      <a class="icon-btn" href="cart.html">
+        <span aria-hidden="true">🛒</span>
+        <span aria-hidden="true">장바구니</span>
+        <span class="cart-count" data-cart-count hidden aria-hidden="true">0</span>
+        <span class="sr-only" data-cart-label>장바구니 (비어 있음)</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <nav class="crumbs" aria-label="현재 위치" id="crumbs"></nav>
+  <div id="pdp"></div>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p class="footer__legal" style="margin-top:0; border:0; padding:0;">
+      (주)모지스토어 · 본 사이트는 UX 검증 서비스 테스트를 위한 가상의 쇼핑몰입니다.
+    </p>
+  </div>
+</footer>
+
+<script src="../shared/products.js"></script>
+<script src="assets/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const id = new URLSearchParams(location.search).get("id");
+  const p  = productById(id);
+  const root = document.getElementById("pdp");
+
+  if (!p) {
+    document.getElementById("crumbs").innerHTML = `<a href="index.html">홈</a> › <span aria-current="page">상품을 찾을 수 없음</span>`;
+    root.innerHTML = `
+      <div class="empty">
+        <h2>찾으시는 상품이 없습니다</h2>
+        <p>주소가 바뀌었거나 판매가 종료된 상품일 수 있습니다.</p>
+        <a class="btn btn--primary" href="list.html">전체 상품 보기</a>
+      </div>`;
+    return;
+  }
+
+  document.title = `${p.name} — MOJI STORE`;
+  document.getElementById("crumbs").innerHTML =
+    `<a href="index.html">홈</a> › <a href="list.html?cat=${encodeURIComponent(p.cat)}">${p.cat}</a> › <span aria-current="page">${p.name}</span>`;
+
+  const off = discountPct(p);
+  const freeShip = p.price >= FREE_SHIP_OVER;
+
+  root.innerHTML = `
+  <div class="pdp">
+    <div class="pdp__gallery">
+      <img src="../shared/img/p${p.id}.svg" alt="${p.name} 정면 사진" width="600" height="750">
+    </div>
+
+    <div class="pdp__info">
+      <p style="color:#5b6270; margin:0; font-size:15px;">${p.cat}</p>
+      <h1 class="pdp__title">${p.name}</h1>
+      <p class="pdp__rating">별점 ${p.rating} / 5 · 리뷰 ${p.reviews}개</p>
+
+      <div class="pdp__price">
+        <strong>${won(p.price)}</strong>
+        ${off ? `<span class="card__list-price">${won(p.listPrice)}</span>
+                 <span class="card__off">${off}% 할인</span>` : ""}
+      </div>
+      <p class="pdp__ship">
+        ${freeShip
+          ? `배송비 <b>무료</b> · 오늘 오후 3시 이전 결제 시 내일 도착 예정`
+          : `배송비 ${won(SHIP_FEE)} · <b>${won(FREE_SHIP_OVER)} 이상 구매 시 무료</b>`}
+      </p>
+
+      ${p.soldOut ? `
+        <div class="error-summary" role="status">
+          <h2>현재 품절된 상품입니다</h2>
+          <p style="margin:0; font-size:15px;">재입고 알림을 신청하시면 입고 시 문자로 안내해 드립니다.</p>
+        </div>` : ""}
+
+      <form id="buy-form" novalidate>
+        <div class="field">
+          <fieldset>
+            <legend class="field__legend">색상 선택 <span class="req" aria-hidden="true">*</span></legend>
+            <div class="opts">
+              ${p.colors.map((c, i) => `
+                <label class="opt">
+                  <input type="radio" name="color" value="${c}" ${i === 0 ? "checked" : ""}>
+                  <span>${c}</span>
+                </label>`).join("")}
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="field">
+          <fieldset>
+            <legend class="field__legend">사이즈 선택 <span class="req" aria-hidden="true">*</span></legend>
+            <div class="opts">
+              ${p.sizes.map((s, i) => `
+                <label class="opt">
+                  <input type="radio" name="size" value="${s}" ${i === 0 ? "checked" : ""}>
+                  <span>${s}</span>
+                </label>`).join("")}
+            </div>
+            <p class="field__hint"><a href="#size-guide">사이즈 가이드 보기</a></p>
+          </fieldset>
+        </div>
+
+        <div class="field">
+          <label id="qty-label" for="qty">수량</label>
+          <div class="qty">
+            <button type="button" id="qty-minus" aria-label="수량 1개 줄이기">−</button>
+            <input id="qty" name="qty" type="number" value="1" min="1" max="99"
+                   inputmode="numeric" aria-labelledby="qty-label">
+            <button type="button" id="qty-plus" aria-label="수량 1개 늘리기">+</button>
+          </div>
+        </div>
+
+        <div class="buy-row">
+          ${p.soldOut
+            ? `<button class="btn btn--primary" type="button" disabled>품절</button>
+               <button class="btn btn--ghost" type="button" id="restock">재입고 알림 신청</button>`
+            : `<button class="btn btn--ghost" type="submit" id="add-cart">장바구니에 담기</button>
+               <button class="btn btn--primary" type="button" id="buy-now">바로 구매하기</button>`}
+        </div>
+      </form>
+
+      <div class="accordion">
+        <details open>
+          <summary>상품 설명</summary>
+          <p>${p.desc}</p>
+        </details>
+        <details id="size-guide">
+          <summary>사이즈 가이드</summary>
+          <p>모델은 175cm / 68kg으로 ${p.sizes[Math.min(1, p.sizes.length - 1)]} 사이즈를 착용했습니다.
+             실측 시 1-2cm 오차가 있을 수 있습니다.</p>
+        </details>
+        <details>
+          <summary>배송 · 반품 안내</summary>
+          <p>평일 오후 3시 이전 결제 시 당일 출고됩니다.
+             수령 후 30일 이내 무료 반품이 가능하며, 반품 신청은 마이페이지에서 하실 수 있습니다.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section__head"><h2>함께 보면 좋은 상품</h2></div>
+    <ul class="grid" id="related"></ul>
+  </section>`;
+
+  /* 수량 조절 */
+  const qty = document.getElementById("qty");
+  const minus = document.getElementById("qty-minus");
+  const plus = document.getElementById("qty-plus");
+  function syncQty() {
+    let v = Math.max(1, Math.min(99, parseInt(qty.value, 10) || 1));
+    qty.value = v;
+    minus.disabled = v <= 1;
+    plus.disabled = v >= 99;
+  }
+  minus.addEventListener("click", () => { qty.value = +qty.value - 1; syncQty(); });
+  plus .addEventListener("click", () => { qty.value = +qty.value + 1; syncQty(); });
+  qty.addEventListener("change", syncQty);
+  syncQty();
+
+  /* 장바구니 담기 — 결과를 반드시 피드백한다 */
+  const form = document.getElementById("buy-form");
+  function currentSelection() {
+    return {
+      id: p.id,
+      color: form.color.value,
+      size: form.size.value,
+      qty: parseInt(qty.value, 10) || 1
+    };
+  }
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const sel = currentSelection();
+    const res = addToCart(sel);
+    if (res.ok) {
+      toast(`${p.name} (${sel.color} / ${sel.size}) ${sel.qty}개를 담았습니다.`,
+            { href: "cart.html", text: "장바구니 보기" });
+    } else {
+      toast(res.reason);
+    }
+  });
+
+  const buyNow = document.getElementById("buy-now");
+  if (buyNow) {
+    buyNow.addEventListener("click", () => {
+      const res = addToCart(currentSelection());
+      if (res.ok) location.href = "cart.html";
+      else toast(res.reason);
+    });
+  }
+
+  const restock = document.getElementById("restock");
+  if (restock) {
+    restock.addEventListener("click", () => toast("재입고 알림을 신청했습니다. 입고되면 문자로 알려드릴게요."));
+  }
+
+  /* 연관 상품 */
+  const related = PRODUCTS.filter((x) => x.cat === p.cat && x.id !== p.id).slice(0, 4);
+  renderGrid(document.getElementById("related"),
+             related.length ? related : PRODUCTS.filter((x) => x.id !== p.id).slice(0, 4));
+});
+</script>
+</body>
+</html>

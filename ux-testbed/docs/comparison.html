@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MOJI 정상판과 결함판</title>
+<style>
+/* ── 토큰: 라이트가 기본, 다크는 토큰만 재정의 ───────────────── */
+:root {
+  --ground:   #f4f6f8;
+  --surface:  #ffffff;
+  --surface-2:#eceff3;
+  --ink:      #171a20;
+  --ink-2:    #565e6c;
+  --ink-3:    #7d8593;
+  --rule:     #dde2e9;
+  --rule-2:   #c6cdd7;
+  --accent:   #1f5f8b;
+  --accent-w: #e4eef5;
+  --good:     #1c6b4e;
+  --good-w:   #e2f0e9;
+  --bad:      #9d3324;
+  --bad-w:    #f6e6e2;
+  --shot-bg:  #ffffff;
+  --shot-rule:#d5dbe3;
+
+  --sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --mono: ui-monospace, "SF Mono", "JetBrains Mono", "Cascadia Code",
+          Consolas, "D2Coding", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground:   #101317;
+    --surface:  #181c22;
+    --surface-2:#20252d;
+    --ink:      #e7eaef;
+    --ink-2:    #a2abb9;
+    --ink-3:    #7c8593;
+    --rule:     #2a3038;
+    --rule-2:   #3a424e;
+    --accent:   #6fb3dd;
+    --accent-w: #16303f;
+    --good:     #62c99b;
+    --good-w:   #133228;
+    --bad:      #e8897a;
+    --bad-w:    #37201c;
+  }
+}
+:root[data-theme="dark"] {
+  --ground:   #101317;
+  --surface:  #181c22;
+  --surface-2:#20252d;
+  --ink:      #e7eaef;
+  --ink-2:    #a2abb9;
+  --ink-3:    #7c8593;
+  --rule:     #2a3038;
+  --rule-2:   #3a424e;
+  --accent:   #6fb3dd;
+  --accent-w: #16303f;
+  --good:     #62c99b;
+  --good-w:   #133228;
+  --bad:      #e8897a;
+  --bad-w:    #37201c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16.5px;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page { width: min(1080px, 100% - 44px); margin-inline: auto; padding: 0 0 96px; }
+
+/* ── 타이포 스케일 ─────────────────────────────────────────── */
+h1, h2, h3 { text-wrap: balance; margin: 0; line-height: 1.28; letter-spacing: -.02em; }
+h1 { font-size: clamp(31px, 4.6vw, 47px); font-weight: 800; }
+h2 { font-size: clamp(22px, 2.7vw, 28px); font-weight: 750; }
+h3 { font-size: 17.5px; font-weight: 700; letter-spacing: -.01em; }
+p  { margin: 0; }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 11.5px; font-weight: 600;
+  letter-spacing: .17em; text-transform: uppercase;
+  color: var(--accent);
+}
+.lede { font-size: 18.5px; color: var(--ink-2); max-width: 60ch; }
+.note { font-size: 14.5px; color: var(--ink-3); }
+code, .mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+
+/* ── 헤더 ──────────────────────────────────────────────────── */
+.masthead {
+  display: flex; flex-direction: column; gap: 20px;
+  padding: 74px 0 40px;
+  border-bottom: 2px solid var(--ink);
+}
+.masthead__meta {
+  display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: baseline;
+}
+
+.stats {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+  gap: 1px; background: var(--rule);
+  border: 1px solid var(--rule); border-top: 0;
+  margin-bottom: 76px;
+}
+.stat { background: var(--surface); padding: 20px 18px; display: grid; gap: 3px; }
+.stat b {
+  font-family: var(--mono); font-size: 27px; font-weight: 650;
+  font-variant-numeric: tabular-nums; letter-spacing: -.03em; line-height: 1.1;
+}
+.stat span { font-size: 13.5px; color: var(--ink-3); }
+
+/* ── 섹션 ──────────────────────────────────────────────────── */
+section { margin-bottom: 76px; }
+.sec-head { display: grid; gap: 11px; margin-bottom: 30px; max-width: 66ch; }
+
+/* ── 두 빌드 소개 ──────────────────────────────────────────── */
+.builds { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.build {
+  background: var(--surface); border: 1px solid var(--rule);
+  border-top-width: 4px; padding: 26px 24px; display: grid; gap: 12px;
+  align-content: start;
+}
+.build--a { border-top-color: var(--good); }
+.build--b { border-top-color: var(--bad); }
+.build__role { font-size: 15px; color: var(--ink-2); }
+.build ul { margin: 4px 0 0; padding-left: 19px; display: grid; gap: 7px;
+            font-size: 15px; color: var(--ink-2); }
+
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--mono); font-size: 11.5px; font-weight: 650;
+  letter-spacing: .1em; padding: 3px 9px; border-radius: 3px;
+}
+.chip--a { background: var(--good-w); color: var(--good); }
+.chip--b { background: var(--bad-w);  color: var(--bad); }
+
+/* ── 비교표 ────────────────────────────────────────────────── */
+.table-scroll { overflow-x: auto; border: 1px solid var(--rule); background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 690px; }
+caption { text-align: left; padding: 0 0 12px; font-size: 14.5px; color: var(--ink-3); }
+th, td { text-align: left; padding: 13px 18px; vertical-align: top; font-size: 15px; }
+thead th {
+  position: sticky; top: 0; z-index: 1;
+  background: var(--surface-2); color: var(--ink);
+  font-family: var(--mono); font-size: 11.5px; font-weight: 650;
+  letter-spacing: .12em; text-transform: uppercase;
+  border-bottom: 1px solid var(--rule-2);
+}
+tbody tr + tr th, tbody tr + tr td { border-top: 1px solid var(--rule); }
+tbody th { font-weight: 600; color: var(--ink); width: 22%; }
+.grp th {
+  background: var(--surface-2); font-family: var(--mono);
+  font-size: 11.5px; font-weight: 650; letter-spacing: .12em;
+  color: var(--ink-2); text-transform: uppercase; padding: 9px 18px;
+}
+td.a { color: var(--ink-2); }
+td.b { color: var(--ink-2); background: color-mix(in srgb, var(--bad-w) 42%, transparent); }
+td .val { color: var(--ink); font-weight: 600; }
+td .mono { font-size: 14px; }
+
+/* ── 실물 표본 ─────────────────────────────────────────────── */
+.specs { display: grid; gap: 22px; }
+.spec { margin: 0; border: 1px solid var(--rule); background: var(--surface); }
+.spec__cap {
+  display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline;
+  padding: 14px 18px; border-bottom: 1px solid var(--rule);
+  font-size: 15px; font-weight: 650;
+}
+.spec__cap i { font-style: normal; font-size: 13.5px; color: var(--ink-3); font-weight: 400; }
+.spec__pair { display: grid; grid-template-columns: 1fr 1fr; }
+.spec__pair > * + * { border-left: 1px solid var(--rule); }
+
+/* 표본 = 실제 사이트 렌더링. 페이지 테마와 무관하게 항상 흰 바탕. */
+.shot {
+  color-scheme: light;
+  background: var(--shot-bg);
+  padding: 20px 20px 18px;
+  display: grid; gap: 14px; align-content: start;
+  min-height: 150px;
+}
+.shot__tag {
+  font-family: var(--mono); font-size: 10.5px; font-weight: 650;
+  letter-spacing: .13em; padding: 2px 7px; border-radius: 3px; justify-self: start;
+}
+.shot--a .shot__tag { background: #e2f0e9; color: #1c6b4e; }
+.shot--b .shot__tag { background: #f6e6e2; color: #9d3324; }
+.shot__foot {
+  font-family: var(--mono); font-size: 12px; color: #6b7280;
+  border-top: 1px dashed var(--shot-rule); padding-top: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 표본 내부: 픽스처의 실제 값을 그대로 재현 */
+.s-clean-body { color: #16181d; font-size: 16px; line-height: 1.6; margin: 0; }
+.s-flaw-body  { color: #b9b9b9; font-size: 11px; line-height: 1.15;
+                font-family: "Malgun Gothic", sans-serif; margin: 0; }
+
+.s-target { display: flex; align-items: flex-end; gap: 10px; }
+.s-box {
+  background: #1f4ed8; border-radius: 6px;
+  display: grid; place-items: center; color: #fff;
+  font-size: 11px; font-family: var(--mono);
+}
+.s-box--a { width: 44px; height: 44px; }
+.s-box--b { width: 18px; height: 14px; background: #fff;
+            border: 1px solid #eee; color: #c5c5c5; font-size: 8px; border-radius: 2px; }
+.s-gap { color: #6b7280; font-size: 12px; font-family: var(--mono); }
+
+.s-btn-a {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 0 20px; background: #1f4ed8; color: #fff;
+  border-radius: 10px; font-size: 15px; font-weight: 600; justify-self: start;
+}
+.s-btn-b {
+  display: inline-block; height: 20px; line-height: 20px; padding: 0 6px;
+  border: 1px solid #e6e6e6; color: #bdbdbd; font-size: 10px;
+  border-radius: 2px; justify-self: start;
+  font-family: "Malgun Gothic", sans-serif;
+}
+.s-price-a { color: #16181d; font-size: 16px; font-weight: 700; }
+.s-price-a s { color: #767d8b; font-weight: 400; font-size: 14px; margin-left: 6px; }
+.s-price-a em { color: #b3261e; font-style: normal; font-weight: 700; font-size: 14px; margin-left: 4px; }
+.s-price-b { color: #c0c0c0; font-size: 11px; font-family: "Malgun Gothic", sans-serif; }
+
+.s-toast {
+  background: #16181d; color: #fff; border-radius: 10px;
+  padding: 12px 14px; font-size: 14px; display: flex; gap: 12px; align-items: center;
+}
+.s-toast a { color: #b9ccff; font-weight: 600; margin-left: auto; text-decoration: none; }
+.s-nothing {
+  border: 1px dashed var(--shot-rule); border-radius: 8px;
+  padding: 16px; text-align: center; color: #a3aab6;
+  font-size: 13px; font-family: var(--mono);
+}
+
+/* ── 동작 시나리오 ─────────────────────────────────────────── */
+.flows { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.flow {
+  background: var(--surface);
+  display: grid; grid-template-columns: 240px 1fr 1fr; gap: 1px;
+  background: var(--rule);
+}
+.flow > * { background: var(--surface); padding: 17px 18px; }
+.flow__act { font-weight: 650; font-size: 15px; display: grid; gap: 4px; align-content: start; }
+.flow__act span { font-family: var(--mono); font-size: 12px; color: var(--ink-3); font-weight: 400; }
+.flow__out { font-size: 15px; color: var(--ink-2); display: flex; gap: 11px; align-items: flex-start; }
+.flow__out b { color: var(--ink); font-weight: 600; }
+.mark {
+  flex: none; width: 19px; height: 19px; border-radius: 50%; margin-top: 3px;
+  display: grid; place-items: center; font-size: 11px; font-weight: 700;
+}
+.mark--a { background: var(--good-w); color: var(--good); }
+.mark--b { background: var(--bad-w);  color: var(--bad); }
+.flow__head {
+  font-family: var(--mono); font-size: 11.5px; font-weight: 650;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2);
+  background: var(--surface-2) !important;
+  padding: 10px 18px !important;
+}
+
+/* ── 설계 이유 ─────────────────────────────────────────────── */
+.reasons { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.reason {
+  background: var(--surface); padding: 26px 26px 28px;
+  display: grid; grid-template-columns: 200px 1fr; gap: 26px;
+}
+.reason__q { display: grid; gap: 9px; align-content: start; }
+.reason__q h3 { color: var(--ink); }
+.reason__body { display: grid; gap: 13px; color: var(--ink-2); font-size: 15.5px; max-width: 62ch; }
+.reason__body strong { color: var(--ink); font-weight: 650; }
+.pull {
+  border-left: 3px solid var(--accent); padding: 3px 0 3px 15px;
+  color: var(--ink); font-size: 15px;
+}
+
+/* ── 난이도 층 ─────────────────────────────────────────────── */
+.tiers { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.tier {
+  background: var(--surface); padding: 18px 22px;
+  display: grid; grid-template-columns: 62px 1fr auto; gap: 20px; align-items: center;
+}
+.tier__n {
+  font-family: var(--mono); font-size: 24px; font-weight: 650;
+  font-variant-numeric: tabular-nums; color: var(--accent); letter-spacing: -.03em;
+}
+.tier__t { display: grid; gap: 3px; }
+.tier__t b { font-size: 15.5px; font-weight: 650; }
+.tier__t span { font-size: 14px; color: var(--ink-3); }
+.bar { width: 132px; height: 7px; background: var(--surface-2); border-radius: 4px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--accent); border-radius: 4px; }
+
+/* ── 채점 ──────────────────────────────────────────────────── */
+.score {
+  background: var(--surface); border: 1px solid var(--rule);
+  padding: 26px; display: grid; gap: 18px;
+}
+.formula {
+  font-family: var(--mono); font-size: 14px; line-height: 2.1;
+  background: var(--surface-2); padding: 16px 18px; overflow-x: auto;
+  color: var(--ink); white-space: pre;
+}
+
+footer {
+  border-top: 1px solid var(--rule); padding-top: 22px;
+  font-size: 14px; color: var(--ink-3); display: grid; gap: 5px;
+}
+
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+@media (max-width: 860px) {
+  .builds, .spec__pair { grid-template-columns: 1fr; }
+  .spec__pair > * + * { border-left: 0; border-top: 1px solid var(--rule); }
+  .flow { grid-template-columns: 1fr; }
+  .flow__head:nth-child(2), .flow__head:nth-child(3) { display: none; }
+  .reason { grid-template-columns: 1fr; gap: 14px; }
+  .tier { grid-template-columns: 44px 1fr; }
+  .bar { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="masthead">
+    <p class="eyebrow">UX 검증 서비스 · 테스트 픽스처</p>
+    <h1>정상판과 결함판은<br>정확히 무엇이 다른가</h1>
+    <p class="lede">
+      같은 상품, 같은 URL, 같은 구매 플로우 위에 쇼핑몰을 두 벌 만들었습니다.
+      바뀐 것은 UI 품질 하나뿐입니다. 검증 서비스를 이 두 벌에 똑같이 돌리고
+      결과를 빼면, 그 차이가 곧 서비스의 실력입니다.
+    </p>
+    <div class="masthead__meta">
+      <span class="chip chip--a">CLEAN · 기준선</span>
+      <span class="chip chip--b">FLAWED · 탐지 대상</span>
+      <span class="note mono">ux-testbed/ · 2026-08-24</span>
+    </div>
+  </header>
+
+  <div class="stats">
+    <div class="stat"><b>68</b><span>심어둔 결함</span></div>
+    <div class="stat"><b>6</b><span>페이지 (버전당)</span></div>
+    <div class="stat"><b>12</b><span>상품 (품절 2종)</span></div>
+    <div class="stat"><b>9</b><span>결함 카테고리</span></div>
+    <div class="stat"><b>40</b><span>스모크 테스트 통과</span></div>
+    <div class="stat"><b>0</b><span>외부 의존성</span></div>
+  </div>
+
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">두 벌의 역할</p>
+      <h2>하나는 정답, 하나는 함정</h2>
+      <p class="lede">두 버전은 대칭이 아닙니다. 각자 재는 지표가 다릅니다.</p>
+    </div>
+    <div class="builds">
+      <div class="build build--a">
+        <span class="chip chip--a">CLEAN</span>
+        <h3>정상 쇼핑몰 — 오탐을 재는 자</h3>
+        <p class="build__role">UX 베스트프랙티스를 지켜 만든 기준선입니다.
+           여기서 나온 지적은 원칙적으로 <strong>오탐(false positive)</strong>으로 집계합니다.</p>
+        <ul>
+          <li>WCAG AA 충족, 본문 16px</li>
+          <li>44px 이상 터치 타깃, 가시적 포커스 링</li>
+          <li>인라인 검증 + 에러 요약, 로딩 상태</li>
+          <li>배송비 사전 고지, 비회원 구매 지원</li>
+        </ul>
+      </div>
+      <div class="build build--b">
+        <span class="chip chip--b">FLAWED</span>
+        <h3>결함 쇼핑몰 — 재현율을 재는 자</h3>
+        <p class="build__role">실무에서 반복적으로 발견되는 결함 68개를 의도적으로 심었습니다.
+           소스마다 <code>[D-xx]</code> 주석이 붙어 있어 <strong>ID 단위 채점</strong>이 됩니다.</p>
+        <ul>
+          <li>대비 1.9:1, 본문 11px, 포커스 링 제거</li>
+          <li>18–24px 터치 타깃, div로 만든 가짜 버튼</li>
+          <li>메시지 없는 조용한 실패</li>
+          <li>숨은 배송비, 기본 체크된 마케팅 동의</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">A–I · 전체 대조</p>
+      <h2>항목별로 무엇이 바뀌었나</h2>
+      <p class="lede">
+        결함 68건을 9개 카테고리로 묶은 표입니다. 왼쪽이 지켜야 할 값, 오른쪽이 실제로 심어둔 값입니다.
+      </p>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">항목</th>
+            <th scope="col">CLEAN</th>
+            <th scope="col">FLAWED</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="grp"><th colspan="3" scope="colgroup">A · 색 대비 · 타이포그래피</th></tr>
+          <tr>
+            <th scope="row">본문 대비</th>
+            <td class="a"><span class="val mono">15.8:1</span> <span class="mono">#16181d</span></td>
+            <td class="b"><span class="val mono">1.9:1</span> <span class="mono">#b9b9b9</span> — AA 기준 미달</td>
+          </tr>
+          <tr>
+            <th scope="row">본문 크기 · 행간</th>
+            <td class="a"><span class="val mono">16px</span> / 1.6</td>
+            <td class="b"><span class="val mono">11px</span> / 1.15</td>
+          </tr>
+          <tr>
+            <th scope="row">링크 식별</th>
+            <td class="a">브랜드 색 + 밑줄</td>
+            <td class="b">본문과 같은 회색, 밑줄 없음</td>
+          </tr>
+
+          <tr class="grp"><th colspan="3" scope="colgroup">B · 시맨틱 · 키보드</th></tr>
+          <tr>
+            <th scope="row">주요 버튼</th>
+            <td class="a"><code>&lt;button&gt;</code> — 키보드 도달</td>
+            <td class="b"><code>&lt;div class="fake-btn"&gt;</code> — role·tabindex 없음</td>
+          </tr>
+          <tr>
+            <th scope="row">포커스 링</th>
+            <td class="a">3px 가시 링</td>
+            <td class="b"><code>outline:none !important</code> 전역</td>
+          </tr>
+          <tr>
+            <th scope="row">이미지 대체 텍스트</th>
+            <td class="a"><span class="val mono">12 / 12</span></td>
+            <td class="b"><span class="val mono">0 / 12</span></td>
+          </tr>
+          <tr>
+            <th scope="row">문서 언어</th>
+            <td class="a"><code>lang="ko"</code></td>
+            <td class="b"><code>lang="en"</code> — 한국어 페이지인데</td>
+          </tr>
+          <tr>
+            <th scope="row">랜드마크 · 헤딩</th>
+            <td class="a"><code>main</code>, skip link, <code>h1</code> 각 1개</td>
+            <td class="b">셋 다 <span class="val">0개</span>, 제목은 굵은 <code>span</code></td>
+          </tr>
+
+          <tr class="grp"><th colspan="3" scope="colgroup">C · 터치 타깃</th></tr>
+          <tr>
+            <th scope="row">버튼 · 칩 · 수량</th>
+            <td class="a">최소 <span class="val mono">44 × 44</span></td>
+            <td class="b"><span class="val mono">24×20</span> · <span class="mono">20×16</span> · <span class="mono">18×14</span></td>
+          </tr>
+          <tr>
+            <th scope="row">체크박스</th>
+            <td class="a"><span class="val mono">20 × 20</span></td>
+            <td class="b"><span class="val mono">10 × 10</span></td>
+          </tr>
+
+          <tr class="grp"><th colspan="3" scope="colgroup">D · 반응형</th></tr>
+          <tr>
+            <th scope="row">뷰포트 대응</th>
+            <td class="a">viewport 메타 + 미디어 쿼리, 햄버거 메뉴</td>
+            <td class="b">둘 다 없음. <code>width:1180px</code> 고정</td>
+          </tr>
+          <tr>
+            <th scope="row">375px에서</th>
+            <td class="a">가로 스크롤 <span class="val">없음</span></td>
+            <td class="b">가로 스크롤 <span class="val">발생</span>, 메뉴는 잘려 사라짐</td>
+          </tr>
+
+          <tr class="grp"><th colspan="3" scope="colgroup">E · 피드백 · 상태</th></tr>
+          <tr>
+            <th scope="row">장바구니 담기</th>
+            <td class="a">토스트 + 헤더 배지 갱신</td>
+            <td class="b">배지 자체가 없고, 아무 반응 없음</td>
+          </tr>
+          <tr>
+            <th scope="row">품절 상품 담기</th>
+            <td class="a">"품절된 상품입니다" 안내</td>
+            <td class="b">무반응 — 조용히 무시</td>
+          </tr>
+          <tr>
+            <th scope="row">비활성 버튼</th>
+            <td class="a">회색 처리 + 커서 차단</td>
+            <td class="b">활성 버튼과 완전히 동일</td>
+          </tr>
+
+          <tr class="grp"><th colspan="3" scope="colgroup">F · 정보 설계</th></tr>
+          <tr>
+            <th scope="row">로고 클릭</th>
+            <td class="a">홈으로 이동</td>
+            <td class="b"><code>span</code> — 아무 일도 없음</td>
+          </tr>
+          <tr>
+            <th scope="row">필터 상태</th>
+            <td class="a">URL에 반영 — 새로고침·공유 유지</td>
+            <td class="b">URL 변화 없음 — 뒤로가기 시 소실</td>
+          </tr>
+          <tr>
+            <th scope="row">페이지 제목</th>
+            <td class="a">화면마다 고유 <code>title</code> + description</td>
+            <td class="b">전 페이지 "쇼핑몰", description 없음</td>
+          </tr>
+
+          <tr class="grp"><th colspan="3" scope="colgroup">G · 빈 상태 · 오류</th></tr>
+          <tr>
+            <th scope="row">빈 장바구니</th>
+            <td class="a">안내 문구 + 상품 보러 가기</td>
+            <td class="b">표 헤더만 남은 흰 화면</td>
+          </tr>
+          <tr>
+            <th scope="row">없는 상품 <code>?id=999</code></th>
+            <td class="a">안내 + 목록 복귀 링크</td>
+            <td class="b">완전한 빈 <code>div</code></td>
+          </tr>
+          <tr>
+            <th scope="row">결과 0건 필터</th>
+            <td class="a">안내 + 전체 보기</td>
+            <td class="b">흰 화면</td>
+          </tr>
+
+          <tr class="grp"><th colspan="3" scope="colgroup">H · 폼 · 입력</th></tr>
+          <tr>
+            <th scope="row">필드 레이블</th>
+            <td class="a">전 항목 <code>&lt;label&gt;</code> + 필수 표시</td>
+            <td class="b"><code>label</code> 0개 — placeholder만, 입력하면 사라짐</td>
+          </tr>
+          <tr>
+            <th scope="row">검증 실패</th>
+            <td class="a">인라인 메시지 + 상단 에러 요약, 입력값 유지</td>
+            <td class="b">메시지 없이 <span class="val">폼 전체 초기화</span></td>
+          </tr>
+          <tr>
+            <th scope="row">주소 입력</th>
+            <td class="a">우편번호 검색 + 상세 주소 분리</td>
+            <td class="b">한 줄에 직접 입력</td>
+          </tr>
+          <tr>
+            <th scope="row">결제 처리 중</th>
+            <td class="a">스피너 + 버튼 잠금</td>
+            <td class="b">2초간 무반응, 중복 클릭 방지 없음</td>
+          </tr>
+
+          <tr class="grp"><th colspan="3" scope="colgroup">I · 다크 패턴 · 카피</th></tr>
+          <tr>
+            <th scope="row">배송비</th>
+            <td class="a">상세·장바구니에 <span class="val mono">3,000원</span> 사전 고지<br>
+                <span class="note">(5만원 이상 무료)</span></td>
+            <td class="b">어디에도 없다가 결제에서 <span class="val mono">+5,000</span></td>
+          </tr>
+          <tr>
+            <th scope="row">마케팅 수신 동의</th>
+            <td class="a">기본 해제, 해지 방법 안내</td>
+            <td class="b">기본 체크 + 흐린 회색 처리</td>
+          </tr>
+          <tr>
+            <th scope="row">비회원 구매</th>
+            <td class="a">지원 (주문번호로 조회)</td>
+            <td class="b">없음 — 회원가입 강제</td>
+          </tr>
+          <tr>
+            <th scope="row">삭제</th>
+            <td class="a">확인 다이얼로그 + 실행취소</td>
+            <td class="b">8px <code>x</code>, 즉시 삭제, 복구 불가</td>
+          </tr>
+          <tr>
+            <th scope="row">CTA 문구</th>
+            <td class="a">"장바구니에 담기" · "바로 구매하기"</td>
+            <td class="b">"확인" · "여기를 클릭" · "구매"</td>
+          </tr>
+          <tr>
+            <th scope="row">가격 표기</th>
+            <td class="a"><span class="val">39,000원</span> + 할인율</td>
+            <td class="b"><span class="val">39000</span> — 단위 없음</td>
+          </tr>
+          <tr>
+            <th scope="row">자동 팝업</th>
+            <td class="a">없음</td>
+            <td class="b">10초 후 등장, ESC·배경 클릭 안 먹힘</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">실물 표본</p>
+      <h2>말로 하면 와닿지 않아서</h2>
+      <p class="lede">
+        아래는 설명이 아니라 픽스처에서 쓰는 실제 값을 그대로 렌더링한 것입니다.
+        표본 영역은 사이트와 같은 흰 바탕으로 고정했습니다.
+      </p>
+    </div>
+
+    <div class="specs">
+
+      <figure class="spec">
+        <figcaption class="spec__cap">본문 가독성 <i>대비 + 크기 + 행간이 함께 무너지면</i></figcaption>
+        <div class="spec__pair">
+          <div class="shot shot--a">
+            <span class="shot__tag">CLEAN</span>
+            <p class="s-clean-body">두께감 있는 20수 코튼으로 만든 오버사이즈 셔츠입니다.
+               어깨선을 낮춰 편안한 실루엣을 완성했습니다.</p>
+            <p class="shot__foot">16px / 1.6 / #16181d — 대비 15.8:1</p>
+          </div>
+          <div class="shot shot--b">
+            <span class="shot__tag">FLAWED</span>
+            <p class="s-flaw-body">두께감 있는 20수 코튼으로 만든 오버사이즈 셔츠입니다.
+               어깨선을 낮춰 편안한 실루엣을 완성했습니다.</p>
+            <p class="shot__foot">11px / 1.15 / #b9b9b9 — 대비 1.9:1</p>
+          </div>
+        </div>
+      </figure>
+
+      <figure class="spec">
+        <figcaption class="spec__cap">터치 타깃 <i>수량 조절 버튼 실제 크기</i></figcaption>
+        <div class="spec__pair">
+          <div class="shot shot--a">
+            <span class="shot__tag">CLEAN</span>
+            <div class="s-target">
+              <span class="s-box s-box--a">−</span>
+              <span class="s-box s-box--a">+</span>
+            </div>
+            <p class="shot__foot">44 × 44px — iOS·Material 권장 충족</p>
+          </div>
+          <div class="shot shot--b">
+            <span class="shot__tag">FLAWED</span>
+            <div class="s-target">
+              <span class="s-box s-box--b">−</span>
+              <span class="s-gap">2px</span>
+              <span class="s-box s-box--b">+</span>
+            </div>
+            <p class="shot__foot">18 × 14px, 간격 2px — 오탭이 사실상 보장됨</p>
+          </div>
+        </div>
+      </figure>
+
+      <figure class="spec">
+        <figcaption class="spec__cap">버튼과 가격 <i>무엇을 누르는지, 얼마를 내는지</i></figcaption>
+        <div class="spec__pair">
+          <div class="shot shot--a">
+            <span class="shot__tag">CLEAN</span>
+            <span class="s-btn-a">장바구니에 담기</span>
+            <p class="s-price-a">89,000원 <s>119,000원</s> <em>25% 할인</em></p>
+            <p class="shot__foot">동사형 CTA · 통화 단위 · 할인율 명시</p>
+          </div>
+          <div class="shot shot--b">
+            <span class="shot__tag">FLAWED</span>
+            <span class="s-btn-b">확인</span>
+            <p class="s-price-b">89000 119000</p>
+            <p class="shot__foot">무엇이 일어나는지, 어느 쪽이 결제 금액인지 알 수 없음</p>
+          </div>
+        </div>
+      </figure>
+
+      <figure class="spec">
+        <figcaption class="spec__cap">담은 직후 <i>내가 방금 한 행동이 먹혔는가</i></figcaption>
+        <div class="spec__pair">
+          <div class="shot shot--a">
+            <span class="shot__tag">CLEAN</span>
+            <div class="s-toast">
+              <span>오버사이즈 코튼 셔츠 1개를 담았습니다.</span>
+              <a href="#none">장바구니 보기</a>
+            </div>
+            <p class="shot__foot">토스트 + 헤더 배지 0 → 1</p>
+          </div>
+          <div class="shot shot--b">
+            <span class="shot__tag">FLAWED</span>
+            <div class="s-nothing">— 화면 변화 없음 —</div>
+            <p class="shot__foot">토스트·모달·배지 전부 없음. 배지 자체가 존재하지 않음</p>
+          </div>
+        </div>
+      </figure>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">동작의 차이</p>
+      <h2>클릭해봐야 드러나는 것들</h2>
+      <p class="lede">
+        정적 분석으로는 절대 보이지 않는 구간입니다. 검증 서비스가 실제로 조작을 수행하는지가 여기서 갈립니다.
+      </p>
+    </div>
+    <div class="flows">
+      <div class="flow">
+        <div class="flow__head">사용자 행동</div>
+        <div class="flow__head">CLEAN</div>
+        <div class="flow__head">FLAWED</div>
+      </div>
+      <div class="flow">
+        <div class="flow__act">옵션을 고르지 않고 담기<span>product.html?id=1</span></div>
+        <div class="flow__out"><span class="mark mark--a">✓</span>
+          <span>기본값이 선택돼 있어 <b>정상 조합으로 저장</b></span></div>
+        <div class="flow__out"><span class="mark mark--b">✕</span>
+          <span>장바구니에 <b>"null / null"</b>이 그대로 노출</span></div>
+      </div>
+      <div class="flow">
+        <div class="flow__act">품절 상품 담기<span>product.html?id=7</span></div>
+        <div class="flow__out"><span class="mark mark--a">✓</span>
+          <span>버튼이 비활성, 재입고 알림으로 <b>대체 경로 제공</b></span></div>
+        <div class="flow__out"><span class="mark mark--b">✕</span>
+          <span>버튼은 멀쩡해 보이는데 <b>눌러도 아무 일 없음</b></span></div>
+      </div>
+      <div class="flow">
+        <div class="flow__act">빈 값으로 결제 제출<span>checkout.html</span></div>
+        <div class="flow__out"><span class="mark mark--a">✓</span>
+          <span>필드별 메시지 + 상단 요약, <b>입력값 유지</b></span></div>
+        <div class="flow__out"><span class="mark mark--b">✕</span>
+          <span>메시지 없이 <b>폼이 초기화</b>. 고장으로 보임</span></div>
+      </div>
+      <div class="flow">
+        <div class="flow__act">장바구니 → 결제 총액 비교<span>59,000원 상품 기준</span></div>
+        <div class="flow__out"><span class="mark mark--a">✓</span>
+          <span>장바구니 <b>59,000원</b> → 결제 <b>59,000원</b></span></div>
+        <div class="flow__out"><span class="mark mark--b">✕</span>
+          <span><b>59000</b> → <b>64000</b>. 5,000원이 고지 없이 추가</span></div>
+      </div>
+      <div class="flow">
+        <div class="flow__act">장바구니 항목 삭제<span>cart.html</span></div>
+        <div class="flow__out"><span class="mark mark--a">✓</span>
+          <span>확인 다이얼로그 → 삭제 후 <b>실행취소 제공</b></span></div>
+        <div class="flow__out"><span class="mark mark--b">✕</span>
+          <span>8px <code>x</code> 한 번에 <b>즉시 삭제, 복구 불가</b></span></div>
+      </div>
+      <div class="flow">
+        <div class="flow__act">10초 이상 체류<span>모든 페이지</span></div>
+        <div class="flow__out"><span class="mark mark--a">✓</span>
+          <span>방해 없음</span></div>
+        <div class="flow__out"><span class="mark mark--b">✕</span>
+          <span>팝업 등장. <b>ESC·배경 클릭 안 먹히고</b> 닫기는 8px</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">설계 이유</p>
+      <h2>왜 이렇게 만들었나</h2>
+      <p class="lede">
+        결정마다 이유가 있습니다. 픽스처를 고칠 때 이 이유들을 깨뜨리지 않는 게 중요합니다.
+      </p>
+    </div>
+
+    <div class="reasons">
+
+      <div class="reason">
+        <div class="reason__q">
+          <p class="eyebrow">01 · 두 벌</p>
+          <h3>왜 정상판까지 만들었나</h3>
+        </div>
+        <div class="reason__body">
+          <p>결함만 잔뜩 있는 사이트 하나로 평가하면 <strong>"많이 지적할수록 좋은 서비스"</strong>가 됩니다.
+             화면마다 트집을 잡는 서비스가 만점을 받고, 정확한 서비스가 손해를 봅니다.</p>
+          <p class="pull">재현율은 결함판이, 정밀도는 정상판이 잽니다. 둘 다 없으면 점수가 성립하지 않습니다.</p>
+          <p>정상판에서 나온 지적은 오탐으로 집계됩니다. 실제 서비스에 붙였을 때
+             고객이 가장 먼저 불평하는 게 오탐이라, 이쪽이 오히려 더 중요한 지표입니다.</p>
+        </div>
+      </div>
+
+      <div class="reason">
+        <div class="reason__q">
+          <p class="eyebrow">02 · 변인 통제</p>
+          <h3>왜 데이터·URL·플로우를 똑같이 맞췄나</h3>
+        </div>
+        <div class="reason__body">
+          <p>상품이 다르거나 페이지 구성이 다르면, 검증 결과의 차이가
+             <strong>UX 때문인지 콘텐츠 때문인지 구분할 수 없습니다.</strong></p>
+          <p>두 버전은 상품 12종, 페이지 6종, URL 구조(<code>product.html?id=7</code>)까지 완전히 같습니다.
+             바뀐 변수는 UI 품질 하나뿐입니다.</p>
+          <p>덕분에 <strong>같은 크롤링 스크립트를 양쪽에 그대로 돌릴 수 있습니다.</strong>
+             시나리오를 두 번 작성할 필요가 없고, 비교가 뺄셈으로 끝납니다.</p>
+        </div>
+      </div>
+
+      <div class="reason">
+        <div class="reason__q">
+          <p class="eyebrow">03 · 난이도</p>
+          <h3>왜 68개나, 그리고 4층으로 나눴나</h3>
+        </div>
+        <div class="reason__body">
+          <p>대비·alt·폰트 크기는 Lighthouse도 잡습니다. 그것만 넣으면 <strong>모든 서비스가 만점이라
+             순위가 나오지 않습니다.</strong></p>
+          <p>그래서 실제로 클릭해봐야 아는 결함(담아도 반응 없음)과 맥락을 읽어야 아는 결함
+             ("확인"이라는 CTA, 숨은 배송비)을 섞었습니다.</p>
+          <p class="pull">어느 층까지 도달하는지가 곧 서비스의 등급입니다.</p>
+        </div>
+      </div>
+
+      <div class="reason">
+        <div class="reason__q">
+          <p class="eyebrow">04 · 결함 선정</p>
+          <h3>왜 하필 이 68개인가</h3>
+        </div>
+        <div class="reason__body">
+          <p>억지 결함은 잡아도 의미가 없습니다. 전부 <strong>실제 커머스에서 반복적으로 발견되고
+             매출에 직결되는 것</strong>들로만 골랐습니다.</p>
+          <p>숨은 배송비, 기본 체크된 마케팅 동의, 강제 회원가입, 확인 없는 삭제 —
+             이건 UX 문제이면서 동시에 전환율 문제이고, 일부는 규제 이슈이기도 합니다.</p>
+          <p>여기서 잡히는 것이 곧 <strong>고객에게 팔 수 있는 가치</strong>입니다.
+             "대비가 낮습니다"보다 "결제 단계에서 5,000원이 갑자기 붙습니다"가 돈이 됩니다.</p>
+        </div>
+      </div>
+
+      <div class="reason">
+        <div class="reason__q">
+          <p class="eyebrow">05 · 채점 자동화</p>
+          <h3>왜 소스에 <code>[D-xx]</code>를 박았나</h3>
+        </div>
+        <div class="reason__body">
+          <p>사람이 눈으로 대조하면 평가가 주관이 되고, 매번 결과가 달라집니다.</p>
+          <p>결함마다 ID를 붙여두면 검증 결과와 <strong>ID 단위로 매칭</strong>할 수 있고,
+             그 순간 평가가 회귀 테스트가 됩니다. 서비스를 개선한 뒤
+             "D-34를 이제 잡는다"처럼 진척을 정확히 말할 수 있습니다.</p>
+        </div>
+      </div>
+
+      <div class="reason">
+        <div class="reason__q">
+          <p class="eyebrow">06 · 스택</p>
+          <h3>왜 React가 아니라 순수 HTML인가</h3>
+        </div>
+        <div class="reason__body">
+          <p>AI가 직접 탐색하는 게 목적이면, <strong>측정 도구가 흔들리면 안 됩니다.</strong></p>
+          <p>SPA는 하이드레이션 대기가 있어 스크린샷 타이밍에 따라 결과가 달라집니다.
+             그 편차는 서비스 성능이 아니라 <strong>픽스처가 만든 잡음</strong>입니다.</p>
+          <p>또 페이지마다 진짜 URL이 있어야 크롤러가 상태를 재현하고 비교할 수 있습니다.
+             빌드도 의존성도 없어서 파일만 열면 돌아갑니다.</p>
+          <p class="note">SPA 대응 검증이 필요해지면 같은 데이터로 React 버전을 2차 타깃으로 추가하는 게 맞습니다.</p>
+        </div>
+      </div>
+
+      <div class="reason">
+        <div class="reason__q">
+          <p class="eyebrow">07 · 자체 테스트</p>
+          <h3>왜 픽스처에 테스트를 붙였나</h3>
+        </div>
+        <div class="reason__body">
+          <p>픽스처도 썩습니다. 결함을 손보다가 실수로 결함이 사라지면,
+             <strong>검증 서비스가 못 잡은 게 아니라 잡을 게 없었던 건데 점수는 떨어집니다.</strong></p>
+          <p><code>smoke-test.js</code>의 40개 항목이 "결함이 아직 살아있는지"와
+             "정상판에 결함이 새로 생기지 않았는지"를 함께 지킵니다.
+             설치된 Chrome을 CDP로 직접 몰기 때문에 의존성이 없습니다.</p>
+          <p class="note">실제로 이 테스트를 만들다가 정상판에서 빈 장바구니인데 배지 "0"이
+             노출되는 버그를 찾아 고쳤습니다. 오탐 기준선에 진짜 결함이 남아 있으면 채점이 무너집니다.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">난이도 4층</p>
+      <h2>어디까지 도달하는가</h2>
+      <p class="lede">결함 68건을 탐지에 필요한 능력별로 나눈 것입니다. 위에서 아래로 갈수록 변별력이 커집니다.</p>
+    </div>
+    <div class="tiers">
+      <div class="tier">
+        <span class="tier__n">22</span>
+        <span class="tier__t"><b>정적 분석만으로</b><span>대비·폰트 크기·alt·lang·랜드마크 — 못 잡으면 기본기 부족</span></span>
+        <span class="bar"><i style="width:32%"></i></span>
+      </div>
+      <div class="tier">
+        <span class="tier__n">10</span>
+        <span class="tier__t"><b>렌더링 + 뷰포트 조작</b><span>가로 스크롤, 잘린 메뉴, 시각적 위계 붕괴</span></span>
+        <span class="bar"><i style="width:15%"></i></span>
+      </div>
+      <div class="tier">
+        <span class="tier__n">16</span>
+        <span class="tier__t"><b>실제 상호작용 수행</b><span>담기 무반응, 조용한 실패, 폼 초기화 — 여기서 변별력이 갈림</span></span>
+        <span class="bar"><i style="width:24%"></i></span>
+      </div>
+      <div class="tier">
+        <span class="tier__n">20</span>
+        <span class="tier__t"><b>의미·맥락 판단</b><span>"확인" CTA, 숨은 배송비, 강제 회원가입 — LLM 없이는 사실상 불가능</span></span>
+        <span class="bar"><i style="width:29%"></i></span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">채점</p>
+      <h2>점수로 옮기기</h2>
+    </div>
+    <div class="score">
+      <div class="formula">Recall    = 결함판에서 찾아낸 결함 수 / 68
+Precision = 실제 결함 지적 수 / 전체 지적 수
+FP rate   = 정상판에서의 지적 수 / 정상판 페이지 수 (6)</div>
+      <p style="font-size:15.5px; color:var(--ink-2); max-width:62ch;">
+        심각도 분포는 Critical 25 · High 30 · Medium 13입니다.
+        같은 재현율이라도 <strong>Critical을 몇 건 잡았는지</strong>로 한 번 더 갈라 보세요.
+        결제 실패로 직결되는 결함을 놓치면서 대비 문제만 잡는 서비스는 실전에서 쓸모가 없습니다.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p><code>ux-testbed/</code> · 정답지 <code>DEFECTS.md</code> · 자체 테스트 <code>smoke-test.js</code></p>
+    <p>MOJI STORE는 테스트용 가상 쇼핑몰입니다. 상품·회사·연락처는 모두 허구이며 실제 주문은 처리되지 않습니다.</p>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MOJI STORE — 기본에 충실한 옷</title>
+<meta name="description" content="유행을 덜 타는 기본 아이템을 만듭니다. 5만원 이상 무료배송, 30일 무료 반품.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">본문 바로가기</a>
+
+<div class="topbar">5만원 이상 구매 시 무료배송 · 30일 이내 무료 반품</div>
+
+<header class="header">
+  <div class="wrap header__inner">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="메뉴 열기">☰</button>
+    <a class="logo" href="index.html">MOJI</a>
+    <nav class="nav" id="main-nav" aria-label="주 메뉴">
+      <a href="index.html" aria-current="page">홈</a>
+      <a href="list.html">전체 상품</a>
+      <a href="list.html?cat=상의">상의</a>
+      <a href="list.html?cat=하의">하의</a>
+      <a href="list.html?cat=신발">신발</a>
+      <a href="list.html?cat=액세서리">액세서리</a>
+    </nav>
+    <div class="header__actions">
+      <a class="icon-btn" href="cart.html">
+        <span aria-hidden="true">🛒</span>
+        <span aria-hidden="true">장바구니</span>
+        <span class="cart-count" data-cart-count hidden aria-hidden="true">0</span>
+        <span class="sr-only" data-cart-label>장바구니 (비어 있음)</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="wrap">
+      <h1>오래 입을 옷만<br>남겼습니다</h1>
+      <p>계절이 바뀌어도 손이 가는 기본 아이템 12종. 5만원 이상 구매하시면 배송비는 저희가 부담합니다.</p>
+      <a class="btn btn--primary btn--lg" href="list.html">전체 상품 보기</a>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="section__head">
+      <h2>이번 주 인기 상품</h2>
+      <p><a href="list.html">전체 12개 상품 보기</a></p>
+    </div>
+    <ul class="grid" id="best-grid"></ul>
+  </section>
+
+  <section class="section wrap">
+    <div class="section__head">
+      <h2>새로 들어온 상품</h2>
+      <p>매주 수요일에 업데이트됩니다</p>
+    </div>
+    <ul class="grid" id="new-grid"></ul>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__cols">
+      <div>
+        <h3>고객센터</h3>
+        <ul>
+          <li><a href="#">1588-0000 (평일 10-18시)</a></li>
+          <li><a href="#">1:1 문의하기</a></li>
+          <li><a href="#">자주 묻는 질문</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>쇼핑 정보</h3>
+        <ul>
+          <li><a href="#">배송 안내</a></li>
+          <li><a href="#">교환 / 반품 안내</a></li>
+          <li><a href="#">사이즈 가이드</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>회사</h3>
+        <ul>
+          <li><a href="#">브랜드 소개</a></li>
+          <li><a href="#">채용</a></li>
+          <li><a href="#">공지사항</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>약관</h3>
+        <ul>
+          <li><a href="#">이용약관</a></li>
+          <li><a href="#">개인정보처리방침</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__legal">
+      (주)모지스토어 · 대표 홍길동 · 사업자등록번호 000-00-00000<br>
+      서울특별시 어딘가로 12, 3층 · 통신판매업신고 제2026-서울-0000호<br>
+      본 사이트는 UX 검증 서비스 테스트를 위한 가상의 쇼핑몰입니다. 실제 주문은 처리되지 않습니다.
+    </p>
+  </div>
+</footer>
+
+<script src="../shared/products.js"></script>
+<script src="assets/app.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const best = [...PRODUCTS].sort((a, b) => b.reviews - a.reviews).slice(0, 4);
+    const fresh = PRODUCTS.filter((p) => p.badge === "NEW" || p.id > 9).slice(0, 4);
+    renderGrid(document.getElementById("best-grid"), best);
+    renderGrid(document.getElementById("new-grid"), fresh);
+  });
+</script>
+</body>
+</html>

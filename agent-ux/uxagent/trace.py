@@ -38,8 +38,39 @@ _KEEP = ("id", "tag", "text", "page_x", "page_y", "w", "h",
          "input_type", "value", "checked")
 
 
-def slim(snap: dict) -> dict:
-    """스냅샷에서 리플레이에 필요한 것만 추린다."""
+def counts_of(els: list[dict]) -> dict:
+    """화면 전체의 집계. **요소를 추려내기 전에** 뽑아 둔다.
+
+    추린 목록으로 세면 "화면에 저대비가 3개뿐"처럼 줄어든 숫자가 나온다.
+    보고서와 일기가 쓰는 것은 화면 전체의 값이므로 여기서 못박는다.
+    """
+    return {
+        "total": len(els),
+        "below_fold": sum(1 for e in els if e.get("below_fold")),
+        "occluded": sum(1 for e in els if e.get("occluded")),
+        "low_contrast": sum(1 for e in els
+                            if (e.get("contrast") or 99) < 3.0
+                            and not e.get("disabled_attr")),
+        "keyboard_unreachable": sum(1 for e in els
+                                    if not e.get("keyboard_reachable")),
+    }
+
+
+def slim(snap: dict, shown_ids: set | None = None) -> dict:
+    """스냅샷에서 리플레이에 필요한 것만 추린다.
+
+    `shown_ids` 를 주면 **그 사람이 실제로 본 요소만** 남긴다.
+
+    예전에는 화면의 모든 요소를 스텝마다 통째로 저장했다. 우리 테스트베드는
+    한 화면에 20~40개라 티가 안 났는데, 위키백과에서 한 스텝에 950개가 잡히며
+    기록 하나가 3.5MB 가 됐다. 프롬프트에 25개만 들어가므로 나머지 925개는
+    그 사람이 본 적도 없는 것들이다.
+
+    지운 것의 집계는 `counts` 로 남겨 보고서 숫자가 줄어들지 않게 한다.
+    """
+    els = snap["elements"]
+    kept = ([e for e in els if e["id"] in shown_ids]
+            if shown_ids is not None else els)
     return {
         "url": snap["url"],
         "title": snap["title"],
@@ -51,7 +82,9 @@ def slim(snap: dict) -> dict:
         "body_contrast": snap["body_contrast"],
         "body_font_size": snap["body_font_size"],
         "visible_text": snap["visible_text"][:300],
-        "elements": [{k: e.get(k) for k in _KEEP} for e in snap["elements"]],
+        # 화면 전체의 집계. elements 를 추려도 이 숫자는 안 줄어든다.
+        "counts": counts_of(els),
+        "elements": [{k: e.get(k) for k in _KEEP} for e in kept],
     }
 
 

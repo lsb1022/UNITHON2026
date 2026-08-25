@@ -16,6 +16,8 @@ import argparse
 import json
 import os
 import sys
+
+from uxagent import trace as T
 from collections import Counter
 
 for _s in (sys.stdout, sys.stderr):
@@ -74,14 +76,14 @@ def screen_worst(run: dict) -> list[tuple]:
         for s in t["steps"]:
             snap = s["snapshot"]
             key = snap["url"].split("/")[-1].split("?")[0] or "index.html"
-            els = snap["elements"]
+            # 화면 전체 집계는 기록에 저장돼 있다 (trace.slim). 남은 요소만
+            # 세면 화면이 실제보다 멀쩡해 보인다.
+            c = snap.get("counts") or T.counts_of(snap["elements"])
             row = by.setdefault(key, {"방문": 0, "가려짐": 0, "저대비": 0, "키보드불가": 0})
             row["방문"] += 1
-            row["가려짐"] = max(row["가려짐"], sum(1 for e in els if e["occluded"]))
-            row["저대비"] = max(row["저대비"], sum(
-                1 for e in els if (e.get("contrast") or 99) < 3.0 and not e.get("disabled_attr")))
-            row["키보드불가"] = max(row["키보드불가"],
-                                sum(1 for e in els if not e["keyboard_reachable"]))
+            row["가려짐"] = max(row["가려짐"], c["occluded"])
+            row["저대비"] = max(row["저대비"], c["low_contrast"])
+            row["키보드불가"] = max(row["키보드불가"], c["keyboard_unreachable"])
     return sorted(by.items(), key=lambda kv: -kv[1]["가려짐"] - kv[1]["저대비"])
 
 

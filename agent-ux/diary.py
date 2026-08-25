@@ -20,6 +20,8 @@ import json
 import os
 import sys
 
+from uxagent import trace as T
+
 for _s in (sys.stdout, sys.stderr):
     try:
         _s.reconfigure(encoding="utf-8")
@@ -76,12 +78,12 @@ def print_scout(d: dict, full: bool) -> None:
 
 def screen_line(snap: dict) -> str:
     els = snap["elements"]
-    below = sum(1 for e in els if e["below_fold"])
-    occ = sum(1 for e in els if e["occluded"])
-    low = sum(1 for e in els
-              if (e.get("contrast") or 99) < 3.0 and not e.get("disabled_attr"))
-    kb = sum(1 for e in els if not e["keyboard_reachable"])
-    bits = ["요소 %d" % len(els), "접힘선아래 %d" % below]
+    # 기록에는 그 사람이 본 요소만 남는다(trace.slim). 화면 전체 숫자는
+    # 저장해 둔 집계에서 읽는다 — 남은 것만 세면 숫자가 줄어든다.
+    c = snap.get("counts") or T.counts_of(els)
+    below, occ, low, kb = (c["below_fold"], c["occluded"],
+                           c["low_contrast"], c["keyboard_unreachable"])
+    bits = ["요소 %d" % c["total"], "접힘선아래 %d" % below]
     if occ:
         bits.append("가려짐 %d" % occ)
     if low:

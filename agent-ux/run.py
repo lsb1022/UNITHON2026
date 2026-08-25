@@ -61,30 +61,36 @@ class Budget:
         return ""
 
 
-async def run_persona(browser, person: dict, site_map: dict | None, root: str,
+async def run_persona(browser, person: dict, site_map: dict | None, target: dict,
                       *, client, models: list[str], usage: Usage, budget: Budget,
-                      mock: bool, run_id: str, variant: str, use_map: bool,
+                      mock: bool, run_id: str, use_map: bool,
                       quiet: bool) -> dict:
     """한 명을 끝까지 돌리고 즉시 저장한다.
 
     페르소나마다 컨텍스트를 새로 연다. 쿠키와 localStorage 가 섞이면
     '처음 온 사람'이 앞사람의 장바구니를 물려받는다.
     """
+    root = target["root"]
     ctx = await browser.new_context(viewport=config.VIEWPORT)
     page = await ctx.new_page()
-    tr = T.Trace(run_id, person, variant)
+    tr = T.Trace(run_id, person, target["name"])
     end_reason, note = "max_steps", ""
     seeded = 0
 
     try:
-        start = root.rstrip("/") + "/" + person["start_path"].lstrip("/")
+        # 우리 테스트베드는 페르소나 파일의 시작 경로를 쓰고, 남의 사이트는
+        # 사용자가 준 주소를 그대로 연다 — 남의 사이트에 /index.html 이 있으리란
+        # 보장이 없다.
+        start = (target["start"] if target["kind"] == "url"
+                 else root.rstrip("/") + "/" + person["start_path"].lstrip("/"))
         await page.goto(start, timeout=config.STEP_TIMEOUT_MS)
 
         # 장바구니 시딩. 키는 여기서 붙인다 — 페르소나 파일에는 키가 없다.
         # 같은 파일을 clean/buggy 양쪽에 넣기 때문이다.
-        if person.get("seed_state"):
+        # 남의 사이트에는 심을 곳이 없으므로 건너뛴다.
+        if person.get("seed_state") and target["cart_key"]:
             seeded = await page.evaluate(
-                P.seed_script(person["seed_state"], config.cart_key(variant)))
+                P.seed_script(person["seed_state"], target["cart_key"]))
             tr.extra["seeded_lines"] = seeded
             await page.reload(timeout=config.STEP_TIMEOUT_MS)
 
@@ -134,6 +140,20 @@ async def run_persona(browser, person: dict, site_map: dict | None, root: str,
                 # 탐색 범위: 결정 전에 대안을 몇 개까지 보는가.
                 # 같은 종류 화면(상품 상세 등)을 정해진 개수 넘게 열면 되돌린다.
                 # 거쳐가는 길(장바구니·결제·완료)은 각각 하나뿐이라 걸리지 않는다.
+                # 검사 범위 밖으로 나갔으면 되돌린다. 남의 사이트에는 광고와
+                # 외부 링크가 섞여 있어서, 한 번 새면 그 뒤 기록은 이 사이트에
+                # 대한 것이 아니게 된다. 되돌린 사실은 기록에 남긴다 —
+                # '나갈 뻔했다'도 그 화면의 마찰이다.
+                if not config.in_scope(page.url, target):
+                    left = page.url
+                    try:
+                        await page.go_back(timeout=config.STEP_TIMEOUT_MS)
+                    except Exception:  # noqa: BLE001
+                        await page.goto(target["start"], timeout=config.STEP_TIMEOUT_MS)
+                    outcome = {"url_after": page.url, "changed": False,
+                               "note": "검사 범위 밖(%s)이라 되돌아왔습니다" % left[:60]}
+                    tr.extra["left_scope"] = tr.extra.get("left_scope", 0) + 1
+
                 cap = person.get("compare_cap") or 0
                 key = discover.template_key(page.url)
                 seen = seen_variants.setdefault(key, set())
@@ -204,9 +224,23 @@ async def main_async(args) -> int:
     # 실행할 때 메모리에서만 각자에게 붙인다.
     goal = data.get("goal", "")
     start_path = data.get("start_path", "/index.html")
+
+    # 다른 사이트를 검사하려면 목표도 그 사이트의 것이어야 한다. 목표는
+    # personas.json 맨 위에 하나만 있는데, 그것을 고치려고 generate.py 를
+    # 다시 돌리면 **사람이 통째로 바뀌어** 앞서 쌓은 기록과 비교가 깨진다.
+    # 그래서 파일은 건드리지 않고 이번 실행에만 갈아 끼운다.
+    if args.goal:
+        goal = args.goal.strip()
     for p in people:
-        p.setdefault("goal", goal)
+        p["goal"] = goal
         p.setdefault("start_path", start_path)
+        # 목표는 사람 소개글(prompt) 맨 끝 줄에도 박혀 있고, 프롬프트에 실제로
+        # 들어가는 것은 그쪽이다. 여기를 안 고치면 --goal 을 줘도 페르소나는
+        # 예전 목표를 들고 간다 — 실제로 나무위키에서 "쇼핑몰이 아니라
+        # 코튼 셔츠를 살 수 없다"며 1스텝 만에 포기했다.
+        head = [ln for ln in (p.get("prompt") or "").split("\n")
+                if not ln.startswith("목표: ")]
+        p["prompt"] = "\n".join(head + ["목표: %s" % goal])
 
     if args.only:
         people = [p for p in people if p["id"] in set(args.only)]
@@ -217,14 +251,36 @@ async def main_async(args) -> int:
     else:
         people = people[:args.limit]
 
-    root = config.site_root(args.variant, args.base)
+    # 무엇을 검사할지. --url 을 주면 우리 테스트베드가 아니라 그 주소를 본다.
+    target = config.resolve_target(
+        None if args.url else args.variant, args.url, args.base)
+    root = target["root"]
+
+    # 검색 제한은 쇼핑몰 전용 규칙이다 (config.SEARCH_RULE 참고). 위키·문서
+    # 사이트에서는 검색이 정상적인 첫 번째 길이고, 거기서 막으면 숙련도 1~2인
+    # 사람은 미션을 구조적으로 수행할 수 없다 — 실제로 나무위키에서 P002 가
+    # 검색창에 세 번 입력을 시도하다 전부 차단당하고 끝났다.
+    site_kind = args.site_kind or target["site_kind"]
+    unlocked = 0
+    for p in people:
+        was = p.get("search_allowed", True)
+        now = config.search_allowed_for(p, site_kind)
+        p["search_allowed"] = now
+        if now and not was:
+            unlocked += 1
+
+
     use_map = not args.no_map
     site_map = None
     if use_map:
-        mp = os.path.join(config.MAPS_DIR, "site_map_%s.json" % args.variant)
+        # 지도 파일 이름: 테스트베드는 변형 이름, 남의 사이트는 호스트 이름.
+        mp = os.path.join(config.MAPS_DIR, "site_map_%s.json" % config.map_stem(target))
         if not os.path.exists(mp):
-            raise SystemExit("지도가 없습니다: %s\n  먼저: python survey.py --variant %s"
-                             % (mp, args.variant))
+            how = ("python survey.py --url %s" % target["start"]
+                   if target["kind"] == "url"
+                   else "python survey.py --variant %s" % target["name"])
+            raise SystemExit("지도가 없습니다: %s\n  먼저: %s\n"
+                             "  (지도 없이 돌리려면 --no-map)" % (mp, how))
         with open(mp, encoding="utf-8") as f:
             site_map = json.load(f)
 
@@ -235,12 +291,29 @@ async def main_async(args) -> int:
     model_list = config.models("explore", pname)
     model = model_list[0]
     run_id = args.run_id or "%s_%s%s" % (
-        datetime.now().strftime("%m%d_%H%M"), args.variant, "" if use_map else "_nomap")
+        datetime.now().strftime("%m%d_%H%M"),
+        target["map_name"] or config.map_stem(target),
+        "" if use_map else "_nomap")
+
+    # 남의 사이트인데 쇼핑몰 목표를 그대로 들고 가면 100명이 위키에서 셔츠를
+    # 찾는다. 결과가 나오긴 하는데 아무 뜻이 없다 — 먼저 막는다.
+    if target["kind"] == "url" and not args.goal:
+        raise SystemExit(
+            "이 목표는 우리 테스트베드용입니다: %r"
+            "\n  --url 로 다른 사이트를 검사할 때는 --goal 도 함께 주세요."
+            "\n  예) --goal \"검색으로 원하는 문서를 찾아 목차의 항목 하나를 연다\""
+            % goal)
 
     steps_est = sum(p["max_steps"] for p in people)
     print("=" * 62)
     print("  실행 %s   대상 %s   지도 %s%s"
-          % (run_id, args.variant, "사용" if use_map else "없음", "   [모의]" if args.mock else ""))
+          % (run_id, target["start"], "사용" if use_map else "없음",
+             "   [모의]" if args.mock else ""))
+    if target["kind"] == "url":
+        print("  범위 %s 밖으로는 나가지 않습니다" % target["scope"])
+    print("  사이트 종류 %s → 검색 %s%s"
+          % (site_kind, config.SEARCH_RULE[site_kind],
+             " (%d명 해제)" % unlocked if unlocked else ""))
     print("  페르소나 %d명 / 최대 %d스텝 = LLM 호출 최대 %d회"
           % (len(people), steps_est, 0 if args.mock else steps_est))
     if not args.mock:
@@ -265,17 +338,21 @@ async def main_async(args) -> int:
                 if budget.exceeded():
                     return None
                 return await run_persona(
-                    browser, person, site_map, root, client=client, models=model_list,
+                    browser, person, site_map, target, client=client, models=model_list,
                     usage=usage, budget=budget, mock=args.mock, run_id=run_id,
-                    variant=args.variant, use_map=use_map, quiet=args.quiet)
+                    use_map=use_map, quiet=args.quiet)
 
         results = await asyncio.gather(*(one(p) for p in people))
         traces = [t for t in results if t]
         await browser.close()
 
     u = usage.as_dict()
-    idx = T.write_index(run_id, args.variant, traces, extra={
-        "variant": args.variant, "map_used": use_map, "mock": args.mock,
+    idx = T.write_index(run_id, target["name"], traces, extra={
+        "variant": target["name"],
+        "target_url": target["start"],
+        "target_kind": target["kind"],
+        "site_kind": site_kind,
+        "search_unlocked": unlocked, "map_used": use_map, "mock": args.mock,
         "provider": None if args.mock else pname,
         "model": None if args.mock else model,
         "usage": u,
@@ -303,6 +380,17 @@ async def main_async(args) -> int:
 def main() -> int:
     ap = argparse.ArgumentParser(description="페르소나 실행기 — 탐색 루프")
     ap.add_argument("--variant", default="buggy", choices=sorted(config.SITE_DIRS))
+    ap.add_argument("--site-kind", default="", choices=["", "commerce", "general"],
+                    help="검색 제한을 걸지 정한다. commerce 면 숙련도 낮은 사람의 "
+                         "검색을 막는다(상품명을 치면 길찾기가 통째로 사라지므로). "
+                         "비워두면 테스트베드=commerce, --url=general 로 잡는다.")
+    ap.add_argument("--goal", default="",
+                    help="이번 실행에만 쓸 목표. personas.json 은 건드리지 않는다. "
+                         "다른 사이트를 검사할 때 반드시 함께 준다 — 안 주면 "
+                         "쇼핑몰 목표를 들고 엉뚱한 곳을 헤맨다.")
+    ap.add_argument("--url", default="",
+                    help="우리 테스트베드가 아닌 아무 공개 주소. 주면 --variant 는 무시된다. "
+                         "그 주소의 출처 밖으로는 나가지 않는다.")
     ap.add_argument("--base", default=config.DEFAULT_BASE)
     ap.add_argument("--only", action="append", default=[],
                     help="특정 페르소나만 (예: --only P001). 반복 지정 가능")

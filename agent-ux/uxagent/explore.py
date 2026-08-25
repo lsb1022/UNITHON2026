@@ -277,6 +277,10 @@ async def execute(page, action: dict, root: str, element: dict | None = None) ->
         t = "click"
         note = "%s 라서 입력 대신 선택으로 처리" % element["input_type"]
 
+    # 브라우저의 '요소가 멈췄나' 검사를 건너뛰고 눌렀는지. 기록에 남긴다 —
+    # 우리가 도구의 한계를 우회했다는 사실을 숨기면 안 된다.
+    forced = False
+
     try:
         # 값 없는 입력은 수행하지 않는다. fill("") 은 성공하면서 칸을 지우기 때문에
         # '아무 일도 안 일어났다'만 돌아오고, 모델은 자기가 헛일을 하는지 모른다.
@@ -288,7 +292,23 @@ async def execute(page, action: dict, root: str, element: dict | None = None) ->
         if t == "click":
             if not sel:
                 return {"changed": False, "note": "지목한 요소가 없습니다"}
-            await page.click(sel, timeout=config.STEP_TIMEOUT_MS)
+            try:
+                await page.click(sel, timeout=config.STEP_TIMEOUT_MS)
+            except Exception:  # noqa: BLE001
+                # 쉬지 않고 스스로 바뀌는 페이지(상대 시간 '38초 전'이 초마다
+                # 갱신되는 등)에서는 브라우저가 '요소가 멈췄다'고 판정하지 못해
+                # 멀쩡한 링크도 시간 초과가 난다. 실제로 나무위키에서 목차
+                # 항목을 다섯 번 눌렀는데 전부 이 이유로 실패했다.
+                #
+                # 그래서 한 번은 검사를 건너뛰고 눌러본다. **사이트의 결함을
+                # 덮는 것이 아니다** — 결함으로 안 눌리는 요소는 클릭 자체는
+                # 성공하고 아무 일도 일어나지 않아(changed=False) 헛클릭으로
+                # 잡힌다. 여기서 구제하는 것은 우리 도구의 한계뿐이다.
+                await page.locator(sel).first.scroll_into_view_if_needed(
+                    timeout=config.STEP_TIMEOUT_MS)
+                await page.locator(sel).first.click(
+                    timeout=config.STEP_TIMEOUT_MS, force=True)
+                forced = True
         elif t == "type":
             if not sel:
                 return {"changed": False, "note": "지목한 요소가 없습니다"}
@@ -363,7 +383,9 @@ async def execute(page, action: dict, root: str, element: dict | None = None) ->
         detail = ("%d픽셀 내려갔습니다" % dy) if dy else "더 내려갈 곳이 없습니다"
 
     parts = [x for x in (note, detail) if x]
-    return {"url_after": after, "changed": bool(detail),
+    if forced:
+        parts.append("(화면이 계속 바뀌어 안정 검사를 건너뛰고 눌렀습니다)")
+    return {"url_after": after, "changed": bool(detail), "forced": forced,
             "note": " / ".join(parts) if parts else "아무 변화가 없었습니다"}
 
 

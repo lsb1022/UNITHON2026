@@ -81,6 +81,33 @@ export function NewProjectPage() {
             className="mt-[21px] w-[420px]"
           />
 
+          {/* 지금 도는 것은 웹 링크뿐이다. 나머지를 눌렀을 때 아무 말도 없으면
+              "왜 아무 일도 안 나지?" 하고 고장으로 읽힌다. 안 되는 것은
+              안 된다고 먼저 말하는 편이 낫다. */}
+          {source !== 'web' ? (
+            <div
+              role="status"
+              className="mt-[16px] flex max-w-[720px] items-start gap-[10px] rounded-[12px] border border-[#f0d9a8] bg-[#fdf7e8] px-[18px] py-[14px]"
+            >
+              <span aria-hidden className="text-[16px] leading-[1.3]">🚧</span>
+              <p className="text-[14px] leading-[1.6] text-[#7a5a12]">
+                <b className="font-semibold">
+                  {source === 'github' ? '깃허브' : 'APK 파일'} 연결은 추후 업데이트 예정이에요.
+                </b>
+                <br />
+                지금은 <b className="font-semibold">웹 링크</b>만 검사할 수 있어요. AI 페르소나가
+                실제 브라우저로 화면을 열어 조작하는 방식이라, 주소로 열리는 사이트가 필요해요.
+                <button
+                  type="button"
+                  onClick={() => setSource('web')}
+                  className="ml-[6px] font-semibold text-main underline underline-offset-4"
+                >
+                  웹 링크로 하기
+                </button>
+              </p>
+            </div>
+          ) : null}
+
           <div className="mt-[17px] flex flex-col gap-[20px]">
             <TextField
               label="프로젝트 이름"

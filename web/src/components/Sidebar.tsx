@@ -8,6 +8,7 @@ import { Icon, type IconName } from './Icon'
 
 const NAV: { to: string; label: string; icon: IconName }[] = [
   { to: '/projects', label: '프로젝트', icon: 'folder' },
+  { to: '/compare', label: '사이트 비교', icon: 'graph' },
   { to: '/team', label: '팀 워크스페이스', icon: 'team' },
   { to: '/credit', label: '크레딧 및 플랜', icon: 'card' },
   { to: '/settings', label: '설정', icon: 'setting' },

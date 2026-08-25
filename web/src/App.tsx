@@ -1,4 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
+import { ComparePage } from './pages/ComparePage'
 import { MissionPage } from './pages/MissionPage'
 import { NewProjectPage } from './pages/NewProjectPage'
 import { NewTestPage } from './pages/NewTestPage'
@@ -18,6 +19,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/projects" replace />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          {/* 두 사이트를 견주는 곳. 프로젝트 안에서는 주소 하나의 결과만 본다. */}
+          <Route path="/compare" element={<ComparePage />} />
           <Route path="/projects/new" element={<NewProjectPage />} />
           <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
           <Route path="/projects/:projectId/tests/new" element={<NewTestPage />} />

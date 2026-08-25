@@ -37,7 +37,7 @@ export function GenderRatioSlider({
         남성 {100 - Math.round(femalePercent)}%
       </p>
 
-      <div className="absolute top-[34px] left-0 h-[8px] w-full rounded-[4px] bg-track">
+      <div className="absolute top-[34px] right-0 left-0 h-[8px] rounded-[4px] bg-track">
         <div
           className="absolute inset-y-0 left-0 rounded-[4px] bg-[#6b5ce7] opacity-32"
           style={{ width: `${ratio * 100}%` }}

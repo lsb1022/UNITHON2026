@@ -42,6 +42,36 @@ export const MOCK_DATA = {
       "5": 20
     }
   },
+  "axisSentences": {
+    "literacy": {
+      "1": "이런 사이트를 써본 적이 거의 없습니다.",
+      "2": "온라인 쇼핑이 아직 익숙하지 않습니다.",
+      "3": "가끔 온라인 쇼핑을 합니다.",
+      "4": "온라인 쇼핑을 자주 합니다.",
+      "5": "온라인 쇼핑에 매우 익숙합니다."
+    },
+    "attention": {
+      "1": "화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.",
+      "2": "필요한 부분만 훑어봅니다.",
+      "3": "중요해 보이는 내용은 읽습니다.",
+      "4": "대부분의 안내 문구를 읽습니다.",
+      "5": "화면의 글을 처음부터 끝까지 읽습니다."
+    },
+    "patience": {
+      "1": "조금만 막혀도 바로 그만둡니다.",
+      "2": "몇 번 시도해보고 안 되면 나갑니다.",
+      "3": "어느 정도는 다시 시도해봅니다.",
+      "4": "잘 안 돼도 방법을 찾아봅니다.",
+      "5": "될 때까지 여러 방법을 시도합니다."
+    },
+    "breadth": {
+      "1": "한 화면만 보고 결정합니다.",
+      "2": "필요한 페이지만 최소한으로 이동합니다.",
+      "3": "몇 군데는 둘러봅니다.",
+      "4": "여러 페이지를 오가며 비교합니다.",
+      "5": "사이트 곳곳을 폭넓게 둘러봅니다."
+    }
+  },
   "personaTotal": 100,
   "maps": {
     "clean": {
@@ -86,37 +116,37 @@ export const MOCK_DATA = {
         {
           "path": "/index.html",
           "title": "쇼핑몰",
-          "layout": "상단에는 브랜드 로고, 카테고리 메뉴, 장바구니 링크가 배치되어 있고, 중앙에는 이벤트 배너와 인기상품 및 신상품 카드가 Grid 형태로 나열된 메인 화면입니다."
+          "layout": "상단에 상단 띠 배너와 로고, 카테고리 메뉴, 장바구니 링크가 있고, 중앙에는 메인 팝업 배너와 인기상품, 신상품 그리드가 나열된 메인 화면입니다."
         },
         {
           "path": "/list.html",
           "title": "쇼핑몰",
-          "layout": "상단에 로고와 카테고리 메뉴, cart 링크가 위치하며, 그 아래로 카테고리 필터 버튼과 상품 목록 그리드가 배치되어 있는 화면입니다. 하단에는 푸터 링크가 위치합니다."
+          "layout": "상단에 브랜드 로고 MOJI와 내비게이션 메뉴(홈, 전체, 상의, 하의, 신발, 액세서리, cart)가 배치되어 있으며, 그 아래 카테고리 구분(전체, 상의, 하의, 신발, 액세서리, 세일)과 함께 상품 카드들이 그리드 형태로 나열되어 있는 상품 목록 화면입니다."
         },
         {
           "path": "/product.html?id=1",
           "title": "쇼핑몰",
-          "layout": "상단에는 메뉴와 장바구니 링크가 배치되어 있으며, 좌측에는 대형 상품 이미지, 우측에는 상품 정보, 옵션 선택 버튼, 수량 입력란, 확인/구매 버튼 및 설명글이 영역을 분할하고 하단에는 관련 상품과 푸터 링크가 존재합니다."
+          "layout": "상단에 상호 및 카테고리 메뉴가 배치되어 있고, 중앙 좌측에는 대표 이미지, 우측에는 상품 제목, 가격, 옵션 선택 영역, 수량 조절 버튼, 확인 및 구매 버튼, 상품 설명이 위치합니다. 아래쪽에는 관련상품 목록과 이용약관 등의 푸터 링크가 있습니다."
         },
         {
           "path": "/cart.html",
           "title": "쇼핑몰",
-          "layout": "상단에 로고와 카테고리 네비게이션 바가 있고, 중앙에는 장바구니 상품 목록 표와 수량 변경 요소, 하단에는 합계 금액과 확인 링크가 배치되어 있습니다."
+          "layout": "상단에 브랜드 로고와 카테고리 메뉴가 배치되어 있고, 중앙에는 담긴 상품 목록, 옵션, 수량 조절 버튼, 금액, 삭제 버튼이 표 형태로 나열되어 있습니다. 목록 우측 하단에는 총 합계 금액과 확인 버튼이 배치되어 있으며 하단에는 푸터 링크가 위치합니다."
         },
         {
           "path": "/checkout.html",
           "title": "쇼핑몰",
-          "layout": "상단 내비게이션 바 아래에 주문을 위한 회원가입 폼(이름, 연락처, 이메일, 비밀번호, 주소 입력 칸 및 약관 동의 체크박스)이 위치하고, 오른쪽 하단에 결제금액과 확인 버튼이 배치된 화면입니다."
+          "layout": "상단에 헤더 네비게이션이 있고, 본문에는 주문 및 회원가입 관련 입력 입력란과 약관 동의 체크박스, 우측 하단에 결제금액 안내와 확인 버튼이 배치되어 있습니다. 하단에는 푸터 영역이 있습니다."
         },
         {
           "path": "/complete.html",
           "title": "쇼핑몰",
-          "layout": "상단에는 로고와 홈, 전체, 장바구니 링크가 배치되어 있고, 본문 영역에는 주문 접수 완료 문구와 주문 금액이 표시되며, 하단에는 약관 및 고객센터 링크가 위치합니다."
+          "layout": "상단에 로고와 메뉴 링크가 위치하고, 본문 영역에는 주문 접수 메시지와 숫자가 표시되며, 하단에는 약관 및 고객센터 링크가 배치되어 있습니다."
         }
       ],
-      "steps": 31,
-      "shots": 31,
-      "usd": 0.088871
+      "steps": 27,
+      "shots": 27,
+      "usd": 0.078592
     }
   },
   "runs": {
@@ -137,6 +167,14 @@ export const MOCK_DATA = {
       },
       "personas": [
         {
+          "journey": [
+            "index.html",
+            "list.html",
+            "product.html",
+            "cart.html",
+            "checkout.html",
+            "complete.html"
+          ],
           "id": "P001",
           "label": "숙련3·주의3·인내4·탐색3",
           "traits": {
@@ -152,6 +190,14 @@ export const MOCK_DATA = {
           "lastThought": "주문이 정상적으로 완료되었으므로 목표를 달성하였습니다."
         },
         {
+          "journey": [
+            "index.html",
+            "list.html",
+            "product.html",
+            "cart.html",
+            "checkout.html",
+            "complete.html"
+          ],
           "id": "P002",
           "label": "숙련1·주의1·인내3·탐색2",
           "traits": {
@@ -167,6 +213,14 @@ export const MOCK_DATA = {
           "lastThought": "주문 완료 페이지에 도착하여 코튼 셔츠 주문이 성공적으로 끝났습니다."
         },
         {
+          "journey": [
+            "index.html",
+            "list.html",
+            "product.html",
+            "cart.html",
+            "checkout.html",
+            "complete.html"
+          ],
           "id": "P003",
           "label": "숙련2·주의2·인내2·탐색2",
           "traits": {
@@ -182,6 +236,13 @@ export const MOCK_DATA = {
           "lastThought": "주문이 정상적으로 완료되었음을 확인했습니다. 목표를 달성했으므로 쇼핑을 마칩니다."
         },
         {
+          "journey": [
+            "index.html",
+            "list.html",
+            "product.html",
+            "cart.html",
+            "checkout.html"
+          ],
           "id": "P004",
           "label": "숙련1·주의4·인내5·탐색5",
           "traits": {
@@ -197,6 +258,14 @@ export const MOCK_DATA = {
           "lastThought": "배송지 입력 정보를 수정하기 위해 화면 위로 다시 올라갑니다."
         },
         {
+          "journey": [
+            "index.html",
+            "list.html",
+            "product.html",
+            "cart.html",
+            "checkout.html",
+            "complete.html"
+          ],
           "id": "P005",
           "label": "숙련5·주의4·인내5·탐색4",
           "traits": {
@@ -212,6 +281,14 @@ export const MOCK_DATA = {
           "lastThought": "주문이 정상적으로 완료되었으므로 목표를 성공적으로 달성했습니다."
         },
         {
+          "journey": [
+            "index.html",
+            "list.html",
+            "product.html",
+            "cart.html",
+            "checkout.html",
+            "complete.html"
+          ],
           "id": "P006",
           "label": "숙련1·주의2·인내5·탐색5",
           "traits": {
@@ -227,6 +304,13 @@ export const MOCK_DATA = {
           "lastThought": "주문 완료 페이지에 도달하여 코튼 셔츠의 주문이 최종 완료되었으므로 목표를 달성했습니다."
         },
         {
+          "journey": [
+            "index.html",
+            "list.html",
+            "product.html",
+            "cart.html",
+            "checkout.html"
+          ],
           "id": "P007",
           "label": "숙련5·주의1·인내2·탐색2",
           "traits": {
@@ -242,6 +326,11 @@ export const MOCK_DATA = {
           "lastThought": "우편번호와 주소를 입력하는 칸이 화면 조작 요소에 보이지 않아 결제를 진행할 수 없습니다. 더 이상 진행할 수 없으니 포기합니다."
         },
         {
+          "journey": [
+            "index.html",
+            "list.html",
+            "product.html"
+          ],
           "id": "P008",
           "label": "숙련4·주의5·인내2·탐색3",
           "traits": {
@@ -257,6 +346,14 @@ export const MOCK_DATA = {
           "lastThought": "상품 옵션(색상, 사이즈) 및 장바구니 버튼을 누르기 위해 화면 위쪽으로 스크롤하여 이동하겠습니다."
         },
         {
+          "journey": [
+            "index.html",
+            "list.html",
+            "product.html",
+            "cart.html",
+            "checkout.html",
+            "complete.html"
+          ],
           "id": "P009",
           "label": "숙련5·주의5·인내5·탐색4",
           "traits": {
@@ -272,6 +369,14 @@ export const MOCK_DATA = {
           "lastThought": "주문 완료 페이지에 도달하여 코튼 셔츠 주문이 정상적으로 완료되었음을 확인했습니다. 목표를 달성했으므로 종료합니다."
         },
         {
+          "journey": [
+            "index.html",
+            "list.html",
+            "product.html",
+            "cart.html",
+            "checkout.html",
+            "complete.html"
+          ],
           "id": "P010",
           "label": "숙련5·주의5·인내2·탐색5",
           "traits": {
@@ -305,6 +410,14 @@ export const MOCK_DATA = {
       },
       "personas": [
         {
+          "journey": [
+            "index.html",
+            "list.html",
+            "product.html",
+            "cart.html",
+            "checkout.html",
+            "complete.html"
+          ],
           "id": "P001",
           "label": "숙련3·주의3·인내4·탐색3",
           "traits": {
@@ -320,6 +433,14 @@ export const MOCK_DATA = {
           "lastThought": "주문이 완료되어 주문 접수 화면이 보입니다. 목표인 코튼 셔츠 주문을 성공적으로 마쳤으므로 작업을 완료합니다."
         },
         {
+          "journey": [
+            "index.html",
+            "list.html",
+            "product.html",
+            "cart.html",
+            "checkout.html",
+            "complete.html"
+          ],
           "id": "P002",
           "label": "숙련1·주의1·인내3·탐색2",
           "traits": {
@@ -335,6 +456,14 @@ export const MOCK_DATA = {
           "lastThought": "주문 접수 완료 화면이 표시되었으므로 목표를 달성했습니다."
         },
         {
+          "journey": [
+            "index.html",
+            "list.html",
+            "product.html",
+            "cart.html",
+            "checkout.html",
+            "complete.html"
+          ],
           "id": "P003",
           "label": "숙련2·주의2·인내2·탐색2",
           "traits": {
@@ -350,6 +479,13 @@ export const MOCK_DATA = {
           "lastThought": "주문 접수 완료 화면에 도달하여 주문이 성공적으로 마쳐졌으므로 목표를 달성했습니다."
         },
         {
+          "journey": [
+            "index.html",
+            "list.html",
+            "product.html",
+            "cart.html",
+            "checkout.html"
+          ],
           "id": "P004",
           "label": "숙련1·주의4·인내5·탐색5",
           "traits": {
@@ -365,6 +501,13 @@ export const MOCK_DATA = {
           "lastThought": "화면 전체를 덮고 있는 팝업 레이어 때문에 약관 동의 체크박스와 확인 버튼 등 대부분의 요소가 전혀 클릭되지 않고, 스크롤도 되지 않아 더 이상 진행할 수 없습니다."
         },
         {
+          "journey": [
+            "index.html",
+            "list.html",
+            "product.html",
+            "cart.html",
+            "checkout.html"
+          ],
           "id": "P005",
           "label": "숙련5·주의4·인내5·탐색4",
           "traits": {
@@ -380,6 +523,11 @@ export const MOCK_DATA = {
           "lastThought": "이용약관 동의 체크박스와 결제 확인 버튼이 화면 전체를 덮는 레이어에 가려져 눌리지 않고, 더 이상 진행할 수 있는 방법이 없습니다."
         },
         {
+          "journey": [
+            "index.html",
+            "list.html",
+            "product.html"
+          ],
           "id": "P006",
           "label": "숙련1·주의2·인내5·탐색5",
           "traits": {
@@ -395,6 +543,13 @@ export const MOCK_DATA = {
           "lastThought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다."
         },
         {
+          "journey": [
+            "index.html",
+            "list.html",
+            "product.html",
+            "cart.html",
+            "checkout.html"
+          ],
           "id": "P007",
           "label": "숙련5·주의1·인내2·탐색2",
           "traits": {
@@ -410,6 +565,10 @@ export const MOCK_DATA = {
           "lastThought": "회원가입 양식이 복잡하고 잘 진행되지 않아 포기하고 나갑니다."
         },
         {
+          "journey": [
+            "index.html",
+            "list.html"
+          ],
           "id": "P008",
           "label": "숙련4·주의5·인내2·탐색3",
           "traits": {
@@ -425,6 +584,14 @@ export const MOCK_DATA = {
           "lastThought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다."
         },
         {
+          "journey": [
+            "index.html",
+            "list.html",
+            "product.html",
+            "cart.html",
+            "checkout.html",
+            "complete.html"
+          ],
           "id": "P009",
           "label": "숙련5·주의5·인내5·탐색4",
           "traits": {
@@ -440,6 +607,10 @@ export const MOCK_DATA = {
           "lastThought": "주문 접수 완료 화면에 도달하여 코튼 셔츠 주문이 정상적으로 마쳐졌습니다. 목표를 달성했으므로 종료합니다."
         },
         {
+          "journey": [
+            "index.html",
+            "list.html"
+          ],
           "id": "P010",
           "label": "숙련5·주의5·인내2·탐색5",
           "traits": {
@@ -455,14 +626,30137 @@ export const MOCK_DATA = {
           "lastThought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다."
         }
       ]
+    },
+    "namu": {
+      "runId": "namu_ssu",
+      "variant": "namu.wiki",
+      "usage": {
+        "calls": 9,
+        "tokens_in": 12203,
+        "tokens_out": 388,
+        "cost_usd": 0.010607,
+        "by_model": {
+          "gemini-3.6-flash": {
+            "in": 8124,
+            "out": 259
+          }
+        }
+      },
+      "personas": [
+        {
+          "journey": [
+            "나무위키:대문",
+            "숭실대학교"
+          ],
+          "id": "P001",
+          "label": "숙련3·주의3·인내4·탐색3",
+          "traits": {
+            "literacy": 3,
+            "attention": 3,
+            "patience": 4,
+            "breadth": 3
+          },
+          "steps": 3,
+          "end": "goal_reached",
+          "endLabel": "달성",
+          "firstThought": "숭실대학교의 위치를 알아보기 위해 검색창에 '숭실대학교'를 입력하겠습니다.",
+          "lastThought": "현재 화면 본문에서 숭실대학교의 지역이 '서울특별시'임을 확인하였으므로 목표를 달성하였습니다."
+        },
+        {
+          "journey": [
+            "나무위키:대문",
+            "숭실대학교"
+          ],
+          "id": "P002",
+          "label": "숙련1·주의1·인내3·탐색2",
+          "traits": {
+            "literacy": 1,
+            "attention": 1,
+            "patience": 3,
+            "breadth": 2
+          },
+          "steps": 3,
+          "end": "goal_reached",
+          "endLabel": "달성",
+          "firstThought": "숭실대학교 지역을 알아내기 위해 먼저 검색창에 숭실대학교를 입력해야겠다.",
+          "lastThought": "현재 화면의 정보표에 숭실대학교의 지역이 서울특별시라고 나와 있는 것을 확인했다."
+        },
+        {
+          "journey": [
+            "나무위키:대문",
+            "숭실대학교"
+          ],
+          "id": "P009",
+          "label": "숙련5·주의5·인내5·탐색4",
+          "traits": {
+            "literacy": 5,
+            "attention": 5,
+            "patience": 5,
+            "breadth": 4
+          },
+          "steps": 3,
+          "end": "goal_reached",
+          "endLabel": "달성",
+          "firstThought": "숭실대학교의 지역을 알아보기 위해 검색창에 '숭실대학교'를 입력합니다.",
+          "lastThought": "숭실대학교 정보상자에 지역이 '서울특별시'로 표시된 것을 확인하여 목표를 달성했습니다."
+        }
+      ]
     }
   },
+  "viewsByVariant": {
+    "clean": {
+      "detail": {
+        "persona_total": 10,
+        "journey_count": 10,
+        "success_rate": 70.0,
+        "drop_rate": 30.0,
+        "avg_success_steps": 12.6
+      },
+      "paths": {
+        "total": 10,
+        "success": {
+          "count": 7,
+          "percent": 70.0
+        },
+        "drop": {
+          "count": 3,
+          "percent": 30.0
+        },
+        "paths": {
+          "success": [
+            {
+              "rank": 1,
+              "name": "경로 1",
+              "label": "홈 → 상품 목록 → 상품 상세 → 장바구니 → 주문/결제",
+              "persona_count": 7,
+              "step_count": 13,
+              "screens": [
+                {
+                  "key": "index.html",
+                  "title": "홈",
+                  "url": null
+                },
+                {
+                  "key": "list.html",
+                  "title": "상품 목록",
+                  "url": null
+                },
+                {
+                  "key": "product.html",
+                  "title": "상품 상세",
+                  "url": null
+                },
+                {
+                  "key": "cart.html",
+                  "title": "장바구니",
+                  "url": null
+                },
+                {
+                  "key": "checkout.html",
+                  "title": "주문/결제",
+                  "url": null
+                }
+              ],
+              "more": 1
+            }
+          ],
+          "drop": [
+            {
+              "rank": 1,
+              "name": "경로 1",
+              "label": "홈 → 상품 목록 → 상품 상세 → 장바구니 → 주문/결제",
+              "persona_count": 2,
+              "step_count": 16,
+              "screens": [
+                {
+                  "key": "index.html",
+                  "title": "홈",
+                  "url": null
+                },
+                {
+                  "key": "list.html",
+                  "title": "상품 목록",
+                  "url": null
+                },
+                {
+                  "key": "product.html",
+                  "title": "상품 상세",
+                  "url": null
+                },
+                {
+                  "key": "cart.html",
+                  "title": "장바구니",
+                  "url": null
+                },
+                {
+                  "key": "checkout.html",
+                  "title": "주문/결제",
+                  "url": null
+                }
+              ],
+              "more": 0
+            },
+            {
+              "rank": 2,
+              "name": "경로 2",
+              "label": "홈 → 상품 목록 → 상품 상세",
+              "persona_count": 1,
+              "step_count": 5,
+              "screens": [
+                {
+                  "key": "index.html",
+                  "title": "홈",
+                  "url": null
+                },
+                {
+                  "key": "list.html",
+                  "title": "상품 목록",
+                  "url": null
+                },
+                {
+                  "key": "product.html",
+                  "title": "상품 상세",
+                  "url": null
+                }
+              ],
+              "more": 0
+            }
+          ]
+        }
+      },
+      "diagram": {
+        "columns": [
+          {
+            "index": 0,
+            "label": "1단계",
+            "nodes": [
+              {
+                "id": "c0:index.html",
+                "column": 0,
+                "key": "index.html",
+                "title": "홈",
+                "count": 10,
+                "success": 7,
+                "drop": 3
+              }
+            ]
+          },
+          {
+            "index": 1,
+            "label": "2단계",
+            "nodes": [
+              {
+                "id": "c1:list.html",
+                "column": 1,
+                "key": "list.html",
+                "title": "상품 목록",
+                "count": 10,
+                "success": 7,
+                "drop": 3
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "label": "3단계",
+            "nodes": [
+              {
+                "id": "c2:product.html",
+                "column": 2,
+                "key": "product.html",
+                "title": "상품 상세",
+                "count": 10,
+                "success": 7,
+                "drop": 3
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "label": "4단계",
+            "nodes": [
+              {
+                "id": "c3:product.html",
+                "column": 3,
+                "key": "product.html",
+                "title": "상품 상세",
+                "count": 4,
+                "success": 1,
+                "drop": 3
+              },
+              {
+                "id": "c3:cart.html",
+                "column": 3,
+                "key": "cart.html",
+                "title": "장바구니",
+                "count": 6,
+                "success": 6,
+                "drop": 0
+              }
+            ]
+          },
+          {
+            "index": 4,
+            "label": "5단계",
+            "nodes": [
+              {
+                "id": "c4:product.html",
+                "column": 4,
+                "key": "product.html",
+                "title": "상품 상세",
+                "count": 1,
+                "success": 0,
+                "drop": 1
+              },
+              {
+                "id": "c4:cart.html",
+                "column": 4,
+                "key": "cart.html",
+                "title": "장바구니",
+                "count": 3,
+                "success": 1,
+                "drop": 2
+              },
+              {
+                "id": "c4:checkout.html",
+                "column": 4,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 6,
+                "success": 6,
+                "drop": 0
+              }
+            ]
+          },
+          {
+            "index": 5,
+            "label": "6단계",
+            "nodes": [
+              {
+                "id": "c5:checkout.html",
+                "column": 5,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 9,
+                "success": 7,
+                "drop": 2
+              },
+              {
+                "id": "c5:end_drop",
+                "column": 5,
+                "key": "end_drop",
+                "title": "이탈",
+                "count": 1,
+                "success": 0,
+                "drop": 1
+              }
+            ]
+          },
+          {
+            "index": 6,
+            "label": "7단계",
+            "nodes": [
+              {
+                "id": "c6:checkout.html",
+                "column": 6,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 9,
+                "success": 7,
+                "drop": 2
+              }
+            ]
+          },
+          {
+            "index": 7,
+            "label": "8단계",
+            "nodes": [
+              {
+                "id": "c7:checkout.html",
+                "column": 7,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 9,
+                "success": 7,
+                "drop": 2
+              }
+            ]
+          },
+          {
+            "index": 8,
+            "label": "9단계",
+            "nodes": [
+              {
+                "id": "c8:checkout.html",
+                "column": 8,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 9,
+                "success": 7,
+                "drop": 2
+              }
+            ]
+          },
+          {
+            "index": 9,
+            "label": "10단계",
+            "nodes": [
+              {
+                "id": "c9:checkout.html",
+                "column": 9,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 9,
+                "success": 7,
+                "drop": 2
+              }
+            ]
+          },
+          {
+            "index": 10,
+            "label": "11단계",
+            "nodes": [
+              {
+                "id": "c10:checkout.html",
+                "column": 10,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 9,
+                "success": 7,
+                "drop": 2
+              }
+            ]
+          },
+          {
+            "index": 11,
+            "label": "12단계",
+            "nodes": [
+              {
+                "id": "c11:checkout.html",
+                "column": 11,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 6,
+                "success": 4,
+                "drop": 2
+              },
+              {
+                "id": "c11:complete.html",
+                "column": 11,
+                "key": "complete.html",
+                "title": "주문 완료",
+                "count": 3,
+                "success": 3,
+                "drop": 0
+              }
+            ]
+          },
+          {
+            "index": 12,
+            "label": "13단계",
+            "nodes": [
+              {
+                "id": "c12:checkout.html",
+                "column": 12,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 2,
+                "success": 0,
+                "drop": 2
+              },
+              {
+                "id": "c12:complete.html",
+                "column": 12,
+                "key": "complete.html",
+                "title": "주문 완료",
+                "count": 4,
+                "success": 4,
+                "drop": 0
+              },
+              {
+                "id": "c12:end_goal",
+                "column": 12,
+                "key": "end_goal",
+                "title": "달성",
+                "count": 3,
+                "success": 3,
+                "drop": 0
+              }
+            ]
+          },
+          {
+            "index": 13,
+            "label": "14단계",
+            "nodes": [
+              {
+                "id": "c13:checkout.html",
+                "column": 13,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 2,
+                "success": 0,
+                "drop": 2
+              },
+              {
+                "id": "c13:end_goal",
+                "column": 13,
+                "key": "end_goal",
+                "title": "달성",
+                "count": 4,
+                "success": 4,
+                "drop": 0
+              }
+            ]
+          },
+          {
+            "index": 14,
+            "label": "15단계",
+            "nodes": [
+              {
+                "id": "c14:checkout.html",
+                "column": 14,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 2,
+                "success": 0,
+                "drop": 2
+              }
+            ]
+          },
+          {
+            "index": 15,
+            "label": "16단계",
+            "nodes": [
+              {
+                "id": "c15:checkout.html",
+                "column": 15,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 1,
+                "success": 0,
+                "drop": 1
+              },
+              {
+                "id": "c15:end_drop",
+                "column": 15,
+                "key": "end_drop",
+                "title": "이탈",
+                "count": 1,
+                "success": 0,
+                "drop": 1
+              }
+            ]
+          },
+          {
+            "index": 16,
+            "label": "17단계",
+            "nodes": [
+              {
+                "id": "c16:end_drop",
+                "column": 16,
+                "key": "end_drop",
+                "title": "이탈",
+                "count": 1,
+                "success": 0,
+                "drop": 1
+              }
+            ]
+          }
+        ],
+        "links": [
+          {
+            "source": "c0:index.html",
+            "target": "c1:list.html",
+            "count": 10,
+            "success": 7,
+            "drop": 3
+          },
+          {
+            "source": "c1:list.html",
+            "target": "c2:product.html",
+            "count": 10,
+            "success": 7,
+            "drop": 3
+          },
+          {
+            "source": "c2:product.html",
+            "target": "c3:cart.html",
+            "count": 6,
+            "success": 6,
+            "drop": 0
+          },
+          {
+            "source": "c3:cart.html",
+            "target": "c4:checkout.html",
+            "count": 6,
+            "success": 6,
+            "drop": 0
+          },
+          {
+            "source": "c4:checkout.html",
+            "target": "c5:checkout.html",
+            "count": 6,
+            "success": 6,
+            "drop": 0
+          },
+          {
+            "source": "c5:checkout.html",
+            "target": "c6:checkout.html",
+            "count": 9,
+            "success": 7,
+            "drop": 2
+          },
+          {
+            "source": "c6:checkout.html",
+            "target": "c7:checkout.html",
+            "count": 9,
+            "success": 7,
+            "drop": 2
+          },
+          {
+            "source": "c7:checkout.html",
+            "target": "c8:checkout.html",
+            "count": 9,
+            "success": 7,
+            "drop": 2
+          },
+          {
+            "source": "c8:checkout.html",
+            "target": "c9:checkout.html",
+            "count": 9,
+            "success": 7,
+            "drop": 2
+          },
+          {
+            "source": "c9:checkout.html",
+            "target": "c10:checkout.html",
+            "count": 9,
+            "success": 7,
+            "drop": 2
+          },
+          {
+            "source": "c10:checkout.html",
+            "target": "c11:complete.html",
+            "count": 3,
+            "success": 3,
+            "drop": 0
+          },
+          {
+            "source": "c11:complete.html",
+            "target": "c12:end_goal",
+            "count": 3,
+            "success": 3,
+            "drop": 0
+          },
+          {
+            "source": "c2:product.html",
+            "target": "c3:product.html",
+            "count": 4,
+            "success": 1,
+            "drop": 3
+          },
+          {
+            "source": "c3:product.html",
+            "target": "c4:cart.html",
+            "count": 3,
+            "success": 1,
+            "drop": 2
+          },
+          {
+            "source": "c4:cart.html",
+            "target": "c5:checkout.html",
+            "count": 3,
+            "success": 1,
+            "drop": 2
+          },
+          {
+            "source": "c10:checkout.html",
+            "target": "c11:checkout.html",
+            "count": 6,
+            "success": 4,
+            "drop": 2
+          },
+          {
+            "source": "c11:checkout.html",
+            "target": "c12:complete.html",
+            "count": 4,
+            "success": 4,
+            "drop": 0
+          },
+          {
+            "source": "c12:complete.html",
+            "target": "c13:end_goal",
+            "count": 4,
+            "success": 4,
+            "drop": 0
+          },
+          {
+            "source": "c11:checkout.html",
+            "target": "c12:checkout.html",
+            "count": 2,
+            "success": 0,
+            "drop": 2
+          },
+          {
+            "source": "c12:checkout.html",
+            "target": "c13:checkout.html",
+            "count": 2,
+            "success": 0,
+            "drop": 2
+          },
+          {
+            "source": "c13:checkout.html",
+            "target": "c14:checkout.html",
+            "count": 2,
+            "success": 0,
+            "drop": 2
+          },
+          {
+            "source": "c14:checkout.html",
+            "target": "c15:checkout.html",
+            "count": 1,
+            "success": 0,
+            "drop": 1
+          },
+          {
+            "source": "c15:checkout.html",
+            "target": "c16:end_drop",
+            "count": 1,
+            "success": 0,
+            "drop": 1
+          },
+          {
+            "source": "c14:checkout.html",
+            "target": "c15:end_drop",
+            "count": 1,
+            "success": 0,
+            "drop": 1
+          },
+          {
+            "source": "c3:product.html",
+            "target": "c4:product.html",
+            "count": 1,
+            "success": 0,
+            "drop": 1
+          },
+          {
+            "source": "c4:product.html",
+            "target": "c5:end_drop",
+            "count": 1,
+            "success": 0,
+            "drop": 1
+          }
+        ],
+        "total": 10,
+        "truncated": 0,
+        "max_columns": 30
+      },
+      "steps": {
+        "c0:index.html": {
+          "id": "c0:index.html",
+          "step": 1,
+          "screen": "index.html",
+          "title": "홈",
+          "count": 10,
+          "shot": {
+            "src": "/screens/clean/index.jpg",
+            "w": 1280,
+            "h": 2220
+          },
+          "clicks": [
+            {
+              "x": 330,
+              "y": 74,
+              "w": 58,
+              "h": 44,
+              "label": "상의",
+              "wasted": false,
+              "persona": "P001"
+            },
+            {
+              "x": 330,
+              "y": 74,
+              "w": 58,
+              "h": 44,
+              "label": "상의",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 330,
+              "y": 74,
+              "w": 58,
+              "h": 44,
+              "label": "상의",
+              "wasted": false,
+              "persona": "P003"
+            },
+            {
+              "x": 330,
+              "y": 74,
+              "w": 58,
+              "h": 44,
+              "label": "상의",
+              "wasted": false,
+              "persona": "P004"
+            },
+            {
+              "x": 330,
+              "y": 74,
+              "w": 58,
+              "h": 44,
+              "label": "상의",
+              "wasted": false,
+              "persona": "P005"
+            },
+            {
+              "x": 330,
+              "y": 74,
+              "w": 58,
+              "h": 44,
+              "label": "상의",
+              "wasted": false,
+              "persona": "P006"
+            },
+            {
+              "x": 330,
+              "y": 74,
+              "w": 58,
+              "h": 44,
+              "label": "상의",
+              "wasted": false,
+              "persona": "P007"
+            },
+            {
+              "x": 330,
+              "y": 74,
+              "w": 58,
+              "h": 44,
+              "label": "상의",
+              "wasted": false,
+              "persona": "P008"
+            },
+            {
+              "x": 330,
+              "y": 74,
+              "w": 58,
+              "h": 44,
+              "label": "상의",
+              "wasted": false,
+              "persona": "P009"
+            },
+            {
+              "x": 330,
+              "y": 74,
+              "w": 58,
+              "h": 44,
+              "label": "상의",
+              "wasted": false,
+              "persona": "P010"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 330,
+              "y": 74,
+              "wasted": false
+            },
+            {
+              "x": 330,
+              "y": 74,
+              "wasted": false
+            },
+            {
+              "x": 330,
+              "y": 74,
+              "wasted": false
+            },
+            {
+              "x": 330,
+              "y": 74,
+              "wasted": false
+            },
+            {
+              "x": 330,
+              "y": 74,
+              "wasted": false
+            },
+            {
+              "x": 330,
+              "y": 74,
+              "wasted": false
+            },
+            {
+              "x": 330,
+              "y": 74,
+              "wasted": false
+            },
+            {
+              "x": 330,
+              "y": 74,
+              "wasted": false
+            },
+            {
+              "x": 330,
+              "y": 74,
+              "wasted": false
+            },
+            {
+              "x": 330,
+              "y": 74,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "코튼 셔츠를 찾기 위해 '상의' 카테고리로 이동합니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "코튼 셔츠를 찾기 위해 일단 상의 카테고리를 눌러봅니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "코튼 셔츠를 찾기 위해 상의 카테고리로 들어가 봅니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 16,
+              "thought": "코튼 셔츠를 찾기 위해 상의 카테고리로 이동합니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "코튼 셔츠를 찾기 위해 상의 카테고리 메뉴로 이동합니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "코튼 셔츠를 찾기 위해 '상의' 카테고리를 클릭해 상품들을 살펴봅니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 15,
+              "thought": "코튼 셔츠를 찾기 위해 상의 카테고리로 이동합니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 5,
+              "thought": "코튼 셔츠를 찾기 위해 상의 카테고리로 이동해보겠습니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "코튼 셔츠를 찾아 주문하기 위해 상의 카테고리로 이동합니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "코튼 셔츠를 찾기 위해 상의 카테고리로 이동합니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [],
+          "total": 10
+        },
+        "c1:list.html": {
+          "id": "c1:list.html",
+          "step": 2,
+          "screen": "list.html",
+          "title": "상품 목록",
+          "count": 10,
+          "shot": {
+            "src": "/screens/clean/list.jpg",
+            "w": 1280,
+            "h": 2250
+          },
+          "clicks": [
+            {
+              "x": 197,
+              "y": 638,
+              "w": 274,
+              "h": 438,
+              "label": "BEST 오버사이즈 코튼 셔츠 39,000원",
+              "wasted": false,
+              "persona": "P001"
+            },
+            {
+              "x": 197,
+              "y": 638,
+              "w": 274,
+              "h": 438,
+              "label": "BEST 오버사이즈 코튼 셔츠 39,000원",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 197,
+              "y": 638,
+              "w": 274,
+              "h": 438,
+              "label": "BEST 오버사이즈 코튼 셔츠 39,000원",
+              "wasted": false,
+              "persona": "P003"
+            },
+            {
+              "x": 197,
+              "y": 638,
+              "w": 274,
+              "h": 438,
+              "label": "BEST 오버사이즈 코튼 셔츠 39,000원",
+              "wasted": false,
+              "persona": "P004"
+            },
+            {
+              "x": 197,
+              "y": 638,
+              "w": 274,
+              "h": 438,
+              "label": "BEST 오버사이즈 코튼 셔츠 39,000원",
+              "wasted": false,
+              "persona": "P005"
+            },
+            {
+              "x": 197,
+              "y": 638,
+              "w": 274,
+              "h": 438,
+              "label": "BEST 오버사이즈 코튼 셔츠 39,000원",
+              "wasted": false,
+              "persona": "P006"
+            },
+            {
+              "x": 197,
+              "y": 638,
+              "w": 274,
+              "h": 438,
+              "label": "BEST 오버사이즈 코튼 셔츠 39,000원",
+              "wasted": false,
+              "persona": "P007"
+            },
+            {
+              "x": 197,
+              "y": 638,
+              "w": 274,
+              "h": 438,
+              "label": "BEST 오버사이즈 코튼 셔츠 39,000원",
+              "wasted": false,
+              "persona": "P008"
+            },
+            {
+              "x": 197,
+              "y": 638,
+              "w": 274,
+              "h": 438,
+              "label": "BEST 오버사이즈 코튼 셔츠 39,000원",
+              "wasted": false,
+              "persona": "P009"
+            },
+            {
+              "x": 197,
+              "y": 638,
+              "w": 274,
+              "h": 438,
+              "label": "BEST 오버사이즈 코튼 셔츠 39,000원",
+              "wasted": false,
+              "persona": "P010"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 197,
+              "y": 638,
+              "wasted": false
+            },
+            {
+              "x": 197,
+              "y": 638,
+              "wasted": false
+            },
+            {
+              "x": 197,
+              "y": 638,
+              "wasted": false
+            },
+            {
+              "x": 197,
+              "y": 638,
+              "wasted": false
+            },
+            {
+              "x": 197,
+              "y": 638,
+              "wasted": false
+            },
+            {
+              "x": 197,
+              "y": 638,
+              "wasted": false
+            },
+            {
+              "x": 197,
+              "y": 638,
+              "wasted": false
+            },
+            {
+              "x": 197,
+              "y": 638,
+              "wasted": false
+            },
+            {
+              "x": 197,
+              "y": 638,
+              "wasted": false
+            },
+            {
+              "x": 197,
+              "y": 638,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "상단에 '오버사이즈 코튼 셔츠' 상품이 바로 보입니다. 해당 상품의 상세 페이지로 이동하기 위해 선택하겠습니다.",
+              "action": "click",
+              "target": "BEST 오버사이즈 코튼 셔츠 39,000원 49,00",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "화면에 오버사이즈 코튼 셔츠가 바로 보이니 클릭해서 들어갑니다.",
+              "action": "click",
+              "target": "BEST 오버사이즈 코튼 셔츠 39,000원 49,00",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "목표인 코튼 셔츠 상품이 화면에 바로 보이네요. 오버사이즈 코튼 셔츠를 클릭해서 상세보기로 이동하겠습니다.",
+              "action": "click",
+              "target": "BEST 오버사이즈 코튼 셔츠 39,000원 49,00",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 16,
+              "thought": "목표인 코튼 셔츠 상품이 보입니다. 상세 정보를 확인하고 장바구니에 담기 위해 상품 링크를 클릭합니다.",
+              "action": "click",
+              "target": "BEST 오버사이즈 코튼 셔츠 39,000원 49,00",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "목표인 코튼 셔츠 상품이 화면에 보이네요. 'BEST 오버사이즈 코튼 셔츠' 상품을 클릭해서 상세 페이지로 이동하겠습니다.",
+              "action": "click",
+              "target": "BEST 오버사이즈 코튼 셔츠 39,000원 49,00",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "목표로 하던 오버사이즈 코튼 셔츠 상품이 화면에 바로 보이므로 클릭하여 상세 페이지로 이동하겠습니다.",
+              "action": "click",
+              "target": "BEST 오버사이즈 코튼 셔츠 39,000원 49,00",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 15,
+              "thought": "눈에 띄는 오버사이즈 코튼 셔츠 상품을 클릭합니다.",
+              "action": "click",
+              "target": "BEST 오버사이즈 코튼 셔츠 39,000원 49,00",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 5,
+              "thought": "원하는 상품인 '오버사이즈 코튼 셔츠'를 찾았으니 상품 상세 페이지로 이동하겠습니다.",
+              "action": "click",
+              "target": "BEST 오버사이즈 코튼 셔츠 39,000원 49,00",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "목표인 코튼 셔츠를 발견했으므로, 상품 상세 페이지로 이동하기 위해 오버사이즈 코튼 셔츠 상품을 클릭합니다.",
+              "action": "click",
+              "target": "BEST 오버사이즈 코튼 셔츠 39,000원 49,00",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "목표인 코튼 셔츠 상품을 발견했으므로 클릭하여 상세 페이지로 들어갑니다.",
+              "action": "click",
+              "target": "BEST 오버사이즈 코튼 셔츠 39,000원 49,00",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [],
+          "total": 10
+        },
+        "c2:product.html": {
+          "id": "c2:product.html",
+          "step": 3,
+          "screen": "product.html",
+          "title": "상품 상세",
+          "count": 10,
+          "shot": {
+            "src": "/screens/clean/product.jpg",
+            "w": 1280,
+            "h": 1950
+          },
+          "clicks": [
+            {
+              "x": 1088,
+              "y": 766,
+              "w": 264,
+              "h": 44,
+              "label": "바로 구매하기",
+              "wasted": false,
+              "persona": "P001"
+            },
+            {
+              "x": 813,
+              "y": 766,
+              "w": 264,
+              "h": 44,
+              "label": "장바구니에 담기",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 1088,
+              "y": 766,
+              "w": 264,
+              "h": 44,
+              "label": "바로 구매하기",
+              "wasted": false,
+              "persona": "P003"
+            },
+            {
+              "x": 813,
+              "y": 766,
+              "w": 264,
+              "h": 44,
+              "label": "장바구니에 담기",
+              "wasted": false,
+              "persona": "P004"
+            },
+            {
+              "x": 1088,
+              "y": 766,
+              "w": 264,
+              "h": 44,
+              "label": "바로 구매하기",
+              "wasted": false,
+              "persona": "P005"
+            },
+            {
+              "x": 1088,
+              "y": 766,
+              "w": 264,
+              "h": 44,
+              "label": "바로 구매하기",
+              "wasted": false,
+              "persona": "P006"
+            },
+            {
+              "x": 813,
+              "y": 766,
+              "w": 264,
+              "h": 44,
+              "label": "장바구니에 담기",
+              "wasted": false,
+              "persona": "P007"
+            },
+            {
+              "x": 1088,
+              "y": 766,
+              "w": 264,
+              "h": 44,
+              "label": "바로 구매하기",
+              "wasted": false,
+              "persona": "P009"
+            },
+            {
+              "x": 1088,
+              "y": 766,
+              "w": 264,
+              "h": 44,
+              "label": "바로 구매하기",
+              "wasted": false,
+              "persona": "P010"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 1088,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 813,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 803,
+              "y": 746,
+              "wasted": false
+            },
+            {
+              "x": 1088,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 813,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 1088,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 1088,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 1088,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 813,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 1148,
+              "y": 74,
+              "wasted": false
+            },
+            {
+              "x": 1088,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 1088,
+              "y": 766,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "오버사이즈 코튼 셔츠 상품 페이지입니다. 구매를 진행하기 위해 바로 구매하기 버튼을 누릅니다.",
+              "action": "click",
+              "target": "바로 구매하기",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "상품 페이지에 왔으니 바로 장바구니에 담아보겠습니다.",
+              "action": "click",
+              "target": "장바구니에 담기",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "오버사이즈 코튼 셔츠 페이지에 왔으니 바로 구매하기 버튼을 눌러 주문을 진행해 보겠습니다.",
+              "action": "click",
+              "target": "바로 구매하기",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 16,
+              "thought": "오버사이즈 코튼 셔츠 상세 페이지에 들어왔으니 상품을 장바구니에 담기 위해 '장바구니에 담기' 버튼을 누릅니다.",
+              "action": "click",
+              "target": "장바구니에 담기",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "코튼 셔츠 상품 페이지에서 상품을 주문하기 위해 바로 구매하기 버튼을 클릭합니다.",
+              "action": "click",
+              "target": "바로 구매하기",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "오버사이즈 코튼 셔츠 상세 페이지에 들어왔으니 바로 구매하기를 눌러 주문 절차를 진행해보겠습니다.",
+              "action": "click",
+              "target": "바로 구매하기",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 15,
+              "thought": "코튼 셔츠를 장바구니에 담기 위해 '장바구니에 담기' 버튼을 누릅니다.",
+              "action": "click",
+              "target": "장바구니에 담기",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 5,
+              "thought": "색상과 사이즈 옵션을 선택하기 위해 화면을 내려서 선택 UI가 보이는지 확인하겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "코튼 셔츠를 바로 구매하기 위해 '바로 구매하기' 버튼을 클릭합니다.",
+              "action": "click",
+              "target": "바로 구매하기",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "상품 옵션(색상, 사이즈)을 고르고 바로 구매하기를 진행하려고 합니다. 먼저 바로 구매하기 버튼을 눌러보겠습니다.",
+              "action": "click",
+              "target": "바로 구매하기",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [],
+          "total": 10
+        },
+        "c3:product.html": {
+          "id": "c3:product.html",
+          "step": 4,
+          "screen": "product.html",
+          "title": "상품 상세",
+          "count": 4,
+          "shot": {
+            "src": "/screens/clean/product.jpg",
+            "w": 1280,
+            "h": 1950
+          },
+          "clicks": [
+            {
+              "x": 803,
+              "y": 746,
+              "w": 82,
+              "h": 48,
+              "label": "장바구니 보기",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 1088,
+              "y": 766,
+              "w": 264,
+              "h": 44,
+              "label": "바로 구매하기",
+              "wasted": false,
+              "persona": "P004"
+            },
+            {
+              "x": 1148,
+              "y": 74,
+              "w": 145,
+              "h": 44,
+              "label": "🛒 장바구니 1 장바구니, 상품 1개",
+              "wasted": false,
+              "persona": "P007"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 1088,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 813,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 803,
+              "y": 746,
+              "wasted": false
+            },
+            {
+              "x": 1088,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 813,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 1088,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 1088,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 1088,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 813,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 1148,
+              "y": 74,
+              "wasted": false
+            },
+            {
+              "x": 1088,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 1088,
+              "y": 766,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "상품을 장바구니에 담았으니 장바구니로 이동하여 주문하기 위해 장바구니 보기를 클릭합니다.",
+              "action": "click",
+              "target": "장바구니 보기",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 16,
+              "thought": "코튼 셔츠를 장바구니에 담았으니 이제 주문을 진행하기 위해 바로 구매하기 버튼을 누릅니다.",
+              "action": "click",
+              "target": "바로 구매하기",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 15,
+              "thought": "장바구니에 상품이 담겼으니 주문을 진행하기 위해 장바구니로 이동합니다.",
+              "action": "click",
+              "target": "🛒 장바구니 1 장바구니, 상품 1개",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 5,
+              "thought": "옵션(색상 및 사이즈)을 선택하기 위해 다시 위로 스크롤하여 옵션 선택 영역을 찾겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "장바구니에 코튼 셔츠가 담겨 있으므로, 결제를 진행하기 위해 결제하기 버튼을 누릅니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "장바구니에 오버사이즈 코튼 셔츠가 담겨 있으니 결제 진행을 위해 결제하기 버튼을 누르겠습니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "장바구니에 오버사이즈 코튼 셔츠가 담겨 있으므로 주문을 진행하기 위해 결제하기 버튼을 누릅니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "장바구니에 코튼 셔츠가 들어있는 것이 확인되었으므로 결제하기를 눌러 주문을 진행하겠습니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "장바구니에 코튼 셔츠가 담겨 있으므로 결제하기 버튼을 눌러 주문을 진행합니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "장바구니에 오버사이즈 코튼 셔츠가 이미 담겨 있으므로, 결제하기 버튼을 눌러 주문을 진행합니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            }
+          ],
+          "finished": [],
+          "total": 10
+        },
+        "c3:cart.html": {
+          "id": "c3:cart.html",
+          "step": 4,
+          "screen": "cart.html",
+          "title": "장바구니",
+          "count": 6,
+          "shot": {
+            "src": "/screens/clean/cart.jpg",
+            "w": 1280,
+            "h": 901
+          },
+          "clicks": [
+            {
+              "x": 1055,
+              "y": 529,
+              "w": 280,
+              "h": 52,
+              "label": "42,000원 결제하기",
+              "wasted": false,
+              "persona": "P001"
+            },
+            {
+              "x": 1055,
+              "y": 529,
+              "w": 280,
+              "h": 52,
+              "label": "42,000원 결제하기",
+              "wasted": false,
+              "persona": "P003"
+            },
+            {
+              "x": 1055,
+              "y": 529,
+              "w": 280,
+              "h": 52,
+              "label": "42,000원 결제하기",
+              "wasted": false,
+              "persona": "P005"
+            },
+            {
+              "x": 1055,
+              "y": 529,
+              "w": 280,
+              "h": 52,
+              "label": "42,000원 결제하기",
+              "wasted": false,
+              "persona": "P006"
+            },
+            {
+              "x": 1055,
+              "y": 529,
+              "w": 280,
+              "h": 52,
+              "label": "42,000원 결제하기",
+              "wasted": false,
+              "persona": "P009"
+            },
+            {
+              "x": 1055,
+              "y": 529,
+              "w": 280,
+              "h": 52,
+              "label": "42,000원 결제하기",
+              "wasted": false,
+              "persona": "P010"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 1055,
+              "y": 529,
+              "wasted": false
+            },
+            {
+              "x": 1055,
+              "y": 529,
+              "wasted": false
+            },
+            {
+              "x": 1055,
+              "y": 529,
+              "wasted": false
+            },
+            {
+              "x": 1055,
+              "y": 529,
+              "wasted": false
+            },
+            {
+              "x": 1055,
+              "y": 529,
+              "wasted": false
+            },
+            {
+              "x": 1055,
+              "y": 529,
+              "wasted": false
+            },
+            {
+              "x": 1055,
+              "y": 529,
+              "wasted": false
+            },
+            {
+              "x": 1055,
+              "y": 529,
+              "wasted": false
+            },
+            {
+              "x": 1055,
+              "y": 529,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "장바구니에 코튼 셔츠가 담겨 있으므로, 결제를 진행하기 위해 결제하기 버튼을 누릅니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "장바구니에 오버사이즈 코튼 셔츠가 담겨 있으니 결제 진행을 위해 결제하기 버튼을 누르겠습니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "장바구니에 오버사이즈 코튼 셔츠가 담겨 있으므로 주문을 진행하기 위해 결제하기 버튼을 누릅니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "장바구니에 코튼 셔츠가 들어있는 것이 확인되었으므로 결제하기를 눌러 주문을 진행하겠습니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "장바구니에 코튼 셔츠가 담겨 있으므로 결제하기 버튼을 눌러 주문을 진행합니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "장바구니에 오버사이즈 코튼 셔츠가 이미 담겨 있으므로, 결제하기 버튼을 눌러 주문을 진행합니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "상품을 장바구니에 담았으니 장바구니로 이동하여 주문하기 위해 장바구니 보기를 클릭합니다.",
+              "action": "click",
+              "target": "장바구니 보기",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 16,
+              "thought": "코튼 셔츠를 장바구니에 담았으니 이제 주문을 진행하기 위해 바로 구매하기 버튼을 누릅니다.",
+              "action": "click",
+              "target": "바로 구매하기",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 15,
+              "thought": "장바구니에 상품이 담겼으니 주문을 진행하기 위해 장바구니로 이동합니다.",
+              "action": "click",
+              "target": "🛒 장바구니 1 장바구니, 상품 1개",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 5,
+              "thought": "옵션(색상 및 사이즈)을 선택하기 위해 다시 위로 스크롤하여 옵션 선택 영역을 찾겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            }
+          ],
+          "finished": [],
+          "total": 10
+        },
+        "c4:product.html": {
+          "id": "c4:product.html",
+          "step": 5,
+          "screen": "product.html",
+          "title": "상품 상세",
+          "count": 1,
+          "shot": {
+            "src": "/screens/clean/product.jpg",
+            "w": 1280,
+            "h": 1950
+          },
+          "clicks": [],
+          "screen_clicks": [
+            {
+              "x": 1088,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 813,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 803,
+              "y": 746,
+              "wasted": false
+            },
+            {
+              "x": 1088,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 813,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 1088,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 1088,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 1088,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 813,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 1148,
+              "y": 74,
+              "wasted": false
+            },
+            {
+              "x": 1088,
+              "y": 766,
+              "wasted": false
+            },
+            {
+              "x": 1088,
+              "y": 766,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 5,
+              "thought": "상품 옵션(색상, 사이즈) 및 장바구니 버튼을 누르기 위해 화면 위쪽으로 스크롤하여 이동하겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문자 정보를 입력하기 위해 이름 입력란에 이름을 작성합니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "장바구니에 오버사이즈 코튼 셔츠가 담겨 있으니 결제하기 버튼을 눌러 결제 절차로 진행합니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문 완료를 위해 먼저 주문자 정보의 이름 칸에 이름을 입력하겠습니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 16,
+              "thought": "장바구니에 오버사이즈 코튼 셔츠가 담겨 있으므로, 주문을 진행하기 위해 결제하기 버튼을 클릭합니다.",
+              "action": "click",
+              "target": "78,000원 결제하기",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문 결제를 진행하기 위해 주문자 정보에 이름부터 입력하겠습니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문자 정보를 작성하기 위해 이름을 입력합니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 15,
+              "thought": "장바구니에 코튼 셔츠가 담겨 있으니 결제하기 버튼을 눌러 주문을 계속 진행합니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문을 완료하기 위해 주문자 정보의 이름 입력란에 이름을 작성합니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문/결제 페이지에 도달했습니다. 주문자 정보의 이름 입력 칸에 이름을 입력합니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            }
+          ],
+          "finished": [],
+          "total": 10
+        },
+        "c4:cart.html": {
+          "id": "c4:cart.html",
+          "step": 5,
+          "screen": "cart.html",
+          "title": "장바구니",
+          "count": 3,
+          "shot": {
+            "src": "/screens/clean/cart.jpg",
+            "w": 1280,
+            "h": 901
+          },
+          "clicks": [
+            {
+              "x": 1055,
+              "y": 529,
+              "w": 280,
+              "h": 52,
+              "label": "42,000원 결제하기",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 1055,
+              "y": 529,
+              "w": 280,
+              "h": 52,
+              "label": "78,000원 결제하기",
+              "wasted": false,
+              "persona": "P004"
+            },
+            {
+              "x": 1055,
+              "y": 529,
+              "w": 280,
+              "h": 52,
+              "label": "42,000원 결제하기",
+              "wasted": false,
+              "persona": "P007"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 1055,
+              "y": 529,
+              "wasted": false
+            },
+            {
+              "x": 1055,
+              "y": 529,
+              "wasted": false
+            },
+            {
+              "x": 1055,
+              "y": 529,
+              "wasted": false
+            },
+            {
+              "x": 1055,
+              "y": 529,
+              "wasted": false
+            },
+            {
+              "x": 1055,
+              "y": 529,
+              "wasted": false
+            },
+            {
+              "x": 1055,
+              "y": 529,
+              "wasted": false
+            },
+            {
+              "x": 1055,
+              "y": 529,
+              "wasted": false
+            },
+            {
+              "x": 1055,
+              "y": 529,
+              "wasted": false
+            },
+            {
+              "x": 1055,
+              "y": 529,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "장바구니에 오버사이즈 코튼 셔츠가 담겨 있으니 결제하기 버튼을 눌러 결제 절차로 진행합니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 16,
+              "thought": "장바구니에 오버사이즈 코튼 셔츠가 담겨 있으므로, 주문을 진행하기 위해 결제하기 버튼을 클릭합니다.",
+              "action": "click",
+              "target": "78,000원 결제하기",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 15,
+              "thought": "장바구니에 코튼 셔츠가 담겨 있으니 결제하기 버튼을 눌러 주문을 계속 진행합니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문자 정보를 입력하기 위해 이름 입력란에 이름을 작성합니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문 완료를 위해 먼저 주문자 정보의 이름 칸에 이름을 입력하겠습니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문 결제를 진행하기 위해 주문자 정보에 이름부터 입력하겠습니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문자 정보를 작성하기 위해 이름을 입력합니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 5,
+              "thought": "상품 옵션(색상, 사이즈) 및 장바구니 버튼을 누르기 위해 화면 위쪽으로 스크롤하여 이동하겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문을 완료하기 위해 주문자 정보의 이름 입력란에 이름을 작성합니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문/결제 페이지에 도달했습니다. 주문자 정보의 이름 입력 칸에 이름을 입력합니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            }
+          ],
+          "finished": [],
+          "total": 10
+        },
+        "c4:checkout.html": {
+          "id": "c4:checkout.html",
+          "step": 5,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 6,
+          "shot": {
+            "src": "/screens/clean/checkout.jpg",
+            "w": 1280,
+            "h": 2379
+          },
+          "clicks": [
+            {
+              "x": 266,
+              "y": 744,
+              "w": 359,
+              "h": 48,
+              "label": "",
+              "wasted": false,
+              "persona": "P001"
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "w": 359,
+              "h": 48,
+              "label": "",
+              "wasted": false,
+              "persona": "P003"
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "w": 359,
+              "h": 48,
+              "label": "",
+              "wasted": false,
+              "persona": "P005"
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "w": 359,
+              "h": 48,
+              "label": "",
+              "wasted": false,
+              "persona": "P006"
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "w": 359,
+              "h": 48,
+              "label": "",
+              "wasted": false,
+              "persona": "P009"
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "w": 359,
+              "h": 48,
+              "label": "",
+              "wasted": false,
+              "persona": "P010"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1341,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": true
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1434,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 2089,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문자 정보를 입력하기 위해 이름 입력란에 이름을 작성합니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문 완료를 위해 먼저 주문자 정보의 이름 칸에 이름을 입력하겠습니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문 결제를 진행하기 위해 주문자 정보에 이름부터 입력하겠습니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문자 정보를 작성하기 위해 이름을 입력합니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문을 완료하기 위해 주문자 정보의 이름 입력란에 이름을 작성합니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문/결제 페이지에 도달했습니다. 주문자 정보의 이름 입력 칸에 이름을 입력합니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "장바구니에 오버사이즈 코튼 셔츠가 담겨 있으니 결제하기 버튼을 눌러 결제 절차로 진행합니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 16,
+              "thought": "장바구니에 오버사이즈 코튼 셔츠가 담겨 있으므로, 주문을 진행하기 위해 결제하기 버튼을 클릭합니다.",
+              "action": "click",
+              "target": "78,000원 결제하기",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 15,
+              "thought": "장바구니에 코튼 셔츠가 담겨 있으니 결제하기 버튼을 눌러 주문을 계속 진행합니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 5,
+              "thought": "상품 옵션(색상, 사이즈) 및 장바구니 버튼을 누르기 위해 화면 위쪽으로 스크롤하여 이동하겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            }
+          ],
+          "finished": [],
+          "total": 10
+        },
+        "c5:checkout.html": {
+          "id": "c5:checkout.html",
+          "step": 6,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 9,
+          "shot": {
+            "src": "/screens/clean/checkout.jpg",
+            "w": 1280,
+            "h": 2379
+          },
+          "clicks": [
+            {
+              "x": 644,
+              "y": 744,
+              "w": 359,
+              "h": 48,
+              "label": "010-1234-5678",
+              "wasted": false,
+              "persona": "P001"
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "w": 359,
+              "h": 48,
+              "label": "",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "w": 359,
+              "h": 48,
+              "label": "010-1234-5678",
+              "wasted": false,
+              "persona": "P003"
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "w": 359,
+              "h": 48,
+              "label": "",
+              "wasted": false,
+              "persona": "P004"
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "w": 359,
+              "h": 48,
+              "label": "010-1234-5678",
+              "wasted": false,
+              "persona": "P005"
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "w": 359,
+              "h": 48,
+              "label": "010-1234-5678",
+              "wasted": false,
+              "persona": "P006"
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "w": 359,
+              "h": 48,
+              "label": "",
+              "wasted": false,
+              "persona": "P007"
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "w": 359,
+              "h": 48,
+              "label": "010-1234-5678",
+              "wasted": false,
+              "persona": "P009"
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "w": 359,
+              "h": 48,
+              "label": "010-1234-5678",
+              "wasted": false,
+              "persona": "P010"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1341,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": true
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1434,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 2089,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문자 정보 입력을 계속 진행하기 위해 휴대폰 번호 입력란에 번호를 작성합니다.",
+              "action": "type",
+              "target": "010-1234-5678",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문자 정보를 입력하기 위해 이름 칸에 이름을 작성합니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문자 정보 작성을 이어가기 위해 휴대폰 번호 입력 칸에 번호를 입력하겠습니다.",
+              "action": "type",
+              "target": "010-1234-5678",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 16,
+              "thought": "주문자 정보의 이름 칸에 이름을 입력합니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문자 정보의 휴대폰 번호를 입력하기 위해 input_4에 휴대폰 번호를 입력합니다.",
+              "action": "type",
+              "target": "010-1234-5678",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문자 정보의 휴대폰 번호를 입력합니다.",
+              "action": "type",
+              "target": "010-1234-5678",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 15,
+              "thought": "주문 결제를 진행하기 위해 이름을 입력합니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문 진행을 위해 휴대폰 번호 입력란에 전화번호를 입력합니다.",
+              "action": "type",
+              "target": "010-1234-5678",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문자 정보 입력의 두 번째 단계로 휴대폰 번호를 입력합니다.",
+              "action": "type",
+              "target": "010-1234-5678",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 5,
+              "thought": "상품 옵션(색상, 사이즈) 및 장바구니 버튼을 누르기 위해 화면 위쪽으로 스크롤하여 이동하겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c6:checkout.html": {
+          "id": "c6:checkout.html",
+          "step": 7,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 9,
+          "shot": {
+            "src": "/screens/clean/checkout.jpg",
+            "w": 1280,
+            "h": 2379
+          },
+          "clicks": [
+            {
+              "x": 455,
+              "y": 883,
+              "w": 736,
+              "h": 48,
+              "label": "",
+              "wasted": false,
+              "persona": "P001"
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "w": 359,
+              "h": 48,
+              "label": "010-1234-5678",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "w": 736,
+              "h": 48,
+              "label": "",
+              "wasted": false,
+              "persona": "P003"
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "w": 359,
+              "h": 48,
+              "label": "010-1234-5678",
+              "wasted": false,
+              "persona": "P004"
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "w": 736,
+              "h": 48,
+              "label": "",
+              "wasted": false,
+              "persona": "P005"
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "w": 359,
+              "h": 48,
+              "label": "010-1234-5678",
+              "wasted": false,
+              "persona": "P007"
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "w": 736,
+              "h": 48,
+              "label": "",
+              "wasted": false,
+              "persona": "P009"
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "w": 736,
+              "h": 48,
+              "label": "",
+              "wasted": false,
+              "persona": "P010"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1341,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": true
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1434,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 2089,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문자 확인 메일을 받을 이메일 주소를 입력합니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문자 정보 입력을 이어가기 위해 휴대폰 번호 칸에 번호를 입력합니다.",
+              "action": "type",
+              "target": "010-1234-5678",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문 완료를 위해 이메일 주소를 입력하겠습니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 16,
+              "thought": "주문자 정보 입력을 계속 진행하기 위해 휴대폰 번호 입력 칸에 번호를 입력합니다.",
+              "action": "type",
+              "target": "010-1234-5678",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문자 정보 생성을 마저 진행하기 위해 이메일 주소를 입력합니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "이메일 주소와 배송지 입력란이 화면 아래에 위치해 있으므로, 먼저 화면을 아래로 스크롤합니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 15,
+              "thought": "주문 결제를 진행하기 위해 휴대폰 번호를 입력합니다.",
+              "action": "type",
+              "target": "010-1234-5678",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문자 정보 작성을 이어가기 위해 이메일 입력란에 이메일 주소를 입력합니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "이메일 필수 입력 칸에 이메일 주소를 입력합니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 5,
+              "thought": "상품 옵션(색상, 사이즈) 및 장바구니 버튼을 누르기 위해 화면 위쪽으로 스크롤하여 이동하겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c7:checkout.html": {
+          "id": "c7:checkout.html",
+          "step": 8,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 9,
+          "shot": {
+            "src": "/screens/clean/checkout.jpg",
+            "w": 1280,
+            "h": 2379
+          },
+          "clicks": [
+            {
+              "x": 455,
+              "y": 883,
+              "w": 736,
+              "h": 48,
+              "label": "",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "w": 736,
+              "h": 48,
+              "label": "",
+              "wasted": false,
+              "persona": "P004"
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "w": 736,
+              "h": 48,
+              "label": "",
+              "wasted": false,
+              "persona": "P006"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1341,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": true
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1434,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 2089,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문자 정보 입력을 마쳤으니, 배송지 및 결제 수단을 입력하고 결제를 진행하기 위해 화면 아래로 스크롤합니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "이메일 정보를 입력해야 하므로 이메일 입력 칸에 주소를 입력하겠습니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "배송지 및 결제 정보를 확인하고 결제를 진행하기 위해 화면을 아래로 내려보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 16,
+              "thought": "주문 확인 메일과 주문번호를 받을 이메일 주소를 입력합니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "배송지 및 결제 양식을 채우고 결제를 진행하기 위해 화면을 아래로 스크롤합니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "이메일 입력란에 주문 확인용 이메일 주소를 입력하겠습니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 15,
+              "thought": "이메일과 배송지 정보를 입력하고 결제 버튼을 누르기 위해 화면을 아래로 내립니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문자 정보를 다 작성했으니 배송지 정보와 결제 정보를 작성하기 위해 화면을 아래로 스크롤합니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문/결제 페이지의 배송지 정보와 결제 버튼을 확인하기 위해 아래로 스크롤합니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 5,
+              "thought": "상품 옵션(색상, 사이즈) 및 장바구니 버튼을 누르기 위해 화면 위쪽으로 스크롤하여 이동하겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c8:checkout.html": {
+          "id": "c8:checkout.html",
+          "step": 9,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 9,
+          "shot": {
+            "src": "/screens/clean/checkout.jpg",
+            "w": 1280,
+            "h": 2379
+          },
+          "clicks": [
+            {
+              "x": 97,
+              "y": 1899,
+              "w": 20,
+              "h": 20,
+              "label": "",
+              "wasted": false,
+              "persona": "P001"
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "w": 736,
+              "h": 48,
+              "label": "",
+              "wasted": false,
+              "persona": "P003"
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "w": 736,
+              "h": 48,
+              "label": "",
+              "wasted": false,
+              "persona": "P005"
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "w": 736,
+              "h": 48,
+              "label": "",
+              "wasted": false,
+              "persona": "P006"
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "w": 736,
+              "h": 48,
+              "label": "",
+              "wasted": false,
+              "persona": "P007"
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "w": 20,
+              "h": 20,
+              "label": "",
+              "wasted": false,
+              "persona": "P009"
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "w": 20,
+              "h": 20,
+              "label": "",
+              "wasted": false,
+              "persona": "P010"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1341,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": true
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1434,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 2089,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문을 완료하기 위해 동의 관련 체크박스를 클릭합니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문자 정보 입력을 마쳤으니 배송지 정보와 결제 버튼이 있는 아래쪽으로 스크롤을 내립니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "배송지 주소를 입력하기 위해 기본 주소 입력 칸에 주소를 입력하겠습니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 16,
+              "thought": "주문자 정보 입력을 마쳤으니 배송지 정보와 결제 수단 입력을 위해 아래로 스크롤합니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "배송지 주소를 입력하기 위해 상세 주소 입력란에 주소를 입력합니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "배송지 기본 주소를 입력하기 위해 주소 입력란에 주소를 작성합니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 15,
+              "thought": "주문/결제 진행을 위해 이메일 주소를 입력합니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문/결제를 완료하기 위해 필수 동의 항목 체크박스를 클릭합니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문 결제를 진행하기 위해 필수 약관 동의 체크박스를 클릭합니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 5,
+              "thought": "상품 옵션(색상, 사이즈) 및 장바구니 버튼을 누르기 위해 화면 위쪽으로 스크롤하여 이동하겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c9:checkout.html": {
+          "id": "c9:checkout.html",
+          "step": 10,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 9,
+          "shot": {
+            "src": "/screens/clean/checkout.jpg",
+            "w": 1280,
+            "h": 2379
+          },
+          "clicks": [
+            {
+              "x": 455,
+              "y": 2088,
+              "w": 790,
+              "h": 52,
+              "label": "42,000원 결제하기",
+              "wasted": false,
+              "persona": "P001"
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "w": 20,
+              "h": 20,
+              "label": "",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "w": 20,
+              "h": 20,
+              "label": "",
+              "wasted": false,
+              "persona": "P003"
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "w": 736,
+              "h": 48,
+              "label": "",
+              "wasted": false,
+              "persona": "P004"
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "w": 20,
+              "h": 20,
+              "label": "",
+              "wasted": false,
+              "persona": "P005"
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "w": 20,
+              "h": 20,
+              "label": "",
+              "wasted": false,
+              "persona": "P006"
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "w": 790,
+              "h": 52,
+              "label": "42,000원 결제하기",
+              "wasted": false,
+              "persona": "P007"
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "w": 790,
+              "h": 52,
+              "label": "42,000원 결제하기",
+              "wasted": false,
+              "persona": "P009"
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "w": 790,
+              "h": 52,
+              "label": "42,000원 결제하기",
+              "wasted": false,
+              "persona": "P010"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1341,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": true
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1434,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 2089,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문 정보와 필수 항목 동의가 모두 완료되었으므로 '42,000원 결제하기' 버튼을 눌러 결제를 진행합니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문 결제를 진행하기 위해 아래쪽에 있는 필수 약관 동의 체크박스를 클릭합니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문 결제를 계속 진행하기 위해 필수 약관 동의 체크박스를 클릭하겠습니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 16,
+              "thought": "배송지 상세 주소를 입력하기 위해 주소 입력 칸에 내용을 입력합니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문/결제 진행을 위해 이용약관 및 결제 동의 체크박스를 클릭합니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문 완료를 위해 필수 동의 항목 체크박스를 선택하겠습니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 15,
+              "thought": "입력할 것 대충 채워진 것 같으니 바로 결제 버튼을 눌러 주문을 마칩니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문 정보를 확인했고 필요한 체크박스를 완료했으므로 결제하기 버튼을 눌러 주문을 마칩니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문자 정보와 필수 약관 동의가 완료되었으므로, 결제하기 버튼을 눌러 주문을 완료하겠습니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 5,
+              "thought": "상품 옵션(색상, 사이즈) 및 장바구니 버튼을 누르기 위해 화면 위쪽으로 스크롤하여 이동하겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c10:checkout.html": {
+          "id": "c10:checkout.html",
+          "step": 11,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 9,
+          "shot": {
+            "src": "/screens/clean/checkout.jpg",
+            "w": 1280,
+            "h": 2379
+          },
+          "clicks": [
+            {
+              "x": 455,
+              "y": 2088,
+              "w": 790,
+              "h": 52,
+              "label": "42,000원 결제하기",
+              "wasted": false,
+              "persona": "P001"
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "w": 790,
+              "h": 52,
+              "label": "42,000원 결제하기",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "w": 790,
+              "h": 52,
+              "label": "42,000원 결제하기",
+              "wasted": false,
+              "persona": "P003"
+            },
+            {
+              "x": 455,
+              "y": 1341,
+              "w": 736,
+              "h": 48,
+              "label": "동, 호수 등",
+              "wasted": false,
+              "persona": "P004"
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "w": 790,
+              "h": 52,
+              "label": "42,000원 결제하기",
+              "wasted": false,
+              "persona": "P005"
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "w": 790,
+              "h": 52,
+              "label": "42,000원 결제하기",
+              "wasted": false,
+              "persona": "P006"
+            },
+            {
+              "x": 455,
+              "y": 1434,
+              "w": 736,
+              "h": 48,
+              "label": "",
+              "wasted": false,
+              "persona": "P007"
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "w": 790,
+              "h": 52,
+              "label": "42,000원 결제하기",
+              "wasted": false,
+              "persona": "P009"
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "w": 790,
+              "h": 52,
+              "label": "42,000원 결제하기",
+              "wasted": false,
+              "persona": "P010"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1341,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": true
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1434,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 2089,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "42,000원 결제하기 버튼인 button_2를 클릭하여 주문 및 결제를 완료합니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "모든 정보 입력 및 동의를 마쳤으므로 결제하기 버튼을 눌러 주문을 완료합니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문자 정보 및 약관 동의 작성을 마쳤으니 42,000원 결제하기 버튼을 눌러 결제를 진행하겠습니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 16,
+              "thought": "배송지 상세 주소를 입력하기 위해 상세주소 입력 칸(input_6)에 내용을 입력합니다.",
+              "action": "type",
+              "target": "동, 호수 등",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "모든 정보를 입력하고 약관에 동의했으므로 42,000원 결제하기 버튼을 눌러 주문을 완료합니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문자 정보 및 결제 선택이 완료되었으므로, 결제하기 버튼을 눌러 주문을 완료합니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 15,
+              "thought": "주소를 입력하라는 안내가 보여 주소 입력칸에 주소를 입력합니다.",
+              "action": "type",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문을 완료하기 위해 결제하기 버튼을 클릭합니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문 결제를 완료하기 위해 결제하기 버튼을 누릅니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 5,
+              "thought": "상품 옵션(색상, 사이즈) 및 장바구니 버튼을 누르기 위해 화면 위쪽으로 스크롤하여 이동하겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c11:checkout.html": {
+          "id": "c11:checkout.html",
+          "step": 12,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 6,
+          "shot": {
+            "src": "/screens/clean/checkout.jpg",
+            "w": 1280,
+            "h": 2379
+          },
+          "clicks": [
+            {
+              "x": 455,
+              "y": 2088,
+              "w": 790,
+              "h": 52,
+              "label": "42,000원 결제하기",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "w": 790,
+              "h": 52,
+              "label": "42,000원 결제하기",
+              "wasted": false,
+              "persona": "P003"
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "w": 790,
+              "h": 52,
+              "label": "42,000원 결제하기",
+              "wasted": false,
+              "persona": "P005"
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "w": 790,
+              "h": 52,
+              "label": "42,000원 결제하기",
+              "wasted": false,
+              "persona": "P006"
+            },
+            {
+              "x": 97,
+              "y": 2089,
+              "w": 20,
+              "h": 20,
+              "label": "",
+              "wasted": false,
+              "persona": "P007"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1341,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": true
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1434,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 2089,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "결제를 완료하기 위해 화면 아래에 있는 결제하기 버튼을 누릅니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "결제를 마치기 위해 하단의 결제하기 버튼을 누르겠습니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 16,
+              "thought": "결제 진행을 위해 약관 동의 체크박스와 결제 버튼이 있는 하단 영역으로 스크롤합니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "모든 주소와 필수 정보가 입력되었으므로 하단의 42,000원 결제하기 버튼을 클릭하여 주문을 완료합니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "결제를 진행하기 위해 화면 하단의 결제하기 버튼을 클릭합니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 15,
+              "thought": "결제 진행을 위해 결제 필수 동의 체크박스를 클릭합니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문이 정상적으로 완료되었으므로 목표를 달성하였습니다.",
+              "action": "done",
+              "target": "",
+              "blocked": false,
+              "screen": "complete.html",
+              "screen_title": "주문 완료"
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문 완료 페이지에 도달하여 코튼 셔츠 주문이 정상적으로 완료되었음을 확인했습니다. 목표를 달성했으므로 종료합니다.",
+              "action": "done",
+              "target": "",
+              "blocked": false,
+              "screen": "complete.html",
+              "screen_title": "주문 완료"
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "코튼 셔츠 주문이 완료되었으므로 목표를 성공적으로 달성했습니다.",
+              "action": "done",
+              "target": "",
+              "blocked": false,
+              "screen": "complete.html",
+              "screen_title": "주문 완료"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 5,
+              "thought": "상품 옵션(색상, 사이즈) 및 장바구니 버튼을 누르기 위해 화면 위쪽으로 스크롤하여 이동하겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c11:complete.html": {
+          "id": "c11:complete.html",
+          "step": 12,
+          "screen": "complete.html",
+          "title": "주문 완료",
+          "count": 3,
+          "shot": {
+            "src": "/screens/clean/complete.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [],
+          "screen_clicks": [],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문이 정상적으로 완료되었으므로 목표를 달성하였습니다.",
+              "action": "done",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문 완료 페이지에 도달하여 코튼 셔츠 주문이 정상적으로 완료되었음을 확인했습니다. 목표를 달성했으므로 종료합니다.",
+              "action": "done",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "코튼 셔츠 주문이 완료되었으므로 목표를 성공적으로 달성했습니다.",
+              "action": "done",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "결제를 완료하기 위해 화면 아래에 있는 결제하기 버튼을 누릅니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "결제를 마치기 위해 하단의 결제하기 버튼을 누르겠습니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 16,
+              "thought": "결제 진행을 위해 약관 동의 체크박스와 결제 버튼이 있는 하단 영역으로 스크롤합니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "모든 주소와 필수 정보가 입력되었으므로 하단의 42,000원 결제하기 버튼을 클릭하여 주문을 완료합니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "결제를 진행하기 위해 화면 하단의 결제하기 버튼을 클릭합니다.",
+              "action": "click",
+              "target": "42,000원 결제하기",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 15,
+              "thought": "결제 진행을 위해 결제 필수 동의 체크박스를 클릭합니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 5,
+              "thought": "상품 옵션(색상, 사이즈) 및 장바구니 버튼을 누르기 위해 화면 위쪽으로 스크롤하여 이동하겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c12:checkout.html": {
+          "id": "c12:checkout.html",
+          "step": 13,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 2,
+          "shot": {
+            "src": "/screens/clean/checkout.jpg",
+            "w": 1280,
+            "h": 2379
+          },
+          "clicks": [
+            {
+              "x": 97,
+              "y": 1899,
+              "w": 20,
+              "h": 20,
+              "label": "",
+              "wasted": true,
+              "persona": "P004"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1341,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": true
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1434,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 2089,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            }
+          ],
+          "wasted": 1,
+          "personas": [
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 16,
+              "thought": "결제를 진행하기 위해 먼저 첫 번째 필수 약관 동의 체크박스를 클릭합니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 15,
+              "thought": "우편번호와 주소 입력 칸을 찾기 위해 화면을 위로 스크롤합니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문 완료 페이지에 도착하여 코튼 셔츠 주문이 성공적으로 끝났습니다.",
+              "action": "done",
+              "target": "",
+              "blocked": false,
+              "screen": "complete.html",
+              "screen_title": "주문 완료"
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문이 정상적으로 완료되었음을 확인했습니다. 목표를 달성했으므로 쇼핑을 마칩니다.",
+              "action": "done",
+              "target": "",
+              "blocked": false,
+              "screen": "complete.html",
+              "screen_title": "주문 완료"
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문이 정상적으로 완료되었으므로 목표를 성공적으로 달성했습니다.",
+              "action": "done",
+              "target": "",
+              "blocked": false,
+              "screen": "complete.html",
+              "screen_title": "주문 완료"
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문 완료 페이지에 도달하여 코튼 셔츠의 주문이 최종 완료되었으므로 목표를 달성했습니다.",
+              "action": "done",
+              "target": "",
+              "blocked": false,
+              "screen": "complete.html",
+              "screen_title": "주문 완료"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문이 정상적으로 완료되었으므로 목표를 달성하였습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 5,
+              "thought": "상품 옵션(색상, 사이즈) 및 장바구니 버튼을 누르기 위해 화면 위쪽으로 스크롤하여 이동하겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문 완료 페이지에 도달하여 코튼 셔츠 주문이 정상적으로 완료되었음을 확인했습니다. 목표를 달성했으므로 종료합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "코튼 셔츠 주문이 완료되었으므로 목표를 성공적으로 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c12:complete.html": {
+          "id": "c12:complete.html",
+          "step": 13,
+          "screen": "complete.html",
+          "title": "주문 완료",
+          "count": 4,
+          "shot": {
+            "src": "/screens/clean/complete.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [],
+          "screen_clicks": [],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문 완료 페이지에 도착하여 코튼 셔츠 주문이 성공적으로 끝났습니다.",
+              "action": "done",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문이 정상적으로 완료되었음을 확인했습니다. 목표를 달성했으므로 쇼핑을 마칩니다.",
+              "action": "done",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문이 정상적으로 완료되었으므로 목표를 성공적으로 달성했습니다.",
+              "action": "done",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문 완료 페이지에 도달하여 코튼 셔츠의 주문이 최종 완료되었으므로 목표를 달성했습니다.",
+              "action": "done",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 16,
+              "thought": "결제를 진행하기 위해 먼저 첫 번째 필수 약관 동의 체크박스를 클릭합니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 15,
+              "thought": "우편번호와 주소 입력 칸을 찾기 위해 화면을 위로 스크롤합니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문이 정상적으로 완료되었으므로 목표를 달성하였습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 5,
+              "thought": "상품 옵션(색상, 사이즈) 및 장바구니 버튼을 누르기 위해 화면 위쪽으로 스크롤하여 이동하겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문 완료 페이지에 도달하여 코튼 셔츠 주문이 정상적으로 완료되었음을 확인했습니다. 목표를 달성했으므로 종료합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "코튼 셔츠 주문이 완료되었으므로 목표를 성공적으로 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c13:checkout.html": {
+          "id": "c13:checkout.html",
+          "step": 14,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 2,
+          "shot": {
+            "src": "/screens/clean/checkout.jpg",
+            "w": 1280,
+            "h": 2379
+          },
+          "clicks": [
+            {
+              "x": 97,
+              "y": 1899,
+              "w": 20,
+              "h": 20,
+              "label": "",
+              "wasted": false,
+              "persona": "P004"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1341,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": true
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1434,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 2089,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 16,
+              "thought": "약관 동의 체크박스(input_10)를 클릭하여 결제를 준비합니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 15,
+              "thought": "우편번호와 주소 입력 칸을 찾기 위해 화면을 위로 스크롤합니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문이 정상적으로 완료되었으므로 목표를 달성하였습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문 완료 페이지에 도착하여 코튼 셔츠 주문이 성공적으로 끝났습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문이 정상적으로 완료되었음을 확인했습니다. 목표를 달성했으므로 쇼핑을 마칩니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문이 정상적으로 완료되었으므로 목표를 성공적으로 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문 완료 페이지에 도달하여 코튼 셔츠의 주문이 최종 완료되었으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 5,
+              "thought": "상품 옵션(색상, 사이즈) 및 장바구니 버튼을 누르기 위해 화면 위쪽으로 스크롤하여 이동하겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문 완료 페이지에 도달하여 코튼 셔츠 주문이 정상적으로 완료되었음을 확인했습니다. 목표를 달성했으므로 종료합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "코튼 셔츠 주문이 완료되었으므로 목표를 성공적으로 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c14:checkout.html": {
+          "id": "c14:checkout.html",
+          "step": 15,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 2,
+          "shot": {
+            "src": "/screens/clean/checkout.jpg",
+            "w": 1280,
+            "h": 2379
+          },
+          "clicks": [],
+          "screen_clicks": [
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1341,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": true
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1434,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 2089,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 16,
+              "thought": "배송지 정보 중 입력하지 않은 우편번호 등을 확인하고 입력하기 위해 위로 스크롤합니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 15,
+              "thought": "우편번호와 주소를 입력하는 칸이 화면 조작 요소에 보이지 않아 결제를 진행할 수 없습니다. 더 이상 진행할 수 없으니 포기합니다.",
+              "action": "give_up",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문이 정상적으로 완료되었으므로 목표를 달성하였습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문 완료 페이지에 도착하여 코튼 셔츠 주문이 성공적으로 끝났습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문이 정상적으로 완료되었음을 확인했습니다. 목표를 달성했으므로 쇼핑을 마칩니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문이 정상적으로 완료되었으므로 목표를 성공적으로 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문 완료 페이지에 도달하여 코튼 셔츠의 주문이 최종 완료되었으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 5,
+              "thought": "상품 옵션(색상, 사이즈) 및 장바구니 버튼을 누르기 위해 화면 위쪽으로 스크롤하여 이동하겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문 완료 페이지에 도달하여 코튼 셔츠 주문이 정상적으로 완료되었음을 확인했습니다. 목표를 달성했으므로 종료합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "코튼 셔츠 주문이 완료되었으므로 목표를 성공적으로 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c15:checkout.html": {
+          "id": "c15:checkout.html",
+          "step": 16,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 1,
+          "shot": {
+            "src": "/screens/clean/checkout.jpg",
+            "w": 1280,
+            "h": 2379
+          },
+          "clicks": [],
+          "screen_clicks": [
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1341,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": true
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1244,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 1434,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 2089,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 266,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 644,
+              "y": 744,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 883,
+              "wasted": false
+            },
+            {
+              "x": 97,
+              "y": 1899,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            },
+            {
+              "x": 455,
+              "y": 2088,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 16,
+              "thought": "배송지 입력 정보를 수정하기 위해 화면 위로 다시 올라갑니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문이 정상적으로 완료되었으므로 목표를 달성하였습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문 완료 페이지에 도착하여 코튼 셔츠 주문이 성공적으로 끝났습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문이 정상적으로 완료되었음을 확인했습니다. 목표를 달성했으므로 쇼핑을 마칩니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문이 정상적으로 완료되었으므로 목표를 성공적으로 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 13,
+              "thought": "주문 완료 페이지에 도달하여 코튼 셔츠의 주문이 최종 완료되었으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 15,
+              "thought": "우편번호와 주소를 입력하는 칸이 화면 조작 요소에 보이지 않아 결제를 진행할 수 없습니다. 더 이상 진행할 수 없으니 포기합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 5,
+              "thought": "상품 옵션(색상, 사이즈) 및 장바구니 버튼을 누르기 위해 화면 위쪽으로 스크롤하여 이동하겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "주문 완료 페이지에 도달하여 코튼 셔츠 주문이 정상적으로 완료되었음을 확인했습니다. 목표를 달성했으므로 종료합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 12,
+              "thought": "코튼 셔츠 주문이 완료되었으므로 목표를 성공적으로 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        }
+      },
+      "filmstrip": [
+        {
+          "step": 1,
+          "id": "c0:index.html",
+          "title": "홈",
+          "count": 10,
+          "shot": {
+            "src": "/screens/clean/index.jpg",
+            "w": 1280,
+            "h": 2220
+          },
+          "others": 0
+        },
+        {
+          "step": 2,
+          "id": "c1:list.html",
+          "title": "상품 목록",
+          "count": 10,
+          "shot": {
+            "src": "/screens/clean/list.jpg",
+            "w": 1280,
+            "h": 2250
+          },
+          "others": 0
+        },
+        {
+          "step": 3,
+          "id": "c2:product.html",
+          "title": "상품 상세",
+          "count": 10,
+          "shot": {
+            "src": "/screens/clean/product.jpg",
+            "w": 1280,
+            "h": 1950
+          },
+          "others": 0
+        },
+        {
+          "step": 4,
+          "id": "c3:cart.html",
+          "title": "장바구니",
+          "count": 6,
+          "shot": {
+            "src": "/screens/clean/cart.jpg",
+            "w": 1280,
+            "h": 901
+          },
+          "others": 1
+        },
+        {
+          "step": 5,
+          "id": "c4:checkout.html",
+          "title": "주문/결제",
+          "count": 6,
+          "shot": {
+            "src": "/screens/clean/checkout.jpg",
+            "w": 1280,
+            "h": 2379
+          },
+          "others": 2
+        },
+        {
+          "step": 6,
+          "id": "c5:checkout.html",
+          "title": "주문/결제",
+          "count": 9,
+          "shot": {
+            "src": "/screens/clean/checkout.jpg",
+            "w": 1280,
+            "h": 2379
+          },
+          "others": 0
+        },
+        {
+          "step": 7,
+          "id": "c6:checkout.html",
+          "title": "주문/결제",
+          "count": 9,
+          "shot": {
+            "src": "/screens/clean/checkout.jpg",
+            "w": 1280,
+            "h": 2379
+          },
+          "others": 0
+        },
+        {
+          "step": 8,
+          "id": "c7:checkout.html",
+          "title": "주문/결제",
+          "count": 9,
+          "shot": {
+            "src": "/screens/clean/checkout.jpg",
+            "w": 1280,
+            "h": 2379
+          },
+          "others": 0
+        },
+        {
+          "step": 9,
+          "id": "c8:checkout.html",
+          "title": "주문/결제",
+          "count": 9,
+          "shot": {
+            "src": "/screens/clean/checkout.jpg",
+            "w": 1280,
+            "h": 2379
+          },
+          "others": 0
+        },
+        {
+          "step": 10,
+          "id": "c9:checkout.html",
+          "title": "주문/결제",
+          "count": 9,
+          "shot": {
+            "src": "/screens/clean/checkout.jpg",
+            "w": 1280,
+            "h": 2379
+          },
+          "others": 0
+        },
+        {
+          "step": 11,
+          "id": "c10:checkout.html",
+          "title": "주문/결제",
+          "count": 9,
+          "shot": {
+            "src": "/screens/clean/checkout.jpg",
+            "w": 1280,
+            "h": 2379
+          },
+          "others": 0
+        },
+        {
+          "step": 12,
+          "id": "c11:checkout.html",
+          "title": "주문/결제",
+          "count": 6,
+          "shot": {
+            "src": "/screens/clean/checkout.jpg",
+            "w": 1280,
+            "h": 2379
+          },
+          "others": 1
+        },
+        {
+          "step": 13,
+          "id": "c12:complete.html",
+          "title": "주문 완료",
+          "count": 4,
+          "shot": {
+            "src": "/screens/clean/complete.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "others": 1
+        },
+        {
+          "step": 14,
+          "id": "c13:checkout.html",
+          "title": "주문/결제",
+          "count": 2,
+          "shot": {
+            "src": "/screens/clean/checkout.jpg",
+            "w": 1280,
+            "h": 2379
+          },
+          "others": 0
+        },
+        {
+          "step": 15,
+          "id": "c14:checkout.html",
+          "title": "주문/결제",
+          "count": 2,
+          "shot": {
+            "src": "/screens/clean/checkout.jpg",
+            "w": 1280,
+            "h": 2379
+          },
+          "others": 0
+        },
+        {
+          "step": 16,
+          "id": "c15:checkout.html",
+          "title": "주문/결제",
+          "count": 1,
+          "shot": {
+            "src": "/screens/clean/checkout.jpg",
+            "w": 1280,
+            "h": 2379
+          },
+          "others": 0
+        }
+      ],
+      "personas": {
+        "total": 10,
+        "changed": 3,
+        "exhausted": 0,
+        "baseline_run": "final_buggy10",
+        "compare_run": "final_clean10",
+        "axes": {
+          "literacy": "숙련도",
+          "attention": "주의 지속",
+          "patience": "인내심",
+          "breadth": "탐색 범위"
+        },
+        "items": [
+          {
+            "id": "P001",
+            "code": "P001",
+            "name": "숙련3·주의3·인내4·탐색3",
+            "traits": {
+              "literacy": 3,
+              "attention": 3,
+              "patience": 4,
+              "breadth": 3
+            },
+            "age_band": "숙련3·주의3·인내4·탐색3",
+            "gender": "",
+            "outcome": "success",
+            "step_count": 12,
+            "baseline": {
+              "outcome": "success",
+              "end_label": "달성",
+              "step_count": 21
+            },
+            "compare": {
+              "outcome": "success",
+              "end_label": "달성",
+              "step_count": 12
+            },
+            "changed": false
+          },
+          {
+            "id": "P002",
+            "code": "P002",
+            "name": "숙련1·주의1·인내3·탐색2",
+            "traits": {
+              "literacy": 1,
+              "attention": 1,
+              "patience": 3,
+              "breadth": 2
+            },
+            "age_band": "숙련1·주의1·인내3·탐색2",
+            "gender": "",
+            "outcome": "success",
+            "step_count": 13,
+            "baseline": {
+              "outcome": "success",
+              "end_label": "달성",
+              "step_count": 19
+            },
+            "compare": {
+              "outcome": "success",
+              "end_label": "달성",
+              "step_count": 13
+            },
+            "changed": false
+          },
+          {
+            "id": "P003",
+            "code": "P003",
+            "name": "숙련2·주의2·인내2·탐색2",
+            "traits": {
+              "literacy": 2,
+              "attention": 2,
+              "patience": 2,
+              "breadth": 2
+            },
+            "age_band": "숙련2·주의2·인내2·탐색2",
+            "gender": "",
+            "outcome": "success",
+            "step_count": 13,
+            "baseline": {
+              "outcome": "success",
+              "end_label": "달성",
+              "step_count": 17
+            },
+            "compare": {
+              "outcome": "success",
+              "end_label": "달성",
+              "step_count": 13
+            },
+            "changed": false
+          },
+          {
+            "id": "P004",
+            "code": "P004",
+            "name": "숙련1·주의4·인내5·탐색5",
+            "traits": {
+              "literacy": 1,
+              "attention": 4,
+              "patience": 5,
+              "breadth": 5
+            },
+            "age_band": "숙련1·주의4·인내5·탐색5",
+            "gender": "",
+            "outcome": "drop",
+            "step_count": 16,
+            "baseline": {
+              "outcome": "drop",
+              "end_label": "포기",
+              "step_count": 23
+            },
+            "compare": {
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "step_count": 16
+            },
+            "changed": false
+          },
+          {
+            "id": "P005",
+            "code": "P005",
+            "name": "숙련5·주의4·인내5·탐색4",
+            "traits": {
+              "literacy": 5,
+              "attention": 4,
+              "patience": 5,
+              "breadth": 4
+            },
+            "age_band": "숙련5·주의4·인내5·탐색4",
+            "gender": "",
+            "outcome": "success",
+            "step_count": 13,
+            "baseline": {
+              "outcome": "drop",
+              "end_label": "포기",
+              "step_count": 23
+            },
+            "compare": {
+              "outcome": "success",
+              "end_label": "달성",
+              "step_count": 13
+            },
+            "changed": true
+          },
+          {
+            "id": "P006",
+            "code": "P006",
+            "name": "숙련1·주의2·인내5·탐색5",
+            "traits": {
+              "literacy": 1,
+              "attention": 2,
+              "patience": 5,
+              "breadth": 5
+            },
+            "age_band": "숙련1·주의2·인내5·탐색5",
+            "gender": "",
+            "outcome": "success",
+            "step_count": 13,
+            "baseline": {
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "step_count": 7
+            },
+            "compare": {
+              "outcome": "success",
+              "end_label": "달성",
+              "step_count": 13
+            },
+            "changed": true
+          },
+          {
+            "id": "P007",
+            "code": "P007",
+            "name": "숙련5·주의1·인내2·탐색2",
+            "traits": {
+              "literacy": 5,
+              "attention": 1,
+              "patience": 2,
+              "breadth": 2
+            },
+            "age_band": "숙련5·주의1·인내2·탐색2",
+            "gender": "",
+            "outcome": "drop",
+            "step_count": 15,
+            "baseline": {
+              "outcome": "drop",
+              "end_label": "포기",
+              "step_count": 10
+            },
+            "compare": {
+              "outcome": "drop",
+              "end_label": "포기",
+              "step_count": 15
+            },
+            "changed": false
+          },
+          {
+            "id": "P008",
+            "code": "P008",
+            "name": "숙련4·주의5·인내2·탐색3",
+            "traits": {
+              "literacy": 4,
+              "attention": 5,
+              "patience": 2,
+              "breadth": 3
+            },
+            "age_band": "숙련4·주의5·인내2·탐색3",
+            "gender": "",
+            "outcome": "drop",
+            "step_count": 5,
+            "baseline": {
+              "outcome": "drop",
+              "end_label": "포기",
+              "step_count": 6
+            },
+            "compare": {
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "step_count": 5
+            },
+            "changed": false
+          },
+          {
+            "id": "P009",
+            "code": "P009",
+            "name": "숙련5·주의5·인내5·탐색4",
+            "traits": {
+              "literacy": 5,
+              "attention": 5,
+              "patience": 5,
+              "breadth": 4
+            },
+            "age_band": "숙련5·주의5·인내5·탐색4",
+            "gender": "",
+            "outcome": "success",
+            "step_count": 12,
+            "baseline": {
+              "outcome": "success",
+              "end_label": "달성",
+              "step_count": 24
+            },
+            "compare": {
+              "outcome": "success",
+              "end_label": "달성",
+              "step_count": 12
+            },
+            "changed": false
+          },
+          {
+            "id": "P010",
+            "code": "P010",
+            "name": "숙련5·주의5·인내2·탐색5",
+            "traits": {
+              "literacy": 5,
+              "attention": 5,
+              "patience": 2,
+              "breadth": 5
+            },
+            "age_band": "숙련5·주의5·인내2·탐색5",
+            "gender": "",
+            "outcome": "success",
+            "step_count": 12,
+            "baseline": {
+              "outcome": "drop",
+              "end_label": "포기",
+              "step_count": 8
+            },
+            "compare": {
+              "outcome": "success",
+              "end_label": "달성",
+              "step_count": 12
+            },
+            "changed": true
+          }
+        ]
+      }
+    },
+    "buggy": {
+      "detail": {
+        "persona_total": 10,
+        "journey_count": 10,
+        "success_rate": 40.0,
+        "drop_rate": 60.0,
+        "avg_success_steps": 20.2
+      },
+      "paths": {
+        "total": 10,
+        "success": {
+          "count": 4,
+          "percent": 40.0
+        },
+        "drop": {
+          "count": 6,
+          "percent": 60.0
+        },
+        "paths": {
+          "success": [
+            {
+              "rank": 1,
+              "name": "경로 1",
+              "label": "홈 → 상품 목록 → 상품 상세 → 장바구니 → 주문/결제",
+              "persona_count": 4,
+              "step_count": 20,
+              "screens": [
+                {
+                  "key": "index.html",
+                  "title": "홈",
+                  "url": null
+                },
+                {
+                  "key": "list.html",
+                  "title": "상품 목록",
+                  "url": null
+                },
+                {
+                  "key": "product.html",
+                  "title": "상품 상세",
+                  "url": null
+                },
+                {
+                  "key": "cart.html",
+                  "title": "장바구니",
+                  "url": null
+                },
+                {
+                  "key": "checkout.html",
+                  "title": "주문/결제",
+                  "url": null
+                }
+              ],
+              "more": 1
+            }
+          ],
+          "drop": [
+            {
+              "rank": 1,
+              "name": "경로 1",
+              "label": "홈 → 상품 목록 → 상품 상세 → 장바구니 → 주문/결제",
+              "persona_count": 3,
+              "step_count": 19,
+              "screens": [
+                {
+                  "key": "index.html",
+                  "title": "홈",
+                  "url": null
+                },
+                {
+                  "key": "list.html",
+                  "title": "상품 목록",
+                  "url": null
+                },
+                {
+                  "key": "product.html",
+                  "title": "상품 상세",
+                  "url": null
+                },
+                {
+                  "key": "cart.html",
+                  "title": "장바구니",
+                  "url": null
+                },
+                {
+                  "key": "checkout.html",
+                  "title": "주문/결제",
+                  "url": null
+                }
+              ],
+              "more": 0
+            },
+            {
+              "rank": 2,
+              "name": "경로 2",
+              "label": "홈 → 상품 목록",
+              "persona_count": 2,
+              "step_count": 7,
+              "screens": [
+                {
+                  "key": "index.html",
+                  "title": "홈",
+                  "url": null
+                },
+                {
+                  "key": "list.html",
+                  "title": "상품 목록",
+                  "url": null
+                }
+              ],
+              "more": 0
+            },
+            {
+              "rank": 3,
+              "name": "경로 3",
+              "label": "홈 → 상품 목록 → 상품 상세",
+              "persona_count": 1,
+              "step_count": 7,
+              "screens": [
+                {
+                  "key": "index.html",
+                  "title": "홈",
+                  "url": null
+                },
+                {
+                  "key": "list.html",
+                  "title": "상품 목록",
+                  "url": null
+                },
+                {
+                  "key": "product.html",
+                  "title": "상품 상세",
+                  "url": null
+                }
+              ],
+              "more": 0
+            }
+          ]
+        }
+      },
+      "diagram": {
+        "columns": [
+          {
+            "index": 0,
+            "label": "1단계",
+            "nodes": [
+              {
+                "id": "c0:index.html",
+                "column": 0,
+                "key": "index.html",
+                "title": "홈",
+                "count": 10,
+                "success": 4,
+                "drop": 6
+              }
+            ]
+          },
+          {
+            "index": 1,
+            "label": "2단계",
+            "nodes": [
+              {
+                "id": "c1:index.html",
+                "column": 1,
+                "key": "index.html",
+                "title": "홈",
+                "count": 5,
+                "success": 1,
+                "drop": 4
+              },
+              {
+                "id": "c1:list.html",
+                "column": 1,
+                "key": "list.html",
+                "title": "상품 목록",
+                "count": 5,
+                "success": 3,
+                "drop": 2
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "label": "3단계",
+            "nodes": [
+              {
+                "id": "c2:index.html",
+                "column": 2,
+                "key": "index.html",
+                "title": "홈",
+                "count": 5,
+                "success": 1,
+                "drop": 4
+              },
+              {
+                "id": "c2:list.html",
+                "column": 2,
+                "key": "list.html",
+                "title": "상품 목록",
+                "count": 1,
+                "success": 1,
+                "drop": 0
+              },
+              {
+                "id": "c2:product.html",
+                "column": 2,
+                "key": "product.html",
+                "title": "상품 상세",
+                "count": 4,
+                "success": 2,
+                "drop": 2
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "label": "4단계",
+            "nodes": [
+              {
+                "id": "c3:list.html",
+                "column": 3,
+                "key": "list.html",
+                "title": "상품 목록",
+                "count": 6,
+                "success": 2,
+                "drop": 4
+              },
+              {
+                "id": "c3:product.html",
+                "column": 3,
+                "key": "product.html",
+                "title": "상품 상세",
+                "count": 4,
+                "success": 2,
+                "drop": 2
+              }
+            ]
+          },
+          {
+            "index": 4,
+            "label": "5단계",
+            "nodes": [
+              {
+                "id": "c4:list.html",
+                "column": 4,
+                "key": "list.html",
+                "title": "상품 목록",
+                "count": 5,
+                "success": 1,
+                "drop": 4
+              },
+              {
+                "id": "c4:product.html",
+                "column": 4,
+                "key": "product.html",
+                "title": "상품 상세",
+                "count": 5,
+                "success": 3,
+                "drop": 2
+              }
+            ]
+          },
+          {
+            "index": 5,
+            "label": "6단계",
+            "nodes": [
+              {
+                "id": "c5:list.html",
+                "column": 5,
+                "key": "list.html",
+                "title": "상품 목록",
+                "count": 5,
+                "success": 1,
+                "drop": 4
+              },
+              {
+                "id": "c5:product.html",
+                "column": 5,
+                "key": "product.html",
+                "title": "상품 상세",
+                "count": 5,
+                "success": 3,
+                "drop": 2
+              }
+            ]
+          },
+          {
+            "index": 6,
+            "label": "7단계",
+            "nodes": [
+              {
+                "id": "c6:list.html",
+                "column": 6,
+                "key": "list.html",
+                "title": "상품 목록",
+                "count": 2,
+                "success": 1,
+                "drop": 1
+              },
+              {
+                "id": "c6:product.html",
+                "column": 6,
+                "key": "product.html",
+                "title": "상품 상세",
+                "count": 6,
+                "success": 2,
+                "drop": 4
+              },
+              {
+                "id": "c6:cart.html",
+                "column": 6,
+                "key": "cart.html",
+                "title": "장바구니",
+                "count": 1,
+                "success": 1,
+                "drop": 0
+              },
+              {
+                "id": "c6:end_drop",
+                "column": 6,
+                "key": "end_drop",
+                "title": "이탈",
+                "count": 1,
+                "success": 0,
+                "drop": 1
+              }
+            ]
+          },
+          {
+            "index": 7,
+            "label": "8단계",
+            "nodes": [
+              {
+                "id": "c7:list.html",
+                "column": 7,
+                "key": "list.html",
+                "title": "상품 목록",
+                "count": 1,
+                "success": 0,
+                "drop": 1
+              },
+              {
+                "id": "c7:product.html",
+                "column": 7,
+                "key": "product.html",
+                "title": "상품 상세",
+                "count": 4,
+                "success": 2,
+                "drop": 2
+              },
+              {
+                "id": "c7:cart.html",
+                "column": 7,
+                "key": "cart.html",
+                "title": "장바구니",
+                "count": 2,
+                "success": 1,
+                "drop": 1
+              },
+              {
+                "id": "c7:checkout.html",
+                "column": 7,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 1,
+                "success": 1,
+                "drop": 0
+              },
+              {
+                "id": "c7:end_drop",
+                "column": 7,
+                "key": "end_drop",
+                "title": "이탈",
+                "count": 1,
+                "success": 0,
+                "drop": 1
+              }
+            ]
+          },
+          {
+            "index": 8,
+            "label": "9단계",
+            "nodes": [
+              {
+                "id": "c8:product.html",
+                "column": 8,
+                "key": "product.html",
+                "title": "상품 상세",
+                "count": 4,
+                "success": 2,
+                "drop": 2
+              },
+              {
+                "id": "c8:checkout.html",
+                "column": 8,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 3,
+                "success": 2,
+                "drop": 1
+              },
+              {
+                "id": "c8:end_drop",
+                "column": 8,
+                "key": "end_drop",
+                "title": "이탈",
+                "count": 1,
+                "success": 0,
+                "drop": 1
+              }
+            ]
+          },
+          {
+            "index": 9,
+            "label": "10단계",
+            "nodes": [
+              {
+                "id": "c9:product.html",
+                "column": 9,
+                "key": "product.html",
+                "title": "상품 상세",
+                "count": 4,
+                "success": 2,
+                "drop": 2
+              },
+              {
+                "id": "c9:checkout.html",
+                "column": 9,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 3,
+                "success": 2,
+                "drop": 1
+              }
+            ]
+          },
+          {
+            "index": 10,
+            "label": "11단계",
+            "nodes": [
+              {
+                "id": "c10:product.html",
+                "column": 10,
+                "key": "product.html",
+                "title": "상품 상세",
+                "count": 3,
+                "success": 1,
+                "drop": 2
+              },
+              {
+                "id": "c10:cart.html",
+                "column": 10,
+                "key": "cart.html",
+                "title": "장바구니",
+                "count": 1,
+                "success": 1,
+                "drop": 0
+              },
+              {
+                "id": "c10:checkout.html",
+                "column": 10,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 2,
+                "success": 2,
+                "drop": 0
+              },
+              {
+                "id": "c10:end_drop",
+                "column": 10,
+                "key": "end_drop",
+                "title": "이탈",
+                "count": 1,
+                "success": 0,
+                "drop": 1
+              }
+            ]
+          },
+          {
+            "index": 11,
+            "label": "12단계",
+            "nodes": [
+              {
+                "id": "c11:cart.html",
+                "column": 11,
+                "key": "cart.html",
+                "title": "장바구니",
+                "count": 3,
+                "success": 1,
+                "drop": 2
+              },
+              {
+                "id": "c11:checkout.html",
+                "column": 11,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 3,
+                "success": 3,
+                "drop": 0
+              }
+            ]
+          },
+          {
+            "index": 12,
+            "label": "13단계",
+            "nodes": [
+              {
+                "id": "c12:cart.html",
+                "column": 12,
+                "key": "cart.html",
+                "title": "장바구니",
+                "count": 3,
+                "success": 1,
+                "drop": 2
+              },
+              {
+                "id": "c12:checkout.html",
+                "column": 12,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 3,
+                "success": 3,
+                "drop": 0
+              }
+            ]
+          },
+          {
+            "index": 13,
+            "label": "14단계",
+            "nodes": [
+              {
+                "id": "c13:cart.html",
+                "column": 13,
+                "key": "cart.html",
+                "title": "장바구니",
+                "count": 3,
+                "success": 1,
+                "drop": 2
+              },
+              {
+                "id": "c13:checkout.html",
+                "column": 13,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 3,
+                "success": 3,
+                "drop": 0
+              }
+            ]
+          },
+          {
+            "index": 14,
+            "label": "15단계",
+            "nodes": [
+              {
+                "id": "c14:checkout.html",
+                "column": 14,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 6,
+                "success": 4,
+                "drop": 2
+              }
+            ]
+          },
+          {
+            "index": 15,
+            "label": "16단계",
+            "nodes": [
+              {
+                "id": "c15:checkout.html",
+                "column": 15,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 6,
+                "success": 4,
+                "drop": 2
+              }
+            ]
+          },
+          {
+            "index": 16,
+            "label": "17단계",
+            "nodes": [
+              {
+                "id": "c16:checkout.html",
+                "column": 16,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 5,
+                "success": 3,
+                "drop": 2
+              },
+              {
+                "id": "c16:complete.html",
+                "column": 16,
+                "key": "complete.html",
+                "title": "주문 완료",
+                "count": 1,
+                "success": 1,
+                "drop": 0
+              }
+            ]
+          },
+          {
+            "index": 17,
+            "label": "18단계",
+            "nodes": [
+              {
+                "id": "c17:checkout.html",
+                "column": 17,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 5,
+                "success": 3,
+                "drop": 2
+              },
+              {
+                "id": "c17:end_goal",
+                "column": 17,
+                "key": "end_goal",
+                "title": "달성",
+                "count": 1,
+                "success": 1,
+                "drop": 0
+              }
+            ]
+          },
+          {
+            "index": 18,
+            "label": "19단계",
+            "nodes": [
+              {
+                "id": "c18:checkout.html",
+                "column": 18,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 4,
+                "success": 2,
+                "drop": 2
+              },
+              {
+                "id": "c18:complete.html",
+                "column": 18,
+                "key": "complete.html",
+                "title": "주문 완료",
+                "count": 1,
+                "success": 1,
+                "drop": 0
+              }
+            ]
+          },
+          {
+            "index": 19,
+            "label": "20단계",
+            "nodes": [
+              {
+                "id": "c19:checkout.html",
+                "column": 19,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 4,
+                "success": 2,
+                "drop": 2
+              },
+              {
+                "id": "c19:end_goal",
+                "column": 19,
+                "key": "end_goal",
+                "title": "달성",
+                "count": 1,
+                "success": 1,
+                "drop": 0
+              }
+            ]
+          },
+          {
+            "index": 20,
+            "label": "21단계",
+            "nodes": [
+              {
+                "id": "c20:checkout.html",
+                "column": 20,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 3,
+                "success": 1,
+                "drop": 2
+              },
+              {
+                "id": "c20:complete.html",
+                "column": 20,
+                "key": "complete.html",
+                "title": "주문 완료",
+                "count": 1,
+                "success": 1,
+                "drop": 0
+              }
+            ]
+          },
+          {
+            "index": 21,
+            "label": "22단계",
+            "nodes": [
+              {
+                "id": "c21:checkout.html",
+                "column": 21,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 3,
+                "success": 1,
+                "drop": 2
+              },
+              {
+                "id": "c21:end_goal",
+                "column": 21,
+                "key": "end_goal",
+                "title": "달성",
+                "count": 1,
+                "success": 1,
+                "drop": 0
+              }
+            ]
+          },
+          {
+            "index": 22,
+            "label": "23단계",
+            "nodes": [
+              {
+                "id": "c22:checkout.html",
+                "column": 22,
+                "key": "checkout.html",
+                "title": "주문/결제",
+                "count": 3,
+                "success": 1,
+                "drop": 2
+              }
+            ]
+          },
+          {
+            "index": 23,
+            "label": "24단계",
+            "nodes": [
+              {
+                "id": "c23:complete.html",
+                "column": 23,
+                "key": "complete.html",
+                "title": "주문 완료",
+                "count": 1,
+                "success": 1,
+                "drop": 0
+              },
+              {
+                "id": "c23:end_drop",
+                "column": 23,
+                "key": "end_drop",
+                "title": "이탈",
+                "count": 2,
+                "success": 0,
+                "drop": 2
+              }
+            ]
+          },
+          {
+            "index": 24,
+            "label": "25단계",
+            "nodes": [
+              {
+                "id": "c24:end_goal",
+                "column": 24,
+                "key": "end_goal",
+                "title": "달성",
+                "count": 1,
+                "success": 1,
+                "drop": 0
+              }
+            ]
+          }
+        ],
+        "links": [
+          {
+            "source": "c0:index.html",
+            "target": "c1:list.html",
+            "count": 5,
+            "success": 3,
+            "drop": 2
+          },
+          {
+            "source": "c1:list.html",
+            "target": "c2:list.html",
+            "count": 1,
+            "success": 1,
+            "drop": 0
+          },
+          {
+            "source": "c2:list.html",
+            "target": "c3:list.html",
+            "count": 1,
+            "success": 1,
+            "drop": 0
+          },
+          {
+            "source": "c3:list.html",
+            "target": "c4:product.html",
+            "count": 1,
+            "success": 1,
+            "drop": 0
+          },
+          {
+            "source": "c4:product.html",
+            "target": "c5:product.html",
+            "count": 5,
+            "success": 3,
+            "drop": 2
+          },
+          {
+            "source": "c5:product.html",
+            "target": "c6:product.html",
+            "count": 4,
+            "success": 2,
+            "drop": 2
+          },
+          {
+            "source": "c6:product.html",
+            "target": "c7:product.html",
+            "count": 3,
+            "success": 1,
+            "drop": 2
+          },
+          {
+            "source": "c7:product.html",
+            "target": "c8:product.html",
+            "count": 4,
+            "success": 2,
+            "drop": 2
+          },
+          {
+            "source": "c8:product.html",
+            "target": "c9:product.html",
+            "count": 4,
+            "success": 2,
+            "drop": 2
+          },
+          {
+            "source": "c9:product.html",
+            "target": "c10:cart.html",
+            "count": 1,
+            "success": 1,
+            "drop": 0
+          },
+          {
+            "source": "c10:cart.html",
+            "target": "c11:checkout.html",
+            "count": 1,
+            "success": 1,
+            "drop": 0
+          },
+          {
+            "source": "c11:checkout.html",
+            "target": "c12:checkout.html",
+            "count": 3,
+            "success": 3,
+            "drop": 0
+          },
+          {
+            "source": "c12:checkout.html",
+            "target": "c13:checkout.html",
+            "count": 3,
+            "success": 3,
+            "drop": 0
+          },
+          {
+            "source": "c13:checkout.html",
+            "target": "c14:checkout.html",
+            "count": 3,
+            "success": 3,
+            "drop": 0
+          },
+          {
+            "source": "c14:checkout.html",
+            "target": "c15:checkout.html",
+            "count": 6,
+            "success": 4,
+            "drop": 2
+          },
+          {
+            "source": "c15:checkout.html",
+            "target": "c16:checkout.html",
+            "count": 5,
+            "success": 3,
+            "drop": 2
+          },
+          {
+            "source": "c16:checkout.html",
+            "target": "c17:checkout.html",
+            "count": 5,
+            "success": 3,
+            "drop": 2
+          },
+          {
+            "source": "c17:checkout.html",
+            "target": "c18:checkout.html",
+            "count": 4,
+            "success": 2,
+            "drop": 2
+          },
+          {
+            "source": "c18:checkout.html",
+            "target": "c19:checkout.html",
+            "count": 4,
+            "success": 2,
+            "drop": 2
+          },
+          {
+            "source": "c19:checkout.html",
+            "target": "c20:complete.html",
+            "count": 1,
+            "success": 1,
+            "drop": 0
+          },
+          {
+            "source": "c20:complete.html",
+            "target": "c21:end_goal",
+            "count": 1,
+            "success": 1,
+            "drop": 0
+          },
+          {
+            "source": "c1:list.html",
+            "target": "c2:product.html",
+            "count": 4,
+            "success": 2,
+            "drop": 2
+          },
+          {
+            "source": "c2:product.html",
+            "target": "c3:product.html",
+            "count": 4,
+            "success": 2,
+            "drop": 2
+          },
+          {
+            "source": "c3:product.html",
+            "target": "c4:product.html",
+            "count": 4,
+            "success": 2,
+            "drop": 2
+          },
+          {
+            "source": "c6:product.html",
+            "target": "c7:cart.html",
+            "count": 2,
+            "success": 1,
+            "drop": 1
+          },
+          {
+            "source": "c7:cart.html",
+            "target": "c8:checkout.html",
+            "count": 2,
+            "success": 1,
+            "drop": 1
+          },
+          {
+            "source": "c8:checkout.html",
+            "target": "c9:checkout.html",
+            "count": 3,
+            "success": 2,
+            "drop": 1
+          },
+          {
+            "source": "c9:checkout.html",
+            "target": "c10:checkout.html",
+            "count": 2,
+            "success": 2,
+            "drop": 0
+          },
+          {
+            "source": "c10:checkout.html",
+            "target": "c11:checkout.html",
+            "count": 2,
+            "success": 2,
+            "drop": 0
+          },
+          {
+            "source": "c17:checkout.html",
+            "target": "c18:complete.html",
+            "count": 1,
+            "success": 1,
+            "drop": 0
+          },
+          {
+            "source": "c18:complete.html",
+            "target": "c19:end_goal",
+            "count": 1,
+            "success": 1,
+            "drop": 0
+          },
+          {
+            "source": "c5:product.html",
+            "target": "c6:cart.html",
+            "count": 1,
+            "success": 1,
+            "drop": 0
+          },
+          {
+            "source": "c6:cart.html",
+            "target": "c7:checkout.html",
+            "count": 1,
+            "success": 1,
+            "drop": 0
+          },
+          {
+            "source": "c7:checkout.html",
+            "target": "c8:checkout.html",
+            "count": 1,
+            "success": 1,
+            "drop": 0
+          },
+          {
+            "source": "c15:checkout.html",
+            "target": "c16:complete.html",
+            "count": 1,
+            "success": 1,
+            "drop": 0
+          },
+          {
+            "source": "c16:complete.html",
+            "target": "c17:end_goal",
+            "count": 1,
+            "success": 1,
+            "drop": 0
+          },
+          {
+            "source": "c0:index.html",
+            "target": "c1:index.html",
+            "count": 5,
+            "success": 1,
+            "drop": 4
+          },
+          {
+            "source": "c1:index.html",
+            "target": "c2:index.html",
+            "count": 5,
+            "success": 1,
+            "drop": 4
+          },
+          {
+            "source": "c2:index.html",
+            "target": "c3:list.html",
+            "count": 5,
+            "success": 1,
+            "drop": 4
+          },
+          {
+            "source": "c3:list.html",
+            "target": "c4:list.html",
+            "count": 5,
+            "success": 1,
+            "drop": 4
+          },
+          {
+            "source": "c4:list.html",
+            "target": "c5:list.html",
+            "count": 5,
+            "success": 1,
+            "drop": 4
+          },
+          {
+            "source": "c5:list.html",
+            "target": "c6:product.html",
+            "count": 2,
+            "success": 0,
+            "drop": 2
+          },
+          {
+            "source": "c9:product.html",
+            "target": "c10:product.html",
+            "count": 3,
+            "success": 1,
+            "drop": 2
+          },
+          {
+            "source": "c10:product.html",
+            "target": "c11:cart.html",
+            "count": 3,
+            "success": 1,
+            "drop": 2
+          },
+          {
+            "source": "c11:cart.html",
+            "target": "c12:cart.html",
+            "count": 3,
+            "success": 1,
+            "drop": 2
+          },
+          {
+            "source": "c12:cart.html",
+            "target": "c13:cart.html",
+            "count": 3,
+            "success": 1,
+            "drop": 2
+          },
+          {
+            "source": "c13:cart.html",
+            "target": "c14:checkout.html",
+            "count": 3,
+            "success": 1,
+            "drop": 2
+          },
+          {
+            "source": "c19:checkout.html",
+            "target": "c20:checkout.html",
+            "count": 3,
+            "success": 1,
+            "drop": 2
+          },
+          {
+            "source": "c20:checkout.html",
+            "target": "c21:checkout.html",
+            "count": 3,
+            "success": 1,
+            "drop": 2
+          },
+          {
+            "source": "c21:checkout.html",
+            "target": "c22:checkout.html",
+            "count": 3,
+            "success": 1,
+            "drop": 2
+          },
+          {
+            "source": "c22:checkout.html",
+            "target": "c23:end_drop",
+            "count": 2,
+            "success": 0,
+            "drop": 2
+          },
+          {
+            "source": "c6:product.html",
+            "target": "c7:end_drop",
+            "count": 1,
+            "success": 0,
+            "drop": 1
+          },
+          {
+            "source": "c9:checkout.html",
+            "target": "c10:end_drop",
+            "count": 1,
+            "success": 0,
+            "drop": 1
+          },
+          {
+            "source": "c5:list.html",
+            "target": "c6:end_drop",
+            "count": 1,
+            "success": 0,
+            "drop": 1
+          },
+          {
+            "source": "c5:list.html",
+            "target": "c6:list.html",
+            "count": 2,
+            "success": 1,
+            "drop": 1
+          },
+          {
+            "source": "c6:list.html",
+            "target": "c7:product.html",
+            "count": 1,
+            "success": 1,
+            "drop": 0
+          },
+          {
+            "source": "c22:checkout.html",
+            "target": "c23:complete.html",
+            "count": 1,
+            "success": 1,
+            "drop": 0
+          },
+          {
+            "source": "c23:complete.html",
+            "target": "c24:end_goal",
+            "count": 1,
+            "success": 1,
+            "drop": 0
+          },
+          {
+            "source": "c6:list.html",
+            "target": "c7:list.html",
+            "count": 1,
+            "success": 0,
+            "drop": 1
+          },
+          {
+            "source": "c7:list.html",
+            "target": "c8:end_drop",
+            "count": 1,
+            "success": 0,
+            "drop": 1
+          }
+        ],
+        "total": 10,
+        "truncated": 0,
+        "max_columns": 30
+      },
+      "steps": {
+        "c0:index.html": {
+          "id": "c0:index.html",
+          "step": 1,
+          "screen": "index.html",
+          "title": "홈",
+          "count": 10,
+          "shot": {
+            "src": "/screens/buggy/index.jpg",
+            "w": 1280,
+            "h": 1231
+          },
+          "clicks": [
+            {
+              "x": 194,
+              "y": 46,
+              "w": 22,
+              "h": 20,
+              "label": "상의",
+              "wasted": false,
+              "persona": "P001"
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "w": 22,
+              "h": 20,
+              "label": "상의",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "w": 22,
+              "h": 20,
+              "label": "상의",
+              "wasted": false,
+              "persona": "P003"
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "w": 22,
+              "h": 20,
+              "label": "상의",
+              "wasted": true,
+              "persona": "P004"
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "w": 22,
+              "h": 20,
+              "label": "상의",
+              "wasted": true,
+              "persona": "P005"
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "w": 22,
+              "h": 20,
+              "label": "상의",
+              "wasted": false,
+              "persona": "P006"
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "w": 22,
+              "h": 20,
+              "label": "상의",
+              "wasted": false,
+              "persona": "P007"
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "w": 22,
+              "h": 20,
+              "label": "상의",
+              "wasted": true,
+              "persona": "P008"
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "w": 22,
+              "h": 20,
+              "label": "상의",
+              "wasted": true,
+              "persona": "P009"
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "w": 22,
+              "h": 20,
+              "label": "상의",
+              "wasted": true,
+              "persona": "P010"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 382,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 45,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 382,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 45,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 45,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 45,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 382,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 45,
+              "wasted": false
+            }
+          ],
+          "wasted": 5,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "코튼 셔츠를 찾기 위해 상의 카테고리 메뉴로 이동합니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "코튼 셔츠를 찾기 위해 우선 상의 카테고리를 눌러봅니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "코튼 셔츠를 찾기 위해 상의 카테고리로 이동합니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "코튼 셔츠를 찾기 위해 우선 상의 카테고리로 이동해보겠습니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "코튼 셔츠를 찾기 위해 상의 카테고리로 이동해 보겠습니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "코튼 셔츠를 찾기 위해 '상의' 카테고리로 이동해 보겠습니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "코튼 셔츠를 찾기 위해 상의 카테고리로 이동합니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "코튼 셔츠를 찾기 위해 상의 카테고리 메뉴로 이동하겠습니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "코튼 셔츠를 찾기 위해 상의 카테고리로 이동합니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "코튼 셔츠를 찾기 위해 '상의' 카테고리로 이동해 보겠습니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [],
+          "total": 10
+        },
+        "c1:index.html": {
+          "id": "c1:index.html",
+          "step": 2,
+          "screen": "index.html",
+          "title": "홈",
+          "count": 5,
+          "shot": {
+            "src": "/screens/buggy/index.jpg",
+            "w": 1280,
+            "h": 1231
+          },
+          "clicks": [
+            {
+              "x": 861,
+              "y": 382,
+              "w": 4,
+              "h": 9,
+              "label": "x",
+              "wasted": false,
+              "persona": "P004"
+            },
+            {
+              "x": 861,
+              "y": 382,
+              "w": 4,
+              "h": 9,
+              "label": "x",
+              "wasted": false,
+              "persona": "P005"
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "w": 4,
+              "h": 9,
+              "label": "x",
+              "wasted": false,
+              "persona": "P008"
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "w": 4,
+              "h": 9,
+              "label": "x",
+              "wasted": false,
+              "persona": "P009"
+            },
+            {
+              "x": 861,
+              "y": 382,
+              "w": 4,
+              "h": 9,
+              "label": "x",
+              "wasted": false,
+              "persona": "P010"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 382,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 45,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 382,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 45,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 45,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 45,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 382,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 45,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "화면을 덮고 있는 팝업 창 때문에 다른 버튼이 안 눌리는 것 같습니다. 팝업에 있는 닫기(x) 표시를 눌러 팝업을 닫아보겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업창 때문에 상의 카테고리가 클릭되지 않은 것 같으니, 팝업의 닫기 버튼인 'x'를 클릭해 팝업을 닫겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "화면에 팝업 창이 떠 있어서 상의 메뉴가 안 눌린 것 같습니다. 팝업을 닫기 위해 x 버튼을 누르겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "화면을 덮고 있는 팝업 레이어를 닫기 위해 x 버튼(span_1)을 클릭합니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "화면에 팝업이 떠서 클릭이 안 되었던 것 같으니, 팝업의 닫기 버튼인 'x' 표시(span_1)를 눌러서 팝업을 닫아보겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "목표로 하는 코튼 셔츠를 찾았으니 '오버사이즈 코튼 셔츠' 상품을 클릭하여 상세 페이지로 이동하겠습니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "목표로 하는 오버사이즈 코튼 셔츠 상품이 화면에 바로 보이므로 클릭하여 들어갑니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "목표인 코튼 셔츠를 찾았으니 상품 상세 페이지로 들어가기 위해 오버사이즈 코튼 셔츠 링크를 클릭합니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "목록에 '오버사이즈 코튼 셔츠'가 보여서 이 상품 상세 페이지로 이동하기 위해 링크를 눌러봅니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "목표인 코튼 셔츠가 바로 보이므로 클릭해서 상세 페이지로 이동하겠습니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            }
+          ],
+          "finished": [],
+          "total": 10
+        },
+        "c1:list.html": {
+          "id": "c1:list.html",
+          "step": 2,
+          "screen": "list.html",
+          "title": "상품 목록",
+          "count": 5,
+          "shot": {
+            "src": "/screens/buggy/list.jpg",
+            "w": 1280,
+            "h": 1442
+          },
+          "clicks": [
+            {
+              "x": 186,
+              "y": 304,
+              "w": 272,
+              "h": 383,
+              "label": "오버사이즈 코튼 셔츠 39000 49000 ",
+              "wasted": true,
+              "persona": "P001"
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "w": 272,
+              "h": 383,
+              "label": "오버사이즈 코튼 셔츠 39000 49000 ",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "w": 272,
+              "h": 383,
+              "label": "오버사이즈 코튼 셔츠 39000 49000 ",
+              "wasted": false,
+              "persona": "P003"
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "w": 272,
+              "h": 383,
+              "label": "오버사이즈 코튼 셔츠 39000 49000 ",
+              "wasted": false,
+              "persona": "P006"
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "w": 272,
+              "h": 383,
+              "label": "오버사이즈 코튼 셔츠 39000 49000 ",
+              "wasted": false,
+              "persona": "P007"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 746,
+              "y": 424,
+              "wasted": true
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 746,
+              "y": 424,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": true
+            },
+            {
+              "x": 746,
+              "y": 424,
+              "wasted": true
+            }
+          ],
+          "wasted": 1,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "목표로 하는 코튼 셔츠를 찾았으니 '오버사이즈 코튼 셔츠' 상품을 클릭하여 상세 페이지로 이동하겠습니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "목표로 하는 오버사이즈 코튼 셔츠 상품이 화면에 바로 보이므로 클릭하여 들어갑니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "목표인 코튼 셔츠를 찾았으니 상품 상세 페이지로 들어가기 위해 오버사이즈 코튼 셔츠 링크를 클릭합니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "목록에 '오버사이즈 코튼 셔츠'가 보여서 이 상품 상세 페이지로 이동하기 위해 링크를 눌러봅니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "목표인 코튼 셔츠가 바로 보이므로 클릭해서 상세 페이지로 이동하겠습니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "화면을 덮고 있는 팝업 창 때문에 다른 버튼이 안 눌리는 것 같습니다. 팝업에 있는 닫기(x) 표시를 눌러 팝업을 닫아보겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "index.html",
+              "screen_title": "홈"
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업창 때문에 상의 카테고리가 클릭되지 않은 것 같으니, 팝업의 닫기 버튼인 'x'를 클릭해 팝업을 닫겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "index.html",
+              "screen_title": "홈"
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "화면에 팝업 창이 떠 있어서 상의 메뉴가 안 눌린 것 같습니다. 팝업을 닫기 위해 x 버튼을 누르겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "index.html",
+              "screen_title": "홈"
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "화면을 덮고 있는 팝업 레이어를 닫기 위해 x 버튼(span_1)을 클릭합니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "index.html",
+              "screen_title": "홈"
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "화면에 팝업이 떠서 클릭이 안 되었던 것 같으니, 팝업의 닫기 버튼인 'x' 표시(span_1)를 눌러서 팝업을 닫아보겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "index.html",
+              "screen_title": "홈"
+            }
+          ],
+          "finished": [],
+          "total": 10
+        },
+        "c2:index.html": {
+          "id": "c2:index.html",
+          "step": 3,
+          "screen": "index.html",
+          "title": "홈",
+          "count": 5,
+          "shot": {
+            "src": "/screens/buggy/index.jpg",
+            "w": 1280,
+            "h": 1231
+          },
+          "clicks": [
+            {
+              "x": 194,
+              "y": 45,
+              "w": 22,
+              "h": 20,
+              "label": "상의",
+              "wasted": false,
+              "persona": "P004"
+            },
+            {
+              "x": 194,
+              "y": 45,
+              "w": 22,
+              "h": 20,
+              "label": "상의",
+              "wasted": false,
+              "persona": "P005"
+            },
+            {
+              "x": 194,
+              "y": 45,
+              "w": 22,
+              "h": 20,
+              "label": "상의",
+              "wasted": false,
+              "persona": "P008"
+            },
+            {
+              "x": 194,
+              "y": 45,
+              "w": 22,
+              "h": 20,
+              "label": "상의",
+              "wasted": false,
+              "persona": "P009"
+            },
+            {
+              "x": 194,
+              "y": 45,
+              "w": 22,
+              "h": 20,
+              "label": "상의",
+              "wasted": false,
+              "persona": "P010"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 382,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 45,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 382,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 45,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 45,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 45,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 46,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 382,
+              "wasted": false
+            },
+            {
+              "x": 194,
+              "y": 45,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업을 닫았으니 이제 상의 카테고리로 이동해서 코튼 셔츠가 있는지 찾아보겠습니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업이 닫혔으니 이제 코튼 셔츠를 찾기 위해 '상의' 카테고리를 눌러 이동해보겠습니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업을 닫았으니 상의 카테고리 메뉴를 클릭해 이동하겠습니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "팝업을 닫았으므로, 코튼 셔츠를 찾기 위해 상의 카테고리 메뉴를 클릭합니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업을 닫았으니 이제 다시 '상의' 카테고리를 눌러 코튼 셔츠를 찾아보겠습니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "상품 클릭을 방해하는 팝업 창이 뜨는 것 같으니 닫기 버튼 'x'를 클릭해 팝업을 닫겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "코튼 셔츠 상품 페이지에 왔으니 장바구니에 담기 위해 확인 버튼을 눌러봅니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "상품 옵션 중 색상을 선택하기 위해 아이보리 버튼을 누릅니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "상품 옵션 중 색상으로 아이보리를 선택해보겠습니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "코튼 셔츠 상품 페이지에 도착했으니 아이보리 색상을 선택해봅니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            }
+          ],
+          "finished": [],
+          "total": 10
+        },
+        "c2:list.html": {
+          "id": "c2:list.html",
+          "step": 3,
+          "screen": "list.html",
+          "title": "상품 목록",
+          "count": 1,
+          "shot": {
+            "src": "/screens/buggy/list.jpg",
+            "w": 1280,
+            "h": 1442
+          },
+          "clicks": [
+            {
+              "x": 861,
+              "y": 348,
+              "w": 4,
+              "h": 9,
+              "label": "x",
+              "wasted": false,
+              "persona": "P001"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 746,
+              "y": 424,
+              "wasted": true
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 746,
+              "y": 424,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": true
+            },
+            {
+              "x": 746,
+              "y": 424,
+              "wasted": true
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "상품 클릭을 방해하는 팝업 창이 뜨는 것 같으니 닫기 버튼 'x'를 클릭해 팝업을 닫겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "코튼 셔츠 상품 페이지에 왔으니 장바구니에 담기 위해 확인 버튼을 눌러봅니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "상품 옵션 중 색상을 선택하기 위해 아이보리 버튼을 누릅니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업을 닫았으니 이제 상의 카테고리로 이동해서 코튼 셔츠가 있는지 찾아보겠습니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false,
+              "screen": "index.html",
+              "screen_title": "홈"
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업이 닫혔으니 이제 코튼 셔츠를 찾기 위해 '상의' 카테고리를 눌러 이동해보겠습니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false,
+              "screen": "index.html",
+              "screen_title": "홈"
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "상품 옵션 중 색상으로 아이보리를 선택해보겠습니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "코튼 셔츠 상품 페이지에 도착했으니 아이보리 색상을 선택해봅니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업을 닫았으니 상의 카테고리 메뉴를 클릭해 이동하겠습니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false,
+              "screen": "index.html",
+              "screen_title": "홈"
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "팝업을 닫았으므로, 코튼 셔츠를 찾기 위해 상의 카테고리 메뉴를 클릭합니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false,
+              "screen": "index.html",
+              "screen_title": "홈"
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업을 닫았으니 이제 다시 '상의' 카테고리를 눌러 코튼 셔츠를 찾아보겠습니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false,
+              "screen": "index.html",
+              "screen_title": "홈"
+            }
+          ],
+          "finished": [],
+          "total": 10
+        },
+        "c2:product.html": {
+          "id": "c2:product.html",
+          "step": 3,
+          "screen": "product.html",
+          "title": "상품 상세",
+          "count": 4,
+          "shot": {
+            "src": "/screens/buggy/product.jpg",
+            "w": 1280,
+            "h": 1393
+          },
+          "clicks": [
+            {
+              "x": 687,
+              "y": 225,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "w": 44,
+              "h": 16,
+              "label": "아이보리",
+              "wasted": true,
+              "persona": "P003"
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "w": 44,
+              "h": 16,
+              "label": "아이보리",
+              "wasted": false,
+              "persona": "P006"
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "w": 44,
+              "h": 16,
+              "label": "아이보리",
+              "wasted": false,
+              "persona": "P007"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 680,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 508,
+              "wasted": false
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            }
+          ],
+          "wasted": 1,
+          "personas": [
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "코튼 셔츠 상품 페이지에 왔으니 장바구니에 담기 위해 확인 버튼을 눌러봅니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "상품 옵션 중 색상을 선택하기 위해 아이보리 버튼을 누릅니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "상품 옵션 중 색상으로 아이보리를 선택해보겠습니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "코튼 셔츠 상품 페이지에 도착했으니 아이보리 색상을 선택해봅니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "상품 클릭을 방해하는 팝업 창이 뜨는 것 같으니 닫기 버튼 'x'를 클릭해 팝업을 닫겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업을 닫았으니 이제 상의 카테고리로 이동해서 코튼 셔츠가 있는지 찾아보겠습니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false,
+              "screen": "index.html",
+              "screen_title": "홈"
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업이 닫혔으니 이제 코튼 셔츠를 찾기 위해 '상의' 카테고리를 눌러 이동해보겠습니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false,
+              "screen": "index.html",
+              "screen_title": "홈"
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업을 닫았으니 상의 카테고리 메뉴를 클릭해 이동하겠습니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false,
+              "screen": "index.html",
+              "screen_title": "홈"
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "팝업을 닫았으므로, 코튼 셔츠를 찾기 위해 상의 카테고리 메뉴를 클릭합니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false,
+              "screen": "index.html",
+              "screen_title": "홈"
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업을 닫았으니 이제 다시 '상의' 카테고리를 눌러 코튼 셔츠를 찾아보겠습니다.",
+              "action": "click",
+              "target": "상의",
+              "blocked": false,
+              "screen": "index.html",
+              "screen_title": "홈"
+            }
+          ],
+          "finished": [],
+          "total": 10
+        },
+        "c3:list.html": {
+          "id": "c3:list.html",
+          "step": 4,
+          "screen": "list.html",
+          "title": "상품 목록",
+          "count": 6,
+          "shot": {
+            "src": "/screens/buggy/list.jpg",
+            "w": 1280,
+            "h": 1442
+          },
+          "clicks": [
+            {
+              "x": 186,
+              "y": 304,
+              "w": 272,
+              "h": 383,
+              "label": "오버사이즈 코튼 셔츠 39000 49000 ",
+              "wasted": false,
+              "persona": "P001"
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "w": 272,
+              "h": 383,
+              "label": "오버사이즈 코튼 셔츠 39000 49000 ",
+              "wasted": true,
+              "persona": "P004"
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "w": 272,
+              "h": 383,
+              "label": "오버사이즈 코튼 셔츠 39000 49000 ",
+              "wasted": true,
+              "persona": "P005"
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "w": 272,
+              "h": 383,
+              "label": "오버사이즈 코튼 셔츠 39000 49000 ",
+              "wasted": true,
+              "persona": "P008"
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "w": 272,
+              "h": 383,
+              "label": "오버사이즈 코튼 셔츠 39000 49000 ",
+              "wasted": true,
+              "persona": "P009"
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "w": 272,
+              "h": 383,
+              "label": "오버사이즈 코튼 셔츠 39000 49000 ",
+              "wasted": true,
+              "persona": "P010"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 746,
+              "y": 424,
+              "wasted": true
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 746,
+              "y": 424,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": true
+            },
+            {
+              "x": 746,
+              "y": 424,
+              "wasted": true
+            }
+          ],
+          "wasted": 5,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "팝업을 닫았으니 이제 '오버사이즈 코튼 셔츠' 상품을 클릭하여 상세 페이지로 이동하겠습니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "목록에서 '오버사이즈 코튼 셔츠' 상품을 발견했습니다. 상세 페이지로 이동하기 위해 해당 상품을 클릭하겠습니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "목표인 코튼 셔츠를 주문하기 위해 상품 목록에서 '오버사이즈 코튼 셔츠' 상품 상세 페이지로 이동합니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "목표인 코튼 셔츠(오버사이즈 코튼 셔츠)가 목록에 보여서 선택해 상세 페이지로 이동하겠습니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "목록에서 오버사이즈 코튼 셔츠 상품을 찾아 클릭하여 상세 페이지로 이동하겠습니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "목록 첫 번째에 있는 '오버사이즈 코튼 셔츠' 상품을 클릭해서 상세 페이지로 이동하겠습니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "코튼 셔츠의 옵션을 선택하기 위해 색상 중에서 아이보리를 눌러봅니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "상품 옵션을 선택하려고 했는데 팝업이 가로막고 있는 것 같습니다. 팝업을 닫기 위해 'x' 버튼을 눌러봅니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "색상을 선택했으니 이제 사이즈를 선택해보겠습니다. M 사이즈를 눌러보겠습니다.",
+              "action": "click",
+              "target": "M",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "옵션을 골랐으니 확인 버튼을 눌러 장바구니에 담아봅니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            }
+          ],
+          "finished": [],
+          "total": 10
+        },
+        "c3:product.html": {
+          "id": "c3:product.html",
+          "step": 4,
+          "screen": "product.html",
+          "title": "상품 상세",
+          "count": 4,
+          "shot": {
+            "src": "/screens/buggy/product.jpg",
+            "w": 1280,
+            "h": 1393
+          },
+          "clicks": [
+            {
+              "x": 692,
+              "y": 143,
+              "w": 44,
+              "h": 16,
+              "label": "아이보리",
+              "wasted": true,
+              "persona": "P002"
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "w": 4,
+              "h": 9,
+              "label": "x",
+              "wasted": false,
+              "persona": "P003"
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "w": 20,
+              "h": 16,
+              "label": "M",
+              "wasted": true,
+              "persona": "P006"
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": true,
+              "persona": "P007"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 680,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 508,
+              "wasted": false
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            }
+          ],
+          "wasted": 3,
+          "personas": [
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "코튼 셔츠의 옵션을 선택하기 위해 색상 중에서 아이보리를 눌러봅니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "상품 옵션을 선택하려고 했는데 팝업이 가로막고 있는 것 같습니다. 팝업을 닫기 위해 'x' 버튼을 눌러봅니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "색상을 선택했으니 이제 사이즈를 선택해보겠습니다. M 사이즈를 눌러보겠습니다.",
+              "action": "click",
+              "target": "M",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "옵션을 골랐으니 확인 버튼을 눌러 장바구니에 담아봅니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "팝업을 닫았으니 이제 '오버사이즈 코튼 셔츠' 상품을 클릭하여 상세 페이지로 이동하겠습니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "목록에서 '오버사이즈 코튼 셔츠' 상품을 발견했습니다. 상세 페이지로 이동하기 위해 해당 상품을 클릭하겠습니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "목표인 코튼 셔츠를 주문하기 위해 상품 목록에서 '오버사이즈 코튼 셔츠' 상품 상세 페이지로 이동합니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "목표인 코튼 셔츠(오버사이즈 코튼 셔츠)가 목록에 보여서 선택해 상세 페이지로 이동하겠습니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "목록에서 오버사이즈 코튼 셔츠 상품을 찾아 클릭하여 상세 페이지로 이동하겠습니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "목록 첫 번째에 있는 '오버사이즈 코튼 셔츠' 상품을 클릭해서 상세 페이지로 이동하겠습니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            }
+          ],
+          "finished": [],
+          "total": 10
+        },
+        "c4:list.html": {
+          "id": "c4:list.html",
+          "step": 5,
+          "screen": "list.html",
+          "title": "상품 목록",
+          "count": 5,
+          "shot": {
+            "src": "/screens/buggy/list.jpg",
+            "w": 1280,
+            "h": 1442
+          },
+          "clicks": [
+            {
+              "x": 861,
+              "y": 348,
+              "w": 4,
+              "h": 9,
+              "label": "x",
+              "wasted": false,
+              "persona": "P004"
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "w": 4,
+              "h": 9,
+              "label": "x",
+              "wasted": false,
+              "persona": "P005"
+            },
+            {
+              "x": 746,
+              "y": 424,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": true,
+              "persona": "P008"
+            },
+            {
+              "x": 746,
+              "y": 424,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": true,
+              "persona": "P009"
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "w": 4,
+              "h": 9,
+              "label": "x",
+              "wasted": true,
+              "persona": "P010"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 746,
+              "y": 424,
+              "wasted": true
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 746,
+              "y": 424,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": true
+            },
+            {
+              "x": 746,
+              "y": 424,
+              "wasted": true
+            }
+          ],
+          "wasted": 3,
+          "personas": [
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "상품을 클릭하려고 했는데 팝업 층이 또 가리고 있는 것 같습니다. 화면 아래에 남아있는 닫기(x) 버튼을 클릭해 팝업을 지워보겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "상품 링크가 팝업 레이어에 가려져 눌리지 않았으므로, 팝업의 닫기 버튼(x)을 눌러 팝업을 닫겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭이 아직 사라지지 않아 상품이 클릭되지 않는 것 같습니다. 팝업 하단의 확인 버튼을 눌러 팝업을 닫아보겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "이메일 팝업이 여전히 화면을 덮고 있어서 상품 선택이 안 되네요. 팝업의 확인 버튼(div_11)을 눌러 팝업을 닫아보겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "오버사이즈 코튼 셔츠를 클릭하려 했으나 여전히 팝업 레이어가 화면을 덮고 있습니다. 팝업의 닫기 버튼(x)을 다시 클릭해 보겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "상품 옵션에서 먼저 색상 '아이보리'를 선택하겠습니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "화면을 덮고 있는 팝업 창을 닫기 위해 x 버튼을 눌러봅니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "팝업을 닫았으니 상품 색상을 선택하기 위해 아이보리를 클릭해봅니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "팝업창이 화면을 가리고 있어 클릭이 안 된 것 같습니다. 닫기 버튼인 'x'를 눌러 팝업을 닫겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "화면을 덮고 있는 팝업 창을 닫기 위해 x 버튼을 누릅니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            }
+          ],
+          "finished": [],
+          "total": 10
+        },
+        "c4:product.html": {
+          "id": "c4:product.html",
+          "step": 5,
+          "screen": "product.html",
+          "title": "상품 상세",
+          "count": 5,
+          "shot": {
+            "src": "/screens/buggy/product.jpg",
+            "w": 1280,
+            "h": 1393
+          },
+          "clicks": [
+            {
+              "x": 692,
+              "y": 143,
+              "w": 44,
+              "h": 16,
+              "label": "아이보리",
+              "wasted": false,
+              "persona": "P001"
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "w": 4,
+              "h": 9,
+              "label": "x",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "w": 44,
+              "h": 16,
+              "label": "아이보리",
+              "wasted": true,
+              "persona": "P003"
+            },
+            {
+              "x": 861,
+              "y": 508,
+              "w": 4,
+              "h": 9,
+              "label": "x",
+              "wasted": false,
+              "persona": "P006"
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "w": 4,
+              "h": 9,
+              "label": "x",
+              "wasted": false,
+              "persona": "P007"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 680,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 508,
+              "wasted": false
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            }
+          ],
+          "wasted": 1,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "상품 옵션에서 먼저 색상 '아이보리'를 선택하겠습니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "화면을 덮고 있는 팝업 창을 닫기 위해 x 버튼을 눌러봅니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "팝업을 닫았으니 상품 색상을 선택하기 위해 아이보리를 클릭해봅니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "팝업창이 화면을 가리고 있어 클릭이 안 된 것 같습니다. 닫기 버튼인 'x'를 눌러 팝업을 닫겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "화면을 덮고 있는 팝업 창을 닫기 위해 x 버튼을 누릅니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "상품을 클릭하려고 했는데 팝업 층이 또 가리고 있는 것 같습니다. 화면 아래에 남아있는 닫기(x) 버튼을 클릭해 팝업을 지워보겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "상품 링크가 팝업 레이어에 가려져 눌리지 않았으므로, 팝업의 닫기 버튼(x)을 눌러 팝업을 닫겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭이 아직 사라지지 않아 상품이 클릭되지 않는 것 같습니다. 팝업 하단의 확인 버튼을 눌러 팝업을 닫아보겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "이메일 팝업이 여전히 화면을 덮고 있어서 상품 선택이 안 되네요. 팝업의 확인 버튼(div_11)을 눌러 팝업을 닫아보겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "오버사이즈 코튼 셔츠를 클릭하려 했으나 여전히 팝업 레이어가 화면을 덮고 있습니다. 팝업의 닫기 버튼(x)을 다시 클릭해 보겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            }
+          ],
+          "finished": [],
+          "total": 10
+        },
+        "c5:list.html": {
+          "id": "c5:list.html",
+          "step": 6,
+          "screen": "list.html",
+          "title": "상품 목록",
+          "count": 5,
+          "shot": {
+            "src": "/screens/buggy/list.jpg",
+            "w": 1280,
+            "h": 1442
+          },
+          "clicks": [
+            {
+              "x": 186,
+              "y": 304,
+              "w": 272,
+              "h": 383,
+              "label": "오버사이즈 코튼 셔츠 39000 49000 ",
+              "wasted": false,
+              "persona": "P004"
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "w": 272,
+              "h": 383,
+              "label": "오버사이즈 코튼 셔츠 39000 49000 ",
+              "wasted": false,
+              "persona": "P005"
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "w": 4,
+              "h": 9,
+              "label": "x",
+              "wasted": false,
+              "persona": "P009"
+            },
+            {
+              "x": 746,
+              "y": 424,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": true,
+              "persona": "P010"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 746,
+              "y": 424,
+              "wasted": true
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 746,
+              "y": 424,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": true
+            },
+            {
+              "x": 746,
+              "y": 424,
+              "wasted": true
+            }
+          ],
+          "wasted": 1,
+          "personas": [
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업을 완전히 닫았으니 이제 '오버사이즈 코튼 셔츠' 상품을 클릭해 상세 페이지로 이동하겠습니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업을 닫았으니 '오버사이즈 코튼 셔츠' 상품 페이지로 이동해보겠습니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "give_up",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "팝업창이 아직 다 닫히지 않은 것 같으니, 팝업의 닫기 버튼(span_1)을 다시 눌러보겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업이 여전히 가려져 클릭이 안 되는 것 같습니다. 팝업 하단의 '확인' 버튼(div_11)을 눌러 팝업을 닫아보겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "상품 옵션을 고르려는데 이메일 할인 팝업이 다시 떠서, 닫기 버튼(x)을 눌러 팝업을 닫겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "팝업이 닫혔으니 다시 옵션 선택을 시도하기 위해 아이보리 색상을 클릭합니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "색상 선택이 안 되는 것 같으니 바로 구매 버튼(div_2)을 눌러 진행해보겠습니다.",
+              "action": "click",
+              "target": "구매",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "팝업이 닫혔으므로 다시 M 사이즈 옵션을 눌러 선택해보겠습니다.",
+              "action": "click",
+              "target": "M",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "팝업을 닫았으니 다시 상품 장바구니 담기(확인) 버튼을 눌러봅니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            }
+          ],
+          "finished": [],
+          "total": 10
+        },
+        "c5:product.html": {
+          "id": "c5:product.html",
+          "step": 6,
+          "screen": "product.html",
+          "title": "상품 상세",
+          "count": 5,
+          "shot": {
+            "src": "/screens/buggy/product.jpg",
+            "w": 1280,
+            "h": 1393
+          },
+          "clicks": [
+            {
+              "x": 861,
+              "y": 348,
+              "w": 4,
+              "h": 9,
+              "label": "x",
+              "wasted": false,
+              "persona": "P001"
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "w": 44,
+              "h": 16,
+              "label": "아이보리",
+              "wasted": true,
+              "persona": "P002"
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "w": 34,
+              "h": 20,
+              "label": "구매",
+              "wasted": false,
+              "persona": "P003"
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "w": 20,
+              "h": 16,
+              "label": "M",
+              "wasted": true,
+              "persona": "P006"
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": true,
+              "persona": "P007"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 680,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 508,
+              "wasted": false
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            }
+          ],
+          "wasted": 3,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "상품 옵션을 고르려는데 이메일 할인 팝업이 다시 떠서, 닫기 버튼(x)을 눌러 팝업을 닫겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "팝업이 닫혔으니 다시 옵션 선택을 시도하기 위해 아이보리 색상을 클릭합니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "색상 선택이 안 되는 것 같으니 바로 구매 버튼(div_2)을 눌러 진행해보겠습니다.",
+              "action": "click",
+              "target": "구매",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "팝업이 닫혔으므로 다시 M 사이즈 옵션을 눌러 선택해보겠습니다.",
+              "action": "click",
+              "target": "M",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "팝업을 닫았으니 다시 상품 장바구니 담기(확인) 버튼을 눌러봅니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업을 완전히 닫았으니 이제 '오버사이즈 코튼 셔츠' 상품을 클릭해 상세 페이지로 이동하겠습니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업을 닫았으니 '오버사이즈 코튼 셔츠' 상품 페이지로 이동해보겠습니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "give_up",
+              "target": "",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "팝업창이 아직 다 닫히지 않은 것 같으니, 팝업의 닫기 버튼(span_1)을 다시 눌러보겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업이 여전히 가려져 클릭이 안 되는 것 같습니다. 팝업 하단의 '확인' 버튼(div_11)을 눌러 팝업을 닫아보겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            }
+          ],
+          "finished": [],
+          "total": 10
+        },
+        "c6:list.html": {
+          "id": "c6:list.html",
+          "step": 7,
+          "screen": "list.html",
+          "title": "상품 목록",
+          "count": 2,
+          "shot": {
+            "src": "/screens/buggy/list.jpg",
+            "w": 1280,
+            "h": 1442
+          },
+          "clicks": [
+            {
+              "x": 186,
+              "y": 304,
+              "w": 272,
+              "h": 383,
+              "label": "오버사이즈 코튼 셔츠 39000 49000 ",
+              "wasted": false,
+              "persona": "P009"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 746,
+              "y": 424,
+              "wasted": true
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 746,
+              "y": 424,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": true
+            },
+            {
+              "x": 746,
+              "y": 424,
+              "wasted": true
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "팝업을 닫았으니 오버사이즈 코튼 셔츠 상품을 클릭하여 상세 페이지로 이동합니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 때문에 상품 클릭이 안 되고 있으므로, 화면을 아래로 스크롤하여 팝업 레이어를 벗어날 수 있는지 확인하겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "팝업을 닫았으니 상품 색상 옵션인 '아이보리'를 클릭해 선택하겠습니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "아이보리 버튼이 반응이 없으니 일단 바로 구매 버튼을 눌러봅니다.",
+              "action": "click",
+              "target": "구매",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "장바구니에 코튼 셔츠가 담겨 있으니 주문을 진행하기 위해 확인 버튼을 누릅니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "상품 옵션 중 색상을 선택하기 위해 '아이보리'를 클릭해 보겠습니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "코튼 셔츠 상품 상세 페이지에 있으므로 먼저 아이보리 색상 옵션을 선택하겠습니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "click",
+              "target": "M",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "장바구니 담기(확인) 버튼이 작동하지 않으니 바로 구매 버튼을 눌러 주문을 시도해봅니다.",
+              "action": "click",
+              "target": "구매",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c6:product.html": {
+          "id": "c6:product.html",
+          "step": 7,
+          "screen": "product.html",
+          "title": "상품 상세",
+          "count": 6,
+          "shot": {
+            "src": "/screens/buggy/product.jpg",
+            "w": 1280,
+            "h": 1393
+          },
+          "clicks": [
+            {
+              "x": 692,
+              "y": 143,
+              "w": 44,
+              "h": 16,
+              "label": "아이보리",
+              "wasted": true,
+              "persona": "P001"
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "w": 34,
+              "h": 20,
+              "label": "구매",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "w": 44,
+              "h": 16,
+              "label": "아이보리",
+              "wasted": true,
+              "persona": "P004"
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "w": 44,
+              "h": 16,
+              "label": "아이보리",
+              "wasted": true,
+              "persona": "P005"
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "w": 20,
+              "h": 16,
+              "label": "M",
+              "wasted": true,
+              "persona": "P006"
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "w": 34,
+              "h": 20,
+              "label": "구매",
+              "wasted": false,
+              "persona": "P007"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 680,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 508,
+              "wasted": false
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            }
+          ],
+          "wasted": 4,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "팝업을 닫았으니 상품 색상 옵션인 '아이보리'를 클릭해 선택하겠습니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "아이보리 버튼이 반응이 없으니 일단 바로 구매 버튼을 눌러봅니다.",
+              "action": "click",
+              "target": "구매",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "상품 옵션 중 색상을 선택하기 위해 '아이보리'를 클릭해 보겠습니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "코튼 셔츠 상품 상세 페이지에 있으므로 먼저 아이보리 색상 옵션을 선택하겠습니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "click",
+              "target": "M",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "장바구니 담기(확인) 버튼이 작동하지 않으니 바로 구매 버튼을 눌러 주문을 시도해봅니다.",
+              "action": "click",
+              "target": "구매",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "장바구니에 코튼 셔츠가 담겨 있으니 주문을 진행하기 위해 확인 버튼을 누릅니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "팝업을 닫았으니 오버사이즈 코튼 셔츠 상품을 클릭하여 상세 페이지로 이동합니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 때문에 상품 클릭이 안 되고 있으므로, 화면을 아래로 스크롤하여 팝업 레이어를 벗어날 수 있는지 확인하겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c6:cart.html": {
+          "id": "c6:cart.html",
+          "step": 7,
+          "screen": "cart.html",
+          "title": "장바구니",
+          "count": 1,
+          "shot": {
+            "src": "/screens/buggy/cart.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [
+            {
+              "x": 1213,
+              "y": 245,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": false,
+              "persona": "P003"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 1213,
+              "y": 313,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 313,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "장바구니에 코튼 셔츠가 담겨 있으니 주문을 진행하기 위해 확인 버튼을 누릅니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "팝업을 닫았으니 상품 색상 옵션인 '아이보리'를 클릭해 선택하겠습니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "아이보리 버튼이 반응이 없으니 일단 바로 구매 버튼을 눌러봅니다.",
+              "action": "click",
+              "target": "구매",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "상품 옵션 중 색상을 선택하기 위해 '아이보리'를 클릭해 보겠습니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "코튼 셔츠 상품 상세 페이지에 있으므로 먼저 아이보리 색상 옵션을 선택하겠습니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "click",
+              "target": "M",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "장바구니 담기(확인) 버튼이 작동하지 않으니 바로 구매 버튼을 눌러 주문을 시도해봅니다.",
+              "action": "click",
+              "target": "구매",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "팝업을 닫았으니 오버사이즈 코튼 셔츠 상품을 클릭하여 상세 페이지로 이동합니다.",
+              "action": "click",
+              "target": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 때문에 상품 클릭이 안 되고 있으므로, 화면을 아래로 스크롤하여 팝업 레이어를 벗어날 수 있는지 확인하겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c7:list.html": {
+          "id": "c7:list.html",
+          "step": 8,
+          "screen": "list.html",
+          "title": "상품 목록",
+          "count": 1,
+          "shot": {
+            "src": "/screens/buggy/list.jpg",
+            "w": 1280,
+            "h": 1442
+          },
+          "clicks": [],
+          "screen_clicks": [
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 746,
+              "y": 424,
+              "wasted": true
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 746,
+              "y": 424,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": false
+            },
+            {
+              "x": 186,
+              "y": 304,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": true
+            },
+            {
+              "x": 746,
+              "y": 424,
+              "wasted": true
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "give_up",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "색상 선택이 안 된 것 같아 상품을 장바구니에 담기 위해 '확인' 버튼(div_1)을 먼저 클릭해 보겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "장바구니 화면에서 상품을 확인했으니 하단의 '확인' 버튼을 눌러 주문 단계로 넘어갑니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문을 완료하기 위해 이름 입력 칸에 이름을 작성합니다.",
+              "action": "type",
+              "target": "이름",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "옵션 선택이 클릭되지 않는 것을 보니 화면을 가리는 레이어/팝업이 아직 남아있는 것 같습니다. 닫기 버튼(x)을 눌러서 팝업을 닫겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업이 다시 화면을 덮어 색상 옵션이 선택되지 않았으므로, 팝업 닫기 버튼(x)을 눌러 팝업을 닫겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "장바구니에 코튼 셔츠가 이미 담겨있으니 바로 주문 진행을 위해 확인 버튼을 누릅니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "현재 상품이 오버사이즈 코튼 셔츠 상세 페이지에 위치해 있으므로, 먼저 색상 옵션(아이보리)을 선택하겠습니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c7:product.html": {
+          "id": "c7:product.html",
+          "step": 8,
+          "screen": "product.html",
+          "title": "상품 상세",
+          "count": 4,
+          "shot": {
+            "src": "/screens/buggy/product.jpg",
+            "w": 1280,
+            "h": 1393
+          },
+          "clicks": [
+            {
+              "x": 687,
+              "y": 225,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": true,
+              "persona": "P001"
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "w": 4,
+              "h": 9,
+              "label": "x",
+              "wasted": false,
+              "persona": "P004"
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "w": 4,
+              "h": 9,
+              "label": "x",
+              "wasted": false,
+              "persona": "P005"
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "w": 44,
+              "h": 16,
+              "label": "아이보리",
+              "wasted": true,
+              "persona": "P009"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 680,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 508,
+              "wasted": false
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            }
+          ],
+          "wasted": 2,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "색상 선택이 안 된 것 같아 상품을 장바구니에 담기 위해 '확인' 버튼(div_1)을 먼저 클릭해 보겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "옵션 선택이 클릭되지 않는 것을 보니 화면을 가리는 레이어/팝업이 아직 남아있는 것 같습니다. 닫기 버튼(x)을 눌러서 팝업을 닫겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업이 다시 화면을 덮어 색상 옵션이 선택되지 않았으므로, 팝업 닫기 버튼(x)을 눌러 팝업을 닫겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "현재 상품이 오버사이즈 코튼 셔츠 상세 페이지에 위치해 있으므로, 먼저 색상 옵션(아이보리)을 선택하겠습니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "장바구니 화면에서 상품을 확인했으니 하단의 '확인' 버튼을 눌러 주문 단계로 넘어갑니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문을 완료하기 위해 이름 입력 칸에 이름을 작성합니다.",
+              "action": "type",
+              "target": "이름",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "장바구니에 코튼 셔츠가 이미 담겨있으니 바로 주문 진행을 위해 확인 버튼을 누릅니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "give_up",
+              "target": "",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c7:cart.html": {
+          "id": "c7:cart.html",
+          "step": 8,
+          "screen": "cart.html",
+          "title": "장바구니",
+          "count": 2,
+          "shot": {
+            "src": "/screens/buggy/cart.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [
+            {
+              "x": 1213,
+              "y": 313,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": false,
+              "persona": "P007"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 1213,
+              "y": 313,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 313,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "장바구니 화면에서 상품을 확인했으니 하단의 '확인' 버튼을 눌러 주문 단계로 넘어갑니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "장바구니에 코튼 셔츠가 이미 담겨있으니 바로 주문 진행을 위해 확인 버튼을 누릅니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "색상 선택이 안 된 것 같아 상품을 장바구니에 담기 위해 '확인' 버튼(div_1)을 먼저 클릭해 보겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문을 완료하기 위해 이름 입력 칸에 이름을 작성합니다.",
+              "action": "type",
+              "target": "이름",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "옵션 선택이 클릭되지 않는 것을 보니 화면을 가리는 레이어/팝업이 아직 남아있는 것 같습니다. 닫기 버튼(x)을 눌러서 팝업을 닫겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업이 다시 화면을 덮어 색상 옵션이 선택되지 않았으므로, 팝업 닫기 버튼(x)을 눌러 팝업을 닫겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "현재 상품이 오버사이즈 코튼 셔츠 상세 페이지에 위치해 있으므로, 먼저 색상 옵션(아이보리)을 선택하겠습니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "give_up",
+              "target": "",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c7:checkout.html": {
+          "id": "c7:checkout.html",
+          "step": 8,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 1,
+          "shot": {
+            "src": "/screens/buggy/checkout.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [
+            {
+              "x": 344,
+              "y": 138,
+              "w": 587,
+              "h": 22,
+              "label": "이름",
+              "wasted": false,
+              "persona": "P003"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문을 완료하기 위해 이름 입력 칸에 이름을 작성합니다.",
+              "action": "type",
+              "target": "이름",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "색상 선택이 안 된 것 같아 상품을 장바구니에 담기 위해 '확인' 버튼(div_1)을 먼저 클릭해 보겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "장바구니 화면에서 상품을 확인했으니 하단의 '확인' 버튼을 눌러 주문 단계로 넘어갑니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "옵션 선택이 클릭되지 않는 것을 보니 화면을 가리는 레이어/팝업이 아직 남아있는 것 같습니다. 닫기 버튼(x)을 눌러서 팝업을 닫겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업이 다시 화면을 덮어 색상 옵션이 선택되지 않았으므로, 팝업 닫기 버튼(x)을 눌러 팝업을 닫겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "장바구니에 코튼 셔츠가 이미 담겨있으니 바로 주문 진행을 위해 확인 버튼을 누릅니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "현재 상품이 오버사이즈 코튼 셔츠 상세 페이지에 위치해 있으므로, 먼저 색상 옵션(아이보리)을 선택하겠습니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "give_up",
+              "target": "",
+              "blocked": false,
+              "screen": "list.html",
+              "screen_title": "상품 목록"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c8:product.html": {
+          "id": "c8:product.html",
+          "step": 9,
+          "screen": "product.html",
+          "title": "상품 상세",
+          "count": 4,
+          "shot": {
+            "src": "/screens/buggy/product.jpg",
+            "w": 1280,
+            "h": 1393
+          },
+          "clicks": [
+            {
+              "x": 680,
+              "y": 169,
+              "w": 20,
+              "h": 16,
+              "label": "S",
+              "wasted": true,
+              "persona": "P001"
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "w": 44,
+              "h": 16,
+              "label": "아이보리",
+              "wasted": true,
+              "persona": "P004"
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "w": 44,
+              "h": 16,
+              "label": "아이보리",
+              "wasted": true,
+              "persona": "P005"
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "w": 4,
+              "h": 9,
+              "label": "x",
+              "wasted": false,
+              "persona": "P009"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 680,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 508,
+              "wasted": false
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            }
+          ],
+          "wasted": 3,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "색상 선택이 반응하지 않아서 사이즈 옵션인 'S'를 선택해보겠습니다.",
+              "action": "click",
+              "target": "S",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업을 닫았으니 이제 상품 옵션 중 '아이보리' 색상을 선택해보겠습니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업을 닫았으므로 코튼 셔츠의 색상 옵션인 '아이보리'를 선택해보겠습니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "화면을 덮고 있는 팝업 레이어를 닫기 위해 'x' 버튼(span_8)을 클릭합니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "주문을 마치기 위해 눈에 띄는 하단의 '확인' 버튼을 눌러봅니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문을 진행하기 위해 연락처 정보를 입력해보겠습니다.",
+              "action": "type",
+              "target": "연락처",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "주문하려는데 회원가입 정보가 입력되지 않았으니 눈에 띄는 확인 버튼을 일단 눌러봅니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c8:checkout.html": {
+          "id": "c8:checkout.html",
+          "step": 9,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 3,
+          "shot": {
+            "src": "/screens/buggy/checkout.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [
+            {
+              "x": 1213,
+              "y": 341,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "w": 587,
+              "h": 22,
+              "label": "연락처",
+              "wasted": false,
+              "persona": "P003"
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": false,
+              "persona": "P007"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "주문을 마치기 위해 눈에 띄는 하단의 '확인' 버튼을 눌러봅니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문을 진행하기 위해 연락처 정보를 입력해보겠습니다.",
+              "action": "type",
+              "target": "연락처",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "주문하려는데 회원가입 정보가 입력되지 않았으니 눈에 띄는 확인 버튼을 일단 눌러봅니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "색상 선택이 반응하지 않아서 사이즈 옵션인 'S'를 선택해보겠습니다.",
+              "action": "click",
+              "target": "S",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업을 닫았으니 이제 상품 옵션 중 '아이보리' 색상을 선택해보겠습니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업을 닫았으므로 코튼 셔츠의 색상 옵션인 '아이보리'를 선택해보겠습니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "화면을 덮고 있는 팝업 레이어를 닫기 위해 'x' 버튼(span_8)을 클릭합니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c9:product.html": {
+          "id": "c9:product.html",
+          "step": 10,
+          "screen": "product.html",
+          "title": "상품 상세",
+          "count": 4,
+          "shot": {
+            "src": "/screens/buggy/product.jpg",
+            "w": 1280,
+            "h": 1393
+          },
+          "clicks": [
+            {
+              "x": 725,
+              "y": 225,
+              "w": 34,
+              "h": 20,
+              "label": "구매",
+              "wasted": false,
+              "persona": "P001"
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": true,
+              "persona": "P004"
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": true,
+              "persona": "P005"
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "w": 44,
+              "h": 16,
+              "label": "아이보리",
+              "wasted": true,
+              "persona": "P009"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 680,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 508,
+              "wasted": false
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            }
+          ],
+          "wasted": 3,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "상품 옵션이나 확인 버튼이 반응하지 않는데, 바로 '구매' 버튼(div_2)을 클릭해 작동하는지 시도해보겠습니다.",
+              "action": "click",
+              "target": "구매",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "색상 선택이 반응하지 않아서, 상품 하단의 '확인' 버튼을 클릭하여 장바구니 추가나 다음 단계 진행을 시도해보겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "옵션 선택 후 장바구니 담기 또는 상품 확인을 위해 '확인' 버튼(div_1)을 눌러보겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "팝업을 닫았으므로 색상 옵션인 아이보리(span_1)를 선택하겠습니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "주문을 진행하기 위해 회원가입 폼의 이름 입력란에 이름을 입력합니다.",
+              "action": "type",
+              "target": "이름",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문서 작성 계속 진행을 위해 이메일 항목을 입력하겠습니다.",
+              "action": "type",
+              "target": "이메일",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "회원가입 양식이 복잡하고 잘 진행되지 않아 포기하고 나갑니다.",
+              "action": "give_up",
+              "target": "",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c9:checkout.html": {
+          "id": "c9:checkout.html",
+          "step": 10,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 3,
+          "shot": {
+            "src": "/screens/buggy/checkout.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [
+            {
+              "x": 344,
+              "y": 138,
+              "w": 587,
+              "h": 22,
+              "label": "이름",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "w": 1180,
+              "h": 22,
+              "label": "이메일",
+              "wasted": false,
+              "persona": "P003"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "주문을 진행하기 위해 회원가입 폼의 이름 입력란에 이름을 입력합니다.",
+              "action": "type",
+              "target": "이름",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문서 작성 계속 진행을 위해 이메일 항목을 입력하겠습니다.",
+              "action": "type",
+              "target": "이메일",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "회원가입 양식이 복잡하고 잘 진행되지 않아 포기하고 나갑니다.",
+              "action": "give_up",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "상품 옵션이나 확인 버튼이 반응하지 않는데, 바로 '구매' 버튼(div_2)을 클릭해 작동하는지 시도해보겠습니다.",
+              "action": "click",
+              "target": "구매",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "색상 선택이 반응하지 않아서, 상품 하단의 '확인' 버튼을 클릭하여 장바구니 추가나 다음 단계 진행을 시도해보겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "옵션 선택 후 장바구니 담기 또는 상품 확인을 위해 '확인' 버튼(div_1)을 눌러보겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "팝업을 닫았으므로 색상 옵션인 아이보리(span_1)를 선택하겠습니다.",
+              "action": "click",
+              "target": "아이보리",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c10:product.html": {
+          "id": "c10:product.html",
+          "step": 11,
+          "screen": "product.html",
+          "title": "상품 상세",
+          "count": 3,
+          "shot": {
+            "src": "/screens/buggy/product.jpg",
+            "w": 1280,
+            "h": 1393
+          },
+          "clicks": [
+            {
+              "x": 725,
+              "y": 225,
+              "w": 34,
+              "h": 20,
+              "label": "구매",
+              "wasted": false,
+              "persona": "P004"
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "w": 34,
+              "h": 20,
+              "label": "구매",
+              "wasted": false,
+              "persona": "P005"
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "w": 34,
+              "h": 20,
+              "label": "구매",
+              "wasted": false,
+              "persona": "P009"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 680,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 508,
+              "wasted": false
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 701,
+              "y": 169,
+              "wasted": true
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 687,
+              "y": 225,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 482,
+              "wasted": false
+            },
+            {
+              "x": 692,
+              "y": 143,
+              "wasted": true
+            },
+            {
+              "x": 725,
+              "y": 225,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "색상 선택과 확인 버튼이 작동하지 않는 것 같으니, 상품 주문/구매를 직접 시도하기 위해 '구매' 버튼을 눌러보겠습니다.",
+              "action": "click",
+              "target": "구매",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "'확인' 버튼 반응이 없으므로 '구매' 버튼(div_2)을 눌러 주문 단계로 이동해 보겠습니다.",
+              "action": "click",
+              "target": "구매",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "구매 버튼(div_2)을 클릭하여 주문을 진행해 봅니다.",
+              "action": "click",
+              "target": "구매",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "장바구니에 담긴 코튼 셔츠 주문을 진행하기 위해 '확인' 링크를 클릭하겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "주문을 진행하기 위해 연락처 입력 칸에 번호를 입력합니다.",
+              "action": "type",
+              "target": "연락처",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문서 완성을 위해 비밀번호 칸을 채워넣겠습니다.",
+              "action": "type",
+              "target": "비밀번호",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "회원가입 양식이 복잡하고 잘 진행되지 않아 포기하고 나갑니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c10:cart.html": {
+          "id": "c10:cart.html",
+          "step": 11,
+          "screen": "cart.html",
+          "title": "장바구니",
+          "count": 1,
+          "shot": {
+            "src": "/screens/buggy/cart.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [
+            {
+              "x": 1213,
+              "y": 313,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": false,
+              "persona": "P001"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 1213,
+              "y": 313,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 313,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "장바구니에 담긴 코튼 셔츠 주문을 진행하기 위해 '확인' 링크를 클릭하겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "주문을 진행하기 위해 연락처 입력 칸에 번호를 입력합니다.",
+              "action": "type",
+              "target": "연락처",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문서 완성을 위해 비밀번호 칸을 채워넣겠습니다.",
+              "action": "type",
+              "target": "비밀번호",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "색상 선택과 확인 버튼이 작동하지 않는 것 같으니, 상품 주문/구매를 직접 시도하기 위해 '구매' 버튼을 눌러보겠습니다.",
+              "action": "click",
+              "target": "구매",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "'확인' 버튼 반응이 없으므로 '구매' 버튼(div_2)을 눌러 주문 단계로 이동해 보겠습니다.",
+              "action": "click",
+              "target": "구매",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "구매 버튼(div_2)을 클릭하여 주문을 진행해 봅니다.",
+              "action": "click",
+              "target": "구매",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "회원가입 양식이 복잡하고 잘 진행되지 않아 포기하고 나갑니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c10:checkout.html": {
+          "id": "c10:checkout.html",
+          "step": 11,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 2,
+          "shot": {
+            "src": "/screens/buggy/checkout.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [
+            {
+              "x": 936,
+              "y": 138,
+              "w": 587,
+              "h": 22,
+              "label": "연락처",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "w": 1180,
+              "h": 22,
+              "label": "비밀번호",
+              "wasted": false,
+              "persona": "P003"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "주문을 진행하기 위해 연락처 입력 칸에 번호를 입력합니다.",
+              "action": "type",
+              "target": "연락처",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문서 완성을 위해 비밀번호 칸을 채워넣겠습니다.",
+              "action": "type",
+              "target": "비밀번호",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "장바구니에 담긴 코튼 셔츠 주문을 진행하기 위해 '확인' 링크를 클릭하겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "색상 선택과 확인 버튼이 작동하지 않는 것 같으니, 상품 주문/구매를 직접 시도하기 위해 '구매' 버튼을 눌러보겠습니다.",
+              "action": "click",
+              "target": "구매",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "'확인' 버튼 반응이 없으므로 '구매' 버튼(div_2)을 눌러 주문 단계로 이동해 보겠습니다.",
+              "action": "click",
+              "target": "구매",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "구매 버튼(div_2)을 클릭하여 주문을 진행해 봅니다.",
+              "action": "click",
+              "target": "구매",
+              "blocked": false,
+              "screen": "product.html",
+              "screen_title": "상품 상세"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "회원가입 양식이 복잡하고 잘 진행되지 않아 포기하고 나갑니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c11:cart.html": {
+          "id": "c11:cart.html",
+          "step": 12,
+          "screen": "cart.html",
+          "title": "장바구니",
+          "count": 3,
+          "shot": {
+            "src": "/screens/buggy/cart.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [
+            {
+              "x": 1213,
+              "y": 245,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": true,
+              "persona": "P004"
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": true,
+              "persona": "P005"
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": true,
+              "persona": "P009"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 1213,
+              "y": 313,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 313,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            }
+          ],
+          "wasted": 3,
+          "personas": [
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "장바구니에 담긴 코튼 셔츠 상품 주문을 진행하기 위해 하단의 확인 링크를 눌러보겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "장바구니에 코튼 셔츠가 담겨 있으니, 주문을 진행하기 위해 하단의 '확인' 버튼을 클릭해보겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "장바구니에 오버사이즈 코튼 셔츠가 담겨 있으니, 주문/확인을 진행하기 위해 '확인' 버튼(link_8)을 누릅니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "주문을 진행하기 위해 먼저 이름 입력란에 이름을 작성하겠습니다.",
+              "action": "type",
+              "target": "이름",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "주문 완료를 위해 이메일 입력 칸에 이메일 주소를 작성합니다.",
+              "action": "type",
+              "target": "이메일",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문을 진행하기 위해 주소 입력란에 주소를 작성하겠습니다.",
+              "action": "type",
+              "target": "주소",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "회원가입 양식이 복잡하고 잘 진행되지 않아 포기하고 나갑니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c11:checkout.html": {
+          "id": "c11:checkout.html",
+          "step": 12,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 3,
+          "shot": {
+            "src": "/screens/buggy/checkout.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [
+            {
+              "x": 344,
+              "y": 138,
+              "w": 587,
+              "h": 22,
+              "label": "이름",
+              "wasted": false,
+              "persona": "P001"
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "w": 1180,
+              "h": 22,
+              "label": "이메일",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "w": 1180,
+              "h": 22,
+              "label": "주소",
+              "wasted": false,
+              "persona": "P003"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "주문을 진행하기 위해 먼저 이름 입력란에 이름을 작성하겠습니다.",
+              "action": "type",
+              "target": "이름",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "주문 완료를 위해 이메일 입력 칸에 이메일 주소를 작성합니다.",
+              "action": "type",
+              "target": "이메일",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문을 진행하기 위해 주소 입력란에 주소를 작성하겠습니다.",
+              "action": "type",
+              "target": "주소",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "장바구니에 담긴 코튼 셔츠 상품 주문을 진행하기 위해 하단의 확인 링크를 눌러보겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "장바구니에 코튼 셔츠가 담겨 있으니, 주문을 진행하기 위해 하단의 '확인' 버튼을 클릭해보겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "장바구니에 오버사이즈 코튼 셔츠가 담겨 있으니, 주문/확인을 진행하기 위해 '확인' 버튼(link_8)을 누릅니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "회원가입 양식이 복잡하고 잘 진행되지 않아 포기하고 나갑니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c12:cart.html": {
+          "id": "c12:cart.html",
+          "step": 13,
+          "screen": "cart.html",
+          "title": "장바구니",
+          "count": 3,
+          "shot": {
+            "src": "/screens/buggy/cart.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [
+            {
+              "x": 861,
+              "y": 348,
+              "w": 4,
+              "h": 9,
+              "label": "x",
+              "wasted": false,
+              "persona": "P004"
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "w": 4,
+              "h": 9,
+              "label": "x",
+              "wasted": false,
+              "persona": "P005"
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "w": 4,
+              "h": 9,
+              "label": "x",
+              "wasted": false,
+              "persona": "P009"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 1213,
+              "y": 313,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 313,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업 배너가 다시 화면을 가리고 있어 클릭이 안 되는 것 같습니다. 팝업을 닫기 위해 닫기 버튼(x)을 누르겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업창 때문에 확인 링크가 안 눌렸으니 하단 팝업 닫기 버튼(span_2)을 눌러 팝업을 닫겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "화면을 덮고 있는 팝업 레이어를 닫기 위해 'x' 버튼(span_2)을 클릭합니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "주문을 완료하기 위해 회원가입/주문 폼의 연락처 입력 칸에 번호를 입력하겠습니다.",
+              "action": "type",
+              "target": "연락처",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "회원가입/주문 작성을 마무리하기 위해 비밀번호 입력 칸에 비밀번호를 입력합니다.",
+              "action": "type",
+              "target": "비밀번호",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문 완료를 위해 필수 약관 동의 체크박스를 클릭해 체크하겠습니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "회원가입 양식이 복잡하고 잘 진행되지 않아 포기하고 나갑니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c12:checkout.html": {
+          "id": "c12:checkout.html",
+          "step": 13,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 3,
+          "shot": {
+            "src": "/screens/buggy/checkout.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [
+            {
+              "x": 936,
+              "y": 138,
+              "w": 587,
+              "h": 22,
+              "label": "연락처",
+              "wasted": false,
+              "persona": "P001"
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "w": 1180,
+              "h": 22,
+              "label": "비밀번호",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "w": 10,
+              "h": 10,
+              "label": "",
+              "wasted": true,
+              "persona": "P003"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            }
+          ],
+          "wasted": 1,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "주문을 완료하기 위해 회원가입/주문 폼의 연락처 입력 칸에 번호를 입력하겠습니다.",
+              "action": "type",
+              "target": "연락처",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "회원가입/주문 작성을 마무리하기 위해 비밀번호 입력 칸에 비밀번호를 입력합니다.",
+              "action": "type",
+              "target": "비밀번호",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문 완료를 위해 필수 약관 동의 체크박스를 클릭해 체크하겠습니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업 배너가 다시 화면을 가리고 있어 클릭이 안 되는 것 같습니다. 팝업을 닫기 위해 닫기 버튼(x)을 누르겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업창 때문에 확인 링크가 안 눌렸으니 하단 팝업 닫기 버튼(span_2)을 눌러 팝업을 닫겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "화면을 덮고 있는 팝업 레이어를 닫기 위해 'x' 버튼(span_2)을 클릭합니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "회원가입 양식이 복잡하고 잘 진행되지 않아 포기하고 나갑니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c13:cart.html": {
+          "id": "c13:cart.html",
+          "step": 14,
+          "screen": "cart.html",
+          "title": "장바구니",
+          "count": 3,
+          "shot": {
+            "src": "/screens/buggy/cart.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [
+            {
+              "x": 1213,
+              "y": 245,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": false,
+              "persona": "P004"
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": false,
+              "persona": "P005"
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": false,
+              "persona": "P009"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 1213,
+              "y": 313,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 313,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 245,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업을 닫았으니 이제 장바구니의 확인 링크를 눌러 주문을 계속 진행하겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업을 닫았으므로 이제 장바구니에서 주문 진행을 위해 '확인' 링크를 눌러보겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "팝업 레이어를 닫았으니 이제 장바구니에서 '확인' 링크를 눌러 주문을 계속 진행해 보겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "주문 및 회원가입을 마치기 위해 이메일 입력칸에 이메일을 작성하겠습니다.",
+              "action": "type",
+              "target": "이메일",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "주문 입력을 계속하기 위해 주소 칸에 주소를 입력합니다.",
+              "action": "type",
+              "target": "주소",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "팝업창이 화면을 막고 있어 약관 동의를 누를 수 없습니다. 팝업을 닫기 위해 'x' 버튼을 누릅니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "회원가입 양식이 복잡하고 잘 진행되지 않아 포기하고 나갑니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c13:checkout.html": {
+          "id": "c13:checkout.html",
+          "step": 14,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 3,
+          "shot": {
+            "src": "/screens/buggy/checkout.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [
+            {
+              "x": 640,
+              "y": 166,
+              "w": 1180,
+              "h": 22,
+              "label": "이메일",
+              "wasted": false,
+              "persona": "P001"
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "w": 1180,
+              "h": 22,
+              "label": "주소",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "w": 4,
+              "h": 9,
+              "label": "x",
+              "wasted": false,
+              "persona": "P003"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "주문 및 회원가입을 마치기 위해 이메일 입력칸에 이메일을 작성하겠습니다.",
+              "action": "type",
+              "target": "이메일",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "주문 입력을 계속하기 위해 주소 칸에 주소를 입력합니다.",
+              "action": "type",
+              "target": "주소",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "팝업창이 화면을 막고 있어 약관 동의를 누를 수 없습니다. 팝업을 닫기 위해 'x' 버튼을 누릅니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업을 닫았으니 이제 장바구니의 확인 링크를 눌러 주문을 계속 진행하겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "팝업을 닫았으므로 이제 장바구니에서 주문 진행을 위해 '확인' 링크를 눌러보겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "팝업 레이어를 닫았으니 이제 장바구니에서 '확인' 링크를 눌러 주문을 계속 진행해 보겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false,
+              "screen": "cart.html",
+              "screen_title": "장바구니"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "회원가입 양식이 복잡하고 잘 진행되지 않아 포기하고 나갑니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c14:checkout.html": {
+          "id": "c14:checkout.html",
+          "step": 15,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 6,
+          "shot": {
+            "src": "/screens/buggy/checkout.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [
+            {
+              "x": 640,
+              "y": 194,
+              "w": 1180,
+              "h": 22,
+              "label": "비밀번호",
+              "wasted": false,
+              "persona": "P001"
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "w": 10,
+              "h": 10,
+              "label": "",
+              "wasted": true,
+              "persona": "P002"
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "w": 10,
+              "h": 10,
+              "label": "",
+              "wasted": false,
+              "persona": "P003"
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "w": 587,
+              "h": 22,
+              "label": "이름",
+              "wasted": false,
+              "persona": "P004"
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "w": 587,
+              "h": 22,
+              "label": "이름",
+              "wasted": false,
+              "persona": "P005"
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "w": 587,
+              "h": 22,
+              "label": "이름",
+              "wasted": false,
+              "persona": "P009"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            }
+          ],
+          "wasted": 1,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "주문 결제를 계속 진행하기 위해 비밀번호 입력 칸에 비밀번호를 입력하겠습니다.",
+              "action": "type",
+              "target": "비밀번호",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "주문 및 회원가입 진행을 위해 이용약관 동의 체크박스를 누릅니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "팝업창을 닫았으니 이제 이용약관 동의 체크박스를 눌러 체크하겠습니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "주문을 완료하기 위해 회원가입 폼에 정보를 입력해야 합니다. 먼저 이름 입력 칸에 이름을 작성하겠습니다.",
+              "action": "type",
+              "target": "이름",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "주문을 완료하기 위해 이름 입력란에 이름을 작성하겠습니다.",
+              "action": "type",
+              "target": "이름",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "주문을 완료하기 위해 회원가입 폼을 작성해야 합니다. 먼저 이름을 입력하겠습니다.",
+              "action": "type",
+              "target": "이름",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "회원가입 양식이 복잡하고 잘 진행되지 않아 포기하고 나갑니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c15:checkout.html": {
+          "id": "c15:checkout.html",
+          "step": 16,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 6,
+          "shot": {
+            "src": "/screens/buggy/checkout.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [
+            {
+              "x": 640,
+              "y": 222,
+              "w": 1180,
+              "h": 22,
+              "label": "주소",
+              "wasted": false,
+              "persona": "P001"
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "w": 4,
+              "h": 9,
+              "label": "x",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": false,
+              "persona": "P003"
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "w": 587,
+              "h": 22,
+              "label": "연락처",
+              "wasted": false,
+              "persona": "P004"
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "w": 587,
+              "h": 22,
+              "label": "연락처",
+              "wasted": false,
+              "persona": "P005"
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "w": 587,
+              "h": 22,
+              "label": "연락처",
+              "wasted": false,
+              "persona": "P009"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "주문을 완료하기 위해 주소 입력란에 주소를 작성하겠습니다.",
+              "action": "type",
+              "target": "주소",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "팝업창이 화면을 막고 있어서 체크박스가 눌리지 않은 것 같으니, 팝업의 닫기 버튼(x)을 눌러 팝업을 닫겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문 정보 입력과 약관 동의가 완료되었으므로 주문을 진행하기 위해 '확인' 버튼을 클릭합니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "이름은 작성되었으니 이제 연락처 입력 칸에 전화번호를 적어보겠습니다.",
+              "action": "type",
+              "target": "연락처",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "주문 처리를 진행하기 위해 연락처 입력란에 전화번호를 입력하겠습니다.",
+              "action": "type",
+              "target": "연락처",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "이름이 입력되었으니 회원가입 폼의 연락처 필드(input_2)에 전화번호를 입력하겠습니다.",
+              "action": "type",
+              "target": "연락처",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "회원가입 양식이 복잡하고 잘 진행되지 않아 포기하고 나갑니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c16:checkout.html": {
+          "id": "c16:checkout.html",
+          "step": 17,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 5,
+          "shot": {
+            "src": "/screens/buggy/checkout.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [
+            {
+              "x": 59,
+              "y": 254,
+              "w": 10,
+              "h": 10,
+              "label": "",
+              "wasted": true,
+              "persona": "P001"
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "w": 10,
+              "h": 10,
+              "label": "",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "w": 1180,
+              "h": 22,
+              "label": "이메일",
+              "wasted": false,
+              "persona": "P004"
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "w": 1180,
+              "h": 22,
+              "label": "이메일",
+              "wasted": false,
+              "persona": "P005"
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "w": 10,
+              "h": 10,
+              "label": "",
+              "wasted": true,
+              "persona": "P009"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            }
+          ],
+          "wasted": 2,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "주문을 완료하기 위해 이용약관 동의 체크박스를 선택합니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "팝업을 닫았으니 다시 이용약관 동의 체크박스를 클릭해봅니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "회원가입 폼을 완성하기 위해 이메일 입력 칸에 이메일 주소를 작성하겠습니다.",
+              "action": "type",
+              "target": "이메일",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "주문 완료를 위해 이메일 입력란에 이메일 주소를 입력하겠습니다.",
+              "action": "type",
+              "target": "이메일",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "회원가입 폼을 완성하기 위해 이용약관 동의 체크박스(input_6)를 클릭합니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문 접수 완료 화면에 도달하여 주문이 성공적으로 마쳐졌으므로 목표를 달성했습니다.",
+              "action": "done",
+              "target": "",
+              "blocked": false,
+              "screen": "complete.html",
+              "screen_title": "주문 완료"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "회원가입 양식이 복잡하고 잘 진행되지 않아 포기하고 나갑니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c16:complete.html": {
+          "id": "c16:complete.html",
+          "step": 17,
+          "screen": "complete.html",
+          "title": "주문 완료",
+          "count": 1,
+          "shot": {
+            "src": "/screens/buggy/complete.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [],
+          "screen_clicks": [],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문 접수 완료 화면에 도달하여 주문이 성공적으로 마쳐졌으므로 목표를 달성했습니다.",
+              "action": "done",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "주문을 완료하기 위해 이용약관 동의 체크박스를 선택합니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "팝업을 닫았으니 다시 이용약관 동의 체크박스를 클릭해봅니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "회원가입 폼을 완성하기 위해 이메일 입력 칸에 이메일 주소를 작성하겠습니다.",
+              "action": "type",
+              "target": "이메일",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "주문 완료를 위해 이메일 입력란에 이메일 주소를 입력하겠습니다.",
+              "action": "type",
+              "target": "이메일",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "회원가입 폼을 완성하기 위해 이용약관 동의 체크박스(input_6)를 클릭합니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "회원가입 양식이 복잡하고 잘 진행되지 않아 포기하고 나갑니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c17:checkout.html": {
+          "id": "c17:checkout.html",
+          "step": 18,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 5,
+          "shot": {
+            "src": "/screens/buggy/checkout.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [
+            {
+              "x": 861,
+              "y": 348,
+              "w": 4,
+              "h": 9,
+              "label": "x",
+              "wasted": false,
+              "persona": "P001"
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "w": 1180,
+              "h": 22,
+              "label": "비밀번호",
+              "wasted": false,
+              "persona": "P004"
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "w": 1180,
+              "h": 22,
+              "label": "비밀번호",
+              "wasted": false,
+              "persona": "P005"
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "w": 4,
+              "h": 9,
+              "label": "x",
+              "wasted": false,
+              "persona": "P009"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "화면을 덮고 있는 팝업 창을 닫기 위해 닫기 버튼(x)을 클릭합니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "모든 주문 정보 입력과 약관 동의가 완료되었으니 확인 버튼을 눌러 주문을 진행합니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "회원가입 폼을 완성하기 위해 비밀번호 입력 칸에 비밀번호를 작성해보겠습니다.",
+              "action": "type",
+              "target": "비밀번호",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "주문 결제를 계속 진행하기 위해 비밀번호 입력 칸에 비밀번호를 입력합니다.",
+              "action": "type",
+              "target": "비밀번호",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "팝업창이 다시 떠서 체크박스가 눌리지 않았습니다. 팝업의 닫기(x) 버튼인 span_1을 클릭해서 팝업을 닫겠습니다.",
+              "action": "click",
+              "target": "x",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문 접수 완료 화면에 도달하여 주문이 성공적으로 마쳐졌으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "회원가입 양식이 복잡하고 잘 진행되지 않아 포기하고 나갑니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c18:checkout.html": {
+          "id": "c18:checkout.html",
+          "step": 19,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 4,
+          "shot": {
+            "src": "/screens/buggy/checkout.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [
+            {
+              "x": 59,
+              "y": 254,
+              "w": 10,
+              "h": 10,
+              "label": "",
+              "wasted": false,
+              "persona": "P001"
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "w": 1180,
+              "h": 22,
+              "label": "주소",
+              "wasted": false,
+              "persona": "P004"
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "w": 1180,
+              "h": 22,
+              "label": "주소",
+              "wasted": false,
+              "persona": "P005"
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "w": 1180,
+              "h": 22,
+              "label": "이메일",
+              "wasted": false,
+              "persona": "P009"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "팝업을 닫았으므로 이용약관 동의 체크박스를 클릭하여 동의 처리를 하겠습니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "주문 및 회원가입 진행을 위해 주소 칸에 주소를 입력하겠습니다.",
+              "action": "type",
+              "target": "주소",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "주문 완료를 위해 주소 입력란에 주소를 입력하겠습니다.",
+              "action": "type",
+              "target": "주소",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "회원가입 폼 작성을 위해 이메일(input_3) 칸에 이메일 주소를 입력하겠습니다.",
+              "action": "type",
+              "target": "이메일",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "주문 접수 완료 화면이 표시되었으므로 목표를 달성했습니다.",
+              "action": "done",
+              "target": "",
+              "blocked": false,
+              "screen": "complete.html",
+              "screen_title": "주문 완료"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문 접수 완료 화면에 도달하여 주문이 성공적으로 마쳐졌으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "회원가입 양식이 복잡하고 잘 진행되지 않아 포기하고 나갑니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c18:complete.html": {
+          "id": "c18:complete.html",
+          "step": 19,
+          "screen": "complete.html",
+          "title": "주문 완료",
+          "count": 1,
+          "shot": {
+            "src": "/screens/buggy/complete.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [],
+          "screen_clicks": [],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "주문 접수 완료 화면이 표시되었으므로 목표를 달성했습니다.",
+              "action": "done",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "팝업을 닫았으므로 이용약관 동의 체크박스를 클릭하여 동의 처리를 하겠습니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "주문 및 회원가입 진행을 위해 주소 칸에 주소를 입력하겠습니다.",
+              "action": "type",
+              "target": "주소",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "주문 완료를 위해 주소 입력란에 주소를 입력하겠습니다.",
+              "action": "type",
+              "target": "주소",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "회원가입 폼 작성을 위해 이메일(input_3) 칸에 이메일 주소를 입력하겠습니다.",
+              "action": "type",
+              "target": "이메일",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문 접수 완료 화면에 도달하여 주문이 성공적으로 마쳐졌으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "회원가입 양식이 복잡하고 잘 진행되지 않아 포기하고 나갑니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c19:checkout.html": {
+          "id": "c19:checkout.html",
+          "step": 20,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 4,
+          "shot": {
+            "src": "/screens/buggy/checkout.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [
+            {
+              "x": 1213,
+              "y": 341,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": false,
+              "persona": "P001"
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "w": 10,
+              "h": 10,
+              "label": "",
+              "wasted": true,
+              "persona": "P004"
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "w": 10,
+              "h": 10,
+              "label": "",
+              "wasted": true,
+              "persona": "P005"
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "w": 1180,
+              "h": 22,
+              "label": "비밀번호",
+              "wasted": false,
+              "persona": "P009"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            }
+          ],
+          "wasted": 2,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "모든 필드가 입력되었고 약관 동의도 완료되었으므로 '확인' 버튼을 눌러 주문을 완료합니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "회원가입 폼을 완성하기 위해 필수 약관인 이용약관 동의 체크박스를 클릭하겠습니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "주문 작성을 마치기 위해 이용약관 동의 체크박스를 클릭하겠습니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "회원가입 폼 완성을 위해 비밀번호 입력란(input_4)에 비밀번호를 입력하겠습니다.",
+              "action": "type",
+              "target": "비밀번호",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "주문 접수 완료 화면이 표시되었으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문 접수 완료 화면에 도달하여 주문이 성공적으로 마쳐졌으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "회원가입 양식이 복잡하고 잘 진행되지 않아 포기하고 나갑니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c20:checkout.html": {
+          "id": "c20:checkout.html",
+          "step": 21,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 3,
+          "shot": {
+            "src": "/screens/buggy/checkout.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [
+            {
+              "x": 640,
+              "y": 222,
+              "w": 1180,
+              "h": 22,
+              "label": "주소",
+              "wasted": false,
+              "persona": "P009"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "화면을 덮고 있는 요소 때문에 약관 동의 체크박스가 누르고 지지 않는 것 같습니다. 화면을 조금 스크롤해보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "화면을 덮고 있는 레이어 때문에 약관 동의 체크박스가 클릭되지 않는 것 같습니다. 화면을 좀 더 아래로 스크롤하여 상태를 확인하겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "주문을 마치기 위해 회원가입 폼의 주소 입력란(input_5)에 주소를 입력하겠습니다.",
+              "action": "type",
+              "target": "주소",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "주문이 완료되어 주문 접수 화면이 보입니다. 목표인 코튼 셔츠 주문을 성공적으로 마쳤으므로 작업을 완료합니다.",
+              "action": "done",
+              "target": "",
+              "blocked": false,
+              "screen": "complete.html",
+              "screen_title": "주문 완료"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "주문 접수 완료 화면이 표시되었으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문 접수 완료 화면에 도달하여 주문이 성공적으로 마쳐졌으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "회원가입 양식이 복잡하고 잘 진행되지 않아 포기하고 나갑니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c20:complete.html": {
+          "id": "c20:complete.html",
+          "step": 21,
+          "screen": "complete.html",
+          "title": "주문 완료",
+          "count": 1,
+          "shot": {
+            "src": "/screens/buggy/complete.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [],
+          "screen_clicks": [],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "주문이 완료되어 주문 접수 화면이 보입니다. 목표인 코튼 셔츠 주문을 성공적으로 마쳤으므로 작업을 완료합니다.",
+              "action": "done",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "화면을 덮고 있는 요소 때문에 약관 동의 체크박스가 누르고 지지 않는 것 같습니다. 화면을 조금 스크롤해보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "화면을 덮고 있는 레이어 때문에 약관 동의 체크박스가 클릭되지 않는 것 같습니다. 화면을 좀 더 아래로 스크롤하여 상태를 확인하겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "주문을 마치기 위해 회원가입 폼의 주소 입력란(input_5)에 주소를 입력하겠습니다.",
+              "action": "type",
+              "target": "주소",
+              "blocked": false,
+              "screen": "checkout.html",
+              "screen_title": "주문/결제"
+            }
+          ],
+          "finished": [
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "주문 접수 완료 화면이 표시되었으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문 접수 완료 화면에 도달하여 주문이 성공적으로 마쳐졌으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "회원가입 양식이 복잡하고 잘 진행되지 않아 포기하고 나갑니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c21:checkout.html": {
+          "id": "c21:checkout.html",
+          "step": 22,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 3,
+          "shot": {
+            "src": "/screens/buggy/checkout.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [
+            {
+              "x": 1213,
+              "y": 341,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": true,
+              "persona": "P004"
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": true,
+              "persona": "P005"
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "w": 10,
+              "h": 10,
+              "label": "",
+              "wasted": false,
+              "persona": "P009"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            }
+          ],
+          "wasted": 2,
+          "personas": [
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "체크박스가 레이어에 가려져 클릭되지 않았습니다. 일단 하단의 주문/가입 완료를 위한 확인 버튼을 클릭해보겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "이용약관 동의 체크박스가 화면을 덮은 팝업 레이어 때문에 클릭되지 않는 것 같습니다. 회원가입 및 주문 완료를 위해 오른쪽 하단의 확인 버튼(div_1)을 클릭해 보겠습니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "회원가입 폼 입력이 완료되었으니, 필수 항목인 이용약관 동의 체크박스(input_6)를 클릭하여 동의합니다.",
+              "action": "click",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "주문이 완료되어 주문 접수 화면이 보입니다. 목표인 코튼 셔츠 주문을 성공적으로 마쳤으므로 작업을 완료합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "주문 접수 완료 화면이 표시되었으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문 접수 완료 화면에 도달하여 주문이 성공적으로 마쳐졌으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "회원가입 양식이 복잡하고 잘 진행되지 않아 포기하고 나갑니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c22:checkout.html": {
+          "id": "c22:checkout.html",
+          "step": 23,
+          "screen": "checkout.html",
+          "title": "주문/결제",
+          "count": 3,
+          "shot": {
+            "src": "/screens/buggy/checkout.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [
+            {
+              "x": 1213,
+              "y": 341,
+              "w": 34,
+              "h": 20,
+              "label": "확인",
+              "wasted": false,
+              "persona": "P009"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": true
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            },
+            {
+              "x": 344,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 936,
+              "y": 138,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": true
+            },
+            {
+              "x": 861,
+              "y": 348,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 166,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 194,
+              "wasted": false
+            },
+            {
+              "x": 640,
+              "y": 222,
+              "wasted": false
+            },
+            {
+              "x": 59,
+              "y": 254,
+              "wasted": false
+            },
+            {
+              "x": 1213,
+              "y": 341,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "화면 전체를 덮고 있는 팝업 레이어 때문에 약관 동의 체크박스와 확인 버튼 등 대부분의 요소가 전혀 클릭되지 않고, 스크롤도 되지 않아 더 이상 진행할 수 없습니다.",
+              "action": "give_up",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "이용약관 동의 체크박스와 결제 확인 버튼이 화면 전체를 덮는 레이어에 가려져 눌리지 않고, 더 이상 진행할 수 있는 방법이 없습니다.",
+              "action": "give_up",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "주문 정보를 모두 입력하고 약관에 동의했으니, 주문을 완료하기 위해 확인 버튼(div_1)을 누릅니다.",
+              "action": "click",
+              "target": "확인",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "주문이 완료되어 주문 접수 화면이 보입니다. 목표인 코튼 셔츠 주문을 성공적으로 마쳤으므로 작업을 완료합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "주문 접수 완료 화면이 표시되었으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문 접수 완료 화면에 도달하여 주문이 성공적으로 마쳐졌으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "회원가입 양식이 복잡하고 잘 진행되지 않아 포기하고 나갑니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        },
+        "c23:complete.html": {
+          "id": "c23:complete.html",
+          "step": 24,
+          "screen": "complete.html",
+          "title": "주문 완료",
+          "count": 1,
+          "shot": {
+            "src": "/screens/buggy/complete.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "clicks": [],
+          "screen_clicks": [],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 24,
+              "thought": "주문 접수 완료 화면에 도달하여 코튼 셔츠 주문이 정상적으로 마쳐졌습니다. 목표를 달성했으므로 종료합니다.",
+              "action": "done",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 21,
+              "thought": "주문이 완료되어 주문 접수 화면이 보입니다. 목표인 코튼 셔츠 주문을 성공적으로 마쳤으므로 작업을 완료합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 19,
+              "thought": "주문 접수 완료 화면이 표시되었으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 17,
+              "thought": "주문 접수 완료 화면에 도달하여 주문이 성공적으로 마쳐졌으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "화면 전체를 덮고 있는 팝업 레이어 때문에 약관 동의 체크박스와 확인 버튼 등 대부분의 요소가 전혀 클릭되지 않고, 스크롤도 되지 않아 더 이상 진행할 수 없습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "이용약관 동의 체크박스와 결제 확인 버튼이 화면 전체를 덮는 레이어에 가려져 눌리지 않고, 더 이상 진행할 수 있는 방법이 없습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "total_steps": 7,
+              "thought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 10,
+              "thought": "회원가입 양식이 복잡하고 잘 진행되지 않아 포기하고 나갑니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 6,
+              "thought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 8,
+              "thought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 10
+        }
+      },
+      "filmstrip": [
+        {
+          "step": 1,
+          "id": "c0:index.html",
+          "title": "홈",
+          "count": 10,
+          "shot": {
+            "src": "/screens/buggy/index.jpg",
+            "w": 1280,
+            "h": 1231
+          },
+          "others": 0
+        },
+        {
+          "step": 2,
+          "id": "c1:index.html",
+          "title": "홈",
+          "count": 5,
+          "shot": {
+            "src": "/screens/buggy/index.jpg",
+            "w": 1280,
+            "h": 1231
+          },
+          "others": 1
+        },
+        {
+          "step": 3,
+          "id": "c2:index.html",
+          "title": "홈",
+          "count": 5,
+          "shot": {
+            "src": "/screens/buggy/index.jpg",
+            "w": 1280,
+            "h": 1231
+          },
+          "others": 2
+        },
+        {
+          "step": 4,
+          "id": "c3:list.html",
+          "title": "상품 목록",
+          "count": 6,
+          "shot": {
+            "src": "/screens/buggy/list.jpg",
+            "w": 1280,
+            "h": 1442
+          },
+          "others": 1
+        },
+        {
+          "step": 5,
+          "id": "c4:list.html",
+          "title": "상품 목록",
+          "count": 5,
+          "shot": {
+            "src": "/screens/buggy/list.jpg",
+            "w": 1280,
+            "h": 1442
+          },
+          "others": 1
+        },
+        {
+          "step": 6,
+          "id": "c5:list.html",
+          "title": "상품 목록",
+          "count": 5,
+          "shot": {
+            "src": "/screens/buggy/list.jpg",
+            "w": 1280,
+            "h": 1442
+          },
+          "others": 1
+        },
+        {
+          "step": 7,
+          "id": "c6:product.html",
+          "title": "상품 상세",
+          "count": 6,
+          "shot": {
+            "src": "/screens/buggy/product.jpg",
+            "w": 1280,
+            "h": 1393
+          },
+          "others": 2
+        },
+        {
+          "step": 8,
+          "id": "c7:product.html",
+          "title": "상품 상세",
+          "count": 4,
+          "shot": {
+            "src": "/screens/buggy/product.jpg",
+            "w": 1280,
+            "h": 1393
+          },
+          "others": 3
+        },
+        {
+          "step": 9,
+          "id": "c8:product.html",
+          "title": "상품 상세",
+          "count": 4,
+          "shot": {
+            "src": "/screens/buggy/product.jpg",
+            "w": 1280,
+            "h": 1393
+          },
+          "others": 1
+        },
+        {
+          "step": 10,
+          "id": "c9:product.html",
+          "title": "상품 상세",
+          "count": 4,
+          "shot": {
+            "src": "/screens/buggy/product.jpg",
+            "w": 1280,
+            "h": 1393
+          },
+          "others": 1
+        },
+        {
+          "step": 11,
+          "id": "c10:product.html",
+          "title": "상품 상세",
+          "count": 3,
+          "shot": {
+            "src": "/screens/buggy/product.jpg",
+            "w": 1280,
+            "h": 1393
+          },
+          "others": 2
+        },
+        {
+          "step": 12,
+          "id": "c11:cart.html",
+          "title": "장바구니",
+          "count": 3,
+          "shot": {
+            "src": "/screens/buggy/cart.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "others": 1
+        },
+        {
+          "step": 13,
+          "id": "c12:cart.html",
+          "title": "장바구니",
+          "count": 3,
+          "shot": {
+            "src": "/screens/buggy/cart.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "others": 1
+        },
+        {
+          "step": 14,
+          "id": "c13:cart.html",
+          "title": "장바구니",
+          "count": 3,
+          "shot": {
+            "src": "/screens/buggy/cart.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "others": 1
+        },
+        {
+          "step": 15,
+          "id": "c14:checkout.html",
+          "title": "주문/결제",
+          "count": 6,
+          "shot": {
+            "src": "/screens/buggy/checkout.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "others": 0
+        },
+        {
+          "step": 16,
+          "id": "c15:checkout.html",
+          "title": "주문/결제",
+          "count": 6,
+          "shot": {
+            "src": "/screens/buggy/checkout.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "others": 0
+        },
+        {
+          "step": 17,
+          "id": "c16:checkout.html",
+          "title": "주문/결제",
+          "count": 5,
+          "shot": {
+            "src": "/screens/buggy/checkout.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "others": 1
+        },
+        {
+          "step": 18,
+          "id": "c17:checkout.html",
+          "title": "주문/결제",
+          "count": 5,
+          "shot": {
+            "src": "/screens/buggy/checkout.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "others": 0
+        },
+        {
+          "step": 19,
+          "id": "c18:checkout.html",
+          "title": "주문/결제",
+          "count": 4,
+          "shot": {
+            "src": "/screens/buggy/checkout.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "others": 1
+        },
+        {
+          "step": 20,
+          "id": "c19:checkout.html",
+          "title": "주문/결제",
+          "count": 4,
+          "shot": {
+            "src": "/screens/buggy/checkout.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "others": 0
+        },
+        {
+          "step": 21,
+          "id": "c20:checkout.html",
+          "title": "주문/결제",
+          "count": 3,
+          "shot": {
+            "src": "/screens/buggy/checkout.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "others": 1
+        },
+        {
+          "step": 22,
+          "id": "c21:checkout.html",
+          "title": "주문/결제",
+          "count": 3,
+          "shot": {
+            "src": "/screens/buggy/checkout.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "others": 0
+        },
+        {
+          "step": 23,
+          "id": "c22:checkout.html",
+          "title": "주문/결제",
+          "count": 3,
+          "shot": {
+            "src": "/screens/buggy/checkout.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "others": 0
+        },
+        {
+          "step": 24,
+          "id": "c23:complete.html",
+          "title": "주문 완료",
+          "count": 1,
+          "shot": {
+            "src": "/screens/buggy/complete.jpg",
+            "w": 1280,
+            "h": 800
+          },
+          "others": 0
+        }
+      ],
+      "personas": {
+        "total": 10,
+        "changed": 3,
+        "exhausted": 0,
+        "baseline_run": "final_clean10",
+        "compare_run": "final_buggy10",
+        "axes": {
+          "literacy": "숙련도",
+          "attention": "주의 지속",
+          "patience": "인내심",
+          "breadth": "탐색 범위"
+        },
+        "items": [
+          {
+            "id": "P001",
+            "code": "P001",
+            "name": "숙련3·주의3·인내4·탐색3",
+            "traits": {
+              "literacy": 3,
+              "attention": 3,
+              "patience": 4,
+              "breadth": 3
+            },
+            "age_band": "숙련3·주의3·인내4·탐색3",
+            "gender": "",
+            "outcome": "success",
+            "step_count": 21,
+            "baseline": {
+              "outcome": "success",
+              "end_label": "달성",
+              "step_count": 12
+            },
+            "compare": {
+              "outcome": "success",
+              "end_label": "달성",
+              "step_count": 21
+            },
+            "changed": false
+          },
+          {
+            "id": "P002",
+            "code": "P002",
+            "name": "숙련1·주의1·인내3·탐색2",
+            "traits": {
+              "literacy": 1,
+              "attention": 1,
+              "patience": 3,
+              "breadth": 2
+            },
+            "age_band": "숙련1·주의1·인내3·탐색2",
+            "gender": "",
+            "outcome": "success",
+            "step_count": 19,
+            "baseline": {
+              "outcome": "success",
+              "end_label": "달성",
+              "step_count": 13
+            },
+            "compare": {
+              "outcome": "success",
+              "end_label": "달성",
+              "step_count": 19
+            },
+            "changed": false
+          },
+          {
+            "id": "P003",
+            "code": "P003",
+            "name": "숙련2·주의2·인내2·탐색2",
+            "traits": {
+              "literacy": 2,
+              "attention": 2,
+              "patience": 2,
+              "breadth": 2
+            },
+            "age_band": "숙련2·주의2·인내2·탐색2",
+            "gender": "",
+            "outcome": "success",
+            "step_count": 17,
+            "baseline": {
+              "outcome": "success",
+              "end_label": "달성",
+              "step_count": 13
+            },
+            "compare": {
+              "outcome": "success",
+              "end_label": "달성",
+              "step_count": 17
+            },
+            "changed": false
+          },
+          {
+            "id": "P004",
+            "code": "P004",
+            "name": "숙련1·주의4·인내5·탐색5",
+            "traits": {
+              "literacy": 1,
+              "attention": 4,
+              "patience": 5,
+              "breadth": 5
+            },
+            "age_band": "숙련1·주의4·인내5·탐색5",
+            "gender": "",
+            "outcome": "drop",
+            "step_count": 23,
+            "baseline": {
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "step_count": 16
+            },
+            "compare": {
+              "outcome": "drop",
+              "end_label": "포기",
+              "step_count": 23
+            },
+            "changed": false
+          },
+          {
+            "id": "P005",
+            "code": "P005",
+            "name": "숙련5·주의4·인내5·탐색4",
+            "traits": {
+              "literacy": 5,
+              "attention": 4,
+              "patience": 5,
+              "breadth": 4
+            },
+            "age_band": "숙련5·주의4·인내5·탐색4",
+            "gender": "",
+            "outcome": "drop",
+            "step_count": 23,
+            "baseline": {
+              "outcome": "success",
+              "end_label": "달성",
+              "step_count": 13
+            },
+            "compare": {
+              "outcome": "drop",
+              "end_label": "포기",
+              "step_count": 23
+            },
+            "changed": true
+          },
+          {
+            "id": "P006",
+            "code": "P006",
+            "name": "숙련1·주의2·인내5·탐색5",
+            "traits": {
+              "literacy": 1,
+              "attention": 2,
+              "patience": 5,
+              "breadth": 5
+            },
+            "age_band": "숙련1·주의2·인내5·탐색5",
+            "gender": "",
+            "outcome": "drop",
+            "step_count": 7,
+            "baseline": {
+              "outcome": "success",
+              "end_label": "달성",
+              "step_count": 13
+            },
+            "compare": {
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "step_count": 7
+            },
+            "changed": true
+          },
+          {
+            "id": "P007",
+            "code": "P007",
+            "name": "숙련5·주의1·인내2·탐색2",
+            "traits": {
+              "literacy": 5,
+              "attention": 1,
+              "patience": 2,
+              "breadth": 2
+            },
+            "age_band": "숙련5·주의1·인내2·탐색2",
+            "gender": "",
+            "outcome": "drop",
+            "step_count": 10,
+            "baseline": {
+              "outcome": "drop",
+              "end_label": "포기",
+              "step_count": 15
+            },
+            "compare": {
+              "outcome": "drop",
+              "end_label": "포기",
+              "step_count": 10
+            },
+            "changed": false
+          },
+          {
+            "id": "P008",
+            "code": "P008",
+            "name": "숙련4·주의5·인내2·탐색3",
+            "traits": {
+              "literacy": 4,
+              "attention": 5,
+              "patience": 2,
+              "breadth": 3
+            },
+            "age_band": "숙련4·주의5·인내2·탐색3",
+            "gender": "",
+            "outcome": "drop",
+            "step_count": 6,
+            "baseline": {
+              "outcome": "drop",
+              "end_label": "맴돌다 중단",
+              "step_count": 5
+            },
+            "compare": {
+              "outcome": "drop",
+              "end_label": "포기",
+              "step_count": 6
+            },
+            "changed": false
+          },
+          {
+            "id": "P009",
+            "code": "P009",
+            "name": "숙련5·주의5·인내5·탐색4",
+            "traits": {
+              "literacy": 5,
+              "attention": 5,
+              "patience": 5,
+              "breadth": 4
+            },
+            "age_band": "숙련5·주의5·인내5·탐색4",
+            "gender": "",
+            "outcome": "success",
+            "step_count": 24,
+            "baseline": {
+              "outcome": "success",
+              "end_label": "달성",
+              "step_count": 12
+            },
+            "compare": {
+              "outcome": "success",
+              "end_label": "달성",
+              "step_count": 24
+            },
+            "changed": false
+          },
+          {
+            "id": "P010",
+            "code": "P010",
+            "name": "숙련5·주의5·인내2·탐색5",
+            "traits": {
+              "literacy": 5,
+              "attention": 5,
+              "patience": 2,
+              "breadth": 5
+            },
+            "age_band": "숙련5·주의5·인내2·탐색5",
+            "gender": "",
+            "outcome": "drop",
+            "step_count": 8,
+            "baseline": {
+              "outcome": "success",
+              "end_label": "달성",
+              "step_count": 12
+            },
+            "compare": {
+              "outcome": "drop",
+              "end_label": "포기",
+              "step_count": 8
+            },
+            "changed": true
+          }
+        ]
+      }
+    },
+    "namu": {
+      "detail": {
+        "persona_total": 3,
+        "journey_count": 3,
+        "success_rate": 100.0,
+        "drop_rate": 0.0,
+        "avg_success_steps": 3.0
+      },
+      "paths": {
+        "total": 3,
+        "success": {
+          "count": 3,
+          "percent": 100.0
+        },
+        "drop": {
+          "count": 0,
+          "percent": 0.0
+        },
+        "paths": {
+          "success": [
+            {
+              "rank": 1,
+              "name": "경로 1",
+              "label": "나무위키:대문 → 숭실대학교",
+              "persona_count": 3,
+              "step_count": 3,
+              "screens": [
+                {
+                  "key": "나무위키:대문",
+                  "title": "나무위키:대문",
+                  "url": null
+                },
+                {
+                  "key": "숭실대학교",
+                  "title": "숭실대학교",
+                  "url": null
+                }
+              ],
+              "more": 0
+            }
+          ],
+          "drop": []
+        }
+      },
+      "diagram": {
+        "columns": [
+          {
+            "index": 0,
+            "label": "1단계",
+            "nodes": [
+              {
+                "id": "c0:나무위키:대문",
+                "column": 0,
+                "key": "나무위키:대문",
+                "title": "나무위키:대문",
+                "count": 3,
+                "success": 3,
+                "drop": 0
+              }
+            ]
+          },
+          {
+            "index": 1,
+            "label": "2단계",
+            "nodes": [
+              {
+                "id": "c1:나무위키:대문",
+                "column": 1,
+                "key": "나무위키:대문",
+                "title": "나무위키:대문",
+                "count": 3,
+                "success": 3,
+                "drop": 0
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "label": "3단계",
+            "nodes": [
+              {
+                "id": "c2:숭실대학교",
+                "column": 2,
+                "key": "숭실대학교",
+                "title": "숭실대학교",
+                "count": 3,
+                "success": 3,
+                "drop": 0
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "label": "4단계",
+            "nodes": [
+              {
+                "id": "c3:end_goal",
+                "column": 3,
+                "key": "end_goal",
+                "title": "달성",
+                "count": 3,
+                "success": 3,
+                "drop": 0
+              }
+            ]
+          }
+        ],
+        "links": [
+          {
+            "source": "c0:나무위키:대문",
+            "target": "c1:나무위키:대문",
+            "count": 3,
+            "success": 3,
+            "drop": 0
+          },
+          {
+            "source": "c1:나무위키:대문",
+            "target": "c2:숭실대학교",
+            "count": 3,
+            "success": 3,
+            "drop": 0
+          },
+          {
+            "source": "c2:숭실대학교",
+            "target": "c3:end_goal",
+            "count": 3,
+            "success": 3,
+            "drop": 0
+          }
+        ],
+        "total": 3,
+        "truncated": 0,
+        "max_columns": 30
+      },
+      "steps": {
+        "c0:나무위키:대문": {
+          "id": "c0:나무위키:대문",
+          "step": 1,
+          "screen": "나무위키:대문",
+          "title": "나무위키:대문",
+          "count": 3,
+          "shot": null,
+          "clicks": [
+            {
+              "x": 982,
+              "y": 28,
+              "w": 200,
+              "h": 40,
+              "label": "여기에서 검색",
+              "wasted": false,
+              "persona": "P001"
+            },
+            {
+              "x": 982,
+              "y": 28,
+              "w": 200,
+              "h": 40,
+              "label": "여기에서 검색",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 982,
+              "y": 28,
+              "w": 200,
+              "h": 40,
+              "label": "여기에서 검색",
+              "wasted": false,
+              "persona": "P009"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 982,
+              "y": 28,
+              "wasted": false
+            },
+            {
+              "x": 1018,
+              "y": 86,
+              "wasted": false
+            },
+            {
+              "x": 982,
+              "y": 28,
+              "wasted": false
+            },
+            {
+              "x": 1018,
+              "y": 86,
+              "wasted": false
+            },
+            {
+              "x": 982,
+              "y": 28,
+              "wasted": false
+            },
+            {
+              "x": 1018,
+              "y": 86,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교의 위치를 알아보기 위해 검색창에 '숭실대학교'를 입력하겠습니다.",
+              "action": "type",
+              "target": "여기에서 검색",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 지역을 알아내기 위해 먼저 검색창에 숭실대학교를 입력해야겠다.",
+              "action": "type",
+              "target": "여기에서 검색",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교의 지역을 알아보기 위해 검색창에 '숭실대학교'를 입력합니다.",
+              "action": "type",
+              "target": "여기에서 검색",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [],
+          "total": 3
+        },
+        "c1:나무위키:대문": {
+          "id": "c1:나무위키:대문",
+          "step": 2,
+          "screen": "나무위키:대문",
+          "title": "나무위키:대문",
+          "count": 3,
+          "shot": null,
+          "clicks": [
+            {
+              "x": 1018,
+              "y": 86,
+              "w": 263,
+              "h": 41,
+              "label": "숭실대학교",
+              "wasted": false,
+              "persona": "P001"
+            },
+            {
+              "x": 1018,
+              "y": 86,
+              "w": 263,
+              "h": 41,
+              "label": "숭실대학교",
+              "wasted": false,
+              "persona": "P002"
+            },
+            {
+              "x": 1018,
+              "y": 86,
+              "w": 263,
+              "h": 41,
+              "label": "숭실대학교",
+              "wasted": false,
+              "persona": "P009"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 982,
+              "y": 28,
+              "wasted": false
+            },
+            {
+              "x": 1018,
+              "y": 86,
+              "wasted": false
+            },
+            {
+              "x": 982,
+              "y": 28,
+              "wasted": false
+            },
+            {
+              "x": 1018,
+              "y": 86,
+              "wasted": false
+            },
+            {
+              "x": 982,
+              "y": 28,
+              "wasted": false
+            },
+            {
+              "x": 1018,
+              "y": 86,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서를 확인하기 위해 '숭실대학교' 링크를 클릭합니다.",
+              "action": "click",
+              "target": "숭실대학교",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "검색창 아래 바로 숭실대학교 링크가 보이니 눌러서 해당 문서로 이동한다.",
+              "action": "click",
+              "target": "숭실대학교",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "검색창에 입력이 되었으니 '숭실대학교' 문서 링크를 클릭하여 해당 페이지로 이동합니다.",
+              "action": "click",
+              "target": "숭실대학교",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [],
+          "total": 3
+        },
+        "c2:숭실대학교": {
+          "id": "c2:숭실대학교",
+          "step": 3,
+          "screen": "숭실대학교",
+          "title": "숭실대학교",
+          "count": 3,
+          "shot": null,
+          "clicks": [],
+          "screen_clicks": [],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "현재 화면 본문에서 숭실대학교의 지역이 '서울특별시'임을 확인하였으므로 목표를 달성하였습니다.",
+              "action": "done",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "현재 화면의 정보표에 숭실대학교의 지역이 서울특별시라고 나와 있는 것을 확인했다.",
+              "action": "done",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 정보상자에 지역이 '서울특별시'로 표시된 것을 확인하여 목표를 달성했습니다.",
+              "action": "done",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [],
+          "total": 3
+        }
+      },
+      "filmstrip": [
+        {
+          "step": 1,
+          "id": "c0:나무위키:대문",
+          "title": "나무위키:대문",
+          "count": 3,
+          "shot": null,
+          "others": 0
+        },
+        {
+          "step": 2,
+          "id": "c1:나무위키:대문",
+          "title": "나무위키:대문",
+          "count": 3,
+          "shot": null,
+          "others": 0
+        },
+        {
+          "step": 3,
+          "id": "c2:숭실대학교",
+          "title": "숭실대학교",
+          "count": 3,
+          "shot": null,
+          "others": 0
+        }
+      ],
+      "personas": {
+        "total": 3,
+        "changed": 0,
+        "exhausted": 0,
+        "baseline_run": null,
+        "compare_run": "namu_ssu",
+        "axes": {
+          "literacy": "숙련도",
+          "attention": "주의 지속",
+          "patience": "인내심",
+          "breadth": "탐색 범위"
+        },
+        "items": [
+          {
+            "id": "P001",
+            "code": "P001",
+            "name": "숙련3·주의3·인내4·탐색3",
+            "traits": {
+              "literacy": 3,
+              "attention": 3,
+              "patience": 4,
+              "breadth": 3
+            },
+            "age_band": "숙련3·주의3·인내4·탐색3",
+            "gender": "",
+            "outcome": "success",
+            "step_count": 3,
+            "baseline": null,
+            "compare": {
+              "outcome": "success",
+              "end_label": "달성",
+              "step_count": 3
+            },
+            "changed": false
+          },
+          {
+            "id": "P002",
+            "code": "P002",
+            "name": "숙련1·주의1·인내3·탐색2",
+            "traits": {
+              "literacy": 1,
+              "attention": 1,
+              "patience": 3,
+              "breadth": 2
+            },
+            "age_band": "숙련1·주의1·인내3·탐색2",
+            "gender": "",
+            "outcome": "success",
+            "step_count": 3,
+            "baseline": null,
+            "compare": {
+              "outcome": "success",
+              "end_label": "달성",
+              "step_count": 3
+            },
+            "changed": false
+          },
+          {
+            "id": "P009",
+            "code": "P009",
+            "name": "숙련5·주의5·인내5·탐색4",
+            "traits": {
+              "literacy": 5,
+              "attention": 5,
+              "patience": 5,
+              "breadth": 4
+            },
+            "age_band": "숙련5·주의5·인내5·탐색4",
+            "gender": "",
+            "outcome": "success",
+            "step_count": 3,
+            "baseline": null,
+            "compare": {
+              "outcome": "success",
+              "end_label": "달성",
+              "step_count": 3
+            },
+            "changed": false
+          }
+        ]
+      }
+    }
+  },
+  "defaultVariant": "buggy",
   "measured": {
-    "calls": 154,
-    "tokensIn": 246956,
-    "tokensOut": 7259,
-    "usd": 0.2124,
-    "usdPerPersona": 0.0106,
+    "calls": 163,
+    "tokensIn": 259159,
+    "tokensOut": 7647,
+    "usd": 0.223,
+    "usdPerPersona": 0.0097,
     "note": "실제 실행에서 측정한 값입니다. 추정식이 아닙니다."
   }
 }

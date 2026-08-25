@@ -226,3 +226,114 @@ def site_root(variant: str, base: str = DEFAULT_BASE) -> str:
     if variant not in SITE_DIRS:
         raise ValueError(f"알 수 없는 변형: {variant} (가능: {list(SITE_DIRS)})")
     return f"{base.rstrip('/')}/{SITE_DIRS[variant]}"
+
+
+def origin_of(url: str) -> str:
+    """주소에서 출처(스킴+호스트)만. 페르소나가 남의 사이트로 새지 않게 막는 데 쓴다."""
+    from urllib.parse import urlsplit
+    p = urlsplit(url)
+    return f"{p.scheme}://{p.netloc}" if p.netloc else ""
+
+
+def resolve_target(variant: str | None, url: str | None,
+                   base: str = DEFAULT_BASE) -> dict:
+    """무엇을 검사할지 하나로 정리한다.
+
+    두 갈래가 있다.
+
+    * **우리 테스트베드의 한 벌** (`--variant clean|buggy`) — 결과를 서로 견주려고
+      만든 쌍이라 장바구니 씨앗을 심고 지도 파일도 이름이 정해져 있다.
+    * **남의 주소 하나** (`--url https://…`) — 씨앗도 지도 이름도 없다. 대신
+      **출처를 벗어나지 못하게** 묶는다. 페르소나가 광고나 외부 링크를 눌러
+      다른 사이트로 가버리면 그 뒤 기록은 이 사이트에 대한 것이 아니게 된다.
+
+    `scope` 는 같은 사이트로 볼 범위다. 주소에 경로가 있으면 그 경로 아래로
+    좁힌다 — 큰 포털의 한 코너만 검사하고 싶을 때 나머지로 새지 않는다.
+    """
+    if url:
+        clean = url.strip()
+        if not clean:
+            raise ValueError("주소가 비어 있습니다")
+        if "://" not in clean:
+            clean = "https://" + clean
+        origin = origin_of(clean)
+        if not origin:
+            raise ValueError(f"주소를 알아볼 수 없습니다: {url}")
+        root = clean.rsplit("/", 1)[0] if clean.count("/") > 2 else origin
+        return {
+            "kind": "url",
+            "name": origin.split("//")[-1],
+            "start": clean,
+            "root": root,
+            "origin": origin,
+            "scope": root,
+            "cart_key": None,
+            "map_name": None,
+            "serve_root": None,
+            # 남의 사이트가 무엇을 파는 곳인지 우리는 모른다. 커머스라고 알려주면
+            # (--site-kind commerce) 그때만 검색 제한을 건다. SEARCH_RULE 참고.
+            "site_kind": "general",
+        }
+
+    v = variant or "buggy"
+    root = site_root(v, base)
+    return {
+        "kind": "variant",
+        "name": v,
+        "start": f"{root}/index.html",
+        "root": root,
+        "origin": origin_of(root),
+        "scope": root,
+        "cart_key": cart_key(v),
+        "map_name": v,
+        "serve_root": DEFAULT_SERVE_ROOT,
+        "site_kind": "commerce",
+    }
+
+
+# ── 검색을 누구에게 허용할 것인가 ──────────────────────────────────
+#
+# 숙련도가 낮은 사람에게는 검색을 막아둔다. 다만 그 근거는 **쇼핑몰 전용**이다:
+# 검색창에 상품명을 그대로 치는 것은 길을 찾은 것이 아니라 길찾기를 건너뛴
+# 것이라, 그러면 메뉴·분류·목록에서 겪었을 마찰이 통째로 측정에서 사라진다.
+#
+# 위키·문서·포털에서는 사정이 정반대다. 검색이 **정상적인 첫 번째 길**이고,
+# 미션 자체가 "검색해서 …"인 경우도 있다. 거기서 검색을 막으면 숙련도 1~2인
+# 사람(전체의 40%)은 미션을 구조적으로 수행할 수 없게 된다 — 실제로 나무위키
+# 에서 P002 가 검색창에 세 번 입력을 시도하다 전부 차단당하고 끝났다.
+#
+# 그래서 **커머스에만** 제한을 건다.
+SEARCH_RULE = {"commerce": "숙련도에 따라 제한", "general": "전원 허용"}
+
+
+def search_allowed_for(person: dict, site_kind: str) -> bool:
+    """이 사람에게 이 사이트에서 검색을 허용할지."""
+    if site_kind != "commerce":
+        return True
+    return bool(person.get("search_allowed", True))
+
+
+def map_stem(target: dict) -> str:
+    """지도·기록 파일에 쓸 짧은 이름. 주소를 파일명으로 쓸 수 없으니 호스트만 남긴다."""
+    if target.get("map_name"):
+        return target["map_name"]
+    safe = "".join(c if c.isalnum() or c in "-_." else "_" for c in target["name"])
+    return safe.strip("_") or "site"
+
+
+def in_scope(url: str, target: dict) -> bool:
+    """이 주소가 검사 범위 안인가. 벗어나면 페르소나를 되돌린다.
+
+    범위는 **사용자가 준 주소의 경로 아래**다. 같은 호스트 전체가 아니다 —
+    쇼핑 코너를 검사하라고 줬는데 회사 소개나 블로그를 헤매면 그 기록은
+    검사 대상에 대한 것이 아니다. 로고를 눌러 첫 화면으로 가는 것만
+    예외로 열어둔다. 사람도 길을 잃으면 로고부터 누른다.
+    """
+    if not url:
+        return False
+    scope = (target.get("scope") or "").rstrip("/")
+    if scope and (url == scope or url.startswith(scope + "/")
+                  or url.startswith(scope + "?")):
+        return True
+    origin = target.get("origin") or ""
+    return bool(origin) and url.rstrip("/") == origin.rstrip("/")

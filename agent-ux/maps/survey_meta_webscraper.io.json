@@ -1,0 +1,111 @@
+{
+  "variant": "webscraper.io",
+  "target_url": "https://webscraper.io/test-sites/e-commerce/allinone",
+  "generated_at": "2026-08-26T01:54:48",
+  "provider": null,
+  "model": null,
+  "mock": true,
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "pages": 7,
+  "discovery": {
+    "link": 7,
+    "dir": 0,
+    "extra": 0
+  },
+  "usage": {
+    "calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "cost_usd": 0.0,
+    "by_model": {}
+  },
+  "reference_measurements": [
+    {
+      "path": "/allinone",
+      "element_count": 39,
+      "horizontal_scroll": false,
+      "body_contrast": 18.3,
+      "body_font_size": 14,
+      "below_fold": 23,
+      "occluded": 0,
+      "low_contrast": 0,
+      "keyboard_unreachable": 0,
+      "missing_alt": 0
+    },
+    {
+      "path": "/allinone/computers",
+      "element_count": 41,
+      "horizontal_scroll": false,
+      "body_contrast": 18.3,
+      "body_font_size": 14,
+      "below_fold": 19,
+      "occluded": 0,
+      "low_contrast": 0,
+      "keyboard_unreachable": 0,
+      "missing_alt": 0
+    },
+    {
+      "path": "/allinone/phones",
+      "element_count": 40,
+      "horizontal_scroll": false,
+      "body_contrast": 18.3,
+      "body_font_size": 14,
+      "below_fold": 19,
+      "occluded": 0,
+      "low_contrast": 0,
+      "keyboard_unreachable": 0,
+      "missing_alt": 0
+    },
+    {
+      "path": "/allinone/product/44",
+      "element_count": 40,
+      "horizontal_scroll": false,
+      "body_contrast": 18.3,
+      "body_font_size": 14,
+      "below_fold": 1,
+      "occluded": 0,
+      "low_contrast": 0,
+      "keyboard_unreachable": 0,
+      "missing_alt": 0
+    },
+    {
+      "path": "/allinone/computers/laptops",
+      "element_count": 155,
+      "horizontal_scroll": false,
+      "body_contrast": 18.3,
+      "body_font_size": 14,
+      "below_fold": 137,
+      "occluded": 0,
+      "low_contrast": 0,
+      "keyboard_unreachable": 0,
+      "missing_alt": 0
+    },
+    {
+      "path": "/allinone/computers/tablets",
+      "element_count": 59,
+      "horizontal_scroll": false,
+      "body_contrast": 18.3,
+      "body_font_size": 14,
+      "below_fold": 41,
+      "occluded": 0,
+      "low_contrast": 0,
+      "keyboard_unreachable": 0,
+      "missing_alt": 0
+    },
+    {
+      "path": "/allinone/phones/touch",
+      "element_count": 46,
+      "horizontal_scroll": false,
+      "body_contrast": 18.3,
+      "body_font_size": 14,
+      "below_fold": 29,
+      "occluded": 0,
+      "low_contrast": 0,
+      "keyboard_unreachable": 0,
+      "missing_alt": 0
+    }
+  ]
+}

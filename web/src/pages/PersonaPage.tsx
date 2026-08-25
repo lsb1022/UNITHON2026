@@ -85,8 +85,9 @@ export function PersonaPage() {
               <div className="flex h-[56px] items-center gap-[16px] font-noto text-[13px] font-medium text-subtext">
                 <span className="w-[150px] shrink-0">연령대</span>
                 <span className="w-[152px] shrink-0">총 인원</span>
-                <span className="min-w-[240px] flex-1">성별 비율</span>
+                <span className="w-[470px] shrink-0">성별 비율</span>
                 <span className="w-[104px] shrink-0 text-center">옵션</span>
+                <span className="flex-1" />
               </div>
 
               {rows.map((row) => (
@@ -172,7 +173,7 @@ function AgeRowItem({ row, onPatch }: { row: AgeRow; onPatch: (next: Partial<Age
       </div>
 
       {/* 상관없음이면 슬라이더를 흐리고 그 위에 안내 pill 을 얹는다 (Figma 130:13987) */}
-      <div className="relative flex min-w-[240px] flex-1 items-center">
+      <div className="relative h-[58px] w-[470px] shrink-0">
         <GenderRatioSlider
           femalePercent={row.femalePercent}
           onChange={(value) => onPatch({ femalePercent: value })}

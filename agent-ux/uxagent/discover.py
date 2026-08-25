@@ -21,16 +21,40 @@ from . import config
 STATE_PARAMS = {"id", "cat", "q", "page", "sort"}
 
 
+def _fold_segment(seg: str) -> str:
+    """경로 한 토막이 '식별자'면 자리표시자로 접는다.
+
+    남의 사이트는 상품 번호를 쿼리가 아니라 경로에 둔다 —
+    `/product/44`, `/product/130` 은 같은 화면이다. 접지 않으면 답사가
+    같은 템플릿을 몇 번씩 세어 페이지 예산을 다 써버린다.
+
+    숫자거나, UUID·해시처럼 긴 데다 사람 말이 아닌 토막만 접는다.
+    `/computers`, `/phones` 같은 진짜 분류는 건드리지 않는다.
+    """
+    if not seg:
+        return seg
+    if seg.isdigit():
+        return "{id}"
+    if len(seg) >= 12 and not any(c in seg for c in "-_.") and seg.isalnum() \
+            and any(c.isdigit() for c in seg):
+        return "{id}"
+    if len(seg) >= 20 and seg.count("-") >= 4:      # UUID 꼴
+        return "{id}"
+    return seg
+
+
 def template_key(url: str) -> str:
     """URL을 페이지 템플릿 단위로 접는다.
 
     product.html?id=7  -> product.html
     list.html?cat=상의 -> list.html
+    /product/44        -> /product/{id}
     쿼리에 STATE_PARAMS 밖의 키가 있으면 그건 다른 화면일 수 있으니 남긴다.
     """
     s = urlsplit(url)
     keep = [(k, v) for k, v in parse_qsl(s.query) if k not in STATE_PARAMS]
     path = s.path or "/"
+    path = "/".join(_fold_segment(x) for x in path.split("/"))
     return path + (f"?{urlencode(keep)}" if keep else "")
 
 
@@ -54,12 +78,17 @@ def rel_path(url: str, root: str) -> str:
 
 # ── 1층: 링크 추적 ─────────────────────────────────────────────────
 
-async def crawl_links(page, root: str, max_pages: int, max_depth: int) -> tuple[list[str], dict]:
+async def crawl_links(page, root: str, max_pages: int, max_depth: int,
+                      start: str | None = None) -> tuple[list[str], dict]:
     """<a href>를 따라가며 템플릿 단위로 대표 URL을 모은다.
 
     반환: (대표 URL 목록, {템플릿키: [링크로 이어진 템플릿키...]})
+
+    `start` 를 주면 거기서 출발한다. 우리 테스트베드는 첫 화면이 늘
+    `/index.html` 이지만 남의 사이트는 그런 파일이 없다 — 그대로 붙이면
+    404 한 장을 지도로 만들고 끝난다.
     """
-    start = root.rstrip("/") + "/index.html"
+    start = start or (root.rstrip("/") + "/index.html")
     seen: dict[str, str] = {}          # 템플릿키 -> 대표 URL
     edges: dict[str, list[str]] = {}
     queue = [(start, 0)]
@@ -125,9 +154,10 @@ def list_local_pages(root: str, serve_root: str | None) -> list[str]:
 
 async def discover(page, root: str, *, serve_root: str | None = None,
                    extra: list[str] | None = None,
+                   start: str | None = None,
                    max_pages: int = config.SURVEY_MAX_PAGES,
                    max_depth: int = config.SURVEY_MAX_DEPTH) -> dict:
-    linked, edges = await crawl_links(page, root, max_pages, max_depth)
+    linked, edges = await crawl_links(page, root, max_pages, max_depth, start)
     by_key: dict[str, dict] = {}
     for u in linked:
         by_key[template_key(u)] = {"url": u, "found_by": "link"}

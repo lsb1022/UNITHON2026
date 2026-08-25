@@ -69,7 +69,7 @@ export type ConnectivityResult = {
   status: number | null
   title: string | null
   /** 도달 가능 여부와 별개다. 열리지만 iframe 임베드만 막는 사이트가 흔하다. */
-  embeddable: boolean
+  embeddable: boolean | null
   embed_block_reason: string | null
   link_count: number | null
   error_kind: string | null
@@ -292,9 +292,84 @@ export type DiagramNode = {
 }
 
 export type DiagramPayload = {
+  /** 열 하나 = 한 스텝. 한 열에 여러 화면이 동시에 설 수 있다. */
   columns: { index: number; label: string; nodes: DiagramNode[] }[]
   links: { source: string; target: string; count: number; success: number; drop: number }[]
   total: number
+  /** 열 상한을 넘겨 끝까지 그리지 못한 인원. 조용히 버리면 전수를 본 것처럼 읽힌다. */
+  truncated?: number
+  max_columns?: number
+}
+
+/** 하나의 클릭. 좌표는 페이지 절대좌표라 화면 사진 위에 그대로 얹혀진다. */
+export type StepClick = {
+  x: number
+  y: number
+  w: number
+  h: number
+  label: string
+  /** 눌렀는데 화면이 아무런 반응도 하지 않았다 — 헛클릭. */
+  wasted: boolean
+  persona: string
+}
+
+export type StepDot = { x: number; y: number; wasted: boolean }
+
+export type StepPersona = {
+  id: string
+  label: string
+  traits: Record<string, number>
+  outcome: 'success' | 'drop'
+  end_label: string
+  total_steps: number
+  /** 그 순간 이 사람이 무슨 생각으로 그것을 눌렀는지. */
+  thought: string
+  action: string
+  target: string
+  blocked: boolean
+  /** 같은 단계에 다른 화면에 있었을 때만 채워진다. */
+  screen?: string
+  screen_title?: string
+}
+
+export type StepDetail = {
+  id: string
+  step: number
+  screen: string
+  title: string
+  count: number
+  shot: { src: string; w: number; h: number } | null
+  clicks: StepClick[]
+  /** 이 화면에서 벌어진 클릭 전부. 열지도의 바탕이 된다. */
+  screen_clicks: StepDot[]
+  wasted: number
+  /** 이 단계에 이 화면에 있던 사람. */
+  personas: StepPersona[]
+  /** 같은 단계에 다른 화면에 있던 사람. */
+  elsewhere: StepPersona[]
+  /** 이 단계 전에 이미 끝난 사람. */
+  finished: StepPersona[]
+  /** 셋을 더하면 전체 인원이 된다. */
+  total: number
+}
+
+export type FilmFrame = {
+  step: number
+  id: string
+  title: string
+  count: number
+  shot: { src: string; w: number; h: number } | null
+  /** 같은 단계에 다른 화면에 있었던 무리의 수. */
+  others: number
+}
+
+export type PersonaOutcome = 'success' | 'drop' | 'other' | null
+
+/** 한쪽 사이트에서의 결과. 기준(정상판)과 비교(결함판)를 나란히 놓기 위한 것. */
+export type PersonaSideResult = {
+  outcome: PersonaOutcome
+  end_label: string
+  step_count: number | null
 }
 
 export type PersonaRow = {
@@ -303,16 +378,92 @@ export type PersonaRow = {
   name: string
   age_band: string
   gender: string
-  outcome: 'success' | 'drop' | 'other' | null
+  outcome: PersonaOutcome
   step_count: number | null
+  /** 테스트 중 만들어진 행동 특성. 축마다 1~5단계. 사용자가 정하는 값이 아니다. */
+  traits?: Record<string, number>
+  /** 기준 사이트(정상판) 결과. 대조군이 없으면 null. */
+  baseline?: PersonaSideResult | null
+  /** 비교 사이트(결함판) 결과. */
+  compare?: PersonaSideResult | null
+  /** 두 사이트에서 결과가 갈렸는가. 이 사람들이 결함의 대가를 치른다. */
+  changed?: boolean
 }
 
-export const getTest = (testId: string) => request<TestDetail>(`/api/tests/${testId}`)
+/** 결과 화면이 어느 사이트 기준으로 볼지. 정상판(대조군) / 결함판. */
+export type Variant = 'clean' | 'buggy'
 
-export const getTestPaths = (testId: string) => request<PathsPayload>(`/api/tests/${testId}/paths`)
+/** ?variant= 를 붙인다. 고른 것이 없으면 서버가 기본값을 고른다. */
+const withVariant = (path: string, variant?: Variant) =>
+  variant ? `${path}?variant=${variant}` : path
 
-export const getTestDiagram = (testId: string) =>
-  request<DiagramPayload>(`/api/tests/${testId}/diagram`)
+export const getTest = (testId: string, variant?: Variant) =>
+  request<TestDetail>(withVariant(`/api/tests/${testId}`, variant))
 
-export const getTestPersonas = (testId: string) =>
-  request<{ total: number; items: PersonaRow[] }>(`/api/tests/${testId}/personas`)
+export const getTestPaths = (testId: string, variant?: Variant) =>
+  request<PathsPayload>(withVariant(`/api/tests/${testId}/paths`, variant))
+
+export const getTestDiagram = (testId: string, variant?: Variant) =>
+  request<DiagramPayload>(withVariant(`/api/tests/${testId}/diagram`, variant))
+
+export type PersonasPayload = {
+  total: number
+  items: PersonaRow[]
+  /** 결과가 갈린 인원 · 스텝을 다 쓴 인원. 표 위 요약 칩에 쓴다. */
+  changed?: number
+  exhausted?: number
+  baseline_run?: string | null
+  compare_run?: string | null
+  axes?: Record<string, string>
+}
+
+export const getTestPersonas = (testId: string, variant?: Variant) =>
+  request<PersonasPayload>(withVariant(`/api/tests/${testId}/personas`, variant))
+
+export type StepsPayload = {
+  /** 막대 id → 그 막대를 눌렀을 때 보여줄 것. */
+  steps: Record<string, StepDetail>
+  /** 아래 필름 띄. 단계마다 사람이 가장 많았던 화면을 대표로 세운다. */
+  filmstrip: FilmFrame[]
+  /** 성격 문장표. 페르소나 규격의 원문이라 화면이 지어낼 일이 없다. */
+  sentences: Record<string, Record<string, string>>
+  axes: Record<string, string>
+  test_name: string
+}
+
+export const getTestSteps = (testId: string, variant?: Variant) =>
+  request<StepsPayload>(withVariant(`/api/tests/${testId}/steps`, variant))
+
+
+// --------------------------------------------------------------------------- //
+// 두 프로젝트 견주기
+//
+// 프로젝트 안에서는 자기 사이트 결과만 보여준다. 고치기 전과 고친 뒤를 나란히
+// 놓는 일은 여기서만 한다 — 같은 사람 열 명을 양쪽에 똑같이 투입했기 때문에
+// "이 사람이 못한 게 사이트 탓인지 역량 탓인지"가 이 표에서만 갈린다.
+// --------------------------------------------------------------------------- //
+
+export type CompareSide = {
+  id: string
+  name: string
+  url: string
+  success_rate: number | null
+}
+
+export type ComparePayload = {
+  ok: boolean
+  message?: string
+  base?: CompareSide
+  against?: CompareSide
+  items: PersonaRow[]
+  total?: number
+  changed?: number
+  exhausted?: number
+  axes?: Record<string, string>
+}
+
+export const listComparableProjects = () =>
+  request<CompareSide[]>('/api/compare/projects')
+
+export const compareProjects = (base: string, against: string) =>
+  request<ComparePayload>(`/api/compare?base=${base}&against=${against}`)

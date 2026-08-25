@@ -58,7 +58,13 @@ def print_map(site_map: dict, meas: list) -> None:
 async def run(args) -> int:
     from playwright.async_api import async_playwright
 
-    root = config.site_root(args.variant, args.base)
+    # 우리 테스트베드의 한 벌이거나, 사용자가 준 아무 공개 주소거나.
+    target = config.resolve_target(
+        None if args.url else args.variant, args.url, args.base)
+    root = target["root"]
+    stem = config.map_stem(target)
+    # 답사자가 본 화면을 남길 곳. 사이트마다 따로 쌓는다.
+    shots_dir = args.shots_dir or os.path.join("shots", stem)
     usage = Usage()
     pname = config.role_provider("survey")
     client = None if args.mock else build_client(pname)
@@ -75,8 +81,12 @@ async def run(args) -> int:
 
         found = await discover.discover(
             page, root,
-            serve_root=None if args.no_local_dir else args.serve_root,
+            # 로컬 정적 사이트일 때만 파일시스템을 뒤져 링크가 못 간 페이지를
+            # 찾는다. 남의 사이트에는 그럴 디렉터리가 없다 — 링크만 따라간다.
+            serve_root=(None if (args.no_local_dir or target["kind"] == "url")
+                        else args.serve_root),
             extra=args.extra,
+            start=target["start"],
             max_pages=args.max_pages,
         )
         c = found["counts"]
@@ -95,7 +105,8 @@ async def run(args) -> int:
 
             entry, m = await S.survey_page(
                 page, t, root, client=client, model=model,
-                usage=usage, mock=args.mock, edges=found["edges"])
+                shots_dir=shots_dir, usage=usage, mock=args.mock,
+                edges=found["edges"])
 
             # 판단 표현이 섞이면 재생성. LLM에게 자기 검증을 맡기지 않는다.
             ok = True
@@ -108,7 +119,8 @@ async def run(args) -> int:
                     print("        - %s" % it)
                 entry, m = await S.survey_page(
                     page, t, root, client=client, model=model,
-                    usage=usage, mock=args.mock, edges=found["edges"])
+                    shots_dir=shots_dir, usage=usage, mock=args.mock,
+                    edges=found["edges"])
             else:
                 if S.validate_page(entry):
                     ok = False
@@ -127,7 +139,9 @@ async def run(args) -> int:
         await browser.close()
 
     site_map = {
-        "variant": args.variant,
+        "variant": stem,
+        "target_url": target["start"],
+        "target_kind": target["kind"],
         "root": root,
         "generated_at": datetime.now().isoformat(timespec="seconds"),
         "pages": pages,
@@ -154,25 +168,27 @@ async def run(args) -> int:
             print("  python survey.py --variant %s --validate-only" % args.variant)
 
     os.makedirs(config.MAPS_DIR, exist_ok=True)
-    mp = os.path.join(config.MAPS_DIR, "site_map_%s.json" % args.variant)
+    mp = os.path.join(config.MAPS_DIR, "site_map_%s.json" % stem)
     with open(mp, "w", encoding="utf-8") as f:
         json.dump(site_map, f, ensure_ascii=False, indent=2)
 
     meta = {
-        "variant": args.variant,
+        "variant": stem,
+        "target_url": target["start"],
         "generated_at": site_map["generated_at"],
         "provider": None if args.mock else pname,
         "model": None if args.mock else model,
         "mock": args.mock,
         "viewport": config.VIEWPORT,
         "pages": len(pages),
+        "shots_dir": shots_dir,
         "discovery": found["counts"],
         "usage": usage.as_dict(),
         # 프롬프트에 절대 들어가지 않는 참고용 수치. clean/buggy 대조와
         # 사람 확인 화면에만 쓴다.
         "reference_measurements": meas,
     }
-    mmp = os.path.join(config.MAPS_DIR, "survey_meta_%s.json" % args.variant)
+    mmp = os.path.join(config.MAPS_DIR, "survey_meta_%s.json" % stem)
     with open(mmp, "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=2)
 
@@ -201,6 +217,10 @@ def validate_only(variant: str) -> int:
 def main() -> int:
     ap = argparse.ArgumentParser(description="답사 에이전트 — 사이트 지도 생성")
     ap.add_argument("--variant", default="buggy", choices=sorted(config.SITE_DIRS))
+    ap.add_argument("--shots-dir", default="",
+                    help="답사자가 본 화면을 저장할 곳. 기본 shots/<사이트>/")
+    ap.add_argument("--url", default="",
+                    help="우리 테스트베드가 아닌 아무 공개 주소. 주면 --variant 는 무시된다.")
     ap.add_argument("--base", default=config.DEFAULT_BASE,
                     help="정적 서버 루트. 포트 분리 없이 경로로 clean/flawed를 가른다")
     ap.add_argument("--serve-root", default=config.DEFAULT_SERVE_ROOT,

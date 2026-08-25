@@ -1,0 +1,23 @@
+[
+ {
+  "name": "직접 지정",
+  "url": "https://namu.wiki/w/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD",
+  "status": 200,
+  "final_url": "https://namu.wiki/w/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD",
+  "note": "networkidle 미도달(계속 뭔가 불러오는 사이트)",
+  "load_s": 14.7,
+  "wall": null,
+  "snap_s": 1.1,
+  "elements": 3026,
+  "named": 3008,
+  "low_contrast": 535,
+  "occluded": 106,
+  "no_keyboard": 0,
+  "page_h": 19397,
+  "h_scroll": false,
+  "reselect": "60/60",
+  "links_total": 3082,
+  "links_internal": 3037,
+  "login_form": false
+ }
+]

@@ -347,10 +347,49 @@ class Handler(BaseHTTPRequestHandler):
         if path.startswith("/api/tests/") and path.endswith("/runs"):
             return self._start(body, from_web=True)
 
+        # 미션 검증. 규칙으로 먼저 거르고 남은 것만 Gemini 에게 묻는다.
+        # 키는 서버에만 둔다 — 브라우저에서 직접 부르면 키가 번들에 실린다.
+        if path == "/api/missions/analyze":
+            return self._analyze(body)
+
         if path != "/api/scan":
             return self._send(404, {"error": "없는 주소입니다"})
 
         return self._start(body, from_web=False)
+
+    def _analyze(self, body: dict):
+        from uxagent import mission
+        from uxagent.llm import Usage, build_client
+
+        goal = str(body.get("prompt") or body.get("goal") or "")
+
+        # 규칙에서 걸리면 여기서 끝. 모델을 부르지 않는다.
+        if mission.rule_issues(goal):
+            return self._send(200, mission.analyze(goal, mock=True))
+
+        site_map = None
+        variant = str(body.get("variant") or Handler.variant)
+        mp = os.path.join(config.MAPS_DIR, "site_map_%s.json" % variant)
+        if os.path.exists(mp):
+            with open(mp, encoding="utf-8") as f:
+                site_map = json.load(f)
+
+        if Handler.mock or not config.api_key(config.role_provider("goals")):
+            return self._send(200, mission.analyze(goal, site_map=site_map, mock=True))
+
+        usage = Usage()
+        try:
+            pname = config.role_provider("goals")
+            out = mission.analyze(goal, site_map=site_map,
+                                  client=build_client(pname),
+                                  models=config.models("goals", pname),
+                                  usage=usage, mock=False)
+        except Exception as e:  # noqa: BLE001
+            # 모델이 죽어도 화면은 살아야 한다. 규칙 층 결과로 물러선다.
+            out = mission.analyze(goal, site_map=site_map, mock=True)
+            out["note"] = "모델 확인은 건너뛰었습니다 (%s)" % str(e)[:80]
+        out["usage"] = usage.as_dict()
+        return self._send(200, out)
 
     def _start(self, body: dict, from_web: bool):
         base = str(body.get("base") or "http://localhost:8000/ux-testbed")

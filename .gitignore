@@ -35,3 +35,7 @@ node_modules/
 dist/
 .claude/settings.local.json
 >>>>>>> Stashed changes
+
+# 확인용으로 찍은 화면. 결과물이 아니라 작업 중 눈으로 본 것들이다.
+agent-ux/*.png
+testbed-comparison.html

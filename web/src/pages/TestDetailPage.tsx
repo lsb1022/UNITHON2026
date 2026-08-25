@@ -3,10 +3,10 @@ import { useNavigate, useParams } from 'react-router-dom'
 import {
   getTest,
   getTestDiagram,
+  getTestSteps,
   getTestPaths,
   getTestPersonas,
   type MissionPath,
-  type PersonaRow,
 } from '../api/client'
 import { useQuery } from '../api/hooks'
 import backArrow from '../assets/icons/back-arrow.svg'
@@ -14,8 +14,10 @@ import { Emoji, type EmojiName } from '../components/Emoji'
 import { Icon } from '../components/Icon'
 import { MissionPathCard } from '../components/MissionPathCard'
 import { NavigationDiagram } from '../components/NavigationDiagram'
+import { StepDetailModal } from '../components/StepDetailModal'
 import { SegmentedControl } from '../components/SegmentedControl'
 import { SitePreview } from '../components/SitePreview'
+import { Chip, Dots, SideResult } from '../components/PersonaBits'
 import { ErrorBlock, LoadingBlock } from '../components/StateView'
 import { TestSidebar } from '../components/TestSidebar'
 
@@ -61,11 +63,7 @@ export function TestDetailPage() {
       </header>
 
       <div className="flex min-h-0 flex-1">
-        <TestSidebar
-          projectId={projectId}
-          testId={testId}
-          personaTotal={test.data?.persona_total ?? 0}
-        />
+        <TestSidebar projectId={projectId} testId={testId} />
 
         <main className="min-h-0 flex-1 overflow-y-auto px-[40px] py-[40px]">
           <div className="w-full max-w-[1573px] rounded-[16px] border border-line bg-white px-[27px] pt-[40px] pb-[40px]">
@@ -308,6 +306,12 @@ function HeatmapModal({ path, onClose }: { path: MissionPath | null; onClose: ()
 
 function DiagramView({ testId }: { testId: string }) {
   const diagram = useQuery(() => getTestDiagram(testId), [testId])
+  // 단계 상세는 흐름도와 같은 실행에서 나온 것이라 함께 받아둔다. 막대를 누른
+  // 뒤에 받으면 창이 빈 채로 먼저 뜬다.
+  const steps = useQuery(() => getTestSteps(testId), [testId])
+  const [picked, setPicked] = useState<string | null>(null)
+
+  const detail = picked ? steps.data?.steps[picked] : null
 
   return (
     <section className="mt-[7px] rounded-[16px] border border-line px-[24px] pt-[22px] pb-[24px]">
@@ -320,8 +324,33 @@ function DiagramView({ testId }: { testId: string }) {
       <div className="mt-[29px]">
         {diagram.loading ? <LoadingBlock label="흐름을 그리는 중이에요" /> : null}
         {diagram.error ? <ErrorBlock message={diagram.error} onRetry={diagram.reload} /> : null}
-        {diagram.data ? <NavigationDiagram data={diagram.data} /> : null}
+        {diagram.data ? (
+          <NavigationDiagram
+            data={diagram.data}
+            // 상세가 아직 안 왔거나 그 막대에 상세가 없으면(달성·이탈 막대)
+            // 누를 수 있는 척하지 않는다.
+            onPickNode={
+              steps.data
+                ? (id) => {
+                    if (steps.data?.steps[id]) setPicked(id)
+                  }
+                : undefined
+            }
+          />
+        ) : null}
       </div>
+
+      {detail && steps.data ? (
+        <StepDetailModal
+          detail={detail}
+          filmstrip={steps.data.filmstrip}
+          sentences={steps.data.sentences}
+          axes={steps.data.axes}
+          testName={steps.data.test_name}
+          onMove={setPicked}
+          onClose={() => setPicked(null)}
+        />
+      ) : null}
     </section>
   )
 }
@@ -339,19 +368,21 @@ function Legend({ color, label }: { color: string; label: string }) {
 // 페르소나
 // --------------------------------------------------------------------------- //
 
-const OUTCOME_STYLE = {
-  success: { label: '성공', className: 'bg-success-soft text-success' },
-  drop: { label: '이탈', className: 'bg-[#fff6d6] text-[#8a6d00]' },
-  other: { label: '기록 없음', className: 'bg-track text-subtext' },
-} as const
-
+/**
+ * 페르소나 목록 — **이 사이트에서의 결과만.**
+ *
+ * 두 사이트를 나란히 놓는 표는 여기서 뺐다. 사용자는 주소 하나를 넣었으므로
+ * 프로젝트 안에서 다른 사이트가 튀어나오면 "내가 넣지도 않은 게 왜 있지?"가 된다.
+ * 견주는 일은 비교 화면(/compare)에서만 한다 — 데이터는 그대로 남아 있다.
+ */
 function PersonaView({ testId }: { testId: string }) {
   const personas = useQuery(() => getTestPersonas(testId), [testId])
 
   if (personas.loading) return <LoadingBlock label="페르소나를 불러오는 중이에요" />
   if (personas.error) return <ErrorBlock message={personas.error} onRetry={personas.reload} />
 
-  const items = personas.data?.items ?? []
+  const data = personas.data
+  const items = data?.items ?? []
   if (items.length === 0) {
     return (
       <p className="py-[80px] text-center text-[15px] text-subtext">
@@ -360,34 +391,58 @@ function PersonaView({ testId }: { testId: string }) {
     )
   }
 
+  const axes = data?.axes ?? {}
+  const axisKeys = Object.keys(axes)
+
   return (
-    <div className="mt-[16px] grid grid-cols-4 gap-[14px]">
-      {items.map((persona: PersonaRow) => {
-        const tone = OUTCOME_STYLE[persona.outcome ?? 'other']
-        return (
-          <article
-            key={persona.id}
-            className="flex flex-col gap-[8px] rounded-[16px] border border-line bg-white p-[16px]"
-          >
-            <div className="flex items-center gap-[8px]">
-              <Icon name="userProfile" className="text-subtext" />
-              <p className="truncate text-[15px] font-semibold text-ink">{persona.name}</p>
-            </div>
-            <p className="text-[13px] text-subtext">
-              {persona.age_band} · {persona.gender} · {persona.code}
-            </p>
-            <div className="flex items-center gap-[8px]">
-              <span className={`rounded-[6px] px-[8px] py-[3px] text-[12px] font-semibold ${tone.className}`}>
-                {tone.label}
-              </span>
-              <span className="text-[12px] text-subtext">
-                {persona.step_count === null ? '–' : `${persona.step_count} step`}
-              </span>
-            </div>
-          </article>
-        )
-      })}
-    </div>
+    <section className="mt-[16px]">
+      <div className="flex flex-wrap items-center gap-[8px]">
+        <Chip tone="plain">전체 {data?.total ?? items.length}명</Chip>
+        {(data?.exhausted ?? 0) > 0 ? (
+          <Chip tone="hold">스텝 소진 {data?.exhausted}명</Chip>
+        ) : null}
+        <span className="ml-auto text-[13px] text-subtext">실행 · {data?.compare_run ?? '–'}</span>
+      </div>
+
+      <p className="mt-[12px] rounded-[12px] bg-bg px-[18px] py-[12px] text-[13px] text-subtext">
+        {axisKeys.map((k) => axes[k]).join('·')}는 테스트 중 AI가 내부적으로 생성한 행동
+        특성이며, 사용자가 직접 설정하는 값이 아니에요.
+      </p>
+
+      <div className="mt-[14px] overflow-x-auto rounded-[16px] border border-line">
+        <table className="w-full min-w-[760px] border-collapse text-left">
+          <thead>
+            <tr className="bg-bg text-[13px] text-subtext">
+              <th className="px-[18px] py-[12px] font-medium">페르소나</th>
+              {axisKeys.map((k) => (
+                <th key={k} className="px-[10px] py-[12px] font-medium whitespace-nowrap">
+                  {axes[k]}
+                </th>
+              ))}
+              <th className="px-[14px] py-[12px] font-medium whitespace-nowrap">결과</th>
+            </tr>
+          </thead>
+          <tbody>
+            {items.map((persona) => (
+              <tr key={persona.id} className="border-t border-line text-[14px]">
+                <td className="px-[18px] py-[12px]">
+                  <p className="font-semibold text-ink">{persona.code}</p>
+                  <p className="text-[12px] text-subtext">{persona.name}</p>
+                </td>
+                {axisKeys.map((k) => (
+                  <td key={k} className="px-[10px] py-[12px]">
+                    <Dots value={persona.traits?.[k] ?? 0} />
+                  </td>
+                ))}
+                <td className="px-[14px] py-[12px]">
+                  <SideResult side={persona.compare ?? null} />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
   )
 }
 

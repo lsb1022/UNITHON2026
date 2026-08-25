@@ -171,6 +171,7 @@ async def shoot(page, max_shots: int = config.SURVEY_SHOTS_PER_PAGE) -> list[byt
 
 
 async def survey_page(page, target: dict, root: str, *, client, model: str,
+                      shots_dir: str | None = None,
                       usage: Usage, mock: bool, edges: dict) -> tuple[dict, dict]:
     """반환: (지도 항목, 참고용 측정값)
 
@@ -178,7 +179,19 @@ async def survey_page(page, target: dict, root: str, *, client, model: str,
     clean/buggy를 비교하는 용도로 쓴다. 프롬프트에는 절대 들어가지 않는다.
     """
     url = target["url"]
-    await page.goto(url, wait_until="networkidle", timeout=config.STEP_TIMEOUT_MS)
+    # 먼저 화면이 뜨는 것까지만 기다리고, 조용해지는 것은 **되면 좋고** 로 둔다.
+    #
+    # networkidle 을 필수로 걸면 스스로 계속 무언가를 불러오는 사이트에서
+    # 영영 끝나지 않는다 — 나무위키가 그랬고, 답사가 첫 페이지에서 시간 초과로
+    # 통째로 죽었다. 우리 테스트베드는 정적 파일이라 티가 안 났던 문제다.
+    await page.goto(url, wait_until="domcontentloaded",
+                    timeout=config.STEP_TIMEOUT_MS * 3)
+    try:
+        await page.wait_for_load_state("networkidle",
+                                       timeout=config.STEP_TIMEOUT_MS)
+    except Exception:  # noqa: BLE001
+        # 안 조용해지는 사이트. 이미지가 자리를 잡을 짬만 주고 진행한다.
+        await page.wait_for_timeout(1500)
     path = discover.rel_path(url, root)
     title = await page.title()
 
@@ -188,6 +201,21 @@ async def survey_page(page, target: dict, root: str, *, client, model: str,
         body = mock_page(path, title)
     else:
         shots = await shoot(page)
+        # 모델에 보낸 그림을 그대로 남긴다. 보내고 버리면 "무엇을 보고 이
+        # 설명서를 썼는가"를 나중에 아무도 확인할 수 없다. 페르소나는 글로만
+        # 움직이므로 이 파이프라인에서 그림이 남는 곳은 여기뿐이다.
+        if shots_dir:
+            import os as _os
+            _os.makedirs(shots_dir, exist_ok=True)
+            # 한글 경로는 퍼센트 인코딩으로 온다. 그대로 파일명에 쓰면
+            # 'EC_9C_84_ED_82_A4...' 가 되어 사람이 못 알아본다.
+            from urllib.parse import unquote as _unq
+            safe = "".join(c if (c.isalnum() or c in "-_.") else "_"
+                           for c in _unq(path))[:60]
+            for i, raw in enumerate(shots, 1):
+                with open(_os.path.join(shots_dir, "%s__%d.png" % (safe.strip("_") or "page", i)),
+                          "wb") as f:
+                    f.write(raw)
         body = chat_json(
             client,
             model=model,

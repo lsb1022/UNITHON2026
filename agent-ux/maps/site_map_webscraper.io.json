@@ -1,0 +1,165 @@
+{
+  "variant": "webscraper.io",
+  "target_url": "https://webscraper.io/test-sites/e-commerce/allinone",
+  "target_kind": "url",
+  "root": "https://webscraper.io/test-sites/e-commerce",
+  "generated_at": "2026-08-26T01:54:48",
+  "pages": [
+    {
+      "path": "/allinone",
+      "template": "/test-sites/e-commerce/allinone",
+      "title": "Allinone | Web Scraper Test Sites",
+      "found_by": "link",
+      "layout": "(/allinone 자리표시자) 상단 헤더, 중앙 본문, 하단 푸터로 구성",
+      "elements": [
+        {
+          "name": "헤더 로고",
+          "type": "링크",
+          "where": "좌측 상단"
+        }
+      ],
+      "links_to": [
+        "/test-sites/e-commerce/allinone",
+        "/test-sites/e-commerce/allinone/computers",
+        "/test-sites/e-commerce/allinone/phones",
+        "/test-sites/e-commerce/allinone/product/{id}"
+      ],
+      "steps": null
+    },
+    {
+      "path": "/allinone/computers",
+      "template": "/test-sites/e-commerce/allinone/computers",
+      "title": "Allinone | Web Scraper Test Sites",
+      "found_by": "link",
+      "layout": "(/allinone/computers 자리표시자) 상단 헤더, 중앙 본문, 하단 푸터로 구성",
+      "elements": [
+        {
+          "name": "헤더 로고",
+          "type": "링크",
+          "where": "좌측 상단"
+        }
+      ],
+      "links_to": [
+        "/test-sites/e-commerce/allinone",
+        "/test-sites/e-commerce/allinone/computers",
+        "/test-sites/e-commerce/allinone/computers/laptops",
+        "/test-sites/e-commerce/allinone/computers/tablets",
+        "/test-sites/e-commerce/allinone/phones",
+        "/test-sites/e-commerce/allinone/product/{id}"
+      ],
+      "steps": null
+    },
+    {
+      "path": "/allinone/phones",
+      "template": "/test-sites/e-commerce/allinone/phones",
+      "title": "Allinone | Web Scraper Test Sites",
+      "found_by": "link",
+      "layout": "(/allinone/phones 자리표시자) 상단 헤더, 중앙 본문, 하단 푸터로 구성",
+      "elements": [
+        {
+          "name": "헤더 로고",
+          "type": "링크",
+          "where": "좌측 상단"
+        }
+      ],
+      "links_to": [
+        "/test-sites/e-commerce/allinone",
+        "/test-sites/e-commerce/allinone/computers",
+        "/test-sites/e-commerce/allinone/phones",
+        "/test-sites/e-commerce/allinone/phones/touch",
+        "/test-sites/e-commerce/allinone/product/{id}"
+      ],
+      "steps": null
+    },
+    {
+      "path": "/allinone/product/44",
+      "template": "/test-sites/e-commerce/allinone/product/{id}",
+      "title": "Web Scraper Cloud | Enterprise Web Scraping Platform",
+      "found_by": "link",
+      "layout": "(/allinone/product/44 자리표시자) 상단 헤더, 중앙 본문, 하단 푸터로 구성",
+      "elements": [
+        {
+          "name": "헤더 로고",
+          "type": "링크",
+          "where": "좌측 상단"
+        }
+      ],
+      "links_to": [
+        "/test-sites/e-commerce/allinone",
+        "/test-sites/e-commerce/allinone/computers",
+        "/test-sites/e-commerce/allinone/phones"
+      ],
+      "steps": null
+    },
+    {
+      "path": "/allinone/computers/laptops",
+      "template": "/test-sites/e-commerce/allinone/computers/laptops",
+      "title": "Allinone | Web Scraper Test Sites",
+      "found_by": "link",
+      "layout": "(/allinone/computers/laptops 자리표시자) 상단 헤더, 중앙 본문, 하단 푸터로 구성",
+      "elements": [
+        {
+          "name": "헤더 로고",
+          "type": "링크",
+          "where": "좌측 상단"
+        }
+      ],
+      "links_to": [
+        "/test-sites/e-commerce/allinone",
+        "/test-sites/e-commerce/allinone/computers",
+        "/test-sites/e-commerce/allinone/computers/laptops",
+        "/test-sites/e-commerce/allinone/computers/tablets",
+        "/test-sites/e-commerce/allinone/phones",
+        "/test-sites/e-commerce/allinone/product/{id}"
+      ],
+      "steps": null
+    },
+    {
+      "path": "/allinone/computers/tablets",
+      "template": "/test-sites/e-commerce/allinone/computers/tablets",
+      "title": "Allinone | Web Scraper Test Sites",
+      "found_by": "link",
+      "layout": "(/allinone/computers/tablets 자리표시자) 상단 헤더, 중앙 본문, 하단 푸터로 구성",
+      "elements": [
+        {
+          "name": "헤더 로고",
+          "type": "링크",
+          "where": "좌측 상단"
+        }
+      ],
+      "links_to": [
+        "/test-sites/e-commerce/allinone",
+        "/test-sites/e-commerce/allinone/computers",
+        "/test-sites/e-commerce/allinone/computers/laptops",
+        "/test-sites/e-commerce/allinone/computers/tablets",
+        "/test-sites/e-commerce/allinone/phones",
+        "/test-sites/e-commerce/allinone/product/{id}"
+      ],
+      "steps": null
+    },
+    {
+      "path": "/allinone/phones/touch",
+      "template": "/test-sites/e-commerce/allinone/phones/touch",
+      "title": "Allinone | Web Scraper Test Sites",
+      "found_by": "link",
+      "layout": "(/allinone/phones/touch 자리표시자) 상단 헤더, 중앙 본문, 하단 푸터로 구성",
+      "elements": [
+        {
+          "name": "헤더 로고",
+          "type": "링크",
+          "where": "좌측 상단"
+        }
+      ],
+      "links_to": [
+        "/test-sites/e-commerce/allinone",
+        "/test-sites/e-commerce/allinone/computers",
+        "/test-sites/e-commerce/allinone/phones",
+        "/test-sites/e-commerce/allinone/phones/touch",
+        "/test-sites/e-commerce/allinone/product/{id}"
+      ],
+      "steps": null
+    }
+  ],
+  "unreached": [],
+  "structure": "Allinone | Web Scraper Test Sites → Allinone | Web Scraper Test Sites → Allinone | Web Scraper Test Sites → Web Scraper Cloud | Enterprise Web Scraping Platform → Allinone | Web Scraper Test Sites → Allinone | Web Scraper Test Sites → Allinone | Web Scraper Test Sites"
+}

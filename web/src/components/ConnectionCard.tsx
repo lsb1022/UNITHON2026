@@ -107,11 +107,15 @@ export function ConnectionCard({
             <div className="mt-[3px] flex flex-wrap gap-[10px]">
               <Badge>접근 가능</Badge>
               {result.status ? <Badge>HTTP {result.status}</Badge> : null}
-              {/* 임베드 가능 여부는 도달 가능 여부와 다른 사실이다. 섞어서 적지 않는다. */}
-              {result.embeddable ? (
+              {/* 임베드 가능 여부는 도달 가능 여부와 다른 사실이다. 섞어서 적지 않는다.
+                  브라우저에서는 열어보기 전에 알 수 없으므로, 모를 때는
+                  모른다고 적는다 — 가능하다고 해놓고 안 되면 고장으로 읽힌다. */}
+              {result.embeddable === true ? (
                 <Badge>미리보기 가능</Badge>
-              ) : (
+              ) : result.embeddable === false ? (
                 <Badge tone="muted">미리보기 차단됨</Badge>
+              ) : (
+                <Badge tone="muted">미리보기는 열어봐야 알 수 있어요</Badge>
               )}
             </div>
           </div>

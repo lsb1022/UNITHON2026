@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-25T20:28:20",
+ "generated_at": "2026-08-26T06:17:47",
  "goal": "코튼 셔츠를 장바구니에 담아 주문까지 마친다",
  "start_path": "/index.html",
  "seed": 20260825,
@@ -23,13 +23,15 @@
     "patience": 4,
     "breadth": 3
    },
+   "age_band": "40대",
+   "gender": "남성",
    "bands": {
     "literacy": "mid",
     "attention": "mid",
     "patience": "high",
     "breadth": "mid"
    },
-   "prompt": "가끔 온라인 쇼핑을 합니다.\n중요해 보이는 내용은 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "40대 남성입니다.\n가끔 온라인 쇼핑을 합니다.\n중요해 보이는 내용은 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -57,13 +59,15 @@
     "patience": 3,
     "breadth": 2
    },
+   "age_band": "40대",
+   "gender": "남성",
    "bands": {
     "literacy": "low",
     "attention": "low",
     "patience": "mid",
     "breadth": "low"
    },
-   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n어느 정도는 다시 시도해봅니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "40대 남성입니다.\n이런 사이트를 써본 적이 거의 없습니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n어느 정도는 다시 시도해봅니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -90,13 +94,15 @@
     "patience": 2,
     "breadth": 2
    },
+   "age_band": "50대",
+   "gender": "여성",
    "bands": {
     "literacy": "low",
     "attention": "low",
     "patience": "low",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n필요한 부분만 훑어봅니다.\n몇 번 시도해보고 안 되면 나갑니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "50대 여성입니다.\n온라인 쇼핑이 아직 익숙하지 않습니다.\n필요한 부분만 훑어봅니다.\n몇 번 시도해보고 안 되면 나갑니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -123,13 +129,15 @@
     "patience": 5,
     "breadth": 5
    },
+   "age_band": "50대",
+   "gender": "남성",
    "bands": {
     "literacy": "low",
     "attention": "high",
     "patience": "high",
     "breadth": "high"
    },
-   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n대부분의 안내 문구를 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "50대 남성입니다.\n이런 사이트를 써본 적이 거의 없습니다.\n대부분의 안내 문구를 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -156,13 +164,15 @@
     "patience": 5,
     "breadth": 4
    },
+   "age_band": "10대",
+   "gender": "남성",
    "bands": {
     "literacy": "high",
     "attention": "high",
     "patience": "high",
     "breadth": "high"
    },
-   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n대부분의 안내 문구를 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "10대 남성입니다.\n온라인 쇼핑에 매우 익숙합니다.\n대부분의 안내 문구를 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -190,13 +200,15 @@
     "patience": 5,
     "breadth": 5
    },
+   "age_band": "20대",
+   "gender": "남성",
    "bands": {
     "literacy": "low",
     "attention": "low",
     "patience": "high",
     "breadth": "high"
    },
-   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n필요한 부분만 훑어봅니다.\n될 때까지 여러 방법을 시도합니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "20대 남성입니다.\n이런 사이트를 써본 적이 거의 없습니다.\n필요한 부분만 훑어봅니다.\n될 때까지 여러 방법을 시도합니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -223,13 +235,15 @@
     "patience": 2,
     "breadth": 2
    },
+   "age_band": "30대",
+   "gender": "남성",
    "bands": {
     "literacy": "high",
     "attention": "low",
     "patience": "low",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n몇 번 시도해보고 안 되면 나갑니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "30대 남성입니다.\n온라인 쇼핑에 매우 익숙합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n몇 번 시도해보고 안 되면 나갑니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -257,13 +271,15 @@
     "patience": 2,
     "breadth": 3
    },
+   "age_band": "30대",
+   "gender": "남성",
    "bands": {
     "literacy": "high",
     "attention": "high",
     "patience": "low",
     "breadth": "mid"
    },
-   "prompt": "온라인 쇼핑을 자주 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "30대 남성입니다.\n온라인 쇼핑을 자주 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -291,13 +307,15 @@
     "patience": 5,
     "breadth": 4
    },
+   "age_band": "60대 이상",
+   "gender": "남성",
    "bands": {
     "literacy": "high",
     "attention": "high",
     "patience": "high",
     "breadth": "high"
    },
-   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "60대 이상 남성입니다.\n온라인 쇼핑에 매우 익숙합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -325,13 +343,15 @@
     "patience": 2,
     "breadth": 5
    },
+   "age_band": "10대",
+   "gender": "여성",
    "bands": {
     "literacy": "high",
     "attention": "high",
     "patience": "low",
     "breadth": "high"
    },
-   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "10대 여성입니다.\n온라인 쇼핑에 매우 익숙합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -359,13 +379,15 @@
     "patience": 2,
     "breadth": 2
    },
+   "age_band": "40대",
+   "gender": "여성",
    "bands": {
     "literacy": "mid",
     "attention": "high",
     "patience": "low",
     "breadth": "low"
    },
-   "prompt": "가끔 온라인 쇼핑을 합니다.\n대부분의 안내 문구를 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "40대 여성입니다.\n가끔 온라인 쇼핑을 합니다.\n대부분의 안내 문구를 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -393,13 +415,15 @@
     "patience": 3,
     "breadth": 1
    },
+   "age_band": "30대",
+   "gender": "남성",
    "bands": {
     "literacy": "low",
     "attention": "mid",
     "patience": "mid",
     "breadth": "low"
    },
-   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n중요해 보이는 내용은 읽습니다.\n어느 정도는 다시 시도해봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "30대 남성입니다.\n이런 사이트를 써본 적이 거의 없습니다.\n중요해 보이는 내용은 읽습니다.\n어느 정도는 다시 시도해봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -426,13 +450,15 @@
     "patience": 5,
     "breadth": 2
    },
+   "age_band": "10대",
+   "gender": "남성",
    "bands": {
     "literacy": "mid",
     "attention": "mid",
     "patience": "high",
     "breadth": "low"
    },
-   "prompt": "가끔 온라인 쇼핑을 합니다.\n중요해 보이는 내용은 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "10대 남성입니다.\n가끔 온라인 쇼핑을 합니다.\n중요해 보이는 내용은 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -460,13 +486,15 @@
     "patience": 2,
     "breadth": 2
    },
+   "age_band": "20대",
+   "gender": "남성",
    "bands": {
     "literacy": "high",
     "attention": "low",
     "patience": "low",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑을 자주 합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n몇 번 시도해보고 안 되면 나갑니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "20대 남성입니다.\n온라인 쇼핑을 자주 합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n몇 번 시도해보고 안 되면 나갑니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -494,13 +522,15 @@
     "patience": 3,
     "breadth": 4
    },
+   "age_band": "30대",
+   "gender": "남성",
    "bands": {
     "literacy": "high",
     "attention": "low",
     "patience": "mid",
     "breadth": "high"
    },
-   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n어느 정도는 다시 시도해봅니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "30대 남성입니다.\n온라인 쇼핑에 매우 익숙합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n어느 정도는 다시 시도해봅니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -528,13 +558,15 @@
     "patience": 2,
     "breadth": 4
    },
+   "age_band": "30대",
+   "gender": "남성",
    "bands": {
     "literacy": "high",
     "attention": "low",
     "patience": "low",
     "breadth": "high"
    },
-   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n몇 번 시도해보고 안 되면 나갑니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "30대 남성입니다.\n온라인 쇼핑에 매우 익숙합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n몇 번 시도해보고 안 되면 나갑니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -562,13 +594,15 @@
     "patience": 4,
     "breadth": 3
    },
+   "age_band": "20대",
+   "gender": "여성",
    "bands": {
     "literacy": "high",
     "attention": "low",
     "patience": "high",
     "breadth": "mid"
    },
-   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n잘 안 돼도 방법을 찾아봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "20대 여성입니다.\n온라인 쇼핑에 매우 익숙합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n잘 안 돼도 방법을 찾아봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -596,13 +630,15 @@
     "patience": 4,
     "breadth": 4
    },
+   "age_band": "30대",
+   "gender": "여성",
    "bands": {
     "literacy": "low",
     "attention": "high",
     "patience": "high",
     "breadth": "high"
    },
-   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n대부분의 안내 문구를 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "30대 여성입니다.\n온라인 쇼핑이 아직 익숙하지 않습니다.\n대부분의 안내 문구를 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -629,13 +665,15 @@
     "patience": 1,
     "breadth": 1
    },
+   "age_band": "10대",
+   "gender": "여성",
    "bands": {
     "literacy": "high",
     "attention": "mid",
     "patience": "low",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n중요해 보이는 내용은 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "10대 여성입니다.\n온라인 쇼핑에 매우 익숙합니다.\n중요해 보이는 내용은 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -663,13 +701,15 @@
     "patience": 1,
     "breadth": 1
    },
+   "age_band": "50대",
+   "gender": "여성",
    "bands": {
     "literacy": "high",
     "attention": "low",
     "patience": "low",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n필요한 부분만 훑어봅니다.\n조금만 막혀도 바로 그만둡니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "50대 여성입니다.\n온라인 쇼핑에 매우 익숙합니다.\n필요한 부분만 훑어봅니다.\n조금만 막혀도 바로 그만둡니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -697,13 +737,15 @@
     "patience": 5,
     "breadth": 3
    },
+   "age_band": "20대",
+   "gender": "여성",
    "bands": {
     "literacy": "high",
     "attention": "low",
     "patience": "high",
     "breadth": "mid"
    },
-   "prompt": "온라인 쇼핑을 자주 합니다.\n필요한 부분만 훑어봅니다.\n될 때까지 여러 방법을 시도합니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "20대 여성입니다.\n온라인 쇼핑을 자주 합니다.\n필요한 부분만 훑어봅니다.\n될 때까지 여러 방법을 시도합니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -731,13 +773,15 @@
     "patience": 3,
     "breadth": 4
    },
+   "age_band": "50대",
+   "gender": "여성",
    "bands": {
     "literacy": "high",
     "attention": "mid",
     "patience": "mid",
     "breadth": "high"
    },
-   "prompt": "온라인 쇼핑을 자주 합니다.\n중요해 보이는 내용은 읽습니다.\n어느 정도는 다시 시도해봅니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "50대 여성입니다.\n온라인 쇼핑을 자주 합니다.\n중요해 보이는 내용은 읽습니다.\n어느 정도는 다시 시도해봅니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -765,13 +809,15 @@
     "patience": 3,
     "breadth": 3
    },
+   "age_band": "30대",
+   "gender": "여성",
    "bands": {
     "literacy": "low",
     "attention": "mid",
     "patience": "mid",
     "breadth": "mid"
    },
-   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n중요해 보이는 내용은 읽습니다.\n어느 정도는 다시 시도해봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "30대 여성입니다.\n이런 사이트를 써본 적이 거의 없습니다.\n중요해 보이는 내용은 읽습니다.\n어느 정도는 다시 시도해봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -798,13 +844,15 @@
     "patience": 4,
     "breadth": 5
    },
+   "age_band": "50대",
+   "gender": "남성",
    "bands": {
     "literacy": "low",
     "attention": "high",
     "patience": "high",
     "breadth": "high"
    },
-   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n대부분의 안내 문구를 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "50대 남성입니다.\n이런 사이트를 써본 적이 거의 없습니다.\n대부분의 안내 문구를 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -831,13 +879,15 @@
     "patience": 1,
     "breadth": 5
    },
+   "age_band": "40대",
+   "gender": "여성",
    "bands": {
     "literacy": "mid",
     "attention": "mid",
     "patience": "low",
     "breadth": "high"
    },
-   "prompt": "가끔 온라인 쇼핑을 합니다.\n중요해 보이는 내용은 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "40대 여성입니다.\n가끔 온라인 쇼핑을 합니다.\n중요해 보이는 내용은 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -865,13 +915,15 @@
     "patience": 5,
     "breadth": 3
    },
+   "age_band": "60대 이상",
+   "gender": "남성",
    "bands": {
     "literacy": "high",
     "attention": "high",
     "patience": "high",
     "breadth": "mid"
    },
-   "prompt": "온라인 쇼핑을 자주 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "60대 이상 남성입니다.\n온라인 쇼핑을 자주 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -899,13 +951,15 @@
     "patience": 1,
     "breadth": 4
    },
+   "age_band": "20대",
+   "gender": "여성",
    "bands": {
     "literacy": "high",
     "attention": "low",
     "patience": "low",
     "breadth": "high"
    },
-   "prompt": "온라인 쇼핑을 자주 합니다.\n필요한 부분만 훑어봅니다.\n조금만 막혀도 바로 그만둡니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "20대 여성입니다.\n온라인 쇼핑을 자주 합니다.\n필요한 부분만 훑어봅니다.\n조금만 막혀도 바로 그만둡니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -933,13 +987,15 @@
     "patience": 1,
     "breadth": 4
    },
+   "age_band": "10대",
+   "gender": "남성",
    "bands": {
     "literacy": "low",
     "attention": "high",
     "patience": "low",
     "breadth": "high"
    },
-   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n대부분의 안내 문구를 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "10대 남성입니다.\n온라인 쇼핑이 아직 익숙하지 않습니다.\n대부분의 안내 문구를 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -966,13 +1022,15 @@
     "patience": 2,
     "breadth": 4
    },
+   "age_band": "40대",
+   "gender": "여성",
    "bands": {
     "literacy": "mid",
     "attention": "low",
     "patience": "low",
     "breadth": "high"
    },
-   "prompt": "가끔 온라인 쇼핑을 합니다.\n필요한 부분만 훑어봅니다.\n몇 번 시도해보고 안 되면 나갑니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "40대 여성입니다.\n가끔 온라인 쇼핑을 합니다.\n필요한 부분만 훑어봅니다.\n몇 번 시도해보고 안 되면 나갑니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1000,13 +1058,15 @@
     "patience": 2,
     "breadth": 5
    },
+   "age_band": "20대",
+   "gender": "여성",
    "bands": {
     "literacy": "high",
     "attention": "high",
     "patience": "low",
     "breadth": "high"
    },
-   "prompt": "온라인 쇼핑을 자주 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "20대 여성입니다.\n온라인 쇼핑을 자주 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1034,13 +1094,15 @@
     "patience": 5,
     "breadth": 1
    },
+   "age_band": "50대",
+   "gender": "여성",
    "bands": {
     "literacy": "high",
     "attention": "low",
     "patience": "high",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑을 자주 합니다.\n필요한 부분만 훑어봅니다.\n될 때까지 여러 방법을 시도합니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "50대 여성입니다.\n온라인 쇼핑을 자주 합니다.\n필요한 부분만 훑어봅니다.\n될 때까지 여러 방법을 시도합니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1068,13 +1130,15 @@
     "patience": 4,
     "breadth": 4
    },
+   "age_band": "30대",
+   "gender": "여성",
    "bands": {
     "literacy": "low",
     "attention": "low",
     "patience": "high",
     "breadth": "high"
    },
-   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n잘 안 돼도 방법을 찾아봅니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "30대 여성입니다.\n이런 사이트를 써본 적이 거의 없습니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n잘 안 돼도 방법을 찾아봅니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1101,13 +1165,15 @@
     "patience": 1,
     "breadth": 2
    },
+   "age_band": "10대",
+   "gender": "남성",
    "bands": {
     "literacy": "high",
     "attention": "low",
     "patience": "low",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑을 자주 합니다.\n필요한 부분만 훑어봅니다.\n조금만 막혀도 바로 그만둡니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "10대 남성입니다.\n온라인 쇼핑을 자주 합니다.\n필요한 부분만 훑어봅니다.\n조금만 막혀도 바로 그만둡니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1135,13 +1201,15 @@
     "patience": 2,
     "breadth": 1
    },
+   "age_band": "50대",
+   "gender": "남성",
    "bands": {
     "literacy": "mid",
     "attention": "high",
     "patience": "low",
     "breadth": "low"
    },
-   "prompt": "가끔 온라인 쇼핑을 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "50대 남성입니다.\n가끔 온라인 쇼핑을 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1169,13 +1237,15 @@
     "patience": 3,
     "breadth": 1
    },
+   "age_band": "40대",
+   "gender": "남성",
    "bands": {
     "literacy": "low",
     "attention": "low",
     "patience": "mid",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n필요한 부분만 훑어봅니다.\n어느 정도는 다시 시도해봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "40대 남성입니다.\n온라인 쇼핑이 아직 익숙하지 않습니다.\n필요한 부분만 훑어봅니다.\n어느 정도는 다시 시도해봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1202,13 +1272,15 @@
     "patience": 3,
     "breadth": 2
    },
+   "age_band": "60대 이상",
+   "gender": "남성",
    "bands": {
     "literacy": "low",
     "attention": "high",
     "patience": "mid",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n대부분의 안내 문구를 읽습니다.\n어느 정도는 다시 시도해봅니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "60대 이상 남성입니다.\n온라인 쇼핑이 아직 익숙하지 않습니다.\n대부분의 안내 문구를 읽습니다.\n어느 정도는 다시 시도해봅니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1235,13 +1307,15 @@
     "patience": 3,
     "breadth": 4
    },
+   "age_band": "60대 이상",
+   "gender": "남성",
    "bands": {
     "literacy": "high",
     "attention": "low",
     "patience": "mid",
     "breadth": "high"
    },
-   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n필요한 부분만 훑어봅니다.\n어느 정도는 다시 시도해봅니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "60대 이상 남성입니다.\n온라인 쇼핑에 매우 익숙합니다.\n필요한 부분만 훑어봅니다.\n어느 정도는 다시 시도해봅니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1269,13 +1343,15 @@
     "patience": 2,
     "breadth": 3
    },
+   "age_band": "20대",
+   "gender": "남성",
    "bands": {
     "literacy": "low",
     "attention": "low",
     "patience": "low",
     "breadth": "mid"
    },
-   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n필요한 부분만 훑어봅니다.\n몇 번 시도해보고 안 되면 나갑니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "20대 남성입니다.\n온라인 쇼핑이 아직 익숙하지 않습니다.\n필요한 부분만 훑어봅니다.\n몇 번 시도해보고 안 되면 나갑니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1302,13 +1378,15 @@
     "patience": 3,
     "breadth": 3
    },
+   "age_band": "50대",
+   "gender": "남성",
    "bands": {
     "literacy": "high",
     "attention": "low",
     "patience": "mid",
     "breadth": "mid"
    },
-   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n필요한 부분만 훑어봅니다.\n어느 정도는 다시 시도해봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "50대 남성입니다.\n온라인 쇼핑에 매우 익숙합니다.\n필요한 부분만 훑어봅니다.\n어느 정도는 다시 시도해봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1336,13 +1414,15 @@
     "patience": 4,
     "breadth": 2
    },
+   "age_band": "50대",
+   "gender": "여성",
    "bands": {
     "literacy": "mid",
     "attention": "low",
     "patience": "high",
     "breadth": "low"
    },
-   "prompt": "가끔 온라인 쇼핑을 합니다.\n필요한 부분만 훑어봅니다.\n잘 안 돼도 방법을 찾아봅니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "50대 여성입니다.\n가끔 온라인 쇼핑을 합니다.\n필요한 부분만 훑어봅니다.\n잘 안 돼도 방법을 찾아봅니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1370,13 +1450,15 @@
     "patience": 3,
     "breadth": 1
    },
+   "age_band": "20대",
+   "gender": "여성",
    "bands": {
     "literacy": "high",
     "attention": "high",
     "patience": "mid",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑을 자주 합니다.\n대부분의 안내 문구를 읽습니다.\n어느 정도는 다시 시도해봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "20대 여성입니다.\n온라인 쇼핑을 자주 합니다.\n대부분의 안내 문구를 읽습니다.\n어느 정도는 다시 시도해봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1404,13 +1486,15 @@
     "patience": 4,
     "breadth": 5
    },
+   "age_band": "60대 이상",
+   "gender": "남성",
    "bands": {
     "literacy": "mid",
     "attention": "high",
     "patience": "high",
     "breadth": "high"
    },
-   "prompt": "가끔 온라인 쇼핑을 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "60대 이상 남성입니다.\n가끔 온라인 쇼핑을 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1438,13 +1522,15 @@
     "patience": 1,
     "breadth": 2
    },
+   "age_band": "30대",
+   "gender": "여성",
    "bands": {
     "literacy": "high",
     "attention": "mid",
     "patience": "low",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n중요해 보이는 내용은 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "30대 여성입니다.\n온라인 쇼핑에 매우 익숙합니다.\n중요해 보이는 내용은 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1472,13 +1558,15 @@
     "patience": 4,
     "breadth": 2
    },
+   "age_band": "60대 이상",
+   "gender": "여성",
    "bands": {
     "literacy": "low",
     "attention": "low",
     "patience": "high",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n잘 안 돼도 방법을 찾아봅니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "60대 이상 여성입니다.\n온라인 쇼핑이 아직 익숙하지 않습니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n잘 안 돼도 방법을 찾아봅니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1505,13 +1593,15 @@
     "patience": 4,
     "breadth": 3
    },
+   "age_band": "10대",
+   "gender": "여성",
    "bands": {
     "literacy": "low",
     "attention": "low",
     "patience": "high",
     "breadth": "mid"
    },
-   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n필요한 부분만 훑어봅니다.\n잘 안 돼도 방법을 찾아봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "10대 여성입니다.\n이런 사이트를 써본 적이 거의 없습니다.\n필요한 부분만 훑어봅니다.\n잘 안 돼도 방법을 찾아봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1538,13 +1628,15 @@
     "patience": 2,
     "breadth": 3
    },
+   "age_band": "20대",
+   "gender": "남성",
    "bands": {
     "literacy": "high",
     "attention": "mid",
     "patience": "low",
     "breadth": "mid"
    },
-   "prompt": "온라인 쇼핑을 자주 합니다.\n중요해 보이는 내용은 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "20대 남성입니다.\n온라인 쇼핑을 자주 합니다.\n중요해 보이는 내용은 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1572,13 +1664,15 @@
     "patience": 1,
     "breadth": 2
    },
+   "age_band": "40대",
+   "gender": "여성",
    "bands": {
     "literacy": "high",
     "attention": "low",
     "patience": "low",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑을 자주 합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n조금만 막혀도 바로 그만둡니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "40대 여성입니다.\n온라인 쇼핑을 자주 합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n조금만 막혀도 바로 그만둡니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1606,13 +1700,15 @@
     "patience": 1,
     "breadth": 3
    },
+   "age_band": "40대",
+   "gender": "여성",
    "bands": {
     "literacy": "mid",
     "attention": "high",
     "patience": "low",
     "breadth": "mid"
    },
-   "prompt": "가끔 온라인 쇼핑을 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "40대 여성입니다.\n가끔 온라인 쇼핑을 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1640,13 +1736,15 @@
     "patience": 2,
     "breadth": 4
    },
+   "age_band": "10대",
+   "gender": "여성",
    "bands": {
     "literacy": "low",
     "attention": "high",
     "patience": "low",
     "breadth": "high"
    },
-   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n대부분의 안내 문구를 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "10대 여성입니다.\n이런 사이트를 써본 적이 거의 없습니다.\n대부분의 안내 문구를 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1673,13 +1771,15 @@
     "patience": 1,
     "breadth": 5
    },
+   "age_band": "30대",
+   "gender": "남성",
    "bands": {
     "literacy": "low",
     "attention": "high",
     "patience": "low",
     "breadth": "high"
    },
-   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n대부분의 안내 문구를 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "30대 남성입니다.\n온라인 쇼핑이 아직 익숙하지 않습니다.\n대부분의 안내 문구를 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1706,13 +1806,15 @@
     "patience": 5,
     "breadth": 1
    },
+   "age_band": "10대",
+   "gender": "남성",
    "bands": {
     "literacy": "mid",
     "attention": "mid",
     "patience": "high",
     "breadth": "low"
    },
-   "prompt": "가끔 온라인 쇼핑을 합니다.\n중요해 보이는 내용은 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "10대 남성입니다.\n가끔 온라인 쇼핑을 합니다.\n중요해 보이는 내용은 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1740,13 +1842,15 @@
     "patience": 2,
     "breadth": 2
    },
+   "age_band": "30대",
+   "gender": "남성",
    "bands": {
     "literacy": "low",
     "attention": "mid",
     "patience": "low",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n중요해 보이는 내용은 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "30대 남성입니다.\n온라인 쇼핑이 아직 익숙하지 않습니다.\n중요해 보이는 내용은 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1773,13 +1877,15 @@
     "patience": 5,
     "breadth": 5
    },
+   "age_band": "60대 이상",
+   "gender": "여성",
    "bands": {
     "literacy": "high",
     "attention": "high",
     "patience": "high",
     "breadth": "high"
    },
-   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n대부분의 안내 문구를 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "60대 이상 여성입니다.\n온라인 쇼핑에 매우 익숙합니다.\n대부분의 안내 문구를 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1807,13 +1913,15 @@
     "patience": 2,
     "breadth": 1
    },
+   "age_band": "40대",
+   "gender": "남성",
    "bands": {
     "literacy": "high",
     "attention": "high",
     "patience": "low",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑을 자주 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "40대 남성입니다.\n온라인 쇼핑을 자주 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1841,13 +1949,15 @@
     "patience": 5,
     "breadth": 1
    },
+   "age_band": "60대 이상",
+   "gender": "남성",
    "bands": {
     "literacy": "mid",
     "attention": "low",
     "patience": "high",
     "breadth": "low"
    },
-   "prompt": "가끔 온라인 쇼핑을 합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n될 때까지 여러 방법을 시도합니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "60대 이상 남성입니다.\n가끔 온라인 쇼핑을 합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n될 때까지 여러 방법을 시도합니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1875,13 +1985,15 @@
     "patience": 5,
     "breadth": 1
    },
+   "age_band": "60대 이상",
+   "gender": "여성",
    "bands": {
     "literacy": "low",
     "attention": "mid",
     "patience": "high",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n중요해 보이는 내용은 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "60대 이상 여성입니다.\n온라인 쇼핑이 아직 익숙하지 않습니다.\n중요해 보이는 내용은 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1908,13 +2020,15 @@
     "patience": 1,
     "breadth": 4
    },
+   "age_band": "40대",
+   "gender": "여성",
    "bands": {
     "literacy": "high",
     "attention": "high",
     "patience": "low",
     "breadth": "high"
    },
-   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "40대 여성입니다.\n온라인 쇼핑에 매우 익숙합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1942,13 +2056,15 @@
     "patience": 1,
     "breadth": 2
    },
+   "age_band": "10대",
+   "gender": "여성",
    "bands": {
     "literacy": "high",
     "attention": "high",
     "patience": "low",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑을 자주 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "10대 여성입니다.\n온라인 쇼핑을 자주 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -1976,13 +2092,15 @@
     "patience": 2,
     "breadth": 3
    },
+   "age_band": "60대 이상",
+   "gender": "남성",
    "bands": {
     "literacy": "high",
     "attention": "high",
     "patience": "low",
     "breadth": "mid"
    },
-   "prompt": "온라인 쇼핑을 자주 합니다.\n대부분의 안내 문구를 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "60대 이상 남성입니다.\n온라인 쇼핑을 자주 합니다.\n대부분의 안내 문구를 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2010,13 +2128,15 @@
     "patience": 4,
     "breadth": 1
    },
+   "age_band": "50대",
+   "gender": "남성",
    "bands": {
     "literacy": "mid",
     "attention": "high",
     "patience": "high",
     "breadth": "low"
    },
-   "prompt": "가끔 온라인 쇼핑을 합니다.\n대부분의 안내 문구를 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "50대 남성입니다.\n가끔 온라인 쇼핑을 합니다.\n대부분의 안내 문구를 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2044,13 +2164,15 @@
     "patience": 1,
     "breadth": 4
    },
+   "age_band": "50대",
+   "gender": "남성",
    "bands": {
     "literacy": "mid",
     "attention": "mid",
     "patience": "low",
     "breadth": "high"
    },
-   "prompt": "가끔 온라인 쇼핑을 합니다.\n중요해 보이는 내용은 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "50대 남성입니다.\n가끔 온라인 쇼핑을 합니다.\n중요해 보이는 내용은 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2078,13 +2200,15 @@
     "patience": 4,
     "breadth": 5
    },
+   "age_band": "50대",
+   "gender": "여성",
    "bands": {
     "literacy": "low",
     "attention": "mid",
     "patience": "high",
     "breadth": "high"
    },
-   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n중요해 보이는 내용은 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "50대 여성입니다.\n이런 사이트를 써본 적이 거의 없습니다.\n중요해 보이는 내용은 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2111,13 +2235,15 @@
     "patience": 3,
     "breadth": 2
    },
+   "age_band": "60대 이상",
+   "gender": "여성",
    "bands": {
     "literacy": "high",
     "attention": "low",
     "patience": "mid",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n필요한 부분만 훑어봅니다.\n어느 정도는 다시 시도해봅니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "60대 이상 여성입니다.\n온라인 쇼핑에 매우 익숙합니다.\n필요한 부분만 훑어봅니다.\n어느 정도는 다시 시도해봅니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2145,13 +2271,15 @@
     "patience": 4,
     "breadth": 5
    },
+   "age_band": "10대",
+   "gender": "여성",
    "bands": {
     "literacy": "high",
     "attention": "low",
     "patience": "high",
     "breadth": "high"
    },
-   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n잘 안 돼도 방법을 찾아봅니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "10대 여성입니다.\n온라인 쇼핑에 매우 익숙합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n잘 안 돼도 방법을 찾아봅니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2179,13 +2307,15 @@
     "patience": 3,
     "breadth": 3
    },
+   "age_band": "40대",
+   "gender": "여성",
    "bands": {
     "literacy": "high",
     "attention": "high",
     "patience": "mid",
     "breadth": "mid"
    },
-   "prompt": "온라인 쇼핑을 자주 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n어느 정도는 다시 시도해봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "40대 여성입니다.\n온라인 쇼핑을 자주 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n어느 정도는 다시 시도해봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2213,13 +2343,15 @@
     "patience": 4,
     "breadth": 4
    },
+   "age_band": "10대",
+   "gender": "여성",
    "bands": {
     "literacy": "low",
     "attention": "mid",
     "patience": "high",
     "breadth": "high"
    },
-   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n중요해 보이는 내용은 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "10대 여성입니다.\n온라인 쇼핑이 아직 익숙하지 않습니다.\n중요해 보이는 내용은 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2246,13 +2378,15 @@
     "patience": 5,
     "breadth": 3
    },
+   "age_band": "50대",
+   "gender": "여성",
    "bands": {
     "literacy": "high",
     "attention": "low",
     "patience": "high",
     "breadth": "mid"
    },
-   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n될 때까지 여러 방법을 시도합니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "50대 여성입니다.\n온라인 쇼핑에 매우 익숙합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n될 때까지 여러 방법을 시도합니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2280,13 +2414,15 @@
     "patience": 3,
     "breadth": 1
    },
+   "age_band": "50대",
+   "gender": "여성",
    "bands": {
     "literacy": "high",
     "attention": "low",
     "patience": "mid",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑을 자주 합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n어느 정도는 다시 시도해봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "50대 여성입니다.\n온라인 쇼핑을 자주 합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n어느 정도는 다시 시도해봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2314,13 +2450,15 @@
     "patience": 3,
     "breadth": 3
    },
+   "age_band": "20대",
+   "gender": "여성",
    "bands": {
     "literacy": "low",
     "attention": "low",
     "patience": "mid",
     "breadth": "mid"
    },
-   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n어느 정도는 다시 시도해봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "20대 여성입니다.\n이런 사이트를 써본 적이 거의 없습니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n어느 정도는 다시 시도해봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2347,13 +2485,15 @@
     "patience": 2,
     "breadth": 4
    },
+   "age_band": "30대",
+   "gender": "여성",
    "bands": {
     "literacy": "low",
     "attention": "high",
     "patience": "low",
     "breadth": "high"
    },
-   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "30대 여성입니다.\n이런 사이트를 써본 적이 거의 없습니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2380,13 +2520,15 @@
     "patience": 3,
     "breadth": 1
    },
+   "age_band": "10대",
+   "gender": "여성",
    "bands": {
     "literacy": "high",
     "attention": "mid",
     "patience": "mid",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n중요해 보이는 내용은 읽습니다.\n어느 정도는 다시 시도해봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "10대 여성입니다.\n온라인 쇼핑에 매우 익숙합니다.\n중요해 보이는 내용은 읽습니다.\n어느 정도는 다시 시도해봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2414,13 +2556,15 @@
     "patience": 1,
     "breadth": 5
    },
+   "age_band": "40대",
+   "gender": "남성",
    "bands": {
     "literacy": "high",
     "attention": "low",
     "patience": "low",
     "breadth": "high"
    },
-   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n조금만 막혀도 바로 그만둡니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "40대 남성입니다.\n온라인 쇼핑에 매우 익숙합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n조금만 막혀도 바로 그만둡니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2448,13 +2592,15 @@
     "patience": 4,
     "breadth": 3
    },
+   "age_band": "30대",
+   "gender": "여성",
    "bands": {
     "literacy": "high",
     "attention": "high",
     "patience": "high",
     "breadth": "mid"
    },
-   "prompt": "온라인 쇼핑을 자주 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "30대 여성입니다.\n온라인 쇼핑을 자주 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2482,13 +2628,15 @@
     "patience": 1,
     "breadth": 5
    },
+   "age_band": "40대",
+   "gender": "남성",
    "bands": {
     "literacy": "low",
     "attention": "low",
     "patience": "low",
     "breadth": "high"
    },
-   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n조금만 막혀도 바로 그만둡니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "40대 남성입니다.\n이런 사이트를 써본 적이 거의 없습니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n조금만 막혀도 바로 그만둡니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2515,13 +2663,15 @@
     "patience": 4,
     "breadth": 1
    },
+   "age_band": "50대",
+   "gender": "여성",
    "bands": {
     "literacy": "low",
     "attention": "high",
     "patience": "high",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n대부분의 안내 문구를 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "50대 여성입니다.\n온라인 쇼핑이 아직 익숙하지 않습니다.\n대부분의 안내 문구를 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2548,13 +2698,15 @@
     "patience": 1,
     "breadth": 1
    },
+   "age_band": "60대 이상",
+   "gender": "여성",
    "bands": {
     "literacy": "high",
     "attention": "low",
     "patience": "low",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑을 자주 합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n조금만 막혀도 바로 그만둡니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "60대 이상 여성입니다.\n온라인 쇼핑을 자주 합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n조금만 막혀도 바로 그만둡니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2582,13 +2734,15 @@
     "patience": 5,
     "breadth": 1
    },
+   "age_band": "40대",
+   "gender": "남성",
    "bands": {
     "literacy": "high",
     "attention": "mid",
     "patience": "high",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑을 자주 합니다.\n중요해 보이는 내용은 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "40대 남성입니다.\n온라인 쇼핑을 자주 합니다.\n중요해 보이는 내용은 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2616,13 +2770,15 @@
     "patience": 5,
     "breadth": 3
    },
+   "age_band": "10대",
+   "gender": "여성",
    "bands": {
     "literacy": "low",
     "attention": "high",
     "patience": "high",
     "breadth": "mid"
    },
-   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n대부분의 안내 문구를 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "10대 여성입니다.\n이런 사이트를 써본 적이 거의 없습니다.\n대부분의 안내 문구를 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2649,13 +2805,15 @@
     "patience": 3,
     "breadth": 4
    },
+   "age_band": "10대",
+   "gender": "여성",
    "bands": {
     "literacy": "mid",
     "attention": "low",
     "patience": "mid",
     "breadth": "high"
    },
-   "prompt": "가끔 온라인 쇼핑을 합니다.\n필요한 부분만 훑어봅니다.\n어느 정도는 다시 시도해봅니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "10대 여성입니다.\n가끔 온라인 쇼핑을 합니다.\n필요한 부분만 훑어봅니다.\n어느 정도는 다시 시도해봅니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2683,13 +2841,15 @@
     "patience": 2,
     "breadth": 3
    },
+   "age_band": "60대 이상",
+   "gender": "여성",
    "bands": {
     "literacy": "low",
     "attention": "high",
     "patience": "low",
     "breadth": "mid"
    },
-   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "60대 이상 여성입니다.\n이런 사이트를 써본 적이 거의 없습니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2716,13 +2876,15 @@
     "patience": 1,
     "breadth": 5
    },
+   "age_band": "60대 이상",
+   "gender": "여성",
    "bands": {
     "literacy": "low",
     "attention": "mid",
     "patience": "low",
     "breadth": "high"
    },
-   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n중요해 보이는 내용은 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "60대 이상 여성입니다.\n온라인 쇼핑이 아직 익숙하지 않습니다.\n중요해 보이는 내용은 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2749,13 +2911,15 @@
     "patience": 5,
     "breadth": 5
    },
+   "age_band": "30대",
+   "gender": "남성",
    "bands": {
     "literacy": "low",
     "attention": "high",
     "patience": "high",
     "breadth": "high"
    },
-   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "30대 남성입니다.\n온라인 쇼핑이 아직 익숙하지 않습니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2782,13 +2946,15 @@
     "patience": 5,
     "breadth": 5
    },
+   "age_band": "20대",
+   "gender": "여성",
    "bands": {
     "literacy": "mid",
     "attention": "low",
     "patience": "high",
     "breadth": "high"
    },
-   "prompt": "가끔 온라인 쇼핑을 합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n될 때까지 여러 방법을 시도합니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "20대 여성입니다.\n가끔 온라인 쇼핑을 합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n될 때까지 여러 방법을 시도합니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2816,13 +2982,15 @@
     "patience": 1,
     "breadth": 2
    },
+   "age_band": "30대",
+   "gender": "남성",
    "bands": {
     "literacy": "low",
     "attention": "low",
     "patience": "low",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n필요한 부분만 훑어봅니다.\n조금만 막혀도 바로 그만둡니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "30대 남성입니다.\n온라인 쇼핑이 아직 익숙하지 않습니다.\n필요한 부분만 훑어봅니다.\n조금만 막혀도 바로 그만둡니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2849,13 +3017,15 @@
     "patience": 4,
     "breadth": 3
    },
+   "age_band": "30대",
+   "gender": "남성",
    "bands": {
     "literacy": "low",
     "attention": "low",
     "patience": "high",
     "breadth": "mid"
    },
-   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n잘 안 돼도 방법을 찾아봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "30대 남성입니다.\n온라인 쇼핑이 아직 익숙하지 않습니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n잘 안 돼도 방법을 찾아봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2882,13 +3052,15 @@
     "patience": 3,
     "breadth": 1
    },
+   "age_band": "20대",
+   "gender": "남성",
    "bands": {
     "literacy": "mid",
     "attention": "high",
     "patience": "mid",
     "breadth": "low"
    },
-   "prompt": "가끔 온라인 쇼핑을 합니다.\n대부분의 안내 문구를 읽습니다.\n어느 정도는 다시 시도해봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "20대 남성입니다.\n가끔 온라인 쇼핑을 합니다.\n대부분의 안내 문구를 읽습니다.\n어느 정도는 다시 시도해봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2916,13 +3088,15 @@
     "patience": 3,
     "breadth": 5
    },
+   "age_band": "10대",
+   "gender": "여성",
    "bands": {
     "literacy": "low",
     "attention": "high",
     "patience": "mid",
     "breadth": "high"
    },
-   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n대부분의 안내 문구를 읽습니다.\n어느 정도는 다시 시도해봅니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "10대 여성입니다.\n이런 사이트를 써본 적이 거의 없습니다.\n대부분의 안내 문구를 읽습니다.\n어느 정도는 다시 시도해봅니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2949,13 +3123,15 @@
     "patience": 1,
     "breadth": 5
    },
+   "age_band": "20대",
+   "gender": "남성",
    "bands": {
     "literacy": "mid",
     "attention": "low",
     "patience": "low",
     "breadth": "high"
    },
-   "prompt": "가끔 온라인 쇼핑을 합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n조금만 막혀도 바로 그만둡니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "20대 남성입니다.\n가끔 온라인 쇼핑을 합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n조금만 막혀도 바로 그만둡니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -2983,13 +3159,15 @@
     "patience": 2,
     "breadth": 4
    },
+   "age_band": "30대",
+   "gender": "남성",
    "bands": {
     "literacy": "mid",
     "attention": "high",
     "patience": "low",
     "breadth": "high"
    },
-   "prompt": "가끔 온라인 쇼핑을 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "30대 남성입니다.\n가끔 온라인 쇼핑을 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -3017,13 +3195,15 @@
     "patience": 1,
     "breadth": 2
    },
+   "age_band": "40대",
+   "gender": "남성",
    "bands": {
     "literacy": "low",
     "attention": "mid",
     "patience": "low",
     "breadth": "low"
    },
-   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n중요해 보이는 내용은 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "40대 남성입니다.\n이런 사이트를 써본 적이 거의 없습니다.\n중요해 보이는 내용은 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -3050,13 +3230,15 @@
     "patience": 5,
     "breadth": 2
    },
+   "age_band": "40대",
+   "gender": "남성",
    "bands": {
     "literacy": "low",
     "attention": "high",
     "patience": "high",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "40대 남성입니다.\n온라인 쇼핑이 아직 익숙하지 않습니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -3083,13 +3265,15 @@
     "patience": 3,
     "breadth": 1
    },
+   "age_band": "60대 이상",
+   "gender": "여성",
    "bands": {
     "literacy": "low",
     "attention": "high",
     "patience": "mid",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n대부분의 안내 문구를 읽습니다.\n어느 정도는 다시 시도해봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "60대 이상 여성입니다.\n온라인 쇼핑이 아직 익숙하지 않습니다.\n대부분의 안내 문구를 읽습니다.\n어느 정도는 다시 시도해봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -3116,13 +3300,15 @@
     "patience": 5,
     "breadth": 1
    },
+   "age_band": "60대 이상",
+   "gender": "남성",
    "bands": {
     "literacy": "low",
     "attention": "high",
     "patience": "high",
     "breadth": "low"
    },
-   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n대부분의 안내 문구를 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "60대 이상 남성입니다.\n이런 사이트를 써본 적이 거의 없습니다.\n대부분의 안내 문구를 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -3149,13 +3335,15 @@
     "patience": 4,
     "breadth": 5
    },
+   "age_band": "20대",
+   "gender": "여성",
    "bands": {
     "literacy": "low",
     "attention": "low",
     "patience": "high",
     "breadth": "high"
    },
-   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n필요한 부분만 훑어봅니다.\n잘 안 돼도 방법을 찾아봅니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "20대 여성입니다.\n이런 사이트를 써본 적이 거의 없습니다.\n필요한 부분만 훑어봅니다.\n잘 안 돼도 방법을 찾아봅니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -3182,13 +3370,15 @@
     "patience": 4,
     "breadth": 5
    },
+   "age_band": "50대",
+   "gender": "남성",
    "bands": {
     "literacy": "mid",
     "attention": "low",
     "patience": "high",
     "breadth": "high"
    },
-   "prompt": "가끔 온라인 쇼핑을 합니다.\n필요한 부분만 훑어봅니다.\n잘 안 돼도 방법을 찾아봅니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "50대 남성입니다.\n가끔 온라인 쇼핑을 합니다.\n필요한 부분만 훑어봅니다.\n잘 안 돼도 방법을 찾아봅니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -3216,13 +3406,15 @@
     "patience": 4,
     "breadth": 3
    },
+   "age_band": "20대",
+   "gender": "남성",
    "bands": {
     "literacy": "mid",
     "attention": "high",
     "patience": "high",
     "breadth": "mid"
    },
-   "prompt": "가끔 온라인 쇼핑을 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "20대 남성입니다.\n가끔 온라인 쇼핑을 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -3250,13 +3442,15 @@
     "patience": 3,
     "breadth": 2
    },
+   "age_band": "40대",
+   "gender": "남성",
    "bands": {
     "literacy": "low",
     "attention": "low",
     "patience": "mid",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n필요한 부분만 훑어봅니다.\n어느 정도는 다시 시도해봅니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "40대 남성입니다.\n온라인 쇼핑이 아직 익숙하지 않습니다.\n필요한 부분만 훑어봅니다.\n어느 정도는 다시 시도해봅니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -3283,13 +3477,15 @@
     "patience": 4,
     "breadth": 2
    },
+   "age_band": "10대",
+   "gender": "남성",
    "bands": {
     "literacy": "high",
     "attention": "high",
     "patience": "high",
     "breadth": "low"
    },
-   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "10대 남성입니다.\n온라인 쇼핑에 매우 익숙합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -3317,13 +3513,15 @@
     "patience": 5,
     "breadth": 4
    },
+   "age_band": "20대",
+   "gender": "남성",
    "bands": {
     "literacy": "low",
     "attention": "high",
     "patience": "high",
     "breadth": "high"
    },
-   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n대부분의 안내 문구를 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "20대 남성입니다.\n온라인 쇼핑이 아직 익숙하지 않습니다.\n대부분의 안내 문구를 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",
@@ -3350,13 +3548,15 @@
     "patience": 2,
     "breadth": 4
    },
+   "age_band": "20대",
+   "gender": "여성",
    "bands": {
     "literacy": "low",
     "attention": "mid",
     "patience": "low",
     "breadth": "high"
    },
-   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n중요해 보이는 내용은 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "prompt": "20대 여성입니다.\n이런 사이트를 써본 적이 거의 없습니다.\n중요해 보이는 내용은 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
    "allowed_actions": [
     "click",

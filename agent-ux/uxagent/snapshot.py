@@ -188,8 +188,52 @@ _COLLECT_JS = r"""
       h1: document.querySelectorAll("h1").length,
     },
     images: { total: imgs.length, missing_alt: imgs.filter((i) => !i.hasAttribute("alt")).length },
-    // 텍스트 본문 일부 — 에이전트가 페이지 성격을 파악하는 데 쓴다
-    visible_text: (document.body.innerText || "").trim().replace(/\s+/g, " ").slice(0, 600),
+    // **지금 화면에 실제로 보이는 글자.**
+    //
+    // 예전에는 document.body.innerText 의 맨 앞 600자를 그대로 넘겼다. 그러면
+    // 스크롤을 아무리 내려도 페르소나가 읽는 글이 안 바뀐다 — 늘 머리말
+    // ("본문으로 이동 주 메뉴 검색 기부 …")만 본다. 우리 테스트베드는 페이지가
+    // 짧고 필요한 정보가 요소 이름에 다 있어서 티가 안 났는데, 글이 본문인
+    // 사이트에서는 페르소나가 사실상 눈을 감고 있는 셈이었다.
+    // (실측: 위키백과 12,440px 문서에서 여섯 명 전원이 표어를 못 읽었다.
+    //  '달성'한 사람조차 화면이 아니라 모델이 원래 알던 지식으로 답했다.)
+    //
+    // 그래서 뷰포트와 겹치는 조각의 글만 모은다. 스크롤이 곧 새 정보가 된다.
+    visible_text: (() => {
+      const rows = [];
+      const seen = new Set();
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      let node;
+      while ((node = walker.nextNode())) {
+        const s = (node.nodeValue || "").trim();
+        if (s.length < 2) continue;
+        const el = node.parentElement;
+        if (!el || seen.has(el)) continue;
+        const cs = getComputedStyle(el);
+        if (cs.display === "none" || cs.visibility === "hidden") continue;
+        const r = el.getBoundingClientRect();
+        // 화면 위/아래로 완전히 벗어난 것은 지금 안 보이는 글이다.
+        if (r.bottom <= 0 || r.top >= vh || r.width < 1) continue;
+        seen.add(el);
+        // **본문을 먼저 담는다.** 목차·메뉴가 화면에 붙박이로 남아 있으면
+        // (위키백과 왼쪽 목차가 그렇다) 그것만으로 자리가 다 차서, 아무리
+        // 스크롤해도 본문 한 줄을 못 읽는다. 사람도 기사 화면에서는 기사를
+        // 읽지 목차를 다시 읽지 않는다.
+        const aside = el.closest("nav,aside,[role=navigation],[role=complementary]");
+        const main = el.closest("main,article,[role=main]");
+        rows.push({ t: s, rank: main && !aside ? 0 : aside ? 2 : 1,
+                    y: Math.round(r.top), x: Math.round(r.left) });
+      }
+      rows.sort((a, b) => a.rank - b.rank || a.y - b.y || a.x - b.x);
+      const out = [];
+      let n = 0;
+      for (const row of rows) {
+        out.push(row.t);
+        n += row.t.length + 1;
+        if (n > 1400) break;
+      }
+      return out.join(" ").replace(/\s+/g, " ").trim().slice(0, 1200);
+    })(),
     elements: elements,
   };
 }
@@ -224,6 +268,8 @@ def _flag_str(el: dict) -> str:
         f.append("키보드불가")
     return " ".join(f)
 
+
+from . import config
 
 NEWLINE = chr(10)
 
@@ -334,7 +380,7 @@ def render_for_prompt(snap: dict, limit: int = 45) -> str:
     if warn:
         lines.append("화면 상태: " + ", ".join(warn))
 
-    lines.append(f"본문 일부: {snap['visible_text'][:300]}")
+    lines.append(f"화면에 보이는 글: {snap['visible_text'][:config.PROMPT_TEXT_CHARS]}")
     lines.append("")
 
     els, note = pick_for_prompt(snap, limit)

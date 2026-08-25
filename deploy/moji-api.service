@@ -1,0 +1,34 @@
+# uvicorn 을 상주시킨다. ssh 를 끊어도 죽지 않고, 재부팅해도 다시 뜬다.
+#
+#   sudo systemctl status moji-api      상태
+#   sudo journalctl -u moji-api -f      로그
+#   sudo systemctl restart moji-api     재시작
+
+[Unit]
+Description=MOJI UX 테스트 API (FastAPI/uvicorn)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+
+# SQLite 파일(uxlab.db)이 이 디렉터리에 생긴다. 다른 곳에서 띄우면
+# 빈 DB 를 새로 만들어 버린다.
+WorkingDirectory=/home/ubuntu/UNITHON2026/server
+
+# 127.0.0.1 만 듣는다. 바깥에는 nginx 만 노출한다 —
+# 8000 을 직접 열면 CORS 도 캐시도 없는 통로가 하나 더 생긴다.
+ExecStart=/home/ubuntu/UNITHON2026/server/.venv/bin/uvicorn app.main:app \
+          --host 127.0.0.1 --port 8000 --workers 1
+
+Restart=always
+RestartSec=3
+
+# 썸네일용 크로미움이 여기에 깔린다.
+Environment=PLAYWRIGHT_BROWSERS_PATH=/home/ubuntu/.cache/ms-playwright
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

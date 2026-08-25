@@ -24,14 +24,22 @@ export function Sidebar() {
       }`}
     >
       {collapsed ? (
-        // 접힘: 로고 자리 사각형 하나만 (Figma 184:357)
+        // 접힘: 파란 사각형 안에 로고 (Figma 184:357)
+        // 회색 자리표시자로 두면 로고를 아직 안 넣은 화면처럼 보인다.
+        // 펼침 상태와 같은 svg 를 쓰고 색만 뒤집는다 — 파일이 둘이면 어긋난다.
         <div className="flex justify-center pt-[25px]">
           <button
             type="button"
             onClick={toggle}
             aria-label="사이드바 펼치기"
-            className="size-[38px] rounded-[10px] bg-[#d9d9d9] transition-opacity hover:opacity-80"
-          />
+            className="grid size-[38px] place-items-center rounded-[10px] bg-main transition-opacity hover:opacity-85"
+          >
+            <img
+              src={logo}
+              alt="서비스 로고"
+              className="w-[26px] brightness-0 invert"
+            />
+          </button>
         </div>
       ) : (
         <div className="relative px-[19px] pt-[27px]">

@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # 파이썬
 __pycache__/
 *.pyc
@@ -29,3 +30,8 @@ web/dist/
 # 서버가 답사 때 찍어 쌓는 스크린샷 — 실행할 때마다 다시 생긴다
 agent-ux/shots_web/
 web/.env
+=======
+node_modules/
+dist/
+.claude/settings.local.json
+>>>>>>> Stashed changes

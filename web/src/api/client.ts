@@ -241,3 +241,78 @@ export type ActiveRun = {
 }
 
 export const getActiveRun = () => request<ActiveRun | null>('/api/runs/active')
+
+// --------------------------------------------------------------------------- //
+// 테스트 상세 — 미션 경로 · 다이어그램 · 페르소나
+// --------------------------------------------------------------------------- //
+
+export type TestDetail = {
+  id: string
+  name: string
+  device: string
+  created_at: string
+  project: { id: string; name: string; preview_url: string | null }
+  mission: { prompt: string; success_criteria: string } | null
+  persona_total: number
+  journey_count: number
+  /** 여정이 없으면 null — 화면이 "0.0%"라는 거짓 수치를 그리지 않도록. */
+  success_rate: number | null
+  drop_rate: number | null
+  avg_success_steps: number | null
+}
+
+export type PathScreen = { key: string; title: string; url: string | null }
+
+export type MissionPath = {
+  rank: number
+  name: string
+  label: string
+  persona_count: number
+  step_count: number
+  screens: PathScreen[]
+  /** 카드에 다 못 실은 화면 수. 0이면 "+n" 을 그리지 않는다. */
+  more: number
+}
+
+export type PathsPayload = {
+  total: number
+  success: { count: number; percent: number }
+  drop: { count: number; percent: number }
+  paths: { success: MissionPath[]; drop: MissionPath[] }
+}
+
+export type DiagramNode = {
+  id: string
+  column: number
+  key: string
+  title: string
+  count: number
+  success: number
+  drop: number
+}
+
+export type DiagramPayload = {
+  columns: { index: number; label: string; nodes: DiagramNode[] }[]
+  links: { source: string; target: string; count: number; success: number; drop: number }[]
+  total: number
+}
+
+export type PersonaRow = {
+  id: string
+  code: string
+  name: string
+  age_band: string
+  gender: string
+  outcome: 'success' | 'drop' | 'other' | null
+  step_count: number | null
+}
+
+export const getTest = (testId: string) => request<TestDetail>(`/api/tests/${testId}`)
+
+export const getTestPaths = (testId: string) => request<PathsPayload>(`/api/tests/${testId}/paths`)
+
+export const getTestDiagram = (testId: string) =>
+  request<DiagramPayload>(`/api/tests/${testId}/diagram`)
+
+export const getTestPersonas = (testId: string) =>
+  request<{ total: number; items: PersonaRow[] }>(`/api/tests/${testId}/personas`)

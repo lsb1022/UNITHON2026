@@ -1,3 +1,4 @@
+import chartIcon from '../assets/icons/emoji-chart.svg'
 import docIcon from '../assets/icons/emoji-doc.png'
 import targetIcon from '../assets/icons/emoji-target.svg'
 import warningIcon from '../assets/icons/emoji-warning.svg'
@@ -15,6 +16,7 @@ export const emoji = {
   doc: docIcon, // 📃 진행한 테스트 수
   target: targetIcon, // 🎯 성공률
   warning: warningIcon, // ⚠️ 이탈률
+  chart: chartIcon, // 📊 평균 미션 성공 step
 } as const
 
 export type EmojiName = keyof typeof emoji

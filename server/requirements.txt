@@ -1,0 +1,11 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+sqlalchemy==2.0.36
+psycopg[binary]==3.2.3
+pydantic==2.10.4
+httpx==0.28.1
+# 미션 분석 (ANTHROPIC_API_KEY 가 없으면 규칙 기반으로 떨어진다)
+anthropic==1.0.0
+# 프로젝트 썸네일 촬영. 설치 후 `python -m playwright install chromium` 이 한 번 필요하다.
+# 없으면 썸네일만 기본 이미지로 대체되고 나머지는 그대로 돈다.
+playwright==1.62.0

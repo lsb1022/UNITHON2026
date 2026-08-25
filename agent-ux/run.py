@@ -31,7 +31,7 @@ for _s in (sys.stdout, sys.stderr):
     except Exception:  # noqa: BLE001 - 리다이렉트된 스트림이면 무시
         pass
 
-from uxagent import config, explore, persona as P, trace as T
+from uxagent import config, discover, explore, persona as P, trace as T
 from uxagent.llm import Usage, build_client
 from uxagent.snapshot import take_snapshot
 from uxagent.survey import get_map_slice
@@ -62,7 +62,7 @@ class Budget:
 
 
 async def run_persona(browser, person: dict, site_map: dict | None, root: str,
-                      *, client, model: str, usage: Usage, budget: Budget,
+                      *, client, models: list[str], usage: Usage, budget: Budget,
                       mock: bool, run_id: str, variant: str, use_map: bool,
                       quiet: bool) -> dict:
     """한 명을 끝까지 돌리고 즉시 저장한다.
@@ -89,6 +89,8 @@ async def run_persona(browser, person: dict, site_map: dict | None, root: str,
             await page.reload(timeout=config.STEP_TIMEOUT_MS)
 
         seen_url = None
+        idle = 0                      # 아무 변화도 못 만든 행동 수 (인내심)
+        seen_templates: set = set()   # 방문한 화면 종류 (탐색 범위)
         for n in range(1, person["max_steps"] + 1):
             if budget.exceeded():
                 end_reason, note = "budget_stop", budget.exceeded()
@@ -100,6 +102,8 @@ async def run_persona(browser, person: dict, site_map: dict | None, root: str,
             # '마주친 적이 없는 것'이다. 이 차이가 기록에 남아야 한다.
             if page.url != seen_url:
                 seen_url = page.url
+                if person.get("page_cap"):
+                    seen_templates.add(discover.template_key(page.url))
                 await asyncio.sleep(person["dwell_ms"] / 1000)
 
             t0 = time.monotonic()
@@ -109,10 +113,12 @@ async def run_persona(browser, person: dict, site_map: dict | None, root: str,
             map_miss = bool(use_map and slice_ is None)
 
             out = explore.decide(client, person, snap, tr.steps, slice_,
-                                 model=model, usage=usage, mock=mock)
+                                 models=models, usage=usage, mock=mock)
             action, thought = out["action"], out["thought"]
 
-            blocked = explore.check_allowed(action, person)
+            el = next((e for e in snap["elements"]
+                       if e["id"] == action.get("target")), None)
+            blocked = explore.check_allowed(action, person, el)
             if blocked:
                 outcome = {"changed": False, "url_after": page.url,
                            "note": "허용되지 않은 행동이라 하지 않았습니다"}
@@ -121,9 +127,22 @@ async def run_persona(browser, person: dict, site_map: dict | None, root: str,
             elif action["type"] == "give_up":
                 outcome = {"changed": False, "url_after": page.url, "note": "포기"}
             else:
-                el = next((e for e in snap["elements"]
-                           if e["id"] == action.get("target")), None)
                 outcome = await explore.execute(page, action, root, el)
+
+                # 탐색 범위가 좁은 사람은 정해진 화면 수까지만 둘러본다.
+                # "한 화면만 보고 결정합니다"를 문장으로만 주면 모델이 무시한다.
+                cap = person.get("page_cap") or 0
+                if cap:
+                    key = discover.template_key(page.url)
+                    if key not in seen_templates and len(seen_templates) >= cap:
+                        try:
+                            await page.go_back(timeout=config.STEP_TIMEOUT_MS)
+                        except Exception:  # noqa: BLE001
+                            pass
+                        outcome = {"url_after": page.url, "changed": False,
+                                   "note": "이 사람은 화면 %d종까지만 둘러봅니다" % cap}
+                    else:
+                        seen_templates.add(key)
 
             tr.add(T.step(
                 n, thought=thought, action=action, snapshot=T.slim(snap),
@@ -144,6 +163,15 @@ async def run_persona(browser, person: dict, site_map: dict | None, root: str,
             if action["type"] == "give_up":
                 end_reason = "gave_up"
                 break
+
+            # 인내심: 아무 변화도 못 만든 행동이 한도를 넘으면 그만둔다.
+            # 사람마다 참는 정도가 다르다는 것을 코드로 강제하는 자리다.
+            if not blocked and action["type"] not in ("wait",)                     and not (outcome or {}).get("changed"):
+                idle += 1
+                if idle >= person.get("max_idle_attempts", 99):
+                    end_reason = "gave_up"
+                    note = "인내심 한도(%d회) 초과 — 아무 변화 없는 시도가 이어졌습니다"                         % person["max_idle_attempts"]
+                    break
             if explore.loop_detected(tr.steps, page.url):
                 end_reason = "loop_detected"
                 break
@@ -168,6 +196,13 @@ async def main_async(args) -> int:
     with open(pf, encoding="utf-8") as f:
         data = json.load(f)
     people = data["personas"]
+    # 목표와 시작 지점은 파일 상단에 한 번만 있다. 파일에 복사하지 않고
+    # 실행할 때 메모리에서만 각자에게 붙인다.
+    goal = data.get("goal", "")
+    start_path = data.get("start_path", "/index.html")
+    for p in people:
+        p.setdefault("goal", goal)
+        p.setdefault("start_path", start_path)
 
     if args.only:
         people = [p for p in people if p["id"] in set(args.only)]
@@ -193,7 +228,8 @@ async def main_async(args) -> int:
     budget = Budget(usage, args.max_usd, args.max_calls)
     pname = config.role_provider("explore")
     client = None if args.mock else build_client(pname)
-    model = config.model("explore", pname)
+    model_list = config.models("explore", pname)
+    model = model_list[0]
     run_id = args.run_id or "%s_%s%s" % (
         datetime.now().strftime("%m%d_%H%M"), args.variant, "" if use_map else "_nomap")
 
@@ -225,7 +261,7 @@ async def main_async(args) -> int:
                 if budget.exceeded():
                     return None
                 return await run_persona(
-                    browser, person, site_map, root, client=client, model=model,
+                    browser, person, site_map, root, client=client, models=model_list,
                     usage=usage, budget=budget, mock=args.mock, run_id=run_id,
                     variant=args.variant, use_map=use_map, quiet=args.quiet)
 

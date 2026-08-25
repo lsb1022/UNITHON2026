@@ -11,7 +11,7 @@
    지목한다. 좌표로 누르면 화면이 조금만 바뀌어도 깨지고, 깨진 클릭이
    '사용자가 못 눌렀다'로 기록되어 결함처럼 보인다.
 
-3. **최근 3스텝만 보여준다.** 전체 이력을 누적하면 30스텝째에 프롬프트가
+3. **최근 몇 스텝만 보여준다 (config.HISTORY_WINDOW).** 전체 이력을 누적하면 30스텝째에 프롬프트가
    수십 배로 불어나고, 스텝당 비용이 스텝 수에 비례해 커진다.
 """
 from __future__ import annotations
@@ -58,22 +58,39 @@ SYSTEM = """당신은 지금 어떤 온라인 쇼핑몰을 쓰고 있는 사람�
 {"thought": "...", "action": {"type": "give_up"}}"""
 
 
-def history_block(steps: list[dict], window: int = config.HISTORY_WINDOW) -> str:
-    """최근 몇 스텝만. 전체 누적 금지."""
+def _one_line(s: dict) -> str:
+    act = s["action"]
+    tgt = (" " + act["target"]) if act.get("target") else ""
+    line = "%d. %s → %s%s" % (s["step"], s["thought"][:60], act["type"], tgt)
+    note = (s.get("outcome") or {}).get("note")
+    if note:
+        line += "  (%s)" % note
+    if s.get("blocked_action"):
+        line += "  (그 행동은 할 수 없었습니다)"
+    return line
+
+
+def history_block(steps: list[dict], window: int = config.HISTORY_WINDOW,
+                  head: int = config.HISTORY_HEAD) -> str:
+    """맨 앞 몇 스텝 + 최근 몇 스텝. 가운데는 접는다.
+
+    창을 뒤에서만 자르면 **목표를 이룬 결정적 행동이 먼저 밀려난다.**
+    실측: "담아둔 상품의 수량을 2개로 바꿔 주문한다" 목표에서 4명 전원이
+    1스텝에 수량 변경을 성공해놓고, 결제 폼을 채우는 6스텝 동안 그 사실이
+    창 밖으로 나가 9스텝째에 "수량을 바꾸러 장바구니로 돌아가겠다"며 맴돌았다.
+
+    창을 키우면 비용만 커지고 긴 실행에서 같은 일이 다시 난다. 앞을 남기는
+    편이 싸고 정확하다 — 시작 부분은 대개 목표에 직결된 행동이다.
+    """
     if not steps:
         return "(아직 아무것도 하지 않았습니다)"
-    out = []
-    for s in steps[-window:]:
-        act = s["action"]
-        tgt = (" " + act["target"]) if act.get("target") else ""
-        line = "%d. %s → %s%s" % (s["step"], s["thought"][:60], act["type"], tgt)
-        note = (s.get("outcome") or {}).get("note")
-        if note:
-            line += "  (%s)" % note
-        if s.get("blocked_action"):
-            line += "  (그 행동은 할 수 없었습니다)"
-        out.append(line)
-    return "\n".join(out)
+    if len(steps) <= window + head:
+        return "\n".join(_one_line(s) for s in steps)
+
+    front = [_one_line(s) for s in steps[:head]]
+    back = [_one_line(s) for s in steps[-window:]]
+    skipped = len(steps) - head - window
+    return "\n".join(front + ["… (%d스텝 생략)" % skipped] + back)
 
 
 def build_user(persona: dict, snap: dict, steps: list[dict],
@@ -87,7 +104,7 @@ def build_user(persona: dict, snap: dict, steps: list[dict],
                   "배치: %s" % map_slice.get("layout"),
                   "요소: %s" % names, ""]
 
-    parts += ["[지금 화면]", render_for_prompt(snap), "",
+    parts += ["[지금 화면]", render_for_prompt(snap, config.PROMPT_ELEMENT_LIMIT), "",
               "[방금 한 일]", history_block(steps), "",
               "[할 수 있는 행동] %s" % ", ".join(persona["allowed_actions"] + list(CONTROL)),
               "",
@@ -96,16 +113,20 @@ def build_user(persona: dict, snap: dict, steps: list[dict],
 
 
 def decide(client, persona: dict, snap: dict, steps: list[dict],
-           map_slice: dict | None, *, model: str, usage, mock: bool) -> dict:
-    """생각 + 행동 하나를 받아온다."""
+           map_slice: dict | None, *, models: list[str], usage, mock: bool) -> dict:
+    """생각 + 행동 하나를 받아온다.
+
+    모델을 목록으로 받는다. 100명 x 30스텝을 달리는 동안 한 모델이 과부하(503)
+    나는 일이 실제로 있었다. 같은 등급의 다른 모델로 넘어가면 실행이 산다.
+    """
     if mock:
         return mock_decide(persona, snap, steps)
 
-    from .llm import chat_json
+    from .llm import chat_json_any
 
-    body = chat_json(
+    body = chat_json_any(
         client,
-        model=model,
+        models=models,
         system=SYSTEM,
         user=build_user(persona, snap, steps, map_slice),
         temperature=config.TEMP_EXPLORE,
@@ -168,6 +189,72 @@ def mock_decide(persona: dict, snap: dict, steps: list[dict]) -> dict:
 
 CLICKABLE_INPUTS = ("radio", "checkbox")
 
+# 행동 전후로 화면이 실제로 어떻게 달라졌는지 재는 데 쓴다.
+# URL 만 비교하면 '장바구니에 담기', '폼 입력', '체크박스 선택'이 전부
+# "아무 일도 안 일어났다"로 보고된다. 그러면 페르소나가 자기 행동이 먹혔는지
+# 알 수 없어 의심하고, 되돌아가서 다시 하고, 스텝을 다 태운다.
+# (실제로 겪음: clean 사이트에서 P001 이 결제 폼을 두 번 채우고 30스텝을 소진했다.)
+_STATE_JS = """() => ({
+  url: location.href,
+  n: document.querySelectorAll(
+       "a[href],button,input,select,textarea,summary,[role=button]").length,
+  y: Math.round(window.scrollY),
+  lines: (document.body ? document.body.innerText : "")
+           .split("\\n").map(s => s.trim()).filter(Boolean),
+})"""
+
+
+# '처리 중' 표시가 떠 있으면 화면이 넘어갈 때까지 기다린다.
+# clean 결제 화면은 버튼을 누르고 1.2초 뒤에 완료 화면으로 넘어가는데, 그 사이에
+# 스냅샷을 찍으면 페르소나는 "결제 처리 중이라는 문구만 뜨고 아무 일도 없다"고
+# 판단해 포기한다 (실제로 P012 가 13스텝에서 그렇게 끝났다). 사람은 기다린다.
+_BUSY_JS = """() => {
+  if (document.querySelector('[aria-busy="true"],.spinner,.loading,.is-loading'
+                             + ',[class*="progress"]')) return true;
+  const t = (document.body ? document.body.innerText : "");
+  return /처리\\s*중|진행\\s*중|로딩|잠시만|Processing|Loading/i.test(t);
+}"""
+
+
+async def _settle(page, before_url: str, budget_ms: int = 6000) -> None:
+    """처리 중 표시가 있는 동안만 잠깐 더 기다린다. 없으면 즉시 돌아간다."""
+    waited = 0
+    step = 400
+    while waited < budget_ms:
+        try:
+            if page.url != before_url or not await page.evaluate(_BUSY_JS):
+                return
+        except Exception:  # noqa: BLE001 - 이동 중이면 다음 회차에 다시 본다
+            return
+        await asyncio.sleep(step / 1000)
+        waited += step
+
+
+async def _state(page) -> dict:
+    try:
+        return await page.evaluate(_STATE_JS)
+    except Exception:  # noqa: BLE001 - 이동 중이면 못 읽는다. 없으면 없는 대로 간다
+        return {}
+
+
+def _diff_note(before: dict, after: dict) -> str:
+    """무엇이 달라졌는지 사람 말로. 없으면 빈 문자열."""
+    if not before or not after:
+        return ""
+    # 새로 나타난 글자가 가장 값진 신호다. 토스트("장바구니에 담았습니다"),
+    # 오류 문구("필수 항목입니다") 가 여기에 잡힌다.
+    fresh = [t for t in after.get("lines", []) if t not in set(before.get("lines", []))]
+    fresh = [t for t in fresh if len(t) > 1][:2]
+    if fresh:
+        return "새로 나타난 글자: " + " / ".join(t[:40] for t in fresh)
+    if after.get("n") != before.get("n"):
+        return "화면 내용이 바뀌었습니다 (조작 가능한 요소 %d개 → %d개)" % (
+            before.get("n", 0), after.get("n", 0))
+    # 스크롤 위치 변화는 신호가 아니다. Playwright 가 요소를 보이게 하려고
+    # 스스로 스크롤하므로, 이걸 '변화'로 치면 체크박스 선택 같은 진짜 결과를
+    # 가린다. 스크롤은 사용자가 스크롤을 요청했을 때만 execute 가 따로 알린다.
+    return ""
+
 
 async def execute(page, action: dict, root: str, element: dict | None = None) -> dict:
     """행동 하나를 수행하고 결과를 돌려준다. 예외를 밖으로 내보내지 않는다.
@@ -180,6 +267,7 @@ async def execute(page, action: dict, root: str, element: dict | None = None) ->
     value = action.get("value")
     sel = '[data-agent-id="%s"]' % target if target else None
     before = page.url
+    before_state = await _state(page)
     note = ""
 
     # 라디오·체크박스에 글자를 넣으려 하면 Playwright 가 거부한다. 이건 사이트의
@@ -227,22 +315,89 @@ async def execute(page, action: dict, root: str, element: dict | None = None) ->
             return {"changed": False, "note": "알 수 없는 행동 %r" % t}
     except Exception as e:  # noqa: BLE001 - 클릭 실패는 마찰이지 오류가 아니다
         note = _short_error(e)
+        # '눌리지 않았다'만 남기면 왜 안 눌렸는지 모른다. 그 자리를 실제로
+        # 덮고 있는 것이 무엇인지 브라우저에 물어 기록한다. 이것이야말로
+        # 스크린샷 대신 쓰는 계산된 시각 정보다.
+        if t in ("click", "type", "select") and sel:
+            blocker = await _who_blocks(page, sel)
+            if blocker:
+                note = "%s 이(가) 덮고 있어 눌리지 않았습니다" % blocker
 
     # 페이지가 반응할 짬. networkidle 은 자동 팝업 타이머 때문에 오래 걸릴 수 있어 쓰지 않는다.
     try:
         await page.wait_for_load_state("domcontentloaded", timeout=3000)
     except Exception:  # noqa: BLE001
         pass
+    # '처리 중'이 떠 있으면 결과가 나올 때까지만 더 기다린다. 사람이 하는 일이다.
+    await _settle(page, before)
 
     after = page.url
-    changed = after != before
-    if note and changed:
+    moved = after != before
+    if moved:
+        # 화면이 넘어갔으면 그 자체가 가장 큰 변화다. 더 볼 것 없다.
         return {"url_after": after, "changed": True, "note": note}
-    return {"url_after": after, "changed": changed,
-            "note": note or ("" if changed else "화면이 바뀌지 않았습니다")}
+
+    # 같은 화면에 머물렀다면 '정말 아무 일도 없었는지' 확인한다.
+    after_state = await _state(page)
+    detail = _diff_note(before_state, after_state)
+
+    # 입력은 값이 들어갔는지 직접 읽는다. 가장 확실한 확인이다.
+    if t == "type" and sel and not note:
+        try:
+            got = await page.input_value(sel, timeout=2000)
+            if got:
+                detail = '입력값이 "%s" 로 들어갔습니다' % got[:30]
+        except Exception:  # noqa: BLE001 - 읽을 수 없으면 다른 신호를 쓴다
+            pass
+    # 체크박스·라디오는 선택 상태를 읽는다.
+    if t == "click" and sel and not detail:
+        try:
+            if await page.is_checked(sel, timeout=1000):
+                detail = "선택됐습니다"
+        except Exception:  # noqa: BLE001 - 체크 대상이 아니면 그냥 넘어간다
+            pass
+
+    # 스크롤은 사용자가 요청했을 때만 결과로 말한다.
+    if t == "scroll" and not detail:
+        dy = (after_state.get("y", 0) - before_state.get("y", 0))
+        detail = ("%d픽셀 내려갔습니다" % dy) if dy else "더 내려갈 곳이 없습니다"
+
+    parts = [x for x in (note, detail) if x]
+    return {"url_after": after, "changed": bool(detail),
+            "note": " / ".join(parts) if parts else "아무 변화가 없었습니다"}
 
 
 _ERR = re.compile(r"^\s*([^\n]{0,120})")
+
+
+_BLOCKER_JS = """(sel) => {
+  const el = document.querySelector(sel);
+  if (!el) return "";
+  const r = el.getBoundingClientRect();
+  const hit = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+  if (!hit || hit === el || el.contains(hit) || hit.contains(el)) return "";
+  const box = hit.getBoundingClientRect();
+  const cls = (typeof hit.className === "string" && hit.className.trim())
+      ? "." + hit.className.trim().split(/\\s+/)[0] : "";
+  const full = box.width >= innerWidth * 0.9 && box.height >= innerHeight * 0.9;
+  return hit.tagName.toLowerCase() + cls +
+      (full ? "(화면 전체를 덮는 층)"
+            : "(" + Math.round(box.width) + "x" + Math.round(box.height) + ")");
+}"""
+
+
+async def _who_blocks(page, sel: str) -> str:
+    """지목한 요소의 중심점을 실제로 차지하고 있는 것을 찾는다.
+
+    스냅샷의 가림 여부는 '그때' 값이라 낡을 수 있다. LLM 이 생각하는
+    10~20초 사이에 자동 팝업이 뜨면, 기록에는 '가려짐 0'인데 클릭은 실패하는
+    모순이 남는다 (실제로 P003 에서 그렇게 남았다). 실패한 그 순간에 다시
+    물어야 기록과 현실이 맞는다.
+    """
+    try:
+        return await page.evaluate(_BLOCKER_JS, sel)
+    except Exception:  # noqa: BLE001 - 진단이 실패해도 본 흐름은 계속된다
+        return ""
 
 
 def _short_error(e: Exception) -> str:
@@ -254,17 +409,23 @@ def _short_error(e: Exception) -> str:
     return head[:120] or e.__class__.__name__
 
 
-def check_allowed(action: dict, persona: dict) -> dict | None:
+def check_allowed(action: dict, persona: dict,
+                  element: dict | None = None) -> dict | None:
     """허용 목록 밖이면 그 행동을 돌려준다 (러너가 blocked_action 으로 기록).
 
-    목록은 장식이 아니라 실제로 강제된다. 서툰 사람이 주소창으로 결제
-    페이지에 바로 가버리면 길찾기 마찰이 통째로 측정에서 사라진다.
+    목록은 장식이 아니라 실제로 강제된다. 문장만 주면 모델이 무시한다.
+    서툰 사람이 주소창으로 결제 페이지에 바로 가버리면 길찾기 마찰이
+    통째로 측정에서 사라진다. 검색도 같은 이유로 막는다 — 검색창에
+    상품명을 치는 것은 '길을 찾은 것'이 아니라 길찾기를 건너뛴 것이다.
     """
     t = action.get("type")
     if t in CONTROL:
         return None
     if t not in persona["allowed_actions"]:
         return dict(action)
+    if (t == "type" and not persona.get("search_allowed", True)
+            and element and element.get("input_type") == "search"):
+        return dict(action, reason="검색은 이 사람의 숙련도에서 허용되지 않습니다")
     return None
 
 

@@ -1,173 +1,192 @@
-"""페르소나 조립 — 목표 11개 x 특성 조합 16개 -> 100명.
+"""페르소나 조립 — 특성 4축 x 1~5단계로 100명.
 
-세 가지가 여기서 정해진다.
+설계 지시(2026-08-25)에 따라 축을 다시 잡았다.
 
-1. **왜 11개인가.** 특성 조합이 16개다. 목표가 10개면 LCM이 80이라
-   81번째부터는 앞 20명과 (조합, 목표) 쌍이 그대로 겹친다. 같은 조건을
-   두 번 돌리고 표본 100이라 부르는 셈이다. 11은 16과 서로소라
-   100명 전원이 서로 다른 쌍을 받는다.
+  숙련도    1 사이트가 낯섦      … 5 온라인 쇼핑에 능숙
+  주의 지속  1 거의 안 읽음       … 5 끝까지 읽음
+  인내심    1 바로 포기          … 5 될 때까지 시도
+  탐색 범위  1 한 화면만          … 5 곳곳을 둘러봄
 
-2. **프롬프트는 200자 이내, 배경 서사 금지.** "35세 직장인 김민수는
-   퇴근 후..." 를 넣으면 모델이 그 서사에 맞는 행동을 지어내고, 그 문장은
-   스텝마다 30번 다시 전송된다. 특성 -> 문장 매핑 딕셔너리로 조립하면
-   같은 특성이 항상 같은 문장이 되어 조합 간 비교가 성립한다.
+5^4 = 625조합이라 100명 전원이 서로 다른 조합을 받는다. 각 축의 값은
+**정확히 20명씩** 배분한다 — 균등하지 않으면 "숙련도가 낮으면 어떤가"를
+비교할 때 표본 크기가 달라 결론이 흔들린다.
 
-3. **상태는 코드가 만든다.** 답사에서 정한 것과 같은 원칙이다.
-   지도 = 상태와 무관한 서술(LLM) / 스냅샷 = 상태에 의존하는 수치(코드).
-   여기서도 목표 문장은 LLM이 쓰지만 `seed_state`(장바구니에 뭐가 담겨
-   있는가)는 코드가 만든다. LLM이 만든 장바구니 JSON은 상품 id·가격이
-   틀려도 아무도 못 잡는다.
+## 목표는 한 번만 저장한다
 
-⚠ `seed_state` 에 localStorage 키를 넣지 않는다. 키가 변형마다 다른데
-   (`moji_cart_clean` / `moji_cart_flawed`) 페르소나 파일은 양쪽에 동일하게
-   투입되므로(결정 6), 키를 박으면 한쪽이 조용히 빈 장바구니가 되고
-   유형 C 목표 전부가 무력화된다. 키는 러너가 `config.cart_key(variant)`
-   에서 읽어 `seed_script()` 에 넘긴다.
+목표 문자열과 시작 지점은 전원 동일하므로 파일 상단에 한 번만 둔다.
+100명에게 복사하면 파일이 커지고, 나중에 목표를 고칠 때 100군데를 고쳐야 한다.
+
+## 문장은 딕셔너리로 조립한다
+
+LLM에게 페르소나 문장을 쓰게 하지 않는다. 같은 값이 항상 같은 문장이어야
+"숙련도 2인 사람들"을 묶어 비교할 수 있다. 배경 서사도 넣지 않는다 —
+길수록 모델이 서사에 맞춰 행동해 페르소나끼리 오히려 닮아진다.
+
+## 강제할 수 있는 것은 코드가 강제한다
+
+문장만 주면 모델이 무시한다. 숫자로 자연스럽게 옮겨지는 축(주의·인내)은
+전 단계를 강제하고, 중간값 정의가 애매한 축(숙련도·탐색)은 **극단만** 강제한다.
+강제 구간(1-2 / 4-5)이 분석 구간과 일치하는 것은 의도적이다.
 """
 from __future__ import annotations
 
-import json
+import random
 
 from . import config
 
-# ── 특성 축 4개 x 2 = 16조합 ───────────────────────────────────────
-# 축을 늘리면 조합이 32가 되어 목표 11개와 다시 서로소가 아니게 되는지
-# 확인해야 한다 (gcd(11,32)=1 이라 32도 안전하지만, 100명으로는 조합당
-# 3명뿐이라 조합별 비교의 표본이 무너진다).
-AXES = {
-    "literacy": ("savvy", "novice"),    # 온라인 쇼핑 숙련도
-    "patience": ("patient", "hasty"),   # 기다림
-    "reading":  ("reader", "scanner"),  # 화면을 읽는가 훑는가
-    "visit":    ("new", "returning"),   # 첫 방문인가
+AXES = ("literacy", "attention", "patience", "breadth")
+
+AXIS_LABEL = {
+    "literacy": "숙련도",
+    "attention": "주의 지속",
+    "patience": "인내심",
+    "breadth": "탐색 범위",
 }
 
-# 특성 -> 문장. 이 딕셔너리가 프롬프트의 유일한 출처다.
+# 값 -> 문장. 이 딕셔너리가 프롬프트의 유일한 출처다.
 SENTENCES = {
     "literacy": {
-        "savvy":  "온라인 쇼핑에 익숙하다.",
-        "novice": "온라인 쇼핑이 서툴다.",
+        1: "이런 사이트를 써본 적이 거의 없습니다.",
+        2: "온라인 쇼핑이 아직 익숙하지 않습니다.",
+        3: "가끔 온라인 쇼핑을 합니다.",
+        4: "온라인 쇼핑을 자주 합니다.",
+        5: "온라인 쇼핑에 매우 익숙합니다.",
+    },
+    "attention": {
+        1: "화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.",
+        2: "필요한 부분만 훑어봅니다.",
+        3: "중요해 보이는 내용은 읽습니다.",
+        4: "대부분의 안내 문구를 읽습니다.",
+        5: "화면의 글을 처음부터 끝까지 읽습니다.",
     },
     "patience": {
-        "patient": "화면이 바뀌지 않아도 잠시 기다린다.",
-        "hasty":   "오래 걸리면 바로 그만둔다.",
+        1: "조금만 막혀도 바로 그만둡니다.",
+        2: "몇 번 시도해보고 안 되면 나갑니다.",
+        3: "어느 정도는 다시 시도해봅니다.",
+        4: "잘 안 돼도 방법을 찾아봅니다.",
+        5: "될 때까지 여러 방법을 시도합니다.",
     },
-    "reading": {
-        "reader":  "화면의 글을 처음부터 읽는다.",
-        "scanner": "글은 훑고 눈에 띄는 것부터 누른다.",
-    },
-    "visit": {
-        "new":       "이 사이트는 처음이다.",
-        "returning": "전에 와서 장바구니에 담아둔 적이 있다.",
+    "breadth": {
+        1: "한 화면만 보고 결정합니다.",
+        2: "필요한 페이지만 최소한으로 이동합니다.",
+        3: "몇 군데는 둘러봅니다.",
+        4: "여러 페이지를 오가며 비교합니다.",
+        5: "사이트 곳곳을 폭넓게 둘러봅니다.",
     },
 }
 
-LABELS = {
-    "savvy": "익숙", "novice": "서툼",
-    "patient": "여유", "hasty": "조급",
-    "reader": "정독", "scanner": "훑기",
-    "new": "신규", "returning": "재방문",
-}
+# ── 코드 강제 ─────────────────────────────────────────────────────
 
-# 러너가 실제로 강제하는 목록. 목록 밖 행동은 blocked_action 으로 기록된다.
+# 주의 지속 -> 한 화면에 머무는 시간(ms). 자동 팝업이 10초 후에 뜨므로
+# 4~5단계만 그 결함을 만난다. 이 표가 곧 '누가 무엇을 마주치는가'를 정한다.
+DWELL_MS = {1: (800, 1500), 2: (1500, 3000), 3: (3000, 6000),
+            4: (6000, 10000), 5: (10000, 15000)}
+
+# 인내심 -> (허용 시도 횟수, 최대 스텝).
+# '시도 횟수'는 아무 변화도 못 만든 행동의 허용치다. 넘으면 그만둔다.
+PATIENCE = {1: ((4, 7), 15), 2: ((8, 12), 20), 3: ((13, 18), 25),
+            4: ((19, 24), 30), 5: ((25, 30), 35)}
+
 BASE_ACTIONS = ["click", "type", "select", "scroll", "back", "wait"]
-# URL을 직접 치는 것은 숙련자만 한다. 서툰 사람이 주소창으로 결제 페이지에
-# 바로 가버리면 '길찾기 마찰'이 통째로 측정에서 사라진다.
-SAVVY_ONLY = ["goto"]
+# 주소창 입력. 서툰 사람에게 허용하면 결제 페이지로 순간이동해
+# 길찾기 마찰이 통째로 측정에서 사라진다.
+URL_ACTION = "goto"
 
-# 한 페이지에 머무는 시간. D-26(자동 팝업)은 로드 10초 후에 뜬다.
-# 전원이 5초 만에 떠나면 Critical 결함 하나를 아무도 만나지 못한다.
-# 정독 x 여유 조합(16 중 4개 = 100명 중 25명)이 10초 문턱을 넘도록 잡았다.
-DWELL_MS = {
-    ("reader", "patient"):  12000,
-    ("reader", "hasty"):     6000,
-    ("scanner", "patient"):  4000,
-    ("scanner", "hasty"):    1500,
-}
+# 탐색 범위 1-2 는 방문 가능한 화면 종류를 제한한다.
+NARROW_PAGE_CAP = 3
 
 
-def combos() -> list[dict]:
-    """16조합을 항상 같은 순서로 만든다. 순서가 흔들리면 실행 간 비교가 깨진다."""
-    out = []
-    for i in range(16):
-        out.append({
-            "literacy": AXES["literacy"][(i >> 0) & 1],
-            "patience": AXES["patience"][(i >> 1) & 1],
-            "reading":  AXES["reading"][(i >> 2) & 1],
-            "visit":    AXES["visit"][(i >> 3) & 1],
-        })
-    return out
+def _balanced(n: int, rng: random.Random) -> list[int]:
+    """1~5 를 정확히 n/5 명씩. 남는 인원은 앞 값부터 하나씩."""
+    per, rest = divmod(n, 5)
+    vals = [v for v in range(1, 6) for _ in range(per)] + list(range(1, 1 + rest))
+    rng.shuffle(vals)
+    return vals
 
 
-def combo_label(t: dict) -> str:
-    return "·".join(LABELS[t[a]] for a in AXES)
+def combos(n: int = config.N_PERSONAS, seed: int = config.PERSONA_SEED) -> list[dict]:
+    """축마다 균등 분포를 만들고, 조합이 겹치지 않게 다듬는다.
 
-
-def build_prompt(traits: dict, goal: dict, seeded: bool) -> str:
-    """특성 문장 4개 + 목표 1줄. 서사는 넣지 않는다.
-
-    seeded=True 면 visit 축이 무엇이든 '담아둔 적 있다' 쪽 문장을 쓴다.
-    장바구니에 물건이 들어있는데 "이 사이트는 처음이다"라고 말하면
-    모델이 그 모순을 스스로 메우려 엉뚱한 행동을 한다.
+    균등 분포와 조합 유일성을 동시에 만족시켜야 한다. 축을 따로 섞으면
+    드물게 같은 조합이 나오므로, 겹칠 때만 한 축의 값을 다른 사람과 맞바꾼다
+    (맞바꾸므로 분포는 그대로다).
     """
-    visit = "returning" if seeded else traits["visit"]
-    lines = [
-        SENTENCES["literacy"][traits["literacy"]],
-        SENTENCES["patience"][traits["patience"]],
-        SENTENCES["reading"][traits["reading"]],
-        SENTENCES["visit"][visit],
-        "목표: %s" % goal["text"],
-    ]
-    return " ".join(lines[:4]) + "\n" + lines[4]
+    rng = random.Random(seed)
+    cols = {a: _balanced(n, rng) for a in AXES}
+    rows = [{a: cols[a][i] for a in AXES} for i in range(n)]
+
+    seen: dict[tuple, int] = {}
+    for i, row in enumerate(rows):
+        key = tuple(row[a] for a in AXES)
+        for _ in range(200):
+            if key not in seen:
+                break
+            # 겹쳤다. 한 축을 골라 다른 사람과 값을 맞바꾼다.
+            a = rng.choice(AXES)
+            j = rng.randrange(n)
+            if j == i:
+                continue
+            rows[i][a], rows[j][a] = rows[j][a], rows[i][a]
+            key = tuple(rows[i][a2] for a2 in AXES)
+        seen[key] = i
+    return rows
 
 
-def build(goals: list[dict], n: int = config.N_PERSONAS) -> list[dict]:
-    """(조합 i%16, 목표 i%11) 로 n명. n<=176 이면 쌍이 겹치지 않는다."""
-    if len(goals) != config.N_GOALS:
-        raise ValueError("목표는 %d개여야 합니다 (받은 값 %d개). "
-                         "16조합과 서로소가 아니면 뒤쪽 페르소나가 앞을 반복합니다."
-                         % (config.N_GOALS, len(goals)))
-    cs = combos()
+def label(traits: dict) -> str:
+    return "숙련%d·주의%d·인내%d·탐색%d" % tuple(traits[a] for a in AXES)
+
+
+def build_prompt(traits: dict, goal: str) -> str:
+    """특성 문장 4줄 + 목표 1줄. 서사는 넣지 않는다."""
+    lines = [SENTENCES[a][traits[a]] for a in AXES]
+    return "\n".join(lines) + "\n목표: %s" % goal
+
+
+def build(goal: str, start_path: str, n: int = config.N_PERSONAS,
+          seed: int = config.PERSONA_SEED) -> list[dict]:
+    """목표는 전원 동일. 사람마다 다른 것은 특성과 거기서 파생된 제약뿐이다."""
+    rng = random.Random(seed + 1)
     people = []
-    for i in range(n):
-        traits = cs[i % len(cs)]
-        goal = goals[i % len(goals)]
-
-        # 시딩 규칙: 목표가 요구하면 목표의 것을, 아니면 재방문자에게 기본 1건.
-        # 재방문자를 빈 장바구니로 두면 '재방문'이 이름뿐인 특성이 된다.
-        seed = goal.get("seed_state") or (
-            DEFAULT_SEED if traits["visit"] == "returning" else None)
-
-        prompt = build_prompt(traits, goal, seed is not None)
+    for i, traits in enumerate(combos(n, seed)):
+        prompt = build_prompt(traits, goal)
         if len(prompt) > config.PROMPT_MAX_CHARS:
             raise ValueError("프롬프트 %d자 > 상한 %d자: %s"
                              % (len(prompt), config.PROMPT_MAX_CHARS, prompt))
 
+        lo, hi = DWELL_MS[traits["attention"]]
+        (amin, amax), max_steps = PATIENCE[traits["patience"]]
+
         actions = list(BASE_ACTIONS)
-        if traits["literacy"] == "savvy":
-            actions += SAVVY_ONLY
+        # 숙련도 1-2 는 주소창·검색을 쓰지 않는다. 3 이상은 제약 없음.
+        url_ok = traits["literacy"] >= 3
+        if url_ok:
+            actions.append(URL_ACTION)
 
         people.append({
             "id": "P%03d" % (i + 1),
-            "label": "%s / %s" % (combo_label(traits), goal["id"]),
+            "label": label(traits),
             "traits": traits,
-            "combo_index": i % len(cs),
-            "goal_id": goal["id"],
-            "goal_type": goal["type"],
-            "goal": goal["text"],
-            "success": goal.get("success"),
-            "start_path": goal["start_path"],
+            # 분석용 묶음. 원본 값은 traits 에 그대로 남는다.
+            "bands": {a: ("low" if traits[a] <= 2 else
+                          "high" if traits[a] >= 4 else "mid") for a in AXES},
             "prompt": prompt,
+            "start_path": start_path,
             "allowed_actions": actions,
-            "max_steps": 20 if traits["patience"] == "hasty" else config.MAX_STEPS,
-            "dwell_ms": DWELL_MS[(traits["reading"], traits["patience"])],
-            "user_type": "returning" if seed else "new",
-            "seed_state": seed,
+            "search_allowed": url_ok,
+            "max_steps": max_steps,
+            "max_idle_attempts": rng.randint(amin, amax),
+            "dwell_ms": rng.randint(lo, hi),
+            # 탐색 범위 1-2 만 화면 수를 제한한다. 3 이상은 제한 없음.
+            "page_cap": NARROW_PAGE_CAP if traits["breadth"] <= 2 else 0,
+            "user_type": "new",
+            "seed_state": None,
         })
     return people
 
 
-# ── 시딩 ──────────────────────────────────────────────────────────
-# 담아둔 상품은 코드가 고른다. 값이 두 군데 있으면 어긋나므로 여기가 유일한 출처.
+# ── 시딩 (목표가 요구할 때만 쓰인다) ────────────────────────────────
+# 지금 설계에서는 목표가 하나뿐이라 기본적으로 쓰지 않는다. 장바구니가 찬
+# 상태에서 시작해야 하는 목표가 다시 생기면 여기를 다시 연결한다.
 DEFAULT_SEED = {"cart": [{"id": 1, "color": "아이보리", "size": "M", "qty": 1}]}
 TWO_ITEM_SEED = {"cart": [
     {"id": 3, "color": "화이트", "size": "250", "qty": 1},
@@ -181,11 +200,9 @@ def seed_script(seed_state: dict, storage_key: str) -> str:
     사이트의 addToCart() 를 부르지 않는 이유: flawed 쪽 addToCart 자체가
     결함일 수 있다. 준비 단계가 검사 대상 코드에 의존하면 '재방문자'가
     한쪽에서만 빈 장바구니로 시작하고, 그 차이가 결함 탐지 결과로 둔갑한다.
-
-    가격·이름은 window.PRODUCTS(두 변형이 공유하는 파일)에서 읽는다.
-    파이썬에 가격표를 복사해두면 픽스처를 고칠 때 반드시 어긋난다.
     """
-    items = json.dumps(seed_state["cart"], ensure_ascii=False)
+    import json as _json
+    items = _json.dumps(seed_state["cart"], ensure_ascii=False)
     return """(() => {
   const want = %s;
   const P = window.PRODUCTS || [];
@@ -197,4 +214,4 @@ def seed_script(seed_state: dict, storage_key: str) -> str:
   }).filter(Boolean);
   localStorage.setItem(%s, JSON.stringify(lines));
   return lines.length;
-})()""" % (items, json.dumps(storage_key))
+})()""" % (items, _json.dumps(storage_key))

@@ -1,157 +1,36 @@
 {
- "generated_at": "2026-08-25T12:57:48",
+ "generated_at": "2026-08-25T19:17:01",
+ "goal": "코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+ "start_path": "/index.html",
+ "seed": 20260825,
+ "axes": {
+  "literacy": "숙련도",
+  "attention": "주의 지속",
+  "patience": "인내심",
+  "breadth": "탐색 범위"
+ },
  "source_map": {
   "variant": "clean",
-  "generated_at": "2026-08-25T12:10:56"
+  "generated_at": "2026-08-25T16:43:48"
  },
- "goals": [
-  {
-   "id": "G01",
-   "type": "A",
-   "start_path": "/index.html",
-   "text": "코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
-   "success": "주문 완료 화면에 도달"
-  },
-  {
-   "id": "G02",
-   "type": "A",
-   "start_path": "/list.html",
-   "text": "신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
-   "success": "신발 카테고리 상품으로 주문 완료"
-  },
-  {
-   "id": "G03",
-   "type": "A",
-   "start_path": "/list.html",
-   "text": "무료배송이 되도록 담아서 주문을 마친다.",
-   "success": "합계 5만원 이상으로 주문 완료"
-  },
-  {
-   "id": "G04",
-   "type": "A",
-   "start_path": "/product.html?id=7",
-   "text": "워시드 후디를 사려고 한다.",
-   "success": "품절을 확인하고 대체품 구매 또는 이탈"
-  },
-  {
-   "id": "G05",
-   "type": "A",
-   "start_path": "/index.html",
-   "text": "액세서리 두 가지를 한 번에 주문한다.",
-   "success": "액세서리 2종이 담긴 상태로 주문 완료"
-  },
-  {
-   "id": "G06",
-   "type": "B",
-   "start_path": "/index.html",
-   "text": "배송비가 무료가 되는 금액을 확인하고 나간다.",
-   "success": "5만원 기준을 말하고 종료"
-  },
-  {
-   "id": "G07",
-   "type": "B",
-   "start_path": "/list.html",
-   "text": "스니커즈에 260 사이즈가 있는지 확인만 한다.",
-   "success": "사이즈 목록을 확인하고 종료"
-  },
-  {
-   "id": "G08",
-   "type": "B",
-   "start_path": "/cart.html",
-   "text": "장바구니의 총 결제금액을 확인하고 나간다.",
-   "success": "배송비 포함 합계를 말하고 종료",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
-  },
-  {
-   "id": "G09",
-   "type": "C",
-   "start_path": "/index.html",
-   "text": "지난번에 담아둔 장바구니를 이어서 결제한다.",
-   "success": "담긴 상품 그대로 주문 완료",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 3,
-      "color": "화이트",
-      "size": "250",
-      "qty": 1
-     },
-     {
-      "id": 10,
-      "color": "블랙",
-      "size": "FREE",
-      "qty": 2
-     }
-    ]
-   }
-  },
-  {
-   "id": "G10",
-   "type": "C",
-   "start_path": "/cart.html",
-   "text": "담아둔 것 중 하나를 빼고 나머지만 주문한다.",
-   "success": "1건 삭제 후 주문 완료",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 3,
-      "color": "화이트",
-      "size": "250",
-      "qty": 1
-     },
-     {
-      "id": 10,
-      "color": "블랙",
-      "size": "FREE",
-      "qty": 2
-     }
-    ]
-   }
-  },
-  {
-   "id": "G11",
-   "type": "C",
-   "start_path": "/cart.html",
-   "text": "담아둔 상품의 수량을 2개로 바꿔 주문한다.",
-   "success": "수량 변경이 합계에 반영된 뒤 주문 완료",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
-  }
- ],
  "personas": [
   {
    "id": "P001",
-   "label": "익숙·여유·정독·신규 / G01",
+   "label": "숙련3·주의3·인내4·탐색3",
    "traits": {
-    "literacy": "savvy",
-    "patience": "patient",
-    "reading": "reader",
-    "visit": "new"
+    "literacy": 3,
+    "attention": 3,
+    "patience": 4,
+    "breadth": 3
    },
-   "combo_index": 0,
-   "goal_id": "G01",
-   "goal_type": "A",
-   "goal": "코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
-   "success": "주문 완료 화면에 도달",
+   "bands": {
+    "literacy": "mid",
+    "attention": "mid",
+    "patience": "high",
+    "breadth": "mid"
+   },
+   "prompt": "가끔 온라인 쇼핑을 합니다.\n중요해 보이는 내용은 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
    "allowed_actions": [
     "click",
     "type",
@@ -161,27 +40,31 @@
     "wait",
     "goto"
    ],
+   "search_allowed": true,
    "max_steps": 30,
-   "dwell_ms": 12000,
+   "max_idle_attempts": 22,
+   "dwell_ms": 5176,
+   "page_cap": 0,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P002",
-   "label": "서툼·여유·정독·신규 / G02",
+   "label": "숙련1·주의1·인내3·탐색2",
    "traits": {
-    "literacy": "novice",
-    "patience": "patient",
-    "reading": "reader",
-    "visit": "new"
+    "literacy": 1,
+    "attention": 1,
+    "patience": 3,
+    "breadth": 2
    },
-   "combo_index": 1,
-   "goal_id": "G02",
-   "goal_type": "A",
-   "goal": "신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
-   "success": "신발 카테고리 상품으로 주문 완료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "bands": {
+    "literacy": "low",
+    "attention": "low",
+    "patience": "mid",
+    "breadth": "low"
+   },
+   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n어느 정도는 다시 시도해봅니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -190,57 +73,64 @@
     "back",
     "wait"
    ],
-   "max_steps": 30,
-   "dwell_ms": 12000,
+   "search_allowed": false,
+   "max_steps": 25,
+   "max_idle_attempts": 17,
+   "dwell_ms": 847,
+   "page_cap": 3,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P003",
-   "label": "익숙·조급·정독·신규 / G03",
+   "label": "숙련2·주의2·인내2·탐색2",
    "traits": {
-    "literacy": "savvy",
-    "patience": "hasty",
-    "reading": "reader",
-    "visit": "new"
+    "literacy": 2,
+    "attention": 2,
+    "patience": 2,
+    "breadth": 2
    },
-   "combo_index": 2,
-   "goal_id": "G03",
-   "goal_type": "A",
-   "goal": "무료배송이 되도록 담아서 주문을 마친다.",
-   "success": "합계 5만원 이상으로 주문 완료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 무료배송이 되도록 담아서 주문을 마친다.",
+   "bands": {
+    "literacy": "low",
+    "attention": "low",
+    "patience": "low",
+    "breadth": "low"
+   },
+   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n필요한 부분만 훑어봅니다.\n몇 번 시도해보고 안 되면 나갑니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait",
-    "goto"
+    "wait"
    ],
+   "search_allowed": false,
    "max_steps": 20,
-   "dwell_ms": 6000,
+   "max_idle_attempts": 8,
+   "dwell_ms": 2781,
+   "page_cap": 3,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P004",
-   "label": "서툼·조급·정독·신규 / G04",
+   "label": "숙련1·주의4·인내5·탐색5",
    "traits": {
-    "literacy": "novice",
-    "patience": "hasty",
-    "reading": "reader",
-    "visit": "new"
+    "literacy": 1,
+    "attention": 4,
+    "patience": 5,
+    "breadth": 5
    },
-   "combo_index": 3,
-   "goal_id": "G04",
-   "goal_type": "A",
-   "goal": "워시드 후디를 사려고 한다.",
-   "success": "품절을 확인하고 대체품 구매 또는 이탈",
-   "start_path": "/product.html?id=7",
-   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 워시드 후디를 사려고 한다.",
+   "bands": {
+    "literacy": "low",
+    "attention": "high",
+    "patience": "high",
+    "breadth": "high"
+   },
+   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n대부분의 안내 문구를 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -249,27 +139,31 @@
     "back",
     "wait"
    ],
-   "max_steps": 20,
-   "dwell_ms": 6000,
+   "search_allowed": false,
+   "max_steps": 35,
+   "max_idle_attempts": 27,
+   "dwell_ms": 6630,
+   "page_cap": 0,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P005",
-   "label": "익숙·여유·훑기·신규 / G05",
+   "label": "숙련5·주의4·인내5·탐색4",
    "traits": {
-    "literacy": "savvy",
-    "patience": "patient",
-    "reading": "scanner",
-    "visit": "new"
+    "literacy": 5,
+    "attention": 4,
+    "patience": 5,
+    "breadth": 4
    },
-   "combo_index": 4,
-   "goal_id": "G05",
-   "goal_type": "A",
-   "goal": "액세서리 두 가지를 한 번에 주문한다.",
-   "success": "액세서리 2종이 담긴 상태로 주문 완료",
+   "bands": {
+    "literacy": "high",
+    "attention": "high",
+    "patience": "high",
+    "breadth": "high"
+   },
+   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n대부분의 안내 문구를 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 액세서리 두 가지를 한 번에 주문한다.",
    "allowed_actions": [
     "click",
     "type",
@@ -279,27 +173,31 @@
     "wait",
     "goto"
    ],
-   "max_steps": 30,
-   "dwell_ms": 4000,
+   "search_allowed": true,
+   "max_steps": 35,
+   "max_idle_attempts": 29,
+   "dwell_ms": 6841,
+   "page_cap": 0,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P006",
-   "label": "서툼·여유·훑기·신규 / G06",
+   "label": "숙련1·주의2·인내5·탐색5",
    "traits": {
-    "literacy": "novice",
-    "patience": "patient",
-    "reading": "scanner",
-    "visit": "new"
+    "literacy": 1,
+    "attention": 2,
+    "patience": 5,
+    "breadth": 5
    },
-   "combo_index": 5,
-   "goal_id": "G06",
-   "goal_type": "B",
-   "goal": "배송비가 무료가 되는 금액을 확인하고 나간다.",
-   "success": "5만원 기준을 말하고 종료",
+   "bands": {
+    "literacy": "low",
+    "attention": "low",
+    "patience": "high",
+    "breadth": "high"
+   },
+   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n필요한 부분만 훑어봅니다.\n될 때까지 여러 방법을 시도합니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 배송비가 무료가 되는 금액을 확인하고 나간다.",
    "allowed_actions": [
     "click",
     "type",
@@ -308,27 +206,31 @@
     "back",
     "wait"
    ],
-   "max_steps": 30,
-   "dwell_ms": 4000,
+   "search_allowed": false,
+   "max_steps": 35,
+   "max_idle_attempts": 26,
+   "dwell_ms": 1737,
+   "page_cap": 0,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P007",
-   "label": "익숙·조급·훑기·신규 / G07",
+   "label": "숙련5·주의1·인내2·탐색2",
    "traits": {
-    "literacy": "savvy",
-    "patience": "hasty",
-    "reading": "scanner",
-    "visit": "new"
+    "literacy": 5,
+    "attention": 1,
+    "patience": 2,
+    "breadth": 2
    },
-   "combo_index": 6,
-   "goal_id": "G07",
-   "goal_type": "B",
-   "goal": "스니커즈에 260 사이즈가 있는지 확인만 한다.",
-   "success": "사이즈 목록을 확인하고 종료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "bands": {
+    "literacy": "high",
+    "attention": "low",
+    "patience": "low",
+    "breadth": "low"
+   },
+   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n몇 번 시도해보고 안 되면 나갑니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -338,65 +240,65 @@
     "wait",
     "goto"
    ],
+   "search_allowed": true,
    "max_steps": 20,
-   "dwell_ms": 1500,
+   "max_idle_attempts": 11,
+   "dwell_ms": 872,
+   "page_cap": 3,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P008",
-   "label": "서툼·조급·훑기·신규 / G08",
+   "label": "숙련4·주의5·인내2·탐색3",
    "traits": {
-    "literacy": "novice",
-    "patience": "hasty",
-    "reading": "scanner",
-    "visit": "new"
+    "literacy": 4,
+    "attention": 5,
+    "patience": 2,
+    "breadth": 3
    },
-   "combo_index": 7,
-   "goal_id": "G08",
-   "goal_type": "B",
-   "goal": "장바구니의 총 결제금액을 확인하고 나간다.",
-   "success": "배송비 포함 합계를 말하고 종료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 장바구니의 총 결제금액을 확인하고 나간다.",
+   "bands": {
+    "literacy": "high",
+    "attention": "high",
+    "patience": "low",
+    "breadth": "mid"
+   },
+   "prompt": "온라인 쇼핑을 자주 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait"
+    "wait",
+    "goto"
    ],
+   "search_allowed": true,
    "max_steps": 20,
-   "dwell_ms": 1500,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "max_idle_attempts": 9,
+   "dwell_ms": 10887,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P009",
-   "label": "익숙·여유·정독·재방문 / G09",
+   "label": "숙련5·주의5·인내5·탐색4",
    "traits": {
-    "literacy": "savvy",
-    "patience": "patient",
-    "reading": "reader",
-    "visit": "returning"
+    "literacy": 5,
+    "attention": 5,
+    "patience": 5,
+    "breadth": 4
    },
-   "combo_index": 8,
-   "goal_id": "G09",
-   "goal_type": "C",
-   "goal": "지난번에 담아둔 장바구니를 이어서 결제한다.",
-   "success": "담긴 상품 그대로 주문 완료",
+   "bands": {
+    "literacy": "high",
+    "attention": "high",
+    "patience": "high",
+    "breadth": "high"
+   },
+   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 지난번에 담아둔 장바구니를 이어서 결제한다.",
    "allowed_actions": [
     "click",
     "type",
@@ -406,86 +308,65 @@
     "wait",
     "goto"
    ],
-   "max_steps": 30,
-   "dwell_ms": 12000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 3,
-      "color": "화이트",
-      "size": "250",
-      "qty": 1
-     },
-     {
-      "id": 10,
-      "color": "블랙",
-      "size": "FREE",
-      "qty": 2
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 35,
+   "max_idle_attempts": 29,
+   "dwell_ms": 10370,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P010",
-   "label": "서툼·여유·정독·재방문 / G10",
+   "label": "숙련5·주의5·인내2·탐색5",
    "traits": {
-    "literacy": "novice",
-    "patience": "patient",
-    "reading": "reader",
-    "visit": "returning"
+    "literacy": 5,
+    "attention": 5,
+    "patience": 2,
+    "breadth": 5
    },
-   "combo_index": 9,
-   "goal_id": "G10",
-   "goal_type": "C",
-   "goal": "담아둔 것 중 하나를 빼고 나머지만 주문한다.",
-   "success": "1건 삭제 후 주문 완료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 것 중 하나를 빼고 나머지만 주문한다.",
+   "bands": {
+    "literacy": "high",
+    "attention": "high",
+    "patience": "low",
+    "breadth": "high"
+   },
+   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait"
+    "wait",
+    "goto"
    ],
-   "max_steps": 30,
-   "dwell_ms": 12000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 3,
-      "color": "화이트",
-      "size": "250",
-      "qty": 1
-     },
-     {
-      "id": 10,
-      "color": "블랙",
-      "size": "FREE",
-      "qty": 2
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 20,
+   "max_idle_attempts": 9,
+   "dwell_ms": 10970,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P011",
-   "label": "익숙·조급·정독·재방문 / G11",
+   "label": "숙련3·주의4·인내2·탐색2",
    "traits": {
-    "literacy": "savvy",
-    "patience": "hasty",
-    "reading": "reader",
-    "visit": "returning"
+    "literacy": 3,
+    "attention": 4,
+    "patience": 2,
+    "breadth": 2
    },
-   "combo_index": 10,
-   "goal_id": "G11",
-   "goal_type": "C",
-   "goal": "담아둔 상품의 수량을 2개로 바꿔 주문한다.",
-   "success": "수량 변경이 합계에 반영된 뒤 주문 완료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "bands": {
+    "literacy": "mid",
+    "attention": "high",
+    "patience": "low",
+    "breadth": "low"
+   },
+   "prompt": "가끔 온라인 쇼핑을 합니다.\n대부분의 안내 문구를 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -495,36 +376,31 @@
     "wait",
     "goto"
    ],
+   "search_allowed": true,
    "max_steps": 20,
-   "dwell_ms": 6000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "max_idle_attempts": 8,
+   "dwell_ms": 6585,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P012",
-   "label": "서툼·조급·정독·재방문 / G01",
+   "label": "숙련1·주의3·인내3·탐색1",
    "traits": {
-    "literacy": "novice",
-    "patience": "hasty",
-    "reading": "reader",
-    "visit": "returning"
+    "literacy": 1,
+    "attention": 3,
+    "patience": 3,
+    "breadth": 1
    },
-   "combo_index": 11,
-   "goal_id": "G01",
-   "goal_type": "A",
-   "goal": "코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
-   "success": "주문 완료 화면에 도달",
+   "bands": {
+    "literacy": "low",
+    "attention": "mid",
+    "patience": "mid",
+    "breadth": "low"
+   },
+   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n중요해 보이는 내용은 읽습니다.\n어느 정도는 다시 시도해봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
    "allowed_actions": [
     "click",
     "type",
@@ -533,36 +409,31 @@
     "back",
     "wait"
    ],
-   "max_steps": 20,
-   "dwell_ms": 6000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": false,
+   "max_steps": 25,
+   "max_idle_attempts": 13,
+   "dwell_ms": 5320,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P013",
-   "label": "익숙·여유·훑기·재방문 / G02",
+   "label": "숙련3·주의3·인내5·탐색2",
    "traits": {
-    "literacy": "savvy",
-    "patience": "patient",
-    "reading": "scanner",
-    "visit": "returning"
+    "literacy": 3,
+    "attention": 3,
+    "patience": 5,
+    "breadth": 2
    },
-   "combo_index": 12,
-   "goal_id": "G02",
-   "goal_type": "A",
-   "goal": "신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
-   "success": "신발 카테고리 상품으로 주문 완료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "bands": {
+    "literacy": "mid",
+    "attention": "mid",
+    "patience": "high",
+    "breadth": "low"
+   },
+   "prompt": "가끔 온라인 쇼핑을 합니다.\n중요해 보이는 내용은 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -572,74 +443,65 @@
     "wait",
     "goto"
    ],
-   "max_steps": 30,
-   "dwell_ms": 4000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 35,
+   "max_idle_attempts": 28,
+   "dwell_ms": 4994,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P014",
-   "label": "서툼·여유·훑기·재방문 / G03",
+   "label": "숙련4·주의1·인내2·탐색2",
    "traits": {
-    "literacy": "novice",
-    "patience": "patient",
-    "reading": "scanner",
-    "visit": "returning"
+    "literacy": 4,
+    "attention": 1,
+    "patience": 2,
+    "breadth": 2
    },
-   "combo_index": 13,
-   "goal_id": "G03",
-   "goal_type": "A",
-   "goal": "무료배송이 되도록 담아서 주문을 마친다.",
-   "success": "합계 5만원 이상으로 주문 완료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 무료배송이 되도록 담아서 주문을 마친다.",
+   "bands": {
+    "literacy": "high",
+    "attention": "low",
+    "patience": "low",
+    "breadth": "low"
+   },
+   "prompt": "온라인 쇼핑을 자주 합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n몇 번 시도해보고 안 되면 나갑니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait"
+    "wait",
+    "goto"
    ],
-   "max_steps": 30,
-   "dwell_ms": 4000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 20,
+   "max_idle_attempts": 9,
+   "dwell_ms": 923,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P015",
-   "label": "익숙·조급·훑기·재방문 / G04",
+   "label": "숙련5·주의1·인내3·탐색4",
    "traits": {
-    "literacy": "savvy",
-    "patience": "hasty",
-    "reading": "scanner",
-    "visit": "returning"
+    "literacy": 5,
+    "attention": 1,
+    "patience": 3,
+    "breadth": 4
    },
-   "combo_index": 14,
-   "goal_id": "G04",
-   "goal_type": "A",
-   "goal": "워시드 후디를 사려고 한다.",
-   "success": "품절을 확인하고 대체품 구매 또는 이탈",
-   "start_path": "/product.html?id=7",
-   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 워시드 후디를 사려고 한다.",
+   "bands": {
+    "literacy": "high",
+    "attention": "low",
+    "patience": "mid",
+    "breadth": "high"
+   },
+   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n어느 정도는 다시 시도해봅니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -649,74 +511,31 @@
     "wait",
     "goto"
    ],
-   "max_steps": 20,
-   "dwell_ms": 1500,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 25,
+   "max_idle_attempts": 18,
+   "dwell_ms": 1348,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P016",
-   "label": "서툼·조급·훑기·재방문 / G05",
+   "label": "숙련5·주의1·인내2·탐색4",
    "traits": {
-    "literacy": "novice",
-    "patience": "hasty",
-    "reading": "scanner",
-    "visit": "returning"
+    "literacy": 5,
+    "attention": 1,
+    "patience": 2,
+    "breadth": 4
    },
-   "combo_index": 15,
-   "goal_id": "G05",
-   "goal_type": "A",
-   "goal": "액세서리 두 가지를 한 번에 주문한다.",
-   "success": "액세서리 2종이 담긴 상태로 주문 완료",
-   "start_path": "/index.html",
-   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 액세서리 두 가지를 한 번에 주문한다.",
-   "allowed_actions": [
-    "click",
-    "type",
-    "select",
-    "scroll",
-    "back",
-    "wait"
-   ],
-   "max_steps": 20,
-   "dwell_ms": 1500,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
-  },
-  {
-   "id": "P017",
-   "label": "익숙·여유·정독·신규 / G06",
-   "traits": {
-    "literacy": "savvy",
-    "patience": "patient",
-    "reading": "reader",
-    "visit": "new"
+   "bands": {
+    "literacy": "high",
+    "attention": "low",
+    "patience": "low",
+    "breadth": "high"
    },
-   "combo_index": 0,
-   "goal_id": "G06",
-   "goal_type": "B",
-   "goal": "배송비가 무료가 되는 금액을 확인하고 나간다.",
-   "success": "5만원 기준을 말하고 종료",
+   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n몇 번 시도해보고 안 되면 나갑니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 배송비가 무료가 되는 금액을 확인하고 나간다.",
    "allowed_actions": [
     "click",
     "type",
@@ -726,27 +545,65 @@
     "wait",
     "goto"
    ],
+   "search_allowed": true,
+   "max_steps": 20,
+   "max_idle_attempts": 11,
+   "dwell_ms": 1311,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P017",
+   "label": "숙련5·주의1·인내4·탐색3",
+   "traits": {
+    "literacy": 5,
+    "attention": 1,
+    "patience": 4,
+    "breadth": 3
+   },
+   "bands": {
+    "literacy": "high",
+    "attention": "low",
+    "patience": "high",
+    "breadth": "mid"
+   },
+   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n잘 안 돼도 방법을 찾아봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "search_allowed": true,
    "max_steps": 30,
-   "dwell_ms": 12000,
+   "max_idle_attempts": 24,
+   "dwell_ms": 925,
+   "page_cap": 0,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P018",
-   "label": "서툼·여유·정독·신규 / G07",
+   "label": "숙련2·주의4·인내4·탐색4",
    "traits": {
-    "literacy": "novice",
-    "patience": "patient",
-    "reading": "reader",
-    "visit": "new"
+    "literacy": 2,
+    "attention": 4,
+    "patience": 4,
+    "breadth": 4
    },
-   "combo_index": 1,
-   "goal_id": "G07",
-   "goal_type": "B",
-   "goal": "스니커즈에 260 사이즈가 있는지 확인만 한다.",
-   "success": "사이즈 목록을 확인하고 종료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "bands": {
+    "literacy": "low",
+    "attention": "high",
+    "patience": "high",
+    "breadth": "high"
+   },
+   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n대부분의 안내 문구를 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -755,27 +612,31 @@
     "back",
     "wait"
    ],
+   "search_allowed": false,
    "max_steps": 30,
-   "dwell_ms": 12000,
+   "max_idle_attempts": 23,
+   "dwell_ms": 9379,
+   "page_cap": 0,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P019",
-   "label": "익숙·조급·정독·신규 / G08",
+   "label": "숙련5·주의3·인내1·탐색1",
    "traits": {
-    "literacy": "savvy",
-    "patience": "hasty",
-    "reading": "reader",
-    "visit": "new"
+    "literacy": 5,
+    "attention": 3,
+    "patience": 1,
+    "breadth": 1
    },
-   "combo_index": 2,
-   "goal_id": "G08",
-   "goal_type": "B",
-   "goal": "장바구니의 총 결제금액을 확인하고 나간다.",
-   "success": "배송비 포함 합계를 말하고 종료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 장바구니의 총 결제금액을 확인하고 나간다.",
+   "bands": {
+    "literacy": "high",
+    "attention": "mid",
+    "patience": "low",
+    "breadth": "low"
+   },
+   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n중요해 보이는 내용은 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -785,80 +646,65 @@
     "wait",
     "goto"
    ],
-   "max_steps": 20,
-   "dwell_ms": 6000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 15,
+   "max_idle_attempts": 6,
+   "dwell_ms": 5209,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P020",
-   "label": "서툼·조급·정독·신규 / G09",
+   "label": "숙련5·주의2·인내1·탐색1",
    "traits": {
-    "literacy": "novice",
-    "patience": "hasty",
-    "reading": "reader",
-    "visit": "new"
+    "literacy": 5,
+    "attention": 2,
+    "patience": 1,
+    "breadth": 1
    },
-   "combo_index": 3,
-   "goal_id": "G09",
-   "goal_type": "C",
-   "goal": "지난번에 담아둔 장바구니를 이어서 결제한다.",
-   "success": "담긴 상품 그대로 주문 완료",
+   "bands": {
+    "literacy": "high",
+    "attention": "low",
+    "patience": "low",
+    "breadth": "low"
+   },
+   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n필요한 부분만 훑어봅니다.\n조금만 막혀도 바로 그만둡니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 지난번에 담아둔 장바구니를 이어서 결제한다.",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait"
+    "wait",
+    "goto"
    ],
-   "max_steps": 20,
-   "dwell_ms": 6000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 3,
-      "color": "화이트",
-      "size": "250",
-      "qty": 1
-     },
-     {
-      "id": 10,
-      "color": "블랙",
-      "size": "FREE",
-      "qty": 2
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 15,
+   "max_idle_attempts": 4,
+   "dwell_ms": 2801,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P021",
-   "label": "익숙·여유·훑기·신규 / G10",
+   "label": "숙련4·주의2·인내5·탐색3",
    "traits": {
-    "literacy": "savvy",
-    "patience": "patient",
-    "reading": "scanner",
-    "visit": "new"
+    "literacy": 4,
+    "attention": 2,
+    "patience": 5,
+    "breadth": 3
    },
-   "combo_index": 4,
-   "goal_id": "G10",
-   "goal_type": "C",
-   "goal": "담아둔 것 중 하나를 빼고 나머지만 주문한다.",
-   "success": "1건 삭제 후 주문 완료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 것 중 하나를 빼고 나머지만 주문한다.",
+   "bands": {
+    "literacy": "high",
+    "attention": "low",
+    "patience": "high",
+    "breadth": "mid"
+   },
+   "prompt": "온라인 쇼핑을 자주 합니다.\n필요한 부분만 훑어봅니다.\n될 때까지 여러 방법을 시도합니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -868,42 +714,65 @@
     "wait",
     "goto"
    ],
-   "max_steps": 30,
-   "dwell_ms": 4000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 3,
-      "color": "화이트",
-      "size": "250",
-      "qty": 1
-     },
-     {
-      "id": 10,
-      "color": "블랙",
-      "size": "FREE",
-      "qty": 2
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 35,
+   "max_idle_attempts": 26,
+   "dwell_ms": 2988,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P022",
-   "label": "서툼·여유·훑기·신규 / G11",
+   "label": "숙련4·주의3·인내3·탐색4",
    "traits": {
-    "literacy": "novice",
-    "patience": "patient",
-    "reading": "scanner",
-    "visit": "new"
+    "literacy": 4,
+    "attention": 3,
+    "patience": 3,
+    "breadth": 4
    },
-   "combo_index": 5,
-   "goal_id": "G11",
-   "goal_type": "C",
-   "goal": "담아둔 상품의 수량을 2개로 바꿔 주문한다.",
-   "success": "수량 변경이 합계에 반영된 뒤 주문 완료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "bands": {
+    "literacy": "high",
+    "attention": "mid",
+    "patience": "mid",
+    "breadth": "high"
+   },
+   "prompt": "온라인 쇼핑을 자주 합니다.\n중요해 보이는 내용은 읽습니다.\n어느 정도는 다시 시도해봅니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "search_allowed": true,
+   "max_steps": 25,
+   "max_idle_attempts": 18,
+   "dwell_ms": 5376,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P023",
+   "label": "숙련1·주의3·인내3·탐색3",
+   "traits": {
+    "literacy": 1,
+    "attention": 3,
+    "patience": 3,
+    "breadth": 3
+   },
+   "bands": {
+    "literacy": "low",
+    "attention": "mid",
+    "patience": "mid",
+    "breadth": "mid"
+   },
+   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n중요해 보이는 내용은 읽습니다.\n어느 정도는 다시 시도해봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -912,66 +781,31 @@
     "back",
     "wait"
    ],
-   "max_steps": 30,
-   "dwell_ms": 4000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
-  },
-  {
-   "id": "P023",
-   "label": "익숙·조급·훑기·신규 / G01",
-   "traits": {
-    "literacy": "savvy",
-    "patience": "hasty",
-    "reading": "scanner",
-    "visit": "new"
-   },
-   "combo_index": 6,
-   "goal_id": "G01",
-   "goal_type": "A",
-   "goal": "코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
-   "success": "주문 완료 화면에 도달",
-   "start_path": "/index.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
-   "allowed_actions": [
-    "click",
-    "type",
-    "select",
-    "scroll",
-    "back",
-    "wait",
-    "goto"
-   ],
-   "max_steps": 20,
-   "dwell_ms": 1500,
+   "search_allowed": false,
+   "max_steps": 25,
+   "max_idle_attempts": 17,
+   "dwell_ms": 4049,
+   "page_cap": 0,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P024",
-   "label": "서툼·조급·훑기·신규 / G02",
+   "label": "숙련1·주의4·인내4·탐색5",
    "traits": {
-    "literacy": "novice",
-    "patience": "hasty",
-    "reading": "scanner",
-    "visit": "new"
+    "literacy": 1,
+    "attention": 4,
+    "patience": 4,
+    "breadth": 5
    },
-   "combo_index": 7,
-   "goal_id": "G02",
-   "goal_type": "A",
-   "goal": "신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
-   "success": "신발 카테고리 상품으로 주문 완료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "bands": {
+    "literacy": "low",
+    "attention": "high",
+    "patience": "high",
+    "breadth": "high"
+   },
+   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n대부분의 안내 문구를 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -980,27 +814,31 @@
     "back",
     "wait"
    ],
-   "max_steps": 20,
-   "dwell_ms": 1500,
+   "search_allowed": false,
+   "max_steps": 30,
+   "max_idle_attempts": 24,
+   "dwell_ms": 6418,
+   "page_cap": 0,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P025",
-   "label": "익숙·여유·정독·재방문 / G03",
+   "label": "숙련3·주의3·인내1·탐색5",
    "traits": {
-    "literacy": "savvy",
-    "patience": "patient",
-    "reading": "reader",
-    "visit": "returning"
+    "literacy": 3,
+    "attention": 3,
+    "patience": 1,
+    "breadth": 5
    },
-   "combo_index": 8,
-   "goal_id": "G03",
-   "goal_type": "A",
-   "goal": "무료배송이 되도록 담아서 주문을 마친다.",
-   "success": "합계 5만원 이상으로 주문 완료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 무료배송이 되도록 담아서 주문을 마친다.",
+   "bands": {
+    "literacy": "mid",
+    "attention": "mid",
+    "patience": "low",
+    "breadth": "high"
+   },
+   "prompt": "가끔 온라인 쇼핑을 합니다.\n중요해 보이는 내용은 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -1010,74 +848,65 @@
     "wait",
     "goto"
    ],
-   "max_steps": 30,
-   "dwell_ms": 12000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 15,
+   "max_idle_attempts": 6,
+   "dwell_ms": 3471,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P026",
-   "label": "서툼·여유·정독·재방문 / G04",
+   "label": "숙련4·주의5·인내5·탐색3",
    "traits": {
-    "literacy": "novice",
-    "patience": "patient",
-    "reading": "reader",
-    "visit": "returning"
+    "literacy": 4,
+    "attention": 5,
+    "patience": 5,
+    "breadth": 3
    },
-   "combo_index": 9,
-   "goal_id": "G04",
-   "goal_type": "A",
-   "goal": "워시드 후디를 사려고 한다.",
-   "success": "품절을 확인하고 대체품 구매 또는 이탈",
-   "start_path": "/product.html?id=7",
-   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 워시드 후디를 사려고 한다.",
+   "bands": {
+    "literacy": "high",
+    "attention": "high",
+    "patience": "high",
+    "breadth": "mid"
+   },
+   "prompt": "온라인 쇼핑을 자주 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait"
+    "wait",
+    "goto"
    ],
-   "max_steps": 30,
-   "dwell_ms": 12000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 35,
+   "max_idle_attempts": 29,
+   "dwell_ms": 11192,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P027",
-   "label": "익숙·조급·정독·재방문 / G05",
+   "label": "숙련4·주의2·인내1·탐색4",
    "traits": {
-    "literacy": "savvy",
-    "patience": "hasty",
-    "reading": "reader",
-    "visit": "returning"
+    "literacy": 4,
+    "attention": 2,
+    "patience": 1,
+    "breadth": 4
    },
-   "combo_index": 10,
-   "goal_id": "G05",
-   "goal_type": "A",
-   "goal": "액세서리 두 가지를 한 번에 주문한다.",
-   "success": "액세서리 2종이 담긴 상태로 주문 완료",
+   "bands": {
+    "literacy": "high",
+    "attention": "low",
+    "patience": "low",
+    "breadth": "high"
+   },
+   "prompt": "온라인 쇼핑을 자주 합니다.\n필요한 부분만 훑어봅니다.\n조금만 막혀도 바로 그만둡니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 액세서리 두 가지를 한 번에 주문한다.",
    "allowed_actions": [
     "click",
     "type",
@@ -1087,36 +916,31 @@
     "wait",
     "goto"
    ],
-   "max_steps": 20,
-   "dwell_ms": 6000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 15,
+   "max_idle_attempts": 6,
+   "dwell_ms": 2214,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P028",
-   "label": "서툼·조급·정독·재방문 / G06",
+   "label": "숙련2·주의4·인내1·탐색4",
    "traits": {
-    "literacy": "novice",
-    "patience": "hasty",
-    "reading": "reader",
-    "visit": "returning"
+    "literacy": 2,
+    "attention": 4,
+    "patience": 1,
+    "breadth": 4
    },
-   "combo_index": 11,
-   "goal_id": "G06",
-   "goal_type": "B",
-   "goal": "배송비가 무료가 되는 금액을 확인하고 나간다.",
-   "success": "5만원 기준을 말하고 종료",
+   "bands": {
+    "literacy": "low",
+    "attention": "high",
+    "patience": "low",
+    "breadth": "high"
+   },
+   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n대부분의 안내 문구를 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 배송비가 무료가 되는 금액을 확인하고 나간다.",
    "allowed_actions": [
     "click",
     "type",
@@ -1125,36 +949,31 @@
     "back",
     "wait"
    ],
-   "max_steps": 20,
-   "dwell_ms": 6000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": false,
+   "max_steps": 15,
+   "max_idle_attempts": 7,
+   "dwell_ms": 7900,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P029",
-   "label": "익숙·여유·훑기·재방문 / G07",
+   "label": "숙련3·주의2·인내2·탐색4",
    "traits": {
-    "literacy": "savvy",
-    "patience": "patient",
-    "reading": "scanner",
-    "visit": "returning"
+    "literacy": 3,
+    "attention": 2,
+    "patience": 2,
+    "breadth": 4
    },
-   "combo_index": 12,
-   "goal_id": "G07",
-   "goal_type": "B",
-   "goal": "스니커즈에 260 사이즈가 있는지 확인만 한다.",
-   "success": "사이즈 목록을 확인하고 종료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "bands": {
+    "literacy": "mid",
+    "attention": "low",
+    "patience": "low",
+    "breadth": "high"
+   },
+   "prompt": "가끔 온라인 쇼핑을 합니다.\n필요한 부분만 훑어봅니다.\n몇 번 시도해보고 안 되면 나갑니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -1164,74 +983,65 @@
     "wait",
     "goto"
    ],
-   "max_steps": 30,
-   "dwell_ms": 4000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 20,
+   "max_idle_attempts": 10,
+   "dwell_ms": 1858,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P030",
-   "label": "서툼·여유·훑기·재방문 / G08",
+   "label": "숙련4·주의5·인내2·탐색5",
    "traits": {
-    "literacy": "novice",
-    "patience": "patient",
-    "reading": "scanner",
-    "visit": "returning"
+    "literacy": 4,
+    "attention": 5,
+    "patience": 2,
+    "breadth": 5
    },
-   "combo_index": 13,
-   "goal_id": "G08",
-   "goal_type": "B",
-   "goal": "장바구니의 총 결제금액을 확인하고 나간다.",
-   "success": "배송비 포함 합계를 말하고 종료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 장바구니의 총 결제금액을 확인하고 나간다.",
+   "bands": {
+    "literacy": "high",
+    "attention": "high",
+    "patience": "low",
+    "breadth": "high"
+   },
+   "prompt": "온라인 쇼핑을 자주 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait"
+    "wait",
+    "goto"
    ],
-   "max_steps": 30,
-   "dwell_ms": 4000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 20,
+   "max_idle_attempts": 10,
+   "dwell_ms": 11382,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P031",
-   "label": "익숙·조급·훑기·재방문 / G09",
+   "label": "숙련4·주의2·인내5·탐색1",
    "traits": {
-    "literacy": "savvy",
-    "patience": "hasty",
-    "reading": "scanner",
-    "visit": "returning"
+    "literacy": 4,
+    "attention": 2,
+    "patience": 5,
+    "breadth": 1
    },
-   "combo_index": 14,
-   "goal_id": "G09",
-   "goal_type": "C",
-   "goal": "지난번에 담아둔 장바구니를 이어서 결제한다.",
-   "success": "담긴 상품 그대로 주문 완료",
+   "bands": {
+    "literacy": "high",
+    "attention": "low",
+    "patience": "high",
+    "breadth": "low"
+   },
+   "prompt": "온라인 쇼핑을 자주 합니다.\n필요한 부분만 훑어봅니다.\n될 때까지 여러 방법을 시도합니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 지난번에 담아둔 장바구니를 이어서 결제한다.",
    "allowed_actions": [
     "click",
     "type",
@@ -1241,42 +1051,31 @@
     "wait",
     "goto"
    ],
-   "max_steps": 20,
-   "dwell_ms": 1500,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 3,
-      "color": "화이트",
-      "size": "250",
-      "qty": 1
-     },
-     {
-      "id": 10,
-      "color": "블랙",
-      "size": "FREE",
-      "qty": 2
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 35,
+   "max_idle_attempts": 28,
+   "dwell_ms": 1841,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P032",
-   "label": "서툼·조급·훑기·재방문 / G10",
+   "label": "숙련1·주의1·인내4·탐색4",
    "traits": {
-    "literacy": "novice",
-    "patience": "hasty",
-    "reading": "scanner",
-    "visit": "returning"
+    "literacy": 1,
+    "attention": 1,
+    "patience": 4,
+    "breadth": 4
    },
-   "combo_index": 15,
-   "goal_id": "G10",
-   "goal_type": "C",
-   "goal": "담아둔 것 중 하나를 빼고 나머지만 주문한다.",
-   "success": "1건 삭제 후 주문 완료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 것 중 하나를 빼고 나머지만 주문한다.",
+   "bands": {
+    "literacy": "low",
+    "attention": "low",
+    "patience": "high",
+    "breadth": "high"
+   },
+   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n잘 안 돼도 방법을 찾아봅니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -1285,42 +1084,31 @@
     "back",
     "wait"
    ],
-   "max_steps": 20,
-   "dwell_ms": 1500,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 3,
-      "color": "화이트",
-      "size": "250",
-      "qty": 1
-     },
-     {
-      "id": 10,
-      "color": "블랙",
-      "size": "FREE",
-      "qty": 2
-     }
-    ]
-   }
+   "search_allowed": false,
+   "max_steps": 30,
+   "max_idle_attempts": 24,
+   "dwell_ms": 1049,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P033",
-   "label": "익숙·여유·정독·신규 / G11",
+   "label": "숙련4·주의2·인내1·탐색2",
    "traits": {
-    "literacy": "savvy",
-    "patience": "patient",
-    "reading": "reader",
-    "visit": "new"
+    "literacy": 4,
+    "attention": 2,
+    "patience": 1,
+    "breadth": 2
    },
-   "combo_index": 0,
-   "goal_id": "G11",
-   "goal_type": "C",
-   "goal": "담아둔 상품의 수량을 2개로 바꿔 주문한다.",
-   "success": "수량 변경이 합계에 반영된 뒤 주문 완료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "bands": {
+    "literacy": "high",
+    "attention": "low",
+    "patience": "low",
+    "breadth": "low"
+   },
+   "prompt": "온라인 쇼핑을 자주 합니다.\n필요한 부분만 훑어봅니다.\n조금만 막혀도 바로 그만둡니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -1330,95 +1118,98 @@
     "wait",
     "goto"
    ],
-   "max_steps": 30,
-   "dwell_ms": 12000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 15,
+   "max_idle_attempts": 7,
+   "dwell_ms": 2342,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P034",
-   "label": "서툼·여유·정독·신규 / G01",
+   "label": "숙련3·주의5·인내2·탐색1",
    "traits": {
-    "literacy": "novice",
-    "patience": "patient",
-    "reading": "reader",
-    "visit": "new"
+    "literacy": 3,
+    "attention": 5,
+    "patience": 2,
+    "breadth": 1
    },
-   "combo_index": 1,
-   "goal_id": "G01",
-   "goal_type": "A",
-   "goal": "코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
-   "success": "주문 완료 화면에 도달",
+   "bands": {
+    "literacy": "mid",
+    "attention": "high",
+    "patience": "low",
+    "breadth": "low"
+   },
+   "prompt": "가끔 온라인 쇼핑을 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait"
+    "wait",
+    "goto"
    ],
-   "max_steps": 30,
-   "dwell_ms": 12000,
+   "search_allowed": true,
+   "max_steps": 20,
+   "max_idle_attempts": 10,
+   "dwell_ms": 13958,
+   "page_cap": 3,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P035",
-   "label": "익숙·조급·정독·신규 / G02",
+   "label": "숙련2·주의2·인내3·탐색1",
    "traits": {
-    "literacy": "savvy",
-    "patience": "hasty",
-    "reading": "reader",
-    "visit": "new"
+    "literacy": 2,
+    "attention": 2,
+    "patience": 3,
+    "breadth": 1
    },
-   "combo_index": 2,
-   "goal_id": "G02",
-   "goal_type": "A",
-   "goal": "신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
-   "success": "신발 카테고리 상품으로 주문 완료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "bands": {
+    "literacy": "low",
+    "attention": "low",
+    "patience": "mid",
+    "breadth": "low"
+   },
+   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n필요한 부분만 훑어봅니다.\n어느 정도는 다시 시도해봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait",
-    "goto"
+    "wait"
    ],
-   "max_steps": 20,
-   "dwell_ms": 6000,
+   "search_allowed": false,
+   "max_steps": 25,
+   "max_idle_attempts": 16,
+   "dwell_ms": 1725,
+   "page_cap": 3,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P036",
-   "label": "서툼·조급·정독·신규 / G03",
+   "label": "숙련2·주의4·인내3·탐색2",
    "traits": {
-    "literacy": "novice",
-    "patience": "hasty",
-    "reading": "reader",
-    "visit": "new"
+    "literacy": 2,
+    "attention": 4,
+    "patience": 3,
+    "breadth": 2
    },
-   "combo_index": 3,
-   "goal_id": "G03",
-   "goal_type": "A",
-   "goal": "무료배송이 되도록 담아서 주문을 마친다.",
-   "success": "합계 5만원 이상으로 주문 완료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 무료배송이 되도록 담아서 주문을 마친다.",
+   "bands": {
+    "literacy": "low",
+    "attention": "high",
+    "patience": "mid",
+    "breadth": "low"
+   },
+   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n대부분의 안내 문구를 읽습니다.\n어느 정도는 다시 시도해봅니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -1427,27 +1218,31 @@
     "back",
     "wait"
    ],
-   "max_steps": 20,
-   "dwell_ms": 6000,
+   "search_allowed": false,
+   "max_steps": 25,
+   "max_idle_attempts": 18,
+   "dwell_ms": 7601,
+   "page_cap": 3,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P037",
-   "label": "익숙·여유·훑기·신규 / G04",
+   "label": "숙련5·주의2·인내3·탐색4",
    "traits": {
-    "literacy": "savvy",
-    "patience": "patient",
-    "reading": "scanner",
-    "visit": "new"
+    "literacy": 5,
+    "attention": 2,
+    "patience": 3,
+    "breadth": 4
    },
-   "combo_index": 4,
-   "goal_id": "G04",
-   "goal_type": "A",
-   "goal": "워시드 후디를 사려고 한다.",
-   "success": "품절을 확인하고 대체품 구매 또는 이탈",
-   "start_path": "/product.html?id=7",
-   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 워시드 후디를 사려고 한다.",
+   "bands": {
+    "literacy": "high",
+    "attention": "low",
+    "patience": "mid",
+    "breadth": "high"
+   },
+   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n필요한 부분만 훑어봅니다.\n어느 정도는 다시 시도해봅니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -1457,27 +1252,31 @@
     "wait",
     "goto"
    ],
-   "max_steps": 30,
-   "dwell_ms": 4000,
+   "search_allowed": true,
+   "max_steps": 25,
+   "max_idle_attempts": 17,
+   "dwell_ms": 2797,
+   "page_cap": 0,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P038",
-   "label": "서툼·여유·훑기·신규 / G05",
+   "label": "숙련2·주의2·인내2·탐색3",
    "traits": {
-    "literacy": "novice",
-    "patience": "patient",
-    "reading": "scanner",
-    "visit": "new"
+    "literacy": 2,
+    "attention": 2,
+    "patience": 2,
+    "breadth": 3
    },
-   "combo_index": 5,
-   "goal_id": "G05",
-   "goal_type": "A",
-   "goal": "액세서리 두 가지를 한 번에 주문한다.",
-   "success": "액세서리 2종이 담긴 상태로 주문 완료",
+   "bands": {
+    "literacy": "low",
+    "attention": "low",
+    "patience": "low",
+    "breadth": "mid"
+   },
+   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n필요한 부분만 훑어봅니다.\n몇 번 시도해보고 안 되면 나갑니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 액세서리 두 가지를 한 번에 주문한다.",
    "allowed_actions": [
     "click",
     "type",
@@ -1486,27 +1285,31 @@
     "back",
     "wait"
    ],
-   "max_steps": 30,
-   "dwell_ms": 4000,
+   "search_allowed": false,
+   "max_steps": 20,
+   "max_idle_attempts": 8,
+   "dwell_ms": 2819,
+   "page_cap": 0,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P039",
-   "label": "익숙·조급·훑기·신규 / G06",
+   "label": "숙련5·주의2·인내3·탐색3",
    "traits": {
-    "literacy": "savvy",
-    "patience": "hasty",
-    "reading": "scanner",
-    "visit": "new"
+    "literacy": 5,
+    "attention": 2,
+    "patience": 3,
+    "breadth": 3
    },
-   "combo_index": 6,
-   "goal_id": "G06",
-   "goal_type": "B",
-   "goal": "배송비가 무료가 되는 금액을 확인하고 나간다.",
-   "success": "5만원 기준을 말하고 종료",
+   "bands": {
+    "literacy": "high",
+    "attention": "low",
+    "patience": "mid",
+    "breadth": "mid"
+   },
+   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n필요한 부분만 훑어봅니다.\n어느 정도는 다시 시도해봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 배송비가 무료가 되는 금액을 확인하고 나간다.",
    "allowed_actions": [
     "click",
     "type",
@@ -1516,56 +1319,65 @@
     "wait",
     "goto"
    ],
-   "max_steps": 20,
-   "dwell_ms": 1500,
+   "search_allowed": true,
+   "max_steps": 25,
+   "max_idle_attempts": 14,
+   "dwell_ms": 2242,
+   "page_cap": 0,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P040",
-   "label": "서툼·조급·훑기·신규 / G07",
+   "label": "숙련3·주의2·인내4·탐색2",
    "traits": {
-    "literacy": "novice",
-    "patience": "hasty",
-    "reading": "scanner",
-    "visit": "new"
+    "literacy": 3,
+    "attention": 2,
+    "patience": 4,
+    "breadth": 2
    },
-   "combo_index": 7,
-   "goal_id": "G07",
-   "goal_type": "B",
-   "goal": "스니커즈에 260 사이즈가 있는지 확인만 한다.",
-   "success": "사이즈 목록을 확인하고 종료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "bands": {
+    "literacy": "mid",
+    "attention": "low",
+    "patience": "high",
+    "breadth": "low"
+   },
+   "prompt": "가끔 온라인 쇼핑을 합니다.\n필요한 부분만 훑어봅니다.\n잘 안 돼도 방법을 찾아봅니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait"
+    "wait",
+    "goto"
    ],
-   "max_steps": 20,
-   "dwell_ms": 1500,
+   "search_allowed": true,
+   "max_steps": 30,
+   "max_idle_attempts": 24,
+   "dwell_ms": 2367,
+   "page_cap": 3,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P041",
-   "label": "익숙·여유·정독·재방문 / G08",
+   "label": "숙련4·주의4·인내3·탐색1",
    "traits": {
-    "literacy": "savvy",
-    "patience": "patient",
-    "reading": "reader",
-    "visit": "returning"
+    "literacy": 4,
+    "attention": 4,
+    "patience": 3,
+    "breadth": 1
    },
-   "combo_index": 8,
-   "goal_id": "G08",
-   "goal_type": "B",
-   "goal": "장바구니의 총 결제금액을 확인하고 나간다.",
-   "success": "배송비 포함 합계를 말하고 종료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 장바구니의 총 결제금액을 확인하고 나간다.",
+   "bands": {
+    "literacy": "high",
+    "attention": "high",
+    "patience": "mid",
+    "breadth": "low"
+   },
+   "prompt": "온라인 쇼핑을 자주 합니다.\n대부분의 안내 문구를 읽습니다.\n어느 정도는 다시 시도해봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -1575,80 +1387,65 @@
     "wait",
     "goto"
    ],
-   "max_steps": 30,
-   "dwell_ms": 12000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 25,
+   "max_idle_attempts": 14,
+   "dwell_ms": 8952,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P042",
-   "label": "서툼·여유·정독·재방문 / G09",
+   "label": "숙련3·주의5·인내4·탐색5",
    "traits": {
-    "literacy": "novice",
-    "patience": "patient",
-    "reading": "reader",
-    "visit": "returning"
+    "literacy": 3,
+    "attention": 5,
+    "patience": 4,
+    "breadth": 5
    },
-   "combo_index": 9,
-   "goal_id": "G09",
-   "goal_type": "C",
-   "goal": "지난번에 담아둔 장바구니를 이어서 결제한다.",
-   "success": "담긴 상품 그대로 주문 완료",
+   "bands": {
+    "literacy": "mid",
+    "attention": "high",
+    "patience": "high",
+    "breadth": "high"
+   },
+   "prompt": "가끔 온라인 쇼핑을 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 지난번에 담아둔 장바구니를 이어서 결제한다.",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait"
+    "wait",
+    "goto"
    ],
+   "search_allowed": true,
    "max_steps": 30,
-   "dwell_ms": 12000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 3,
-      "color": "화이트",
-      "size": "250",
-      "qty": 1
-     },
-     {
-      "id": 10,
-      "color": "블랙",
-      "size": "FREE",
-      "qty": 2
-     }
-    ]
-   }
+   "max_idle_attempts": 24,
+   "dwell_ms": 13947,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P043",
-   "label": "익숙·조급·정독·재방문 / G10",
+   "label": "숙련5·주의3·인내1·탐색2",
    "traits": {
-    "literacy": "savvy",
-    "patience": "hasty",
-    "reading": "reader",
-    "visit": "returning"
+    "literacy": 5,
+    "attention": 3,
+    "patience": 1,
+    "breadth": 2
    },
-   "combo_index": 10,
-   "goal_id": "G10",
-   "goal_type": "C",
-   "goal": "담아둔 것 중 하나를 빼고 나머지만 주문한다.",
-   "success": "1건 삭제 후 주문 완료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 것 중 하나를 빼고 나머지만 주문한다.",
+   "bands": {
+    "literacy": "high",
+    "attention": "mid",
+    "patience": "low",
+    "breadth": "low"
+   },
+   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n중요해 보이는 내용은 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -1658,42 +1455,31 @@
     "wait",
     "goto"
    ],
-   "max_steps": 20,
-   "dwell_ms": 6000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 3,
-      "color": "화이트",
-      "size": "250",
-      "qty": 1
-     },
-     {
-      "id": 10,
-      "color": "블랙",
-      "size": "FREE",
-      "qty": 2
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 15,
+   "max_idle_attempts": 4,
+   "dwell_ms": 4685,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P044",
-   "label": "서툼·조급·정독·재방문 / G11",
+   "label": "숙련2·주의1·인내4·탐색2",
    "traits": {
-    "literacy": "novice",
-    "patience": "hasty",
-    "reading": "reader",
-    "visit": "returning"
+    "literacy": 2,
+    "attention": 1,
+    "patience": 4,
+    "breadth": 2
    },
-   "combo_index": 11,
-   "goal_id": "G11",
-   "goal_type": "C",
-   "goal": "담아둔 상품의 수량을 2개로 바꿔 주문한다.",
-   "success": "수량 변경이 합계에 반영된 뒤 주문 완료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "bands": {
+    "literacy": "low",
+    "attention": "low",
+    "patience": "high",
+    "breadth": "low"
+   },
+   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n잘 안 돼도 방법을 찾아봅니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -1702,113 +1488,98 @@
     "back",
     "wait"
    ],
-   "max_steps": 20,
-   "dwell_ms": 6000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": false,
+   "max_steps": 30,
+   "max_idle_attempts": 23,
+   "dwell_ms": 1281,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P045",
-   "label": "익숙·여유·훑기·재방문 / G01",
+   "label": "숙련1·주의2·인내4·탐색3",
    "traits": {
-    "literacy": "savvy",
-    "patience": "patient",
-    "reading": "scanner",
-    "visit": "returning"
+    "literacy": 1,
+    "attention": 2,
+    "patience": 4,
+    "breadth": 3
    },
-   "combo_index": 12,
-   "goal_id": "G01",
-   "goal_type": "A",
-   "goal": "코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
-   "success": "주문 완료 화면에 도달",
+   "bands": {
+    "literacy": "low",
+    "attention": "low",
+    "patience": "high",
+    "breadth": "mid"
+   },
+   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n필요한 부분만 훑어봅니다.\n잘 안 돼도 방법을 찾아봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait",
-    "goto"
+    "wait"
    ],
+   "search_allowed": false,
    "max_steps": 30,
-   "dwell_ms": 4000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "max_idle_attempts": 21,
+   "dwell_ms": 2748,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P046",
-   "label": "서툼·여유·훑기·재방문 / G02",
+   "label": "숙련4·주의3·인내2·탐색3",
    "traits": {
-    "literacy": "novice",
-    "patience": "patient",
-    "reading": "scanner",
-    "visit": "returning"
+    "literacy": 4,
+    "attention": 3,
+    "patience": 2,
+    "breadth": 3
    },
-   "combo_index": 13,
-   "goal_id": "G02",
-   "goal_type": "A",
-   "goal": "신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
-   "success": "신발 카테고리 상품으로 주문 완료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "bands": {
+    "literacy": "high",
+    "attention": "mid",
+    "patience": "low",
+    "breadth": "mid"
+   },
+   "prompt": "온라인 쇼핑을 자주 합니다.\n중요해 보이는 내용은 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait"
+    "wait",
+    "goto"
    ],
-   "max_steps": 30,
-   "dwell_ms": 4000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 20,
+   "max_idle_attempts": 8,
+   "dwell_ms": 3701,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P047",
-   "label": "익숙·조급·훑기·재방문 / G03",
+   "label": "숙련4·주의1·인내1·탐색2",
    "traits": {
-    "literacy": "savvy",
-    "patience": "hasty",
-    "reading": "scanner",
-    "visit": "returning"
+    "literacy": 4,
+    "attention": 1,
+    "patience": 1,
+    "breadth": 2
    },
-   "combo_index": 14,
-   "goal_id": "G03",
-   "goal_type": "A",
-   "goal": "무료배송이 되도록 담아서 주문을 마친다.",
-   "success": "합계 5만원 이상으로 주문 완료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 무료배송이 되도록 담아서 주문을 마친다.",
+   "bands": {
+    "literacy": "high",
+    "attention": "low",
+    "patience": "low",
+    "breadth": "low"
+   },
+   "prompt": "온라인 쇼핑을 자주 합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n조금만 막혀도 바로 그만둡니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -1818,36 +1589,65 @@
     "wait",
     "goto"
    ],
-   "max_steps": 20,
-   "dwell_ms": 1500,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 15,
+   "max_idle_attempts": 4,
+   "dwell_ms": 1371,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P048",
-   "label": "서툼·조급·훑기·재방문 / G04",
+   "label": "숙련3·주의5·인내1·탐색3",
    "traits": {
-    "literacy": "novice",
-    "patience": "hasty",
-    "reading": "scanner",
-    "visit": "returning"
+    "literacy": 3,
+    "attention": 5,
+    "patience": 1,
+    "breadth": 3
    },
-   "combo_index": 15,
-   "goal_id": "G04",
-   "goal_type": "A",
-   "goal": "워시드 후디를 사려고 한다.",
-   "success": "품절을 확인하고 대체품 구매 또는 이탈",
-   "start_path": "/product.html?id=7",
-   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 워시드 후디를 사려고 한다.",
+   "bands": {
+    "literacy": "mid",
+    "attention": "high",
+    "patience": "low",
+    "breadth": "mid"
+   },
+   "prompt": "가끔 온라인 쇼핑을 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "search_allowed": true,
+   "max_steps": 15,
+   "max_idle_attempts": 5,
+   "dwell_ms": 13729,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P049",
+   "label": "숙련1·주의4·인내2·탐색4",
+   "traits": {
+    "literacy": 1,
+    "attention": 4,
+    "patience": 2,
+    "breadth": 4
+   },
+   "bands": {
+    "literacy": "low",
+    "attention": "high",
+    "patience": "low",
+    "breadth": "high"
+   },
+   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n대부분의 안내 문구를 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -1856,66 +1656,31 @@
     "back",
     "wait"
    ],
+   "search_allowed": false,
    "max_steps": 20,
-   "dwell_ms": 1500,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
-  },
-  {
-   "id": "P049",
-   "label": "익숙·여유·정독·신규 / G05",
-   "traits": {
-    "literacy": "savvy",
-    "patience": "patient",
-    "reading": "reader",
-    "visit": "new"
-   },
-   "combo_index": 0,
-   "goal_id": "G05",
-   "goal_type": "A",
-   "goal": "액세서리 두 가지를 한 번에 주문한다.",
-   "success": "액세서리 2종이 담긴 상태로 주문 완료",
-   "start_path": "/index.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 액세서리 두 가지를 한 번에 주문한다.",
-   "allowed_actions": [
-    "click",
-    "type",
-    "select",
-    "scroll",
-    "back",
-    "wait",
-    "goto"
-   ],
-   "max_steps": 30,
-   "dwell_ms": 12000,
+   "max_idle_attempts": 11,
+   "dwell_ms": 9356,
+   "page_cap": 0,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P050",
-   "label": "서툼·여유·정독·신규 / G06",
+   "label": "숙련2·주의4·인내1·탐색5",
    "traits": {
-    "literacy": "novice",
-    "patience": "patient",
-    "reading": "reader",
-    "visit": "new"
+    "literacy": 2,
+    "attention": 4,
+    "patience": 1,
+    "breadth": 5
    },
-   "combo_index": 1,
-   "goal_id": "G06",
-   "goal_type": "B",
-   "goal": "배송비가 무료가 되는 금액을 확인하고 나간다.",
-   "success": "5만원 기준을 말하고 종료",
+   "bands": {
+    "literacy": "low",
+    "attention": "high",
+    "patience": "low",
+    "breadth": "high"
+   },
+   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n대부분의 안내 문구를 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 배송비가 무료가 되는 금액을 확인하고 나간다.",
    "allowed_actions": [
     "click",
     "type",
@@ -1924,27 +1689,31 @@
     "back",
     "wait"
    ],
-   "max_steps": 30,
-   "dwell_ms": 12000,
+   "search_allowed": false,
+   "max_steps": 15,
+   "max_idle_attempts": 5,
+   "dwell_ms": 8638,
+   "page_cap": 0,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P051",
-   "label": "익숙·조급·정독·신규 / G07",
+   "label": "숙련3·주의3·인내5·탐색1",
    "traits": {
-    "literacy": "savvy",
-    "patience": "hasty",
-    "reading": "reader",
-    "visit": "new"
+    "literacy": 3,
+    "attention": 3,
+    "patience": 5,
+    "breadth": 1
    },
-   "combo_index": 2,
-   "goal_id": "G07",
-   "goal_type": "B",
-   "goal": "스니커즈에 260 사이즈가 있는지 확인만 한다.",
-   "success": "사이즈 목록을 확인하고 종료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "bands": {
+    "literacy": "mid",
+    "attention": "mid",
+    "patience": "high",
+    "breadth": "low"
+   },
+   "prompt": "가끔 온라인 쇼핑을 합니다.\n중요해 보이는 내용은 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -1954,27 +1723,31 @@
     "wait",
     "goto"
    ],
-   "max_steps": 20,
-   "dwell_ms": 6000,
+   "search_allowed": true,
+   "max_steps": 35,
+   "max_idle_attempts": 29,
+   "dwell_ms": 4221,
+   "page_cap": 3,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P052",
-   "label": "서툼·조급·정독·신규 / G08",
+   "label": "숙련2·주의3·인내2·탐색2",
    "traits": {
-    "literacy": "novice",
-    "patience": "hasty",
-    "reading": "reader",
-    "visit": "new"
+    "literacy": 2,
+    "attention": 3,
+    "patience": 2,
+    "breadth": 2
    },
-   "combo_index": 3,
-   "goal_id": "G08",
-   "goal_type": "B",
-   "goal": "장바구니의 총 결제금액을 확인하고 나간다.",
-   "success": "배송비 포함 합계를 말하고 종료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 장바구니의 총 결제금액을 확인하고 나간다.",
+   "bands": {
+    "literacy": "low",
+    "attention": "mid",
+    "patience": "low",
+    "breadth": "low"
+   },
+   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n중요해 보이는 내용은 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -1983,36 +1756,31 @@
     "back",
     "wait"
    ],
+   "search_allowed": false,
    "max_steps": 20,
-   "dwell_ms": 6000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "max_idle_attempts": 8,
+   "dwell_ms": 5843,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P053",
-   "label": "익숙·여유·훑기·신규 / G09",
+   "label": "숙련5·주의4·인내5·탐색5",
    "traits": {
-    "literacy": "savvy",
-    "patience": "patient",
-    "reading": "scanner",
-    "visit": "new"
+    "literacy": 5,
+    "attention": 4,
+    "patience": 5,
+    "breadth": 5
    },
-   "combo_index": 4,
-   "goal_id": "G09",
-   "goal_type": "C",
-   "goal": "지난번에 담아둔 장바구니를 이어서 결제한다.",
-   "success": "담긴 상품 그대로 주문 완료",
+   "bands": {
+    "literacy": "high",
+    "attention": "high",
+    "patience": "high",
+    "breadth": "high"
+   },
+   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n대부분의 안내 문구를 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 지난번에 담아둔 장바구니를 이어서 결제한다.",
    "allowed_actions": [
     "click",
     "type",
@@ -2022,86 +1790,31 @@
     "wait",
     "goto"
    ],
-   "max_steps": 30,
-   "dwell_ms": 4000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 3,
-      "color": "화이트",
-      "size": "250",
-      "qty": 1
-     },
-     {
-      "id": 10,
-      "color": "블랙",
-      "size": "FREE",
-      "qty": 2
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 35,
+   "max_idle_attempts": 28,
+   "dwell_ms": 8582,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P054",
-   "label": "서툼·여유·훑기·신규 / G10",
+   "label": "숙련4·주의5·인내2·탐색1",
    "traits": {
-    "literacy": "novice",
-    "patience": "patient",
-    "reading": "scanner",
-    "visit": "new"
+    "literacy": 4,
+    "attention": 5,
+    "patience": 2,
+    "breadth": 1
    },
-   "combo_index": 5,
-   "goal_id": "G10",
-   "goal_type": "C",
-   "goal": "담아둔 것 중 하나를 빼고 나머지만 주문한다.",
-   "success": "1건 삭제 후 주문 완료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 것 중 하나를 빼고 나머지만 주문한다.",
-   "allowed_actions": [
-    "click",
-    "type",
-    "select",
-    "scroll",
-    "back",
-    "wait"
-   ],
-   "max_steps": 30,
-   "dwell_ms": 4000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 3,
-      "color": "화이트",
-      "size": "250",
-      "qty": 1
-     },
-     {
-      "id": 10,
-      "color": "블랙",
-      "size": "FREE",
-      "qty": 2
-     }
-    ]
-   }
-  },
-  {
-   "id": "P055",
-   "label": "익숙·조급·훑기·신규 / G11",
-   "traits": {
-    "literacy": "savvy",
-    "patience": "hasty",
-    "reading": "scanner",
-    "visit": "new"
+   "bands": {
+    "literacy": "high",
+    "attention": "high",
+    "patience": "low",
+    "breadth": "low"
    },
-   "combo_index": 6,
-   "goal_id": "G11",
-   "goal_type": "C",
-   "goal": "담아둔 상품의 수량을 2개로 바꿔 주문한다.",
-   "success": "수량 변경이 합계에 반영된 뒤 주문 완료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "prompt": "온라인 쇼핑을 자주 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -2111,36 +1824,65 @@
     "wait",
     "goto"
    ],
+   "search_allowed": true,
    "max_steps": 20,
-   "dwell_ms": 1500,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "max_idle_attempts": 10,
+   "dwell_ms": 14943,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P055",
+   "label": "숙련3·주의1·인내5·탐색1",
+   "traits": {
+    "literacy": 3,
+    "attention": 1,
+    "patience": 5,
+    "breadth": 1
+   },
+   "bands": {
+    "literacy": "mid",
+    "attention": "low",
+    "patience": "high",
+    "breadth": "low"
+   },
+   "prompt": "가끔 온라인 쇼핑을 합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n될 때까지 여러 방법을 시도합니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "search_allowed": true,
+   "max_steps": 35,
+   "max_idle_attempts": 25,
+   "dwell_ms": 1070,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P056",
-   "label": "서툼·조급·훑기·신규 / G01",
+   "label": "숙련2·주의3·인내5·탐색1",
    "traits": {
-    "literacy": "novice",
-    "patience": "hasty",
-    "reading": "scanner",
-    "visit": "new"
+    "literacy": 2,
+    "attention": 3,
+    "patience": 5,
+    "breadth": 1
    },
-   "combo_index": 7,
-   "goal_id": "G01",
-   "goal_type": "A",
-   "goal": "코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
-   "success": "주문 완료 화면에 도달",
+   "bands": {
+    "literacy": "low",
+    "attention": "mid",
+    "patience": "high",
+    "breadth": "low"
+   },
+   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n중요해 보이는 내용은 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
    "allowed_actions": [
     "click",
     "type",
@@ -2149,27 +1891,31 @@
     "back",
     "wait"
    ],
-   "max_steps": 20,
-   "dwell_ms": 1500,
+   "search_allowed": false,
+   "max_steps": 35,
+   "max_idle_attempts": 25,
+   "dwell_ms": 5109,
+   "page_cap": 3,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P057",
-   "label": "익숙·여유·정독·재방문 / G02",
+   "label": "숙련5·주의5·인내1·탐색4",
    "traits": {
-    "literacy": "savvy",
-    "patience": "patient",
-    "reading": "reader",
-    "visit": "returning"
+    "literacy": 5,
+    "attention": 5,
+    "patience": 1,
+    "breadth": 4
    },
-   "combo_index": 8,
-   "goal_id": "G02",
-   "goal_type": "A",
-   "goal": "신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
-   "success": "신발 카테고리 상품으로 주문 완료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "bands": {
+    "literacy": "high",
+    "attention": "high",
+    "patience": "low",
+    "breadth": "high"
+   },
+   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -2179,74 +1925,65 @@
     "wait",
     "goto"
    ],
-   "max_steps": 30,
-   "dwell_ms": 12000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 15,
+   "max_idle_attempts": 5,
+   "dwell_ms": 10505,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P058",
-   "label": "서툼·여유·정독·재방문 / G03",
+   "label": "숙련4·주의5·인내1·탐색2",
    "traits": {
-    "literacy": "novice",
-    "patience": "patient",
-    "reading": "reader",
-    "visit": "returning"
+    "literacy": 4,
+    "attention": 5,
+    "patience": 1,
+    "breadth": 2
    },
-   "combo_index": 9,
-   "goal_id": "G03",
-   "goal_type": "A",
-   "goal": "무료배송이 되도록 담아서 주문을 마친다.",
-   "success": "합계 5만원 이상으로 주문 완료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 무료배송이 되도록 담아서 주문을 마친다.",
+   "bands": {
+    "literacy": "high",
+    "attention": "high",
+    "patience": "low",
+    "breadth": "low"
+   },
+   "prompt": "온라인 쇼핑을 자주 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait"
+    "wait",
+    "goto"
    ],
-   "max_steps": 30,
-   "dwell_ms": 12000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 15,
+   "max_idle_attempts": 5,
+   "dwell_ms": 12496,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P059",
-   "label": "익숙·조급·정독·재방문 / G04",
+   "label": "숙련4·주의4·인내2·탐색3",
    "traits": {
-    "literacy": "savvy",
-    "patience": "hasty",
-    "reading": "reader",
-    "visit": "returning"
+    "literacy": 4,
+    "attention": 4,
+    "patience": 2,
+    "breadth": 3
    },
-   "combo_index": 10,
-   "goal_id": "G04",
-   "goal_type": "A",
-   "goal": "워시드 후디를 사려고 한다.",
-   "success": "품절을 확인하고 대체품 구매 또는 이탈",
-   "start_path": "/product.html?id=7",
-   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 워시드 후디를 사려고 한다.",
+   "bands": {
+    "literacy": "high",
+    "attention": "high",
+    "patience": "low",
+    "breadth": "mid"
+   },
+   "prompt": "온라인 쇼핑을 자주 합니다.\n대부분의 안내 문구를 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -2256,74 +1993,65 @@
     "wait",
     "goto"
    ],
+   "search_allowed": true,
    "max_steps": 20,
-   "dwell_ms": 6000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "max_idle_attempts": 8,
+   "dwell_ms": 7902,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P060",
-   "label": "서툼·조급·정독·재방문 / G05",
+   "label": "숙련3·주의4·인내4·탐색1",
    "traits": {
-    "literacy": "novice",
-    "patience": "hasty",
-    "reading": "reader",
-    "visit": "returning"
+    "literacy": 3,
+    "attention": 4,
+    "patience": 4,
+    "breadth": 1
    },
-   "combo_index": 11,
-   "goal_id": "G05",
-   "goal_type": "A",
-   "goal": "액세서리 두 가지를 한 번에 주문한다.",
-   "success": "액세서리 2종이 담긴 상태로 주문 완료",
+   "bands": {
+    "literacy": "mid",
+    "attention": "high",
+    "patience": "high",
+    "breadth": "low"
+   },
+   "prompt": "가끔 온라인 쇼핑을 합니다.\n대부분의 안내 문구를 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 액세서리 두 가지를 한 번에 주문한다.",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait"
+    "wait",
+    "goto"
    ],
-   "max_steps": 20,
-   "dwell_ms": 6000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 30,
+   "max_idle_attempts": 20,
+   "dwell_ms": 8515,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P061",
-   "label": "익숙·여유·훑기·재방문 / G06",
+   "label": "숙련3·주의3·인내1·탐색4",
    "traits": {
-    "literacy": "savvy",
-    "patience": "patient",
-    "reading": "scanner",
-    "visit": "returning"
+    "literacy": 3,
+    "attention": 3,
+    "patience": 1,
+    "breadth": 4
    },
-   "combo_index": 12,
-   "goal_id": "G06",
-   "goal_type": "B",
-   "goal": "배송비가 무료가 되는 금액을 확인하고 나간다.",
-   "success": "5만원 기준을 말하고 종료",
+   "bands": {
+    "literacy": "mid",
+    "attention": "mid",
+    "patience": "low",
+    "breadth": "high"
+   },
+   "prompt": "가끔 온라인 쇼핑을 합니다.\n중요해 보이는 내용은 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 배송비가 무료가 되는 금액을 확인하고 나간다.",
    "allowed_actions": [
     "click",
     "type",
@@ -2333,36 +2061,31 @@
     "wait",
     "goto"
    ],
-   "max_steps": 30,
-   "dwell_ms": 4000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 15,
+   "max_idle_attempts": 7,
+   "dwell_ms": 5296,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P062",
-   "label": "서툼·여유·훑기·재방문 / G07",
+   "label": "숙련1·주의3·인내4·탐색5",
    "traits": {
-    "literacy": "novice",
-    "patience": "patient",
-    "reading": "scanner",
-    "visit": "returning"
+    "literacy": 1,
+    "attention": 3,
+    "patience": 4,
+    "breadth": 5
    },
-   "combo_index": 13,
-   "goal_id": "G07",
-   "goal_type": "B",
-   "goal": "스니커즈에 260 사이즈가 있는지 확인만 한다.",
-   "success": "사이즈 목록을 확인하고 종료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "bands": {
+    "literacy": "low",
+    "attention": "mid",
+    "patience": "high",
+    "breadth": "high"
+   },
+   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n중요해 보이는 내용은 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -2371,36 +2094,31 @@
     "back",
     "wait"
    ],
+   "search_allowed": false,
    "max_steps": 30,
-   "dwell_ms": 4000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "max_idle_attempts": 24,
+   "dwell_ms": 4171,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P063",
-   "label": "익숙·조급·훑기·재방문 / G08",
+   "label": "숙련5·주의2·인내3·탐색2",
    "traits": {
-    "literacy": "savvy",
-    "patience": "hasty",
-    "reading": "scanner",
-    "visit": "returning"
+    "literacy": 5,
+    "attention": 2,
+    "patience": 3,
+    "breadth": 2
    },
-   "combo_index": 14,
-   "goal_id": "G08",
-   "goal_type": "B",
-   "goal": "장바구니의 총 결제금액을 확인하고 나간다.",
-   "success": "배송비 포함 합계를 말하고 종료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 장바구니의 총 결제금액을 확인하고 나간다.",
+   "bands": {
+    "literacy": "high",
+    "attention": "low",
+    "patience": "mid",
+    "breadth": "low"
+   },
+   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n필요한 부분만 훑어봅니다.\n어느 정도는 다시 시도해봅니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -2410,80 +2128,65 @@
     "wait",
     "goto"
    ],
-   "max_steps": 20,
-   "dwell_ms": 1500,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 25,
+   "max_idle_attempts": 14,
+   "dwell_ms": 2808,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P064",
-   "label": "서툼·조급·훑기·재방문 / G09",
+   "label": "숙련5·주의1·인내4·탐색5",
    "traits": {
-    "literacy": "novice",
-    "patience": "hasty",
-    "reading": "scanner",
-    "visit": "returning"
+    "literacy": 5,
+    "attention": 1,
+    "patience": 4,
+    "breadth": 5
    },
-   "combo_index": 15,
-   "goal_id": "G09",
-   "goal_type": "C",
-   "goal": "지난번에 담아둔 장바구니를 이어서 결제한다.",
-   "success": "담긴 상품 그대로 주문 완료",
+   "bands": {
+    "literacy": "high",
+    "attention": "low",
+    "patience": "high",
+    "breadth": "high"
+   },
+   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n잘 안 돼도 방법을 찾아봅니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 지난번에 담아둔 장바구니를 이어서 결제한다.",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait"
+    "wait",
+    "goto"
    ],
-   "max_steps": 20,
-   "dwell_ms": 1500,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 3,
-      "color": "화이트",
-      "size": "250",
-      "qty": 1
-     },
-     {
-      "id": 10,
-      "color": "블랙",
-      "size": "FREE",
-      "qty": 2
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 30,
+   "max_idle_attempts": 22,
+   "dwell_ms": 1363,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P065",
-   "label": "익숙·여유·정독·신규 / G10",
+   "label": "숙련4·주의5·인내3·탐색3",
    "traits": {
-    "literacy": "savvy",
-    "patience": "patient",
-    "reading": "reader",
-    "visit": "new"
+    "literacy": 4,
+    "attention": 5,
+    "patience": 3,
+    "breadth": 3
    },
-   "combo_index": 0,
-   "goal_id": "G10",
-   "goal_type": "C",
-   "goal": "담아둔 것 중 하나를 빼고 나머지만 주문한다.",
-   "success": "1건 삭제 후 주문 완료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 것 중 하나를 빼고 나머지만 주문한다.",
+   "bands": {
+    "literacy": "high",
+    "attention": "high",
+    "patience": "mid",
+    "breadth": "mid"
+   },
+   "prompt": "온라인 쇼핑을 자주 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n어느 정도는 다시 시도해봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -2493,42 +2196,31 @@
     "wait",
     "goto"
    ],
-   "max_steps": 30,
-   "dwell_ms": 12000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 3,
-      "color": "화이트",
-      "size": "250",
-      "qty": 1
-     },
-     {
-      "id": 10,
-      "color": "블랙",
-      "size": "FREE",
-      "qty": 2
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 25,
+   "max_idle_attempts": 18,
+   "dwell_ms": 10238,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P066",
-   "label": "서툼·여유·정독·신규 / G11",
+   "label": "숙련2·주의3·인내4·탐색4",
    "traits": {
-    "literacy": "novice",
-    "patience": "patient",
-    "reading": "reader",
-    "visit": "new"
+    "literacy": 2,
+    "attention": 3,
+    "patience": 4,
+    "breadth": 4
    },
-   "combo_index": 1,
-   "goal_id": "G11",
-   "goal_type": "C",
-   "goal": "담아둔 상품의 수량을 2개로 바꿔 주문한다.",
-   "success": "수량 변경이 합계에 반영된 뒤 주문 완료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "bands": {
+    "literacy": "low",
+    "attention": "mid",
+    "patience": "high",
+    "breadth": "high"
+   },
+   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n중요해 보이는 내용은 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -2537,36 +2229,31 @@
     "back",
     "wait"
    ],
+   "search_allowed": false,
    "max_steps": 30,
-   "dwell_ms": 12000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "max_idle_attempts": 21,
+   "dwell_ms": 5660,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P067",
-   "label": "익숙·조급·정독·신규 / G01",
+   "label": "숙련5·주의1·인내5·탐색3",
    "traits": {
-    "literacy": "savvy",
-    "patience": "hasty",
-    "reading": "reader",
-    "visit": "new"
+    "literacy": 5,
+    "attention": 1,
+    "patience": 5,
+    "breadth": 3
    },
-   "combo_index": 2,
-   "goal_id": "G01",
-   "goal_type": "A",
-   "goal": "코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
-   "success": "주문 완료 화면에 도달",
+   "bands": {
+    "literacy": "high",
+    "attention": "low",
+    "patience": "high",
+    "breadth": "mid"
+   },
+   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n될 때까지 여러 방법을 시도합니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
    "allowed_actions": [
     "click",
     "type",
@@ -2576,86 +2263,98 @@
     "wait",
     "goto"
    ],
-   "max_steps": 20,
-   "dwell_ms": 6000,
+   "search_allowed": true,
+   "max_steps": 35,
+   "max_idle_attempts": 25,
+   "dwell_ms": 1397,
+   "page_cap": 0,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P068",
-   "label": "서툼·조급·정독·신규 / G02",
+   "label": "숙련4·주의1·인내3·탐색1",
    "traits": {
-    "literacy": "novice",
-    "patience": "hasty",
-    "reading": "reader",
-    "visit": "new"
+    "literacy": 4,
+    "attention": 1,
+    "patience": 3,
+    "breadth": 1
    },
-   "combo_index": 3,
-   "goal_id": "G02",
-   "goal_type": "A",
-   "goal": "신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
-   "success": "신발 카테고리 상품으로 주문 완료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "bands": {
+    "literacy": "high",
+    "attention": "low",
+    "patience": "mid",
+    "breadth": "low"
+   },
+   "prompt": "온라인 쇼핑을 자주 합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n어느 정도는 다시 시도해봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait"
+    "wait",
+    "goto"
    ],
-   "max_steps": 20,
-   "dwell_ms": 6000,
+   "search_allowed": true,
+   "max_steps": 25,
+   "max_idle_attempts": 17,
+   "dwell_ms": 1155,
+   "page_cap": 3,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P069",
-   "label": "익숙·여유·훑기·신규 / G03",
+   "label": "숙련1·주의1·인내3·탐색3",
    "traits": {
-    "literacy": "savvy",
-    "patience": "patient",
-    "reading": "scanner",
-    "visit": "new"
+    "literacy": 1,
+    "attention": 1,
+    "patience": 3,
+    "breadth": 3
    },
-   "combo_index": 4,
-   "goal_id": "G03",
-   "goal_type": "A",
-   "goal": "무료배송이 되도록 담아서 주문을 마친다.",
-   "success": "합계 5만원 이상으로 주문 완료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 무료배송이 되도록 담아서 주문을 마친다.",
+   "bands": {
+    "literacy": "low",
+    "attention": "low",
+    "patience": "mid",
+    "breadth": "mid"
+   },
+   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n어느 정도는 다시 시도해봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait",
-    "goto"
+    "wait"
    ],
-   "max_steps": 30,
-   "dwell_ms": 4000,
+   "search_allowed": false,
+   "max_steps": 25,
+   "max_idle_attempts": 13,
+   "dwell_ms": 1064,
+   "page_cap": 0,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P070",
-   "label": "서툼·여유·훑기·신규 / G04",
+   "label": "숙련1·주의5·인내2·탐색4",
    "traits": {
-    "literacy": "novice",
-    "patience": "patient",
-    "reading": "scanner",
-    "visit": "new"
+    "literacy": 1,
+    "attention": 5,
+    "patience": 2,
+    "breadth": 4
    },
-   "combo_index": 5,
-   "goal_id": "G04",
-   "goal_type": "A",
-   "goal": "워시드 후디를 사려고 한다.",
-   "success": "품절을 확인하고 대체품 구매 또는 이탈",
-   "start_path": "/product.html?id=7",
-   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 워시드 후디를 사려고 한다.",
+   "bands": {
+    "literacy": "low",
+    "attention": "high",
+    "patience": "low",
+    "breadth": "high"
+   },
+   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -2664,27 +2363,31 @@
     "back",
     "wait"
    ],
-   "max_steps": 30,
-   "dwell_ms": 4000,
+   "search_allowed": false,
+   "max_steps": 20,
+   "max_idle_attempts": 8,
+   "dwell_ms": 12902,
+   "page_cap": 0,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P071",
-   "label": "익숙·조급·훑기·신규 / G05",
+   "label": "숙련5·주의3·인내3·탐색1",
    "traits": {
-    "literacy": "savvy",
-    "patience": "hasty",
-    "reading": "scanner",
-    "visit": "new"
+    "literacy": 5,
+    "attention": 3,
+    "patience": 3,
+    "breadth": 1
    },
-   "combo_index": 6,
-   "goal_id": "G05",
-   "goal_type": "A",
-   "goal": "액세서리 두 가지를 한 번에 주문한다.",
-   "success": "액세서리 2종이 담긴 상태로 주문 완료",
+   "bands": {
+    "literacy": "high",
+    "attention": "mid",
+    "patience": "mid",
+    "breadth": "low"
+   },
+   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n중요해 보이는 내용은 읽습니다.\n어느 정도는 다시 시도해봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 액세서리 두 가지를 한 번에 주문한다.",
    "allowed_actions": [
     "click",
     "type",
@@ -2694,56 +2397,65 @@
     "wait",
     "goto"
    ],
-   "max_steps": 20,
-   "dwell_ms": 1500,
+   "search_allowed": true,
+   "max_steps": 25,
+   "max_idle_attempts": 16,
+   "dwell_ms": 4665,
+   "page_cap": 3,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P072",
-   "label": "서툼·조급·훑기·신규 / G06",
+   "label": "숙련5·주의1·인내1·탐색5",
    "traits": {
-    "literacy": "novice",
-    "patience": "hasty",
-    "reading": "scanner",
-    "visit": "new"
+    "literacy": 5,
+    "attention": 1,
+    "patience": 1,
+    "breadth": 5
    },
-   "combo_index": 7,
-   "goal_id": "G06",
-   "goal_type": "B",
-   "goal": "배송비가 무료가 되는 금액을 확인하고 나간다.",
-   "success": "5만원 기준을 말하고 종료",
+   "bands": {
+    "literacy": "high",
+    "attention": "low",
+    "patience": "low",
+    "breadth": "high"
+   },
+   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n조금만 막혀도 바로 그만둡니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 배송비가 무료가 되는 금액을 확인하고 나간다.",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait"
+    "wait",
+    "goto"
    ],
-   "max_steps": 20,
-   "dwell_ms": 1500,
+   "search_allowed": true,
+   "max_steps": 15,
+   "max_idle_attempts": 6,
+   "dwell_ms": 800,
+   "page_cap": 0,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P073",
-   "label": "익숙·여유·정독·재방문 / G07",
+   "label": "숙련4·주의5·인내4·탐색3",
    "traits": {
-    "literacy": "savvy",
-    "patience": "patient",
-    "reading": "reader",
-    "visit": "returning"
+    "literacy": 4,
+    "attention": 5,
+    "patience": 4,
+    "breadth": 3
    },
-   "combo_index": 8,
-   "goal_id": "G07",
-   "goal_type": "B",
-   "goal": "스니커즈에 260 사이즈가 있는지 확인만 한다.",
-   "success": "사이즈 목록을 확인하고 종료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "bands": {
+    "literacy": "high",
+    "attention": "high",
+    "patience": "high",
+    "breadth": "mid"
+   },
+   "prompt": "온라인 쇼핑을 자주 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -2753,36 +2465,31 @@
     "wait",
     "goto"
    ],
+   "search_allowed": true,
    "max_steps": 30,
-   "dwell_ms": 12000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "max_idle_attempts": 24,
+   "dwell_ms": 10612,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P074",
-   "label": "서툼·여유·정독·재방문 / G08",
+   "label": "숙련1·주의1·인내1·탐색5",
    "traits": {
-    "literacy": "novice",
-    "patience": "patient",
-    "reading": "reader",
-    "visit": "returning"
+    "literacy": 1,
+    "attention": 1,
+    "patience": 1,
+    "breadth": 5
    },
-   "combo_index": 9,
-   "goal_id": "G08",
-   "goal_type": "B",
-   "goal": "장바구니의 총 결제금액을 확인하고 나간다.",
-   "success": "배송비 포함 합계를 말하고 종료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 장바구니의 총 결제금액을 확인하고 나간다.",
+   "bands": {
+    "literacy": "low",
+    "attention": "low",
+    "patience": "low",
+    "breadth": "high"
+   },
+   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n조금만 막혀도 바로 그만둡니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -2791,125 +2498,98 @@
     "back",
     "wait"
    ],
-   "max_steps": 30,
-   "dwell_ms": 12000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": false,
+   "max_steps": 15,
+   "max_idle_attempts": 5,
+   "dwell_ms": 1308,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P075",
-   "label": "익숙·조급·정독·재방문 / G09",
+   "label": "숙련2·주의4·인내4·탐색1",
    "traits": {
-    "literacy": "savvy",
-    "patience": "hasty",
-    "reading": "reader",
-    "visit": "returning"
+    "literacy": 2,
+    "attention": 4,
+    "patience": 4,
+    "breadth": 1
    },
-   "combo_index": 10,
-   "goal_id": "G09",
-   "goal_type": "C",
-   "goal": "지난번에 담아둔 장바구니를 이어서 결제한다.",
-   "success": "담긴 상품 그대로 주문 완료",
+   "bands": {
+    "literacy": "low",
+    "attention": "high",
+    "patience": "high",
+    "breadth": "low"
+   },
+   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n대부분의 안내 문구를 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 지난번에 담아둔 장바구니를 이어서 결제한다.",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait",
-    "goto"
+    "wait"
    ],
-   "max_steps": 20,
-   "dwell_ms": 6000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 3,
-      "color": "화이트",
-      "size": "250",
-      "qty": 1
-     },
-     {
-      "id": 10,
-      "color": "블랙",
-      "size": "FREE",
-      "qty": 2
-     }
-    ]
-   }
+   "search_allowed": false,
+   "max_steps": 30,
+   "max_idle_attempts": 20,
+   "dwell_ms": 6979,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P076",
-   "label": "서툼·조급·정독·재방문 / G10",
+   "label": "숙련4·주의1·인내1·탐색1",
    "traits": {
-    "literacy": "novice",
-    "patience": "hasty",
-    "reading": "reader",
-    "visit": "returning"
+    "literacy": 4,
+    "attention": 1,
+    "patience": 1,
+    "breadth": 1
    },
-   "combo_index": 11,
-   "goal_id": "G10",
-   "goal_type": "C",
-   "goal": "담아둔 것 중 하나를 빼고 나머지만 주문한다.",
-   "success": "1건 삭제 후 주문 완료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 것 중 하나를 빼고 나머지만 주문한다.",
+   "bands": {
+    "literacy": "high",
+    "attention": "low",
+    "patience": "low",
+    "breadth": "low"
+   },
+   "prompt": "온라인 쇼핑을 자주 합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n조금만 막혀도 바로 그만둡니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait"
+    "wait",
+    "goto"
    ],
-   "max_steps": 20,
-   "dwell_ms": 6000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 3,
-      "color": "화이트",
-      "size": "250",
-      "qty": 1
-     },
-     {
-      "id": 10,
-      "color": "블랙",
-      "size": "FREE",
-      "qty": 2
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 15,
+   "max_idle_attempts": 4,
+   "dwell_ms": 1497,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P077",
-   "label": "익숙·여유·훑기·재방문 / G11",
+   "label": "숙련4·주의3·인내5·탐색1",
    "traits": {
-    "literacy": "savvy",
-    "patience": "patient",
-    "reading": "scanner",
-    "visit": "returning"
+    "literacy": 4,
+    "attention": 3,
+    "patience": 5,
+    "breadth": 1
    },
-   "combo_index": 12,
-   "goal_id": "G11",
-   "goal_type": "C",
-   "goal": "담아둔 상품의 수량을 2개로 바꿔 주문한다.",
-   "success": "수량 변경이 합계에 반영된 뒤 주문 완료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "bands": {
+    "literacy": "high",
+    "attention": "mid",
+    "patience": "high",
+    "breadth": "low"
+   },
+   "prompt": "온라인 쇼핑을 자주 합니다.\n중요해 보이는 내용은 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -2919,36 +2599,31 @@
     "wait",
     "goto"
    ],
-   "max_steps": 30,
-   "dwell_ms": 4000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 35,
+   "max_idle_attempts": 29,
+   "dwell_ms": 3697,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P078",
-   "label": "서툼·여유·훑기·재방문 / G01",
+   "label": "숙련1·주의4·인내5·탐색3",
    "traits": {
-    "literacy": "novice",
-    "patience": "patient",
-    "reading": "scanner",
-    "visit": "returning"
+    "literacy": 1,
+    "attention": 4,
+    "patience": 5,
+    "breadth": 3
    },
-   "combo_index": 13,
-   "goal_id": "G01",
-   "goal_type": "A",
-   "goal": "코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
-   "success": "주문 완료 화면에 도달",
+   "bands": {
+    "literacy": "low",
+    "attention": "high",
+    "patience": "high",
+    "breadth": "mid"
+   },
+   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n대부분의 안내 문구를 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
    "allowed_actions": [
     "click",
     "type",
@@ -2957,36 +2632,31 @@
     "back",
     "wait"
    ],
-   "max_steps": 30,
-   "dwell_ms": 4000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": false,
+   "max_steps": 35,
+   "max_idle_attempts": 30,
+   "dwell_ms": 7273,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P079",
-   "label": "익숙·조급·훑기·재방문 / G02",
+   "label": "숙련3·주의2·인내3·탐색4",
    "traits": {
-    "literacy": "savvy",
-    "patience": "hasty",
-    "reading": "scanner",
-    "visit": "returning"
+    "literacy": 3,
+    "attention": 2,
+    "patience": 3,
+    "breadth": 4
    },
-   "combo_index": 14,
-   "goal_id": "G02",
-   "goal_type": "A",
-   "goal": "신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
-   "success": "신발 카테고리 상품으로 주문 완료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "bands": {
+    "literacy": "mid",
+    "attention": "low",
+    "patience": "mid",
+    "breadth": "high"
+   },
+   "prompt": "가끔 온라인 쇼핑을 합니다.\n필요한 부분만 훑어봅니다.\n어느 정도는 다시 시도해봅니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -2996,36 +2666,31 @@
     "wait",
     "goto"
    ],
-   "max_steps": 20,
-   "dwell_ms": 1500,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 25,
+   "max_idle_attempts": 18,
+   "dwell_ms": 2066,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P080",
-   "label": "서툼·조급·훑기·재방문 / G03",
+   "label": "숙련1·주의5·인내2·탐색3",
    "traits": {
-    "literacy": "novice",
-    "patience": "hasty",
-    "reading": "scanner",
-    "visit": "returning"
+    "literacy": 1,
+    "attention": 5,
+    "patience": 2,
+    "breadth": 3
    },
-   "combo_index": 15,
-   "goal_id": "G03",
-   "goal_type": "A",
-   "goal": "무료배송이 되도록 담아서 주문을 마친다.",
-   "success": "합계 5만원 이상으로 주문 완료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 무료배송이 되도록 담아서 주문을 마친다.",
+   "bands": {
+    "literacy": "low",
+    "attention": "high",
+    "patience": "low",
+    "breadth": "mid"
+   },
+   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -3034,66 +2699,64 @@
     "back",
     "wait"
    ],
+   "search_allowed": false,
    "max_steps": 20,
-   "dwell_ms": 1500,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "max_idle_attempts": 9,
+   "dwell_ms": 13602,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P081",
-   "label": "익숙·여유·정독·신규 / G04",
+   "label": "숙련2·주의3·인내1·탐색5",
    "traits": {
-    "literacy": "savvy",
-    "patience": "patient",
-    "reading": "reader",
-    "visit": "new"
+    "literacy": 2,
+    "attention": 3,
+    "patience": 1,
+    "breadth": 5
    },
-   "combo_index": 0,
-   "goal_id": "G04",
-   "goal_type": "A",
-   "goal": "워시드 후디를 사려고 한다.",
-   "success": "품절을 확인하고 대체품 구매 또는 이탈",
-   "start_path": "/product.html?id=7",
-   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 워시드 후디를 사려고 한다.",
+   "bands": {
+    "literacy": "low",
+    "attention": "mid",
+    "patience": "low",
+    "breadth": "high"
+   },
+   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n중요해 보이는 내용은 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait",
-    "goto"
+    "wait"
    ],
-   "max_steps": 30,
-   "dwell_ms": 12000,
+   "search_allowed": false,
+   "max_steps": 15,
+   "max_idle_attempts": 6,
+   "dwell_ms": 3414,
+   "page_cap": 0,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P082",
-   "label": "서툼·여유·정독·신규 / G05",
+   "label": "숙련2·주의5·인내5·탐색5",
    "traits": {
-    "literacy": "novice",
-    "patience": "patient",
-    "reading": "reader",
-    "visit": "new"
+    "literacy": 2,
+    "attention": 5,
+    "patience": 5,
+    "breadth": 5
    },
-   "combo_index": 1,
-   "goal_id": "G05",
-   "goal_type": "A",
-   "goal": "액세서리 두 가지를 한 번에 주문한다.",
-   "success": "액세서리 2종이 담긴 상태로 주문 완료",
+   "bands": {
+    "literacy": "low",
+    "attention": "high",
+    "patience": "high",
+    "breadth": "high"
+   },
+   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 액세서리 두 가지를 한 번에 주문한다.",
    "allowed_actions": [
     "click",
     "type",
@@ -3102,27 +2765,31 @@
     "back",
     "wait"
    ],
-   "max_steps": 30,
-   "dwell_ms": 12000,
+   "search_allowed": false,
+   "max_steps": 35,
+   "max_idle_attempts": 28,
+   "dwell_ms": 12965,
+   "page_cap": 0,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P083",
-   "label": "익숙·조급·정독·신규 / G06",
+   "label": "숙련3·주의1·인내5·탐색5",
    "traits": {
-    "literacy": "savvy",
-    "patience": "hasty",
-    "reading": "reader",
-    "visit": "new"
+    "literacy": 3,
+    "attention": 1,
+    "patience": 5,
+    "breadth": 5
    },
-   "combo_index": 2,
-   "goal_id": "G06",
-   "goal_type": "B",
-   "goal": "배송비가 무료가 되는 금액을 확인하고 나간다.",
-   "success": "5만원 기준을 말하고 종료",
+   "bands": {
+    "literacy": "mid",
+    "attention": "low",
+    "patience": "high",
+    "breadth": "high"
+   },
+   "prompt": "가끔 온라인 쇼핑을 합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n될 때까지 여러 방법을 시도합니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 배송비가 무료가 되는 금액을 확인하고 나간다.",
    "allowed_actions": [
     "click",
     "type",
@@ -3132,27 +2799,31 @@
     "wait",
     "goto"
    ],
-   "max_steps": 20,
-   "dwell_ms": 6000,
+   "search_allowed": true,
+   "max_steps": 35,
+   "max_idle_attempts": 25,
+   "dwell_ms": 1244,
+   "page_cap": 0,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P084",
-   "label": "서툼·조급·정독·신규 / G07",
+   "label": "숙련2·주의2·인내1·탐색2",
    "traits": {
-    "literacy": "novice",
-    "patience": "hasty",
-    "reading": "reader",
-    "visit": "new"
+    "literacy": 2,
+    "attention": 2,
+    "patience": 1,
+    "breadth": 2
    },
-   "combo_index": 3,
-   "goal_id": "G07",
-   "goal_type": "B",
-   "goal": "스니커즈에 260 사이즈가 있는지 확인만 한다.",
-   "success": "사이즈 목록을 확인하고 종료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "bands": {
+    "literacy": "low",
+    "attention": "low",
+    "patience": "low",
+    "breadth": "low"
+   },
+   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n필요한 부분만 훑어봅니다.\n조금만 막혀도 바로 그만둡니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -3161,193 +2832,165 @@
     "back",
     "wait"
    ],
-   "max_steps": 20,
-   "dwell_ms": 6000,
+   "search_allowed": false,
+   "max_steps": 15,
+   "max_idle_attempts": 5,
+   "dwell_ms": 2553,
+   "page_cap": 3,
    "user_type": "new",
    "seed_state": null
   },
   {
    "id": "P085",
-   "label": "익숙·여유·훑기·신규 / G08",
+   "label": "숙련2·주의1·인내4·탐색3",
    "traits": {
-    "literacy": "savvy",
-    "patience": "patient",
-    "reading": "scanner",
-    "visit": "new"
+    "literacy": 2,
+    "attention": 1,
+    "patience": 4,
+    "breadth": 3
    },
-   "combo_index": 4,
-   "goal_id": "G08",
-   "goal_type": "B",
-   "goal": "장바구니의 총 결제금액을 확인하고 나간다.",
-   "success": "배송비 포함 합계를 말하고 종료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 장바구니의 총 결제금액을 확인하고 나간다.",
+   "bands": {
+    "literacy": "low",
+    "attention": "low",
+    "patience": "high",
+    "breadth": "mid"
+   },
+   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n잘 안 돼도 방법을 찾아봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait",
-    "goto"
+    "wait"
    ],
+   "search_allowed": false,
    "max_steps": 30,
-   "dwell_ms": 4000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "max_idle_attempts": 20,
+   "dwell_ms": 1029,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P086",
-   "label": "서툼·여유·훑기·신규 / G09",
+   "label": "숙련3·주의4·인내3·탐색1",
    "traits": {
-    "literacy": "novice",
-    "patience": "patient",
-    "reading": "scanner",
-    "visit": "new"
+    "literacy": 3,
+    "attention": 4,
+    "patience": 3,
+    "breadth": 1
    },
-   "combo_index": 5,
-   "goal_id": "G09",
-   "goal_type": "C",
-   "goal": "지난번에 담아둔 장바구니를 이어서 결제한다.",
-   "success": "담긴 상품 그대로 주문 완료",
+   "bands": {
+    "literacy": "mid",
+    "attention": "high",
+    "patience": "mid",
+    "breadth": "low"
+   },
+   "prompt": "가끔 온라인 쇼핑을 합니다.\n대부분의 안내 문구를 읽습니다.\n어느 정도는 다시 시도해봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 지난번에 담아둔 장바구니를 이어서 결제한다.",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait"
+    "wait",
+    "goto"
    ],
-   "max_steps": 30,
-   "dwell_ms": 4000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 3,
-      "color": "화이트",
-      "size": "250",
-      "qty": 1
-     },
-     {
-      "id": 10,
-      "color": "블랙",
-      "size": "FREE",
-      "qty": 2
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 25,
+   "max_idle_attempts": 14,
+   "dwell_ms": 8808,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P087",
-   "label": "익숙·조급·훑기·신규 / G10",
+   "label": "숙련1·주의4·인내3·탐색5",
    "traits": {
-    "literacy": "savvy",
-    "patience": "hasty",
-    "reading": "scanner",
-    "visit": "new"
+    "literacy": 1,
+    "attention": 4,
+    "patience": 3,
+    "breadth": 5
    },
-   "combo_index": 6,
-   "goal_id": "G10",
-   "goal_type": "C",
-   "goal": "담아둔 것 중 하나를 빼고 나머지만 주문한다.",
-   "success": "1건 삭제 후 주문 완료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 것 중 하나를 빼고 나머지만 주문한다.",
+   "bands": {
+    "literacy": "low",
+    "attention": "high",
+    "patience": "mid",
+    "breadth": "high"
+   },
+   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n대부분의 안내 문구를 읽습니다.\n어느 정도는 다시 시도해봅니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait",
-    "goto"
+    "wait"
    ],
-   "max_steps": 20,
-   "dwell_ms": 1500,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 3,
-      "color": "화이트",
-      "size": "250",
-      "qty": 1
-     },
-     {
-      "id": 10,
-      "color": "블랙",
-      "size": "FREE",
-      "qty": 2
-     }
-    ]
-   }
+   "search_allowed": false,
+   "max_steps": 25,
+   "max_idle_attempts": 18,
+   "dwell_ms": 6048,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P088",
-   "label": "서툼·조급·훑기·신규 / G11",
+   "label": "숙련3·주의1·인내1·탐색5",
    "traits": {
-    "literacy": "novice",
-    "patience": "hasty",
-    "reading": "scanner",
-    "visit": "new"
+    "literacy": 3,
+    "attention": 1,
+    "patience": 1,
+    "breadth": 5
    },
-   "combo_index": 7,
-   "goal_id": "G11",
-   "goal_type": "C",
-   "goal": "담아둔 상품의 수량을 2개로 바꿔 주문한다.",
-   "success": "수량 변경이 합계에 반영된 뒤 주문 완료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "bands": {
+    "literacy": "mid",
+    "attention": "low",
+    "patience": "low",
+    "breadth": "high"
+   },
+   "prompt": "가끔 온라인 쇼핑을 합니다.\n화면을 거의 읽지 않고 눈에 띄는 것만 누릅니다.\n조금만 막혀도 바로 그만둡니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait"
+    "wait",
+    "goto"
    ],
-   "max_steps": 20,
-   "dwell_ms": 1500,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 15,
+   "max_idle_attempts": 7,
+   "dwell_ms": 1075,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P089",
-   "label": "익숙·여유·정독·재방문 / G01",
+   "label": "숙련3·주의5·인내2·탐색4",
    "traits": {
-    "literacy": "savvy",
-    "patience": "patient",
-    "reading": "reader",
-    "visit": "returning"
+    "literacy": 3,
+    "attention": 5,
+    "patience": 2,
+    "breadth": 4
    },
-   "combo_index": 8,
-   "goal_id": "G01",
-   "goal_type": "A",
-   "goal": "코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
-   "success": "주문 완료 화면에 도달",
+   "bands": {
+    "literacy": "mid",
+    "attention": "high",
+    "patience": "low",
+    "breadth": "high"
+   },
+   "prompt": "가끔 온라인 쇼핑을 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
    "allowed_actions": [
     "click",
     "type",
@@ -3357,36 +3000,31 @@
     "wait",
     "goto"
    ],
-   "max_steps": 30,
-   "dwell_ms": 12000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 20,
+   "max_idle_attempts": 9,
+   "dwell_ms": 14070,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P090",
-   "label": "서툼·여유·정독·재방문 / G02",
+   "label": "숙련1·주의3·인내1·탐색2",
    "traits": {
-    "literacy": "novice",
-    "patience": "patient",
-    "reading": "reader",
-    "visit": "returning"
+    "literacy": 1,
+    "attention": 3,
+    "patience": 1,
+    "breadth": 2
    },
-   "combo_index": 9,
-   "goal_id": "G02",
-   "goal_type": "A",
-   "goal": "신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
-   "success": "신발 카테고리 상품으로 주문 완료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "bands": {
+    "literacy": "low",
+    "attention": "mid",
+    "patience": "low",
+    "breadth": "low"
+   },
+   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n중요해 보이는 내용은 읽습니다.\n조금만 막혀도 바로 그만둡니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -3395,75 +3033,64 @@
     "back",
     "wait"
    ],
-   "max_steps": 30,
-   "dwell_ms": 12000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": false,
+   "max_steps": 15,
+   "max_idle_attempts": 5,
+   "dwell_ms": 4800,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P091",
-   "label": "익숙·조급·정독·재방문 / G03",
+   "label": "숙련2·주의5·인내5·탐색2",
    "traits": {
-    "literacy": "savvy",
-    "patience": "hasty",
-    "reading": "reader",
-    "visit": "returning"
+    "literacy": 2,
+    "attention": 5,
+    "patience": 5,
+    "breadth": 2
    },
-   "combo_index": 10,
-   "goal_id": "G03",
-   "goal_type": "A",
-   "goal": "무료배송이 되도록 담아서 주문을 마친다.",
-   "success": "합계 5만원 이상으로 주문 완료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 무료배송이 되도록 담아서 주문을 마친다.",
+   "bands": {
+    "literacy": "low",
+    "attention": "high",
+    "patience": "high",
+    "breadth": "low"
+   },
+   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait",
-    "goto"
+    "wait"
    ],
-   "max_steps": 20,
-   "dwell_ms": 6000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": false,
+   "max_steps": 35,
+   "max_idle_attempts": 26,
+   "dwell_ms": 12664,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P092",
-   "label": "서툼·조급·정독·재방문 / G04",
+   "label": "숙련2·주의4·인내3·탐색1",
    "traits": {
-    "literacy": "novice",
-    "patience": "hasty",
-    "reading": "reader",
-    "visit": "returning"
+    "literacy": 2,
+    "attention": 4,
+    "patience": 3,
+    "breadth": 1
    },
-   "combo_index": 11,
-   "goal_id": "G04",
-   "goal_type": "A",
-   "goal": "워시드 후디를 사려고 한다.",
-   "success": "품절을 확인하고 대체품 구매 또는 이탈",
-   "start_path": "/product.html?id=7",
-   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 워시드 후디를 사려고 한다.",
+   "bands": {
+    "literacy": "low",
+    "attention": "high",
+    "patience": "mid",
+    "breadth": "low"
+   },
+   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n대부분의 안내 문구를 읽습니다.\n어느 정도는 다시 시도해봅니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -3472,75 +3099,64 @@
     "back",
     "wait"
    ],
-   "max_steps": 20,
-   "dwell_ms": 6000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": false,
+   "max_steps": 25,
+   "max_idle_attempts": 16,
+   "dwell_ms": 8991,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P093",
-   "label": "익숙·여유·훑기·재방문 / G05",
+   "label": "숙련1·주의4·인내5·탐색1",
    "traits": {
-    "literacy": "savvy",
-    "patience": "patient",
-    "reading": "scanner",
-    "visit": "returning"
+    "literacy": 1,
+    "attention": 4,
+    "patience": 5,
+    "breadth": 1
    },
-   "combo_index": 12,
-   "goal_id": "G05",
-   "goal_type": "A",
-   "goal": "액세서리 두 가지를 한 번에 주문한다.",
-   "success": "액세서리 2종이 담긴 상태로 주문 완료",
+   "bands": {
+    "literacy": "low",
+    "attention": "high",
+    "patience": "high",
+    "breadth": "low"
+   },
+   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n대부분의 안내 문구를 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n한 화면만 보고 결정합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 액세서리 두 가지를 한 번에 주문한다.",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait",
-    "goto"
+    "wait"
    ],
-   "max_steps": 30,
-   "dwell_ms": 4000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": false,
+   "max_steps": 35,
+   "max_idle_attempts": 29,
+   "dwell_ms": 6873,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P094",
-   "label": "서툼·여유·훑기·재방문 / G06",
+   "label": "숙련1·주의2·인내4·탐색5",
    "traits": {
-    "literacy": "novice",
-    "patience": "patient",
-    "reading": "scanner",
-    "visit": "returning"
+    "literacy": 1,
+    "attention": 2,
+    "patience": 4,
+    "breadth": 5
    },
-   "combo_index": 13,
-   "goal_id": "G06",
-   "goal_type": "B",
-   "goal": "배송비가 무료가 되는 금액을 확인하고 나간다.",
-   "success": "5만원 기준을 말하고 종료",
+   "bands": {
+    "literacy": "low",
+    "attention": "low",
+    "patience": "high",
+    "breadth": "high"
+   },
+   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n필요한 부분만 훑어봅니다.\n잘 안 돼도 방법을 찾아봅니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 배송비가 무료가 되는 금액을 확인하고 나간다.",
    "allowed_actions": [
     "click",
     "type",
@@ -3549,36 +3165,31 @@
     "back",
     "wait"
    ],
+   "search_allowed": false,
    "max_steps": 30,
-   "dwell_ms": 4000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "max_idle_attempts": 23,
+   "dwell_ms": 2943,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P095",
-   "label": "익숙·조급·훑기·재방문 / G07",
+   "label": "숙련3·주의2·인내4·탐색5",
    "traits": {
-    "literacy": "savvy",
-    "patience": "hasty",
-    "reading": "scanner",
-    "visit": "returning"
+    "literacy": 3,
+    "attention": 2,
+    "patience": 4,
+    "breadth": 5
    },
-   "combo_index": 14,
-   "goal_id": "G07",
-   "goal_type": "B",
-   "goal": "스니커즈에 260 사이즈가 있는지 확인만 한다.",
-   "success": "사이즈 목록을 확인하고 종료",
-   "start_path": "/list.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "bands": {
+    "literacy": "mid",
+    "attention": "low",
+    "patience": "high",
+    "breadth": "high"
+   },
+   "prompt": "가끔 온라인 쇼핑을 합니다.\n필요한 부분만 훑어봅니다.\n잘 안 돼도 방법을 찾아봅니다.\n사이트 곳곳을 폭넓게 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -3588,163 +3199,98 @@
     "wait",
     "goto"
    ],
-   "max_steps": 20,
-   "dwell_ms": 1500,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 30,
+   "max_idle_attempts": 23,
+   "dwell_ms": 1676,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P096",
-   "label": "서툼·조급·훑기·재방문 / G08",
+   "label": "숙련3·주의5·인내4·탐색3",
    "traits": {
-    "literacy": "novice",
-    "patience": "hasty",
-    "reading": "scanner",
-    "visit": "returning"
+    "literacy": 3,
+    "attention": 5,
+    "patience": 4,
+    "breadth": 3
    },
-   "combo_index": 15,
-   "goal_id": "G08",
-   "goal_type": "B",
-   "goal": "장바구니의 총 결제금액을 확인하고 나간다.",
-   "success": "배송비 포함 합계를 말하고 종료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 장바구니의 총 결제금액을 확인하고 나간다.",
+   "bands": {
+    "literacy": "mid",
+    "attention": "high",
+    "patience": "high",
+    "breadth": "mid"
+   },
+   "prompt": "가끔 온라인 쇼핑을 합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n몇 군데는 둘러봅니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait"
+    "wait",
+    "goto"
    ],
-   "max_steps": 20,
-   "dwell_ms": 1500,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 30,
+   "max_idle_attempts": 24,
+   "dwell_ms": 10260,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P097",
-   "label": "익숙·여유·정독·신규 / G09",
+   "label": "숙련2·주의2·인내3·탐색2",
    "traits": {
-    "literacy": "savvy",
-    "patience": "patient",
-    "reading": "reader",
-    "visit": "new"
+    "literacy": 2,
+    "attention": 2,
+    "patience": 3,
+    "breadth": 2
    },
-   "combo_index": 0,
-   "goal_id": "G09",
-   "goal_type": "C",
-   "goal": "지난번에 담아둔 장바구니를 이어서 결제한다.",
-   "success": "담긴 상품 그대로 주문 완료",
+   "bands": {
+    "literacy": "low",
+    "attention": "low",
+    "patience": "mid",
+    "breadth": "low"
+   },
+   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n필요한 부분만 훑어봅니다.\n어느 정도는 다시 시도해봅니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 지난번에 담아둔 장바구니를 이어서 결제한다.",
    "allowed_actions": [
     "click",
     "type",
     "select",
     "scroll",
     "back",
-    "wait",
-    "goto"
+    "wait"
    ],
-   "max_steps": 30,
-   "dwell_ms": 12000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 3,
-      "color": "화이트",
-      "size": "250",
-      "qty": 1
-     },
-     {
-      "id": 10,
-      "color": "블랙",
-      "size": "FREE",
-      "qty": 2
-     }
-    ]
-   }
+   "search_allowed": false,
+   "max_steps": 25,
+   "max_idle_attempts": 13,
+   "dwell_ms": 1888,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
    "id": "P098",
-   "label": "서툼·여유·정독·신규 / G10",
+   "label": "숙련5·주의5·인내4·탐색2",
    "traits": {
-    "literacy": "novice",
-    "patience": "patient",
-    "reading": "reader",
-    "visit": "new"
+    "literacy": 5,
+    "attention": 5,
+    "patience": 4,
+    "breadth": 2
    },
-   "combo_index": 1,
-   "goal_id": "G10",
-   "goal_type": "C",
-   "goal": "담아둔 것 중 하나를 빼고 나머지만 주문한다.",
-   "success": "1건 삭제 후 주문 완료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 것 중 하나를 빼고 나머지만 주문한다.",
-   "allowed_actions": [
-    "click",
-    "type",
-    "select",
-    "scroll",
-    "back",
-    "wait"
-   ],
-   "max_steps": 30,
-   "dwell_ms": 12000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 3,
-      "color": "화이트",
-      "size": "250",
-      "qty": 1
-     },
-     {
-      "id": 10,
-      "color": "블랙",
-      "size": "FREE",
-      "qty": 2
-     }
-    ]
-   }
-  },
-  {
-   "id": "P099",
-   "label": "익숙·조급·정독·신규 / G11",
-   "traits": {
-    "literacy": "savvy",
-    "patience": "hasty",
-    "reading": "reader",
-    "visit": "new"
+   "bands": {
+    "literacy": "high",
+    "attention": "high",
+    "patience": "high",
+    "breadth": "low"
    },
-   "combo_index": 2,
-   "goal_id": "G11",
-   "goal_type": "C",
-   "goal": "담아둔 상품의 수량을 2개로 바꿔 주문한다.",
-   "success": "수량 변경이 합계에 반영된 뒤 주문 완료",
-   "start_path": "/cart.html",
-   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "prompt": "온라인 쇼핑에 매우 익숙합니다.\n화면의 글을 처음부터 끝까지 읽습니다.\n잘 안 돼도 방법을 찾아봅니다.\n필요한 페이지만 최소한으로 이동합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
    "allowed_actions": [
     "click",
     "type",
@@ -3754,36 +3300,31 @@
     "wait",
     "goto"
    ],
-   "max_steps": 20,
-   "dwell_ms": 6000,
-   "user_type": "returning",
-   "seed_state": {
-    "cart": [
-     {
-      "id": 1,
-      "color": "아이보리",
-      "size": "M",
-      "qty": 1
-     }
-    ]
-   }
+   "search_allowed": true,
+   "max_steps": 30,
+   "max_idle_attempts": 21,
+   "dwell_ms": 10936,
+   "page_cap": 3,
+   "user_type": "new",
+   "seed_state": null
   },
   {
-   "id": "P100",
-   "label": "서툼·조급·정독·신규 / G01",
+   "id": "P099",
+   "label": "숙련2·주의4·인내5·탐색4",
    "traits": {
-    "literacy": "novice",
-    "patience": "hasty",
-    "reading": "reader",
-    "visit": "new"
+    "literacy": 2,
+    "attention": 4,
+    "patience": 5,
+    "breadth": 4
    },
-   "combo_index": 3,
-   "goal_id": "G01",
-   "goal_type": "A",
-   "goal": "코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
-   "success": "주문 완료 화면에 도달",
+   "bands": {
+    "literacy": "low",
+    "attention": "high",
+    "patience": "high",
+    "breadth": "high"
+   },
+   "prompt": "온라인 쇼핑이 아직 익숙하지 않습니다.\n대부분의 안내 문구를 읽습니다.\n될 때까지 여러 방법을 시도합니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
    "start_path": "/index.html",
-   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
    "allowed_actions": [
     "click",
     "type",
@@ -3792,8 +3333,44 @@
     "back",
     "wait"
    ],
+   "search_allowed": false,
+   "max_steps": 35,
+   "max_idle_attempts": 25,
+   "dwell_ms": 6583,
+   "page_cap": 0,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P100",
+   "label": "숙련1·주의3·인내2·탐색4",
+   "traits": {
+    "literacy": 1,
+    "attention": 3,
+    "patience": 2,
+    "breadth": 4
+   },
+   "bands": {
+    "literacy": "low",
+    "attention": "mid",
+    "patience": "low",
+    "breadth": "high"
+   },
+   "prompt": "이런 사이트를 써본 적이 거의 없습니다.\n중요해 보이는 내용은 읽습니다.\n몇 번 시도해보고 안 되면 나갑니다.\n여러 페이지를 오가며 비교합니다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+   "start_path": "/index.html",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "search_allowed": false,
    "max_steps": 20,
-   "dwell_ms": 6000,
+   "max_idle_attempts": 8,
+   "dwell_ms": 5877,
+   "page_cap": 0,
    "user_type": "new",
    "seed_state": null
   }

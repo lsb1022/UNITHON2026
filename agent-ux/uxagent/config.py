@@ -39,10 +39,16 @@ PROVIDERS = {
         # 100만 토큰당 USD. 2026-08-25 웹 조사 기준이며 **콘솔 확인 전**이다.
         # Gemini 3.1 Pro 가 $2/$12 로 조사돼 탐색 루프에 쓰면 안 되는 단가다
         # (1만 호출이면 $58). 탐색은 반드시 flash 계열로 둘 것.
-        "price": {"input": 2.00, "output": 12.00},
-        # 탐색 루프에만 적용되는 단가. 역할마다 모델이 다른데 단가가 하나면
-        # 비용 추정이 통째로 틀린다.
-        "price_explore": {"input": 0.10, "output": 0.40},
+        # 100만 토큰당 USD. 2026-08-25 웹 조사 기준이며 **콘솔 확인 전**이다.
+        # 3.6-flash 는 2026-12-31 까지 프로모션가이고 2027-01-01 에 2배가 된다.
+        "prices": {
+            "gemini-3.6-flash":       {"input": 0.75, "output": 3.75},
+            "gemini-3.5-flash":       {"input": 0.75, "output": 3.75},
+            "gemini-3.1-flash-lite":  {"input": 0.10, "output": 0.40},
+            "gemini-3.7-flash":       {"input": 0.75, "output": 3.75},
+            "gemini-3.1-pro-preview": {"input": 2.00, "output": 12.00},
+        },
+        "price": {"input": 0.75, "output": 3.75},   # 목록에 없는 모델의 기본값
     },
     # Alibaba Cloud Model Studio.
     # '-intl'이 빠지면 중국 본토 계정으로 붙어 401이 난다.
@@ -58,8 +64,12 @@ PROVIDERS = {
         "model_analyze": "qwen3.6-plus",
         # 2026-08-25 웹 조사: qwen3.5-plus $0.40/$2.40, qwen3.5-flash $0.10/$0.40.
         # 더 싼 등급(qwen3.7-flash $0.03/$0.13)도 있으나 한국어 품질 미확인.
+        "prices": {
+            "qwen3.6-plus":  {"input": 0.40, "output": 2.40},
+            "qwen3.6-flash": {"input": 0.10, "output": 0.40},
+            "qwen3-vl-plus": {"input": 0.40, "output": 2.40},
+        },
         "price": {"input": 0.40, "output": 2.40},
-        "price_explore": {"input": 0.10, "output": 0.40},
     },
 }
 
@@ -118,14 +128,32 @@ RETRY_BACKOFF = (2, 5, 12)   # 초. 인덱스가 시도 횟수
 REQUEST_TIMEOUT = 60.0
 
 
-def estimate_cost(tok_in: int, tok_out: int, name: str | None = None) -> float:
-    p = provider(name)["price"]
+def price_of(model_name: str | None, name: str | None = None) -> dict:
+    """모델별 단가. 모르는 모델이면 프로바이더 기본값을 쓴다."""
+    p = provider(name)
+    return (p.get("prices") or {}).get(model_name or "", p["price"])
+
+
+def estimate_cost(tok_in: int, tok_out: int, name: str | None = None,
+                  model_name: str | None = None) -> float:
+    p = price_of(model_name, name)
     return round(tok_in / 1_000_000 * p["input"] + tok_out / 1_000_000 * p["output"], 6)
 
 
 # ── 에이전트 루프 ──────────────────────────────────────────────────
 MAX_STEPS = 30
-HISTORY_WINDOW = 3       # 프롬프트에 넣을 최근 스텝 수. 전체 누적 금지.
+# 프롬프트에 넣을 최근 스텝 수. 전체 누적은 금지지만 3은 너무 짧았다.
+# 장바구니에 담은 사실이 3스텝 만에 창 밖으로 밀려나 "아직 안 담았나?" 하고
+# 되돌아가는 맴돌이가 clean 사이트에서 2건 나왔다 (P011, P016).
+# 한 줄이 약 40토큰이라 6줄이어도 프롬프트의 15% 안쪽이다.
+HISTORY_WINDOW = 6
+# 항상 남기는 맨 앞 스텝 수. 뒤에서만 자르면 목표를 이룬 결정적 행동이
+# 먼저 사라진다 (explore.history_block 주석 참고).
+HISTORY_HEAD = 2
+# 프롬프트에 싣는 요소 개수. 실측상 프롬프트의 3분의 2가 이 목록이다.
+# 접힘선 위부터 정렬되므로 자르면 안 보이는 것(푸터·관련상품)부터 빠진다.
+# 45 -> 25 로 줄이면 호출당 약 25% 절감된다.
+PROMPT_ELEMENT_LIMIT = 25
 LOOP_THRESHOLD = 3       # 같은 URL이 이 횟수 이상이면 loop_detected
 STEP_TIMEOUT_MS = 15000
 
@@ -154,6 +182,9 @@ MAPS_DIR = "maps"
 # 서로 다른 (조합, 목표) 쌍을 받는다. 10개면 LCM이 80이라 뒤 20명이
 # 앞 20명을 그대로 반복한다.
 N_PERSONAS = 100
+# 페르소나 배분의 난수 씨앗. 같은 씨앗이면 같은 100명이 나온다.
+# 실행 간 비교를 하려면 사람이 같아야 한다.
+PERSONA_SEED = 20260825
 N_GOALS = 11
 GOAL_TYPES = ("A", "B", "C")     # A=구매 완수 / B=정보 확인 후 이탈 / C=중단·재개
 GOAL_MIX = {"A": 5, "B": 3, "C": 3}

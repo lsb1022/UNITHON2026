@@ -1,25 +1,42 @@
 {
-  "generated_at": "2026-08-25T12:57:48",
-  "provider": null,
-  "model": null,
-  "mock": true,
+  "generated_at": "2026-08-25T19:17:01",
+  "goal": "코튼 셔츠를 장바구니에 담아 주문까지 마친다",
+  "start_path": "/index.html",
   "counts": {
-    "goals": 11,
-    "combos": 16,
     "personas": 100,
-    "unique_pairs": 100,
-    "seeded": 67,
-    "dwell_over_10s": 26,
-    "goal_types": {
-      "A": 5,
-      "B": 3,
-      "C": 3
+    "unique_combos": 100,
+    "dwell_over_10s": 20,
+    "url_allowed": 60,
+    "page_capped": 40,
+    "by_axis": {
+      "literacy": {
+        "1": 20,
+        "2": 20,
+        "3": 20,
+        "4": 20,
+        "5": 20
+      },
+      "attention": {
+        "1": 20,
+        "2": 20,
+        "3": 20,
+        "4": 20,
+        "5": 20
+      },
+      "patience": {
+        "1": 20,
+        "2": 20,
+        "3": 20,
+        "4": 20,
+        "5": 20
+      },
+      "breadth": {
+        "1": 20,
+        "2": 20,
+        "3": 20,
+        "4": 20,
+        "5": 20
+      }
     }
-  },
-  "usage": {
-    "calls": 0,
-    "tokens_in": 0,
-    "tokens_out": 0,
-    "cost_usd": 0.0
   }
 }

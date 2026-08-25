@@ -13,12 +13,14 @@ from __future__ import annotations
 
 import asyncio
 import sys
+from collections import Counter
 
 sys.stdout.reconfigure(encoding="utf-8")
 
 from uxagent import config, discover
 from uxagent import explore as E
 from uxagent import scout as SC
+import generate as GEN
 from uxagent import goals as G
 from uxagent import persona as PS
 from uxagent import survey as S
@@ -195,68 +197,72 @@ async def test_browser() -> None:
 # ── 5. 페르소나 조립 (브라우저 불필요) ─────────────────────────────
 
 def test_persona() -> None:
-    """여기서 보는 것은 '100명이 만들어진다'가 아니라 **100명이 서로 다른가**,
-    그리고 **아무도 만나지 못하는 결함이 생기지 않는가**이다."""
+    """설계 지시(2026-08-25): 특성 4축 x 1~5단계, 목표는 하나.
+
+    여기서 보는 것은 '100명이 만들어진다'가 아니라 **비교가 성립하는가**이다.
+    분포가 기울면 "숙련도가 낮으면 어떤가"를 물을 때 표본 크기가 달라진다.
+    """
     print("\n── 페르소나 조립 ──")
 
-    goals = G.attach_seeds([dict(g) for g in G.MOCK_GOALS])
-    paths = {"/index.html", "/list.html", "/cart.html", "/product.html?id=3",
-             "/checkout.html", "/complete.html"}
-    check("기본 목표 11개가 검사 통과", G.validate(goals, paths) == [],
-          "%d건" % len(G.validate(goals, paths)))
+    goal = "코튼 셔츠를 장바구니에 담아 주문까지 마친다"
+    people = PS.build(goal, "/index.html", n=config.N_PERSONAS)
 
-    # 품절 상품(?id=7)은 지도에 대표로 실리지 않는다. 템플릿으로 접어 비교하지
-    # 않으면 마찰을 일부러 만드는 목표가 검사기에 지워진다.
-    off = [dict(goals[0], id="GX", start_path="/product.html?id=7")]
-    check("템플릿 밖 상태 URL도 통과", G.validate(off, paths)[:1] == []
-          or all("시작 경로" not in i for i in G.validate(off, paths)))
-    gone = [dict(goals[0], id="GY", start_path="/returns.html")]
-    check("없는 페이지는 거부", any("시작 경로" in i for i in G.validate(gone, paths)))
+    combos = {tuple(p["traits"][a] for a in PS.AXES) for p in people}
+    check("100명이 서로 다른 4축 조합", len(combos) == len(people),
+          "고유 %d / 전체 %d" % (len(combos), len(people)))
 
-    leak = [dict(goals[0], id="GZ", text="결제 버튼이 작동하지 않는지 확인한다")]
-    check("결함을 알려주는 목표는 거부", any("판단 표현" in i for i in G.validate(leak, paths)))
+    for a in PS.AXES:
+        c = Counter(p["traits"][a] for p in people)
+        spread = max(c.values()) - min(c.values())
+        check("%s 1~5단계가 고르게" % PS.AXIS_LABEL[a],
+              set(c) == {1, 2, 3, 4, 5} and spread <= 1,
+              " ".join("%d단계:%d" % (k, c[k]) for k in sorted(c)))
 
-    people = PS.build(goals, n=config.N_PERSONAS)
-    pairs = {(p["combo_index"], p["goal_id"]) for p in people}
-    check("100명이 서로 다른 (조합, 목표)", len(pairs) == len(people),
-          "고유 %d / 전체 %d" % (len(pairs), len(people)))
+    dwell10 = [p for p in people if p["dwell_ms"] >= 10000]
+    check("체류 10초 이상이 존재 (자동 팝업 조건)", len(dwell10) > 0, "%d명" % len(dwell10))
+    check("체류 10초 이상은 주의 지속이 높은 사람",
+          all(p["traits"]["attention"] >= 4 for p in dwell10))
+
+    novice = [p for p in people if p["traits"]["literacy"] <= 2]
+    check("숙련도 1-2 는 주소창 금지",
+          all(PS.URL_ACTION not in p["allowed_actions"] for p in novice),
+          "%d명" % len(novice))
+    check("숙련도 1-2 는 검색 금지",
+          all(not p["search_allowed"] for p in novice))
+    check("숙련도 4-5 는 주소창 허용",
+          all(PS.URL_ACTION in p["allowed_actions"]
+              for p in people if p["traits"]["literacy"] >= 4))
+
+    narrow = [p for p in people if p["traits"]["breadth"] <= 2]
+    check("탐색 범위 1-2 는 화면 수 제한",
+          all(p["page_cap"] == PS.NARROW_PAGE_CAP for p in narrow), "%d명" % len(narrow))
+    check("탐색 범위 3 이상은 제한 없음",
+          all(not p["page_cap"] for p in people if p["traits"]["breadth"] >= 3))
+
+    check("인내심이 낮을수록 스텝이 적다",
+          all(p["max_steps"] <= q["max_steps"] for p in people for q in people
+              if p["traits"]["patience"] < q["traits"]["patience"]))
 
     longest = max(len(p["prompt"]) for p in people)
     check("프롬프트가 상한 이내", longest <= config.PROMPT_MAX_CHARS,
           "최장 %d자 (상한 %d)" % (longest, config.PROMPT_MAX_CHARS))
     check("배경 서사 없음", all("살" not in p["prompt"] and "직장" not in p["prompt"]
                             for p in people))
+    check("목표는 사람마다 복사되지 않는다", "goal" not in people[0],
+          "페르소나 항목의 키: %s" % ",".join(sorted(people[0])[:6]))
 
-    # 10초 문턱: D-26 자동 팝업은 로드 10초 후에 뜬다.
-    dwell10 = sum(1 for p in people if p["dwell_ms"] >= 10000)
-    check("10초 이상 머무는 인원 존재 (D-26)", dwell10 > 0, "%d명" % dwell10)
-
-    seeded = [p for p in people if p["seed_state"]]
-    check("재방문자는 빈 장바구니로 시작하지 않음",
-          all(p["seed_state"] for p in people if p["traits"]["visit"] == "returning"),
-          "시딩 %d명" % len(seeded))
-    check("시딩된 사람은 user_type=returning",
-          all(p["user_type"] == "returning" for p in seeded))
-    check("시딩된 사람 프롬프트에 '처음이다' 없음",
-          all("이 사이트는 처음이다" not in p["prompt"] for p in seeded))
-    check("서툰 사람에게 URL 직접입력 없음",
-          all("goto" not in p["allowed_actions"]
-              for p in people if p["traits"]["literacy"] == "novice"))
-
-    # 장바구니 키가 변형마다 다르다. 페르소나에 키가 박혀 있으면 한쪽이
-    # 조용히 빈 장바구니가 되고 유형 C 전부가 무력화된다.
-    blob = repr(people)
-    check("페르소나에 localStorage 키가 박히지 않음",
-          "moji_cart" not in blob)
-    check("변형별 장바구니 키가 갈림",
-          config.cart_key("clean") != config.cart_key("buggy"))
-
-
-# ── 6. 탐색 루프 (브라우저 불필요) ─────────────────────────────────
-
-def _st(n, url, typ, target=None):
-    return {"step": n, "thought": "t", "action": {"type": typ, "target": target},
-            "outcome": {"url_after": url}, "blocked_action": None}
+    # 목표 문자열도 답사자와 같은 필터를 통과해야 한다.
+    site_map = {"pages": [{"path": "/index.html", "title": "MOJI STORE",
+                           "layout": "상단 헤더, 상품 그리드",
+                           "elements": [{"name": "장바구니", "where": "우측 상단"}]}]}
+    ok, warns = GEN.check_goal("코튼 셔츠를 장바구니에 담아 주문까지 마친다", site_map)
+    check("정상 목표는 통과", ok == [])
+    bad, _ = GEN.check_goal("결제 버튼이 작동하지 않는지 확인한다", site_map)
+    check("결함을 알려주는 목표는 거부", any("판단 표현" in x for x in bad))
+    zh, _ = GEN.check_goal("把商品加入购物车并完成结算", site_map)
+    check("한국어가 아닌 목표는 거부", any("한국어가 아닌" in x for x in zh))
+    _, w = GEN.check_goal("반품 신청서를 작성한다", site_map)
+    check("지도에 없는 기능은 경고", any("확인되지 않은" in x for x in w))
 
 
 def test_explore() -> None:
@@ -286,10 +292,18 @@ def test_explore() -> None:
     # 끝내겠다는 의사 표시는 목록과 무관하게 막을 수 없다.
     check("포기는 언제나 허용", E.check_allowed({"type": "give_up"}, novice) is None)
 
-    many = [_st(i, a, "scroll") for i in range(1, 11)]
-    lines = E.history_block(many).count(chr(10)) + 1
-    check("이력은 최근 3스텝만", lines == config.HISTORY_WINDOW,
-          "%d줄 (창 %d)" % (lines, config.HISTORY_WINDOW))
+    # 이력은 '맨 앞 + 최근'이다. 뒤에서만 자르면 목표를 이룬 결정적 행동이
+    # 먼저 밀려나 맴돌이가 난다 (실측: G11 목표 4명 전원 맴돌이).
+    many = [_st(i, a, "click", "b%d" % i) for i in range(1, 21)]
+    txt = E.history_block(many)
+    lines = txt.count(chr(10)) + 1
+    cap = config.HISTORY_HEAD + config.HISTORY_WINDOW + 1   # +1 은 '생략' 줄
+    check("이력 길이가 상한 이내", lines <= cap, "%d줄 (상한 %d)" % (lines, cap))
+    check("맨 앞 스텝은 항상 남는다", txt.startswith("1. "))
+    check("최근 스텝도 남는다", "20." in txt)
+    check("가운데는 접힌다", "생략" in txt)
+    check("짧으면 통째로 보여준다",
+          E.history_block(many[:3]).count(chr(10)) + 1 == 3)
 
 
 # ── 7. 답사 페르소나 (브라우저 불필요) ─────────────────────────────

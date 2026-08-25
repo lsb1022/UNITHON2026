@@ -28,21 +28,35 @@ class Usage:
         self.calls = 0
         self.tok_in = 0
         self.tok_out = 0
+        # 모델별로 나눠 센다. 답사는 비전 모델, 탐색은 flash 로 단가가 다른데
+        # 하나로 뭉뚱그리면 금액이 통째로 틀린다 (실제로 22배 부풀려 찍혔다).
+        self.by_model: dict[str, list[int]] = {}
 
-    def add(self, resp) -> None:
+    def add(self, resp, model_name: str | None = None) -> None:
         self.calls += 1
         u = getattr(resp, "usage", None)
         if u is None:
             return
-        self.tok_in += getattr(u, "prompt_tokens", 0) or 0
-        self.tok_out += getattr(u, "completion_tokens", 0) or 0
+        i = getattr(u, "prompt_tokens", 0) or 0
+        o = getattr(u, "completion_tokens", 0) or 0
+        self.tok_in += i
+        self.tok_out += o
+        key = model_name or getattr(resp, "model", None) or "(모름)"
+        row = self.by_model.setdefault(key, [0, 0])
+        row[0] += i
+        row[1] += o
 
     def as_dict(self, provider_name: str | None = None) -> dict:
+        cost = sum(config.estimate_cost(i, o, provider_name, m)
+                   for m, (i, o) in self.by_model.items())
+        if not self.by_model:      # usage 를 안 주는 프로바이더 대비
+            cost = config.estimate_cost(self.tok_in, self.tok_out, provider_name)
         return {
             "calls": self.calls,
             "tokens_in": self.tok_in,
             "tokens_out": self.tok_out,
-            "cost_usd": config.estimate_cost(self.tok_in, self.tok_out, provider_name),
+            "cost_usd": round(cost, 6),
+            "by_model": {m: {"in": i, "out": o} for m, (i, o) in self.by_model.items()},
         }
 
 
@@ -188,7 +202,7 @@ def chat_json(
                 continue
 
         if usage is not None:
-            usage.add(resp)
+            usage.add(resp, model)
         try:
             return extract_json(resp.choices[0].message.content)
         except LLMError as e:

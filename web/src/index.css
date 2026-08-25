@@ -1,5 +1,14 @@
 @import 'tailwindcss';
 
+/* 화면 기본 배율.
+   디자인이 넓게 잡혀 있어 100% 에서는 한 화면에 다 들어오지 않는다.
+   브라우저에서 Ctrl+- 를 두 번 누른 상태(80%)를 기본으로 삼는다.
+   zoom 은 레이아웃 계산까지 함께 줄여서 transform: scale 과 달리
+   스크롤 영역과 고정 요소가 어긋나지 않는다.
+   되돌리려면 이 블록만 지우면 된다. */
+html {
+  zoom: 0.8;
+}
 /* Figma 변수(94tQpJoJlr5FxH9KciQSeA)를 그대로 옮긴 디자인 토큰 */
 @theme {
   --color-white: #ffffff; /* 하양 */

@@ -1,0 +1,282 @@
+{
+  "variant": "clean",
+  "root": "http://localhost:8000/ux-testbed/clean",
+  "generated_at": "2026-08-25T16:39:27",
+  "pages": [
+    {
+      "path": "/index.html",
+      "template": "/ux-testbed/clean/index.html",
+      "title": "MOJI STORE — 기본에 충실한 옷",
+      "found_by": "link",
+      "layout": "상단에 상단 안내 띠와 로고, 카테고리 메뉴, 장바구니 링크가 있고, 중앙에는 메인 히어로 배너와 전체 상품 보기 버튼, 하단에는 이번 주 인기 상품 목록이 카드로 배치되어 있습니다.",
+      "elements": [
+        {
+          "name": "MOJI",
+          "type": "링크",
+          "where": "상단 좌측"
+        },
+        {
+          "name": "홈",
+          "type": "링크",
+          "where": "상단 카테고리"
+        },
+        {
+          "name": "전체 상품",
+          "type": "링크",
+          "where": "상단 카테고리"
+        },
+        {
+          "name": "상의",
+          "type": "링크",
+          "where": "상단 카테고리"
+        },
+        {
+          "name": "하의",
+          "type": "링크",
+          "where": "상단 카테고리"
+        },
+        {
+          "name": "신발",
+          "type": "링크",
+          "where": "상단 카테고리"
+        },
+        {
+          "name": "액세서리",
+          "type": "링크",
+          "where": "상단 카테고리"
+        },
+        {
+          "name": "🛒 장바구니 장바구니 (비어 있음)",
+          "type": "링크",
+          "where": "상단 우측"
+        },
+        {
+          "name": "전체 상품 보기",
+          "type": "링크",
+          "where": "중앙 메인 배너"
+        },
+        {
+          "name": "전체 12개 상품 보기",
+          "type": "링크",
+          "where": "인기 상품 섹션 우측 상단"
+        },
+        {
+          "name": "SALE 미니멀 레더 스니커즈 89,000원 119,000원 25% 할인 별점 4.8 / 5 · 리뷰 341개",
+          "type": "링크",
+          "where": "인기 상품 목록 첫 번째"
+        },
+        {
+          "name": "캔버스 토트백 29,000원 별점 4.5 / 5 · 리뷰 210개",
+          "type": "링크",
+          "where": "인기 상품 목록 두 번째"
+        },
+        {
+          "name": "BEST 스웨이드 첼시 부츠 129,000원 159,000원 19% 할인 별점 4.9 / 5 · 리뷰 187개",
+          "type": "링크",
+          "where": "인기 상품 목록 세 번째"
+        },
+        {
+          "name": "니트 비니 19,000원 별점 4.4 / 5 · 리뷰 143개",
+          "type": "링크",
+          "where": "인기 상품 목록 네 번째"
+        }
+      ],
+      "links_to": [
+        "/ux-testbed/clean/product.html"
+      ],
+      "steps": null
+    },
+    {
+      "path": "/product.html?id=3",
+      "template": "/ux-testbed/clean/product.html",
+      "title": "미니멀 레더 스니커즈 — MOJI STORE",
+      "found_by": "scout",
+      "layout": "상단에 네비게이션 바가 위치하고, 중앙 좌측에는 상품 이미지, 우측에는 상품 정보, 가격, 색상/사이즈 옵션 선택 영역, 수량 조절 및 구매 버튼이 배치되어 있습니다. 하단에는 상품 설명, 사이즈 가이드, 배송 안내 등의 상세 정보 접힘 영역이 있습니다.",
+      "elements": [
+        {
+          "name": "MOJI 로고",
+          "type": "링크",
+          "where": "상단 좌측"
+        },
+        {
+          "name": "카테고리 메뉴(홈, 전체 상품, 상의, 하의, 신발, 액세서리)",
+          "type": "링크",
+          "where": "상단 중앙"
+        },
+        {
+          "name": "장바구니",
+          "type": "링크",
+          "where": "상단 우측"
+        },
+        {
+          "name": "사이즈 가이드 보기",
+          "type": "링크",
+          "where": "우측 옵션 영역"
+        },
+        {
+          "name": "수량 감소 버튼",
+          "type": "버튼",
+          "where": "우측 수량 조절 영역"
+        },
+        {
+          "name": "수량 입력 필드",
+          "type": "입력 칸",
+          "where": "우측 수량 조절 영역"
+        },
+        {
+          "name": "수량 증가 버튼",
+          "type": "버튼",
+          "where": "우측 수량 조절 영역"
+        },
+        {
+          "name": "장바구니에 담기",
+          "type": "버튼",
+          "where": "우측 하단"
+        },
+        {
+          "name": "바로 구매하기",
+          "type": "버튼",
+          "where": "우측 하단"
+        },
+        {
+          "name": "상품 설명",
+          "type": "접힘 메뉴",
+          "where": "하단"
+        },
+        {
+          "name": "사이즈 가이드",
+          "type": "접힘 메뉴",
+          "where": "하단"
+        },
+        {
+          "name": "배송 · 반품 안내",
+          "type": "접힘 메뉴",
+          "where": "하단"
+        }
+      ],
+      "links_to": [
+        "/ux-testbed/clean/cart.html"
+      ],
+      "steps": null
+    },
+    {
+      "path": "/cart.html",
+      "template": "/ux-testbed/clean/cart.html",
+      "title": "장바구니 — MOJI STORE",
+      "found_by": "scout",
+      "layout": "상단에 상단 네비게이션 바가 위치하고, 본문 좌측에 장바구니에 담긴 상품 목록과 수량 조절 및 삭제 버튼이 있으며, 우측에 결제 금액 요약 정보와 결제하기 버튼이 구성되어 있습니다.",
+      "elements": [
+        {
+          "name": "MOJI",
+          "type": "링크",
+          "where": "상단 좌측"
+        },
+        {
+          "name": "네비게이션 메뉴(홈, 전체 상품, 상의, 하의, 신발, 액세서리)",
+          "type": "링크",
+          "where": "상단 중앙"
+        },
+        {
+          "name": "장바구니",
+          "type": "링크",
+          "where": "상단 우측"
+        },
+        {
+          "name": "미니멀 레더 스니커즈",
+          "type": "링크",
+          "where": "본문 좌측"
+        },
+        {
+          "name": "수량 감소 (-)",
+          "type": "버튼",
+          "where": "본문 좌측"
+        },
+        {
+          "name": "수량 입력 필드",
+          "type": "입력칸",
+          "where": "본문 좌측"
+        },
+        {
+          "name": "수량 증가 (+)",
+          "type": "버튼",
+          "where": "본문 좌측"
+        },
+        {
+          "name": "삭제",
+          "type": "버튼",
+          "where": "본문 좌측 우측 끝"
+        },
+        {
+          "name": "89,000원 결제하기",
+          "type": "링크",
+          "where": "본문 우측 하단"
+        }
+      ],
+      "links_to": [
+        "/ux-testbed/clean/checkout.html"
+      ],
+      "steps": null
+    },
+    {
+      "path": "/checkout.html",
+      "template": "/ux-testbed/clean/checkout.html",
+      "title": "주문/결제 — MOJI STORE",
+      "found_by": "scout",
+      "layout": "상단에 브랜드 로고 및 상단 메뉴가 위치하며, 본문 좌측에는 주문 방식 선택, 주문자 정보, 배송지 정보 및 결제 수단 선택 폼이, 우측에는 주문 요약 정보 카드와 장바구니 돌아가기 버튼이 위치합니다.",
+      "elements": [
+        {
+          "name": "MOJI 로고",
+          "type": "링크",
+          "where": "상단 좌측"
+        },
+        {
+          "name": "비회원으로 주문하기",
+          "type": "라디오 버튼",
+          "where": "본문 좌측 주문 방식 영역"
+        },
+        {
+          "name": "회원으로 주문하기",
+          "type": "라디오 버튼",
+          "where": "본문 좌측 주문 방식 영역"
+        },
+        {
+          "name": "이름 입력 칸",
+          "type": "입력 칸",
+          "where": "본문 좌측 주문자 정보 영역"
+        },
+        {
+          "name": "휴대폰 번호 입력 칸",
+          "type": "입력 칸",
+          "where": "본문 좌측 주문자 정보 영역"
+        },
+        {
+          "name": "이메일 입력 칸",
+          "type": "입력 칸",
+          "where": "본문 좌측 주문자 정보 영역"
+        },
+        {
+          "name": "우편번호 찾기",
+          "type": "버튼",
+          "where": "본문 좌측 배송지 정보 영역"
+        },
+        {
+          "name": "장바구니로 돌아가기",
+          "type": "링크",
+          "where": "본문 우측 주문 요약 영역"
+        },
+        {
+          "name": "89,000원 결제하기",
+          "type": "버튼",
+          "where": "본문 하단 결제 영역"
+        }
+      ],
+      "links_to": [],
+      "steps": null
+    }
+  ],
+  "unreached": [
+    "/list.html",
+    "/complete.html"
+  ],
+  "structure": "MOJI STORE — 기본에 충실한 옷 → 미니멀 레더 스니커즈 — MOJI STORE → 장바구니 — MOJI STORE → 주문/결제 — MOJI STORE"
+}

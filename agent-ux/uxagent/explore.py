@@ -44,6 +44,8 @@ SYSTEM = """당신은 지금 어떤 온라인 쇼핑몰을 쓰고 있는 사람�
 [행동]
 - 한 번에 하나만 합니다.
 - 요소는 반드시 목록에 있는 이름(link_3, button_1 …)으로 지목합니다.
+- [radio] [checkbox] 는 click 으로 고릅니다. type 은 글자를 넣는 칸에만 씁니다.
+- 같은 행동이 실패하면 그대로 반복하지 말고 다른 방법을 쓰세요.
 - 목표를 이뤘으면 done, 더는 못 하겠으면 give_up 을 쓰세요.
   못 하겠으면 참지 말고 give_up 을 쓰는 편이 낫습니다.
 
@@ -164,7 +166,10 @@ def mock_decide(persona: dict, snap: dict, steps: list[dict]) -> dict:
 
 # ── 행동 실행 ─────────────────────────────────────────────────────
 
-async def execute(page, action: dict, root: str) -> dict:
+CLICKABLE_INPUTS = ("radio", "checkbox")
+
+
+async def execute(page, action: dict, root: str, element: dict | None = None) -> dict:
     """행동 하나를 수행하고 결과를 돌려준다. 예외를 밖으로 내보내지 않는다.
 
     실패도 결과다. '눌렀는데 아무 일도 안 일어났다'는 마찰의 기록이지
@@ -177,7 +182,21 @@ async def execute(page, action: dict, root: str) -> dict:
     before = page.url
     note = ""
 
+    # 라디오·체크박스에 글자를 넣으려 하면 Playwright 가 거부한다. 이건 사이트의
+    # 마찰이 아니라 지목 방식의 불일치이므로 클릭으로 바꿔 수행하고 기록에 남긴다.
+    # (실제로 겪음: 모델이 라디오에 type 을 5번 반복하다 답사가 끝났다.)
+    if t == "type" and element and element.get("input_type") in CLICKABLE_INPUTS:
+        t = "click"
+        note = "%s 라서 입력 대신 선택으로 처리" % element["input_type"]
+
     try:
+        # 값 없는 입력은 수행하지 않는다. fill("") 은 성공하면서 칸을 지우기 때문에
+        # '아무 일도 안 일어났다'만 돌아오고, 모델은 자기가 헛일을 하는지 모른다.
+        # (실제로 겪음: 값 없는 type 을 12번 반복하다 답사가 끝났다.)
+        if t == "type" and not str(value or "").strip():
+            return {"url_after": before, "changed": False,
+                    "note": "입력할 값이 없어 실행하지 않았습니다. value 를 함께 주세요"}
+
         if t == "click":
             if not sel:
                 return {"changed": False, "note": "지목한 요소가 없습니다"}
@@ -216,8 +235,11 @@ async def execute(page, action: dict, root: str) -> dict:
         pass
 
     after = page.url
-    return {"url_after": after, "changed": after != before,
-            "note": note or ("" if after != before else "화면이 바뀌지 않았습니다")}
+    changed = after != before
+    if note and changed:
+        return {"url_after": after, "changed": True, "note": note}
+    return {"url_after": after, "changed": changed,
+            "note": note or ("" if changed else "화면이 바뀌지 않았습니다")}
 
 
 _ERR = re.compile(r"^\s*([^\n]{0,120})")

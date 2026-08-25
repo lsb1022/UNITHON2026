@@ -159,7 +159,9 @@ async def run(args) -> int:
 
             if action.get("target"):
                 visited.add((snap["url"], action["target"]))
-            outcome = await explore.execute(page, action, root)
+            el = next((e for e in snap["elements"]
+                       if e["id"] == action.get("target")), None)
+            outcome = await explore.execute(page, action, root, el)
             steps.append({"n": n, "url": snap["url"], "title": snap["title"],
                           "thought": out["thought"], "action": action,
                           "recorded": bool(is_new and record),
@@ -172,6 +174,26 @@ async def run(args) -> int:
             if not args.quiet:
                 tgt = (" " + action["target"]) if action.get("target") else ""
                 print("  [%2d] %s%s — %s" % (n, action["type"], tgt, out["thought"][:60]))
+
+            # 맴돌면 다음 미기록 화면으로 강제 이동한다.
+            # 답사자의 일은 '사람 흉내'가 아니라 '지도 완성'이라, 막혔을 때
+            # 순간이동시키는 편이 낫다. 페르소나에게는 절대 허용하지 않는다.
+            last3 = [(x["action"]["type"], x["action"].get("target"))
+                     for x in steps[-3:]]
+            if len(last3) == 3 and len(set(last3)) == 1:
+                nxt = [t for t in todo_all if t["key"] not in pages]
+                if nxt:
+                    dest = root.rstrip("/") + nxt[0]["path"]
+                    print("  [%2d] 같은 행동 3회 반복 → %s 로 건너뜁니다"
+                          % (n, nxt[0]["path"]))
+                    await page.goto(dest, timeout=config.STEP_TIMEOUT_MS)
+                    steps.append({"n": n, "url": page.url, "title": snap["title"],
+                                  "thought": "(막혀서 다음 화면으로 건너뜀)",
+                                  "action": {"type": "goto", "target": nxt[0]["path"]},
+                                  "recorded": False, "note": "맴돌이 탈출"})
+                    continue
+                stop = "loop"
+                break
 
             if dry >= args.dry_rounds:
                 stop = "dry"

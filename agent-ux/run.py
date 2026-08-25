@@ -121,7 +121,9 @@ async def run_persona(browser, person: dict, site_map: dict | None, root: str,
             elif action["type"] == "give_up":
                 outcome = {"changed": False, "url_after": page.url, "note": "포기"}
             else:
-                outcome = await explore.execute(page, action, root)
+                el = next((e for e in snap["elements"]
+                           if e["id"] == action.get("target")), None)
+                outcome = await explore.execute(page, action, root, el)
 
             tr.add(T.step(
                 n, thought=thought, action=action, snapshot=T.slim(snap),

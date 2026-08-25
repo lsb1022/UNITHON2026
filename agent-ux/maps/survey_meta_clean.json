@@ -1,23 +1,27 @@
 {
   "variant": "clean",
-  "generated_at": "2026-08-25T14:46:42",
+  "generated_at": "2026-08-25T16:43:48",
   "surveyor": "scout",
-  "provider": null,
-  "model": null,
-  "mock": true,
+  "provider": "gemini",
+  "model": "gemini-3.6-flash",
+  "model_fallbacks": [
+    "gemini-3.5-flash",
+    "gemini-3.1-flash-lite"
+  ],
+  "mock": false,
   "viewport": {
     "width": 1280,
     "height": 800
   },
-  "steps": 41,
-  "stop_reason": "dry",
-  "screenshots": 41,
+  "steps": 19,
+  "stop_reason": "done",
+  "screenshots": 19,
   "pages": 6,
   "unreached": [],
   "usage": {
-    "calls": 0,
-    "tokens_in": 0,
-    "tokens_out": 0,
-    "cost_usd": 0.0
+    "calls": 19,
+    "tokens_in": 50036,
+    "tokens_out": 4166,
+    "cost_usd": 0.150064
   }
 }

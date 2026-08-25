@@ -20,18 +20,21 @@ PROVIDERS = {
         "key_env": "GEMINI_API_KEY",
         # 한 모델이 과부하(503)면 같은 등급의 다른 모델로 넘어간다.
         # 답사는 40스텝을 이어 달려야 해서 한 번의 일시 장애로 죽으면 안 된다.
+        # 2026-08-25 실측 지연: 3.6-flash 3.8초 / 3.5-flash 3.1초 /
+        # 3.1-flash-lite 2.7초 / **3.7-flash 176초(혼잡)** / 2.5 계열은 이 키에서 404.
+        # 같은 등급이라도 그날 혼잡한 모델이 있다. 대체 목록의 값어치가 여기 있다.
         "fallbacks": {
-            "survey":  ["gemini-3.6-flash", "gemini-3.5-flash", "gemini-2.5-flash"],
-            "explore": ["gemini-3.6-flash", "gemini-3.5-flash", "gemini-2.5-flash"],
-            "goals":   ["gemini-3.7-flash", "gemini-3.6-flash"],
-            "analyze": ["gemini-3.7-flash", "gemini-3.6-flash"],
+            "survey":  ["gemini-3.5-flash", "gemini-3.1-flash-lite"],
+            "explore": ["gemini-3.5-flash", "gemini-3.1-flash-lite"],
+            "goals":   ["gemini-3.5-flash", "gemini-3.1-flash-lite"],
+            "analyze": ["gemini-3.5-flash", "gemini-3.1-flash-lite"],
         },
         # 답사(비전). pro 는 이미지 한 장에 약 47초라 41스텝이면 30분이 넘고,
         # 실측 서술 품질도 flash 가 오히려 더 자세했다 (2026-08-25 비교).
         # 답사는 스텝마다 이미지를 보내므로 속도가 곧 실행 가능성이다.
-        "model_survey":  "gemini-3.7-flash",
-        "model_goals":   "gemini-3.1-pro-preview",  # 목표 생성. 호출 3회 미만
-        "model_explore": "gemini-3.7-flash",        # 탐색 루프. 스텝마다 호출 → 저가
+        "model_survey":  "gemini-3.6-flash",
+        "model_goals":   "gemini-3.6-flash",        # 목표 생성. 호출 3회 미만
+        "model_explore": "gemini-3.6-flash",        # 탐색 루프. 스텝마다 호출 → 저가
         "model_analyze": "gemini-3.1-pro-preview",  # 사후 분석. 실행당 1회
         # 100만 토큰당 USD. 2026-08-25 웹 조사 기준이며 **콘솔 확인 전**이다.
         # Gemini 3.1 Pro 가 $2/$12 로 조사돼 탐색 루프에 쓰면 안 되는 단가다
@@ -105,9 +108,14 @@ TEMP_ANALYZE = 0.0
 
 # 429(잔액)·503(과부하)·타임아웃이 잦다. 503 은 몇 초 뒤면 풀리는 경우가 많아
 # 짧은 백오프로 포기하면 멀쩡한 실행이 통째로 죽는다 (2026-08-25 실제로 겪음).
-MAX_RETRIES = 5
-RETRY_BACKOFF = (2, 5, 12, 25, 45)   # 초. 인덱스가 시도 횟수
-REQUEST_TIMEOUT = 120.0  # 비전 호출은 텍스트보다 오래 걸린다
+# 대체 모델이 여러 개이므로 한 모델에 오래 매달릴 이유가 없다.
+# 재시도 5회 x 백오프 45초 x 모델 4개면 한 스텝에 최악 40분이 나온다
+# (2026-08-25 실제로 겪음 — 답사가 15분간 멈춰 있었다).
+MAX_RETRIES = 3
+RETRY_BACKOFF = (2, 5, 12)   # 초. 인덱스가 시도 횟수
+# 비전 호출은 텍스트보다 오래 걸리지만, 120초는 '망이 끊겼는데 기다리는' 시간이
+# 되기 쉽다. 스크린샷 한 장(약 120KB)은 정상이면 10초 안에 돌아온다.
+REQUEST_TIMEOUT = 60.0
 
 
 def estimate_cost(tok_in: int, tok_out: int, name: str | None = None) -> float:

@@ -71,6 +71,7 @@ async def run_persona(browser, person: dict, site_map: dict | None, target: dict
     '처음 온 사람'이 앞사람의 장바구니를 물려받는다.
     """
     root = target["root"]
+    expect = (person.get("expect") or "").strip()
     ctx = await browser.new_context(viewport=config.VIEWPORT)
     page = await ctx.new_page()
     tr = T.Trace(run_id, person, target["name"])
@@ -131,7 +132,23 @@ async def run_persona(browser, person: dict, site_map: dict | None, target: dict
                 outcome = {"changed": False, "url_after": page.url,
                            "note": "허용되지 않은 행동이라 하지 않았습니다"}
             elif action["type"] == "done":
-                outcome = {"changed": False, "url_after": page.url, "note": "목표를 이뤘다고 판단"}
+                # **본인 말만 믿지 않는다.**
+                # 모델은 화면에서 못 찾으면 자기가 아는 지식으로 메우고 '달성'을
+                # 외친다. 실측: 위키백과에서 "표어는 진리와 봉사"라고 달성 선언한
+                # 사람이 넷이었는데 그 글자는 어떤 화면에도 없었고, 심지어 답도
+                # 틀렸다(그건 건학이념이다). 확인할 말을 미리 받아두면 코드가
+                # 대조할 수 있다.
+                seen_text = " ".join(
+                    st["snapshot"].get("visible_text") or "" for st in tr.steps)
+                seen_text += " " + (snap.get("visible_text") or "")
+                if expect and expect not in seen_text:
+                    end_reason = "claimed_unverified"
+                    note = ("본인은 달성이라고 했지만 화면에 %r 가 나온 적이 없습니다"
+                            % expect)
+                    outcome = {"changed": False, "url_after": page.url, "note": note}
+                else:
+                    outcome = {"changed": False, "url_after": page.url,
+                               "note": "목표를 이뤘다고 판단"}
             elif action["type"] == "give_up":
                 outcome = {"changed": False, "url_after": page.url, "note": "포기"}
             else:
@@ -189,7 +206,9 @@ async def run_persona(browser, person: dict, site_map: dict | None, target: dict
                          "  ⨯차단" if blocked else "", thought[:70]), flush=True)
 
             if action["type"] == "done":
-                end_reason = "goal_reached"
+                # 위에서 근거를 못 찾았으면 이미 claimed_unverified 로 정해져 있다.
+                if end_reason != "claimed_unverified":
+                    end_reason = "goal_reached"
                 break
             if action["type"] == "give_up":
                 end_reason = "gave_up"
@@ -240,6 +259,7 @@ async def main_async(args) -> int:
         goal = args.goal.strip()
     for p in people:
         p["goal"] = goal
+        p["expect"] = args.expect
         p.setdefault("start_path", start_path)
         # 목표는 사람 소개글(prompt) 맨 끝 줄에도 박혀 있고, 프롬프트에 실제로
         # 들어가는 것은 그쪽이다. 여기를 안 고치면 --goal 을 줘도 페르소나는
@@ -387,6 +407,10 @@ async def main_async(args) -> int:
 def main() -> int:
     ap = argparse.ArgumentParser(description="페르소나 실행기 — 탐색 루프")
     ap.add_argument("--variant", default="buggy", choices=sorted(config.SITE_DIRS))
+    ap.add_argument("--expect", default="",
+                    help="달성을 인정할 근거 문자열. 이 글자가 그 사람 화면에 한 번도 "
+                         "안 나왔으면 달성으로 세지 않는다(claimed_unverified). "
+                         "모델이 자기 지식으로 답을 메우는 것을 막는다.")
     ap.add_argument("--site-kind", default="", choices=["", "commerce", "general"],
                     help="검색 제한을 걸지 정한다. commerce 면 숙련도 낮은 사람의 "
                          "검색을 막는다(상품명을 치면 길찾기가 통째로 사라지므로). "

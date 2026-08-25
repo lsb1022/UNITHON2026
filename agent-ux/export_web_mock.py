@@ -24,7 +24,10 @@ for _s in (sys.stdout, sys.stderr):
         pass
 
 WEB_OUT = os.path.join("..", "web", "src", "api", "mock-data.ts")
-END_LABEL = {"goal_reached": "달성", "gave_up": "포기", "max_steps": "스텝 소진",
+END_LABEL = {"goal_reached": "달성",
+             # 본인은 달성이라 했지만 근거가 화면에 없던 경우. 달성으로 세지 않는다.
+             "claimed_unverified": "근거 없음",
+             "gave_up": "포기", "max_steps": "스텝 소진",
              "loop_detected": "맴돌다 중단", "budget_stop": "예산 상한", "error": "오류"}
 
 

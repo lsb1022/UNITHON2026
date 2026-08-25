@@ -51,6 +51,8 @@ def template_key(url: str) -> str:
     /product/44        -> /product/{id}
     쿼리에 STATE_PARAMS 밖의 키가 있으면 그건 다른 화면일 수 있으니 남긴다.
     """
+    # 조각(#목차)은 같은 문서 안의 위치라 화면이 아니다. 떼지 않으면
+    # '숭실대학교' 와 '숭실대학교#' 가 서로 다른 화면으로 세어진다.
     s = urlsplit(url)
     keep = [(k, v) for k, v in parse_qsl(s.query) if k not in STATE_PARAMS]
     path = s.path or "/"

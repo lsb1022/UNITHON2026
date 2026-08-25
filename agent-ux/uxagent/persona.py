@@ -102,6 +102,16 @@ URL_ACTION = "goto"
 COMPARE_CAP = {1: 1, 2: 2, 3: 0, 4: 0, 5: 0}
 
 
+def _balanced_over(values: tuple, n: int, rng: random.Random) -> list:
+    """값을 고르게 나눠 담고 섞는다. 나머지는 앞에서부터 하나씩 더 준다."""
+    q, r = divmod(n, len(values))
+    out = []
+    for i, v in enumerate(values):
+        out += [v] * (q + (1 if i < r else 0))
+    rng.shuffle(out)
+    return out
+
+
 def _balanced(n: int, rng: random.Random) -> list[int]:
     """1~5 를 정확히 n/5 명씩. 남는 인원은 앞 값부터 하나씩."""
     per, rest = divmod(n, 5)
@@ -142,9 +152,25 @@ def label(traits: dict) -> str:
     return "숙련%d·주의%d·인내%d·탐색%d" % tuple(traits[a] for a in AXES)
 
 
-def build_prompt(traits: dict, goal: str) -> str:
-    """특성 문장 4줄 + 목표 1줄. 서사는 넣지 않는다."""
-    lines = [SENTENCES[a][traits[a]] for a in AXES]
+# ── 나이·성별 ──────────────────────────────────────────────────────
+#
+# 서비스에서 사용자가 "20대 40명, 30대 30명…" 하고 정해 넣는 값이다. 받아놓고
+# 버리면 화면이 묻는 것과 실제로 돌린 것이 어긋난다.
+#
+# **행동 4축과 독립으로 붙인다.** '숙련도가 낮으니 60대'처럼 그럴듯하게 짝지으면
+# 나중에 결과에서 "고연령층이 실패했다"가 나온다. 그건 발견이 아니라 우리가
+# 미리 심어놓은 것이다. 독립으로 두어야 상관관계가 나왔을 때 그게 진짜다.
+AGE_BANDS = ("10대", "20대", "30대", "40대", "50대", "60대 이상")
+GENDERS = ("남성", "여성")
+
+
+def build_prompt(traits: dict, goal: str, who: str = "") -> str:
+    """특성 문장 4줄 + 목표 1줄. 서사는 넣지 않는다.
+
+    나이·성별은 한 줄로만 붙인다. 사연까지 붙이면 모델이 그 사연에 맞는 연기를
+    시작하고, 그때부터는 화면을 겪는 것이 아니라 배역을 수행하게 된다.
+    """
+    lines = ([who] if who else []) + [SENTENCES[a][traits[a]] for a in AXES]
     return "\n".join(lines) + "\n목표: %s" % goal
 
 
@@ -152,9 +178,17 @@ def build(goal: str, start_path: str, n: int = config.N_PERSONAS,
           seed: int = config.PERSONA_SEED) -> list[dict]:
     """목표는 전원 동일. 사람마다 다른 것은 특성과 거기서 파생된 제약뿐이다."""
     rng = random.Random(seed + 1)
+    # 나이·성별은 **따로 뽑는다.** 위 rng 를 같이 쓰면 난수 흐름이 밀려서
+    # 이미 돌린 100명의 체류시간·인내심이 통째로 바뀌고, 앞선 실행과 비교가
+    # 깨진다. 새 씨앗을 쓰면 기존 값은 한 자리도 안 움직인다.
+    who_rng = random.Random(seed + 7)
+    ages = _balanced_over(AGE_BANDS, n, who_rng)
+    genders = _balanced_over(GENDERS, n, who_rng)
+
     people = []
     for i, traits in enumerate(combos(n, seed)):
-        prompt = build_prompt(traits, goal)
+        age, gender = ages[i], genders[i]
+        prompt = build_prompt(traits, goal, "%s %s입니다." % (age, gender))
         if len(prompt) > config.PROMPT_MAX_CHARS:
             raise ValueError("프롬프트 %d자 > 상한 %d자: %s"
                              % (len(prompt), config.PROMPT_MAX_CHARS, prompt))
@@ -172,6 +206,10 @@ def build(goal: str, start_path: str, n: int = config.N_PERSONAS,
             "id": "P%03d" % (i + 1),
             "label": label(traits),
             "traits": traits,
+            # 사용자가 화면에서 정하는 값. 행동 규칙은 traits 가 정하고,
+            # 이 둘은 프롬프트에 한 줄로만 들어간다.
+            "age_band": age,
+            "gender": gender,
             # 분석용 묶음. 원본 값은 traits 에 그대로 남는다.
             "bands": {a: ("low" if traits[a] <= 2 else
                           "high" if traits[a] >= 4 else "mid") for a in AXES},

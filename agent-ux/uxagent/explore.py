@@ -471,8 +471,15 @@ def loop_detected(steps: list[dict], url: str) -> bool:
 
     recent = steps[-config.LOOP_THRESHOLD:]
     same_url = all((s.get("outcome") or {}).get("url_after") == url for s in recent)
-    if same_url and len({(s["action"]["type"], s["action"].get("target"))
-                         for s in recent}) == 1:
+    same_move = len({(s["action"]["type"], s["action"].get("target"))
+                     for s in recent}) == 1
+    # **먹히는 행동을 반복하는 것은 맴도는 것이 아니다.**
+    # 긴 문서를 읽으려면 스크롤을 계속 내려야 하는데, 예전에는 세 번만 내리면
+    # 맴돌이로 끊겼다 (실측: 12,440px 짜리 위키 문서에서 1,280px 지점에 끊김 —
+    # 세 명 전원이 표어를 찾기도 전에 중단됐다). 같은 URL 에서 같은 행동을
+    # 반복하더라도 매번 화면이 실제로 달라졌다면 앞으로 가고 있는 것이다.
+    made_progress = any((s.get("outcome") or {}).get("changed") for s in recent)
+    if same_url and same_move and not made_progress:
         return True
 
     window = steps[-(config.LOOP_THRESHOLD * 2):]
@@ -480,6 +487,10 @@ def loop_detected(steps: list[dict], url: str) -> bool:
         return False
     counts = {}
     for s in window:
+        # 여기서도 같은 이유로, 화면을 실제로 바꾼 행동은 세지 않는다.
+        # 긴 문서를 여섯 번 내리면 왕복 검사에도 걸렸다.
+        if (s.get("outcome") or {}).get("changed"):
+            continue
         k = _key(s)
         counts[k] = counts.get(k, 0) + 1
-    return max(counts.values()) >= config.LOOP_THRESHOLD
+    return bool(counts) and max(counts.values()) >= config.LOOP_THRESHOLD

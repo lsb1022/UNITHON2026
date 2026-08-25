@@ -39,3 +39,6 @@ dist/
 # 확인용으로 찍은 화면. 결과물이 아니라 작업 중 눈으로 본 것들이다.
 agent-ux/*.png
 testbed-comparison.html
+
+# 페르소나 규격을 바꾸기 전에 뜬 사본. 되돌릴 일이 있으면 git 에서 꺼낸다.
+agent-ux/personas/*.bak

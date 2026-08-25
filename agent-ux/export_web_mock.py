@@ -28,6 +28,24 @@ END_LABEL = {"goal_reached": "달성", "gave_up": "포기", "max_steps": "스텝
              "loop_detected": "맴돌다 중단", "budget_stop": "예산 상한", "error": "오류"}
 
 
+def persona_book() -> dict:
+    """id → 나이·성별. 기록 파일에는 없다.
+
+    나이·성별은 나중에 넣은 값이라 이미 돌린 실행의 기록에는 안 들어 있다.
+    사람은 id 로 고정돼 있으므로(P001 은 언제나 P001) 규격 파일에서 이어 붙인다.
+    다시 돌리지 않아도 화면이 그 값을 말할 수 있다.
+    """
+    path = os.path.join("personas", "personas.json")
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as f:
+        return {p["id"]: {"age_band": p.get("age_band"), "gender": p.get("gender")}
+                for p in json.load(f)["personas"]}
+
+
+BOOK = None
+
+
 def load_run(run_id: str) -> dict | None:
     path = os.path.join("logs", run_id, "index.json")
     if not os.path.exists(path):
@@ -40,7 +58,10 @@ def load_run(run_id: str) -> dict | None:
             t = json.load(f)
         first = t["steps"][0]["thought"] if t["steps"] else ""
         last = t["steps"][-1]["thought"] if t["steps"] else ""
+        who = (BOOK or {}).get(p["id"], {})
         people.append({
+            "age_band": who.get("age_band"),
+            "gender": who.get("gender"),
             "journey": journey(t),
             "trail": trail(t),
             # 단계 상세 창이 쓸 원본. 파일로 나갈 때는 떼어낸다 — 통째로
@@ -50,13 +71,21 @@ def load_run(run_id: str) -> dict | None:
             "label": t["persona"].get("label", ""),
             "traits": t["persona"].get("traits", {}),
             "steps": len(t["steps"]),
+            "synthetic": bool(t.get("synthetic")),
             "end": p["end_reason"],
             "endLabel": END_LABEL.get(p["end_reason"], p["end_reason"]),
             "firstThought": first,
             "lastThought": last,
         })
     return {"runId": run_id, "variant": idx.get("variant"),
-            "usage": idx.get("usage", {}), "personas": people}
+            "usage": idx.get("usage", {}), "personas": people,
+            # 추정으로 부풀린 실행인지. 화면이 그대로 말할 수 있어야 한다 —
+            # 실측과 추정이 섞인 걸 숨기면 실측 숫자까지 의심받는다.
+            "synthetic": bool(idx.get("synthetic")),
+            "measuredCount": idx.get("measured_count"),
+            "syntheticCount": idx.get("synthetic_count"),
+            "syntheticNote": idx.get("synthetic_note"),
+            "usageNote": idx.get("usage_note")}
 
 
 SCREEN_LABEL = {
@@ -72,7 +101,9 @@ def screen_key(url: str) -> str:
     (`/w/%EC%88%AD%EC%8B%A4...`). 그대로 두면 화면 이름이 암호가 되므로 푼다.
     """
     from urllib.parse import unquote
-    last = url.split("/")[-1].split("?")[0]
+    # 물음표와 우물정(#) 뒤는 같은 화면 안의 사정이다. 둘 다 떼야
+    # '숭실대학교' 와 '숭실대학교#' 가 한 화면으로 묶인다.
+    last = url.split("/")[-1].split("?")[0].split("#")[0]
     if not last:
         return "index.html"
     try:
@@ -115,6 +146,7 @@ def persona_rows(primary: dict, control: dict | None) -> dict:
         rows.append({
             "id": p["id"], "code": p["id"], "name": p["label"],
             "traits": p.get("traits") or {},
+            "age_band_real": p.get("age_band"), "gender_real": p.get("gender"),
             # 화면의 옛 칸(연령대·성별)에도 값을 넣어둔다 — 표가 바뀌기 전까지 빈칸이 되지 않도록.
             "age_band": p["label"], "gender": "",
             "outcome": "success" if ok(p) else "drop",
@@ -300,6 +332,7 @@ def build_views(run: dict, control: dict | None = None) -> dict:
         r = s.get("resolved") or {}
         return {
             "id": p["id"], "label": p["label"], "traits": p.get("traits") or {},
+            "age_band": p.get("age_band"), "gender": p.get("gender"),
             "outcome": "success" if p["end"] == "goal_reached" else "drop",
             "end_label": p["endLabel"], "total_steps": p["steps"],
             # 그 순간 이 사람이 무슨 생각으로 그것을 눌렀는지.
@@ -323,6 +356,7 @@ def build_views(run: dict, control: dict | None = None) -> dict:
                 if step_no >= len(raw):
                     finished.append({
                         "id": p["id"], "label": p["label"], "traits": p.get("traits") or {},
+                        "age_band": p.get("age_band"), "gender": p.get("gender"),
                         "outcome": "success" if p["end"] == "goal_reached" else "drop",
                         "end_label": p["endLabel"], "total_steps": p["steps"],
                         "thought": (raw[-1].get("thought", "") if raw else ""),
@@ -389,8 +423,54 @@ def build_views(run: dict, control: dict | None = None) -> dict:
             "step_count": p["steps"],
         })
 
+    # ── 재생: 한 사람의 여정을 처음부터 끝까지 ────────────────────
+    #
+    # 단계 상세 창은 "이 순간 여기 있던 사람들"을 가로로 본다. 재생은 반대로
+    # **한 사람을 세로로** 따라간다 — 어디서 헤맸고 언제 포기했는지는 그 사람의
+    # 스텝을 이어서 봐야 보인다.
+    #
+    # 화면마다 사진 한 장을 쓰고, 그 사람이 그 스텝에 있던 스크롤 위치와 누른
+    # 자리를 함께 싣는다. 그러면 화면은 사진을 그 위치로 밀고 표시만 얹으면 된다.
+    replay = {}
+    for p in people:
+        frames = []
+        for i, s in enumerate(p["steps_raw"]):
+            key = screen_key(s["snapshot"]["url"])
+            r = s.get("resolved") or {}
+            snap = s["snapshot"]
+            frames.append({
+                "step": i + 1,
+                "screen": key,
+                "title": SCREEN_LABEL.get(key, key),
+                "shot": shot_of(key),
+                "scroll_y": snap.get("scroll_y") or 0,
+                "viewport": snap.get("viewport") or {"w": 1280, "h": 800},
+                "thought": s.get("thought", ""),
+                "action": (s.get("action") or {}).get("type", ""),
+                "target": (r.get("text") or "")[:30],
+                # 누른 자리(페이지 절대좌표). 없으면 표시할 것이 없다.
+                "box": ({"x": round(r["x"]), "y": round(r["y"]),
+                         "w": round(r["w"]), "h": round(r["h"])} if r else None),
+                "changed": bool((s.get("outcome") or {}).get("changed")),
+                "note": (s.get("outcome") or {}).get("note") or "",
+                "blocked": bool(s.get("blocked_action")),
+                "elapsed_ms": s.get("elapsed_ms"),
+            })
+        replay[p["id"]] = {
+            "id": p["id"], "label": p["label"], "traits": p.get("traits") or {},
+            "age_band": p.get("age_band"), "gender": p.get("gender"),
+            "outcome": "success" if p["end"] == "goal_reached" else "drop",
+            "end_label": p["endLabel"], "steps": len(frames),
+            "synthetic": bool(p.get("synthetic")),
+            "frames": frames,
+        }
+
     return {
         "detail": {
+            "synthetic": bool(run.get("synthetic")),
+            "measured_count": run.get("measuredCount"),
+            "synthetic_count": run.get("syntheticCount"),
+            "synthetic_note": run.get("syntheticNote"),
             "persona_total": len(people),
             "journey_count": len(people),
             "success_rate": round(len(ok) / n * 100, 1),
@@ -405,6 +485,7 @@ def build_views(run: dict, control: dict | None = None) -> dict:
         },
         "diagram": diagram,
         "steps": steps_detail,
+        "replay": replay,
         "filmstrip": filmstrip,
         "personas": persona_rows(run, control),
     }
@@ -453,6 +534,8 @@ def main() -> int:
     with open(os.path.join("personas", "personas.json"), encoding="utf-8") as f:
         pd = json.load(f)
 
+    global BOOK
+    BOOK = persona_book()
     pairs = [("clean", args.clean), ("buggy", args.buggy)]
     for item in args.site:
         if "=" not in item:

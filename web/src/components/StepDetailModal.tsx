@@ -1,6 +1,14 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import type { FilmFrame, StepClick, StepDetail, StepPersona } from '../api/client'
+import type {
+  FilmFrame,
+  PersonaReplay,
+  StepClick,
+  StepDetail,
+  StepPersona,
+} from '../api/client'
 import { ClickHeatmap } from './ClickHeatmap'
+import { PersonaFace, PersonaNameToggle, usePersonaLabel } from './PersonaIdentity'
+import { ReplayStage } from './ReplayStage'
 
 /**
  * 흐름도에서 막대 하나를 누르면 뜨는 창 (Figma 290:11203 / 290:11542).
@@ -23,6 +31,7 @@ export function StepDetailModal({
   axes,
   testName,
   onMove,
+  replay,
   onClose,
 }: {
   detail: StepDetail
@@ -32,11 +41,16 @@ export function StepDetailModal({
   testName: string
   /** 필름 띠의 다른 칸으로 옮긴다. */
   onMove: (id: string) => void
+  /** 페르소나 id → 그 사람의 전체 여정. 주면 왼쪽을 재생으로 갈아끼울 수 있다. */
+  replay?: Record<string, PersonaReplay>
   onClose: () => void
 }) {
   const [open, setOpen] = useState<string | null>(null)
   const [picked, setPicked] = useState<StepClick | null>(null)
   const [playing, setPlaying] = useState(false)
+  // 재생은 **이 창 안에서** 왼쪽만 바꾼다. 창을 하나 더 띄우면 오른쪽 패널이
+  // 가려져서 "그 자리에 누가 또 있었나"를 같이 못 본다.
+  const [replayId, setReplayId] = useState<string | null>(null)
   const strip = useRef<HTMLDivElement>(null)
 
   const at = filmstrip.findIndex((f) => f.id === detail.id)
@@ -49,6 +63,7 @@ export function StepDetailModal({
   useEffect(() => {
     setOpen(null)
     setPicked(null)
+    setReplayId(null)
   }, [detail.id])
 
   useEffect(() => {
@@ -83,6 +98,7 @@ export function StepDetailModal({
   }, [detail.id])
 
   const landed = detail.clicks.length - detail.wasted
+  const replaying = replayId ? replay?.[replayId] : null
 
   // 같은 단계의 다른 화면으로 건너뛴다. 막대 id 는 'c{열}:{화면}' 규칙이라
   // 열 번호를 그대로 쓰고 화면만 갈아 끼우면 된다.
@@ -131,8 +147,16 @@ export function StepDetailModal({
         </header>
 
         <div className="flex min-h-0 flex-1">
-          {/* 왼쪽 — 화면 사진 + 눌린 자리 */}
+          {/* 왼쪽 — 화면 사진 + 눌린 자리. 재생 중이면 그 자리에 무대가 들어온다. */}
           <div className="flex min-w-0 flex-1 flex-col border-r border-line">
+            {replaying ? (
+              <ReplayStage
+                person={replaying}
+                width={SHOT_WIDTH}
+                onExit={() => setReplayId(null)}
+              />
+            ) : (
+            <>
             <div className="flex-1 overflow-auto bg-[#f6f7f9] p-[24px]">
               <div className="mx-auto w-fit">
                 {detail.shot ? (
@@ -211,6 +235,8 @@ export function StepDetailModal({
                 </span>
               </div>
             </div>
+            </>
+            )}
           </div>
 
           {/* 오른쪽 — 이 단계에 열 명이 각각 무엇을 하고 있었나.
@@ -218,14 +244,18 @@ export function StepDetailModal({
               셋을 더하면 언제나 전체 인원이다. 이 화면에 있던 사람만 보여주면
               "10단계에 왜 네 명뿐이지?" 하고 나머지 여섯을 잃어버린다. */}
           <aside className="flex w-[400px] shrink-0 flex-col">
-            <p className="border-b border-line px-[20px] py-[13px] text-[13px] text-subtext">
-              <span className="text-[14px] font-semibold text-heading">
-                {detail.step}단계의 {detail.total}명
+            <div className="flex items-center gap-[10px] border-b border-line px-[20px] py-[13px]">
+              <span className="text-[15px] font-bold text-heading">화면 정보</span>
+              <span className="text-[13px] text-subtext">
+                <span aria-hidden>👤</span> {detail.total}
               </span>
-              <br />
-              이 화면 {detail.personas.length} · 다른 화면 {detail.elsewhere.length} · 이미 끝남{' '}
-              {detail.finished.length}
-            </p>
+              <span className="text-[13px] text-subtext">
+                <span aria-hidden>≡</span> {detail.personas.length}
+              </span>
+              <span className="ml-auto">
+                <PersonaNameToggle />
+              </span>
+            </div>
             <div className="min-h-0 flex-1 overflow-y-auto">
               {detail.personas.map((p) => (
                 <PersonaCard
@@ -235,6 +265,7 @@ export function StepDetailModal({
                   axes={axes}
                   sentences={sentences}
                   open={open === p.id}
+                  onReplay={replay ? setReplayId : undefined}
                   onToggle={() => {
                     const nextOpen = open === p.id ? null : p.id
                     setOpen(nextOpen)
@@ -256,6 +287,7 @@ export function StepDetailModal({
                   axes={axes}
                   sentences={sentences}
                   open={open === p.id}
+                  onReplay={replay ? setReplayId : undefined}
                   onToggle={() => setOpen(open === p.id ? null : p.id)}
                   onJump={p.screen ? () => jumpTo(p.screen as string) : undefined}
                 />
@@ -272,6 +304,7 @@ export function StepDetailModal({
                   axes={axes}
                   sentences={sentences}
                   open={open === p.id}
+                  onReplay={replay ? setReplayId : undefined}
                   onToggle={() => setOpen(open === p.id ? null : p.id)}
                   ended
                 />
@@ -341,6 +374,7 @@ function PersonaCard({
   open,
   onToggle,
   onJump,
+  onReplay,
   ended,
 }: {
   person: StepPersona
@@ -351,10 +385,13 @@ function PersonaCard({
   onToggle: () => void
   /** 이 사람이 있던 화면으로 창을 옮긴다. 같은 단계의 다른 화면일 때만 준다. */
   onJump?: () => void
+  /** 이 사람의 여정 전체를 재생한다. */
+  onReplay?: (personaId: string) => void
   /** 이 단계에 이미 끝나 있던 사람. 그 순간의 조작이 없다. */
   ended?: boolean
 }) {
   // 성격 문장은 페르소나 규격의 원문이다. 화면이 지어낸 문장이 아니다.
+  const label = usePersonaLabel()
   const character = useMemo(
     () =>
       Object.keys(axes)
@@ -372,12 +409,10 @@ function PersonaCard({
         aria-expanded={open}
         className="flex w-full items-center gap-[12px] px-[20px] py-[14px] text-left transition-colors hover:bg-black/[0.02]"
       >
-        <span className="flex size-[36px] shrink-0 items-center justify-center rounded-full bg-track text-[12px] font-semibold text-subtext">
-          {person.id.replace('P0', '')}
-        </span>
+        <PersonaFace id={person.id} />
         <span className="min-w-0 flex-1">
-          <span className="flex items-center gap-[6px] text-[14px] font-semibold text-heading">
-            {person.id}
+          <span className="flex items-center gap-[6px] text-[15px] font-semibold text-heading">
+            {label(person.id)}
             {/* 어느 화면에 있었는지를 이름 옆에 붙여야 "10단계에 이 사람은
                 주문/결제에 있었구나"가 한눈에 읽힌다. */}
             {person.screen_title ? (
@@ -386,18 +421,21 @@ function PersonaCard({
               </span>
             ) : null}
           </span>
-          {/* 우리 페르소나엔 나이·성별이 없다. 있는 것(특성 4축)을 적는다. */}
-          <span className="block truncate text-[12px] text-subtext">{person.label}</span>
+          <span className="block truncate text-[12px] text-subtext">
+            {person.age_band && person.gender
+              ? `${person.age_band} · ${person.gender}`
+              : person.label}
+          </span>
         </span>
         <span className="shrink-0 text-right">
-          <span className={`block text-[13px] font-semibold ${OUTCOME[person.outcome] ?? ''}`}>
+          <span className={`block text-[14px] font-semibold ${OUTCOME[person.outcome] ?? ''}`}>
             {person.end_label}
           </span>
           <span className="block text-[12px] text-subtext tabular-nums">
-            {person.total_steps} step
+            {person.total_steps} Step
           </span>
         </span>
-        <span className="shrink-0 text-[13px] text-subtext">{open ? '⌃' : '›'}</span>
+        <span className="shrink-0 text-[15px] text-subtext">{open ? '⌃' : '›'}</span>
       </button>
 
       {open ? (
@@ -427,15 +465,28 @@ function PersonaCard({
               {person.blocked ? ' · 규칙에 막혀 못 한 조작이 있었어요' : ''}
             </p>
           ) : null}
-          {onJump ? (
-            <button
-              type="button"
-              onClick={onJump}
-              className="mt-[10px] text-[12px] font-semibold text-main underline underline-offset-4"
-            >
-              {person.screen_title} 화면으로 보기 →
-            </button>
-          ) : null}
+          <div className="mt-[10px] flex flex-wrap items-center gap-[14px]">
+            {onReplay ? (
+              // 이 창은 '이 순간'을 가로로 본다. 한 사람이 어디서 헤맸는지는
+              // 그 사람의 스텝을 이어서 봐야 보이므로 재생으로 넘긴다.
+              <button
+                type="button"
+                onClick={() => onReplay(person.id)}
+                className="rounded-[8px] bg-main px-[12px] py-[6px] text-[12px] font-semibold text-white"
+              >
+                ▶ 이 사람 여정 재생
+              </button>
+            ) : null}
+            {onJump ? (
+              <button
+                type="button"
+                onClick={onJump}
+                className="text-[12px] font-semibold text-main underline underline-offset-4"
+              >
+                {person.screen_title} 화면으로 보기 →
+              </button>
+            ) : null}
+          </div>
         </div>
       ) : null}
     </div>

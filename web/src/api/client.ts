@@ -319,6 +319,9 @@ export type StepPersona = {
   id: string
   label: string
   traits: Record<string, number>
+  /** 사용자가 화면에서 정하는 값. 행동 규칙은 traits 가 정한다. */
+  age_band?: string | null
+  gender?: string | null
   outcome: 'success' | 'drop'
   end_label: string
   total_steps: number
@@ -375,6 +378,9 @@ export type PersonaSideResult = {
 }
 
 export type PersonaRow = {
+  /** 사용자가 정한 값. 없던 시절 기록에는 비어 있다. */
+  age_band_real?: string | null
+  gender_real?: string | null
   id: string
   code: string
   name: string
@@ -422,6 +428,39 @@ export type PersonasPayload = {
 export const getTestPersonas = (testId: string, variant?: Variant) =>
   request<PersonasPayload>(withVariant(`/api/tests/${testId}/personas`, variant))
 
+/** 한 사람의 여정 한 장면. 화면은 사진을 이 스크롤 위치로 밀고 표시만 얹는다. */
+export type ReplayFrame = {
+  step: number
+  screen: string
+  title: string
+  shot: { src: string; w: number; h: number } | null
+  scroll_y: number
+  viewport: { w: number; h: number }
+  thought: string
+  action: string
+  target: string
+  /** 누른 자리 (문서 절대좌표). 스크롤·기다림처럼 짚은 곳이 없으면 null. */
+  box: { x: number; y: number; w: number; h: number } | null
+  changed: boolean
+  note: string
+  blocked: boolean
+  elapsed_ms: number | null
+}
+
+export type PersonaReplay = {
+  id: string
+  label: string
+  traits: Record<string, number>
+  /** 사용자가 화면에서 정하는 값. 행동 규칙은 traits 가 정한다. */
+  age_band?: string | null
+  gender?: string | null
+  outcome: 'success' | 'drop'
+  end_label: string
+  steps: number
+  synthetic: boolean
+  frames: ReplayFrame[]
+}
+
 export type StepsPayload = {
   /** 막대 id → 그 막대를 눌렀을 때 보여줄 것. */
   steps: Record<string, StepDetail>
@@ -431,6 +470,8 @@ export type StepsPayload = {
   sentences: Record<string, Record<string, string>>
   axes: Record<string, string>
   test_name: string
+  /** 페르소나 id → 그 사람의 전체 여정. 어디서든 한 명을 골라 재생한다. */
+  replay?: Record<string, PersonaReplay>
 }
 
 export const getTestSteps = (testId: string, variant?: Variant) =>

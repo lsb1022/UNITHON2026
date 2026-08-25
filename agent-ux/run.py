@@ -33,7 +33,7 @@ for _s in (sys.stdout, sys.stderr):
 
 from uxagent import config, discover, explore, persona as P, trace as T
 from uxagent.llm import Usage, build_client
-from uxagent.snapshot import take_snapshot
+from uxagent.snapshot import pick_for_prompt, take_snapshot
 from uxagent.survey import get_map_slice
 
 
@@ -168,8 +168,15 @@ async def run_persona(browser, person: dict, site_map: dict | None, target: dict
                 else:
                     seen.add(page.url)
 
+            # 기록에는 **그 사람이 실제로 본 요소만** 남긴다. 프롬프트에 들어간
+            # 것과 같은 목록이라, 나중에 "무엇을 보고 이렇게 했나"가 그대로 맞는다.
+            shown = {e["id"] for e in
+                     pick_for_prompt(snap, config.PROMPT_ELEMENT_LIMIT)[0]}
+            if action.get("target"):
+                shown.add(action["target"])
             tr.add(T.step(
-                n, thought=thought, action=action, snapshot=T.slim(snap),
+                n, thought=thought, action=action,
+                snapshot=T.slim(snap, shown),
                 resolved=T.resolve(snap, action.get("target")),
                 outcome=outcome, map_slice_used=slice_ is not None,
                 map_miss=map_miss, blocked_action=blocked,

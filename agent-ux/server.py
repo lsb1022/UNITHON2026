@@ -39,7 +39,10 @@ PY = sys.executable
 # 우리 쇼핑몰만 검사한다. 데모라 대상이 정해져 있고, 남의 사이트에 에이전트를
 # 붙이는 것은 허락과 안전장치가 필요한 별개의 문제다.
 # 여기에 없는 주소는 거부한다 — 프론트가 실수로 보내도 서버가 막는다.
-ALLOWED_HOSTS = {"localhost", "127.0.0.1", "lsb1022.github.io"}
+# 이 데모가 검사해도 되는 곳. 남의 사이트를 마구 두들기지 않으려고 좁혀 둔다.
+# 공개 문서 사이트는 예시로 열어 둔다 — 실제로 여기서 돌려 본 곳이다.
+ALLOWED_HOSTS = {"localhost", "127.0.0.1", "lsb1022.github.io",
+                 "ko.wikipedia.org", "webscraper.io"}
 
 JOBS: dict[str, dict] = {}
 LOCK = threading.Lock()
@@ -392,19 +395,32 @@ class Handler(BaseHTTPRequestHandler):
         return self._send(200, out)
 
     def _start(self, body: dict, from_web: bool):
+        # 프론트가 어떤 프로젝트에서 눌렀는지 함께 보낸다. 예전에는 빈 요청이 와서
+        # 어느 화면에서 눌러도 서버 기본값(테스트베드 결함판)이 돌았다 — 위키백과
+        # 프로젝트를 만들고 눌러도 "MOJI STORE / 코튼 셔츠 주문 완주"가 떴다.
+        url = str(body.get("url") or "").strip()
+        goal = str(body.get("goal") or "").strip()
+        expect = str(body.get("expect") or "").strip()
         base = str(body.get("base") or "http://localhost:8000/ux-testbed")
-        if not _allowed(base):
+
+        if not _allowed(url or base):
             return self._send(403, {
-                "error": "허용되지 않은 주소입니다. 이 데모는 지정된 쇼핑몰만 검사합니다.",
+                "error": "허용되지 않은 주소입니다. 이 데모는 지정된 사이트만 검사합니다.",
                 "allowed_hosts": sorted(ALLOWED_HOSTS)})
 
         variant = str(body.get("variant") or Handler.variant)
         count = max(1, min(int(body.get("personas") or Handler.personas), 100))
-        # 프론트에서 온 실행은 답사부터 돌린다. "처음 페르소나가 사이트를 훑고
-        # 그 설명서를 나머지가 읽는다"가 이 파이프라인의 시작점이라, 그 장면이
-        # 화면에 보여야 무엇을 하는 도구인지 전달된다.
+        title = str(body.get("test_name") or "코튼 셔츠 주문 완주")
         resurvey = bool(body.get("resurvey", from_web))
-        run_id = "web_%s_%s" % (variant, time.strftime("%m%d_%H%M%S"))
+
+        # 우리 테스트베드는 변형 이름으로, 남의 사이트는 주소로 부른다.
+        if url:
+            target = ["--url", url]
+            stem = url.split("//")[-1].split("/")[0]
+        else:
+            target = ["--variant", variant, "--base", base]
+            stem = variant
+        run_id = "web_%s_%s" % (stem.replace(".", "_"), time.strftime("%m%d_%H%M%S"))
 
         mock = ["--mock"] if Handler.mock else []
         steps = []
@@ -413,20 +429,28 @@ class Handler(BaseHTTPRequestHandler):
             # 썼는가"를 나중에 아무도 확인할 수 없다. 페르소나는 이미지를 안 쓰므로
             # 스크린샷은 여기서만 쌓인다.
             steps.append({"name": "답사 — 사이트를 돌아보며 설명서 작성",
-                          "cmd": [PY, "-u", "scout.py", "--variant", variant,
-                                  "--base", base, "--yes", "--max-steps", "45",
-                                  "--shots-dir", os.path.join("shots_web", run_id)]
+                          "cmd": [PY, "-u", "survey.py"] + target
+                                 + ["--yes", "--max-pages", "6",
+                                    "--shots-dir", os.path.join("shots_web", run_id)]
                                  + mock})
-        steps.append({"name": "페르소나 %d명 탐색" % count,
-                      "cmd": [PY, "-u", "run.py", "--variant", variant, "--base", base,
-                              "--limit", str(count), "--run-id", run_id,
-                              "--max-usd", "2.0"] + mock})
+
+        run_cmd = [PY, "-u", "run.py"] + target + [
+            "--limit", str(count), "--run-id", run_id, "--max-usd", "2.0"]
+        # 미션과 근거는 실행할 때만 갈아 끼운다. personas.json 은 건드리지 않는다.
+        if goal:
+            run_cmd += ["--goal", goal]
+        if expect:
+            run_cmd += ["--expect", expect]
+        # 지도가 없는 사이트면 답사 없이도 돌 수 있게 한다.
+        if not resurvey and url:
+            run_cmd += ["--no-map"]
+        steps.append({"name": "페르소나 %d명 탐색" % count, "cmd": run_cmd + mock})
 
         jid = uuid.uuid4().hex[:12]
         job = Job(jid, steps)
         job.run_id = run_id
         job.total = count
-        job.title = "코튼 셔츠 주문 완주"
+        job.title = title
         JOBS[jid] = job
 
         def worker():

@@ -178,7 +178,8 @@ export function createTest(
 
 export function saveMission(
   testId: string,
-  body: { prompt: string; success_criteria: string; auto_detect?: boolean },
+  body: { prompt: string; success_criteria: string; auto_detect?: boolean;
+          /** 달성을 인정할 근거 문구 */ expect?: string },
 ) {
   return request<{ id: string }>(`/api/tests/${testId}/mission`, {
     method: 'PUT',
@@ -204,7 +205,12 @@ export function savePersonaSpecs(testId: string, specs: PersonaSpecPayload[]) {
 export type ReviewPayload = {
   project: { id: string }
   test: { id: string; name: string; device: string }
-  mission: { prompt: string; success_criteria: string } | null
+  mission: {
+    prompt: string
+    success_criteria: string
+    /** 달성을 인정할 근거 문구. 사용자가 미션 화면에서 정한다. */
+    expect?: string
+  } | null
   personas: {
     total: number
     breakdown: { age_band: string; total: number; male: number; female: number; any: number }[]
@@ -222,9 +228,21 @@ export type ReviewPayload = {
 
 export const getReview = (testId: string) => request<ReviewPayload>(`/api/tests/${testId}/review`)
 
-export const startRun = (testId: string) =>
+/** 실행을 시작할 때 서버에 함께 넘기는 것. 비워 보내면 서버가 기본값(테스트베드)을
+ *  돌아서, 어느 프로젝트에서 눌렀든 같은 결과가 나온다. */
+export type RunRequest = {
+  url?: string
+  goal?: string
+  /** 달성을 인정할 근거 문구. 이 글자가 화면에 뜬 적이 없으면 달성으로 세지 않는다. */
+  expect?: string
+  personas?: number
+  test_name?: string
+}
+
+export const startRun = (testId: string, req: RunRequest = {}) =>
   request<{ run_id: string; persona_count: number; status: string }>(`/api/tests/${testId}/runs`, {
     method: 'POST',
+    body: JSON.stringify(req),
   })
 
 // --------------------------------------------------------------------------- //
@@ -252,7 +270,12 @@ export type TestDetail = {
   device: string
   created_at: string
   project: { id: string; name: string; preview_url: string | null }
-  mission: { prompt: string; success_criteria: string } | null
+  mission: {
+    prompt: string
+    success_criteria: string
+    /** 달성을 인정할 근거 문구. 사용자가 미션 화면에서 정한다. */
+    expect?: string
+  } | null
   persona_total: number
   journey_count: number
   /** 여정이 없으면 null — 화면이 "0.0%"라는 거짓 수치를 그리지 않도록. */

@@ -67,7 +67,16 @@ export function ReviewPage() {
             disabled={start.pending || !testId}
             onClick={async () => {
               if (!testId) return
-              const run = await start.run(testId)
+              // 어느 프로젝트에서 눌렀는지 함께 보낸다. 안 보내면 서버가
+              // 기본값(테스트베드)을 돌아서, 위키백과 프로젝트를 만들어도
+              // "MOJI STORE / 코튼 셔츠 주문 완주"가 돌아간다.
+              const run = await start.run(testId, {
+                url: project.data?.preview_url ?? undefined,
+                goal: review.data?.mission?.prompt ?? undefined,
+                expect: review.data?.mission?.expect ?? undefined,
+                personas: total,
+                test_name: review.data?.test?.name ?? undefined,
+              })
               if (run) navigate(`/projects/${projectId}/tests/new/running`)
             }}
             className="flex h-[65px] w-[179px] items-center justify-center gap-[5px] rounded-[14px] bg-main text-[20px] leading-[1.45] font-medium text-white transition-colors hover:bg-[#2872dd] disabled:cursor-not-allowed disabled:bg-[#c4d9f9]"

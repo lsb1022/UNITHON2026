@@ -29,6 +29,10 @@ export function MissionPage() {
   const project = useQuery(() => getProject(projectId), [projectId])
   const save = useMutation(saveMission)
   const { mission, setMission, successCriteria, setSuccessCriteria, testId } = useWizard()
+  // 달성을 인정할 근거 문구. 이 글자가 그 사람 화면에 뜬 적이 없으면 달성으로
+  // 세지 않는다(run.py --expect). 모델이 자기 지식으로 답을 메우는 것을 막는
+  // 유일한 장치라, 사용자가 직접 정하게 한다.
+  const [expect, setExpect] = useState('')
 
   const [analysis, setAnalysis] = useState<MissionAnalysis | null>(null)
   const [analyzing, setAnalyzing] = useState(false)
@@ -73,6 +77,7 @@ export function MissionPage() {
               const saved = await save.run(testId, {
                 prompt: mission.trim(),
                 success_criteria: successCriteria,
+                expect: expect.trim(),
               })
               if (!saved) return
             }
@@ -115,6 +120,8 @@ export function MissionPage() {
           <section className="mt-[31px] flex flex-col gap-[9px]">
             <p className="text-[20px] leading-[1.45] font-bold text-heading">성공 기준</p>
             <SuccessCriteria
+              expect={expect}
+              onExpect={setExpect}
               criteria={successCriteria}
               status={analysis?.status ?? null}
               analyzing={analyzing}
@@ -152,11 +159,16 @@ function SuccessCriteria({
   status,
   analyzing,
   empty,
+  expect,
+  onExpect,
 }: {
   criteria: string
   status: MissionAnalysis['status'] | null
   analyzing: boolean
   empty: boolean
+  /** 달성을 인정할 근거 문구 */
+  expect: string
+  onExpect: (v: string) => void
 }) {
   const tone =
     empty || status === null
@@ -182,7 +194,8 @@ function SuccessCriteria({
   }[tone]
 
   return (
-    <div className={`flex h-[88px] items-center justify-between rounded-[18px] border px-[23px] ${shell}`}>
+    <div className={`rounded-[18px] border px-[23px] py-[18px] ${shell}`}>
+     <div className="flex items-center justify-between">
       <div className="flex items-center gap-[14px]">
         <span
           className={`flex size-[48px] shrink-0 items-center justify-center rounded-[12px] ${
@@ -218,7 +231,17 @@ function SuccessCriteria({
               : (criteria || '미션을 쓰면 성공 기준을 만들어 드려요.')}
           </p>
           <p className="text-[13px] leading-[1.45] text-subtext">
-            {tone === 'ok' ? '자동으로 감지해요' : '미션에서 도착점을 찾아 만들어요'}
+            {/* '자동으로 감지해요' 는 사실이 아니었다. 감지하는 코드가 없다.
+                실제로 하는 일만 적는다 — 낱말 규칙으로 거르고, 달성 여부는
+                아래 근거 문구를 화면과 대조해서 판정한다. */}
+            {
+              {
+                idle: '미션을 적으면 규칙에 걸리는 표현부터 짚어드려요',
+                warning: '규칙 검사는 통과했어요. 아래에서 근거 문구를 정해주세요',
+                danger: '이대로 돌리면 결과를 믿기 어려워요',
+                ok: '근거 문구를 화면과 대조해 달성을 판정해요',
+              }[tone]
+            }
           </p>
         </div>
       </div>
@@ -227,6 +250,30 @@ function SuccessCriteria({
       >
         {badge.label}
       </span>
+     </div>
+
+      {/* 근거 문구. 비워둘 수 있지만, 비우면 무엇을 잃는지 그 자리에서 말한다. */}
+      {!empty ? (
+        <div className="mt-[16px] border-t border-line/70 pt-[14px]">
+          <label
+            htmlFor="mission-expect"
+            className="block text-[14px] font-semibold text-heading"
+          >
+            달성으로 인정할 근거 문구
+          </label>
+          <p className="mt-[3px] text-[13px] leading-[1.5] text-subtext">
+            이 글자가 그 사람 화면에 실제로 뜬 적이 없으면 달성으로 세지 않아요.
+            비워두면 페르소나가 스스로 “다 했다”고 말하는 것만으로 달성이 됩니다.
+          </p>
+          <input
+            id="mission-expect"
+            value={expect}
+            onChange={(e) => onExpect(e.target.value)}
+            placeholder="예) 주문이 완료되었습니다"
+            className="mt-[10px] h-[46px] w-full rounded-[10px] border border-line bg-white px-[14px] text-[15px] text-ink outline-none focus-visible:border-main"
+          />
+        </div>
+      ) : null}
     </div>
   )
 }

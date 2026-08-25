@@ -143,7 +143,8 @@ function saveCreated(list: Site[]): void {
 /** 마법사가 앞뒤로 오가도 값이 남아 있어야 한다. 새로고침하면 초기화된다. */
 const state = {
   missionPrompt: MOCK_DATA.goal as string,
-  successCriteria: '주문 완료 화면에 도달하면 성공',
+  successCriteria: '화면에 아래 문구가 실제로 보였을 때만 달성으로 셉니다',
+  expect: '',
   personaTotal: 10,
   /**
    * 이 자리에서 만든 프로젝트. 새로고침하면 사라진다 — 데모라 서버가 없다.
@@ -541,6 +542,87 @@ function abCard(row: AbRow): Json | null {
   }
 }
 
+/**
+ * 미션 문장 검토 — **규칙으로 확인할 수 있는 것만.**
+ *
+ * 예전에는 무엇을 넣든 "주문 완료 화면에 도달하면 성공"을 돌려주고 '자동으로
+ * 감지해요' 라고 적었다. 감지하는 코드는 없었다. 확인해준다고 해놓고 확인하지
+ * 않는 것은 없는 기능보다 나쁘다 — 사용자가 그 말을 믿고 다음 단계로 간다.
+ *
+ * 브라우저 안에서는 모델을 부를 수 없다(키가 번들에 실린다). 그래서 낱말로
+ * 확실히 걸리는 것만 걸러내고, **성공 기준은 사용자가 정한다.** 그 문구가 그
+ * 사람 화면에 실제로 떴을 때만 달성으로 센다(run.py 의 --expect 와 같은 값이다).
+ */
+function analyzeMissionText(promptText: string) {
+  const text = promptText.trim()
+  const issues: { kind: string; message: string; fix: string }[] = []
+
+  // ① 결함을 미리 알려주는 표현. 이게 들어가면 전원이 그것을 찾으러 가고,
+  //    적중률이 '우리가 알려준 답을 세는 값'이 된다.
+  const banned = ['작동하지', '안 됨', '안됨', '문제', '오류', '불편', '이상하',
+                  '헷갈', '어렵', '느리', '복잡', '개선']
+  for (const w of banned) {
+    if (text.includes(w)) {
+      issues.push({
+        kind: 'judgement',
+        message: `"${w}" 는 결함을 미리 알려주는 표현이에요.`,
+        fix: '무엇을 하려는지만 적어주세요. 예) 코튼 셔츠를 장바구니에 담아 주문까지 마친다',
+      })
+      break
+    }
+  }
+
+  // ② 너무 막연하면 끝났는지 판정할 수 없다.
+  const vague = ['둘러본다', '살펴본다', '구경', '탐색한다', '이것저것']
+  if (vague.some((w) => text.includes(w)) || (text.length > 0 && text.length < 8)) {
+    issues.push({
+      kind: 'vague',
+      message: '무엇을 하면 끝인지 알 수 없어요.',
+      fix: '도착점이 있는 일 하나로 적어주세요. 예) 배송비 정책을 확인한다',
+    })
+  }
+
+  // ③ 할 일이 여러 개면 어디서 실패했는지 갈리지 않는다.
+  if (/그리고|,\s*그다음|한 뒤에|한 다음/.test(text)) {
+    issues.push({
+      kind: 'multi',
+      message: '할 일이 여러 개로 보여요.',
+      fix: '한 번에 하나씩 나눠서 돌려주세요.',
+    })
+  }
+
+  // ④ 길이. 스텝마다 다시 보내는 문장이라 길면 값이 비싸다.
+  if (text.length > 60) {
+    issues.push({
+      kind: 'length',
+      message: `${text.length}자예요. 60자 이내로 줄여주세요.`,
+      fix: '페르소나마다 스텝마다 다시 보내는 문장이라 길수록 비용이 늘어요.',
+    })
+  }
+
+  if (!text) {
+    return { status: 'idle', success_criteria: null, expect: '', issues: [],
+             generated_by: 'rule' }
+  }
+  if (issues.length) {
+    return { status: 'invalid', success_criteria: null, expect: '', issues,
+             generated_by: 'rule' }
+  }
+  return {
+    status: 'warning',
+    // 규칙이 통과했다고 '검증됐다'가 아니다. 남은 한 가지를 사용자에게 묻는다.
+    success_criteria: '화면에 아래 문구가 실제로 보였을 때만 달성으로 셉니다',
+    expect: '',
+    issues: [{
+      kind: 'need_evidence',
+      message: '달성을 인정할 근거 문구를 정해주세요.',
+      fix: '그 글자가 화면에 뜬 적이 없으면 달성으로 세지 않아요. ' +
+           '비워두면 페르소나가 스스로 "다 했다"고 말하는 것만으로 달성이 됩니다.',
+    }],
+    generated_by: 'rule',
+  }
+}
+
 /** 경로별 응답. 흉내 낼 수 없으면 MOCK_MISS 를 돌려 호출부가 진짜 서버로 넘기게 한다. */
 export function mockResponse(rawPath: string, init?: RequestInit): unknown {
   const method = (init?.method ?? 'GET').toUpperCase()
@@ -554,33 +636,7 @@ export function mockResponse(rawPath: string, init?: RequestInit): unknown {
     return checkUrl(url)
   }
 
-  if (path === '/api/missions/analyze') {
-    const prompt = String(body?.prompt ?? '')
-    // 답사자에게 걸었던 것과 같은 규칙이다. 목표에 결함을 적으면 100명 전원이
-    // 그것을 찾으러 가고, 적중률이 우리가 알려준 답을 세는 값이 된다.
-    const banned = ['작동하지', '안 됨', '문제', '오류', '불편', '이상']
-    const hit = banned.find((w) => prompt.includes(w))
-    if (hit) {
-      return {
-        status: 'invalid',
-        success_criteria: null,
-        issues: [
-          {
-            kind: 'judgement',
-            message: `"${hit}" 는 결함을 미리 알려주는 표현입니다.`,
-            fix: '무엇을 하려는지만 적어주세요. 예) 코튼 셔츠를 장바구니에 담아 주문까지 마친다',
-          },
-        ],
-        generated_by: 'rule',
-      }
-    }
-    return {
-      status: 'ok',
-      success_criteria: state.successCriteria,
-      issues: [],
-      generated_by: 'rule',
-    }
-  }
+  if (path === '/api/missions/analyze') return analyzeMissionText(String(body?.prompt ?? ''))
 
   // ── 프로젝트 ──────────────────────────────────────────────────
   if (path === '/api/projects' && method === 'GET') return allSites().map(projectCard)
@@ -643,6 +699,7 @@ export function mockResponse(rawPath: string, init?: RequestInit): unknown {
     if (path === `${base}/mission`) {
       state.missionPrompt = String(body?.prompt ?? state.missionPrompt)
       state.successCriteria = String(body?.success_criteria ?? state.successCriteria)
+      state.expect = String(body?.expect ?? state.expect)
       return { id: 'demo-mission' }
     }
     if (path === `${base}/persona-specs`) {
@@ -657,7 +714,9 @@ export function mockResponse(rawPath: string, init?: RequestInit): unknown {
       return {
         project: { id: site.id },
         test: { id: site.testId, name: missionOf(site.variant).name, device: 'desktop' },
-        mission: { prompt: state.missionPrompt, success_criteria: state.successCriteria },
+        mission: { prompt: state.missionPrompt,
+                   success_criteria: state.successCriteria,
+                   expect: state.expect },
         personas: {
           total: n,
           // 화면은 연령대 표를 그리지만 우리 페르소나는 특성 축으로 나뉜다.

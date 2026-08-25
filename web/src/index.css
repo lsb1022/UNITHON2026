@@ -34,6 +34,14 @@ html {
   --color-drop: #ffd52b;
   --color-track: #f2f4f6;
 
+  /* 로그인·설정·크레딧 화면에서 쓰는 색 (Figma 311:21134 / 336:28072 / 311:21384) */
+  --color-muted: #6b7684; /* 본문 회색 — body 보다 옅다 */
+  --color-brand-tint: #f1f6fd; /* 로그인 오른쪽 판 */
+  --color-brand-soft: #eaf4ff; /* 파란 알약·아바타 배경 */
+  --color-brand-faint: #f2f7ff; /* 내면 독백 말풍선 */
+  --color-ok: #168a5b; /* 성공 글자 — success 보다 짙어 흰 배경에서 읽힌다 */
+  --color-ok-bg: #e8f8f1;
+
   /* 연결 실패 상태 */
   --color-danger: #e5484d;
   --color-danger-bg: #fdeced;

@@ -373,7 +373,7 @@ function Legend({ color, label }: { color: string; label: string }) {
  *
  * 두 사이트를 나란히 놓는 표는 여기서 뺐다. 사용자는 주소 하나를 넣었으므로
  * 프로젝트 안에서 다른 사이트가 튀어나오면 "내가 넣지도 않은 게 왜 있지?"가 된다.
- * 견주는 일은 비교 화면(/compare)에서만 한다 — 데이터는 그대로 남아 있다.
+ * 견주는 일은 A/B 테스트(/ab)에서만 한다 — 데이터는 그대로 남아 있다.
  */
 function PersonaView({ testId }: { testId: string }) {
   const personas = useQuery(() => getTestPersonas(testId), [testId])

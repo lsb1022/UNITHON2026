@@ -17,6 +17,9 @@ const HINTS: Record<string, string> = {
   invalid: '주소 형식이 올바르지 않아요.',
   empty: '주소를 입력해 주세요.',
   transport: '네트워크 문제로 연결하지 못했어요.',
+  // 데모에는 백엔드가 없어서 답사를 새로 돌릴 수 없다. 열 수 있는 주소를 알려준다.
+  demo_scope:
+    '지금은 https://ko.wikipedia.org/ 와 https://lsb1022.github.io/UNITHON2026-MOJI/ux-testbed/ 로 시작하는 주소만 열 수 있어요.',
 }
 
 export function ConnectionCard({

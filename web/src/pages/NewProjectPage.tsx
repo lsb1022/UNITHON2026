@@ -70,7 +70,7 @@ export function NewProjectPage() {
       <PageBody>
         <div className="max-w-[1280px]">
           <PageHeading
-            title="어떤 화면을 테스트할까요?"
+            title="어떤 프로젝트를 업로드 할까요?"
             description="링크나 파일을 연결하면 테스트 가능한 상태인지 바로 확인해요."
           />
 

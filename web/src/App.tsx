@@ -7,6 +7,7 @@ import { ProjectDetailPage } from './pages/ProjectDetailPage'
 import { ProjectsPage } from './pages/ProjectsPage'
 import { ReviewPage } from './pages/ReviewPage'
 import { RunningPage } from './pages/RunningPage'
+import { TestDetailPage } from './pages/TestDetailPage'
 import { SidebarProvider } from './state/SidebarContext'
 import { WizardProvider } from './state/WizardContext'
 
@@ -20,6 +21,8 @@ export default function App() {
           <Route path="/projects/new" element={<NewProjectPage />} />
           <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
           <Route path="/projects/:projectId/tests/new" element={<NewTestPage />} />
+          {/* 'new' 가 먼저 걸려야 마법사 첫 화면이 테스트 상세로 새지 않는다. */}
+          <Route path="/projects/:projectId/tests/:testId" element={<TestDetailPage />} />
           <Route path="/projects/:projectId/tests/new/mission" element={<MissionPage />} />
           <Route path="/projects/:projectId/tests/new/persona" element={<PersonaPage />} />
           <Route path="/projects/:projectId/tests/new/review" element={<ReviewPage />} />

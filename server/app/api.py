@@ -14,6 +14,14 @@ from .categories import CATEGORIES, normalize as normalize_category
 from .connectivity import check_as_dict
 from .db import get_session
 from .estimates import DEFAULT_PAGE_COUNT, estimate
+from .journeys import (
+    DROP_REASONS,
+    build_diagram,
+    group_paths,
+    load_walks,
+    outcome_counts,
+    persona_rows,
+)
 from .missions import analyze_as_dict
 from .models import (
     Journey,
@@ -244,7 +252,7 @@ def get_project(project_id: uuid.UUID, session: Session = Depends(get_session)) 
             func.count(Journey.id).label("journeys"),
             func.count(Journey.id).filter(Journey.goal_achieved.is_(True)).label("achieved"),
             func.count(Journey.id)
-            .filter(Journey.termination_reason.in_(("gave_up", "loop_detected")))
+            .filter(Journey.termination_reason.in_(DROP_REASONS))
             .label("dropped"),
         )
         .select_from(Test)
@@ -292,7 +300,7 @@ def list_tests(project_id: uuid.UUID, session: Session = Depends(get_session)) -
             (
                 100.0
                 * func.count(Journey.id).filter(
-                    Journey.termination_reason.in_(("gave_up", "loop_detected"))
+                    Journey.termination_reason.in_(DROP_REASONS)
                 )
                 / func.nullif(func.count(Journey.id), 0)
             ).label("drop_rate"),
@@ -506,6 +514,106 @@ def active_run(session: Session = Depends(get_session)) -> dict | None:
         "done": done,
         "total": run.persona_count,
     }
+
+
+# --------------------------------------------------------------------------- #
+# [화면] 테스트 상세 — 미션 경로 · 다이어그램 · 페르소나
+# --------------------------------------------------------------------------- #
+
+def _load_test(test_id: uuid.UUID, session: Session) -> Test:
+    test = session.get(Test, test_id)
+    if test is None:
+        raise HTTPException(status_code=404, detail="테스트를 찾을 수 없습니다")
+    return test
+
+
+@router.get("/tests/{test_id}")
+def test_detail(test_id: uuid.UUID, session: Session = Depends(get_session)) -> dict:
+    """상단 제목 · 미션 문장 · 지표 세 칸."""
+    test = _load_test(test_id, session)
+    project = session.get(Project, test.project_id)
+    mission = session.scalar(select(Mission).where(Mission.test_id == test_id))
+
+    stats = session.execute(
+        select(
+            func.count(Journey.id).label("journeys"),
+            func.count(Journey.id).filter(Journey.goal_achieved.is_(True)).label("achieved"),
+            func.count(Journey.id)
+            .filter(Journey.termination_reason.in_(DROP_REASONS))
+            .label("dropped"),
+            func.avg(Journey.step_count)
+            .filter(Journey.goal_achieved.is_(True))
+            .label("success_steps"),
+        )
+        .select_from(Journey)
+        .join(Run, Run.id == Journey.run_id)
+        .where(Run.test_id == test_id)
+    ).one()
+
+    journeys = stats.journeys or 0
+    persona_total = session.scalar(
+        select(func.count(Persona.id)).where(Persona.test_id == test_id)
+    ) or 0
+
+    return {
+        "id": str(test.id),
+        "name": test.name,
+        "device": test.device,
+        "created_at": _as_utc(test.created_at),
+        "project": {
+            "id": str(test.project_id),
+            "name": project.name if project else "",
+            "preview_url": project.preview_url if project else None,
+        },
+        "mission": None if mission is None else {
+            "prompt": mission.prompt,
+            "success_criteria": mission.success_criteria,
+        },
+        "persona_total": persona_total,
+        "journey_count": journeys,
+        # 여정이 없으면 0% 가 아니라 '아직 없음'이다 — 프로젝트 상세와 같은 규칙.
+        "success_rate": round(100 * stats.achieved / journeys, 1) if journeys else None,
+        "drop_rate": round(100 * stats.dropped / journeys, 1) if journeys else None,
+        "avg_success_steps": round(float(stats.success_steps), 2) if stats.success_steps else None,
+    }
+
+
+@router.get("/tests/{test_id}/paths")
+def test_paths(test_id: uuid.UUID, session: Session = Depends(get_session)) -> dict:
+    """'경로' 보기. 성공/이탈 두 묶음을 한 번에 준다 — 탭을 눌러도 다시 부르지 않는다."""
+    _load_test(test_id, session)
+    walks = load_walks(session, test_id)
+    counts = outcome_counts(walks)
+    total = len(walks)
+
+    def share(kind: str) -> dict:
+        count = counts.get(kind, 0)
+        return {"count": count, "percent": round(100 * count / total) if total else 0}
+
+    return {
+        "total": total,
+        "success": share("success"),
+        "drop": share("drop"),
+        "paths": {
+            "success": group_paths(walks, "success"),
+            "drop": group_paths(walks, "drop"),
+        },
+    }
+
+
+@router.get("/tests/{test_id}/diagram")
+def test_diagram(test_id: uuid.UUID, session: Session = Depends(get_session)) -> dict:
+    """'다이어그램' 보기. 같은 여정을 단계 × 화면으로 펼친다."""
+    _load_test(test_id, session)
+    return build_diagram(load_walks(session, test_id))
+
+
+@router.get("/tests/{test_id}/personas")
+def test_personas(test_id: uuid.UUID, session: Session = Depends(get_session)) -> dict:
+    """사이드바 '페르소나' 탭."""
+    _load_test(test_id, session)
+    rows = persona_rows(session, test_id, load_walks(session, test_id))
+    return {"total": len(rows), "items": rows}
 
 
 # --------------------------------------------------------------------------- #

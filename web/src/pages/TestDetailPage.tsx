@@ -14,6 +14,8 @@ import { Emoji, type EmojiName } from '../components/Emoji'
 import { Icon } from '../components/Icon'
 import { MissionPathCard } from '../components/MissionPathCard'
 import { NavigationDiagram } from '../components/NavigationDiagram'
+import { PersonaFace, PersonaNameToggle, usePersonaLabel } from '../components/PersonaIdentity'
+import { PersonaReplayModal } from '../components/PersonaReplayModal'
 import { StepDetailModal } from '../components/StepDetailModal'
 import { SegmentedControl } from '../components/SegmentedControl'
 import { SitePreview } from '../components/SitePreview'
@@ -310,8 +312,8 @@ function DiagramView({ testId }: { testId: string }) {
   // 뒤에 받으면 창이 빈 채로 먼저 뜬다.
   const steps = useQuery(() => getTestSteps(testId), [testId])
   const [picked, setPicked] = useState<string | null>(null)
-
   const detail = picked ? steps.data?.steps[picked] : null
+  const replay = steps.data?.replay
 
   return (
     <section className="mt-[7px] rounded-[16px] border border-line px-[24px] pt-[22px] pb-[24px]">
@@ -348,6 +350,7 @@ function DiagramView({ testId }: { testId: string }) {
           axes={steps.data.axes}
           testName={steps.data.test_name}
           onMove={setPicked}
+          replay={replay}
           onClose={() => setPicked(null)}
         />
       ) : null}
@@ -377,6 +380,13 @@ function Legend({ color, label }: { color: string; label: string }) {
  */
 function PersonaView({ testId }: { testId: string }) {
   const personas = useQuery(() => getTestPersonas(testId), [testId])
+  // 재생 자료는 단계 상세와 같은 곳에서 온다. 표를 누르는 순간 받으면
+  // 창이 빈 채로 먼저 뜬다.
+  const steps = useQuery(() => getTestSteps(testId), [testId])
+  const [replayId, setReplayId] = useState<string | null>(null)
+  const label = usePersonaLabel()
+  const replay = steps.data?.replay
+  const playing = replayId ? replay?.[replayId] : null
 
   if (personas.loading) return <LoadingBlock label="페르소나를 불러오는 중이에요" />
   if (personas.error) return <ErrorBlock message={personas.error} onRetry={personas.reload} />
@@ -398,6 +408,7 @@ function PersonaView({ testId }: { testId: string }) {
     <section className="mt-[16px]">
       <div className="flex flex-wrap items-center gap-[8px]">
         <Chip tone="plain">전체 {data?.total ?? items.length}명</Chip>
+        <PersonaNameToggle />
         {(data?.exhausted ?? 0) > 0 ? (
           <Chip tone="hold">스텝 소진 {data?.exhausted}명</Chip>
         ) : null}
@@ -424,10 +435,25 @@ function PersonaView({ testId }: { testId: string }) {
           </thead>
           <tbody>
             {items.map((persona) => (
-              <tr key={persona.id} className="border-t border-line text-[14px]">
+              <tr
+                key={persona.id}
+                onClick={() => replay?.[persona.id] && setReplayId(persona.id)}
+                className={`border-t border-line text-[14px] ${
+                  replay?.[persona.id] ? 'cursor-pointer hover:bg-black/[0.02]' : ''
+                }`}
+              >
                 <td className="px-[18px] py-[12px]">
-                  <p className="font-semibold text-ink">{persona.code}</p>
-                  <p className="text-[12px] text-subtext">{persona.name}</p>
+                  <div className="flex items-center gap-[10px]">
+                    <PersonaFace id={persona.id} size={32} />
+                    <div className="min-w-0">
+                      <p className="font-semibold text-ink">{label(persona.id)}</p>
+                      <p className="truncate text-[12px] text-subtext">
+                        {persona.age_band_real && persona.gender_real
+                          ? `${persona.age_band_real} · ${persona.gender_real}`
+                          : persona.name}
+                      </p>
+                    </div>
+                  </div>
                 </td>
                 {axisKeys.map((k) => (
                   <td key={k} className="px-[10px] py-[12px]">
@@ -442,6 +468,19 @@ function PersonaView({ testId }: { testId: string }) {
           </tbody>
         </table>
       </div>
+
+      <p className="mt-[10px] text-[13px] text-subtext">
+        줄을 누르면 그 사람의 여정을 처음부터 재생해요.
+      </p>
+
+      {playing ? (
+        <PersonaReplayModal
+          person={playing}
+          others={Object.values(replay ?? {})}
+          onPick={setReplayId}
+          onClose={() => setReplayId(null)}
+        />
+      ) : null}
     </section>
   )
 }

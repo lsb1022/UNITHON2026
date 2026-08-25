@@ -47,16 +47,12 @@ const SITES = [
     url: `${TESTBED}clean/index.html`,
   },
   // 우리 테스트베드가 아닌 **진짜 공개 사이트**. 이 도구가 남의 사이트에도
-  // 붙는다는 증거라 데모에 넣어 둔다.
-  //
-  // 주의: 이 항목에 붙는 실행 기록(variant 'namu')은 **나무위키에서 돌린 것**이다.
-  // 데모에서 열 수 있는 공개 사이트를 위키백과로 정하면서 이름과 주소만 바꿨기
-  // 때문에, 경로·다이어그램의 화면 이름에는 '나무위키:대문' 이 그대로 남는다.
-  // 위키백과에서 다시 돌려 내보내면(agent-ux/export_web_mock.py) 그때 맞춰진다.
+  // 붙는다는 증거라 데모에 넣어 둔다. 기록은 실제로 위키백과에서 여섯 명을
+  // 돌린 것이다 (agent-ux/logs/wiki_all).
   {
-    id: 'namu-wiki',
-    testId: 'namu-wiki-test',
-    variant: 'namu',
+    id: 'wikipedia',
+    testId: 'wikipedia-test',
+    variant: 'wiki',
     name: '위키백과 (공개 사이트)',
     url: 'https://ko.wikipedia.org/',
   },
@@ -82,10 +78,10 @@ const MISSION: Record<string, { name: string; goal: string; criteria: string }> 
     goal: '코튼 셔츠를 장바구니에 담아 주문까지 마친다',
     criteria: '주문 완료 화면에 도달하면 성공',
   },
-  namu: {
-    name: '숭실대학교 지역 확인',
-    goal: '숭실대학교를 검색해서 숭실대학교의 지역이 어디인지 파악한다',
-    criteria: '숭실대학교 문서에 도달하고 화면에 "서울특별시"가 보이면 성공',
+  wiki: {
+    name: '숭실대학교 표어 확인',
+    goal: '숭실대학교를 검색해서 숭실대학교의 표어가 무엇인지 파악한다',
+    criteria: '숭실대학교 문서에서 표어(교훈) "진리와 봉사"를 확인하면 성공',
   },
 }
 
@@ -231,6 +227,7 @@ const byVariant = MOCK_DATA.viewsByVariant as Record<
     personas: Json
     steps: Json
     filmstrip: unknown[]
+    replay: Json
   }
 >
 
@@ -712,6 +709,7 @@ export function mockResponse(rawPath: string, init?: RequestInit): unknown {
           sentences: MOCK_DATA.axisSentences,
           axes: MOCK_DATA.axes,
           test_name: missionOf(site.variant).name,
+          replay: views.replay,
         }
       }
     }

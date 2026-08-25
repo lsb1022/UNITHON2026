@@ -698,7 +698,7 @@ export const MOCK_DATA = {
       "usageNote": "P008·P009 2명분만 집계된 값. 앞 8명은 실행이 중단되며 기록되지 못함"
     },
     "wiki": {
-      "runId": "wiki_v",
+      "runId": "wiki_demo",
       "variant": "ko.wikipedia.org",
       "usage": {
         "calls": 90,
@@ -860,12 +860,12 @@ export const MOCK_DATA = {
             "patience": 2,
             "breadth": 2
           },
-          "steps": 3,
-          "synthetic": false,
-          "end": "goal_reached",
-          "endLabel": "달성",
-          "firstThought": "숭실대학교를 검색하기 위해 검색창에 '숭실대학교'를 입력합니다.",
-          "lastThought": "숭실대학교 위키백과 페이지에서 표어가 '역사로 미래를 여는 대학'인 것을 확인했습니다."
+          "steps": 11,
+          "synthetic": true,
+          "end": "gave_up",
+          "endLabel": "포기",
+          "firstThought": "숭실대학교의 표어를 찾기 위해 검색창에 '숭실대학교'를 입력하겠습니다.",
+          "lastThought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다."
         },
         {
           "age_band": "30대",
@@ -1014,12 +1014,12 @@ export const MOCK_DATA = {
             "patience": 2,
             "breadth": 2
           },
-          "steps": 3,
-          "synthetic": false,
-          "end": "goal_reached",
-          "endLabel": "달성",
-          "firstThought": "숭실대학교를 검색해야 하니까 일단 검색창에 '숭실대학교'를 쳐야겠다.",
-          "lastThought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'이라고 나와 있어서 목표를 달성했다."
+          "steps": 23,
+          "synthetic": true,
+          "end": "gave_up",
+          "endLabel": "포기",
+          "firstThought": "숭실대학교를 검색하기 위해 검색창에 '숭실대학교'를 입력합니다.",
+          "lastThought": "숭실대학교 표어가 어디 있는지 눈에 잘 띄지 않고 계속 스크롤해도 잘 모르겠어서 더 이상 찾기 힘듭니다."
         },
         {
           "age_band": "30대",
@@ -1058,12 +1058,12 @@ export const MOCK_DATA = {
             "patience": 2,
             "breadth": 4
           },
-          "steps": 3,
-          "synthetic": false,
-          "end": "goal_reached",
-          "endLabel": "달성",
-          "firstThought": "숭실대학교의 표어를 찾기 위해 검색창에 '숭실대학교'를 입력합니다.",
-          "lastThought": "화면 우측의 정보 상자에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 완료합니다."
+          "steps": 11,
+          "synthetic": true,
+          "end": "gave_up",
+          "endLabel": "포기",
+          "firstThought": "숭실대학교의 표어를 찾기 위해 검색창에 '숭실대학교'를 입력하겠습니다.",
+          "lastThought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다."
         },
         {
           "age_band": "20대",
@@ -1374,10 +1374,10 @@ export const MOCK_DATA = {
           "lastThought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다."
         }
       ],
-      "synthetic": false,
-      "measuredCount": null,
-      "syntheticCount": null,
-      "syntheticNote": null,
+      "synthetic": true,
+      "measuredCount": 27,
+      "syntheticCount": 3,
+      "syntheticNote": "30명 중 27명은 실제 실행 기록이고, 3명은 발표용으로 결과를 실패로 바꾼 것입니다. 바꾼 사람의 스텝과 속마음은 같은 미션에서 실제로 실패한 기록을 옮긴 것입니다. 비용·토큰은 실측분만 집계돼 있습니다.",
       "usageNote": null
     }
   },
@@ -40309,25 +40309,25 @@ export const MOCK_DATA = {
     },
     "wiki": {
       "detail": {
-        "synthetic": false,
-        "measured_count": null,
-        "synthetic_count": null,
-        "synthetic_note": null,
+        "synthetic": true,
+        "measured_count": 27,
+        "synthetic_count": 3,
+        "synthetic_note": "30명 중 27명은 실제 실행 기록이고, 3명은 발표용으로 결과를 실패로 바꾼 것입니다. 바꾼 사람의 스텝과 속마음은 같은 미션에서 실제로 실패한 기록을 옮긴 것입니다. 비용·토큰은 실측분만 집계돼 있습니다.",
         "persona_total": 30,
         "journey_count": 30,
-        "success_rate": 100.0,
-        "drop_rate": 0.0,
+        "success_rate": 90.0,
+        "drop_rate": 10.0,
         "avg_success_steps": 3.0
       },
       "paths": {
         "total": 30,
         "success": {
-          "count": 30,
-          "percent": 100.0
+          "count": 27,
+          "percent": 90.0
         },
         "drop": {
-          "count": 0,
-          "percent": 0.0
+          "count": 3,
+          "percent": 10.0
         },
         "paths": {
           "success": [
@@ -40335,7 +40335,7 @@ export const MOCK_DATA = {
               "rank": 1,
               "name": "경로 1",
               "label": "위키백과:대문 → 숭실대학교",
-              "persona_count": 30,
+              "persona_count": 27,
               "step_count": 3,
               "screens": [
                 {
@@ -40352,7 +40352,28 @@ export const MOCK_DATA = {
               "more": 0
             }
           ],
-          "drop": []
+          "drop": [
+            {
+              "rank": 1,
+              "name": "경로 1",
+              "label": "위키백과:대문 → 숭실대학교",
+              "persona_count": 3,
+              "step_count": 15,
+              "screens": [
+                {
+                  "key": "위키백과:대문",
+                  "title": "위키백과:대문",
+                  "url": null
+                },
+                {
+                  "key": "숭실대학교",
+                  "title": "숭실대학교",
+                  "url": null
+                }
+              ],
+              "more": 0
+            }
+          ]
         }
       },
       "diagram": {
@@ -40367,8 +40388,8 @@ export const MOCK_DATA = {
                 "key": "위키백과:대문",
                 "title": "위키백과:대문",
                 "count": 30,
-                "success": 30,
-                "drop": 0
+                "success": 27,
+                "drop": 3
               }
             ]
           },
@@ -40382,8 +40403,8 @@ export const MOCK_DATA = {
                 "key": "위키백과:대문",
                 "title": "위키백과:대문",
                 "count": 30,
-                "success": 30,
-                "drop": 0
+                "success": 27,
+                "drop": 3
               }
             ]
           },
@@ -40397,8 +40418,8 @@ export const MOCK_DATA = {
                 "key": "숭실대학교",
                 "title": "숭실대학교",
                 "count": 30,
-                "success": 30,
-                "drop": 0
+                "success": 27,
+                "drop": 3
               }
             ]
           },
@@ -40407,13 +40428,331 @@ export const MOCK_DATA = {
             "label": "4단계",
             "nodes": [
               {
+                "id": "c3:숭실대학교",
+                "column": 3,
+                "key": "숭실대학교",
+                "title": "숭실대학교",
+                "count": 3,
+                "success": 0,
+                "drop": 3
+              },
+              {
                 "id": "c3:end_goal",
                 "column": 3,
                 "key": "end_goal",
                 "title": "달성",
-                "count": 30,
-                "success": 30,
+                "count": 27,
+                "success": 27,
                 "drop": 0
+              }
+            ]
+          },
+          {
+            "index": 4,
+            "label": "5단계",
+            "nodes": [
+              {
+                "id": "c4:숭실대학교",
+                "column": 4,
+                "key": "숭실대학교",
+                "title": "숭실대학교",
+                "count": 3,
+                "success": 0,
+                "drop": 3
+              }
+            ]
+          },
+          {
+            "index": 5,
+            "label": "6단계",
+            "nodes": [
+              {
+                "id": "c5:숭실대학교",
+                "column": 5,
+                "key": "숭실대학교",
+                "title": "숭실대학교",
+                "count": 3,
+                "success": 0,
+                "drop": 3
+              }
+            ]
+          },
+          {
+            "index": 6,
+            "label": "7단계",
+            "nodes": [
+              {
+                "id": "c6:숭실대학교",
+                "column": 6,
+                "key": "숭실대학교",
+                "title": "숭실대학교",
+                "count": 3,
+                "success": 0,
+                "drop": 3
+              }
+            ]
+          },
+          {
+            "index": 7,
+            "label": "8단계",
+            "nodes": [
+              {
+                "id": "c7:숭실대학교",
+                "column": 7,
+                "key": "숭실대학교",
+                "title": "숭실대학교",
+                "count": 3,
+                "success": 0,
+                "drop": 3
+              }
+            ]
+          },
+          {
+            "index": 8,
+            "label": "9단계",
+            "nodes": [
+              {
+                "id": "c8:숭실대학교",
+                "column": 8,
+                "key": "숭실대학교",
+                "title": "숭실대학교",
+                "count": 3,
+                "success": 0,
+                "drop": 3
+              }
+            ]
+          },
+          {
+            "index": 9,
+            "label": "10단계",
+            "nodes": [
+              {
+                "id": "c9:숭실대학교",
+                "column": 9,
+                "key": "숭실대학교",
+                "title": "숭실대학교",
+                "count": 3,
+                "success": 0,
+                "drop": 3
+              }
+            ]
+          },
+          {
+            "index": 10,
+            "label": "11단계",
+            "nodes": [
+              {
+                "id": "c10:숭실대학교",
+                "column": 10,
+                "key": "숭실대학교",
+                "title": "숭실대학교",
+                "count": 3,
+                "success": 0,
+                "drop": 3
+              }
+            ]
+          },
+          {
+            "index": 11,
+            "label": "12단계",
+            "nodes": [
+              {
+                "id": "c11:숭실대학교",
+                "column": 11,
+                "key": "숭실대학교",
+                "title": "숭실대학교",
+                "count": 1,
+                "success": 0,
+                "drop": 1
+              },
+              {
+                "id": "c11:end_drop",
+                "column": 11,
+                "key": "end_drop",
+                "title": "이탈",
+                "count": 2,
+                "success": 0,
+                "drop": 2
+              }
+            ]
+          },
+          {
+            "index": 12,
+            "label": "13단계",
+            "nodes": [
+              {
+                "id": "c12:숭실대학교",
+                "column": 12,
+                "key": "숭실대학교",
+                "title": "숭실대학교",
+                "count": 1,
+                "success": 0,
+                "drop": 1
+              }
+            ]
+          },
+          {
+            "index": 13,
+            "label": "14단계",
+            "nodes": [
+              {
+                "id": "c13:숭실대학교",
+                "column": 13,
+                "key": "숭실대학교",
+                "title": "숭실대학교",
+                "count": 1,
+                "success": 0,
+                "drop": 1
+              }
+            ]
+          },
+          {
+            "index": 14,
+            "label": "15단계",
+            "nodes": [
+              {
+                "id": "c14:숭실대학교",
+                "column": 14,
+                "key": "숭실대학교",
+                "title": "숭실대학교",
+                "count": 1,
+                "success": 0,
+                "drop": 1
+              }
+            ]
+          },
+          {
+            "index": 15,
+            "label": "16단계",
+            "nodes": [
+              {
+                "id": "c15:숭실대학교",
+                "column": 15,
+                "key": "숭실대학교",
+                "title": "숭실대학교",
+                "count": 1,
+                "success": 0,
+                "drop": 1
+              }
+            ]
+          },
+          {
+            "index": 16,
+            "label": "17단계",
+            "nodes": [
+              {
+                "id": "c16:숭실대학교",
+                "column": 16,
+                "key": "숭실대학교",
+                "title": "숭실대학교",
+                "count": 1,
+                "success": 0,
+                "drop": 1
+              }
+            ]
+          },
+          {
+            "index": 17,
+            "label": "18단계",
+            "nodes": [
+              {
+                "id": "c17:숭실대학교",
+                "column": 17,
+                "key": "숭실대학교",
+                "title": "숭실대학교",
+                "count": 1,
+                "success": 0,
+                "drop": 1
+              }
+            ]
+          },
+          {
+            "index": 18,
+            "label": "19단계",
+            "nodes": [
+              {
+                "id": "c18:숭실대학교",
+                "column": 18,
+                "key": "숭실대학교",
+                "title": "숭실대학교",
+                "count": 1,
+                "success": 0,
+                "drop": 1
+              }
+            ]
+          },
+          {
+            "index": 19,
+            "label": "20단계",
+            "nodes": [
+              {
+                "id": "c19:숭실대학교",
+                "column": 19,
+                "key": "숭실대학교",
+                "title": "숭실대학교",
+                "count": 1,
+                "success": 0,
+                "drop": 1
+              }
+            ]
+          },
+          {
+            "index": 20,
+            "label": "21단계",
+            "nodes": [
+              {
+                "id": "c20:숭실대학교",
+                "column": 20,
+                "key": "숭실대학교",
+                "title": "숭실대학교",
+                "count": 1,
+                "success": 0,
+                "drop": 1
+              }
+            ]
+          },
+          {
+            "index": 21,
+            "label": "22단계",
+            "nodes": [
+              {
+                "id": "c21:숭실대학교",
+                "column": 21,
+                "key": "숭실대학교",
+                "title": "숭실대학교",
+                "count": 1,
+                "success": 0,
+                "drop": 1
+              }
+            ]
+          },
+          {
+            "index": 22,
+            "label": "23단계",
+            "nodes": [
+              {
+                "id": "c22:숭실대학교",
+                "column": 22,
+                "key": "숭실대학교",
+                "title": "숭실대학교",
+                "count": 1,
+                "success": 0,
+                "drop": 1
+              }
+            ]
+          },
+          {
+            "index": 23,
+            "label": "24단계",
+            "nodes": [
+              {
+                "id": "c23:end_drop",
+                "column": 23,
+                "key": "end_drop",
+                "title": "이탈",
+                "count": 1,
+                "success": 0,
+                "drop": 1
               }
             ]
           }
@@ -40423,22 +40762,176 @@ export const MOCK_DATA = {
             "source": "c0:위키백과:대문",
             "target": "c1:위키백과:대문",
             "count": 30,
-            "success": 30,
-            "drop": 0
+            "success": 27,
+            "drop": 3
           },
           {
             "source": "c1:위키백과:대문",
             "target": "c2:숭실대학교",
             "count": 30,
-            "success": 30,
-            "drop": 0
+            "success": 27,
+            "drop": 3
           },
           {
             "source": "c2:숭실대학교",
             "target": "c3:end_goal",
-            "count": 30,
-            "success": 30,
+            "count": 27,
+            "success": 27,
             "drop": 0
+          },
+          {
+            "source": "c2:숭실대학교",
+            "target": "c3:숭실대학교",
+            "count": 3,
+            "success": 0,
+            "drop": 3
+          },
+          {
+            "source": "c3:숭실대학교",
+            "target": "c4:숭실대학교",
+            "count": 3,
+            "success": 0,
+            "drop": 3
+          },
+          {
+            "source": "c4:숭실대학교",
+            "target": "c5:숭실대학교",
+            "count": 3,
+            "success": 0,
+            "drop": 3
+          },
+          {
+            "source": "c5:숭실대학교",
+            "target": "c6:숭실대학교",
+            "count": 3,
+            "success": 0,
+            "drop": 3
+          },
+          {
+            "source": "c6:숭실대학교",
+            "target": "c7:숭실대학교",
+            "count": 3,
+            "success": 0,
+            "drop": 3
+          },
+          {
+            "source": "c7:숭실대학교",
+            "target": "c8:숭실대학교",
+            "count": 3,
+            "success": 0,
+            "drop": 3
+          },
+          {
+            "source": "c8:숭실대학교",
+            "target": "c9:숭실대학교",
+            "count": 3,
+            "success": 0,
+            "drop": 3
+          },
+          {
+            "source": "c9:숭실대학교",
+            "target": "c10:숭실대학교",
+            "count": 3,
+            "success": 0,
+            "drop": 3
+          },
+          {
+            "source": "c10:숭실대학교",
+            "target": "c11:end_drop",
+            "count": 2,
+            "success": 0,
+            "drop": 2
+          },
+          {
+            "source": "c10:숭실대학교",
+            "target": "c11:숭실대학교",
+            "count": 1,
+            "success": 0,
+            "drop": 1
+          },
+          {
+            "source": "c11:숭실대학교",
+            "target": "c12:숭실대학교",
+            "count": 1,
+            "success": 0,
+            "drop": 1
+          },
+          {
+            "source": "c12:숭실대학교",
+            "target": "c13:숭실대학교",
+            "count": 1,
+            "success": 0,
+            "drop": 1
+          },
+          {
+            "source": "c13:숭실대학교",
+            "target": "c14:숭실대학교",
+            "count": 1,
+            "success": 0,
+            "drop": 1
+          },
+          {
+            "source": "c14:숭실대학교",
+            "target": "c15:숭실대학교",
+            "count": 1,
+            "success": 0,
+            "drop": 1
+          },
+          {
+            "source": "c15:숭실대학교",
+            "target": "c16:숭실대학교",
+            "count": 1,
+            "success": 0,
+            "drop": 1
+          },
+          {
+            "source": "c16:숭실대학교",
+            "target": "c17:숭실대학교",
+            "count": 1,
+            "success": 0,
+            "drop": 1
+          },
+          {
+            "source": "c17:숭실대학교",
+            "target": "c18:숭실대학교",
+            "count": 1,
+            "success": 0,
+            "drop": 1
+          },
+          {
+            "source": "c18:숭실대학교",
+            "target": "c19:숭실대학교",
+            "count": 1,
+            "success": 0,
+            "drop": 1
+          },
+          {
+            "source": "c19:숭실대학교",
+            "target": "c20:숭실대학교",
+            "count": 1,
+            "success": 0,
+            "drop": 1
+          },
+          {
+            "source": "c20:숭실대학교",
+            "target": "c21:숭실대학교",
+            "count": 1,
+            "success": 0,
+            "drop": 1
+          },
+          {
+            "source": "c21:숭실대학교",
+            "target": "c22:숭실대학교",
+            "count": 1,
+            "success": 0,
+            "drop": 1
+          },
+          {
+            "source": "c22:숭실대학교",
+            "target": "c23:end_drop",
+            "count": 1,
+            "success": 0,
+            "drop": 1
           }
         ],
         "total": 30,
@@ -41158,10 +41651,10 @@ export const MOCK_DATA = {
               },
               "age_band": "30대",
               "gender": "남성",
-              "outcome": "success",
-              "end_label": "달성",
-              "total_steps": 3,
-              "thought": "숭실대학교를 검색하기 위해 검색창에 '숭실대학교'를 입력합니다.",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "숭실대학교의 표어를 찾기 위해 검색창에 '숭실대학교'를 입력하겠습니다.",
               "action": "type",
               "target": "위키백과 검색",
               "blocked": false
@@ -41291,10 +41784,10 @@ export const MOCK_DATA = {
               },
               "age_band": "20대",
               "gender": "남성",
-              "outcome": "success",
-              "end_label": "달성",
-              "total_steps": 3,
-              "thought": "숭실대학교를 검색해야 하니까 일단 검색창에 '숭실대학교'를 쳐야겠다.",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "숭실대학교를 검색하기 위해 검색창에 '숭실대학교'를 입력합니다.",
               "action": "type",
               "target": "위키백과 검색",
               "blocked": false
@@ -41329,10 +41822,10 @@ export const MOCK_DATA = {
               },
               "age_band": "30대",
               "gender": "남성",
-              "outcome": "success",
-              "end_label": "달성",
-              "total_steps": 3,
-              "thought": "숭실대학교의 표어를 찾기 위해 검색창에 '숭실대학교'를 입력합니다.",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "숭실대학교의 표어를 찾기 위해 검색창에 '숭실대학교'를 입력하겠습니다.",
               "action": "type",
               "target": "위키백과 검색",
               "blocked": false
@@ -42320,10 +42813,10 @@ export const MOCK_DATA = {
               },
               "age_band": "30대",
               "gender": "남성",
-              "outcome": "success",
-              "end_label": "달성",
-              "total_steps": 3,
-              "thought": "검색 결과에서 가장 위에 있는 '숭실대학교' 링크를 클릭하여 해당 페이지로 이동합니다.",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "검색 결과 추천 목록에 있는 '숭실대학교 대한민국 서울특별시의 사립 종합대학' 링크를 클릭하여 숭실대학교 문서로 이동하겠습니다.",
               "action": "click",
               "target": "숭실대학교 대한민국 서울특별시의 사립 종합대학",
               "blocked": false
@@ -42453,10 +42946,10 @@ export const MOCK_DATA = {
               },
               "age_band": "20대",
               "gender": "남성",
-              "outcome": "success",
-              "end_label": "달성",
-              "total_steps": 3,
-              "thought": "검색 결과에 숭실대학교 링크가 나왔으니 클릭해서 해당 페이지로 이동한다.",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "검색 결과에 나온 숭실대학교 링크를 눌러 페이지로 이동합니다.",
               "action": "click",
               "target": "숭실대학교 대한민국 서울특별시의 사립 종합대학",
               "blocked": false
@@ -42491,10 +42984,10 @@ export const MOCK_DATA = {
               },
               "age_band": "30대",
               "gender": "남성",
-              "outcome": "success",
-              "end_label": "달성",
-              "total_steps": 3,
-              "thought": "검색 결과 목록에서 숭실대학교 링크를 눌러 숭실대학교 문서로 이동합니다.",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "검색 결과 추천 목록에 있는 '숭실대학교 대한민국 서울특별시의 사립 종합대학' 링크를 클릭하여 숭실대학교 문서로 이동하겠습니다.",
               "action": "click",
               "target": "숭실대학교 대한민국 서울특별시의 사립 종합대학",
               "blocked": false
@@ -42782,7 +43275,18 @@ export const MOCK_DATA = {
             "h": 12440
           },
           "clicks": [],
-          "screen_clicks": [],
+          "screen_clicks": [
+            {
+              "x": 142,
+              "y": 7117,
+              "wasted": true
+            },
+            {
+              "x": 142,
+              "y": 247,
+              "wasted": false
+            }
+          ],
           "wasted": 0,
           "personas": [
             {
@@ -42910,11 +43414,11 @@ export const MOCK_DATA = {
               },
               "age_band": "30대",
               "gender": "남성",
-              "outcome": "success",
-              "end_label": "달성",
-              "total_steps": 3,
-              "thought": "숭실대학교 위키백과 페이지에서 표어가 '역사로 미래를 여는 대학'인 것을 확인했습니다.",
-              "action": "done",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "숭실대학교 페이지에 들어왔으니 스크롤을 내려 표어가 적힌 정보를 찾겠습니다.",
+              "action": "scroll",
               "target": "",
               "blocked": false
             },
@@ -43043,11 +43547,11 @@ export const MOCK_DATA = {
               },
               "age_band": "20대",
               "gender": "남성",
-              "outcome": "success",
-              "end_label": "달성",
-              "total_steps": 3,
-              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'이라고 나와 있어서 목표를 달성했다.",
-              "action": "done",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "숭실대학교 페이지에 왔으니 표어를 찾기 위해 아래로 스크롤합니다.",
+              "action": "scroll",
               "target": "",
               "blocked": false
             },
@@ -43081,11 +43585,11 @@ export const MOCK_DATA = {
               },
               "age_band": "30대",
               "gender": "남성",
-              "outcome": "success",
-              "end_label": "달성",
-              "total_steps": 3,
-              "thought": "화면 우측의 정보 상자에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 완료합니다.",
-              "action": "done",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "숭실대학교 페이지에 들어왔으니 스크롤을 내려 표어가 적힌 정보를 찾겠습니다.",
+              "action": "scroll",
               "target": "",
               "blocked": false
             },
@@ -43358,6 +43862,12066 @@ export const MOCK_DATA = {
           ],
           "elsewhere": [],
           "finished": [],
+          "total": 30
+        },
+        "c3:숭실대학교": {
+          "id": "c3:숭실대학교",
+          "step": 4,
+          "screen": "숭실대학교",
+          "title": "숭실대학교",
+          "count": 3,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "clicks": [],
+          "screen_clicks": [
+            {
+              "x": 142,
+              "y": 7117,
+              "wasted": true
+            },
+            {
+              "x": 142,
+              "y": 247,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "숭실대학교 페이지에 들어왔으니 스크롤을 더 내려서 학교 정보 상자나 교훈/표어 관련 내용을 찾아보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P014",
+              "label": "숙련4·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 4,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "숭실대학교의 표어가 적힌 부분을 찾기 위해 화면을 더 아래로 내려봅니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P016",
+              "label": "숙련5·주의1·인내2·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "숭실대학교 페이지에 들어왔으니 스크롤을 더 내려서 학교 정보 상자나 교훈/표어 관련 내용을 찾아보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'으로 표기되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보를 보니 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 검색 목표를 완료했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어인 '역사로 미래를 여는 대학'이 보이므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라는 정보를 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P011",
+              "label": "숙련3·주의4·인내2·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 4,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P012",
+              "label": "숙련1·주의3·인내3·탐색1",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 1
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 '표어 역사로 미래를 여는 대학'이라는 문구가 명확하게 보이므로 숭실대학교의 표어를 파악했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P013",
+              "label": "숙련3·주의3·인내5·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 5,
+                "breadth": 2
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에 접속했고 화면에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P015",
+              "label": "숙련5·주의1·인내3·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 정보 상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P017",
+              "label": "숙련5·주의1·인내4·탐색3",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "페이지 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P018",
+              "label": "숙련2·주의4·인내4·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면의 숭실대학교 정보란에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P019",
+              "label": "숙련5·주의3·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'이라고 나와 있네요. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P020",
+              "label": "숙련5·주의2·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 적혀 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P021",
+              "label": "숙련4·주의2·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "현재 화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P022",
+              "label": "숙련4·주의3·인내3·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'인 것을 확인했으니 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P023",
+              "label": "숙련1·주의3·인내3·탐색3",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있어서 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P024",
+              "label": "숙련1·주의4·인내4·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인하였습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P025",
+              "label": "숙련3·주의3·인내1·탐색5",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 5
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P026",
+              "label": "숙련4·주의5·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P027",
+              "label": "숙련4·주의2·인내1·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어로 '역사로 미래를 여는 대학'이 표기되어 있는 것을 확인하여 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P028",
+              "label": "숙련2·주의4·인내1·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'인 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P029",
+              "label": "숙련3·주의2·인내2·탐색4",
+              "traits": {
+                "literacy": 3,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P030",
+              "label": "숙련4·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 30
+        },
+        "c4:숭실대학교": {
+          "id": "c4:숭실대학교",
+          "step": 5,
+          "screen": "숭실대학교",
+          "title": "숭실대학교",
+          "count": 3,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "clicks": [],
+          "screen_clicks": [
+            {
+              "x": 142,
+              "y": 7117,
+              "wasted": true
+            },
+            {
+              "x": 142,
+              "y": 247,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "숭실대학교 정보 상자나 교훈/표어 항목을 확인하기 위해 스크롤을 더 내려보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P014",
+              "label": "숙련4·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 4,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "숭실대학교의 표어를 찾기 위해 화면을 조금 더 아래로 스크롤합니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P016",
+              "label": "숙련5·주의1·인내2·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "숭실대학교 정보 상자나 교훈/표어 항목을 확인하기 위해 스크롤을 더 내려보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'으로 표기되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보를 보니 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 검색 목표를 완료했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어인 '역사로 미래를 여는 대학'이 보이므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라는 정보를 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P011",
+              "label": "숙련3·주의4·인내2·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 4,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P012",
+              "label": "숙련1·주의3·인내3·탐색1",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 1
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 '표어 역사로 미래를 여는 대학'이라는 문구가 명확하게 보이므로 숭실대학교의 표어를 파악했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P013",
+              "label": "숙련3·주의3·인내5·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 5,
+                "breadth": 2
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에 접속했고 화면에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P015",
+              "label": "숙련5·주의1·인내3·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 정보 상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P017",
+              "label": "숙련5·주의1·인내4·탐색3",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "페이지 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P018",
+              "label": "숙련2·주의4·인내4·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면의 숭실대학교 정보란에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P019",
+              "label": "숙련5·주의3·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'이라고 나와 있네요. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P020",
+              "label": "숙련5·주의2·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 적혀 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P021",
+              "label": "숙련4·주의2·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "현재 화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P022",
+              "label": "숙련4·주의3·인내3·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'인 것을 확인했으니 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P023",
+              "label": "숙련1·주의3·인내3·탐색3",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있어서 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P024",
+              "label": "숙련1·주의4·인내4·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인하였습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P025",
+              "label": "숙련3·주의3·인내1·탐색5",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 5
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P026",
+              "label": "숙련4·주의5·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P027",
+              "label": "숙련4·주의2·인내1·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어로 '역사로 미래를 여는 대학'이 표기되어 있는 것을 확인하여 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P028",
+              "label": "숙련2·주의4·인내1·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'인 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P029",
+              "label": "숙련3·주의2·인내2·탐색4",
+              "traits": {
+                "literacy": 3,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P030",
+              "label": "숙련4·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 30
+        },
+        "c5:숭실대학교": {
+          "id": "c5:숭실대학교",
+          "step": 6,
+          "screen": "숭실대학교",
+          "title": "숭실대학교",
+          "count": 3,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "clicks": [],
+          "screen_clicks": [
+            {
+              "x": 142,
+              "y": 7117,
+              "wasted": true
+            },
+            {
+              "x": 142,
+              "y": 247,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "숭실대학교의 표어나 교훈을 찾기 위해 화면을 더 아래로 스크롤해보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P014",
+              "label": "숙련4·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 4,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "숭실대학교의 표어를 찾기 위해 아래로 조금 더 스크롤해봅니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P016",
+              "label": "숙련5·주의1·인내2·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "숭실대학교의 표어나 교훈을 찾기 위해 화면을 더 아래로 스크롤해보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'으로 표기되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보를 보니 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 검색 목표를 완료했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어인 '역사로 미래를 여는 대학'이 보이므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라는 정보를 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P011",
+              "label": "숙련3·주의4·인내2·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 4,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P012",
+              "label": "숙련1·주의3·인내3·탐색1",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 1
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 '표어 역사로 미래를 여는 대학'이라는 문구가 명확하게 보이므로 숭실대학교의 표어를 파악했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P013",
+              "label": "숙련3·주의3·인내5·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 5,
+                "breadth": 2
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에 접속했고 화면에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P015",
+              "label": "숙련5·주의1·인내3·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 정보 상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P017",
+              "label": "숙련5·주의1·인내4·탐색3",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "페이지 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P018",
+              "label": "숙련2·주의4·인내4·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면의 숭실대학교 정보란에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P019",
+              "label": "숙련5·주의3·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'이라고 나와 있네요. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P020",
+              "label": "숙련5·주의2·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 적혀 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P021",
+              "label": "숙련4·주의2·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "현재 화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P022",
+              "label": "숙련4·주의3·인내3·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'인 것을 확인했으니 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P023",
+              "label": "숙련1·주의3·인내3·탐색3",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있어서 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P024",
+              "label": "숙련1·주의4·인내4·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인하였습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P025",
+              "label": "숙련3·주의3·인내1·탐색5",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 5
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P026",
+              "label": "숙련4·주의5·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P027",
+              "label": "숙련4·주의2·인내1·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어로 '역사로 미래를 여는 대학'이 표기되어 있는 것을 확인하여 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P028",
+              "label": "숙련2·주의4·인내1·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'인 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P029",
+              "label": "숙련3·주의2·인내2·탐색4",
+              "traits": {
+                "literacy": 3,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P030",
+              "label": "숙련4·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 30
+        },
+        "c6:숭실대학교": {
+          "id": "c6:숭실대학교",
+          "step": 7,
+          "screen": "숭실대학교",
+          "title": "숭실대학교",
+          "count": 3,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "clicks": [],
+          "screen_clicks": [
+            {
+              "x": 142,
+              "y": 7117,
+              "wasted": true
+            },
+            {
+              "x": 142,
+              "y": 247,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "숭실대학교 정보 상자나 본문에서 표어를 찾기 위해 아래로 스크롤을 더 내려보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P014",
+              "label": "숙련4·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 4,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "숭실대학교의 표어를 찾기 위해 아래로 스크롤을 더 내려봅니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P016",
+              "label": "숙련5·주의1·인내2·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "숭실대학교 정보 상자나 본문에서 표어를 찾기 위해 아래로 스크롤을 더 내려보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'으로 표기되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보를 보니 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 검색 목표를 완료했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어인 '역사로 미래를 여는 대학'이 보이므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라는 정보를 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P011",
+              "label": "숙련3·주의4·인내2·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 4,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P012",
+              "label": "숙련1·주의3·인내3·탐색1",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 1
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 '표어 역사로 미래를 여는 대학'이라는 문구가 명확하게 보이므로 숭실대학교의 표어를 파악했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P013",
+              "label": "숙련3·주의3·인내5·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 5,
+                "breadth": 2
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에 접속했고 화면에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P015",
+              "label": "숙련5·주의1·인내3·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 정보 상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P017",
+              "label": "숙련5·주의1·인내4·탐색3",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "페이지 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P018",
+              "label": "숙련2·주의4·인내4·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면의 숭실대학교 정보란에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P019",
+              "label": "숙련5·주의3·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'이라고 나와 있네요. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P020",
+              "label": "숙련5·주의2·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 적혀 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P021",
+              "label": "숙련4·주의2·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "현재 화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P022",
+              "label": "숙련4·주의3·인내3·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'인 것을 확인했으니 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P023",
+              "label": "숙련1·주의3·인내3·탐색3",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있어서 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P024",
+              "label": "숙련1·주의4·인내4·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인하였습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P025",
+              "label": "숙련3·주의3·인내1·탐색5",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 5
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P026",
+              "label": "숙련4·주의5·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P027",
+              "label": "숙련4·주의2·인내1·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어로 '역사로 미래를 여는 대학'이 표기되어 있는 것을 확인하여 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P028",
+              "label": "숙련2·주의4·인내1·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'인 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P029",
+              "label": "숙련3·주의2·인내2·탐색4",
+              "traits": {
+                "literacy": 3,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P030",
+              "label": "숙련4·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 30
+        },
+        "c7:숭실대학교": {
+          "id": "c7:숭실대학교",
+          "step": 8,
+          "screen": "숭실대학교",
+          "title": "숭실대학교",
+          "count": 3,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "clicks": [],
+          "screen_clicks": [
+            {
+              "x": 142,
+              "y": 7117,
+              "wasted": true
+            },
+            {
+              "x": 142,
+              "y": 247,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "숭실대학교의 표어를 찾기 위해 본문 내용을 좀 더 내려서 찾아보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P014",
+              "label": "숙련4·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 4,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "숭실대학교 표어를 찾기 위해 아래로 스크롤하여 본문이나 우측 정보 상자 내용을 확인합니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P016",
+              "label": "숙련5·주의1·인내2·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "숭실대학교의 표어를 찾기 위해 본문 내용을 좀 더 내려서 찾아보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'으로 표기되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보를 보니 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 검색 목표를 완료했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어인 '역사로 미래를 여는 대학'이 보이므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라는 정보를 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P011",
+              "label": "숙련3·주의4·인내2·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 4,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P012",
+              "label": "숙련1·주의3·인내3·탐색1",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 1
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 '표어 역사로 미래를 여는 대학'이라는 문구가 명확하게 보이므로 숭실대학교의 표어를 파악했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P013",
+              "label": "숙련3·주의3·인내5·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 5,
+                "breadth": 2
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에 접속했고 화면에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P015",
+              "label": "숙련5·주의1·인내3·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 정보 상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P017",
+              "label": "숙련5·주의1·인내4·탐색3",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "페이지 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P018",
+              "label": "숙련2·주의4·인내4·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면의 숭실대학교 정보란에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P019",
+              "label": "숙련5·주의3·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'이라고 나와 있네요. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P020",
+              "label": "숙련5·주의2·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 적혀 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P021",
+              "label": "숙련4·주의2·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "현재 화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P022",
+              "label": "숙련4·주의3·인내3·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'인 것을 확인했으니 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P023",
+              "label": "숙련1·주의3·인내3·탐색3",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있어서 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P024",
+              "label": "숙련1·주의4·인내4·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인하였습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P025",
+              "label": "숙련3·주의3·인내1·탐색5",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 5
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P026",
+              "label": "숙련4·주의5·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P027",
+              "label": "숙련4·주의2·인내1·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어로 '역사로 미래를 여는 대학'이 표기되어 있는 것을 확인하여 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P028",
+              "label": "숙련2·주의4·인내1·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'인 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P029",
+              "label": "숙련3·주의2·인내2·탐색4",
+              "traits": {
+                "literacy": 3,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P030",
+              "label": "숙련4·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 30
+        },
+        "c8:숭실대학교": {
+          "id": "c8:숭실대학교",
+          "step": 9,
+          "screen": "숭실대학교",
+          "title": "숭실대학교",
+          "count": 3,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "clicks": [],
+          "screen_clicks": [
+            {
+              "x": 142,
+              "y": 7117,
+              "wasted": true
+            },
+            {
+              "x": 142,
+              "y": 247,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "숭실대학교의 표어나 교훈 정보가 있는지 확인하기 위해 스크롤을 더 내려보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P014",
+              "label": "숙련4·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 4,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "숭실대학교 표어를 찾기 위해 본문 내용을 더 확인하고자 아래로 스크롤합니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P016",
+              "label": "숙련5·주의1·인내2·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "숭실대학교의 표어나 교훈 정보가 있는지 확인하기 위해 스크롤을 더 내려보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'으로 표기되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보를 보니 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 검색 목표를 완료했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어인 '역사로 미래를 여는 대학'이 보이므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라는 정보를 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P011",
+              "label": "숙련3·주의4·인내2·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 4,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P012",
+              "label": "숙련1·주의3·인내3·탐색1",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 1
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 '표어 역사로 미래를 여는 대학'이라는 문구가 명확하게 보이므로 숭실대학교의 표어를 파악했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P013",
+              "label": "숙련3·주의3·인내5·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 5,
+                "breadth": 2
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에 접속했고 화면에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P015",
+              "label": "숙련5·주의1·인내3·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 정보 상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P017",
+              "label": "숙련5·주의1·인내4·탐색3",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "페이지 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P018",
+              "label": "숙련2·주의4·인내4·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면의 숭실대학교 정보란에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P019",
+              "label": "숙련5·주의3·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'이라고 나와 있네요. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P020",
+              "label": "숙련5·주의2·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 적혀 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P021",
+              "label": "숙련4·주의2·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "현재 화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P022",
+              "label": "숙련4·주의3·인내3·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'인 것을 확인했으니 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P023",
+              "label": "숙련1·주의3·인내3·탐색3",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있어서 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P024",
+              "label": "숙련1·주의4·인내4·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인하였습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P025",
+              "label": "숙련3·주의3·인내1·탐색5",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 5
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P026",
+              "label": "숙련4·주의5·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P027",
+              "label": "숙련4·주의2·인내1·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어로 '역사로 미래를 여는 대학'이 표기되어 있는 것을 확인하여 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P028",
+              "label": "숙련2·주의4·인내1·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'인 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P029",
+              "label": "숙련3·주의2·인내2·탐색4",
+              "traits": {
+                "literacy": 3,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P030",
+              "label": "숙련4·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 30
+        },
+        "c9:숭실대학교": {
+          "id": "c9:숭실대학교",
+          "step": 10,
+          "screen": "숭실대학교",
+          "title": "숭실대학교",
+          "count": 3,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "clicks": [],
+          "screen_clicks": [
+            {
+              "x": 142,
+              "y": 7117,
+              "wasted": true
+            },
+            {
+              "x": 142,
+              "y": 247,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "숭실대학교의 표어나 교훈을 찾기 위해 본문과 정보 상자가 나오는 부분으로 계속 스크롤해보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P014",
+              "label": "숙련4·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 4,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "숭실대학교 표어가 어디 있는지 찾기 위해 화면을 계속 아래로 내려봅니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P016",
+              "label": "숙련5·주의1·인내2·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "숭실대학교의 표어나 교훈을 찾기 위해 본문과 정보 상자가 나오는 부분으로 계속 스크롤해보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'으로 표기되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보를 보니 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 검색 목표를 완료했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어인 '역사로 미래를 여는 대학'이 보이므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라는 정보를 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P011",
+              "label": "숙련3·주의4·인내2·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 4,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P012",
+              "label": "숙련1·주의3·인내3·탐색1",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 1
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 '표어 역사로 미래를 여는 대학'이라는 문구가 명확하게 보이므로 숭실대학교의 표어를 파악했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P013",
+              "label": "숙련3·주의3·인내5·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 5,
+                "breadth": 2
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에 접속했고 화면에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P015",
+              "label": "숙련5·주의1·인내3·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 정보 상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P017",
+              "label": "숙련5·주의1·인내4·탐색3",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "페이지 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P018",
+              "label": "숙련2·주의4·인내4·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면의 숭실대학교 정보란에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P019",
+              "label": "숙련5·주의3·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'이라고 나와 있네요. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P020",
+              "label": "숙련5·주의2·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 적혀 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P021",
+              "label": "숙련4·주의2·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "현재 화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P022",
+              "label": "숙련4·주의3·인내3·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'인 것을 확인했으니 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P023",
+              "label": "숙련1·주의3·인내3·탐색3",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있어서 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P024",
+              "label": "숙련1·주의4·인내4·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인하였습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P025",
+              "label": "숙련3·주의3·인내1·탐색5",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 5
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P026",
+              "label": "숙련4·주의5·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P027",
+              "label": "숙련4·주의2·인내1·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어로 '역사로 미래를 여는 대학'이 표기되어 있는 것을 확인하여 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P028",
+              "label": "숙련2·주의4·인내1·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'인 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P029",
+              "label": "숙련3·주의2·인내2·탐색4",
+              "traits": {
+                "literacy": 3,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P030",
+              "label": "숙련4·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 30
+        },
+        "c10:숭실대학교": {
+          "id": "c10:숭실대학교",
+          "step": 11,
+          "screen": "숭실대학교",
+          "title": "숭실대학교",
+          "count": 3,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "clicks": [],
+          "screen_clicks": [
+            {
+              "x": 142,
+              "y": 7117,
+              "wasted": true
+            },
+            {
+              "x": 142,
+              "y": 247,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "give_up",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P014",
+              "label": "숙련4·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 4,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "숭실대학교의 표어가 나와 있는지 확인하기 위해 다시 아래로 스크롤을 내려봅니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P016",
+              "label": "숙련5·주의1·인내2·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "give_up",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'으로 표기되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보를 보니 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 검색 목표를 완료했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어인 '역사로 미래를 여는 대학'이 보이므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라는 정보를 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P011",
+              "label": "숙련3·주의4·인내2·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 4,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P012",
+              "label": "숙련1·주의3·인내3·탐색1",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 1
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 '표어 역사로 미래를 여는 대학'이라는 문구가 명확하게 보이므로 숭실대학교의 표어를 파악했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P013",
+              "label": "숙련3·주의3·인내5·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 5,
+                "breadth": 2
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에 접속했고 화면에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P015",
+              "label": "숙련5·주의1·인내3·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 정보 상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P017",
+              "label": "숙련5·주의1·인내4·탐색3",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "페이지 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P018",
+              "label": "숙련2·주의4·인내4·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면의 숭실대학교 정보란에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P019",
+              "label": "숙련5·주의3·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'이라고 나와 있네요. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P020",
+              "label": "숙련5·주의2·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 적혀 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P021",
+              "label": "숙련4·주의2·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "현재 화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P022",
+              "label": "숙련4·주의3·인내3·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'인 것을 확인했으니 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P023",
+              "label": "숙련1·주의3·인내3·탐색3",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있어서 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P024",
+              "label": "숙련1·주의4·인내4·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인하였습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P025",
+              "label": "숙련3·주의3·인내1·탐색5",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 5
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P026",
+              "label": "숙련4·주의5·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P027",
+              "label": "숙련4·주의2·인내1·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어로 '역사로 미래를 여는 대학'이 표기되어 있는 것을 확인하여 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P028",
+              "label": "숙련2·주의4·인내1·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'인 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P029",
+              "label": "숙련3·주의2·인내2·탐색4",
+              "traits": {
+                "literacy": 3,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P030",
+              "label": "숙련4·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 30
+        },
+        "c11:숭실대학교": {
+          "id": "c11:숭실대학교",
+          "step": 12,
+          "screen": "숭실대학교",
+          "title": "숭실대학교",
+          "count": 1,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "clicks": [],
+          "screen_clicks": [
+            {
+              "x": 142,
+              "y": 7117,
+              "wasted": true
+            },
+            {
+              "x": 142,
+              "y": 247,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P014",
+              "label": "숙련4·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 4,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "숭실대학교 표어가 적혀 있는 정보상자나 본문 내용을 찾기 위해 아래로 스크롤합니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'으로 표기되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보를 보니 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 검색 목표를 완료했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어인 '역사로 미래를 여는 대학'이 보이므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라는 정보를 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P011",
+              "label": "숙련3·주의4·인내2·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 4,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P012",
+              "label": "숙련1·주의3·인내3·탐색1",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 1
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 '표어 역사로 미래를 여는 대학'이라는 문구가 명확하게 보이므로 숭실대학교의 표어를 파악했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P013",
+              "label": "숙련3·주의3·인내5·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 5,
+                "breadth": 2
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에 접속했고 화면에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P015",
+              "label": "숙련5·주의1·인내3·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 정보 상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P016",
+              "label": "숙련5·주의1·인내2·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P017",
+              "label": "숙련5·주의1·인내4·탐색3",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "페이지 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P018",
+              "label": "숙련2·주의4·인내4·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면의 숭실대학교 정보란에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P019",
+              "label": "숙련5·주의3·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'이라고 나와 있네요. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P020",
+              "label": "숙련5·주의2·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 적혀 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P021",
+              "label": "숙련4·주의2·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "현재 화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P022",
+              "label": "숙련4·주의3·인내3·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'인 것을 확인했으니 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P023",
+              "label": "숙련1·주의3·인내3·탐색3",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있어서 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P024",
+              "label": "숙련1·주의4·인내4·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인하였습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P025",
+              "label": "숙련3·주의3·인내1·탐색5",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 5
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P026",
+              "label": "숙련4·주의5·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P027",
+              "label": "숙련4·주의2·인내1·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어로 '역사로 미래를 여는 대학'이 표기되어 있는 것을 확인하여 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P028",
+              "label": "숙련2·주의4·인내1·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'인 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P029",
+              "label": "숙련3·주의2·인내2·탐색4",
+              "traits": {
+                "literacy": 3,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P030",
+              "label": "숙련4·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 30
+        },
+        "c12:숭실대학교": {
+          "id": "c12:숭실대학교",
+          "step": 13,
+          "screen": "숭실대학교",
+          "title": "숭실대학교",
+          "count": 1,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "clicks": [],
+          "screen_clicks": [
+            {
+              "x": 142,
+              "y": 7117,
+              "wasted": true
+            },
+            {
+              "x": 142,
+              "y": 247,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P014",
+              "label": "숙련4·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 4,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "숭실대학교 표어를 찾기 위해 아래로 더 내려가며 본문과 우측 정보상자를 확인합니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'으로 표기되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보를 보니 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 검색 목표를 완료했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어인 '역사로 미래를 여는 대학'이 보이므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라는 정보를 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P011",
+              "label": "숙련3·주의4·인내2·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 4,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P012",
+              "label": "숙련1·주의3·인내3·탐색1",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 1
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 '표어 역사로 미래를 여는 대학'이라는 문구가 명확하게 보이므로 숭실대학교의 표어를 파악했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P013",
+              "label": "숙련3·주의3·인내5·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 5,
+                "breadth": 2
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에 접속했고 화면에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P015",
+              "label": "숙련5·주의1·인내3·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 정보 상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P016",
+              "label": "숙련5·주의1·인내2·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P017",
+              "label": "숙련5·주의1·인내4·탐색3",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "페이지 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P018",
+              "label": "숙련2·주의4·인내4·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면의 숭실대학교 정보란에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P019",
+              "label": "숙련5·주의3·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'이라고 나와 있네요. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P020",
+              "label": "숙련5·주의2·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 적혀 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P021",
+              "label": "숙련4·주의2·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "현재 화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P022",
+              "label": "숙련4·주의3·인내3·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'인 것을 확인했으니 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P023",
+              "label": "숙련1·주의3·인내3·탐색3",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있어서 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P024",
+              "label": "숙련1·주의4·인내4·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인하였습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P025",
+              "label": "숙련3·주의3·인내1·탐색5",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 5
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P026",
+              "label": "숙련4·주의5·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P027",
+              "label": "숙련4·주의2·인내1·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어로 '역사로 미래를 여는 대학'이 표기되어 있는 것을 확인하여 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P028",
+              "label": "숙련2·주의4·인내1·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'인 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P029",
+              "label": "숙련3·주의2·인내2·탐색4",
+              "traits": {
+                "literacy": 3,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P030",
+              "label": "숙련4·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 30
+        },
+        "c13:숭실대학교": {
+          "id": "c13:숭실대학교",
+          "step": 14,
+          "screen": "숭실대학교",
+          "title": "숭실대학교",
+          "count": 1,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "clicks": [
+            {
+              "x": 142,
+              "y": 7117,
+              "w": 164,
+              "h": 30,
+              "label": "처음 위치",
+              "wasted": true,
+              "persona": "P014"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 142,
+              "y": 7117,
+              "wasted": true
+            },
+            {
+              "x": 142,
+              "y": 247,
+              "wasted": false
+            }
+          ],
+          "wasted": 1,
+          "personas": [
+            {
+              "id": "P014",
+              "label": "숙련4·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 4,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "계속 아래로 내려봐도 표어가 안 보여서 목차의 '처음 위치'를 눌러 다시 맨 위로 올라가 봅니다.",
+              "action": "click",
+              "target": "처음 위치",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'으로 표기되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보를 보니 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 검색 목표를 완료했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어인 '역사로 미래를 여는 대학'이 보이므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라는 정보를 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P011",
+              "label": "숙련3·주의4·인내2·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 4,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P012",
+              "label": "숙련1·주의3·인내3·탐색1",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 1
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 '표어 역사로 미래를 여는 대학'이라는 문구가 명확하게 보이므로 숭실대학교의 표어를 파악했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P013",
+              "label": "숙련3·주의3·인내5·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 5,
+                "breadth": 2
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에 접속했고 화면에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P015",
+              "label": "숙련5·주의1·인내3·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 정보 상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P016",
+              "label": "숙련5·주의1·인내2·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P017",
+              "label": "숙련5·주의1·인내4·탐색3",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "페이지 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P018",
+              "label": "숙련2·주의4·인내4·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면의 숭실대학교 정보란에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P019",
+              "label": "숙련5·주의3·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'이라고 나와 있네요. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P020",
+              "label": "숙련5·주의2·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 적혀 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P021",
+              "label": "숙련4·주의2·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "현재 화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P022",
+              "label": "숙련4·주의3·인내3·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'인 것을 확인했으니 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P023",
+              "label": "숙련1·주의3·인내3·탐색3",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있어서 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P024",
+              "label": "숙련1·주의4·인내4·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인하였습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P025",
+              "label": "숙련3·주의3·인내1·탐색5",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 5
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P026",
+              "label": "숙련4·주의5·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P027",
+              "label": "숙련4·주의2·인내1·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어로 '역사로 미래를 여는 대학'이 표기되어 있는 것을 확인하여 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P028",
+              "label": "숙련2·주의4·인내1·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'인 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P029",
+              "label": "숙련3·주의2·인내2·탐색4",
+              "traits": {
+                "literacy": 3,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P030",
+              "label": "숙련4·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 30
+        },
+        "c14:숭실대학교": {
+          "id": "c14:숭실대학교",
+          "step": 15,
+          "screen": "숭실대학교",
+          "title": "숭실대학교",
+          "count": 1,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "clicks": [
+            {
+              "x": 142,
+              "y": 247,
+              "w": 164,
+              "h": 30,
+              "label": "처음 위치",
+              "wasted": false,
+              "persona": "P014"
+            }
+          ],
+          "screen_clicks": [
+            {
+              "x": 142,
+              "y": 7117,
+              "wasted": true
+            },
+            {
+              "x": 142,
+              "y": 247,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P014",
+              "label": "숙련4·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 4,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "맨 위로 올라가기 위해 화면에 보이는 '처음 위치' 링크(link_8)를 눌러봅니다.",
+              "action": "click",
+              "target": "처음 위치",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'으로 표기되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보를 보니 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 검색 목표를 완료했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어인 '역사로 미래를 여는 대학'이 보이므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라는 정보를 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P011",
+              "label": "숙련3·주의4·인내2·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 4,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P012",
+              "label": "숙련1·주의3·인내3·탐색1",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 1
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 '표어 역사로 미래를 여는 대학'이라는 문구가 명확하게 보이므로 숭실대학교의 표어를 파악했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P013",
+              "label": "숙련3·주의3·인내5·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 5,
+                "breadth": 2
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에 접속했고 화면에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P015",
+              "label": "숙련5·주의1·인내3·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 정보 상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P016",
+              "label": "숙련5·주의1·인내2·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P017",
+              "label": "숙련5·주의1·인내4·탐색3",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "페이지 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P018",
+              "label": "숙련2·주의4·인내4·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면의 숭실대학교 정보란에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P019",
+              "label": "숙련5·주의3·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'이라고 나와 있네요. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P020",
+              "label": "숙련5·주의2·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 적혀 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P021",
+              "label": "숙련4·주의2·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "현재 화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P022",
+              "label": "숙련4·주의3·인내3·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'인 것을 확인했으니 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P023",
+              "label": "숙련1·주의3·인내3·탐색3",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있어서 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P024",
+              "label": "숙련1·주의4·인내4·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인하였습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P025",
+              "label": "숙련3·주의3·인내1·탐색5",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 5
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P026",
+              "label": "숙련4·주의5·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P027",
+              "label": "숙련4·주의2·인내1·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어로 '역사로 미래를 여는 대학'이 표기되어 있는 것을 확인하여 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P028",
+              "label": "숙련2·주의4·인내1·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'인 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P029",
+              "label": "숙련3·주의2·인내2·탐색4",
+              "traits": {
+                "literacy": 3,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P030",
+              "label": "숙련4·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 30
+        },
+        "c15:숭실대학교": {
+          "id": "c15:숭실대학교",
+          "step": 16,
+          "screen": "숭실대학교",
+          "title": "숭실대학교",
+          "count": 1,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "clicks": [],
+          "screen_clicks": [
+            {
+              "x": 142,
+              "y": 7117,
+              "wasted": true
+            },
+            {
+              "x": 142,
+              "y": 247,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P014",
+              "label": "숙련4·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 4,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "숭실대학교 정보상자나 표어 내용을 확인하기 위해 다시 아래로 스크롤을 내려봅니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'으로 표기되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보를 보니 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 검색 목표를 완료했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어인 '역사로 미래를 여는 대학'이 보이므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라는 정보를 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P011",
+              "label": "숙련3·주의4·인내2·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 4,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P012",
+              "label": "숙련1·주의3·인내3·탐색1",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 1
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 '표어 역사로 미래를 여는 대학'이라는 문구가 명확하게 보이므로 숭실대학교의 표어를 파악했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P013",
+              "label": "숙련3·주의3·인내5·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 5,
+                "breadth": 2
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에 접속했고 화면에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P015",
+              "label": "숙련5·주의1·인내3·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 정보 상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P016",
+              "label": "숙련5·주의1·인내2·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P017",
+              "label": "숙련5·주의1·인내4·탐색3",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "페이지 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P018",
+              "label": "숙련2·주의4·인내4·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면의 숭실대학교 정보란에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P019",
+              "label": "숙련5·주의3·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'이라고 나와 있네요. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P020",
+              "label": "숙련5·주의2·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 적혀 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P021",
+              "label": "숙련4·주의2·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "현재 화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P022",
+              "label": "숙련4·주의3·인내3·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'인 것을 확인했으니 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P023",
+              "label": "숙련1·주의3·인내3·탐색3",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있어서 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P024",
+              "label": "숙련1·주의4·인내4·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인하였습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P025",
+              "label": "숙련3·주의3·인내1·탐색5",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 5
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P026",
+              "label": "숙련4·주의5·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P027",
+              "label": "숙련4·주의2·인내1·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어로 '역사로 미래를 여는 대학'이 표기되어 있는 것을 확인하여 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P028",
+              "label": "숙련2·주의4·인내1·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'인 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P029",
+              "label": "숙련3·주의2·인내2·탐색4",
+              "traits": {
+                "literacy": 3,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P030",
+              "label": "숙련4·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 30
+        },
+        "c16:숭실대학교": {
+          "id": "c16:숭실대학교",
+          "step": 17,
+          "screen": "숭실대학교",
+          "title": "숭실대학교",
+          "count": 1,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "clicks": [],
+          "screen_clicks": [
+            {
+              "x": 142,
+              "y": 7117,
+              "wasted": true
+            },
+            {
+              "x": 142,
+              "y": 247,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P014",
+              "label": "숙련4·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 4,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "숭실대학교의 표어를 찾기 위해 아래로 스크롤하여 정보상자나 본문 내용을 더 확인합니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'으로 표기되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보를 보니 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 검색 목표를 완료했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어인 '역사로 미래를 여는 대학'이 보이므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라는 정보를 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P011",
+              "label": "숙련3·주의4·인내2·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 4,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P012",
+              "label": "숙련1·주의3·인내3·탐색1",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 1
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 '표어 역사로 미래를 여는 대학'이라는 문구가 명확하게 보이므로 숭실대학교의 표어를 파악했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P013",
+              "label": "숙련3·주의3·인내5·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 5,
+                "breadth": 2
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에 접속했고 화면에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P015",
+              "label": "숙련5·주의1·인내3·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 정보 상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P016",
+              "label": "숙련5·주의1·인내2·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P017",
+              "label": "숙련5·주의1·인내4·탐색3",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "페이지 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P018",
+              "label": "숙련2·주의4·인내4·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면의 숭실대학교 정보란에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P019",
+              "label": "숙련5·주의3·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'이라고 나와 있네요. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P020",
+              "label": "숙련5·주의2·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 적혀 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P021",
+              "label": "숙련4·주의2·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "현재 화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P022",
+              "label": "숙련4·주의3·인내3·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'인 것을 확인했으니 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P023",
+              "label": "숙련1·주의3·인내3·탐색3",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있어서 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P024",
+              "label": "숙련1·주의4·인내4·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인하였습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P025",
+              "label": "숙련3·주의3·인내1·탐색5",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 5
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P026",
+              "label": "숙련4·주의5·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P027",
+              "label": "숙련4·주의2·인내1·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어로 '역사로 미래를 여는 대학'이 표기되어 있는 것을 확인하여 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P028",
+              "label": "숙련2·주의4·인내1·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'인 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P029",
+              "label": "숙련3·주의2·인내2·탐색4",
+              "traits": {
+                "literacy": 3,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P030",
+              "label": "숙련4·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 30
+        },
+        "c17:숭실대학교": {
+          "id": "c17:숭실대학교",
+          "step": 18,
+          "screen": "숭실대학교",
+          "title": "숭실대학교",
+          "count": 1,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "clicks": [],
+          "screen_clicks": [
+            {
+              "x": 142,
+              "y": 7117,
+              "wasted": true
+            },
+            {
+              "x": 142,
+              "y": 247,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P014",
+              "label": "숙련4·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 4,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "숭실대학교의 표어나 교훈을 찾기 위해 화면을 더 아래로 스크롤해서 찾아봅니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'으로 표기되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보를 보니 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 검색 목표를 완료했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어인 '역사로 미래를 여는 대학'이 보이므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라는 정보를 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P011",
+              "label": "숙련3·주의4·인내2·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 4,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P012",
+              "label": "숙련1·주의3·인내3·탐색1",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 1
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 '표어 역사로 미래를 여는 대학'이라는 문구가 명확하게 보이므로 숭실대학교의 표어를 파악했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P013",
+              "label": "숙련3·주의3·인내5·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 5,
+                "breadth": 2
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에 접속했고 화면에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P015",
+              "label": "숙련5·주의1·인내3·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 정보 상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P016",
+              "label": "숙련5·주의1·인내2·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P017",
+              "label": "숙련5·주의1·인내4·탐색3",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "페이지 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P018",
+              "label": "숙련2·주의4·인내4·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면의 숭실대학교 정보란에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P019",
+              "label": "숙련5·주의3·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'이라고 나와 있네요. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P020",
+              "label": "숙련5·주의2·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 적혀 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P021",
+              "label": "숙련4·주의2·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "현재 화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P022",
+              "label": "숙련4·주의3·인내3·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'인 것을 확인했으니 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P023",
+              "label": "숙련1·주의3·인내3·탐색3",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있어서 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P024",
+              "label": "숙련1·주의4·인내4·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인하였습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P025",
+              "label": "숙련3·주의3·인내1·탐색5",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 5
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P026",
+              "label": "숙련4·주의5·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P027",
+              "label": "숙련4·주의2·인내1·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어로 '역사로 미래를 여는 대학'이 표기되어 있는 것을 확인하여 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P028",
+              "label": "숙련2·주의4·인내1·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'인 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P029",
+              "label": "숙련3·주의2·인내2·탐색4",
+              "traits": {
+                "literacy": 3,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P030",
+              "label": "숙련4·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 30
+        },
+        "c18:숭실대학교": {
+          "id": "c18:숭실대학교",
+          "step": 19,
+          "screen": "숭실대학교",
+          "title": "숭실대학교",
+          "count": 1,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "clicks": [],
+          "screen_clicks": [
+            {
+              "x": 142,
+              "y": 7117,
+              "wasted": true
+            },
+            {
+              "x": 142,
+              "y": 247,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P014",
+              "label": "숙련4·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 4,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "숭실대학교 표어가 어디 있는지 보이지 않아서 아래로 더 스크롤해서 찾아봅니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'으로 표기되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보를 보니 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 검색 목표를 완료했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어인 '역사로 미래를 여는 대학'이 보이므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라는 정보를 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P011",
+              "label": "숙련3·주의4·인내2·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 4,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P012",
+              "label": "숙련1·주의3·인내3·탐색1",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 1
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 '표어 역사로 미래를 여는 대학'이라는 문구가 명확하게 보이므로 숭실대학교의 표어를 파악했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P013",
+              "label": "숙련3·주의3·인내5·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 5,
+                "breadth": 2
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에 접속했고 화면에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P015",
+              "label": "숙련5·주의1·인내3·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 정보 상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P016",
+              "label": "숙련5·주의1·인내2·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P017",
+              "label": "숙련5·주의1·인내4·탐색3",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "페이지 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P018",
+              "label": "숙련2·주의4·인내4·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면의 숭실대학교 정보란에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P019",
+              "label": "숙련5·주의3·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'이라고 나와 있네요. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P020",
+              "label": "숙련5·주의2·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 적혀 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P021",
+              "label": "숙련4·주의2·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "현재 화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P022",
+              "label": "숙련4·주의3·인내3·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'인 것을 확인했으니 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P023",
+              "label": "숙련1·주의3·인내3·탐색3",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있어서 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P024",
+              "label": "숙련1·주의4·인내4·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인하였습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P025",
+              "label": "숙련3·주의3·인내1·탐색5",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 5
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P026",
+              "label": "숙련4·주의5·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P027",
+              "label": "숙련4·주의2·인내1·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어로 '역사로 미래를 여는 대학'이 표기되어 있는 것을 확인하여 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P028",
+              "label": "숙련2·주의4·인내1·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'인 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P029",
+              "label": "숙련3·주의2·인내2·탐색4",
+              "traits": {
+                "literacy": 3,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P030",
+              "label": "숙련4·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 30
+        },
+        "c19:숭실대학교": {
+          "id": "c19:숭실대학교",
+          "step": 20,
+          "screen": "숭실대학교",
+          "title": "숭실대학교",
+          "count": 1,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "clicks": [],
+          "screen_clicks": [
+            {
+              "x": 142,
+              "y": 7117,
+              "wasted": true
+            },
+            {
+              "x": 142,
+              "y": 247,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P014",
+              "label": "숙련4·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 4,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "숭실대학교 표어를 찾기 위해 아래로 조금 더 스크롤해서 찾아봅니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'으로 표기되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보를 보니 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 검색 목표를 완료했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어인 '역사로 미래를 여는 대학'이 보이므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라는 정보를 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P011",
+              "label": "숙련3·주의4·인내2·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 4,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P012",
+              "label": "숙련1·주의3·인내3·탐색1",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 1
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 '표어 역사로 미래를 여는 대학'이라는 문구가 명확하게 보이므로 숭실대학교의 표어를 파악했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P013",
+              "label": "숙련3·주의3·인내5·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 5,
+                "breadth": 2
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에 접속했고 화면에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P015",
+              "label": "숙련5·주의1·인내3·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 정보 상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P016",
+              "label": "숙련5·주의1·인내2·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P017",
+              "label": "숙련5·주의1·인내4·탐색3",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "페이지 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P018",
+              "label": "숙련2·주의4·인내4·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면의 숭실대학교 정보란에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P019",
+              "label": "숙련5·주의3·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'이라고 나와 있네요. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P020",
+              "label": "숙련5·주의2·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 적혀 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P021",
+              "label": "숙련4·주의2·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "현재 화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P022",
+              "label": "숙련4·주의3·인내3·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'인 것을 확인했으니 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P023",
+              "label": "숙련1·주의3·인내3·탐색3",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있어서 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P024",
+              "label": "숙련1·주의4·인내4·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인하였습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P025",
+              "label": "숙련3·주의3·인내1·탐색5",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 5
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P026",
+              "label": "숙련4·주의5·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P027",
+              "label": "숙련4·주의2·인내1·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어로 '역사로 미래를 여는 대학'이 표기되어 있는 것을 확인하여 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P028",
+              "label": "숙련2·주의4·인내1·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'인 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P029",
+              "label": "숙련3·주의2·인내2·탐색4",
+              "traits": {
+                "literacy": 3,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P030",
+              "label": "숙련4·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 30
+        },
+        "c20:숭실대학교": {
+          "id": "c20:숭실대학교",
+          "step": 21,
+          "screen": "숭실대학교",
+          "title": "숭실대학교",
+          "count": 1,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "clicks": [],
+          "screen_clicks": [
+            {
+              "x": 142,
+              "y": 7117,
+              "wasted": true
+            },
+            {
+              "x": 142,
+              "y": 247,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P014",
+              "label": "숙련4·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 4,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "숭실대학교 표어를 찾기 위해 아래로 스크롤을 내려 정보상자나 본문 내용을 확인합니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'으로 표기되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보를 보니 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 검색 목표를 완료했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어인 '역사로 미래를 여는 대학'이 보이므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라는 정보를 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P011",
+              "label": "숙련3·주의4·인내2·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 4,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P012",
+              "label": "숙련1·주의3·인내3·탐색1",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 1
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 '표어 역사로 미래를 여는 대학'이라는 문구가 명확하게 보이므로 숭실대학교의 표어를 파악했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P013",
+              "label": "숙련3·주의3·인내5·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 5,
+                "breadth": 2
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에 접속했고 화면에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P015",
+              "label": "숙련5·주의1·인내3·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 정보 상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P016",
+              "label": "숙련5·주의1·인내2·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P017",
+              "label": "숙련5·주의1·인내4·탐색3",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "페이지 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P018",
+              "label": "숙련2·주의4·인내4·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면의 숭실대학교 정보란에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P019",
+              "label": "숙련5·주의3·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'이라고 나와 있네요. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P020",
+              "label": "숙련5·주의2·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 적혀 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P021",
+              "label": "숙련4·주의2·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "현재 화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P022",
+              "label": "숙련4·주의3·인내3·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'인 것을 확인했으니 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P023",
+              "label": "숙련1·주의3·인내3·탐색3",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있어서 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P024",
+              "label": "숙련1·주의4·인내4·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인하였습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P025",
+              "label": "숙련3·주의3·인내1·탐색5",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 5
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P026",
+              "label": "숙련4·주의5·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P027",
+              "label": "숙련4·주의2·인내1·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어로 '역사로 미래를 여는 대학'이 표기되어 있는 것을 확인하여 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P028",
+              "label": "숙련2·주의4·인내1·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'인 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P029",
+              "label": "숙련3·주의2·인내2·탐색4",
+              "traits": {
+                "literacy": 3,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P030",
+              "label": "숙련4·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 30
+        },
+        "c21:숭실대학교": {
+          "id": "c21:숭실대학교",
+          "step": 22,
+          "screen": "숭실대학교",
+          "title": "숭실대학교",
+          "count": 1,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "clicks": [],
+          "screen_clicks": [
+            {
+              "x": 142,
+              "y": 7117,
+              "wasted": true
+            },
+            {
+              "x": 142,
+              "y": 247,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P014",
+              "label": "숙련4·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 4,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "숭실대학교 표어를 찾기 위해 본문 내용을 좀 더 둘러봅니다.",
+              "action": "scroll",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'으로 표기되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보를 보니 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 검색 목표를 완료했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어인 '역사로 미래를 여는 대학'이 보이므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라는 정보를 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P011",
+              "label": "숙련3·주의4·인내2·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 4,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P012",
+              "label": "숙련1·주의3·인내3·탐색1",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 1
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 '표어 역사로 미래를 여는 대학'이라는 문구가 명확하게 보이므로 숭실대학교의 표어를 파악했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P013",
+              "label": "숙련3·주의3·인내5·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 5,
+                "breadth": 2
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에 접속했고 화면에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P015",
+              "label": "숙련5·주의1·인내3·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 정보 상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P016",
+              "label": "숙련5·주의1·인내2·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P017",
+              "label": "숙련5·주의1·인내4·탐색3",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "페이지 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P018",
+              "label": "숙련2·주의4·인내4·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면의 숭실대학교 정보란에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P019",
+              "label": "숙련5·주의3·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'이라고 나와 있네요. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P020",
+              "label": "숙련5·주의2·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 적혀 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P021",
+              "label": "숙련4·주의2·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "현재 화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P022",
+              "label": "숙련4·주의3·인내3·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'인 것을 확인했으니 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P023",
+              "label": "숙련1·주의3·인내3·탐색3",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있어서 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P024",
+              "label": "숙련1·주의4·인내4·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인하였습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P025",
+              "label": "숙련3·주의3·인내1·탐색5",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 5
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P026",
+              "label": "숙련4·주의5·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P027",
+              "label": "숙련4·주의2·인내1·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어로 '역사로 미래를 여는 대학'이 표기되어 있는 것을 확인하여 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P028",
+              "label": "숙련2·주의4·인내1·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'인 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P029",
+              "label": "숙련3·주의2·인내2·탐색4",
+              "traits": {
+                "literacy": 3,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P030",
+              "label": "숙련4·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "total": 30
+        },
+        "c22:숭실대학교": {
+          "id": "c22:숭실대학교",
+          "step": 23,
+          "screen": "숭실대학교",
+          "title": "숭실대학교",
+          "count": 1,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "clicks": [],
+          "screen_clicks": [
+            {
+              "x": 142,
+              "y": 7117,
+              "wasted": true
+            },
+            {
+              "x": 142,
+              "y": 247,
+              "wasted": false
+            }
+          ],
+          "wasted": 0,
+          "personas": [
+            {
+              "id": "P014",
+              "label": "숙련4·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 4,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 23,
+              "thought": "숭실대학교 표어가 어디 있는지 눈에 잘 띄지 않고 계속 스크롤해도 잘 모르겠어서 더 이상 찾기 힘듭니다.",
+              "action": "give_up",
+              "target": "",
+              "blocked": false
+            }
+          ],
+          "elsewhere": [],
+          "finished": [
+            {
+              "id": "P001",
+              "label": "숙련3·주의3·인내4·탐색3",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'으로 표기되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P002",
+              "label": "숙련1·주의1·인내3·탐색2",
+              "traits": {
+                "literacy": 1,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보를 보니 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P003",
+              "label": "숙련2·주의2·인내2·탐색2",
+              "traits": {
+                "literacy": 2,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 검색 목표를 완료했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P004",
+              "label": "숙련1·주의4·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P005",
+              "label": "숙련5·주의4·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 4,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P006",
+              "label": "숙련1·주의2·인내5·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어인 '역사로 미래를 여는 대학'이 보이므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P007",
+              "label": "숙련5·주의1·인내2·탐색2",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P008",
+              "label": "숙련4·주의5·인내2·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라는 정보를 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P009",
+              "label": "숙련5·주의5·인내5·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 4
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있는 것을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P010",
+              "label": "숙련5·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 5,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P011",
+              "label": "숙련3·주의4·인내2·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 4,
+                "patience": 2,
+                "breadth": 2
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P012",
+              "label": "숙련1·주의3·인내3·탐색1",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 1
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 '표어 역사로 미래를 여는 대학'이라는 문구가 명확하게 보이므로 숭실대학교의 표어를 파악했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P013",
+              "label": "숙련3·주의3·인내5·탐색2",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 5,
+                "breadth": 2
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에 접속했고 화면에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P015",
+              "label": "숙련5·주의1·인내3·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 위키백과 정보 상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P016",
+              "label": "숙련5·주의1·인내2·탐색4",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "남성",
+              "outcome": "drop",
+              "end_label": "포기",
+              "total_steps": 11,
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P017",
+              "label": "숙련5·주의1·인내4·탐색3",
+              "traits": {
+                "literacy": 5,
+                "attention": 1,
+                "patience": 4,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "페이지 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P018",
+              "label": "숙련2·주의4·인내4·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 4
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면의 숭실대학교 정보란에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P019",
+              "label": "숙련5·주의3·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "10대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'이라고 나와 있네요. 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P020",
+              "label": "숙련5·주의2·인내1·탐색1",
+              "traits": {
+                "literacy": 5,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 1
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 적혀 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P021",
+              "label": "숙련4·주의2·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "현재 화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 명시되어 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P022",
+              "label": "숙련4·주의3·인내3·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 4
+              },
+              "age_band": "50대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'인 것을 확인했으니 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P023",
+              "label": "숙련1·주의3·인내3·탐색3",
+              "traits": {
+                "literacy": 1,
+                "attention": 3,
+                "patience": 3,
+                "breadth": 3
+              },
+              "age_band": "30대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면 내용을 읽어보니 숭실대학교의 표어가 '역사로 미래를 여는 대학'으로 나와 있어서 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P024",
+              "label": "숙련1·주의4·인내4·탐색5",
+              "traits": {
+                "literacy": 1,
+                "attention": 4,
+                "patience": 4,
+                "breadth": 5
+              },
+              "age_band": "50대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 페이지에서 표어가 '역사로 미래를 여는 대학'임을 확인하였습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P025",
+              "label": "숙련3·주의3·인내1·탐색5",
+              "traits": {
+                "literacy": 3,
+                "attention": 3,
+                "patience": 1,
+                "breadth": 5
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "숭실대학교 문서의 정보상자에서 표어가 '역사로 미래를 여는 대학'임을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P026",
+              "label": "숙련4·주의5·인내5·탐색3",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 5,
+                "breadth": 3
+              },
+              "age_band": "60대 이상",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P027",
+              "label": "숙련4·주의2·인내1·탐색4",
+              "traits": {
+                "literacy": 4,
+                "attention": 2,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어로 '역사로 미래를 여는 대학'이 표기되어 있는 것을 확인하여 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P028",
+              "label": "숙련2·주의4·인내1·탐색4",
+              "traits": {
+                "literacy": 2,
+                "attention": 4,
+                "patience": 1,
+                "breadth": 4
+              },
+              "age_band": "10대",
+              "gender": "남성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'인 것을 확인했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P029",
+              "label": "숙련3·주의2·인내2·탐색4",
+              "traits": {
+                "literacy": 3,
+                "attention": 2,
+                "patience": 2,
+                "breadth": 4
+              },
+              "age_band": "40대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            },
+            {
+              "id": "P030",
+              "label": "숙련4·주의5·인내2·탐색5",
+              "traits": {
+                "literacy": 4,
+                "attention": 5,
+                "patience": 2,
+                "breadth": 5
+              },
+              "age_band": "20대",
+              "gender": "여성",
+              "outcome": "success",
+              "end_label": "달성",
+              "total_steps": 3,
+              "thought": "화면에 숭실대학교의 표어가 '역사로 미래를 여는 대학'이라고 나와 있는 것을 확인했으므로 목표를 달성했습니다.",
+              "action": "",
+              "target": "",
+              "blocked": false
+            }
+          ],
           "total": 30
         }
       },
@@ -43955,10 +56519,10 @@ export const MOCK_DATA = {
           },
           "age_band": "30대",
           "gender": "남성",
-          "outcome": "success",
-          "end_label": "달성",
-          "steps": 3,
-          "synthetic": false,
+          "outcome": "drop",
+          "end_label": "포기",
+          "steps": 11,
+          "synthetic": true,
           "frames": [
             {
               "step": 1,
@@ -43974,7 +56538,7 @@ export const MOCK_DATA = {
                 "w": 1280,
                 "h": 800
               },
-              "thought": "숭실대학교를 검색하기 위해 검색창에 '숭실대학교'를 입력합니다.",
+              "thought": "숭실대학교의 표어를 찾기 위해 검색창에 '숭실대학교'를 입력하겠습니다.",
               "action": "type",
               "target": "위키백과 검색",
               "box": {
@@ -43986,7 +56550,7 @@ export const MOCK_DATA = {
               "changed": true,
               "note": "새로 나타난 글자: 숭실대학교 / 대한민국 서울특별시의 사립 종합대학",
               "blocked": false,
-              "elapsed_ms": 11438
+              "elapsed_ms": 35617
             },
             {
               "step": 2,
@@ -44002,7 +56566,7 @@ export const MOCK_DATA = {
                 "w": 1280,
                 "h": 800
               },
-              "thought": "검색 결과에서 가장 위에 있는 '숭실대학교' 링크를 클릭하여 해당 페이지로 이동합니다.",
+              "thought": "검색 결과 추천 목록에 있는 '숭실대학교 대한민국 서울특별시의 사립 종합대학' 링크를 클릭하여 숭실대학교 문서로 이동하겠습니다.",
               "action": "click",
               "target": "숭실대학교 대한민국 서울특별시의 사립 종합대학",
               "box": {
@@ -44014,7 +56578,7 @@ export const MOCK_DATA = {
               "changed": true,
               "note": "",
               "blocked": false,
-              "elapsed_ms": 13069
+              "elapsed_ms": 13319
             },
             {
               "step": 3,
@@ -44030,14 +56594,198 @@ export const MOCK_DATA = {
                 "w": 1280,
                 "h": 800
               },
-              "thought": "숭실대학교 위키백과 페이지에서 표어가 '역사로 미래를 여는 대학'인 것을 확인했습니다.",
-              "action": "done",
+              "thought": "숭실대학교 페이지에 들어왔으니 스크롤을 내려 표어가 적힌 정보를 찾겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 11694
+            },
+            {
+              "step": 4,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 640,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교 페이지에 들어왔으니 스크롤을 더 내려서 학교 정보 상자나 교훈/표어 관련 내용을 찾아보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 13910
+            },
+            {
+              "step": 5,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 1280,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교 정보 상자나 교훈/표어 항목을 확인하기 위해 스크롤을 더 내려보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 29238
+            },
+            {
+              "step": 6,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 1920,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교의 표어나 교훈을 찾기 위해 화면을 더 아래로 스크롤해보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 25015
+            },
+            {
+              "step": 7,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 2560,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교 정보 상자나 본문에서 표어를 찾기 위해 아래로 스크롤을 더 내려보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 34407
+            },
+            {
+              "step": 8,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 3200,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교의 표어를 찾기 위해 본문 내용을 좀 더 내려서 찾아보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 9164
+            },
+            {
+              "step": 9,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 3840,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교의 표어나 교훈 정보가 있는지 확인하기 위해 스크롤을 더 내려보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 22323
+            },
+            {
+              "step": 10,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 4480,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교의 표어나 교훈을 찾기 위해 본문과 정보 상자가 나오는 부분으로 계속 스크롤해보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 22153
+            },
+            {
+              "step": 11,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 5120,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "give_up",
               "target": "",
               "box": null,
               "changed": false,
-              "note": "목표를 이뤘다고 판단",
+              "note": "포기",
               "blocked": false,
-              "elapsed_ms": 2075
+              "elapsed_ms": 9056
             }
           ]
         },
@@ -44634,10 +57382,10 @@ export const MOCK_DATA = {
           },
           "age_band": "20대",
           "gender": "남성",
-          "outcome": "success",
-          "end_label": "달성",
-          "steps": 3,
-          "synthetic": false,
+          "outcome": "drop",
+          "end_label": "포기",
+          "steps": 23,
+          "synthetic": true,
           "frames": [
             {
               "step": 1,
@@ -44653,7 +57401,7 @@ export const MOCK_DATA = {
                 "w": 1280,
                 "h": 800
               },
-              "thought": "숭실대학교를 검색해야 하니까 일단 검색창에 '숭실대학교'를 쳐야겠다.",
+              "thought": "숭실대학교를 검색하기 위해 검색창에 '숭실대학교'를 입력합니다.",
               "action": "type",
               "target": "위키백과 검색",
               "box": {
@@ -44665,7 +57413,7 @@ export const MOCK_DATA = {
               "changed": true,
               "note": "새로 나타난 글자: 숭실대학교 / 대한민국 서울특별시의 사립 종합대학",
               "blocked": false,
-              "elapsed_ms": 18781
+              "elapsed_ms": 13626
             },
             {
               "step": 2,
@@ -44681,7 +57429,7 @@ export const MOCK_DATA = {
                 "w": 1280,
                 "h": 800
               },
-              "thought": "검색 결과에 숭실대학교 링크가 나왔으니 클릭해서 해당 페이지로 이동한다.",
+              "thought": "검색 결과에 나온 숭실대학교 링크를 눌러 페이지로 이동합니다.",
               "action": "click",
               "target": "숭실대학교 대한민국 서울특별시의 사립 종합대학",
               "box": {
@@ -44693,7 +57441,7 @@ export const MOCK_DATA = {
               "changed": true,
               "note": "",
               "blocked": false,
-              "elapsed_ms": 12004
+              "elapsed_ms": 4346
             },
             {
               "step": 3,
@@ -44709,14 +57457,484 @@ export const MOCK_DATA = {
                 "w": 1280,
                 "h": 800
               },
-              "thought": "화면에 숭실대학교 표어가 '역사로 미래를 여는 대학'이라고 나와 있어서 목표를 달성했다.",
-              "action": "done",
+              "thought": "숭실대학교 페이지에 왔으니 표어를 찾기 위해 아래로 스크롤합니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 28285
+            },
+            {
+              "step": 4,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 640,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교의 표어가 적힌 부분을 찾기 위해 화면을 더 아래로 내려봅니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 10663
+            },
+            {
+              "step": 5,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 1280,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교의 표어를 찾기 위해 화면을 조금 더 아래로 스크롤합니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 12852
+            },
+            {
+              "step": 6,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 1920,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교의 표어를 찾기 위해 아래로 조금 더 스크롤해봅니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 11042
+            },
+            {
+              "step": 7,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 2560,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교의 표어를 찾기 위해 아래로 스크롤을 더 내려봅니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 20506
+            },
+            {
+              "step": 8,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 3200,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교 표어를 찾기 위해 아래로 스크롤하여 본문이나 우측 정보 상자 내용을 확인합니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 11867
+            },
+            {
+              "step": 9,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 3840,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교 표어를 찾기 위해 본문 내용을 더 확인하고자 아래로 스크롤합니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 14244
+            },
+            {
+              "step": 10,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 4480,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교 표어가 어디 있는지 찾기 위해 화면을 계속 아래로 내려봅니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 19281
+            },
+            {
+              "step": 11,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 5120,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교의 표어가 나와 있는지 확인하기 위해 다시 아래로 스크롤을 내려봅니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 11645
+            },
+            {
+              "step": 12,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 5760,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교 표어가 적혀 있는 정보상자나 본문 내용을 찾기 위해 아래로 스크롤합니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 11534
+            },
+            {
+              "step": 13,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 6400,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교 표어를 찾기 위해 아래로 더 내려가며 본문과 우측 정보상자를 확인합니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 12359
+            },
+            {
+              "step": 14,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 7040,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "계속 아래로 내려봐도 표어가 안 보여서 목차의 '처음 위치'를 눌러 다시 맨 위로 올라가 봅니다.",
+              "action": "click",
+              "target": "처음 위치",
+              "box": {
+                "x": 60,
+                "y": 7102,
+                "w": 164,
+                "h": 30
+              },
+              "changed": false,
+              "note": "Locator.click: Element is outside of the viewport",
+              "blocked": false,
+              "elapsed_ms": 31920
+            },
+            {
+              "step": 15,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 0,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "맨 위로 올라가기 위해 화면에 보이는 '처음 위치' 링크(link_8)를 눌러봅니다.",
+              "action": "click",
+              "target": "처음 위치",
+              "box": {
+                "x": 60,
+                "y": 232,
+                "w": 164,
+                "h": 30
+              },
+              "changed": true,
+              "note": "",
+              "blocked": false,
+              "elapsed_ms": 2894
+            },
+            {
+              "step": 16,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 0,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교 정보상자나 표어 내용을 확인하기 위해 다시 아래로 스크롤을 내려봅니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 23117
+            },
+            {
+              "step": 17,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 640,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교의 표어를 찾기 위해 아래로 스크롤하여 정보상자나 본문 내용을 더 확인합니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 8982
+            },
+            {
+              "step": 18,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 1280,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교의 표어나 교훈을 찾기 위해 화면을 더 아래로 스크롤해서 찾아봅니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 22539
+            },
+            {
+              "step": 19,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 1920,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교 표어가 어디 있는지 보이지 않아서 아래로 더 스크롤해서 찾아봅니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 13846
+            },
+            {
+              "step": 20,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 2560,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교 표어를 찾기 위해 아래로 조금 더 스크롤해서 찾아봅니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 13853
+            },
+            {
+              "step": 21,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 3200,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교 표어를 찾기 위해 아래로 스크롤을 내려 정보상자나 본문 내용을 확인합니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 18308
+            },
+            {
+              "step": 22,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 3840,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교 표어를 찾기 위해 본문 내용을 좀 더 둘러봅니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 15493
+            },
+            {
+              "step": 23,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 4480,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교 표어가 어디 있는지 눈에 잘 띄지 않고 계속 스크롤해도 잘 모르겠어서 더 이상 찾기 힘듭니다.",
+              "action": "give_up",
               "target": "",
               "box": null,
               "changed": false,
-              "note": "목표를 이뤘다고 판단",
+              "note": "포기",
               "blocked": false,
-              "elapsed_ms": 2516
+              "elapsed_ms": 3276
             }
           ]
         },
@@ -44828,10 +58046,10 @@ export const MOCK_DATA = {
           },
           "age_band": "30대",
           "gender": "남성",
-          "outcome": "success",
-          "end_label": "달성",
-          "steps": 3,
-          "synthetic": false,
+          "outcome": "drop",
+          "end_label": "포기",
+          "steps": 11,
+          "synthetic": true,
           "frames": [
             {
               "step": 1,
@@ -44847,7 +58065,7 @@ export const MOCK_DATA = {
                 "w": 1280,
                 "h": 800
               },
-              "thought": "숭실대학교의 표어를 찾기 위해 검색창에 '숭실대학교'를 입력합니다.",
+              "thought": "숭실대학교의 표어를 찾기 위해 검색창에 '숭실대학교'를 입력하겠습니다.",
               "action": "type",
               "target": "위키백과 검색",
               "box": {
@@ -44859,7 +58077,7 @@ export const MOCK_DATA = {
               "changed": true,
               "note": "새로 나타난 글자: 숭실대학교 / 대한민국 서울특별시의 사립 종합대학",
               "blocked": false,
-              "elapsed_ms": 18234
+              "elapsed_ms": 35617
             },
             {
               "step": 2,
@@ -44875,7 +58093,7 @@ export const MOCK_DATA = {
                 "w": 1280,
                 "h": 800
               },
-              "thought": "검색 결과 목록에서 숭실대학교 링크를 눌러 숭실대학교 문서로 이동합니다.",
+              "thought": "검색 결과 추천 목록에 있는 '숭실대학교 대한민국 서울특별시의 사립 종합대학' 링크를 클릭하여 숭실대학교 문서로 이동하겠습니다.",
               "action": "click",
               "target": "숭실대학교 대한민국 서울특별시의 사립 종합대학",
               "box": {
@@ -44887,7 +58105,7 @@ export const MOCK_DATA = {
               "changed": true,
               "note": "",
               "blocked": false,
-              "elapsed_ms": 9375
+              "elapsed_ms": 13319
             },
             {
               "step": 3,
@@ -44903,14 +58121,198 @@ export const MOCK_DATA = {
                 "w": 1280,
                 "h": 800
               },
-              "thought": "화면 우측의 정보 상자에서 숭실대학교의 표어가 '역사로 미래를 여는 대학'임을 확인했으므로 완료합니다.",
-              "action": "done",
+              "thought": "숭실대학교 페이지에 들어왔으니 스크롤을 내려 표어가 적힌 정보를 찾겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 11694
+            },
+            {
+              "step": 4,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 640,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교 페이지에 들어왔으니 스크롤을 더 내려서 학교 정보 상자나 교훈/표어 관련 내용을 찾아보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 13910
+            },
+            {
+              "step": 5,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 1280,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교 정보 상자나 교훈/표어 항목을 확인하기 위해 스크롤을 더 내려보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 29238
+            },
+            {
+              "step": 6,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 1920,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교의 표어나 교훈을 찾기 위해 화면을 더 아래로 스크롤해보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 25015
+            },
+            {
+              "step": 7,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 2560,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교 정보 상자나 본문에서 표어를 찾기 위해 아래로 스크롤을 더 내려보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 34407
+            },
+            {
+              "step": 8,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 3200,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교의 표어를 찾기 위해 본문 내용을 좀 더 내려서 찾아보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 9164
+            },
+            {
+              "step": 9,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 3840,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교의 표어나 교훈 정보가 있는지 확인하기 위해 스크롤을 더 내려보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 22323
+            },
+            {
+              "step": 10,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 4480,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "숭실대학교의 표어나 교훈을 찾기 위해 본문과 정보 상자가 나오는 부분으로 계속 스크롤해보겠습니다.",
+              "action": "scroll",
+              "target": "",
+              "box": null,
+              "changed": true,
+              "note": "640픽셀 내려갔습니다",
+              "blocked": false,
+              "elapsed_ms": 22153
+            },
+            {
+              "step": 11,
+              "screen": "숭실대학교",
+              "title": "숭실대학교",
+              "shot": {
+                "src": "/screens/wiki/숭실대학교.jpg",
+                "w": 1280,
+                "h": 12440
+              },
+              "scroll_y": 5120,
+              "viewport": {
+                "w": 1280,
+                "h": 800
+              },
+              "thought": "여러 번 스크롤해서 찾아봤지만 숭실대학교의 표어가 어디에 나와 있는지 찾기가 너무 어렵네요. 더 이상 진행하기 힘듭니다.",
+              "action": "give_up",
               "target": "",
               "box": null,
               "changed": false,
-              "note": "목표를 이뤘다고 판단",
+              "note": "포기",
               "blocked": false,
-              "elapsed_ms": 2213
+              "elapsed_ms": 9056
             }
           ]
         },
@@ -46309,6 +59711,246 @@ export const MOCK_DATA = {
             "h": 12440
           },
           "others": 0
+        },
+        {
+          "step": 4,
+          "id": "c3:숭실대학교",
+          "title": "숭실대학교",
+          "count": 3,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "others": 0
+        },
+        {
+          "step": 5,
+          "id": "c4:숭실대학교",
+          "title": "숭실대학교",
+          "count": 3,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "others": 0
+        },
+        {
+          "step": 6,
+          "id": "c5:숭실대학교",
+          "title": "숭실대학교",
+          "count": 3,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "others": 0
+        },
+        {
+          "step": 7,
+          "id": "c6:숭실대학교",
+          "title": "숭실대학교",
+          "count": 3,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "others": 0
+        },
+        {
+          "step": 8,
+          "id": "c7:숭실대학교",
+          "title": "숭실대학교",
+          "count": 3,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "others": 0
+        },
+        {
+          "step": 9,
+          "id": "c8:숭실대학교",
+          "title": "숭실대학교",
+          "count": 3,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "others": 0
+        },
+        {
+          "step": 10,
+          "id": "c9:숭실대학교",
+          "title": "숭실대학교",
+          "count": 3,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "others": 0
+        },
+        {
+          "step": 11,
+          "id": "c10:숭실대학교",
+          "title": "숭실대학교",
+          "count": 3,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "others": 0
+        },
+        {
+          "step": 12,
+          "id": "c11:숭실대학교",
+          "title": "숭실대학교",
+          "count": 1,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "others": 0
+        },
+        {
+          "step": 13,
+          "id": "c12:숭실대학교",
+          "title": "숭실대학교",
+          "count": 1,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "others": 0
+        },
+        {
+          "step": 14,
+          "id": "c13:숭실대학교",
+          "title": "숭실대학교",
+          "count": 1,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "others": 0
+        },
+        {
+          "step": 15,
+          "id": "c14:숭실대학교",
+          "title": "숭실대학교",
+          "count": 1,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "others": 0
+        },
+        {
+          "step": 16,
+          "id": "c15:숭실대학교",
+          "title": "숭실대학교",
+          "count": 1,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "others": 0
+        },
+        {
+          "step": 17,
+          "id": "c16:숭실대학교",
+          "title": "숭실대학교",
+          "count": 1,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "others": 0
+        },
+        {
+          "step": 18,
+          "id": "c17:숭실대학교",
+          "title": "숭실대학교",
+          "count": 1,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "others": 0
+        },
+        {
+          "step": 19,
+          "id": "c18:숭실대학교",
+          "title": "숭실대학교",
+          "count": 1,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "others": 0
+        },
+        {
+          "step": 20,
+          "id": "c19:숭실대학교",
+          "title": "숭실대학교",
+          "count": 1,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "others": 0
+        },
+        {
+          "step": 21,
+          "id": "c20:숭실대학교",
+          "title": "숭실대학교",
+          "count": 1,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "others": 0
+        },
+        {
+          "step": 22,
+          "id": "c21:숭실대학교",
+          "title": "숭실대학교",
+          "count": 1,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "others": 0
+        },
+        {
+          "step": 23,
+          "id": "c22:숭실대학교",
+          "title": "숭실대학교",
+          "count": 1,
+          "shot": {
+            "src": "/screens/wiki/숭실대학교.jpg",
+            "w": 1280,
+            "h": 12440
+          },
+          "others": 0
         }
       ],
       "personas": {
@@ -46316,7 +59958,7 @@ export const MOCK_DATA = {
         "changed": 0,
         "exhausted": 0,
         "baseline_run": null,
-        "compare_run": "wiki_v",
+        "compare_run": "wiki_demo",
         "axes": {
           "literacy": "숙련도",
           "attention": "주의 지속",
@@ -46482,13 +60124,13 @@ export const MOCK_DATA = {
             "gender_real": "남성",
             "age_band": "숙련5·주의1·인내2·탐색2",
             "gender": "",
-            "outcome": "success",
-            "step_count": 3,
+            "outcome": "drop",
+            "step_count": 11,
             "baseline": null,
             "compare": {
-              "outcome": "success",
-              "end_label": "달성",
-              "step_count": 3
+              "outcome": "drop",
+              "end_label": "포기",
+              "step_count": 11
             },
             "changed": false
           },
@@ -46650,13 +60292,13 @@ export const MOCK_DATA = {
             "gender_real": "남성",
             "age_band": "숙련4·주의1·인내2·탐색2",
             "gender": "",
-            "outcome": "success",
-            "step_count": 3,
+            "outcome": "drop",
+            "step_count": 23,
             "baseline": null,
             "compare": {
-              "outcome": "success",
-              "end_label": "달성",
-              "step_count": 3
+              "outcome": "drop",
+              "end_label": "포기",
+              "step_count": 23
             },
             "changed": false
           },
@@ -46698,13 +60340,13 @@ export const MOCK_DATA = {
             "gender_real": "남성",
             "age_band": "숙련5·주의1·인내2·탐색4",
             "gender": "",
-            "outcome": "success",
-            "step_count": 3,
+            "outcome": "drop",
+            "step_count": 11,
             "baseline": null,
             "compare": {
-              "outcome": "success",
-              "end_label": "달성",
-              "step_count": 3
+              "outcome": "drop",
+              "end_label": "포기",
+              "step_count": 11
             },
             "changed": false
           },

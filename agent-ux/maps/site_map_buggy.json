@@ -1,44 +1,89 @@
 {
   "variant": "buggy",
   "root": "http://localhost:8000/ux-testbed/flawed",
-  "generated_at": "2026-08-25T14:14:00",
+  "generated_at": "2026-08-25T16:47:41",
   "pages": [
     {
       "path": "/index.html",
       "template": "/ux-testbed/flawed/index.html",
       "title": "쇼핑몰",
       "found_by": "link",
-      "layout": "(/ux-testbed/flawed/index.html 자리표시자) 상단 헤더, 중앙 본문, 하단 푸터로 구성",
+      "layout": "상단에 상호 및 카테고리 메뉴, 장바구니 링크가 배치되어 있으며 본문에는 배너 영역과 인기상품, 신상품 목록이 그리드로 표시되어 있습니다.",
       "elements": [
         {
           "name": "홈",
-          "type": "a",
-          "where": "위쪽"
+          "type": "링크",
+          "where": "상단 메뉴바"
         },
         {
           "name": "전체",
-          "type": "a",
-          "where": "위쪽"
+          "type": "링크",
+          "where": "상단 메뉴바"
         },
         {
           "name": "상의",
-          "type": "a",
-          "where": "위쪽"
+          "type": "링크",
+          "where": "상단 메뉴바"
         },
         {
           "name": "하의",
-          "type": "a",
-          "where": "위쪽"
+          "type": "링크",
+          "where": "상단 메뉴바"
         },
         {
           "name": "신발",
-          "type": "a",
-          "where": "위쪽"
+          "type": "링크",
+          "where": "상단 메뉴바"
         },
         {
           "name": "액세서리",
-          "type": "a",
-          "where": "위쪽"
+          "type": "링크",
+          "where": "상단 메뉴바"
+        },
+        {
+          "name": "cart",
+          "type": "링크",
+          "where": "상단 우측"
+        },
+        {
+          "name": "여기를 클릭",
+          "type": "링크",
+          "where": "본문 상단 배너"
+        },
+        {
+          "name": "미니멀 레더 스니커즈 89000 119000 SALE",
+          "type": "링크",
+          "where": "인기상품 목록 첫 번째 항목"
+        },
+        {
+          "name": "캔버스 토트백 29000",
+          "type": "링크",
+          "where": "인기상품 목록 두 번째 항목"
+        },
+        {
+          "name": "스웨이드 첼시 부츠 129000 159000 BEST",
+          "type": "링크",
+          "where": "인기상품 목록 세 번째 항목"
+        },
+        {
+          "name": "니트 비니 19000",
+          "type": "링크",
+          "where": "인기상품 목록 네 번째 항목"
+        },
+        {
+          "name": "이용약관",
+          "type": "링크",
+          "where": "하단 푸터"
+        },
+        {
+          "name": "개인정보처리방침",
+          "type": "링크",
+          "where": "하단 푸터"
+        },
+        {
+          "name": "고객센터",
+          "type": "링크",
+          "where": "하단 푸터"
         }
       ],
       "links_to": [
@@ -51,86 +96,96 @@
       "template": "/ux-testbed/flawed/list.html",
       "title": "쇼핑몰",
       "found_by": "scout",
-      "layout": "(/ux-testbed/flawed/list.html 자리표시자) 상단 헤더, 중앙 본문, 하단 푸터로 구성",
+      "layout": "상단에 네비게이션 메뉴와 장바구니 링크가 있고, 그 아래 필터 태그 목록과 4열 격자 형태로 배치된 상품 목록이 나열되어 있습니다.",
       "elements": [
         {
           "name": "홈",
-          "type": "a",
-          "where": "위쪽"
+          "type": "링크",
+          "where": "상단 좌측"
         },
         {
           "name": "전체",
-          "type": "a",
-          "where": "위쪽"
+          "type": "링크",
+          "where": "상단 좌측"
         },
         {
           "name": "상의",
-          "type": "a",
-          "where": "위쪽"
+          "type": "링크",
+          "where": "상단 좌측"
         },
         {
           "name": "하의",
-          "type": "a",
-          "where": "위쪽"
+          "type": "링크",
+          "where": "상단 좌측"
         },
         {
           "name": "신발",
-          "type": "a",
-          "where": "위쪽"
+          "type": "링크",
+          "where": "상단 좌측"
         },
         {
           "name": "액세서리",
-          "type": "a",
-          "where": "위쪽"
+          "type": "링크",
+          "where": "상단 좌측"
+        },
+        {
+          "name": "cart",
+          "type": "링크",
+          "where": "상단 우측"
+        },
+        {
+          "name": "전체",
+          "type": "버튼",
+          "where": "상단 필터바"
+        },
+        {
+          "name": "상의",
+          "type": "버튼",
+          "where": "상단 필터바"
+        },
+        {
+          "name": "하의",
+          "type": "버튼",
+          "where": "상단 필터바"
+        },
+        {
+          "name": "신발",
+          "type": "버튼",
+          "where": "상단 필터바"
+        },
+        {
+          "name": "액세서리",
+          "type": "버튼",
+          "where": "상단 필터바"
+        },
+        {
+          "name": "세일",
+          "type": "버튼",
+          "where": "상단 필터바"
+        },
+        {
+          "name": "오버사이즈 코튼 셔츠 39000 49000 BEST",
+          "type": "링크",
+          "where": "상품 목록 첫 번째"
+        },
+        {
+          "name": "라이트 워시 데님 팬츠 59000",
+          "type": "링크",
+          "where": "상품 목록 두 번째"
+        },
+        {
+          "name": "미니멀 레더 스니커즈 89000 119000 SALE",
+          "type": "링크",
+          "where": "상품 목록 세 번째"
+        },
+        {
+          "name": "캐시미어 블렌드 니트 79000 NEW",
+          "type": "링크",
+          "where": "상품 목록 네 번째"
         }
       ],
       "links_to": [
-        "/ux-testbed/flawed/cart.html",
         "/ux-testbed/flawed/product.html"
-      ],
-      "steps": null
-    },
-    {
-      "path": "/cart.html",
-      "template": "/ux-testbed/flawed/cart.html",
-      "title": "쇼핑몰",
-      "found_by": "scout",
-      "layout": "(/ux-testbed/flawed/cart.html 자리표시자) 상단 헤더, 중앙 본문, 하단 푸터로 구성",
-      "elements": [
-        {
-          "name": "홈",
-          "type": "a",
-          "where": "위쪽"
-        },
-        {
-          "name": "전체",
-          "type": "a",
-          "where": "위쪽"
-        },
-        {
-          "name": "상의",
-          "type": "a",
-          "where": "위쪽"
-        },
-        {
-          "name": "하의",
-          "type": "a",
-          "where": "위쪽"
-        },
-        {
-          "name": "신발",
-          "type": "a",
-          "where": "위쪽"
-        },
-        {
-          "name": "액세서리",
-          "type": "a",
-          "where": "위쪽"
-        }
-      ],
-      "links_to": [
-        "/ux-testbed/flawed/checkout.html",
-        "/ux-testbed/flawed/list.html"
       ],
       "steps": null
     },
@@ -139,37 +194,117 @@
       "template": "/ux-testbed/flawed/product.html",
       "title": "쇼핑몰",
       "found_by": "scout",
-      "layout": "(/ux-testbed/flawed/product.html 자리표시자) 상단 헤더, 중앙 본문, 하단 푸터로 구성",
+      "layout": "상단에 로고와 카테고리 메뉴가 배치되어 있고, 좌측에는 큰 상품 이미지, 우측에는 상품명, 가격, 색상 선택, 사이즈 선택, 수량 조절 버튼, 확인/구매 버튼 및 상세 설명이 위치하며 하단에는 관련 상품 영역과 푸터가 나열되어 있습니다.",
       "elements": [
         {
           "name": "홈",
-          "type": "a",
-          "where": "위쪽"
+          "type": "링크",
+          "where": "상단 메뉴"
         },
         {
           "name": "전체",
-          "type": "a",
-          "where": "위쪽"
+          "type": "링크",
+          "where": "상단 메뉴"
         },
         {
           "name": "상의",
-          "type": "a",
-          "where": "위쪽"
+          "type": "링크",
+          "where": "상단 메뉴"
         },
         {
           "name": "하의",
-          "type": "a",
-          "where": "위쪽"
+          "type": "링크",
+          "where": "상단 메뉴"
         },
         {
           "name": "신발",
-          "type": "a",
-          "where": "위쪽"
+          "type": "링크",
+          "where": "상단 메뉴"
         },
         {
           "name": "액세서리",
-          "type": "a",
-          "where": "위쪽"
+          "type": "링크",
+          "where": "상단 메뉴"
+        },
+        {
+          "name": "cart",
+          "type": "링크",
+          "where": "상단 우측"
+        },
+        {
+          "name": "아이보리",
+          "type": "버튼",
+          "where": "우측 옵션 선택"
+        },
+        {
+          "name": "블랙",
+          "type": "버튼",
+          "where": "우측 옵션 선택"
+        },
+        {
+          "name": "라이트블루",
+          "type": "버튼",
+          "where": "우측 옵션 선택"
+        },
+        {
+          "name": "S",
+          "type": "버튼",
+          "where": "우측 옵션 선택"
+        },
+        {
+          "name": "M",
+          "type": "버튼",
+          "where": "우측 옵션 선택"
+        },
+        {
+          "name": "L",
+          "type": "버튼",
+          "where": "우측 옵션 선택"
+        },
+        {
+          "name": "XL",
+          "type": "버튼",
+          "where": "우측 옵션 선택"
+        },
+        {
+          "name": "-",
+          "type": "버튼",
+          "where": "우측 수량 조절"
+        },
+        {
+          "name": "수량 입력",
+          "type": "입력창",
+          "where": "우측 수량 조절"
+        },
+        {
+          "name": "+",
+          "type": "버튼",
+          "where": "우측 수량 조절"
+        },
+        {
+          "name": "확인",
+          "type": "버튼",
+          "where": "우측 구매 옵션"
+        },
+        {
+          "name": "구매",
+          "type": "버튼",
+          "where": "우측 구매 옵션"
+        },
+        {
+          "name": "캐시미어 블렌드 니트",
+          "type": "링크",
+          "where": "하단 관련상품"
+        },
+        {
+          "name": "워시드 후디",
+          "type": "링크",
+          "where": "하단 관련상품"
+        },
+        {
+          "name": "린넨 하프 셔츠",
+          "type": "링크",
+          "where": "하단 관련상품"
         }
       ],
       "links_to": [
@@ -178,49 +313,186 @@
       "steps": null
     },
     {
+      "path": "/cart.html",
+      "template": "/ux-testbed/flawed/cart.html",
+      "title": "쇼핑몰",
+      "found_by": "scout",
+      "layout": "상단에 브랜드 로고 및 카테고리 메뉴가 위치하고, 중앙에 장바구니에 담긴 상품 목록(이미지, 상품명, 옵션, 수량 조절, 금액, 삭제 버튼)이 테이블 형태로 배치되어 있으며, 우측 하단에 총 합계 금액과 확인 버튼이 위치합니다.",
+      "elements": [
+        {
+          "name": "홈",
+          "type": "링크",
+          "where": "상단 좌측 내비게이션"
+        },
+        {
+          "name": "전체",
+          "type": "링크",
+          "where": "상단 좌측 내비게이션"
+        },
+        {
+          "name": "상의",
+          "type": "링크",
+          "where": "상단 좌측 내비게이션"
+        },
+        {
+          "name": "하의",
+          "type": "링크",
+          "where": "상단 좌측 내비게이션"
+        },
+        {
+          "name": "신발",
+          "type": "링크",
+          "where": "상단 좌측 내비게이션"
+        },
+        {
+          "name": "액세서리",
+          "type": "링크",
+          "where": "상단 좌측 내비게이션"
+        },
+        {
+          "name": "cart",
+          "type": "링크",
+          "where": "상단 우측"
+        },
+        {
+          "name": "-",
+          "type": "버튼",
+          "where": "상품 목록 수량 조절 영역"
+        },
+        {
+          "name": "1",
+          "type": "입력창",
+          "where": "상품 목록 수량 조절 영역"
+        },
+        {
+          "name": "+",
+          "type": "버튼",
+          "where": "상품 목록 수량 조절 영역"
+        },
+        {
+          "name": "x",
+          "type": "버튼",
+          "where": "상품 목록 우측 끝"
+        },
+        {
+          "name": "확인",
+          "type": "링크",
+          "where": "장바구니 하단 우측"
+        },
+        {
+          "name": "이용약관",
+          "type": "링크",
+          "where": "하단 푸터"
+        },
+        {
+          "name": "개인정보처리방침",
+          "type": "링크",
+          "where": "하단 푸터"
+        },
+        {
+          "name": "고객센터",
+          "type": "링크",
+          "where": "하단 푸터"
+        }
+      ],
+      "links_to": [
+        "/ux-testbed/flawed/checkout.html"
+      ],
+      "steps": null
+    },
+    {
       "path": "/checkout.html",
       "template": "/ux-testbed/flawed/checkout.html",
       "title": "쇼핑몰",
       "found_by": "scout",
-      "layout": "(/ux-testbed/flawed/checkout.html 자리표시자) 상단 헤더, 중앙 본문, 하단 푸터로 구성",
+      "layout": "상단에 브랜드 로고와 메인 메뉴가 위치하며, 중앙 영역에는 이름, 연락처, 이메일, 비밀번호, 주소를 입력하는 폼과 약관 동의 체크박스가 배치되어 있습니다. 우측 하단에는 결제 금액과 확인 버튼이 배치되어 있고 하단에는 푸터 정보가 위치합니다.",
+      "elements": [
+        {
+          "name": "이름 입력칸",
+          "type": "텍스트 입력",
+          "where": "중앙 폼 영역"
+        },
+        {
+          "name": "연락처 입력칸",
+          "type": "텍스트 입력",
+          "where": "중앙 폼 영역"
+        },
+        {
+          "name": "이메일 입력칸",
+          "type": "텍스트 입력",
+          "where": "중앙 폼 영역"
+        },
+        {
+          "name": "비밀번호 입력칸",
+          "type": "비밀번호 입력",
+          "where": "중앙 폼 영역"
+        },
+        {
+          "name": "주소 입력칸",
+          "type": "텍스트 입력",
+          "where": "중앙 폼 영역"
+        },
+        {
+          "name": "이용약관 동의",
+          "type": "체크박스",
+          "where": "중앙 폼 하단"
+        },
+        {
+          "name": "마케팅 정보 수신 동의",
+          "type": "체크박스",
+          "where": "중앙 폼 하단"
+        },
+        {
+          "name": "확인",
+          "type": "버튼",
+          "where": "우측 하단"
+        }
+      ],
+      "links_to": [],
+      "steps": null
+    },
+    {
+      "path": "/complete.html",
+      "template": "/ux-testbed/flawed/complete.html",
+      "title": "쇼핑몰",
+      "found_by": "scout",
+      "layout": "상단 헤더, 하단 푸터, 그리고 가운데 흰색 영역으로 구성된 주문 완료 관련 페이지입니다.",
       "elements": [
         {
           "name": "홈",
-          "type": "a",
-          "where": "위쪽"
+          "type": "링크",
+          "where": "상단 좌측"
         },
         {
           "name": "전체",
-          "type": "a",
-          "where": "위쪽"
-        },
-        {
-          "name": "장바구니",
-          "type": "a",
-          "where": "위쪽"
+          "type": "링크",
+          "where": "상단 좌측"
         },
         {
           "name": "cart",
-          "type": "a",
-          "where": "위쪽"
+          "type": "링크",
+          "where": "상단 우측"
         },
         {
-          "name": "이름",
-          "type": "input",
-          "where": "위쪽"
+          "name": "이용약관",
+          "type": "링크",
+          "where": "하단 좌측"
         },
         {
-          "name": "연락처",
-          "type": "input",
-          "where": "위쪽"
+          "name": "개인정보처리방침",
+          "type": "링크",
+          "where": "하단 좌측"
+        },
+        {
+          "name": "고객센터",
+          "type": "링크",
+          "where": "하단 좌측"
         }
       ],
-      "links_to": [
-        "/ux-testbed/flawed/list.html"
-      ],
+      "links_to": [],
       "steps": null
     }
   ],
   "unreached": [],
-  "structure": "쇼핑몰 → 쇼핑몰 → 쇼핑몰 → 쇼핑몰 → 쇼핑몰"
+  "structure": "쇼핑몰 → 쇼핑몰 → 쇼핑몰 → 쇼핑몰 → 쇼핑몰 → 쇼핑몰"
 }

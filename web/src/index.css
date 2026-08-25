@@ -1,0 +1,142 @@
+@import 'tailwindcss';
+
+/* Figma 변수(94tQpJoJlr5FxH9KciQSeA)를 그대로 옮긴 디자인 토큰 */
+@theme {
+  --color-white: #ffffff; /* 하양 */
+  --color-main: #3182f6; /* 메인 */
+  --color-main-soft: rgba(49, 130, 246, 0.15);
+  --color-ink: #000000; /* 검정 */
+  --color-subtext: #737373; /* 서브테스트 */
+  --color-line: #d7d7d7; /* 선 */
+  --color-bg: #f7f8fa; /* 배경 */
+
+  /* 폼/마법사 화면에서만 쓰이는 보조 색 (Figma 하드코딩 값) */
+  --color-heading: #191f28;
+  --color-body: #4e5968;
+  --color-placeholder: #8b95a1;
+  --color-required: #c70707;
+  --color-success: #00a86b;
+  --color-success-bg: #e9f8f1;
+  --color-success-soft: rgba(0, 168, 107, 0.1);
+  --color-divider: #e5e8eb;
+  --color-segment-bg: #f5f5f5;
+
+  /* 지표 색 — 성공률은 메인, 이탈률은 경고 노랑 */
+  --color-drop: #ffd52b;
+  --color-track: #f2f4f6;
+
+  /* 연결 실패 상태 */
+  --color-danger: #e5484d;
+  --color-danger-bg: #fdeced;
+  --color-danger-soft: rgba(229, 72, 77, 0.1);
+
+  --font-sans: 'Pretendard Variable', Pretendard, -apple-system, system-ui, sans-serif;
+  --font-noto: 'Noto Sans KR', 'Pretendard Variable', Pretendard, sans-serif;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font: inherit;
+    color: inherit;
+  }
+
+  /* 성별 비율 슬라이더의 썸 — Figma 130:13929 (흰 원 20px + 메인색 3px 테두리).
+     트랙은 컴포넌트가 직접 그리므로 여기서는 투명하게 두고 썸만 남긴다. */
+  .ratio-slider::-webkit-slider-runnable-track {
+    height: 20px;
+    background: transparent;
+  }
+
+  .ratio-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 9999px;
+    background: var(--color-white);
+    border: 3px solid var(--color-main);
+    box-shadow: 0 1px 3px rgb(0 0 0 / 0.12);
+  }
+
+  .ratio-slider::-moz-range-track {
+    height: 20px;
+    background: transparent;
+  }
+
+  .ratio-slider::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 9999px;
+    background: var(--color-white);
+    border: 3px solid var(--color-main);
+  }
+
+  .ratio-slider:focus-visible::-webkit-slider-thumb {
+    outline: 2px solid var(--color-main);
+    outline-offset: 2px;
+  }
+
+  /* 무한 로딩 링 — 원판이 돌면서 호가 늘었다 줄어든다.
+     원 둘레는 2πr = 2π × 143 ≈ 898.5 (RING_SIZE 300, stroke 14 기준). */
+  .loading-ring {
+    animation: loading-ring-rotate 2s linear infinite;
+    transform-origin: center;
+  }
+
+  .loading-ring__arc {
+    animation: loading-ring-dash 1.6s ease-in-out infinite;
+  }
+
+  @keyframes loading-ring-rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes loading-ring-dash {
+    0% {
+      stroke-dasharray: 45 855;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 580 320;
+      stroke-dashoffset: -180;
+    }
+    100% {
+      stroke-dasharray: 45 855;
+      stroke-dashoffset: -720;
+    }
+  }
+
+  /* 애니메이션을 줄이도록 설정한 사용자에게는 정적인 호만 보여준다. */
+  @media (prefers-reduced-motion: reduce) {
+    .loading-ring,
+    .loading-ring__arc {
+      animation: none;
+    }
+
+    .loading-ring__arc {
+      stroke-dasharray: 300 600;
+    }
+  }
+}
+

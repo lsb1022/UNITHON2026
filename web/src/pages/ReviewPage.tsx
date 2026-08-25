@@ -5,7 +5,7 @@ import checkMarkBlue from '../assets/icons/check-mark-blue.svg'
 import { AppLayout, PageBody } from '../components/AppLayout'
 import { WizardTopBar } from '../components/StepIndicator'
 import { ErrorBlock, LoadingBlock } from '../components/StateView'
-import { estimateRun, formatTokens } from '../lib/estimate'
+import { estimateRun } from '../lib/estimate'
 import { splitRow, useWizard } from '../state/WizardContext'
 
 export function ReviewPage() {
@@ -21,12 +21,13 @@ export function ReviewPage() {
   )
   const start = useMutation(startRun)
 
-  const local = estimateRun(totalPersonas)
+  const total = review.data?.personas.total ?? totalPersonas
+  // 인원이 정해지면 소요와 크레딧이 따라온다. 서버가 준 값이 있으면 그것을 먼저 쓰되,
+  // 크레딧은 사람 수를 그대로 세므로 화면에서 바로 계산해도 결과가 같다.
+  const local = estimateRun(total)
   const est = review.data?.estimate
   const minutes = est?.minutes ?? local.minutes
-  const tokens = est?.tokens ?? local.tokens
-  const pageCount = est?.page_count ?? local.pageCount
-  const total = review.data?.personas.total ?? totalPersonas
+  const credits = est?.credits ?? local.credits
 
   if (project.loading) {
     return (
@@ -67,6 +68,7 @@ export function ReviewPage() {
             disabled={start.pending || !testId}
             onClick={async () => {
               if (!testId) return
+<<<<<<< Updated upstream
               // 어느 프로젝트에서 눌렀는지 함께 보낸다. 안 보내면 서버가
               // 기본값(테스트베드)을 돌아서, 위키백과 프로젝트를 만들어도
               // "MOJI STORE / 코튼 셔츠 주문 완주"가 돌아간다.
@@ -78,6 +80,17 @@ export function ReviewPage() {
                 test_name: review.data?.test?.name ?? undefined,
               })
               if (run) navigate(`/projects/${projectId}/tests/new/running`)
+=======
+              const run = await start.run(testId)
+              if (!run) return
+              // 이미 끝난 실행이면 진행률 화면에 세워둘 이유가 없다. 0%에서 멈춘
+              // 막대를 보여주느니 바로 결과로 데려간다.
+              if (run.status === 'done') {
+                navigate(`/projects/${projectId}/tests/${run.test_id ?? testId}`)
+                return
+              }
+              navigate(`/projects/${projectId}/tests/new/running`)
+>>>>>>> Stashed changes
             }}
             className="flex h-[65px] w-[179px] items-center justify-center gap-[5px] rounded-[14px] bg-main text-[20px] leading-[1.45] font-medium text-white transition-colors hover:bg-[#2872dd] disabled:cursor-not-allowed disabled:bg-[#c4d9f9]"
           >
@@ -162,22 +175,20 @@ export function ReviewPage() {
             <div className="rounded-[22px] border border-line bg-white p-[23px]">
               <p className="text-[14px] leading-[1.45] font-medium text-body">예상 소요</p>
               <p className="mt-[7px] text-[26px] leading-[1.45] font-bold text-heading">
-                약 {minutes}분
+                {minutes}분
               </p>
               {/* 실측이 아니라 공식이다. 기준을 같이 적어야 숫자를 믿을 만큼만 믿는다. */}
               <p className="mt-[9px] text-[13px] leading-[1.45] text-placeholder">
-                {total}명 × {pageCount}페이지 기준
+                {total}명 기준
               </p>
               <hr className="my-[21px] border-line" />
-              <p className="text-[13px] leading-[1.45] font-medium text-body">예상 사용량</p>
-              <p className="mt-[8px] text-[16px] leading-[1.45] font-bold text-heading">
-                약 {formatTokens(tokens)} 토큰
+              <p className="text-[13px] leading-[1.45] font-medium text-body">예상 크레딧</p>
+              <p className="mt-[8px] text-[26px] leading-[1.45] font-bold text-heading">
+                {credits.toLocaleString('ko-KR')} 크레딧
               </p>
-              {est && !est.measured ? (
-                <p className="mt-[8px] text-[12px] leading-[1.45] text-placeholder">
-                  실측 전 추정치예요
-                </p>
-              ) : null}
+              <p className="mt-[8px] text-[12px] leading-[1.45] text-placeholder">
+                페르소나 1명당 1크레딧
+              </p>
             </div>
 
             <div className="flex items-center gap-[12px] rounded-[18px] border border-divider bg-white p-[19px]">

@@ -1,3 +1,4 @@
+import abTestRaw from '../assets/icons/ab-test.svg?raw'
 import arrowUp2Raw from '../assets/icons/arrow-up-2.svg?raw'
 import cardRaw from '../assets/icons/card.svg?raw'
 import folderRaw from '../assets/icons/folder.svg?raw'
@@ -30,6 +31,7 @@ const RAW = {
   people: peopleRaw, // 경로 카드의 인원
   steps: stepsRaw, // 경로 카드의 스텝 수
   arrowUp2: arrowUp2Raw, // '히트맵 보기' 꺾쇠
+  abTest: abTestRaw, // 사이드바 'A/B 테스트' (Figma 336:28028)
 } as const
 
 export type IconName = keyof typeof RAW

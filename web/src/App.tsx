@@ -1,13 +1,20 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { ComparePage } from './pages/ComparePage'
+import { AbListPage } from './pages/AbListPage'
+import { AbNewPage } from './pages/AbNewPage'
+import { AbResultPage } from './pages/AbResultPage'
+import { LoginPage } from './pages/LoginPage'
 import { MissionPage } from './pages/MissionPage'
 import { NewProjectPage } from './pages/NewProjectPage'
 import { NewTestPage } from './pages/NewTestPage'
 import { PersonaPage } from './pages/PersonaPage'
+import { PlansPage } from './pages/PlansPage'
 import { ProjectDetailPage } from './pages/ProjectDetailPage'
 import { ProjectsPage } from './pages/ProjectsPage'
 import { ReviewPage } from './pages/ReviewPage'
 import { RunningPage } from './pages/RunningPage'
+import { SettingsCreditPage } from './pages/SettingsCreditPage'
+import { SettingsPlanPage } from './pages/SettingsPlanPage'
+import { SettingsTeamPage } from './pages/SettingsTeamPage'
 import { TestDetailPage } from './pages/TestDetailPage'
 import { SidebarProvider } from './state/SidebarContext'
 import { WizardProvider } from './state/WizardContext'
@@ -18,9 +25,19 @@ export default function App() {
       <WizardProvider>
         <Routes>
           <Route path="/" element={<Navigate to="/projects" replace />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
-          {/* 두 사이트를 견주는 곳. 프로젝트 안에서는 주소 하나의 결과만 본다. */}
-          <Route path="/compare" element={<ComparePage />} />
+
+          {/* A/B 테스트 — 'new' 가 :abId 보다 구체적이라 먼저 걸린다. */}
+          <Route path="/ab" element={<AbListPage />} />
+          <Route path="/ab/new" element={<AbNewPage />} />
+          <Route path="/ab/:abId" element={<AbResultPage />} />
+
+          {/* 크레딧·설정 */}
+          <Route path="/credit" element={<PlansPage />} />
+          <Route path="/settings" element={<SettingsTeamPage />} />
+          <Route path="/settings/plan" element={<SettingsPlanPage />} />
+          <Route path="/settings/credit" element={<SettingsCreditPage />} />
           <Route path="/projects/new" element={<NewProjectPage />} />
           <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
           <Route path="/projects/:projectId/tests/new" element={<NewTestPage />} />

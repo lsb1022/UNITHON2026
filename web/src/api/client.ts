@@ -370,6 +370,8 @@ export type PersonaSideResult = {
   outcome: PersonaOutcome
   end_label: string
   step_count: number | null
+  /** 그 사람이 밟은 화면 이름. A/B 상세 패널만 쓴다 — 없으면 경로를 그리지 않는다. */
+  screens?: string[]
 }
 
 export type PersonaRow = {
@@ -467,3 +469,99 @@ export const listComparableProjects = () =>
 
 export const compareProjects = (base: string, against: string) =>
   request<ComparePayload>(`/api/compare?base=${base}&against=${against}`)
+
+// --------------------------------------------------------------------------- //
+// 계정 · 플랜 · 크레딧 (설정 / 크레딧 및 플랜 화면)
+// --------------------------------------------------------------------------- //
+
+export type Account = {
+  name: string
+  initial: string
+  workspace: string
+  email: string
+  plan_label: string
+}
+
+export type PlanPayload = {
+  current: {
+    name: string
+    price_label: string
+    next_billing_at: string
+    used: number
+    quota: number
+  }
+  features: string[]
+  upgrade: { badge: string; title: string; body: string; cta: string; note: string }
+}
+
+export type CreditsPayload = {
+  balance: number
+  used_this_month: number
+  rules: { label: string; value: string; highlight: boolean }[]
+  packs: { credits: number; price: string; featured: boolean }[]
+  history: { at: string; label: string; delta: number }[]
+}
+
+export type PlanTier = {
+  id: string
+  name: string
+  tagline: string
+  price: string
+  cta: string
+  featured: boolean
+  badge: string | null
+  features: string[]
+}
+
+export const getAccount = () => request<Account>('/api/account')
+export const getPlan = () => request<PlanPayload>('/api/billing/plan')
+export const getCredits = () => request<CreditsPayload>('/api/billing/credits')
+export const getPlanTiers = () => request<{ tiers: PlanTier[] }>('/api/billing/tiers')
+
+// --------------------------------------------------------------------------- //
+// A/B 테스트
+// --------------------------------------------------------------------------- //
+
+export type AbSide = {
+  id: string
+  name: string
+  preview_url: string | null
+  success_rate?: number | null
+}
+
+export type AbCard = {
+  id: string
+  name: string
+  mission: string
+  created_at: string
+  a: AbSide
+  b: AbSide
+}
+
+export type AbResult = {
+  id: string
+  name: string
+  mission: string
+  created_at: string
+  a: AbSide
+  b: AbSide
+  compare:
+    | { ok: true; items: PersonaRow[]; total?: number; changed?: number; exhausted?: number; axes?: Record<string, string> }
+    | { ok: false; message: string; items: PersonaRow[] }
+  diagrams: { a: DiagramPayload | null; b: DiagramPayload | null }
+}
+
+export const listAbTests = () => request<{ items: AbCard[] }>('/api/ab')
+
+export const getAbTest = (id: string) => request<AbResult>(`/api/ab/${id}`)
+
+export function createAbTest(body: {
+  name: string
+  a_project_id: string
+  b_project_id: string
+}) {
+  return request<{ id?: string; error?: string }>('/api/ab', {
+    method: 'POST',
+    body: JSON.stringify(body),
+  })
+}

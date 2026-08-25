@@ -1,15 +1,20 @@
 import { Link, NavLink } from 'react-router-dom'
-import chevronDownIcon from '../assets/icons/chevron-down.svg'
 import sidebarToggleIcon from '../assets/icons/sidebar-toggle.svg'
-import avatar from '../assets/img/avatar.png'
 import logo from '../assets/img/logo.svg'
 import { useSidebar } from '../state/SidebarContext'
 import { Icon, type IconName } from './Icon'
+import { ProfileMenu } from './ProfileMenu'
 
+/**
+ * 전역 메뉴 (Figma 336:28021).
+ *
+ * 네 개뿐이다. '사이트 비교'는 A/B 테스트가 흡수했고, '팀 워크스페이스'는
+ * 설정 안의 '팀 설정'으로 들어갔다 — 누를 데가 두 곳이면 어느 쪽이 정본인지
+ * 알 수 없어진다.
+ */
 const NAV: { to: string; label: string; icon: IconName }[] = [
   { to: '/projects', label: '프로젝트', icon: 'folder' },
-  { to: '/compare', label: '사이트 비교', icon: 'graph' },
-  { to: '/team', label: '팀 워크스페이스', icon: 'team' },
+  { to: '/ab', label: 'A/B 테스트', icon: 'abTest' },
   { to: '/credit', label: '크레딧 및 플랜', icon: 'card' },
   { to: '/settings', label: '설정', icon: 'setting' },
 ]
@@ -89,21 +94,8 @@ export function Sidebar() {
 
       {/* 사이드바 테두리는 오른쪽 한 줄뿐이다 (Figma 184:372 / 184:336).
           프로필 블록 위에는 구분선이 없다 — 넣으면 디자인에 없는 선이 하나 더 생긴다. */}
-      <div
-        className={`mt-auto flex h-[70px] items-center ${
-          collapsed ? 'justify-center px-0' : 'px-[30px]'
-        }`}
-      >
-        <button type="button" className="flex items-center gap-[7px]">
-          <img src={avatar} alt="" className="size-[35px] rounded-full object-cover" />
-          {collapsed ? null : (
-            <>
-              <span className="text-[20px] text-ink">영찬</span>
-              <span className="text-[13px] leading-[1.45] font-medium text-subtext">Pro</span>
-              <img src={chevronDownIcon} alt="" className="size-[24px]" />
-            </>
-          )}
-        </button>
+      <div className="mt-auto">
+        <ProfileMenu collapsed={collapsed} />
       </div>
     </aside>
   )

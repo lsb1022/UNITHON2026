@@ -3,12 +3,21 @@ import stepChevron from '../assets/icons/step-chevron.svg'
 
 export const WIZARD_STEPS = ['새 테스트 설정', '미션 설정', '페르소나', '확인'] as const
 
+/** A/B 테스트 마법사 (Figma 329:24648). 단계 수는 같고 이름만 다르다. */
+export const AB_STEPS = ['개선전 A 선택', '미션 선택', '개선후 B 입력', '확인'] as const
+
 export type WizardStep = 1 | 2 | 3 | 4
 
-export function StepIndicator({ current }: { current: WizardStep }) {
+export function StepIndicator({
+  current,
+  steps = WIZARD_STEPS,
+}: {
+  current: WizardStep
+  steps?: readonly string[]
+}) {
   return (
     <ol className="flex items-center gap-[20px]">
-      {WIZARD_STEPS.map((label, index) => {
+      {steps.map((label, index) => {
         const step = index + 1
         const done = step < current
         const active = step === current
@@ -52,9 +61,11 @@ export function StepIndicator({ current }: { current: WizardStep }) {
 export function WizardTopBar({
   breadcrumb,
   current,
+  steps,
 }: {
   breadcrumb: { project?: string; page: string }
   current?: WizardStep
+  steps?: readonly string[]
 }) {
   return (
     <div className="flex w-full items-center gap-[40px]">
@@ -68,7 +79,7 @@ export function WizardTopBar({
       </p>
       {current ? (
         <div className="flex flex-1 justify-center pr-[251px]">
-          <StepIndicator current={current} />
+          <StepIndicator current={current} steps={steps} />
         </div>
       ) : null}
     </div>

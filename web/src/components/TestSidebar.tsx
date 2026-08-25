@@ -1,9 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import { listTests, type TestStats } from '../api/client'
 import { useQuery } from '../api/hooks'
-import chevronDownIcon from '../assets/icons/chevron-down.svg'
-import avatar from '../assets/img/avatar.png'
 import { Icon, type IconName } from './Icon'
+import { ProfileMenu } from './ProfileMenu'
 
 /**
  * 테스트 상세의 왼쪽 목록 (Figma 264:8035 / 264:8738).
@@ -26,14 +25,7 @@ export function TestSidebar({ projectId, testId }: { projectId: string; testId: 
       </div>
 
       {/* 프로필 블록 위에는 구분선이 없다 (전역 사이드바와 같은 규칙). */}
-      <div className="flex h-[70px] shrink-0 items-center px-[30px]">
-        <button type="button" className="flex items-center gap-[7px]">
-          <img src={avatar} alt="" className="size-[35px] rounded-full object-cover" />
-          <span className="text-[20px] text-ink">영찬</span>
-          <span className="text-[13px] leading-[1.45] font-medium text-subtext">Pro</span>
-          <img src={chevronDownIcon} alt="" className="size-[24px]" />
-        </button>
-      </div>
+      <ProfileMenu />
     </aside>
   )
 }

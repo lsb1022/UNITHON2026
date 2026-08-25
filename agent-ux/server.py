@@ -25,7 +25,7 @@ import threading
 import time
 import uuid
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
-from urllib.parse import urlparse
+from urllib.parse import quote, unquote, urlparse
 
 for _s in (sys.stdout, sys.stderr):
     try:
@@ -58,6 +58,9 @@ class Job:
 
     def __init__(self, jid: str, steps: list[dict]):
         self.id = jid
+        self.run_id = ""
+        self.total = 0
+        self.title = ""
         self.steps = steps          # [{"name":..., "cmd":[...]}]
         self.stage = ""
         self.done = False
@@ -96,6 +99,19 @@ class Job:
         self.stage = "완료"
         self.ok = True
         self.done = True
+
+
+def done_count(run_id: str) -> int:
+    """끝난 사람 수 = logs/{run_id}/ 에 쌓인 개인 기록 파일 수.
+
+    한 명이 끝날 때마다 즉시 저장하므로 이 값이 곧 진행률이다.
+    시간으로 어림잡지 않는다 — 어림값은 화면에 그럴듯하게 흐르지만 거짓이다.
+    """
+    d = os.path.join(HERE, "logs", run_id)
+    if not os.path.isdir(d):
+        return 0
+    return len([f for f in os.listdir(d)
+                if f.startswith("P") and f.endswith(".json")])
 
 
 def read_result(run_id: str) -> dict:
@@ -156,9 +172,60 @@ def read_trace(run_id: str, persona: str) -> dict:
             "end_reason": t["end_reason"], "steps": steps}
 
 
+SHOTS_ROOT = os.path.join(HERE, "shots_web")
+
+
+def shot_runs() -> list[str]:
+    """스크린샷이 남은 실행들. 최근 것이 앞에 온다."""
+    if not os.path.isdir(SHOTS_ROOT):
+        return []
+    ds = [d for d in os.listdir(SHOTS_ROOT)
+          if os.path.isdir(os.path.join(SHOTS_ROOT, d))]
+    return sorted(ds, key=lambda d: os.path.getmtime(os.path.join(SHOTS_ROOT, d)),
+                  reverse=True)
+
+
+def shot_files(run_id: str) -> list[str]:
+    d = os.path.join(SHOTS_ROOT, run_id)
+    if not os.path.isdir(d):
+        return []
+    return sorted(f for f in os.listdir(d) if f.endswith(".png"))
+
+
+GALLERY = """<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<title>답사자가 본 화면</title>
+<style>
+ body{margin:0;background:#11161c;color:#e6ebf0;
+   font-family:system-ui,"Malgun Gothic",sans-serif}
+ header{padding:1rem 1.2rem;border-bottom:1px solid #28313b}
+ h1{margin:0;font-size:1.05rem}
+ p{margin:.35rem 0 0;color:#8b95a0;font-size:.85rem;max-width:70ch}
+ .grid{display:grid;gap:1rem;padding:1.2rem;
+   grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
+ figure{margin:0;background:#171d25;border:1px solid #28313b;border-radius:6px;
+   overflow:hidden}
+ img{width:100%%;display:block;background:#fff}
+ figcaption{padding:.45rem .6rem;font-size:.78rem;color:#8b95a0;
+   font-family:ui-monospace,monospace}
+ .empty{padding:2rem 1.2rem;color:#8b95a0}
+ a{color:#69b4d6}
+</style></head><body>
+<header>
+  <h1>답사자가 본 화면 — %(run)s</h1>
+  <p>첫 페르소나(답사자)가 스텝마다 찍은 스크린샷입니다. 이 그림들로 사이트
+  설명서를 만들고, <b>뒤따르는 페르소나들은 이미지를 한 장도 쓰지 않습니다</b> —
+  설명서와 계산된 수치(대비·좌표·가림)만 텍스트로 받습니다.</p>
+  <p>다른 실행: %(others)s</p>
+</header>
+%(body)s
+</body></html>"""
+
+
 class Handler(BaseHTTPRequestHandler):
     server_version = "uxagent/1.0"
     mock = False
+    personas = 3
+    variant = "buggy"
 
     def log_message(self, fmt, *args):      # 기본 로그가 시끄럽다
         pass
@@ -182,6 +249,46 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):                       # noqa: N802
         path = urlparse(self.path).path.rstrip("/")
 
+        # 답사 스크린샷 갤러리 (임시 확인용). 브라우저로 바로 연다.
+        if path == "/shots" or path.startswith("/shots/"):
+            # 주소는 인코딩돼서 온다. 되돌리지 않으면 한글이 섞인 폴더를 못 찾는다.
+            parts = [unquote(x) for x in path.split("/") if x]
+            runs = shot_runs()
+            run = parts[1] if len(parts) > 1 else (runs[0] if runs else "")
+            if len(parts) > 2:                       # /shots/{run}/{file} — 이미지 자체
+                fp = os.path.join(SHOTS_ROOT, parts[1], parts[2])
+                if os.path.isfile(fp) and fp.endswith(".png"):
+                    data = open(fp, "rb").read()
+                    self.send_response(200)
+                    self.send_header("Content-Type", "image/png")
+                    self.send_header("Content-Length", str(len(data)))
+                    self.send_header("Access-Control-Allow-Origin", "*")
+                    self.end_headers()
+                    self.wfile.write(data)
+                    return
+                return self._send(404, {"error": "그런 그림이 없습니다"})
+
+            files = shot_files(run)
+            if not files:
+                body = ('<div class="empty">아직 스크린샷이 없습니다. '
+                        '답사가 끝나면 여기에 쌓입니다.</div>')
+            else:
+                body = '<div class="grid">' + "".join(
+                    '<figure><img loading="lazy" src="/shots/%s/%s" alt="%s">'
+                    '<figcaption>%s</figcaption></figure>'
+                    % (quote(run), quote(f), f, f)
+                    for f in files) + "</div>"
+            others = " · ".join('<a href="/shots/%s">%s</a>' % (quote(r), r)
+                                for r in runs[:6]) or "없음"
+            html = (GALLERY % {"run": run or "(없음)", "body": body,
+                               "others": others}).encode("utf-8")
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Content-Length", str(len(html)))
+            self.end_headers()
+            self.wfile.write(html)
+            return
+
         if path in ("/api/health", "/api"):
             return self._send(200, {"ok": True, "mock": Handler.mock,
                                     "allowed_hosts": sorted(ALLOWED_HOSTS)})
@@ -202,6 +309,24 @@ class Handler(BaseHTTPRequestHandler):
                 "log": lines[-120:], "result": job.result,
             })
 
+        # 프론트의 실행중 화면이 2초마다 부른다. 가장 최근 작업 하나를 알린다.
+        if path == "/api/runs/active":
+            live = [j for j in JOBS.values() if not j.done]
+            job = live[-1] if live else None
+            if job is None:
+                return self._send(200, None)
+            done = done_count(job.run_id)
+            return self._send(200, {
+                "run_id": job.id,
+                "project_id": "demo-moji",
+                "project_name": "MOJI STORE",
+                # ActiveRun 스키마에는 단계 칸이 없다. 답사에만 몇 분이 걸리는데
+                # 그동안 0% 만 보이면 멈춘 것처럼 읽힌다. 이름에 단계를 실어 보낸다.
+                "test_name": "%s · %s" % (job.stage, job.title),
+                "done": done,
+                "total": job.total,
+            })
+
         if path.startswith("/api/traces/"):
             parts = path.split("/")
             if len(parts) >= 5:
@@ -218,26 +343,41 @@ class Handler(BaseHTTPRequestHandler):
         except Exception:  # noqa: BLE001
             return self._send(400, {"error": "JSON 을 읽지 못했습니다"})
 
+        # 프론트의 '테스트 하기' 버튼. 답사부터 실제로 돌린다.
+        if path.startswith("/api/tests/") and path.endswith("/runs"):
+            return self._start(body, from_web=True)
+
         if path != "/api/scan":
             return self._send(404, {"error": "없는 주소입니다"})
 
+        return self._start(body, from_web=False)
+
+    def _start(self, body: dict, from_web: bool):
         base = str(body.get("base") or "http://localhost:8000/ux-testbed")
         if not _allowed(base):
             return self._send(403, {
                 "error": "허용되지 않은 주소입니다. 이 데모는 지정된 쇼핑몰만 검사합니다.",
                 "allowed_hosts": sorted(ALLOWED_HOSTS)})
 
-        variant = str(body.get("variant") or "buggy")
-        count = max(1, min(int(body.get("personas") or 3), 100))
-        resurvey = bool(body.get("resurvey"))
+        variant = str(body.get("variant") or Handler.variant)
+        count = max(1, min(int(body.get("personas") or Handler.personas), 100))
+        # 프론트에서 온 실행은 답사부터 돌린다. "처음 페르소나가 사이트를 훑고
+        # 그 설명서를 나머지가 읽는다"가 이 파이프라인의 시작점이라, 그 장면이
+        # 화면에 보여야 무엇을 하는 도구인지 전달된다.
+        resurvey = bool(body.get("resurvey", from_web))
         run_id = "web_%s_%s" % (variant, time.strftime("%m%d_%H%M%S"))
 
         mock = ["--mock"] if Handler.mock else []
         steps = []
         if resurvey:
+            # 답사자가 본 것을 남긴다. 모델에 보내고 버리면 "무엇을 보고 이 설명서를
+            # 썼는가"를 나중에 아무도 확인할 수 없다. 페르소나는 이미지를 안 쓰므로
+            # 스크린샷은 여기서만 쌓인다.
             steps.append({"name": "답사 — 사이트를 돌아보며 설명서 작성",
                           "cmd": [PY, "-u", "scout.py", "--variant", variant,
-                                  "--base", base, "--yes", "--max-steps", "45"] + mock})
+                                  "--base", base, "--yes", "--max-steps", "45",
+                                  "--shots-dir", os.path.join("shots_web", run_id)]
+                                 + mock})
         steps.append({"name": "페르소나 %d명 탐색" % count,
                       "cmd": [PY, "-u", "run.py", "--variant", variant, "--base", base,
                               "--limit", str(count), "--run-id", run_id,
@@ -245,6 +385,9 @@ class Handler(BaseHTTPRequestHandler):
 
         jid = uuid.uuid4().hex[:12]
         job = Job(jid, steps)
+        job.run_id = run_id
+        job.total = count
+        job.title = "코튼 셔츠 주문 완주"
         JOBS[jid] = job
 
         def worker():
@@ -261,19 +404,29 @@ def main() -> int:
     ap.add_argument("--port", type=int, default=8100)
     ap.add_argument("--mock", action="store_true",
                     help="LLM 없이 돈다. 프론트 개발용 — 응답 모양은 진짜와 같다")
+    ap.add_argument("--personas", type=int, default=3,
+                    help="프론트에서 실행할 때 돌릴 인원. 시연은 2~3명이 알맞다 "
+                         "(한 명당 1~2분)")
+    ap.add_argument("--variant", default="buggy", choices=("clean", "buggy", "flawed"),
+                    help="프론트에서 실행할 때 검사할 판")
     args = ap.parse_args()
 
     Handler.mock = args.mock
+    Handler.personas = args.personas
+    Handler.variant = args.variant
     srv = ThreadingHTTPServer(("127.0.0.1", args.port), Handler)
     print("=" * 58)
     print("  API 서버 http://127.0.0.1:%d%s" % (args.port, "   [모의 — 공짜]" if args.mock else ""))
     print("  검사 허용 호스트: %s" % ", ".join(sorted(ALLOWED_HOSTS)))
     print("=" * 58)
-    print("  POST /api/scan          {variant, personas, base, resurvey}")
+    print("  POST /api/scan                  {variant, personas, base, resurvey}")
+    print("  POST /api/tests/{id}/runs       프론트의 '테스트 하기' (답사부터)")
+    print("  GET  /api/runs/active           진행률 (끝난 기록 파일 수)")
     print("  GET  /api/jobs/{id}     진행 상황과 로그")
     print("  GET  /api/jobs/{id}/result")
     print("  GET  /api/traces/{run_id}/{persona}")
     print("  GET  /api/health")
+    print("  GET  /shots                     답사자가 본 화면 (임시 갤러리)")
     print("\n멈추려면 Ctrl+C")
     try:
         srv.serve_forever()

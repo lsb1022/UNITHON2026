@@ -287,14 +287,182 @@ export const MOCK_DATA = {
           "lastThought": "코튼 셔츠 주문이 완료되었으므로 목표를 성공적으로 달성했습니다."
         }
       ]
+    },
+    "buggy": {
+      "runId": "final_buggy10",
+      "variant": "buggy",
+      "usage": {
+        "calls": 30,
+        "tokens_in": 56104,
+        "tokens_out": 1565,
+        "cost_usd": 0.047947,
+        "by_model": {
+          "gemini-3.6-flash": {
+            "in": 56104,
+            "out": 1565
+          }
+        }
+      },
+      "personas": [
+        {
+          "id": "P001",
+          "label": "숙련3·주의3·인내4·탐색3",
+          "traits": {
+            "literacy": 3,
+            "attention": 3,
+            "patience": 4,
+            "breadth": 3
+          },
+          "steps": 21,
+          "end": "goal_reached",
+          "endLabel": "달성",
+          "firstThought": "코튼 셔츠를 찾기 위해 상의 카테고리 메뉴로 이동합니다.",
+          "lastThought": "주문이 완료되어 주문 접수 화면이 보입니다. 목표인 코튼 셔츠 주문을 성공적으로 마쳤으므로 작업을 완료합니다."
+        },
+        {
+          "id": "P002",
+          "label": "숙련1·주의1·인내3·탐색2",
+          "traits": {
+            "literacy": 1,
+            "attention": 1,
+            "patience": 3,
+            "breadth": 2
+          },
+          "steps": 19,
+          "end": "goal_reached",
+          "endLabel": "달성",
+          "firstThought": "코튼 셔츠를 찾기 위해 우선 상의 카테고리를 눌러봅니다.",
+          "lastThought": "주문 접수 완료 화면이 표시되었으므로 목표를 달성했습니다."
+        },
+        {
+          "id": "P003",
+          "label": "숙련2·주의2·인내2·탐색2",
+          "traits": {
+            "literacy": 2,
+            "attention": 2,
+            "patience": 2,
+            "breadth": 2
+          },
+          "steps": 17,
+          "end": "goal_reached",
+          "endLabel": "달성",
+          "firstThought": "코튼 셔츠를 찾기 위해 상의 카테고리로 이동합니다.",
+          "lastThought": "주문 접수 완료 화면에 도달하여 주문이 성공적으로 마쳐졌으므로 목표를 달성했습니다."
+        },
+        {
+          "id": "P004",
+          "label": "숙련1·주의4·인내5·탐색5",
+          "traits": {
+            "literacy": 1,
+            "attention": 4,
+            "patience": 5,
+            "breadth": 5
+          },
+          "steps": 23,
+          "end": "gave_up",
+          "endLabel": "포기",
+          "firstThought": "코튼 셔츠를 찾기 위해 우선 상의 카테고리로 이동해보겠습니다.",
+          "lastThought": "화면 전체를 덮고 있는 팝업 레이어 때문에 약관 동의 체크박스와 확인 버튼 등 대부분의 요소가 전혀 클릭되지 않고, 스크롤도 되지 않아 더 이상 진행할 수 없습니다."
+        },
+        {
+          "id": "P005",
+          "label": "숙련5·주의4·인내5·탐색4",
+          "traits": {
+            "literacy": 5,
+            "attention": 4,
+            "patience": 5,
+            "breadth": 4
+          },
+          "steps": 23,
+          "end": "gave_up",
+          "endLabel": "포기",
+          "firstThought": "코튼 셔츠를 찾기 위해 상의 카테고리로 이동해 보겠습니다.",
+          "lastThought": "이용약관 동의 체크박스와 결제 확인 버튼이 화면 전체를 덮는 레이어에 가려져 눌리지 않고, 더 이상 진행할 수 있는 방법이 없습니다."
+        },
+        {
+          "id": "P006",
+          "label": "숙련1·주의2·인내5·탐색5",
+          "traits": {
+            "literacy": 1,
+            "attention": 2,
+            "patience": 5,
+            "breadth": 5
+          },
+          "steps": 7,
+          "end": "loop_detected",
+          "endLabel": "맴돌다 중단",
+          "firstThought": "코튼 셔츠를 찾기 위해 '상의' 카테고리로 이동해 보겠습니다.",
+          "lastThought": "사이즈 선택을 위해 M 사이즈 버튼을 눌러보겠습니다."
+        },
+        {
+          "id": "P007",
+          "label": "숙련5·주의1·인내2·탐색2",
+          "traits": {
+            "literacy": 5,
+            "attention": 1,
+            "patience": 2,
+            "breadth": 2
+          },
+          "steps": 10,
+          "end": "gave_up",
+          "endLabel": "포기",
+          "firstThought": "코튼 셔츠를 찾기 위해 상의 카테고리로 이동합니다.",
+          "lastThought": "회원가입 양식이 복잡하고 잘 진행되지 않아 포기하고 나갑니다."
+        },
+        {
+          "id": "P008",
+          "label": "숙련4·주의5·인내2·탐색3",
+          "traits": {
+            "literacy": 4,
+            "attention": 5,
+            "patience": 2,
+            "breadth": 3
+          },
+          "steps": 6,
+          "end": "gave_up",
+          "endLabel": "포기",
+          "firstThought": "코튼 셔츠를 찾기 위해 상의 카테고리 메뉴로 이동하겠습니다.",
+          "lastThought": "팝업 백드롭 레이어 때문에 상품 클릭이 되지 않고, 팝업 닫기/확인 버튼도 제대로 작동하지 않아 더 이상 진행하기 어렵습니다."
+        },
+        {
+          "id": "P009",
+          "label": "숙련5·주의5·인내5·탐색4",
+          "traits": {
+            "literacy": 5,
+            "attention": 5,
+            "patience": 5,
+            "breadth": 4
+          },
+          "steps": 24,
+          "end": "goal_reached",
+          "endLabel": "달성",
+          "firstThought": "코튼 셔츠를 찾기 위해 상의 카테고리로 이동합니다.",
+          "lastThought": "주문 접수 완료 화면에 도달하여 코튼 셔츠 주문이 정상적으로 마쳐졌습니다. 목표를 달성했으므로 종료합니다."
+        },
+        {
+          "id": "P010",
+          "label": "숙련5·주의5·인내2·탐색5",
+          "traits": {
+            "literacy": 5,
+            "attention": 5,
+            "patience": 2,
+            "breadth": 5
+          },
+          "steps": 8,
+          "end": "gave_up",
+          "endLabel": "포기",
+          "firstThought": "코튼 셔츠를 찾기 위해 '상의' 카테고리로 이동해 보겠습니다.",
+          "lastThought": "팝업 레이어로 인해 상품을 클릭할 수 없고 닫기 버튼과 확인 버튼도 작동하지 않아 더 이상 진행이 어렵습니다. 구매 시도를 중단합니다."
+        }
+      ]
     }
   },
   "measured": {
-    "calls": 124,
-    "tokensIn": 190852,
-    "tokensOut": 5694,
-    "usd": 0.1645,
-    "usdPerPersona": 0.0164,
+    "calls": 154,
+    "tokensIn": 246956,
+    "tokensOut": 7259,
+    "usd": 0.2124,
+    "usdPerPersona": 0.0106,
     "note": "실제 실행에서 측정한 값입니다. 추정식이 아닙니다."
   }
 }

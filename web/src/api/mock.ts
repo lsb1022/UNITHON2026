@@ -16,14 +16,12 @@ type Json = Record<string, unknown>
 
 const PROJECT_ID = 'demo-moji'
 const TEST_ID = 'demo-test'
-const RUN_ID = 'demo-run'
 
 /** 마법사가 앞뒤로 오가도 값이 남아 있어야 한다. 새로고침하면 초기화된다. */
 const state = {
   missionPrompt: MOCK_DATA.goal as string,
   successCriteria: '주문 완료 화면에 도달하면 성공',
   personaTotal: 10,
-  runStartedAt: 0,
   // 사용자가 입력한 주소를 기억한다. 무시하고 고정값을 보여주면
   // "내가 넣은 주소가 검사된 게 맞나?" 하는 의심이 남는다.
   projectName: 'MOJI STORE',
@@ -49,16 +47,20 @@ function rate(run?: typeof primary) {
   return Math.round((ok / run.personas.length) * 1000) / 10
 }
 
-/** 실행 화면이 진행률을 그릴 수 있도록, 시작 시각 기준으로 흘려보낸다. */
-function progress(): { done: number; total: number } {
-  const total = primary?.personas.length ?? 10
-  if (!state.runStartedAt) return { done: 0, total }
-  const elapsed = (Date.now() - state.runStartedAt) / 1000
-  // 실측: 페르소나 한 명이 대략 1~2분. 데모에서는 8초에 한 명씩 끝나는 속도로 보여준다.
-  return { done: Math.min(total, Math.floor(elapsed / 8)), total }
-}
-
 const cleanMap = MOCK_DATA.maps.clean as { pages: { path: string; title: string }[] }
+
+/**
+ * 입력창 앞의 "https://" 는 화면 장식일 뿐이라 값에 포함되지 않는다.
+ * 그래서 사용자가 무엇을 치든(프로토콜 있든 없든) 열리는 주소로 맞춰준다.
+ * localhost 는 http 다 — https 를 붙이면 연결이 안 된다.
+ */
+function normalizeUrl(raw: string): string {
+  const t = raw.trim()
+  if (!t) return ''
+  if (/^https?:\/\//i.test(t)) return t
+  const isLocal = /^(localhost|127\.0\.0\.1)(:|\/|$)/i.test(t)
+  return (isLocal ? 'http://' : 'https://') + t
+}
 
 function project(): Json {
   return {
@@ -89,7 +91,7 @@ export function mockResponse(path: string, init?: RequestInit): unknown {
   const body = init?.body ? (JSON.parse(String(init.body)) as Json) : null
 
   if (path === '/api/connectivity/check') {
-    const url = String(body?.url ?? '')
+    const url = normalizeUrl(String(body?.url ?? ''))
     if (url) state.targetUrl = url
     return {
       ok: true,
@@ -134,7 +136,7 @@ export function mockResponse(path: string, init?: RequestInit): unknown {
   if (path === '/api/projects' && method === 'GET') return [project()]
   if (path === '/api/projects' && method === 'POST') {
     if (body?.name) state.projectName = String(body.name)
-    if (body?.target_url) state.targetUrl = String(body.target_url)
+    if (body?.target_url) state.targetUrl = normalizeUrl(String(body.target_url))
     return project()
   }
 
@@ -215,23 +217,11 @@ export function mockResponse(path: string, init?: RequestInit): unknown {
     }
   }
 
-  if (path === `/api/tests/${TEST_ID}/runs` && method === 'POST') {
-    state.runStartedAt = Date.now()
-    return { run_id: RUN_ID, persona_count: state.personaTotal, status: 'running' }
-  }
-
-  if (path === '/api/runs/active') {
-    if (!state.runStartedAt) return null
-    const { done, total } = progress()
-    return {
-      run_id: RUN_ID,
-      project_id: PROJECT_ID,
-      project_name: 'MOJI STORE',
-      test_name: '코튼 셔츠 주문 완주',
-      done,
-      total,
-    }
-  }
+  // 실행과 진행률만은 흉내 내지 않는다. 진짜 파이프라인이 답사부터 돌고,
+  // 진행률은 logs/ 에 쌓인 기록 파일 수에서 나온다.
+  // (agent-ux/server.py 를 띄우고 VITE_API_BASE 를 그쪽으로 두면 연결된다)
+  if (path.endsWith('/runs') && method === 'POST') return MOCK_MISS
+  if (path === '/api/runs/active') return MOCK_MISS
 
   // 썸네일은 <img src> 로 직접 불려서 이 경로를 타지 않는다. 흉내 내지 않는다.
   return MOCK_MISS

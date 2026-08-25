@@ -25,3 +25,7 @@ agent-ux/*_check*.png
 agent-ux/web_*.png
 web/node_modules/
 web/dist/
+
+# 서버가 답사 때 찍어 쌓는 스크린샷 — 실행할 때마다 다시 생긴다
+agent-ux/shots_web/
+web/.env

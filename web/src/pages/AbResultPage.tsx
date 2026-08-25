@@ -1,10 +1,17 @@
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { getAbTest, type AbResult, type PersonaRow, type PersonaSideResult } from '../api/client'
+import {
+  getAbTest,
+  type AbResult,
+  type PersonaRow,
+  type PersonaSideResult,
+  type StepsPayload,
+} from '../api/client'
 import { useQuery } from '../api/hooks'
 import backArrow from '../assets/icons/back-arrow.svg'
 import { Icon } from '../components/Icon'
 import { NavigationDiagram } from '../components/NavigationDiagram'
+import { StepDetailModal } from '../components/StepDetailModal'
 import { Chip, Dots } from '../components/PersonaBits'
 import { PersonaCompareTable } from '../components/PersonaCompareTable'
 import { ErrorBlock, LoadingBlock } from '../components/StateView'
@@ -76,8 +83,10 @@ export function AbResultPage() {
                 </div>
               </section>
 
-              <DiagramBlock tag="A" side={data.a} diagram={data.diagrams.a} />
-              <DiagramBlock tag="B" side={data.b} diagram={data.diagrams.b} />
+              <DiagramBlock tag="A" side={data.a} diagram={data.diagrams.a}
+                            steps={data.steps?.a ?? null} />
+              <DiagramBlock tag="B" side={data.b} diagram={data.diagrams.b}
+                            steps={data.steps?.b ?? null} />
             </div>
           ) : null}
         </main>
@@ -94,11 +103,19 @@ function DiagramBlock({
   tag,
   side,
   diagram,
+  steps,
 }: {
   tag: 'A' | 'B'
   side: AbResult['a']
   diagram: AbResult['diagrams']['a']
+  /** 없으면 막대를 눌러도 아무 일이 없다. 그럴 때는 누를 수 있는 척하지 않는다. */
+  steps: StepsPayload | null
 }) {
+  // 테스트 상세 화면과 같은 창을 띄운다. A/B 는 흐름도가 두 장일 뿐,
+  // 막대 하나를 눌렀을 때 보고 싶은 것은 똑같다.
+  const [picked, setPicked] = useState<string | null>(null)
+  const detail = picked ? steps?.steps[picked] : null
+
   return (
     <section className="mt-[34px]">
       <h2 className="text-[22px] leading-[1.45] font-bold text-heading">
@@ -118,7 +135,16 @@ function DiagramBlock({
         </div>
         <div className="mt-[24px]">
           {diagram ? (
-            <NavigationDiagram data={diagram} />
+            <NavigationDiagram
+              data={diagram}
+              onPickNode={
+                steps
+                  ? (id) => {
+                      if (steps.steps[id]) setPicked(id)
+                    }
+                  : undefined
+              }
+            />
           ) : (
             <p className="py-[60px] text-center text-[15px] text-subtext">
               이 사이트의 이동 기록이 아직 없어요.
@@ -126,6 +152,19 @@ function DiagramBlock({
           )}
         </div>
       </div>
+
+      {detail && steps ? (
+        <StepDetailModal
+          detail={detail}
+          filmstrip={steps.filmstrip}
+          sentences={steps.sentences}
+          axes={steps.axes}
+          testName={`${side.name} · ${steps.test_name}`}
+          replay={steps.replay}
+          onMove={setPicked}
+          onClose={() => setPicked(null)}
+        />
+      ) : null}
     </section>
   )
 }

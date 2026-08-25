@@ -718,6 +718,20 @@ export function mockResponse(rawPath: string, init?: RequestInit): unknown {
     }
   }
 
+/** 단계 상세 묶음. 테스트 상세와 A/B 결과가 같은 것을 쓴다. */
+function stepsPayload(variant: string) {
+  const v = byVariant[variant]
+  if (!v) return null
+  return {
+    steps: v.steps,
+    filmstrip: v.filmstrip,
+    replay: v.replay,
+    sentences: MOCK_DATA.axisSentences,
+    axes: MOCK_DATA.axes,
+    test_name: missionOf(variant).name,
+  }
+}
+
   // ── 두 프로젝트 견주기 ────────────────────────────────────────
   // 프로젝트 안에서는 자기 결과만 보여주고, 두 사이트를 나란히 놓는 일은
   // 여기서만 한다. 같은 사람 열 명을 양쪽에 똑같이 투입했기 때문에 성립한다.
@@ -814,6 +828,13 @@ export function mockResponse(rawPath: string, init?: RequestInit): unknown {
       diagrams: {
         a: byVariant[a.variant]?.diagram ?? null,
         b: byVariant[b.variant]?.diagram ?? null,
+      },
+      // 흐름도 막대를 눌렀을 때 뜨는 단계 상세와 여정 재생. 테스트 상세 화면과
+      // 같은 자료를 그대로 쓴다 — 여기만 안 눌리면 같은 그림인데 한쪽만
+      // 죽어 있는 것처럼 보인다.
+      steps: {
+        a: stepsPayload(a.variant),
+        b: stepsPayload(b.variant),
       },
     }
   }

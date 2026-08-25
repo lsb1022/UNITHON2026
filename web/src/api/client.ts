@@ -590,6 +590,8 @@ export type AbResult = {
     | { ok: true; items: PersonaRow[]; total?: number; changed?: number; exhausted?: number; axes?: Record<string, string> }
     | { ok: false; message: string; items: PersonaRow[] }
   diagrams: { a: DiagramPayload | null; b: DiagramPayload | null }
+  /** 흐름도 막대를 눌렀을 때 뜨는 단계 상세·여정 재생. 테스트 상세와 같은 자료. */
+  steps?: { a: StepsPayload | null; b: StepsPayload | null }
 }
 
 export const listAbTests = () => request<{ items: AbCard[] }>('/api/ab')

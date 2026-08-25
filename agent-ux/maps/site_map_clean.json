@@ -1,0 +1,271 @@
+{
+  "variant": "clean",
+  "root": "http://localhost:8000/ux-testbed/clean",
+  "generated_at": "2026-08-25T14:46:42",
+  "pages": [
+    {
+      "path": "/index.html",
+      "template": "/ux-testbed/clean/index.html",
+      "title": "MOJI STORE — 기본에 충실한 옷",
+      "found_by": "link",
+      "layout": "(/ux-testbed/clean/index.html 자리표시자) 상단 헤더, 중앙 본문, 하단 푸터로 구성",
+      "elements": [
+        {
+          "name": "MOJI",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "홈",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "전체 상품",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "상의",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "하의",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "신발",
+          "type": "a",
+          "where": "위쪽"
+        }
+      ],
+      "links_to": [
+        "/ux-testbed/clean/cart.html",
+        "/ux-testbed/clean/list.html"
+      ],
+      "steps": null
+    },
+    {
+      "path": "/cart.html",
+      "template": "/ux-testbed/clean/cart.html",
+      "title": "장바구니 — MOJI STORE",
+      "found_by": "scout",
+      "layout": "(/ux-testbed/clean/cart.html 자리표시자) 상단 헤더, 중앙 본문, 하단 푸터로 구성",
+      "elements": [
+        {
+          "name": "MOJI",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "홈",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "전체 상품",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "상의",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "하의",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "신발",
+          "type": "a",
+          "where": "위쪽"
+        }
+      ],
+      "links_to": [
+        "/ux-testbed/clean/checkout.html",
+        "/ux-testbed/clean/index.html",
+        "/ux-testbed/clean/list.html"
+      ],
+      "steps": null
+    },
+    {
+      "path": "/list.html?cat=%EC%A0%84%EC%B2%B4&sort=popular",
+      "template": "/ux-testbed/clean/list.html",
+      "title": "전체 상품 — MOJI STORE",
+      "found_by": "scout",
+      "layout": "(/ux-testbed/clean/list.html 자리표시자) 상단 헤더, 중앙 본문, 하단 푸터로 구성",
+      "elements": [
+        {
+          "name": "MOJI",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "홈",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "전체 상품",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "상의",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "하의",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "신발",
+          "type": "a",
+          "where": "위쪽"
+        }
+      ],
+      "links_to": [
+        "/ux-testbed/clean/cart.html",
+        "/ux-testbed/clean/product.html"
+      ],
+      "steps": null
+    },
+    {
+      "path": "/product.html?id=3",
+      "template": "/ux-testbed/clean/product.html",
+      "title": "미니멀 레더 스니커즈 — MOJI STORE",
+      "found_by": "scout",
+      "layout": "(/ux-testbed/clean/product.html 자리표시자) 상단 헤더, 중앙 본문, 하단 푸터로 구성",
+      "elements": [
+        {
+          "name": "MOJI",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "홈",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "전체 상품",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "상의",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "하의",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "신발",
+          "type": "a",
+          "where": "위쪽"
+        }
+      ],
+      "links_to": [
+        "/ux-testbed/clean/cart.html"
+      ],
+      "steps": null
+    },
+    {
+      "path": "/checkout.html",
+      "template": "/ux-testbed/clean/checkout.html",
+      "title": "주문/결제 — MOJI STORE",
+      "found_by": "scout",
+      "layout": "(/ux-testbed/clean/checkout.html 자리표시자) 상단 헤더, 중앙 본문, 하단 푸터로 구성",
+      "elements": [
+        {
+          "name": "MOJI",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "홈",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "전체 상품",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "장바구니",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "🛒 장바구니 2 장바구니, 상품 2개",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "홈",
+          "type": "a",
+          "where": "위쪽"
+        }
+      ],
+      "links_to": [
+        "/ux-testbed/clean/complete.html"
+      ],
+      "steps": null
+    },
+    {
+      "path": "/complete.html",
+      "template": "/ux-testbed/clean/complete.html",
+      "title": "주문이 완료되었습니다 — MOJI STORE",
+      "found_by": "scout",
+      "layout": "(/ux-testbed/clean/complete.html 자리표시자) 상단 헤더, 중앙 본문, 하단 푸터로 구성",
+      "elements": [
+        {
+          "name": "MOJI",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "홈",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "전체 상품",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "🛒 장바구니 장바구니 (비어 있음)",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "주문 상세 보기",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "쇼핑 계속하기",
+          "type": "a",
+          "where": "위쪽"
+        }
+      ],
+      "links_to": [
+        "/ux-testbed/clean/list.html"
+      ],
+      "steps": null
+    }
+  ],
+  "unreached": [],
+  "structure": "MOJI STORE — 기본에 충실한 옷 → 장바구니 — MOJI STORE → 전체 상품 — MOJI STORE → 미니멀 레더 스니커즈 — MOJI STORE → 주문/결제 — MOJI STORE → 주문이 완료되었습니다 — MOJI STORE"
+}

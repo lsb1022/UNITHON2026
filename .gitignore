@@ -1,0 +1,15 @@
+# 파이썬
+__pycache__/
+*.pyc
+
+# 실행 산출물 — 돌릴 때마다 다시 생기고, 스크린샷은 실행당 수 MB다.
+# 지도(maps/)와 페르소나(personas/)는 입력이라 저장한다.
+agent-ux/logs/
+agent-ux/shots/
+agent-ux/shots-real*/
+agent-ux/maps/*.bak
+
+# 키는 환경변수로만 다룬다. 파일로 들어올 자리를 아예 막는다.
+.env
+*.key
+secrets*

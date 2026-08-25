@@ -1,0 +1,226 @@
+{
+  "variant": "buggy",
+  "root": "http://localhost:8000/ux-testbed/flawed",
+  "generated_at": "2026-08-25T14:14:00",
+  "pages": [
+    {
+      "path": "/index.html",
+      "template": "/ux-testbed/flawed/index.html",
+      "title": "쇼핑몰",
+      "found_by": "link",
+      "layout": "(/ux-testbed/flawed/index.html 자리표시자) 상단 헤더, 중앙 본문, 하단 푸터로 구성",
+      "elements": [
+        {
+          "name": "홈",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "전체",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "상의",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "하의",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "신발",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "액세서리",
+          "type": "a",
+          "where": "위쪽"
+        }
+      ],
+      "links_to": [
+        "/ux-testbed/flawed/list.html"
+      ],
+      "steps": null
+    },
+    {
+      "path": "/list.html",
+      "template": "/ux-testbed/flawed/list.html",
+      "title": "쇼핑몰",
+      "found_by": "scout",
+      "layout": "(/ux-testbed/flawed/list.html 자리표시자) 상단 헤더, 중앙 본문, 하단 푸터로 구성",
+      "elements": [
+        {
+          "name": "홈",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "전체",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "상의",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "하의",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "신발",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "액세서리",
+          "type": "a",
+          "where": "위쪽"
+        }
+      ],
+      "links_to": [
+        "/ux-testbed/flawed/cart.html",
+        "/ux-testbed/flawed/product.html"
+      ],
+      "steps": null
+    },
+    {
+      "path": "/cart.html",
+      "template": "/ux-testbed/flawed/cart.html",
+      "title": "쇼핑몰",
+      "found_by": "scout",
+      "layout": "(/ux-testbed/flawed/cart.html 자리표시자) 상단 헤더, 중앙 본문, 하단 푸터로 구성",
+      "elements": [
+        {
+          "name": "홈",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "전체",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "상의",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "하의",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "신발",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "액세서리",
+          "type": "a",
+          "where": "위쪽"
+        }
+      ],
+      "links_to": [
+        "/ux-testbed/flawed/checkout.html",
+        "/ux-testbed/flawed/list.html"
+      ],
+      "steps": null
+    },
+    {
+      "path": "/product.html?id=1",
+      "template": "/ux-testbed/flawed/product.html",
+      "title": "쇼핑몰",
+      "found_by": "scout",
+      "layout": "(/ux-testbed/flawed/product.html 자리표시자) 상단 헤더, 중앙 본문, 하단 푸터로 구성",
+      "elements": [
+        {
+          "name": "홈",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "전체",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "상의",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "하의",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "신발",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "액세서리",
+          "type": "a",
+          "where": "위쪽"
+        }
+      ],
+      "links_to": [
+        "/ux-testbed/flawed/cart.html"
+      ],
+      "steps": null
+    },
+    {
+      "path": "/checkout.html",
+      "template": "/ux-testbed/flawed/checkout.html",
+      "title": "쇼핑몰",
+      "found_by": "scout",
+      "layout": "(/ux-testbed/flawed/checkout.html 자리표시자) 상단 헤더, 중앙 본문, 하단 푸터로 구성",
+      "elements": [
+        {
+          "name": "홈",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "전체",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "장바구니",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "cart",
+          "type": "a",
+          "where": "위쪽"
+        },
+        {
+          "name": "이름",
+          "type": "input",
+          "where": "위쪽"
+        },
+        {
+          "name": "연락처",
+          "type": "input",
+          "where": "위쪽"
+        }
+      ],
+      "links_to": [
+        "/ux-testbed/flawed/list.html"
+      ],
+      "steps": null
+    }
+  ],
+  "unreached": [],
+  "structure": "쇼핑몰 → 쇼핑몰 → 쇼핑몰 → 쇼핑몰 → 쇼핑몰"
+}

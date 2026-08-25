@@ -1,0 +1,23 @@
+{
+  "variant": "clean",
+  "generated_at": "2026-08-25T14:46:42",
+  "surveyor": "scout",
+  "provider": null,
+  "model": null,
+  "mock": true,
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "steps": 41,
+  "stop_reason": "dry",
+  "screenshots": 41,
+  "pages": 6,
+  "unreached": [],
+  "usage": {
+    "calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "cost_usd": 0.0
+  }
+}

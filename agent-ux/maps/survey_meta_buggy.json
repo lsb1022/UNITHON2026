@@ -1,0 +1,23 @@
+{
+  "variant": "buggy",
+  "generated_at": "2026-08-25T14:14:00",
+  "surveyor": "scout",
+  "provider": null,
+  "model": null,
+  "mock": true,
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "steps": 24,
+  "stop_reason": "dry",
+  "screenshots": 0,
+  "pages": 5,
+  "unreached": [],
+  "usage": {
+    "calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "cost_usd": 0.0
+  }
+}

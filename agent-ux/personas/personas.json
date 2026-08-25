@@ -1,0 +1,3801 @@
+{
+ "generated_at": "2026-08-25T12:57:48",
+ "source_map": {
+  "variant": "clean",
+  "generated_at": "2026-08-25T12:10:56"
+ },
+ "goals": [
+  {
+   "id": "G01",
+   "type": "A",
+   "start_path": "/index.html",
+   "text": "코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
+   "success": "주문 완료 화면에 도달"
+  },
+  {
+   "id": "G02",
+   "type": "A",
+   "start_path": "/list.html",
+   "text": "신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "success": "신발 카테고리 상품으로 주문 완료"
+  },
+  {
+   "id": "G03",
+   "type": "A",
+   "start_path": "/list.html",
+   "text": "무료배송이 되도록 담아서 주문을 마친다.",
+   "success": "합계 5만원 이상으로 주문 완료"
+  },
+  {
+   "id": "G04",
+   "type": "A",
+   "start_path": "/product.html?id=7",
+   "text": "워시드 후디를 사려고 한다.",
+   "success": "품절을 확인하고 대체품 구매 또는 이탈"
+  },
+  {
+   "id": "G05",
+   "type": "A",
+   "start_path": "/index.html",
+   "text": "액세서리 두 가지를 한 번에 주문한다.",
+   "success": "액세서리 2종이 담긴 상태로 주문 완료"
+  },
+  {
+   "id": "G06",
+   "type": "B",
+   "start_path": "/index.html",
+   "text": "배송비가 무료가 되는 금액을 확인하고 나간다.",
+   "success": "5만원 기준을 말하고 종료"
+  },
+  {
+   "id": "G07",
+   "type": "B",
+   "start_path": "/list.html",
+   "text": "스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "success": "사이즈 목록을 확인하고 종료"
+  },
+  {
+   "id": "G08",
+   "type": "B",
+   "start_path": "/cart.html",
+   "text": "장바구니의 총 결제금액을 확인하고 나간다.",
+   "success": "배송비 포함 합계를 말하고 종료",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "G09",
+   "type": "C",
+   "start_path": "/index.html",
+   "text": "지난번에 담아둔 장바구니를 이어서 결제한다.",
+   "success": "담긴 상품 그대로 주문 완료",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 3,
+      "color": "화이트",
+      "size": "250",
+      "qty": 1
+     },
+     {
+      "id": 10,
+      "color": "블랙",
+      "size": "FREE",
+      "qty": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "G10",
+   "type": "C",
+   "start_path": "/cart.html",
+   "text": "담아둔 것 중 하나를 빼고 나머지만 주문한다.",
+   "success": "1건 삭제 후 주문 완료",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 3,
+      "color": "화이트",
+      "size": "250",
+      "qty": 1
+     },
+     {
+      "id": 10,
+      "color": "블랙",
+      "size": "FREE",
+      "qty": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "G11",
+   "type": "C",
+   "start_path": "/cart.html",
+   "text": "담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "success": "수량 변경이 합계에 반영된 뒤 주문 완료",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  }
+ ],
+ "personas": [
+  {
+   "id": "P001",
+   "label": "익숙·여유·정독·신규 / G01",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "patient",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 0,
+   "goal_id": "G01",
+   "goal_type": "A",
+   "goal": "코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
+   "success": "주문 완료 화면에 도달",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 12000,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P002",
+   "label": "서툼·여유·정독·신규 / G02",
+   "traits": {
+    "literacy": "novice",
+    "patience": "patient",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 1,
+   "goal_id": "G02",
+   "goal_type": "A",
+   "goal": "신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "success": "신발 카테고리 상품으로 주문 완료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 12000,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P003",
+   "label": "익숙·조급·정독·신규 / G03",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "hasty",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 2,
+   "goal_id": "G03",
+   "goal_type": "A",
+   "goal": "무료배송이 되도록 담아서 주문을 마친다.",
+   "success": "합계 5만원 이상으로 주문 완료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 무료배송이 되도록 담아서 주문을 마친다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 6000,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P004",
+   "label": "서툼·조급·정독·신규 / G04",
+   "traits": {
+    "literacy": "novice",
+    "patience": "hasty",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 3,
+   "goal_id": "G04",
+   "goal_type": "A",
+   "goal": "워시드 후디를 사려고 한다.",
+   "success": "품절을 확인하고 대체품 구매 또는 이탈",
+   "start_path": "/product.html?id=7",
+   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 워시드 후디를 사려고 한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 6000,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P005",
+   "label": "익숙·여유·훑기·신규 / G05",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "patient",
+    "reading": "scanner",
+    "visit": "new"
+   },
+   "combo_index": 4,
+   "goal_id": "G05",
+   "goal_type": "A",
+   "goal": "액세서리 두 가지를 한 번에 주문한다.",
+   "success": "액세서리 2종이 담긴 상태로 주문 완료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 액세서리 두 가지를 한 번에 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 4000,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P006",
+   "label": "서툼·여유·훑기·신규 / G06",
+   "traits": {
+    "literacy": "novice",
+    "patience": "patient",
+    "reading": "scanner",
+    "visit": "new"
+   },
+   "combo_index": 5,
+   "goal_id": "G06",
+   "goal_type": "B",
+   "goal": "배송비가 무료가 되는 금액을 확인하고 나간다.",
+   "success": "5만원 기준을 말하고 종료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 배송비가 무료가 되는 금액을 확인하고 나간다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 4000,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P007",
+   "label": "익숙·조급·훑기·신규 / G07",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "hasty",
+    "reading": "scanner",
+    "visit": "new"
+   },
+   "combo_index": 6,
+   "goal_id": "G07",
+   "goal_type": "B",
+   "goal": "스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "success": "사이즈 목록을 확인하고 종료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 1500,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P008",
+   "label": "서툼·조급·훑기·신규 / G08",
+   "traits": {
+    "literacy": "novice",
+    "patience": "hasty",
+    "reading": "scanner",
+    "visit": "new"
+   },
+   "combo_index": 7,
+   "goal_id": "G08",
+   "goal_type": "B",
+   "goal": "장바구니의 총 결제금액을 확인하고 나간다.",
+   "success": "배송비 포함 합계를 말하고 종료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 장바구니의 총 결제금액을 확인하고 나간다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 1500,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P009",
+   "label": "익숙·여유·정독·재방문 / G09",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "patient",
+    "reading": "reader",
+    "visit": "returning"
+   },
+   "combo_index": 8,
+   "goal_id": "G09",
+   "goal_type": "C",
+   "goal": "지난번에 담아둔 장바구니를 이어서 결제한다.",
+   "success": "담긴 상품 그대로 주문 완료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 지난번에 담아둔 장바구니를 이어서 결제한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 12000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 3,
+      "color": "화이트",
+      "size": "250",
+      "qty": 1
+     },
+     {
+      "id": 10,
+      "color": "블랙",
+      "size": "FREE",
+      "qty": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "P010",
+   "label": "서툼·여유·정독·재방문 / G10",
+   "traits": {
+    "literacy": "novice",
+    "patience": "patient",
+    "reading": "reader",
+    "visit": "returning"
+   },
+   "combo_index": 9,
+   "goal_id": "G10",
+   "goal_type": "C",
+   "goal": "담아둔 것 중 하나를 빼고 나머지만 주문한다.",
+   "success": "1건 삭제 후 주문 완료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 것 중 하나를 빼고 나머지만 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 12000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 3,
+      "color": "화이트",
+      "size": "250",
+      "qty": 1
+     },
+     {
+      "id": 10,
+      "color": "블랙",
+      "size": "FREE",
+      "qty": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "P011",
+   "label": "익숙·조급·정독·재방문 / G11",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "hasty",
+    "reading": "reader",
+    "visit": "returning"
+   },
+   "combo_index": 10,
+   "goal_id": "G11",
+   "goal_type": "C",
+   "goal": "담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "success": "수량 변경이 합계에 반영된 뒤 주문 완료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 6000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P012",
+   "label": "서툼·조급·정독·재방문 / G01",
+   "traits": {
+    "literacy": "novice",
+    "patience": "hasty",
+    "reading": "reader",
+    "visit": "returning"
+   },
+   "combo_index": 11,
+   "goal_id": "G01",
+   "goal_type": "A",
+   "goal": "코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
+   "success": "주문 완료 화면에 도달",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 6000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P013",
+   "label": "익숙·여유·훑기·재방문 / G02",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "patient",
+    "reading": "scanner",
+    "visit": "returning"
+   },
+   "combo_index": 12,
+   "goal_id": "G02",
+   "goal_type": "A",
+   "goal": "신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "success": "신발 카테고리 상품으로 주문 완료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 4000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P014",
+   "label": "서툼·여유·훑기·재방문 / G03",
+   "traits": {
+    "literacy": "novice",
+    "patience": "patient",
+    "reading": "scanner",
+    "visit": "returning"
+   },
+   "combo_index": 13,
+   "goal_id": "G03",
+   "goal_type": "A",
+   "goal": "무료배송이 되도록 담아서 주문을 마친다.",
+   "success": "합계 5만원 이상으로 주문 완료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 무료배송이 되도록 담아서 주문을 마친다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 4000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P015",
+   "label": "익숙·조급·훑기·재방문 / G04",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "hasty",
+    "reading": "scanner",
+    "visit": "returning"
+   },
+   "combo_index": 14,
+   "goal_id": "G04",
+   "goal_type": "A",
+   "goal": "워시드 후디를 사려고 한다.",
+   "success": "품절을 확인하고 대체품 구매 또는 이탈",
+   "start_path": "/product.html?id=7",
+   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 워시드 후디를 사려고 한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 1500,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P016",
+   "label": "서툼·조급·훑기·재방문 / G05",
+   "traits": {
+    "literacy": "novice",
+    "patience": "hasty",
+    "reading": "scanner",
+    "visit": "returning"
+   },
+   "combo_index": 15,
+   "goal_id": "G05",
+   "goal_type": "A",
+   "goal": "액세서리 두 가지를 한 번에 주문한다.",
+   "success": "액세서리 2종이 담긴 상태로 주문 완료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 액세서리 두 가지를 한 번에 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 1500,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P017",
+   "label": "익숙·여유·정독·신규 / G06",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "patient",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 0,
+   "goal_id": "G06",
+   "goal_type": "B",
+   "goal": "배송비가 무료가 되는 금액을 확인하고 나간다.",
+   "success": "5만원 기준을 말하고 종료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 배송비가 무료가 되는 금액을 확인하고 나간다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 12000,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P018",
+   "label": "서툼·여유·정독·신규 / G07",
+   "traits": {
+    "literacy": "novice",
+    "patience": "patient",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 1,
+   "goal_id": "G07",
+   "goal_type": "B",
+   "goal": "스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "success": "사이즈 목록을 확인하고 종료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 12000,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P019",
+   "label": "익숙·조급·정독·신규 / G08",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "hasty",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 2,
+   "goal_id": "G08",
+   "goal_type": "B",
+   "goal": "장바구니의 총 결제금액을 확인하고 나간다.",
+   "success": "배송비 포함 합계를 말하고 종료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 장바구니의 총 결제금액을 확인하고 나간다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 6000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P020",
+   "label": "서툼·조급·정독·신규 / G09",
+   "traits": {
+    "literacy": "novice",
+    "patience": "hasty",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 3,
+   "goal_id": "G09",
+   "goal_type": "C",
+   "goal": "지난번에 담아둔 장바구니를 이어서 결제한다.",
+   "success": "담긴 상품 그대로 주문 완료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 지난번에 담아둔 장바구니를 이어서 결제한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 6000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 3,
+      "color": "화이트",
+      "size": "250",
+      "qty": 1
+     },
+     {
+      "id": 10,
+      "color": "블랙",
+      "size": "FREE",
+      "qty": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "P021",
+   "label": "익숙·여유·훑기·신규 / G10",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "patient",
+    "reading": "scanner",
+    "visit": "new"
+   },
+   "combo_index": 4,
+   "goal_id": "G10",
+   "goal_type": "C",
+   "goal": "담아둔 것 중 하나를 빼고 나머지만 주문한다.",
+   "success": "1건 삭제 후 주문 완료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 것 중 하나를 빼고 나머지만 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 4000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 3,
+      "color": "화이트",
+      "size": "250",
+      "qty": 1
+     },
+     {
+      "id": 10,
+      "color": "블랙",
+      "size": "FREE",
+      "qty": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "P022",
+   "label": "서툼·여유·훑기·신규 / G11",
+   "traits": {
+    "literacy": "novice",
+    "patience": "patient",
+    "reading": "scanner",
+    "visit": "new"
+   },
+   "combo_index": 5,
+   "goal_id": "G11",
+   "goal_type": "C",
+   "goal": "담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "success": "수량 변경이 합계에 반영된 뒤 주문 완료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 4000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P023",
+   "label": "익숙·조급·훑기·신규 / G01",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "hasty",
+    "reading": "scanner",
+    "visit": "new"
+   },
+   "combo_index": 6,
+   "goal_id": "G01",
+   "goal_type": "A",
+   "goal": "코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
+   "success": "주문 완료 화면에 도달",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 1500,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P024",
+   "label": "서툼·조급·훑기·신규 / G02",
+   "traits": {
+    "literacy": "novice",
+    "patience": "hasty",
+    "reading": "scanner",
+    "visit": "new"
+   },
+   "combo_index": 7,
+   "goal_id": "G02",
+   "goal_type": "A",
+   "goal": "신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "success": "신발 카테고리 상품으로 주문 완료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 1500,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P025",
+   "label": "익숙·여유·정독·재방문 / G03",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "patient",
+    "reading": "reader",
+    "visit": "returning"
+   },
+   "combo_index": 8,
+   "goal_id": "G03",
+   "goal_type": "A",
+   "goal": "무료배송이 되도록 담아서 주문을 마친다.",
+   "success": "합계 5만원 이상으로 주문 완료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 무료배송이 되도록 담아서 주문을 마친다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 12000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P026",
+   "label": "서툼·여유·정독·재방문 / G04",
+   "traits": {
+    "literacy": "novice",
+    "patience": "patient",
+    "reading": "reader",
+    "visit": "returning"
+   },
+   "combo_index": 9,
+   "goal_id": "G04",
+   "goal_type": "A",
+   "goal": "워시드 후디를 사려고 한다.",
+   "success": "품절을 확인하고 대체품 구매 또는 이탈",
+   "start_path": "/product.html?id=7",
+   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 워시드 후디를 사려고 한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 12000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P027",
+   "label": "익숙·조급·정독·재방문 / G05",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "hasty",
+    "reading": "reader",
+    "visit": "returning"
+   },
+   "combo_index": 10,
+   "goal_id": "G05",
+   "goal_type": "A",
+   "goal": "액세서리 두 가지를 한 번에 주문한다.",
+   "success": "액세서리 2종이 담긴 상태로 주문 완료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 액세서리 두 가지를 한 번에 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 6000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P028",
+   "label": "서툼·조급·정독·재방문 / G06",
+   "traits": {
+    "literacy": "novice",
+    "patience": "hasty",
+    "reading": "reader",
+    "visit": "returning"
+   },
+   "combo_index": 11,
+   "goal_id": "G06",
+   "goal_type": "B",
+   "goal": "배송비가 무료가 되는 금액을 확인하고 나간다.",
+   "success": "5만원 기준을 말하고 종료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 배송비가 무료가 되는 금액을 확인하고 나간다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 6000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P029",
+   "label": "익숙·여유·훑기·재방문 / G07",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "patient",
+    "reading": "scanner",
+    "visit": "returning"
+   },
+   "combo_index": 12,
+   "goal_id": "G07",
+   "goal_type": "B",
+   "goal": "스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "success": "사이즈 목록을 확인하고 종료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 4000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P030",
+   "label": "서툼·여유·훑기·재방문 / G08",
+   "traits": {
+    "literacy": "novice",
+    "patience": "patient",
+    "reading": "scanner",
+    "visit": "returning"
+   },
+   "combo_index": 13,
+   "goal_id": "G08",
+   "goal_type": "B",
+   "goal": "장바구니의 총 결제금액을 확인하고 나간다.",
+   "success": "배송비 포함 합계를 말하고 종료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 장바구니의 총 결제금액을 확인하고 나간다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 4000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P031",
+   "label": "익숙·조급·훑기·재방문 / G09",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "hasty",
+    "reading": "scanner",
+    "visit": "returning"
+   },
+   "combo_index": 14,
+   "goal_id": "G09",
+   "goal_type": "C",
+   "goal": "지난번에 담아둔 장바구니를 이어서 결제한다.",
+   "success": "담긴 상품 그대로 주문 완료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 지난번에 담아둔 장바구니를 이어서 결제한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 1500,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 3,
+      "color": "화이트",
+      "size": "250",
+      "qty": 1
+     },
+     {
+      "id": 10,
+      "color": "블랙",
+      "size": "FREE",
+      "qty": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "P032",
+   "label": "서툼·조급·훑기·재방문 / G10",
+   "traits": {
+    "literacy": "novice",
+    "patience": "hasty",
+    "reading": "scanner",
+    "visit": "returning"
+   },
+   "combo_index": 15,
+   "goal_id": "G10",
+   "goal_type": "C",
+   "goal": "담아둔 것 중 하나를 빼고 나머지만 주문한다.",
+   "success": "1건 삭제 후 주문 완료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 것 중 하나를 빼고 나머지만 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 1500,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 3,
+      "color": "화이트",
+      "size": "250",
+      "qty": 1
+     },
+     {
+      "id": 10,
+      "color": "블랙",
+      "size": "FREE",
+      "qty": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "P033",
+   "label": "익숙·여유·정독·신규 / G11",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "patient",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 0,
+   "goal_id": "G11",
+   "goal_type": "C",
+   "goal": "담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "success": "수량 변경이 합계에 반영된 뒤 주문 완료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 12000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P034",
+   "label": "서툼·여유·정독·신규 / G01",
+   "traits": {
+    "literacy": "novice",
+    "patience": "patient",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 1,
+   "goal_id": "G01",
+   "goal_type": "A",
+   "goal": "코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
+   "success": "주문 완료 화면에 도달",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 12000,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P035",
+   "label": "익숙·조급·정독·신규 / G02",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "hasty",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 2,
+   "goal_id": "G02",
+   "goal_type": "A",
+   "goal": "신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "success": "신발 카테고리 상품으로 주문 완료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 6000,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P036",
+   "label": "서툼·조급·정독·신규 / G03",
+   "traits": {
+    "literacy": "novice",
+    "patience": "hasty",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 3,
+   "goal_id": "G03",
+   "goal_type": "A",
+   "goal": "무료배송이 되도록 담아서 주문을 마친다.",
+   "success": "합계 5만원 이상으로 주문 완료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 무료배송이 되도록 담아서 주문을 마친다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 6000,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P037",
+   "label": "익숙·여유·훑기·신규 / G04",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "patient",
+    "reading": "scanner",
+    "visit": "new"
+   },
+   "combo_index": 4,
+   "goal_id": "G04",
+   "goal_type": "A",
+   "goal": "워시드 후디를 사려고 한다.",
+   "success": "품절을 확인하고 대체품 구매 또는 이탈",
+   "start_path": "/product.html?id=7",
+   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 워시드 후디를 사려고 한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 4000,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P038",
+   "label": "서툼·여유·훑기·신규 / G05",
+   "traits": {
+    "literacy": "novice",
+    "patience": "patient",
+    "reading": "scanner",
+    "visit": "new"
+   },
+   "combo_index": 5,
+   "goal_id": "G05",
+   "goal_type": "A",
+   "goal": "액세서리 두 가지를 한 번에 주문한다.",
+   "success": "액세서리 2종이 담긴 상태로 주문 완료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 액세서리 두 가지를 한 번에 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 4000,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P039",
+   "label": "익숙·조급·훑기·신규 / G06",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "hasty",
+    "reading": "scanner",
+    "visit": "new"
+   },
+   "combo_index": 6,
+   "goal_id": "G06",
+   "goal_type": "B",
+   "goal": "배송비가 무료가 되는 금액을 확인하고 나간다.",
+   "success": "5만원 기준을 말하고 종료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 배송비가 무료가 되는 금액을 확인하고 나간다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 1500,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P040",
+   "label": "서툼·조급·훑기·신규 / G07",
+   "traits": {
+    "literacy": "novice",
+    "patience": "hasty",
+    "reading": "scanner",
+    "visit": "new"
+   },
+   "combo_index": 7,
+   "goal_id": "G07",
+   "goal_type": "B",
+   "goal": "스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "success": "사이즈 목록을 확인하고 종료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 1500,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P041",
+   "label": "익숙·여유·정독·재방문 / G08",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "patient",
+    "reading": "reader",
+    "visit": "returning"
+   },
+   "combo_index": 8,
+   "goal_id": "G08",
+   "goal_type": "B",
+   "goal": "장바구니의 총 결제금액을 확인하고 나간다.",
+   "success": "배송비 포함 합계를 말하고 종료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 장바구니의 총 결제금액을 확인하고 나간다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 12000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P042",
+   "label": "서툼·여유·정독·재방문 / G09",
+   "traits": {
+    "literacy": "novice",
+    "patience": "patient",
+    "reading": "reader",
+    "visit": "returning"
+   },
+   "combo_index": 9,
+   "goal_id": "G09",
+   "goal_type": "C",
+   "goal": "지난번에 담아둔 장바구니를 이어서 결제한다.",
+   "success": "담긴 상품 그대로 주문 완료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 지난번에 담아둔 장바구니를 이어서 결제한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 12000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 3,
+      "color": "화이트",
+      "size": "250",
+      "qty": 1
+     },
+     {
+      "id": 10,
+      "color": "블랙",
+      "size": "FREE",
+      "qty": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "P043",
+   "label": "익숙·조급·정독·재방문 / G10",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "hasty",
+    "reading": "reader",
+    "visit": "returning"
+   },
+   "combo_index": 10,
+   "goal_id": "G10",
+   "goal_type": "C",
+   "goal": "담아둔 것 중 하나를 빼고 나머지만 주문한다.",
+   "success": "1건 삭제 후 주문 완료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 것 중 하나를 빼고 나머지만 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 6000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 3,
+      "color": "화이트",
+      "size": "250",
+      "qty": 1
+     },
+     {
+      "id": 10,
+      "color": "블랙",
+      "size": "FREE",
+      "qty": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "P044",
+   "label": "서툼·조급·정독·재방문 / G11",
+   "traits": {
+    "literacy": "novice",
+    "patience": "hasty",
+    "reading": "reader",
+    "visit": "returning"
+   },
+   "combo_index": 11,
+   "goal_id": "G11",
+   "goal_type": "C",
+   "goal": "담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "success": "수량 변경이 합계에 반영된 뒤 주문 완료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 6000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P045",
+   "label": "익숙·여유·훑기·재방문 / G01",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "patient",
+    "reading": "scanner",
+    "visit": "returning"
+   },
+   "combo_index": 12,
+   "goal_id": "G01",
+   "goal_type": "A",
+   "goal": "코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
+   "success": "주문 완료 화면에 도달",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 4000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P046",
+   "label": "서툼·여유·훑기·재방문 / G02",
+   "traits": {
+    "literacy": "novice",
+    "patience": "patient",
+    "reading": "scanner",
+    "visit": "returning"
+   },
+   "combo_index": 13,
+   "goal_id": "G02",
+   "goal_type": "A",
+   "goal": "신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "success": "신발 카테고리 상품으로 주문 완료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 4000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P047",
+   "label": "익숙·조급·훑기·재방문 / G03",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "hasty",
+    "reading": "scanner",
+    "visit": "returning"
+   },
+   "combo_index": 14,
+   "goal_id": "G03",
+   "goal_type": "A",
+   "goal": "무료배송이 되도록 담아서 주문을 마친다.",
+   "success": "합계 5만원 이상으로 주문 완료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 무료배송이 되도록 담아서 주문을 마친다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 1500,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P048",
+   "label": "서툼·조급·훑기·재방문 / G04",
+   "traits": {
+    "literacy": "novice",
+    "patience": "hasty",
+    "reading": "scanner",
+    "visit": "returning"
+   },
+   "combo_index": 15,
+   "goal_id": "G04",
+   "goal_type": "A",
+   "goal": "워시드 후디를 사려고 한다.",
+   "success": "품절을 확인하고 대체품 구매 또는 이탈",
+   "start_path": "/product.html?id=7",
+   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 워시드 후디를 사려고 한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 1500,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P049",
+   "label": "익숙·여유·정독·신규 / G05",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "patient",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 0,
+   "goal_id": "G05",
+   "goal_type": "A",
+   "goal": "액세서리 두 가지를 한 번에 주문한다.",
+   "success": "액세서리 2종이 담긴 상태로 주문 완료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 액세서리 두 가지를 한 번에 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 12000,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P050",
+   "label": "서툼·여유·정독·신규 / G06",
+   "traits": {
+    "literacy": "novice",
+    "patience": "patient",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 1,
+   "goal_id": "G06",
+   "goal_type": "B",
+   "goal": "배송비가 무료가 되는 금액을 확인하고 나간다.",
+   "success": "5만원 기준을 말하고 종료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 배송비가 무료가 되는 금액을 확인하고 나간다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 12000,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P051",
+   "label": "익숙·조급·정독·신규 / G07",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "hasty",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 2,
+   "goal_id": "G07",
+   "goal_type": "B",
+   "goal": "스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "success": "사이즈 목록을 확인하고 종료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 6000,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P052",
+   "label": "서툼·조급·정독·신규 / G08",
+   "traits": {
+    "literacy": "novice",
+    "patience": "hasty",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 3,
+   "goal_id": "G08",
+   "goal_type": "B",
+   "goal": "장바구니의 총 결제금액을 확인하고 나간다.",
+   "success": "배송비 포함 합계를 말하고 종료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 장바구니의 총 결제금액을 확인하고 나간다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 6000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P053",
+   "label": "익숙·여유·훑기·신규 / G09",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "patient",
+    "reading": "scanner",
+    "visit": "new"
+   },
+   "combo_index": 4,
+   "goal_id": "G09",
+   "goal_type": "C",
+   "goal": "지난번에 담아둔 장바구니를 이어서 결제한다.",
+   "success": "담긴 상품 그대로 주문 완료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 지난번에 담아둔 장바구니를 이어서 결제한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 4000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 3,
+      "color": "화이트",
+      "size": "250",
+      "qty": 1
+     },
+     {
+      "id": 10,
+      "color": "블랙",
+      "size": "FREE",
+      "qty": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "P054",
+   "label": "서툼·여유·훑기·신규 / G10",
+   "traits": {
+    "literacy": "novice",
+    "patience": "patient",
+    "reading": "scanner",
+    "visit": "new"
+   },
+   "combo_index": 5,
+   "goal_id": "G10",
+   "goal_type": "C",
+   "goal": "담아둔 것 중 하나를 빼고 나머지만 주문한다.",
+   "success": "1건 삭제 후 주문 완료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 것 중 하나를 빼고 나머지만 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 4000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 3,
+      "color": "화이트",
+      "size": "250",
+      "qty": 1
+     },
+     {
+      "id": 10,
+      "color": "블랙",
+      "size": "FREE",
+      "qty": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "P055",
+   "label": "익숙·조급·훑기·신규 / G11",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "hasty",
+    "reading": "scanner",
+    "visit": "new"
+   },
+   "combo_index": 6,
+   "goal_id": "G11",
+   "goal_type": "C",
+   "goal": "담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "success": "수량 변경이 합계에 반영된 뒤 주문 완료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 1500,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P056",
+   "label": "서툼·조급·훑기·신규 / G01",
+   "traits": {
+    "literacy": "novice",
+    "patience": "hasty",
+    "reading": "scanner",
+    "visit": "new"
+   },
+   "combo_index": 7,
+   "goal_id": "G01",
+   "goal_type": "A",
+   "goal": "코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
+   "success": "주문 완료 화면에 도달",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 1500,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P057",
+   "label": "익숙·여유·정독·재방문 / G02",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "patient",
+    "reading": "reader",
+    "visit": "returning"
+   },
+   "combo_index": 8,
+   "goal_id": "G02",
+   "goal_type": "A",
+   "goal": "신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "success": "신발 카테고리 상품으로 주문 완료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 12000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P058",
+   "label": "서툼·여유·정독·재방문 / G03",
+   "traits": {
+    "literacy": "novice",
+    "patience": "patient",
+    "reading": "reader",
+    "visit": "returning"
+   },
+   "combo_index": 9,
+   "goal_id": "G03",
+   "goal_type": "A",
+   "goal": "무료배송이 되도록 담아서 주문을 마친다.",
+   "success": "합계 5만원 이상으로 주문 완료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 무료배송이 되도록 담아서 주문을 마친다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 12000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P059",
+   "label": "익숙·조급·정독·재방문 / G04",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "hasty",
+    "reading": "reader",
+    "visit": "returning"
+   },
+   "combo_index": 10,
+   "goal_id": "G04",
+   "goal_type": "A",
+   "goal": "워시드 후디를 사려고 한다.",
+   "success": "품절을 확인하고 대체품 구매 또는 이탈",
+   "start_path": "/product.html?id=7",
+   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 워시드 후디를 사려고 한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 6000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P060",
+   "label": "서툼·조급·정독·재방문 / G05",
+   "traits": {
+    "literacy": "novice",
+    "patience": "hasty",
+    "reading": "reader",
+    "visit": "returning"
+   },
+   "combo_index": 11,
+   "goal_id": "G05",
+   "goal_type": "A",
+   "goal": "액세서리 두 가지를 한 번에 주문한다.",
+   "success": "액세서리 2종이 담긴 상태로 주문 완료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 액세서리 두 가지를 한 번에 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 6000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P061",
+   "label": "익숙·여유·훑기·재방문 / G06",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "patient",
+    "reading": "scanner",
+    "visit": "returning"
+   },
+   "combo_index": 12,
+   "goal_id": "G06",
+   "goal_type": "B",
+   "goal": "배송비가 무료가 되는 금액을 확인하고 나간다.",
+   "success": "5만원 기준을 말하고 종료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 배송비가 무료가 되는 금액을 확인하고 나간다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 4000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P062",
+   "label": "서툼·여유·훑기·재방문 / G07",
+   "traits": {
+    "literacy": "novice",
+    "patience": "patient",
+    "reading": "scanner",
+    "visit": "returning"
+   },
+   "combo_index": 13,
+   "goal_id": "G07",
+   "goal_type": "B",
+   "goal": "스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "success": "사이즈 목록을 확인하고 종료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 4000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P063",
+   "label": "익숙·조급·훑기·재방문 / G08",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "hasty",
+    "reading": "scanner",
+    "visit": "returning"
+   },
+   "combo_index": 14,
+   "goal_id": "G08",
+   "goal_type": "B",
+   "goal": "장바구니의 총 결제금액을 확인하고 나간다.",
+   "success": "배송비 포함 합계를 말하고 종료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 장바구니의 총 결제금액을 확인하고 나간다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 1500,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P064",
+   "label": "서툼·조급·훑기·재방문 / G09",
+   "traits": {
+    "literacy": "novice",
+    "patience": "hasty",
+    "reading": "scanner",
+    "visit": "returning"
+   },
+   "combo_index": 15,
+   "goal_id": "G09",
+   "goal_type": "C",
+   "goal": "지난번에 담아둔 장바구니를 이어서 결제한다.",
+   "success": "담긴 상품 그대로 주문 완료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 지난번에 담아둔 장바구니를 이어서 결제한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 1500,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 3,
+      "color": "화이트",
+      "size": "250",
+      "qty": 1
+     },
+     {
+      "id": 10,
+      "color": "블랙",
+      "size": "FREE",
+      "qty": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "P065",
+   "label": "익숙·여유·정독·신규 / G10",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "patient",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 0,
+   "goal_id": "G10",
+   "goal_type": "C",
+   "goal": "담아둔 것 중 하나를 빼고 나머지만 주문한다.",
+   "success": "1건 삭제 후 주문 완료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 것 중 하나를 빼고 나머지만 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 12000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 3,
+      "color": "화이트",
+      "size": "250",
+      "qty": 1
+     },
+     {
+      "id": 10,
+      "color": "블랙",
+      "size": "FREE",
+      "qty": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "P066",
+   "label": "서툼·여유·정독·신규 / G11",
+   "traits": {
+    "literacy": "novice",
+    "patience": "patient",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 1,
+   "goal_id": "G11",
+   "goal_type": "C",
+   "goal": "담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "success": "수량 변경이 합계에 반영된 뒤 주문 완료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 12000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P067",
+   "label": "익숙·조급·정독·신규 / G01",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "hasty",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 2,
+   "goal_id": "G01",
+   "goal_type": "A",
+   "goal": "코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
+   "success": "주문 완료 화면에 도달",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 6000,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P068",
+   "label": "서툼·조급·정독·신규 / G02",
+   "traits": {
+    "literacy": "novice",
+    "patience": "hasty",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 3,
+   "goal_id": "G02",
+   "goal_type": "A",
+   "goal": "신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "success": "신발 카테고리 상품으로 주문 완료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 6000,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P069",
+   "label": "익숙·여유·훑기·신규 / G03",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "patient",
+    "reading": "scanner",
+    "visit": "new"
+   },
+   "combo_index": 4,
+   "goal_id": "G03",
+   "goal_type": "A",
+   "goal": "무료배송이 되도록 담아서 주문을 마친다.",
+   "success": "합계 5만원 이상으로 주문 완료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 무료배송이 되도록 담아서 주문을 마친다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 4000,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P070",
+   "label": "서툼·여유·훑기·신규 / G04",
+   "traits": {
+    "literacy": "novice",
+    "patience": "patient",
+    "reading": "scanner",
+    "visit": "new"
+   },
+   "combo_index": 5,
+   "goal_id": "G04",
+   "goal_type": "A",
+   "goal": "워시드 후디를 사려고 한다.",
+   "success": "품절을 확인하고 대체품 구매 또는 이탈",
+   "start_path": "/product.html?id=7",
+   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 워시드 후디를 사려고 한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 4000,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P071",
+   "label": "익숙·조급·훑기·신규 / G05",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "hasty",
+    "reading": "scanner",
+    "visit": "new"
+   },
+   "combo_index": 6,
+   "goal_id": "G05",
+   "goal_type": "A",
+   "goal": "액세서리 두 가지를 한 번에 주문한다.",
+   "success": "액세서리 2종이 담긴 상태로 주문 완료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 액세서리 두 가지를 한 번에 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 1500,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P072",
+   "label": "서툼·조급·훑기·신규 / G06",
+   "traits": {
+    "literacy": "novice",
+    "patience": "hasty",
+    "reading": "scanner",
+    "visit": "new"
+   },
+   "combo_index": 7,
+   "goal_id": "G06",
+   "goal_type": "B",
+   "goal": "배송비가 무료가 되는 금액을 확인하고 나간다.",
+   "success": "5만원 기준을 말하고 종료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 이 사이트는 처음이다.\n목표: 배송비가 무료가 되는 금액을 확인하고 나간다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 1500,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P073",
+   "label": "익숙·여유·정독·재방문 / G07",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "patient",
+    "reading": "reader",
+    "visit": "returning"
+   },
+   "combo_index": 8,
+   "goal_id": "G07",
+   "goal_type": "B",
+   "goal": "스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "success": "사이즈 목록을 확인하고 종료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 12000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P074",
+   "label": "서툼·여유·정독·재방문 / G08",
+   "traits": {
+    "literacy": "novice",
+    "patience": "patient",
+    "reading": "reader",
+    "visit": "returning"
+   },
+   "combo_index": 9,
+   "goal_id": "G08",
+   "goal_type": "B",
+   "goal": "장바구니의 총 결제금액을 확인하고 나간다.",
+   "success": "배송비 포함 합계를 말하고 종료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 장바구니의 총 결제금액을 확인하고 나간다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 12000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P075",
+   "label": "익숙·조급·정독·재방문 / G09",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "hasty",
+    "reading": "reader",
+    "visit": "returning"
+   },
+   "combo_index": 10,
+   "goal_id": "G09",
+   "goal_type": "C",
+   "goal": "지난번에 담아둔 장바구니를 이어서 결제한다.",
+   "success": "담긴 상품 그대로 주문 완료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 지난번에 담아둔 장바구니를 이어서 결제한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 6000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 3,
+      "color": "화이트",
+      "size": "250",
+      "qty": 1
+     },
+     {
+      "id": 10,
+      "color": "블랙",
+      "size": "FREE",
+      "qty": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "P076",
+   "label": "서툼·조급·정독·재방문 / G10",
+   "traits": {
+    "literacy": "novice",
+    "patience": "hasty",
+    "reading": "reader",
+    "visit": "returning"
+   },
+   "combo_index": 11,
+   "goal_id": "G10",
+   "goal_type": "C",
+   "goal": "담아둔 것 중 하나를 빼고 나머지만 주문한다.",
+   "success": "1건 삭제 후 주문 완료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 것 중 하나를 빼고 나머지만 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 6000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 3,
+      "color": "화이트",
+      "size": "250",
+      "qty": 1
+     },
+     {
+      "id": 10,
+      "color": "블랙",
+      "size": "FREE",
+      "qty": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "P077",
+   "label": "익숙·여유·훑기·재방문 / G11",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "patient",
+    "reading": "scanner",
+    "visit": "returning"
+   },
+   "combo_index": 12,
+   "goal_id": "G11",
+   "goal_type": "C",
+   "goal": "담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "success": "수량 변경이 합계에 반영된 뒤 주문 완료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 4000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P078",
+   "label": "서툼·여유·훑기·재방문 / G01",
+   "traits": {
+    "literacy": "novice",
+    "patience": "patient",
+    "reading": "scanner",
+    "visit": "returning"
+   },
+   "combo_index": 13,
+   "goal_id": "G01",
+   "goal_type": "A",
+   "goal": "코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
+   "success": "주문 완료 화면에 도달",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 4000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P079",
+   "label": "익숙·조급·훑기·재방문 / G02",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "hasty",
+    "reading": "scanner",
+    "visit": "returning"
+   },
+   "combo_index": 14,
+   "goal_id": "G02",
+   "goal_type": "A",
+   "goal": "신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "success": "신발 카테고리 상품으로 주문 완료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 1500,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P080",
+   "label": "서툼·조급·훑기·재방문 / G03",
+   "traits": {
+    "literacy": "novice",
+    "patience": "hasty",
+    "reading": "scanner",
+    "visit": "returning"
+   },
+   "combo_index": 15,
+   "goal_id": "G03",
+   "goal_type": "A",
+   "goal": "무료배송이 되도록 담아서 주문을 마친다.",
+   "success": "합계 5만원 이상으로 주문 완료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 무료배송이 되도록 담아서 주문을 마친다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 1500,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P081",
+   "label": "익숙·여유·정독·신규 / G04",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "patient",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 0,
+   "goal_id": "G04",
+   "goal_type": "A",
+   "goal": "워시드 후디를 사려고 한다.",
+   "success": "품절을 확인하고 대체품 구매 또는 이탈",
+   "start_path": "/product.html?id=7",
+   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 워시드 후디를 사려고 한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 12000,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P082",
+   "label": "서툼·여유·정독·신규 / G05",
+   "traits": {
+    "literacy": "novice",
+    "patience": "patient",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 1,
+   "goal_id": "G05",
+   "goal_type": "A",
+   "goal": "액세서리 두 가지를 한 번에 주문한다.",
+   "success": "액세서리 2종이 담긴 상태로 주문 완료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 액세서리 두 가지를 한 번에 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 12000,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P083",
+   "label": "익숙·조급·정독·신규 / G06",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "hasty",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 2,
+   "goal_id": "G06",
+   "goal_type": "B",
+   "goal": "배송비가 무료가 되는 금액을 확인하고 나간다.",
+   "success": "5만원 기준을 말하고 종료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 배송비가 무료가 되는 금액을 확인하고 나간다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 6000,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P084",
+   "label": "서툼·조급·정독·신규 / G07",
+   "traits": {
+    "literacy": "novice",
+    "patience": "hasty",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 3,
+   "goal_id": "G07",
+   "goal_type": "B",
+   "goal": "스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "success": "사이즈 목록을 확인하고 종료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 6000,
+   "user_type": "new",
+   "seed_state": null
+  },
+  {
+   "id": "P085",
+   "label": "익숙·여유·훑기·신규 / G08",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "patient",
+    "reading": "scanner",
+    "visit": "new"
+   },
+   "combo_index": 4,
+   "goal_id": "G08",
+   "goal_type": "B",
+   "goal": "장바구니의 총 결제금액을 확인하고 나간다.",
+   "success": "배송비 포함 합계를 말하고 종료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 장바구니의 총 결제금액을 확인하고 나간다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 4000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P086",
+   "label": "서툼·여유·훑기·신규 / G09",
+   "traits": {
+    "literacy": "novice",
+    "patience": "patient",
+    "reading": "scanner",
+    "visit": "new"
+   },
+   "combo_index": 5,
+   "goal_id": "G09",
+   "goal_type": "C",
+   "goal": "지난번에 담아둔 장바구니를 이어서 결제한다.",
+   "success": "담긴 상품 그대로 주문 완료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 지난번에 담아둔 장바구니를 이어서 결제한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 4000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 3,
+      "color": "화이트",
+      "size": "250",
+      "qty": 1
+     },
+     {
+      "id": 10,
+      "color": "블랙",
+      "size": "FREE",
+      "qty": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "P087",
+   "label": "익숙·조급·훑기·신규 / G10",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "hasty",
+    "reading": "scanner",
+    "visit": "new"
+   },
+   "combo_index": 6,
+   "goal_id": "G10",
+   "goal_type": "C",
+   "goal": "담아둔 것 중 하나를 빼고 나머지만 주문한다.",
+   "success": "1건 삭제 후 주문 완료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 것 중 하나를 빼고 나머지만 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 1500,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 3,
+      "color": "화이트",
+      "size": "250",
+      "qty": 1
+     },
+     {
+      "id": 10,
+      "color": "블랙",
+      "size": "FREE",
+      "qty": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "P088",
+   "label": "서툼·조급·훑기·신규 / G11",
+   "traits": {
+    "literacy": "novice",
+    "patience": "hasty",
+    "reading": "scanner",
+    "visit": "new"
+   },
+   "combo_index": 7,
+   "goal_id": "G11",
+   "goal_type": "C",
+   "goal": "담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "success": "수량 변경이 합계에 반영된 뒤 주문 완료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 1500,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P089",
+   "label": "익숙·여유·정독·재방문 / G01",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "patient",
+    "reading": "reader",
+    "visit": "returning"
+   },
+   "combo_index": 8,
+   "goal_id": "G01",
+   "goal_type": "A",
+   "goal": "코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
+   "success": "주문 완료 화면에 도달",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 12000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P090",
+   "label": "서툼·여유·정독·재방문 / G02",
+   "traits": {
+    "literacy": "novice",
+    "patience": "patient",
+    "reading": "reader",
+    "visit": "returning"
+   },
+   "combo_index": 9,
+   "goal_id": "G02",
+   "goal_type": "A",
+   "goal": "신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "success": "신발 카테고리 상품으로 주문 완료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 신발 중에서 스니커즈 한 켤레를 골라 결제한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 12000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P091",
+   "label": "익숙·조급·정독·재방문 / G03",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "hasty",
+    "reading": "reader",
+    "visit": "returning"
+   },
+   "combo_index": 10,
+   "goal_id": "G03",
+   "goal_type": "A",
+   "goal": "무료배송이 되도록 담아서 주문을 마친다.",
+   "success": "합계 5만원 이상으로 주문 완료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 무료배송이 되도록 담아서 주문을 마친다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 6000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P092",
+   "label": "서툼·조급·정독·재방문 / G04",
+   "traits": {
+    "literacy": "novice",
+    "patience": "hasty",
+    "reading": "reader",
+    "visit": "returning"
+   },
+   "combo_index": 11,
+   "goal_id": "G04",
+   "goal_type": "A",
+   "goal": "워시드 후디를 사려고 한다.",
+   "success": "품절을 확인하고 대체품 구매 또는 이탈",
+   "start_path": "/product.html?id=7",
+   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 워시드 후디를 사려고 한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 6000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P093",
+   "label": "익숙·여유·훑기·재방문 / G05",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "patient",
+    "reading": "scanner",
+    "visit": "returning"
+   },
+   "combo_index": 12,
+   "goal_id": "G05",
+   "goal_type": "A",
+   "goal": "액세서리 두 가지를 한 번에 주문한다.",
+   "success": "액세서리 2종이 담긴 상태로 주문 완료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 액세서리 두 가지를 한 번에 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 4000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P094",
+   "label": "서툼·여유·훑기·재방문 / G06",
+   "traits": {
+    "literacy": "novice",
+    "patience": "patient",
+    "reading": "scanner",
+    "visit": "returning"
+   },
+   "combo_index": 13,
+   "goal_id": "G06",
+   "goal_type": "B",
+   "goal": "배송비가 무료가 되는 금액을 확인하고 나간다.",
+   "success": "5만원 기준을 말하고 종료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 배송비가 무료가 되는 금액을 확인하고 나간다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 4000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P095",
+   "label": "익숙·조급·훑기·재방문 / G07",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "hasty",
+    "reading": "scanner",
+    "visit": "returning"
+   },
+   "combo_index": 14,
+   "goal_id": "G07",
+   "goal_type": "B",
+   "goal": "스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "success": "사이즈 목록을 확인하고 종료",
+   "start_path": "/list.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 스니커즈에 260 사이즈가 있는지 확인만 한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 1500,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P096",
+   "label": "서툼·조급·훑기·재방문 / G08",
+   "traits": {
+    "literacy": "novice",
+    "patience": "hasty",
+    "reading": "scanner",
+    "visit": "returning"
+   },
+   "combo_index": 15,
+   "goal_id": "G08",
+   "goal_type": "B",
+   "goal": "장바구니의 총 결제금액을 확인하고 나간다.",
+   "success": "배송비 포함 합계를 말하고 종료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 글은 훑고 눈에 띄는 것부터 누른다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 장바구니의 총 결제금액을 확인하고 나간다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 1500,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P097",
+   "label": "익숙·여유·정독·신규 / G09",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "patient",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 0,
+   "goal_id": "G09",
+   "goal_type": "C",
+   "goal": "지난번에 담아둔 장바구니를 이어서 결제한다.",
+   "success": "담긴 상품 그대로 주문 완료",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 지난번에 담아둔 장바구니를 이어서 결제한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 12000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 3,
+      "color": "화이트",
+      "size": "250",
+      "qty": 1
+     },
+     {
+      "id": 10,
+      "color": "블랙",
+      "size": "FREE",
+      "qty": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "P098",
+   "label": "서툼·여유·정독·신규 / G10",
+   "traits": {
+    "literacy": "novice",
+    "patience": "patient",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 1,
+   "goal_id": "G10",
+   "goal_type": "C",
+   "goal": "담아둔 것 중 하나를 빼고 나머지만 주문한다.",
+   "success": "1건 삭제 후 주문 완료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑이 서툴다. 화면이 바뀌지 않아도 잠시 기다린다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 것 중 하나를 빼고 나머지만 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 30,
+   "dwell_ms": 12000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 3,
+      "color": "화이트",
+      "size": "250",
+      "qty": 1
+     },
+     {
+      "id": 10,
+      "color": "블랙",
+      "size": "FREE",
+      "qty": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "P099",
+   "label": "익숙·조급·정독·신규 / G11",
+   "traits": {
+    "literacy": "savvy",
+    "patience": "hasty",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 2,
+   "goal_id": "G11",
+   "goal_type": "C",
+   "goal": "담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "success": "수량 변경이 합계에 반영된 뒤 주문 완료",
+   "start_path": "/cart.html",
+   "prompt": "온라인 쇼핑에 익숙하다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 전에 와서 장바구니에 담아둔 적이 있다.\n목표: 담아둔 상품의 수량을 2개로 바꿔 주문한다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait",
+    "goto"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 6000,
+   "user_type": "returning",
+   "seed_state": {
+    "cart": [
+     {
+      "id": 1,
+      "color": "아이보리",
+      "size": "M",
+      "qty": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": "P100",
+   "label": "서툼·조급·정독·신규 / G01",
+   "traits": {
+    "literacy": "novice",
+    "patience": "hasty",
+    "reading": "reader",
+    "visit": "new"
+   },
+   "combo_index": 3,
+   "goal_id": "G01",
+   "goal_type": "A",
+   "goal": "코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
+   "success": "주문 완료 화면에 도달",
+   "start_path": "/index.html",
+   "prompt": "온라인 쇼핑이 서툴다. 오래 걸리면 바로 그만둔다. 화면의 글을 처음부터 읽는다. 이 사이트는 처음이다.\n목표: 코튼 셔츠를 장바구니에 담아 주문까지 마친다.",
+   "allowed_actions": [
+    "click",
+    "type",
+    "select",
+    "scroll",
+    "back",
+    "wait"
+   ],
+   "max_steps": 20,
+   "dwell_ms": 6000,
+   "user_type": "new",
+   "seed_state": null
+  }
+ ]
+}

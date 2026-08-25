@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-08-25T12:57:48",
+  "provider": null,
+  "model": null,
+  "mock": true,
+  "counts": {
+    "goals": 11,
+    "combos": 16,
+    "personas": 100,
+    "unique_pairs": 100,
+    "seeded": 67,
+    "dwell_over_10s": 26,
+    "goal_types": {
+      "A": 5,
+      "B": 3,
+      "C": 3
+    }
+  },
+  "usage": {
+    "calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "cost_usd": 0.0
+  }
+}

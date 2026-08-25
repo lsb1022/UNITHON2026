@@ -233,11 +233,17 @@ def test_persona() -> None:
           all(PS.URL_ACTION in p["allowed_actions"]
               for p in people if p["traits"]["literacy"] >= 4))
 
+    # 탐색 범위는 '거쳐가는 화면 수'가 아니라 '대안을 몇 개 보는가'다.
+    # 경로를 막으면 목표 자체가 불가능해져 그 사람들의 결과가 사이트와 무관해진다.
     narrow = [p for p in people if p["traits"]["breadth"] <= 2]
-    check("탐색 범위 1-2 는 화면 수 제한",
-          all(p["page_cap"] == PS.NARROW_PAGE_CAP for p in narrow), "%d명" % len(narrow))
+    check("탐색 범위 1-2 는 비교 개수 제한",
+          all(p["compare_cap"] == PS.COMPARE_CAP[p["traits"]["breadth"]]
+              for p in narrow), "%d명" % len(narrow))
+    check("탐색 범위 1 은 대안 1개만", all(p["compare_cap"] == 1 for p in people
+                                    if p["traits"]["breadth"] == 1))
     check("탐색 범위 3 이상은 제한 없음",
-          all(not p["page_cap"] for p in people if p["traits"]["breadth"] >= 3))
+          all(not p["compare_cap"] for p in people if p["traits"]["breadth"] >= 3))
+    check("경로 자체는 막지 않는다 (page_cap 폐기)", "page_cap" not in people[0])
 
     check("인내심이 낮을수록 스텝이 적다",
           all(p["max_steps"] <= q["max_steps"] for p in people for q in people
@@ -263,6 +269,11 @@ def test_persona() -> None:
     check("한국어가 아닌 목표는 거부", any("한국어가 아닌" in x for x in zh))
     _, w = GEN.check_goal("반품 신청서를 작성한다", site_map)
     check("지도에 없는 기능은 경고", any("확인되지 않은" in x for x in w))
+
+
+def _st(n, url, typ, target=None):
+    return {"step": n, "thought": "t", "action": {"type": typ, "target": target},
+            "outcome": {"url_after": url}, "blocked_action": None}
 
 
 def test_explore() -> None:

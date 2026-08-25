@@ -92,8 +92,14 @@ BASE_ACTIONS = ["click", "type", "select", "scroll", "back", "wait"]
 # 길찾기 마찰이 통째로 측정에서 사라진다.
 URL_ACTION = "goto"
 
-# 탐색 범위 1-2 는 방문 가능한 화면 종류를 제한한다.
-NARROW_PAGE_CAP = 3
+# 탐색 범위 = 결정하기 전에 **대안을 몇 개나 보는가**.
+# 목표로 가는 길(장바구니 -> 결제 -> 완료)은 둘러보는 것이 아니라 거쳐가는 곳이므로
+# 세지 않는다. 같은 종류 화면(상품 상세, 목록)을 몇 개까지 열어보는지만 센다.
+#   1 한 화면만 보고 결정  -> 상품 1개만 보고 정한다
+#   2 필요한 최소한        -> 2개까지 비교
+#   3 이상                 -> 제한 없음 (극단만 강제한다는 원칙)
+# 이렇게 세면 상품 하나만 보고 바로 사는 사람도 결제를 끝까지 마칠 수 있다.
+COMPARE_CAP = {1: 1, 2: 2, 3: 0, 4: 0, 5: 0}
 
 
 def _balanced(n: int, rng: random.Random) -> list[int]:
@@ -176,8 +182,8 @@ def build(goal: str, start_path: str, n: int = config.N_PERSONAS,
             "max_steps": max_steps,
             "max_idle_attempts": rng.randint(amin, amax),
             "dwell_ms": rng.randint(lo, hi),
-            # 탐색 범위 1-2 만 화면 수를 제한한다. 3 이상은 제한 없음.
-            "page_cap": NARROW_PAGE_CAP if traits["breadth"] <= 2 else 0,
+            # 같은 종류 화면을 몇 개까지 비교하는가. 0 이면 제한 없음.
+            "compare_cap": COMPARE_CAP[traits["breadth"]],
             "user_type": "new",
             "seed_state": None,
         })

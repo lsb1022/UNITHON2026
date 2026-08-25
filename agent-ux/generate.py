@@ -121,8 +121,9 @@ def print_summary(goal: str, start: str, people: list[dict]) -> None:
     print("    아무도 마주치지 못하고, 못 잡은 게 아니라 만난 적이 없는 것이 된다.")
     print("주소창 입력 허용: %d명 (숙련도 3 이상)"
           % sum(1 for p in people if P.URL_ACTION in p["allowed_actions"]))
-    print("방문 화면 %d종 제한: %d명 (탐색 범위 2 이하)"
-          % (P.NARROW_PAGE_CAP, sum(1 for p in people if p["page_cap"])))
+    caps = [p["compare_cap"] for p in people if p["compare_cap"]]
+    print("같은 종류 화면 비교 제한: %d명 (탐색 범위 2 이하, 최대 %s개까지)"
+          % (len(caps), max(caps) if caps else 0))
     print("최장 프롬프트: %d자 (상한 %d자)"
           % (max(len(p["prompt"]) for p in people), config.PROMPT_MAX_CHARS))
 
@@ -163,7 +164,7 @@ def save(goal: str, start: str, people: list[dict], site_map: dict,
             "unique_combos": len({tuple(p["traits"][a] for a in P.AXES) for p in people}),
             "dwell_over_10s": sum(1 for p in people if p["dwell_ms"] >= 10000),
             "url_allowed": sum(1 for p in people if P.URL_ACTION in p["allowed_actions"]),
-            "page_capped": sum(1 for p in people if p["page_cap"]),
+            "compare_capped": sum(1 for p in people if p["compare_cap"]),
             "by_axis": {a: dict(sorted(Counter(p["traits"][a] for p in people).items()))
                         for a in P.AXES},
         },

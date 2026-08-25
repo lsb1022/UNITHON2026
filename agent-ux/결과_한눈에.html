@@ -1,0 +1,104 @@
+<title>페르소나 실행 결과</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#F2F4F6; --card:#FFFFFF; --ink:#141A21; --soft:#4A5765; --mute:#7C8896;
+  --line:#DEE3E8; --line2:#EDF0F3;
+  --ok:#1F7A5A; --ok-bg:#E3F2EB; --bad:#A63A2B; --bad-bg:#F8E7E3;
+  --warn:#8A5A12; --warn-bg:#F7EEDD; --accent:#0F5C7A; --accent-bg:#E2EEF4;
+  --f:"IBM Plex Sans KR",system-ui,"Malgun Gothic",sans-serif;
+  --m:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0E1319; --card:#161C24; --ink:#E6EBF0; --soft:#AEB9C5; --mute:#7F8B98;
+  --line:#28313B; --line2:#1E252E;
+  --ok:#6DBF9C; --ok-bg:#152A22; --bad:#DE8B7A; --bad-bg:#2E1E1A;
+  --warn:#D6AC66; --warn-bg:#2B2416; --accent:#69B4D6; --accent-bg:#12303D;
+}}
+:root[data-theme="dark"]{
+  --bg:#0E1319; --card:#161C24; --ink:#E6EBF0; --soft:#AEB9C5; --mute:#7F8B98;
+  --line:#28313B; --line2:#1E252E;
+  --ok:#6DBF9C; --ok-bg:#152A22; --bad:#DE8B7A; --bad-bg:#2E1E1A;
+  --warn:#D6AC66; --warn-bg:#2B2416; --accent:#69B4D6; --accent-bg:#12303D;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:70rem;margin:0 auto;padding:clamp(1.2rem,4vw,2.8rem)}
+h1{font-size:clamp(1.5rem,4vw,2.1rem);font-weight:700;margin:0 0 .3rem;letter-spacing:-.01em}
+.goal{font-family:var(--m);font-size:.9rem;color:var(--accent);
+  background:var(--accent-bg);display:inline-block;padding:.3rem .7rem;border-radius:3px;
+  margin-bottom:1.6rem}
+h2{font-size:1.05rem;font-weight:600;margin:2.4rem 0 .5rem}
+h2 + p{margin:0 0 1rem;color:var(--soft);font-size:.9rem;max-width:60ch}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:.9rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1rem 1.1rem}
+.card h3{margin:0;font-family:var(--m);font-size:.78rem;color:var(--mute);font-weight:400}
+.big{margin:.35rem 0 .1rem;font-family:var(--m);font-variant-numeric:tabular-nums}
+.big b{font-size:2rem;font-weight:600}
+.big span{color:var(--mute);font-size:.95rem;margin-left:.2rem}
+.sub{margin:0;font-size:.8rem;color:var(--mute);font-family:var(--m)}
+.tablewrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:6px}
+table{border-collapse:collapse;width:100%;font-size:.86rem;min-width:44rem}
+th,td{padding:.5rem .6rem;text-align:left;border-bottom:1px solid var(--line2);white-space:nowrap}
+thead th{font-family:var(--m);font-size:.72rem;color:var(--mute);font-weight:400;
+  background:var(--bg);position:sticky;top:0}
+tbody tr:last-child td{border-bottom:0}
+tr.flip{background:var(--bad-bg)}
+td.pid{font-family:var(--m);font-weight:600}
+td.axis{padding-left:.3rem;padding-right:.3rem}
+.dots{display:inline-flex;gap:2px}
+.dots i{width:7px;height:7px;border-radius:50%;background:var(--line);display:block}
+.dots i.on{background:var(--accent)}
+.pill{font-size:.76rem;padding:.12rem .5rem;border-radius:99px;white-space:nowrap}
+.pill.ok{color:var(--ok);background:var(--ok-bg)}
+.pill.bad{color:var(--bad);background:var(--bad-bg)}
+.pill.warn{color:var(--warn);background:var(--warn-bg)}
+.pill.mute{color:var(--mute);background:var(--line2)}
+.barcell{width:9rem}
+.bar{display:flex;align-items:center;gap:.4rem;position:relative}
+.bar i{display:block;height:7px;border-radius:99px;background:var(--line);min-width:4px}
+.bar.ok i{background:var(--ok)} .bar.bad i{background:var(--bad)}
+.bar.warn i{background:var(--warn)}
+.bar b{font-family:var(--m);font-size:.76rem;color:var(--mute);font-weight:400;
+  font-variant-numeric:tabular-nums}
+.mono{font-family:var(--m);font-size:.85em}
+.mute{color:var(--mute);font-weight:400}
+ul.notes{list-style:none;padding:0;margin:0;display:grid;gap:.8rem}
+ul.notes li{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--bad);
+  border-radius:6px;padding:.9rem 1.1rem;font-size:.9rem}
+blockquote{margin:.5rem 0 0;padding:.5rem .8rem;background:var(--bg);border-radius:4px;
+  color:var(--soft);font-size:.86rem}
+footer{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--line);
+  color:var(--mute);font-size:.8rem}
+</style>
+<div class="wrap">
+<h1>페르소나 실행 결과</h1>
+<div class="goal">목표 · 코튼 셔츠를 장바구니에 담아 주문까지 마친다</div>
+
+<div class="cards"><div class="card"><h3>v2_clean10</h3><p class="big"><b>6</b><span>/10 달성</span></p><p class="sub">평균 12.1스텝 · 호출 121회 · $0.161773</p></div><div class="card"><h3>v2_buggy10</h3><p class="big"><b>4</b><span>/10 달성</span></p><p class="sub">평균 14.6스텝 · 호출 146회 · $0.229549</p></div></div>
+
+<h2>사람별 — 같은 목표, 같은 사람, 다른 사이트</h2>
+<p>특성은 1~5단계를 점으로 표시했다. 막대는 걸린 스텝 수다.
+붉게 칠한 줄은 <b>정상 사이트에서는 해냈는데 결함 사이트에서 못 한 사람</b>이다.</p>
+<div class="tablewrap"><table>
+<thead><tr><th></th><th>숙련도</th><th>주의 지속</th><th>인내심</th><th>탐색 범위</th><th colspan="2">v2_clean10</th><th colspan="2">v2_buggy10</th></tr></thead>
+<tbody><tr class="keep"><td class="pid">P001</td><td class="axis"><span class="dots" title="3단계"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></td><td class="axis"><span class="dots" title="3단계"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></td><td class="axis"><span class="dots" title="4단계"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></td><td class="axis"><span class="dots" title="3단계"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></td><td><span class="pill ok">달성</span></td><td class="barcell"><span class="bar ok"><i style="width:88%"></i><b>22</b></span></td><td><span class="pill ok">달성</span></td><td class="barcell"><span class="bar ok"><i style="width:80%"></i><b>20</b></span></td></tr><tr class=""><td class="pid">P002</td><td class="axis"><span class="dots" title="1단계"><i class="on"></i><i></i><i></i><i></i><i></i></span></td><td class="axis"><span class="dots" title="1단계"><i class="on"></i><i></i><i></i><i></i><i></i></span></td><td class="axis"><span class="dots" title="3단계"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></td><td class="axis"><span class="dots" title="2단계"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></td><td><span class="pill bad">포기</span></td><td class="barcell"><span class="bar bad"><i style="width:32%"></i><b>8</b></span></td><td><span class="pill bad">포기</span></td><td class="barcell"><span class="bar bad"><i style="width:40%"></i><b>10</b></span></td></tr><tr class=""><td class="pid">P003</td><td class="axis"><span class="dots" title="2단계"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></td><td class="axis"><span class="dots" title="2단계"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></td><td class="axis"><span class="dots" title="2단계"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></td><td class="axis"><span class="dots" title="2단계"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></td><td><span class="pill bad">포기</span></td><td class="barcell"><span class="bar bad"><i style="width:24%"></i><b>6</b></span></td><td><span class="pill bad">포기</span></td><td class="barcell"><span class="bar bad"><i style="width:36%"></i><b>9</b></span></td></tr><tr class="keep"><td class="pid">P004</td><td class="axis"><span class="dots" title="1단계"><i class="on"></i><i></i><i></i><i></i><i></i></span></td><td class="axis"><span class="dots" title="4단계"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></td><td class="axis"><span class="dots" title="5단계"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td class="axis"><span class="dots" title="5단계"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td><span class="pill ok">달성</span></td><td class="barcell"><span class="bar ok"><i style="width:60%"></i><b>15</b></span></td><td><span class="pill ok">달성</span></td><td class="barcell"><span class="bar ok"><i style="width:80%"></i><b>20</b></span></td></tr><tr class="keep"><td class="pid">P005</td><td class="axis"><span class="dots" title="5단계"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td class="axis"><span class="dots" title="4단계"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></td><td class="axis"><span class="dots" title="5단계"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td class="axis"><span class="dots" title="4단계"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></td><td><span class="pill ok">달성</span></td><td class="barcell"><span class="bar ok"><i style="width:52%"></i><b>13</b></span></td><td><span class="pill ok">달성</span></td><td class="barcell"><span class="bar ok"><i style="width:100%"></i><b>25</b></span></td></tr><tr class="keep"><td class="pid">P006</td><td class="axis"><span class="dots" title="1단계"><i class="on"></i><i></i><i></i><i></i><i></i></span></td><td class="axis"><span class="dots" title="2단계"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></td><td class="axis"><span class="dots" title="5단계"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td class="axis"><span class="dots" title="5단계"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td><span class="pill ok">달성</span></td><td class="barcell"><span class="bar ok"><i style="width:48%"></i><b>12</b></span></td><td><span class="pill ok">달성</span></td><td class="barcell"><span class="bar ok"><i style="width:72%"></i><b>18</b></span></td></tr><tr class=""><td class="pid">P007</td><td class="axis"><span class="dots" title="5단계"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td class="axis"><span class="dots" title="1단계"><i class="on"></i><i></i><i></i><i></i><i></i></span></td><td class="axis"><span class="dots" title="2단계"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></td><td class="axis"><span class="dots" title="2단계"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></td><td><span class="pill bad">포기</span></td><td class="barcell"><span class="bar bad"><i style="width:28%"></i><b>7</b></span></td><td><span class="pill bad">포기</span></td><td class="barcell"><span class="bar bad"><i style="width:36%"></i><b>9</b></span></td></tr><tr class="flip"><td class="pid">P008</td><td class="axis"><span class="dots" title="4단계"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></td><td class="axis"><span class="dots" title="5단계"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td class="axis"><span class="dots" title="2단계"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></td><td class="axis"><span class="dots" title="3단계"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></td><td><span class="pill ok">달성</span></td><td class="barcell"><span class="bar ok"><i style="width:48%"></i><b>12</b></span></td><td><span class="pill bad">포기</span></td><td class="barcell"><span class="bar bad"><i style="width:24%"></i><b>6</b></span></td></tr><tr class="flip"><td class="pid">P009</td><td class="axis"><span class="dots" title="5단계"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td class="axis"><span class="dots" title="5단계"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td class="axis"><span class="dots" title="5단계"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td class="axis"><span class="dots" title="4단계"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></td><td><span class="pill ok">달성</span></td><td class="barcell"><span class="bar ok"><i style="width:56%"></i><b>14</b></span></td><td><span class="pill bad">포기</span></td><td class="barcell"><span class="bar bad"><i style="width:36%"></i><b>9</b></span></td></tr><tr class=""><td class="pid">P010</td><td class="axis"><span class="dots" title="5단계"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td class="axis"><span class="dots" title="5단계"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td class="axis"><span class="dots" title="2단계"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></td><td class="axis"><span class="dots" title="5단계"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td><span class="pill warn">맴돌다 중단</span></td><td class="barcell"><span class="bar warn"><i style="width:48%"></i><b>12</b></span></td><td><span class="pill warn">스텝 소진</span></td><td class="barcell"><span class="bar warn"><i style="width:80%"></i><b>20</b></span></td></tr></tbody>
+</table></div>
+
+<h2>축을 묶어서 — 낮음(1-2) vs 높음(4-5)</h2>
+<p>값마다 인원이 적어 옆칸끼리는 비교할 수 없다. 양 끝만 묶어서 본다.</p>
+<div class="tablewrap"><table>
+<thead><tr><th></th><th>v2_clean10<br><span class="mute">낮음(1-2)</span></th><th>v2_clean10<br><span class="mute">높음(4-5)</span></th><th>v2_buggy10<br><span class="mute">낮음(1-2)</span></th><th>v2_buggy10<br><span class="mute">높음(4-5)</span></th></tr></thead>
+<tbody><tr><th>숙련도</th><td>2/4</td><td>3/5</td><td>2/4</td><td>1/5</td></tr><tr><th>주의 지속</th><td>1/4</td><td>4/5</td><td>1/4</td><td>2/5</td></tr><tr><th>인내심</th><td>1/4</td><td>5/5</td><td>0/4</td><td>4/5</td></tr><tr><th>탐색 범위</th><td>0/3</td><td>4/5</td><td>0/3</td><td>3/5</td></tr></tbody>
+</table></div>
+
+<h2>뒤집힌 사람들</h2>
+<p>이 사람들이 결함의 대가를 치른다. 마지막 생각은 기록에서 그대로 옮겼다.</p>
+<ul class="notes"><li><b>P008</b> <span class="mono">숙련4·주의5·인내2·탐색3</span> — v2_clean10에서는 12스텝에 해냈지만 v2_buggy10에서는 포기. 화면이 가장 험할 때 <span class="mono">가려짐 24 · 저대비 30 · 키보드불가 12</span>, 팝업에 막힌 클릭 3회.<blockquote>팝업 및 가림막 레이어로 인해 상품 링크 클릭이 계속 실패하고 있습니다. 여러 번 시도했지만 더 이상 진행할 수 없으므로 포기합니다.</blockquote></li><li><b>P009</b> <span class="mono">숙련5·주의5·인내5·탐색4</span> — v2_clean10에서는 14스텝에 해냈지만 v2_buggy10에서는 포기. 화면이 가장 험할 때 <span class="mono">가려짐 24 · 저대비 30 · 키보드불가 12</span>, 팝업에 막힌 클릭 2회.<blockquote>팝업 백드롭이 삭제되지 않아 상품 링크 및 기타 버튼 조작이 불가능합니다. 여러 방법으로 팝업 닫기를 시도했으나 진행할 수 없으므로 포기합니다.</blockquote></li></ul>
+
+<footer>숫자는 <span class="mono">logs/</span> 의 기록에서 직접 읽어 만들었다.
+다시 만들려면 <span class="mono">python report_html.py &lt;run_id&gt; &lt;run_id&gt;</span>.</footer>
+</div>

@@ -1,4 +1,12 @@
+import { MOCK_MISS, mockResponse } from './mock'
+
 const BASE = import.meta.env.VITE_API_BASE ?? 'http://localhost:8000'
+
+/**
+ * 데모 모드. 백엔드 없이 프론트 하나로 돌린다 (MVP 광고용).
+ * 진짜 백엔드에 붙이려면 web/.env 에 VITE_MOCK=0 을 넣는다.
+ */
+const USE_MOCK = (import.meta.env.VITE_MOCK ?? '1') !== '0'
 
 /** fetch 를 거치지 않는 것(예: <img src>)도 서버 주소가 필요하다. */
 export const API_BASE = BASE
@@ -16,6 +24,17 @@ export class ApiError extends Error {
 }
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
+  if (USE_MOCK) {
+    const canned = mockResponse(path, init)
+    // 흉내 낼 수 없는 경로만 진짜 서버로 넘긴다. null 은 그 자체가 정상 응답일 수 있다
+    // (예: 실행 중인 것이 없으면 /api/runs/active 는 null 을 돌려준다).
+    if (canned !== MOCK_MISS) {
+      // 실제 호출처럼 보이도록 한 박자 쉰다. 로딩 상태가 화면에서 사라지지 않도록.
+      await new Promise((r) => setTimeout(r, 180))
+      return canned as T
+    }
+  }
+
   let response: Response
   try {
     response = await fetch(`${BASE}${path}`, {

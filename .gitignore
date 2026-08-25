@@ -19,3 +19,9 @@ agent-ux/shots_*/
 agent-ux/measured_*.csv
 agent-ux/*.bak
 agent-ux/maps/*.4pages.json
+
+# 확인용으로 찍은 스크린샷 — 디버깅 흔적이지 산출물이 아니다
+agent-ux/*_check*.png
+agent-ux/web_*.png
+web/node_modules/
+web/dist/

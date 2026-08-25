@@ -89,8 +89,10 @@ async def run_persona(browser, person: dict, site_map: dict | None, root: str,
             await page.reload(timeout=config.STEP_TIMEOUT_MS)
 
         seen_url = None
-        idle = 0                      # 아무 변화도 못 만든 행동 수 (인내심)
-        seen_templates: set = set()   # 방문한 화면 종류 (탐색 범위)
+        idle = 0                       # 아무 변화도 못 만든 행동 수 (인내심)
+        # 같은 종류 화면을 몇 개나 열어봤는지 (탐색 범위).
+        # {템플릿: {실제 URL들}} — 상품 상세를 3개 봤으면 product 아래 3개가 쌓인다.
+        seen_variants: dict = {}
         for n in range(1, person["max_steps"] + 1):
             if budget.exceeded():
                 end_reason, note = "budget_stop", budget.exceeded()
@@ -102,8 +104,8 @@ async def run_persona(browser, person: dict, site_map: dict | None, root: str,
             # '마주친 적이 없는 것'이다. 이 차이가 기록에 남아야 한다.
             if page.url != seen_url:
                 seen_url = page.url
-                if person.get("page_cap"):
-                    seen_templates.add(discover.template_key(page.url))
+                seen_variants.setdefault(
+                    discover.template_key(page.url), set()).add(page.url)
                 await asyncio.sleep(person["dwell_ms"] / 1000)
 
             t0 = time.monotonic()
@@ -129,20 +131,22 @@ async def run_persona(browser, person: dict, site_map: dict | None, root: str,
             else:
                 outcome = await explore.execute(page, action, root, el)
 
-                # 탐색 범위가 좁은 사람은 정해진 화면 수까지만 둘러본다.
-                # "한 화면만 보고 결정합니다"를 문장으로만 주면 모델이 무시한다.
-                cap = person.get("page_cap") or 0
-                if cap:
-                    key = discover.template_key(page.url)
-                    if key not in seen_templates and len(seen_templates) >= cap:
-                        try:
-                            await page.go_back(timeout=config.STEP_TIMEOUT_MS)
-                        except Exception:  # noqa: BLE001
-                            pass
-                        outcome = {"url_after": page.url, "changed": False,
-                                   "note": "이 사람은 화면 %d종까지만 둘러봅니다" % cap}
-                    else:
-                        seen_templates.add(key)
+                # 탐색 범위: 결정 전에 대안을 몇 개까지 보는가.
+                # 같은 종류 화면(상품 상세 등)을 정해진 개수 넘게 열면 되돌린다.
+                # 거쳐가는 길(장바구니·결제·완료)은 각각 하나뿐이라 걸리지 않는다.
+                cap = person.get("compare_cap") or 0
+                key = discover.template_key(page.url)
+                seen = seen_variants.setdefault(key, set())
+                if cap and page.url not in seen and len(seen) >= cap:
+                    try:
+                        await page.go_back(timeout=config.STEP_TIMEOUT_MS)
+                    except Exception:  # noqa: BLE001
+                        pass
+                    outcome = {"url_after": page.url, "changed": False,
+                               "note": "이 사람은 같은 종류 화면을 %d개까지만 비교합니다"
+                                       % cap}
+                else:
+                    seen.add(page.url)
 
             tr.add(T.step(
                 n, thought=thought, action=action, snapshot=T.slim(snap),

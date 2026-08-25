@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T19:17:01",
+  "generated_at": "2026-08-25T20:28:20",
   "goal": "코튼 셔츠를 장바구니에 담아 주문까지 마친다",
   "start_path": "/index.html",
   "counts": {
@@ -7,7 +7,7 @@
     "unique_combos": 100,
     "dwell_over_10s": 20,
     "url_allowed": 60,
-    "page_capped": 40,
+    "compare_capped": 40,
     "by_axis": {
       "literacy": {
         "1": 20,

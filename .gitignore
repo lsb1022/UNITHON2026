@@ -25,7 +25,13 @@ agent-ux/maps/*.4pages.json
 agent-ux/*_check*.png
 agent-ux/web_*.png
 web/node_modules/
-web/dist/
+# web/dist 는 예외로 **커밋한다.**
+# 배포 담당이 이 저장소를 받아서 그대로 올리기 때문이다. 빌드 결과를 저장소에
+# 두는 건 보통 피하지만(빌드마다 diff 가 생긴다), 받는 쪽에 빌드 단계를
+# 요구하지 않는 쪽이 배포 사고가 적다.
+# 반드시 `npm run build` (배포 모드) 로 만든 것만 넣는다 — .env.local 이 섞이면
+# 방문자 브라우저가 localhost 를 부른다. .env.production 이 그것을 막는다.
+!web/dist/
 
 # 서버가 답사 때 찍어 쌓는 스크린샷 — 실행할 때마다 다시 생긴다
 agent-ux/shots_web/

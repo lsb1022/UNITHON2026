@@ -1,0 +1,122 @@
+{
+ "clean": [
+  {
+   "key": "index.html",
+   "file": "clean/index.jpg",
+   "w": 1280,
+   "h": 2220,
+   "bytes": 148772
+  },
+  {
+   "key": "list.html",
+   "file": "clean/list.jpg",
+   "w": 1280,
+   "h": 2250,
+   "bytes": 158393
+  },
+  {
+   "key": "product.html",
+   "file": "clean/product.jpg",
+   "w": 1280,
+   "h": 1950,
+   "bytes": 114232
+  },
+  {
+   "key": "cart.html",
+   "file": "clean/cart.jpg",
+   "w": 1280,
+   "h": 901,
+   "bytes": 55743
+  },
+  {
+   "key": "checkout.html",
+   "file": "clean/checkout.jpg",
+   "w": 1280,
+   "h": 2379,
+   "bytes": 132959
+  },
+  {
+   "key": "complete.html",
+   "file": "clean/complete.jpg",
+   "w": 1280,
+   "h": 800,
+   "bytes": 36193
+  }
+ ],
+ "buggy": [
+  {
+   "key": "index.html",
+   "file": "buggy/index.jpg",
+   "w": 1280,
+   "h": 1231,
+   "bytes": 56563
+  },
+  {
+   "key": "list.html",
+   "file": "buggy/list.jpg",
+   "w": 1280,
+   "h": 1442,
+   "bytes": 74419
+  },
+  {
+   "key": "product.html",
+   "file": "buggy/product.jpg",
+   "w": 1280,
+   "h": 1393,
+   "bytes": 53206
+  },
+  {
+   "key": "cart.html",
+   "file": "buggy/cart.jpg",
+   "w": 1280,
+   "h": 800,
+   "bytes": 18702
+  },
+  {
+   "key": "checkout.html",
+   "file": "buggy/checkout.jpg",
+   "w": 1280,
+   "h": 800,
+   "bytes": 24001
+  },
+  {
+   "key": "complete.html",
+   "file": "buggy/complete.jpg",
+   "w": 1280,
+   "h": 800,
+   "bytes": 12704
+  }
+ ],
+ "wiki": [
+  {
+   "key": "위키백과:대문",
+   "file": "wiki/위키백과_대문.jpg",
+   "w": 1280,
+   "h": 3597,
+   "bytes": 453886
+  },
+  {
+   "key": "숭실대학교",
+   "file": "wiki/숭실대학교.jpg",
+   "w": 1280,
+   "h": 12440,
+   "bytes": 1794575
+  }
+ ],
+ "ko.wikipedia.org": [
+  {
+   "key": "위키백과:대문",
+   "file": "wiki/위키백과_대문.jpg",
+   "w": 1280,
+   "h": 3597,
+   "bytes": 453886
+  },
+  {
+   "key": "숭실대학교",
+   "file": "wiki/숭실대학교.jpg",
+   "w": 1280,
+   "h": 12440,
+   "bytes": 1794575
+  }
+ ]
+}

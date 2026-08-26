@@ -68,7 +68,6 @@ export function ReviewPage() {
             disabled={start.pending || !testId}
             onClick={async () => {
               if (!testId) return
-<<<<<<< Updated upstream
               // 어느 프로젝트에서 눌렀는지 함께 보낸다. 안 보내면 서버가
               // 기본값(테스트베드)을 돌아서, 위키백과 프로젝트를 만들어도
               // "MOJI STORE / 코튼 셔츠 주문 완주"가 돌아간다.
@@ -92,9 +91,6 @@ export function ReviewPage() {
                     enabled: r.enabled,
                   })),
               })
-              if (run) navigate(`/projects/${projectId}/tests/new/running`)
-=======
-              const run = await start.run(testId)
               if (!run) return
               // 이미 끝난 실행이면 진행률 화면에 세워둘 이유가 없다. 0%에서 멈춘
               // 막대를 보여주느니 바로 결과로 데려간다.
@@ -103,7 +99,6 @@ export function ReviewPage() {
                 return
               }
               navigate(`/projects/${projectId}/tests/new/running`)
->>>>>>> Stashed changes
             }}
             className="flex h-[65px] w-[179px] items-center justify-center gap-[5px] rounded-[14px] bg-main text-[20px] leading-[1.45] font-medium text-white transition-colors hover:bg-[#2872dd] disabled:cursor-not-allowed disabled:bg-[#c4d9f9]"
           >

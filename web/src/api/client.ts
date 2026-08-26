@@ -230,7 +230,6 @@ export type ReviewPayload = {
 
 export const getReview = (testId: string) => request<ReviewPayload>(`/api/tests/${testId}/review`)
 
-<<<<<<< Updated upstream
 /** 실행을 시작할 때 서버에 함께 넘기는 것. 비워 보내면 서버가 기본값(테스트베드)을
  *  돌아서, 어느 프로젝트에서 눌렀든 같은 결과가 나온다. */
 export type RunRequest = {
@@ -248,9 +247,6 @@ export type RunRequest = {
 }
 
 export const startRun = (testId: string, req: RunRequest = {}) =>
-  request<{ run_id: string; persona_count: number; status: string }>(`/api/tests/${testId}/runs`, {
-=======
-export const startRun = (testId: string) =>
   request<{
     run_id: string
     persona_count: number
@@ -259,7 +255,6 @@ export const startRun = (testId: string) =>
     test_id?: string
     project_id?: string
   }>(`/api/tests/${testId}/runs`, {
->>>>>>> Stashed changes
     method: 'POST',
     body: JSON.stringify(req),
   })

@@ -37,19 +37,26 @@ for _s in (sys.stdout, sys.stderr):
 HERE = os.path.dirname(os.path.abspath(__file__))
 PY = sys.executable
 
-# 우리 쇼핑몰만 검사한다. 데모라 대상이 정해져 있고, 남의 사이트에 에이전트를
-# 붙이는 것은 허락과 안전장치가 필요한 별개의 문제다.
-# 여기에 없는 주소는 거부한다 — 프론트가 실수로 보내도 서버가 막는다.
-# 이 데모가 검사해도 되는 곳. 남의 사이트를 마구 두들기지 않으려고 좁혀 둔다.
-# 공개 문서 사이트는 예시로 열어 둔다 — 실제로 여기서 돌려 본 곳이다.
-ALLOWED_HOSTS = {"localhost", "127.0.0.1", "lsb1022.github.io",
-                 "ko.wikipedia.org", "webscraper.io"}
+# 검사해도 되는 곳.
+#
+# 기본은 **열어 둔다.** 이 서버는 127.0.0.1 에만 붙고, 띄운 사람이 자기 화면에서
+# 자기가 정한 주소를 검사하는 도구다. 새 사이트를 시험해 보려고 할 때마다 코드를
+# 고쳐야 하는 쪽이 더 나쁘다.
+#
+# 좁히고 싶으면 띄울 때 정한다:
+#   python server.py --only ko.wikipedia.org --only localhost
+#
+# 여는 것과 별개로 남의 사이트를 마구 두들기지는 않는다. 답사는 --max-pages 로
+# 화면 수가 묶여 있고, 실행은 --max-usd 로 예산이 묶여 있다.
+ALLOWED_HOSTS: set[str] = set()      # 비어 있으면 = 전부 허용
 
 JOBS: dict[str, dict] = {}
 LOCK = threading.Lock()
 
 
 def _allowed(url: str) -> bool:
+    if not ALLOWED_HOSTS:
+        return True
     try:
         host = urlparse(url).hostname or ""
     except Exception:  # noqa: BLE001
@@ -553,7 +560,7 @@ class Handler(BaseHTTPRequestHandler):
 
         if not _allowed(url or base):
             return self._send(403, {
-                "error": "허용되지 않은 주소입니다. 이 데모는 지정된 사이트만 검사합니다.",
+                "error": "이 서버는 --only 로 지정된 호스트만 검사하도록 좁혀져 있습니다.",
                 "allowed_hosts": sorted(ALLOWED_HOSTS)})
 
         variant = str(body.get("variant") or Handler.variant)
@@ -648,7 +655,12 @@ def main() -> int:
                          "(한 명당 1~2분)")
     ap.add_argument("--variant", default="buggy", choices=("clean", "buggy", "flawed"),
                     help="프론트에서 실행할 때 검사할 판")
+    ap.add_argument("--only", action="append", default=[], metavar="호스트",
+                    help="이 호스트만 검사하도록 좁힌다. 여러 번 쓸 수 있다. "
+                         "안 주면 전부 허용")
     args = ap.parse_args()
+
+    ALLOWED_HOSTS.update(h.strip() for h in args.only if h.strip())
 
     Handler.mock = args.mock
     Handler.personas = args.personas
@@ -656,7 +668,8 @@ def main() -> int:
     srv = ThreadingHTTPServer(("127.0.0.1", args.port), Handler)
     print("=" * 58)
     print("  API 서버 http://127.0.0.1:%d%s" % (args.port, "   [모의 — 공짜]" if args.mock else ""))
-    print("  검사 허용 호스트: %s" % ", ".join(sorted(ALLOWED_HOSTS)))
+    print("  검사 허용 호스트: %s"
+          % (", ".join(sorted(ALLOWED_HOSTS)) if ALLOWED_HOSTS else "전부 (--only 로 좁힐 수 있음)"))
     print("=" * 58)
     print("  POST /api/scan                  {variant, personas, base, resurvey}")
     print("  POST /api/tests/{id}/runs       프론트의 '테스트 하기' (답사부터)")

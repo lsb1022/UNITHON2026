@@ -36,5 +36,8 @@ export function useConnection() {
     embeddable: result?.embeddable ?? false,
     blockReason: result?.embed_block_reason ?? null,
     connected: Boolean(result?.ok),
+    /** 검사를 통과했거나, 통과는 못 했지만 넘어가도 되는 경우.
+     *  느린 사이트에서 시간이 모자란 것은 주소가 틀린 것과 다르다. */
+    canProceed: Boolean(result?.ok || result?.proceed_anyway),
   }
 }

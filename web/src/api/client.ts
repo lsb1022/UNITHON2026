@@ -74,6 +74,9 @@ export type ConnectivityResult = {
   link_count: number | null
   error_kind: string | null
   message: string
+  /** 확인은 못 했지만 넘어가도 되는 경우(시간 초과 등).
+   *  느린 사이트를 '없는 주소' 취급해서 막아 두지 않는다. */
+  proceed_anyway?: boolean
 }
 
 export function checkConnectivity(url: string) {

@@ -275,22 +275,9 @@ export const MOCK_MISS = Symbol('mock-miss')
  * 죽은 서버는 예외를 던지고, 살아 있으면 내용은 못 읽어도 성공으로 돌아온다.
  * 알 수 있는 것만 말하고 나머지는 모른다고 말한다.
  */
-const PROBE_MS = 8000
-
-/**
- * 데모에서 열어볼 수 있는 주소.
- *
- * 배포본에는 백엔드가 없어서 답사를 새로 돌릴 수 없다. 우리가 실제로 돌려 둔
- * 두 곳 말고 다른 주소를 받아 주면, 화면은 남의 실행 기록을 그 주소의 결과인
- * 것처럼 보여주게 된다 — 확인해준 것이 아니라 지어낸 것이 된다.
- * 그래서 받아 줄 수 없는 주소는 그 자리에서 받아 줄 수 없다고 말한다.
- */
-const DEMO_ALLOWED = [
-  'https://ko.wikipedia.org/',
-  'https://lsb1022.github.io/UNITHON2026-MOJI/ux-testbed/',
-]
-
-const DEMO_SCOPE_MESSAGE = '데모 모드에서는 사용할 수 없습니다.'
+// 느린 사이트는 이 정도까지 걸린다 (실측: news.ycombinator.com 24~60초).
+// 8초로 두었을 때는 살아 있는 사이트가 '닿지 못했어요' 로 떨어졌다.
+const PROBE_MS = 15000
 
 async function checkUrl(url: string) {
   if (!url) {
@@ -320,32 +307,41 @@ async function checkUrl(url: string) {
     }
   }
 
-  // 닿는지 확인하기 전에 먼저 거른다. 받아 줄 수 없는 주소를 굳이 열어볼 이유가 없다.
-  if (!DEMO_ALLOWED.some((prefix) => url.startsWith(prefix))) {
-    return {
-      ok: false, url, final_url: null, status: null, title: null,
-      embeddable: false, embed_block_reason: null, link_count: null,
-      error_kind: 'demo_scope', message: DEMO_SCOPE_MESSAGE,
-    }
-  }
+  // 주소 제한은 두지 않는다.
+  //
+  // 예전에는 미리 돌려 둔 두 곳으로 좁혀 두었다. 아무 주소나 받으면 화면이
+  // 남의 실행 기록을 그 주소의 결과인 것처럼 보여줬기 때문이다. 지금은 그쪽을
+  // 고쳤다 — 직접 만든 프로젝트에는 기록이 없다고 정직하게 말한다(hasRecord).
+  // 그래서 새 사이트를 넣어 보는 것을 막을 이유가 없어졌다.
 
   // '화면 N종을 찾았습니다' 는 **우리 테스트베드**를 답사한 결과다(cleanMap).
   // 예전에는 데모 사이트 아무거나에 이 수를 붙였는데, 그러면 위키백과를 넣어도
   // 쇼핑몰의 화면 수를 찾았다고 말하게 된다. 아는 것만 말한다.
   const known = url.startsWith(TESTBED)
   const started = Date.now()
+  // catch 에서도 봐야 한다 — try 안에 두면 시간 초과인지 알 수 없다.
+  let timedOut = false
   try {
     const ctl = new AbortController()
-    const timer = setTimeout(() => ctl.abort(), PROBE_MS)
+    const timer = setTimeout(() => {
+      timedOut = true
+      ctl.abort()
+    }, PROBE_MS)
     // no-cors 라 내용을 못 읽는다. 우리가 얻는 것은 '닿았다'는 사실 하나뿐이다.
     await fetch(url, { mode: 'no-cors', signal: ctl.signal, cache: 'no-store' })
     clearTimeout(timer)
   } catch {
+    // **시간이 모자란 것과 주소가 틀린 것은 다르다.** 둘을 같은 말로 뭉치면
+    // 살아 있는데 느린 사이트를 '없는 주소' 라고 말하게 된다.
     return {
       ok: false, url, final_url: null, status: null, title: null,
       embeddable: false, embed_block_reason: null, link_count: null,
-      error_kind: 'unreachable',
-      message: `${host} 에 닿지 못했어요. 주소가 맞는지, 사이트가 열려 있는지 확인해 주세요.`,
+      error_kind: timedOut ? 'timeout' : 'unreachable',
+      message: timedOut
+        ? `${host} 가 ${PROBE_MS / 1000}초 안에 응답하지 않았어요. 느린 것뿐일 수 있어요 — 주소가 맞다면 그대로 진행해도 됩니다.`
+        : `${host} 에 닿지 못했어요. 주소가 맞는지, 사이트가 열려 있는지 확인해 주세요.`,
+      /** 확인은 못 했지만 사용자가 주소를 안다면 넘어갈 수 있다. */
+      proceed_anyway: Boolean(timedOut),
     }
   }
 
@@ -356,10 +352,10 @@ async function checkUrl(url: string) {
     // 상태 코드는 브라우저에서 읽을 수 없다. 200 이라고 적으면 거짓말이 된다.
     status: null,
     title: known ? 'MOJI STORE' : null,
-    // 미리보기(iframe) 가능 여부는 보통 브라우저에서 알 수 없다. 다만 여기까지
-    // 온 주소는 허용 목록의 두 곳뿐이고, 둘 다 프레임을 막는 헤더
-    // (X-Frame-Options / CSP frame-ancestors)가 없는 것을 확인했다.
-    // 그래도 빈 화면이 되면 미리보기 창이 찍어 둔 사진으로 떨어진다.
+    // 미리보기(iframe) 가 되는지는 브라우저에서 알 수 없다 — 프레임을 막는
+    // 헤더(X-Frame-Options / CSP frame-ancestors)를 no-cors 응답에서 읽을 수
+    // 없기 때문이다. 그래서 일단 띄워 보고, 빈 화면이면 찍어 둔 사진으로
+    // 떨어진다. 확인한 사실이 아니라 '해보겠다' 는 뜻이다.
     embeddable: true,
     embed_block_reason: null,
     // 링크 수는 답사를 돌려야 나온다. 아는 사이트만 말한다.

@@ -55,14 +55,15 @@ export function NewProjectPage() {
             if (created) navigate(`/projects/${created.id}`)
           }}
           nextLabel={create.pending ? '만드는 중…' : '생성하기'}
-          // 필수 칸이 비어 있으면 넘어가지 못한다. 링크는 비었는지에 더해
-          // 실제로 연결까지 확인돼야 한다 — 못 여는 주소로는 답사를 돌릴 수 없다.
+          // 필수 칸이 비어 있으면 넘어가지 못한다. 링크는 연결 확인까지 거친다.
+          // 다만 **시간 초과는 막지 않는다** — 느린 사이트가 15초 안에 대답을
+          // 못 한 것과 주소가 틀린 것은 다르다. 주소를 아는 쪽은 사용자다.
           nextDisabled={
             create.pending ||
             name.trim() === '' ||
             link.trim() === '' ||
             category.trim() === '' ||
-            !connection.connected
+            !connection.canProceed
           }
         />
       }

@@ -12,14 +12,13 @@ export type ConnectionState =
 const HINTS: Record<string, string> = {
   dns: '도메인 철자와 .com / .co.kr 을 확인해 주세요.',
   refused: '서버가 켜져 있는지, 방화벽이 막고 있지 않은지 확인해 주세요.',
-  timeout: '사이트가 응답하지 않아요. 잠시 뒤 다시 시도해 주세요.',
+  timeout: '시간 안에 응답이 없었어요. 느린 것뿐일 수 있어요.',
   http_error: '주소는 살아 있지만 해당 경로가 없어요. 경로를 확인해 주세요.',
   invalid: '주소 형식이 올바르지 않아요.',
   empty: '주소를 입력해 주세요.',
   transport: '네트워크 문제로 연결하지 못했어요.',
-  // 데모에는 백엔드가 없어서 답사를 새로 돌릴 수 없다. 열 수 있는 주소를 알려준다.
-  demo_scope:
-    '지금은 https://ko.wikipedia.org/ 와 https://lsb1022.github.io/UNITHON2026-MOJI/ux-testbed/ 로 시작하는 주소만 열 수 있어요.',
+  // 서버를 --only 로 좁혀 띄웠을 때. 지금은 기본이 '전부 허용' 이라 잘 안 뜬다.
+  demo_scope: '이 서버가 검사하도록 허용된 주소가 아니에요.',
 }
 
 export function ConnectionCard({

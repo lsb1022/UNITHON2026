@@ -1,28 +1,27 @@
 /**
- * 예상 소요·사용량 공식. 서버 `app/estimates.py` 와 같은 상수를 쓴다.
+ * 예상 소요·크레딧 공식.
  *
- *   소요(분) = 페르소나 수 × 페이지 수 × MINUTES_WEIGHT
- *   토큰     = 페르소나 수 × 페이지 수 × TOKENS_WEIGHT
+ *   소요(분) = 페르소나 수 × 2 × 1.2 × 0.88
+ *   크레딧   = 페르소나 수          (1명당 1크레딧)
+ *
+ * 크레딧은 사람 수를 그대로 센다. 토큰으로 보여주던 것을 바꿨다 —
+ * 토큰 수는 결제 단위가 아니라서, 그 숫자를 보고는 얼마가 빠지는지 알 수 없었다.
  *
  * 마법사 도중(아직 서버에 저장 전)에도 숫자를 보여줘야 해서 클라이언트에도 둔다.
- * 확인 화면은 서버가 계산한 값을 그대로 쓴다 — 저장된 답사 화면 수를 반영하기 때문이다.
+ * 확인 화면은 서버가 계산한 값이 있으면 그것을 먼저 쓴다.
  */
-export const DEFAULT_PAGE_COUNT = 6
-export const MINUTES_WEIGHT = 0.01
-export const TOKENS_WEIGHT = 3_000
 
-export function estimateRun(personaCount: number, pageCount = DEFAULT_PAGE_COUNT) {
-  const pages = Math.max(1, pageCount)
+/** 페르소나 한 명이 차지하는 실행 시간(분). 병렬 처리와 재시도까지 반영한 계수다. */
+export const MINUTES_PER_PERSONA = 2 * 1.2 * 0.88
+
+/** 페르소나 한 명 = 크레딧 한 개. */
+export const CREDITS_PER_PERSONA = 1
+
+export function estimateRun(personaCount: number) {
+  const people = Math.max(0, personaCount)
   return {
-    pageCount: pages,
-    minutes: Math.max(1, Math.round(personaCount * pages * MINUTES_WEIGHT)),
-    tokens: personaCount * pages * TOKENS_WEIGHT,
+    // 소수점을 그대로 보여주면 "21.12분"이 된다. 분 단위로 반올림해서 딱 떨어지게 둔다.
+    minutes: Math.max(1, Math.round(people * MINUTES_PER_PERSONA)),
+    credits: people * CREDITS_PER_PERSONA,
   }
-}
-
-/** 1,800,000 → "1.8M" · 45,000 → "45,000" */
-export function formatTokens(tokens: number): string {
-  if (tokens >= 1_000_000) return `${(tokens / 1_000_000).toFixed(1)}M`
-  if (tokens >= 10_000) return `${Math.round(tokens / 1000).toLocaleString('ko-KR')}K`
-  return tokens.toLocaleString('ko-KR')
 }

@@ -99,12 +99,14 @@ export function PlansPage() {
   )
 }
 
-/** ₩39,000 → 연간 20% 할인 표시. 숫자가 없는 값(₩0)은 그대로 둔다. */
+/** ₩14,900 → 연간 20% 할인 표시. 숫자가 없는 값(₩0)은 그대로 둔다. */
 function priceLabel(price: string, yearly: boolean): string {
   if (!yearly) return price
   const digits = price.replace(/[^\d]/g, '')
   if (digits === '' || Number(digits) === 0) return price
-  const discounted = Math.round((Number(digits) * 0.8) / 1000) * 1000
+  // 100원 단위로 맞춘다. 1000원 단위로 끊으면 ₩14,900 이 ₩12,000 이 되어
+  // 끝자리가 900 인 정가와 나란히 놓였을 때 다른 가격표처럼 보인다.
+  const discounted = Math.round((Number(digits) * 0.8) / 100) * 100
   return `₩${discounted.toLocaleString()}`
 }
 

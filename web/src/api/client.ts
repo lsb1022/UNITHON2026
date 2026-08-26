@@ -217,6 +217,8 @@ export type ReviewPayload = {
   }
   estimate: {
     minutes: number
+    /** 페르소나 1명 = 1크레딧. 예전에는 토큰을 보여줬는데 결제 단위가 아니라 뜻이 없었다. */
+    credits?: number
     tokens: number
     page_count: number
     vision_calls: number
@@ -228,6 +230,7 @@ export type ReviewPayload = {
 
 export const getReview = (testId: string) => request<ReviewPayload>(`/api/tests/${testId}/review`)
 
+<<<<<<< Updated upstream
 /** 실행을 시작할 때 서버에 함께 넘기는 것. 비워 보내면 서버가 기본값(테스트베드)을
  *  돌아서, 어느 프로젝트에서 눌렀든 같은 결과가 나온다. */
 export type RunRequest = {
@@ -246,6 +249,17 @@ export type RunRequest = {
 
 export const startRun = (testId: string, req: RunRequest = {}) =>
   request<{ run_id: string; persona_count: number; status: string }>(`/api/tests/${testId}/runs`, {
+=======
+export const startRun = (testId: string) =>
+  request<{
+    run_id: string
+    persona_count: number
+    status: string
+    /** 이미 끝난 실행이면 결과로 바로 보낼 수 있게 대상을 같이 준다. */
+    test_id?: string
+    project_id?: string
+  }>(`/api/tests/${testId}/runs`, {
+>>>>>>> Stashed changes
     method: 'POST',
     body: JSON.stringify(req),
   })

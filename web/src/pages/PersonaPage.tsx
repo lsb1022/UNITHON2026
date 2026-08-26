@@ -12,7 +12,7 @@ import {
 } from '../components/GenderRatioSlider'
 import { WizardTopBar } from '../components/StepIndicator'
 import { WizardFooter } from '../components/WizardFooter'
-import { estimateRun, formatTokens } from '../lib/estimate'
+import { estimateRun } from '../lib/estimate'
 import { splitRow, useWizard, type AgeRow } from '../state/WizardContext'
 
 export function PersonaPage() {
@@ -109,15 +109,15 @@ export function PersonaPage() {
           </div>
 
           <aside className="mt-[100px] h-[696px] w-[225px] shrink-0 rounded-[22px] border border-line bg-white px-[24px] pt-[64px]">
-            <p className="text-[14px] leading-[1.45] font-medium text-body">예상 토큰 사용량</p>
+            <p className="text-[14px] leading-[1.45] font-medium text-body">예상 크레딧</p>
             <p className="mt-[5px] text-[26px] leading-[1.45] font-bold text-heading">
-              약 {formatTokens(estimate.tokens)}
+              {estimate.credits.toLocaleString('ko-KR')} 크레딧
             </p>
             <p className="mt-[16px] text-[13px] leading-[1.45] text-placeholder">
-              {totalPersonas}명 × {estimate.pageCount}페이지 기준
+              페르소나 1명당 1크레딧
             </p>
             <p className="mt-[4px] text-[13px] leading-[1.45] text-placeholder">
-              예상 소요 약 {estimate.minutes}분
+              예상 소요 {estimate.minutes}분
             </p>
           </aside>
         </div>

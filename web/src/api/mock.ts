@@ -373,7 +373,7 @@ const ACCOUNT = {
 const PLAN = {
   current: {
     name: '스탠다드',
-    price_label: '월 ₩39,000',
+    price_label: '월 ₩14,900',
     next_billing_at: '2026. 09. 26',
     used: 12,
     quota: 30,
@@ -434,7 +434,7 @@ const PLAN_TIERS = [
     id: 'standard',
     name: '스탠다드',
     tagline: '팀의 반복 UX 테스트를 자동화해요.',
-    price: '₩39,000',
+    price: '₩14,900',
     cta: '스탠다드 시작하기',
     featured: true,
     badge: '가장 많이 선택해요',
@@ -451,7 +451,7 @@ const PLAN_TIERS = [
     id: 'pro',
     name: '프로',
     tagline: '고빈도 테스트와 상세 분석이 필요한 팀.',
-    price: '₩99,000',
+    price: '₩39,900',
     cta: '프로 시작하기',
     featured: false,
     badge: null,
@@ -735,7 +735,9 @@ export function mockResponse(rawPath: string, init?: RequestInit): unknown {
           }),
         },
         estimate: {
-          minutes: Math.max(1, Math.round(n * 1.5)),
+          // 화면과 같은 공식을 쓴다 (web/src/lib/estimate.ts).
+          minutes: Math.max(1, Math.round(n * 2 * 1.2 * 0.88)),
+          credits: n,
           tokens: measured.tokensIn + measured.tokensOut,
           page_count: cleanMap.pages.length,
           vision_calls: (MOCK_DATA.maps.clean as { shots: number }).shots,
@@ -903,11 +905,32 @@ function stepsPayload(variant: string) {
   if (path === '/api/billing/credits') return CREDITS
   if (path === '/api/billing/tiers') return { tiers: PLAN_TIERS }
 
-  // 실행과 진행률만은 흉내 내지 않는다. 진짜 파이프라인이 답사부터 돌고,
-  // 진행률은 logs/ 에 쌓인 기록 파일 수에서 나온다.
-  // (agent-ux/server.py 를 띄우고 VITE_API_BASE 를 그쪽으로 두면 연결된다)
-  if (path.endsWith('/runs') && method === 'POST') return MOCK_MISS
-  if (path === '/api/runs/active') return MOCK_MISS
+  // 실행 시작.
+  //
+  // 예전에는 이 요청을 진짜 서버로 넘겼다. 그런데 데모의 테스트 id 는 UUID 가
+  // 아니라서(`moji-before-test`) FastAPI 가 경로 변수를 파싱하다 **422** 를 냈다.
+  // 화면에는 "요청이 실패했어요 (HTTP 422)" 만 떴고, 사용자는 무엇이 잘못됐는지
+  // 알 수 없었다.
+  //
+  // 데모에는 돌릴 파이프라인이 없다. 대신 이 사이트들은 **이미 돌려 둔 실행 기록**이
+  // 있다. 그래서 새로 시작한 척하지 않고, 이미 끝난 실행이라고 사실대로 답한다 —
+  // 화면은 그 결과로 데려간다.
+  if (path.endsWith('/runs') && method === 'POST') {
+    const site = siteByTest(path.split('/')[3] ?? '')
+    if (!site) return MOCK_MISS
+    const run = runs[site.variant]
+    return {
+      run_id: run?.runId ?? `${site.testId}-run`,
+      persona_count: run?.personas.length ?? state.personaTotal,
+      status: 'done',
+      test_id: site.testId,
+      project_id: site.id,
+    }
+  }
+
+  // 돌고 있는 실행이 없다. 진행률은 logs/ 에 쌓인 기록 파일 수에서 나오는데
+  // 데모에는 그 파이프라인이 붙어 있지 않다. 없는 진행률을 지어내지 않는다.
+  if (path === '/api/runs/active') return null
 
   // 썸네일은 <img src> 로 직접 불려서 이 경로를 타지 않는다. 흉내 내지 않는다.
   return MOCK_MISS

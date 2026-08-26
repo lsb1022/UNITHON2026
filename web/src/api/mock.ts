@@ -121,6 +121,9 @@ function allSites(): Site[] {
   return [...(SITES as readonly Site[]), ...state.created]
 }
 
+/** 미리 돌려 둔 기록이 있는 사이트인가. 사용자가 방금 만든 프로젝트에는 없다. */
+const hasRecord = (site: Site) => (SITES as readonly Site[]).some((x) => x.id === site.id)
+
 const siteById = (id: string) => allSites().find((s) => s.id === id)
 const siteByTest = (id: string) => allSites().find((s) => s.testId === id)
 
@@ -223,7 +226,7 @@ function projectCard(site: Site): Json {
     id: site.id,
     name: nameOf(site),
     category: '커머스',
-    test_count: 1,
+    test_count: hasRecord(site) ? 1 : 0,
     last_activity_at: MOCK_DATA.generatedAt,
     preview_url: site.url,
     preview_embeddable: true,
@@ -667,8 +670,9 @@ export function mockResponse(rawPath: string, init?: RequestInit): unknown {
       ...projectCard(project),
       device_preset: 'desktop',
       viewport: { w: 1280, h: 800 },
-      success_rate: rate(project.variant),
-      drop_rate: dropRate(project.variant),
+      // 돌린 적이 없으면 성공률도 없다. 0% 로 적으면 '전원 실패'로 읽힌다.
+      success_rate: hasRecord(project) ? rate(project.variant) : null,
+      drop_rate: hasRecord(project) ? dropRate(project.variant) : null,
     }
   }
 
@@ -680,6 +684,11 @@ export function mockResponse(rawPath: string, init?: RequestInit): unknown {
       if (body?.name) state.testName = String(body.name)
       return { id: listing.testId }
     }
+    // **방금 만든 프로젝트에는 기록이 없다.**
+    // 예전에는 주소가 같은 데모 사이트의 결과를 그대로 빌려줘서, 아무것도 안
+    // 돌린 프로젝트에 "코튼 셔츠 주문 완주 · 성공률 70%" 가 떴다. 남의 결과를
+    // 내 것처럼 보여주는 것은 이 도구가 하지 말아야 할 일 그 자체다.
+    if (!hasRecord(listing)) return []
     return [
       {
         test_id: listing.testId,

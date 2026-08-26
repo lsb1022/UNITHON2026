@@ -42,3 +42,6 @@ testbed-comparison.html
 
 # 페르소나 규격을 바꾸기 전에 뜬 사본. 되돌릴 일이 있으면 git 에서 꺼낸다.
 agent-ux/personas/*.bak
+
+# 로컬에서만 쓰는 실행 스위치. 커밋하면 배포 빌드도 이 값을 읽어 데모가 깨진다.
+web/.env.local

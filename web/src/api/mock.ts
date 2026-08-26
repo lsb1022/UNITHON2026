@@ -16,6 +16,20 @@
  */
 import { MOCK_DATA } from './mock-data'
 
+/**
+ * 실행만 진짜 파이프라인에 맡길지.
+ *
+ * 배포본에는 돌릴 파이프라인이 없어서, 실행 요청에 "이미 끝난 실행"이라고 답하고
+ * 미리 돌려 둔 결과로 보낸다. 그게 시연 중에 죽지 않는 유일한 방법이다.
+ *
+ * 그런데 로컬에서 `python server.py` 를 띄워놓고 진짜로 돌려 보고 싶을 때도 그
+ * 지름길로 새서, 진행 화면이 아예 안 뜨고 곧장 결과로 튀었다. 그때만 이 스위치를
+ * 켠다 — 나머지 화면(프로젝트·결과·재생)은 그대로 목업이 답하므로 데모는 살아 있다.
+ *
+ *     web/.env.local:  VITE_LIVE_RUN=1
+ */
+const LIVE_RUN = import.meta.env.VITE_LIVE_RUN === '1' 
+
 type Json = Record<string, unknown>
 
 /**
@@ -916,6 +930,8 @@ function stepsPayload(variant: string) {
   // 있다. 그래서 새로 시작한 척하지 않고, 이미 끝난 실행이라고 사실대로 답한다 —
   // 화면은 그 결과로 데려간다.
   if (path.endsWith('/runs') && method === 'POST') {
+    // 진짜로 돌리기로 했으면 여기서 답하지 않는다. 서버가 파이프라인을 띄운다.
+    if (LIVE_RUN) return MOCK_MISS
     const site = siteByTest(path.split('/')[3] ?? '')
     if (!site) return MOCK_MISS
     const run = runs[site.variant]
@@ -930,7 +946,7 @@ function stepsPayload(variant: string) {
 
   // 돌고 있는 실행이 없다. 진행률은 logs/ 에 쌓인 기록 파일 수에서 나오는데
   // 데모에는 그 파이프라인이 붙어 있지 않다. 없는 진행률을 지어내지 않는다.
-  if (path === '/api/runs/active') return null
+  if (path === '/api/runs/active') return LIVE_RUN ? MOCK_MISS : null
 
   // 썸네일은 <img src> 로 직접 불려서 이 경로를 타지 않는다. 흉내 내지 않는다.
   return MOCK_MISS

@@ -117,6 +117,9 @@ export type ProjectCard = {
   /** 카드 썸네일에 띄울 실제 주소. 임베드가 막힌 사이트면 대체 이미지를 쓴다. */
   preview_url: string | null
   preview_embeddable: boolean
+  /** 지울 수 있는가. 이 자리에서 직접 만든 프로젝트만 지운다 —
+   *  데모에 딸려 오는 세 개는 기록이 코드에 들어 있어서 지울 대상이 아니다. */
+  removable?: boolean
 }
 
 export type ProjectDetail = {
@@ -144,6 +147,10 @@ export type TestStats = {
 }
 
 export const listProjects = () => request<ProjectCard[]>('/api/projects')
+
+/** 이 자리에서 만든 프로젝트를 지운다. 데모 프로젝트는 지워지지 않는다. */
+export const deleteProject = (id: string) =>
+  request<{ ok: boolean; message?: string }>(`/api/projects/${id}`, { method: 'DELETE' })
 
 export const getProject = (id: string) => request<ProjectDetail>(`/api/projects/${id}`)
 

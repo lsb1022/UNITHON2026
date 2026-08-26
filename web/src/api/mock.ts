@@ -230,6 +230,7 @@ function projectCard(site: Site): Json {
     last_activity_at: MOCK_DATA.generatedAt,
     preview_url: site.url,
     preview_embeddable: true,
+    removable: !hasRecord(site),
   }
 }
 
@@ -655,6 +656,19 @@ export function mockResponse(rawPath: string, init?: RequestInit): unknown {
 
   // ── 프로젝트 ──────────────────────────────────────────────────
   if (path === '/api/projects' && method === 'GET') return allSites().map(projectCard)
+
+  // 이 자리에서 만든 프로젝트 지우기. 목록이 지저분해지면 치울 수 있어야 한다.
+  // 데모에 딸려 오는 세 개는 기록이 코드에 들어 있어서 지울 대상이 아니다 —
+  // 지운 척하고 다음 새로고침에 되살아나면 그게 더 나쁘다.
+  if (path.startsWith('/api/projects/') && method === 'DELETE') {
+    const id = path.split('/')[3] ?? ''
+    if (!state.created.some((s) => s.id === id)) {
+      return { ok: false, message: '데모에 들어 있는 프로젝트는 지울 수 없어요.' }
+    }
+    state.created = state.created.filter((s) => s.id !== id)
+    saveCreated(state.created)
+    return { ok: true }
+  }
   if (path === '/api/projects' && method === 'POST') {
     // **새 항목으로 쌓는다.** 원래 있던 데모 프로젝트는 건드리지 않는다.
     const url = normalizeUrl(String(body?.target_url ?? state.targetUrl))

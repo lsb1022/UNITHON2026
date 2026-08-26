@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { getActiveRun, listProjects, type ProjectCard } from '../api/client'
+import { deleteProject, getActiveRun, listProjects, type ProjectCard } from '../api/client'
 import { useQuery } from '../api/hooks'
 import moreIcon from '../assets/icons/more.svg'
 import { AppLayout, PageBody, PageHeading } from '../components/AppLayout'
@@ -87,6 +87,11 @@ export function ProjectsPage() {
                 <div className="grid grid-cols-3 gap-x-[31px] gap-y-[22px]">
                   {group.items.map((project) => (
                     <ProjectCardItem
+                      onRemove={async () => {
+                        const r = await deleteProject(project.id)
+                        if (r.ok) projects.reload()
+                        else window.alert(r.message ?? '지우지 못했어요.')
+                      }}
                       key={project.id}
                       project={project}
                       onOpen={() => navigate(`/projects/${project.id}`)}
@@ -102,7 +107,17 @@ export function ProjectsPage() {
   )
 }
 
-function ProjectCardItem({ project, onOpen }: { project: ProjectCard; onOpen: () => void }) {
+function ProjectCardItem({
+  project,
+  onOpen,
+  onRemove,
+}: {
+  project: ProjectCard
+  onOpen: () => void
+  onRemove: () => void
+}) {
+  const [menu, setMenu] = useState(false)
+
   return (
     <article
       onClick={onOpen}
@@ -120,14 +135,46 @@ function ProjectCardItem({ project, onOpen }: { project: ProjectCard; onOpen: ()
           </p>
           <p className="text-[14px] text-subtext">{timeAgo(project.last_activity_at)}</p>
         </div>
-        <button
-          type="button"
-          aria-label={`${project.name} 더보기`}
-          onClick={(event) => event.stopPropagation()}
-          className="grid size-[36px] shrink-0 place-items-center rounded-full hover:bg-black/[0.04]"
-        >
-          <img src={moreIcon} alt="" className="size-[36px]" />
-        </button>
+        {/* 예전에는 눌러도 아무 일이 없었다. 직접 만든 프로젝트가 쌓이면
+            치울 방법이 있어야 한다 — 데모에 딸려 오는 셋은 대상이 아니다. */}
+        <div className="relative shrink-0">
+          <button
+            type="button"
+            aria-label={`${project.name} 더보기`}
+            aria-expanded={menu}
+            onClick={(event) => {
+              event.stopPropagation()
+              setMenu((v) => !v)
+            }}
+            className="grid size-[36px] place-items-center rounded-full hover:bg-black/[0.04]"
+          >
+            <img src={moreIcon} alt="" className="size-[36px]" />
+          </button>
+
+          {menu ? (
+            <div
+              onClick={(event) => event.stopPropagation()}
+              className="absolute top-[38px] right-0 z-10 w-[188px] rounded-[10px] border border-line bg-white py-[6px] shadow-[0_8px_24px_rgba(0,0,0,0.12)]"
+            >
+              {project.removable ? (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMenu(false)
+                    if (window.confirm(`"${project.name}" 프로젝트를 지울까요?`)) onRemove()
+                  }}
+                  className="block w-full px-[14px] py-[9px] text-left text-[14px] text-danger hover:bg-black/[0.03]"
+                >
+                  프로젝트 지우기
+                </button>
+              ) : (
+                <p className="px-[14px] py-[9px] text-[13px] leading-[1.5] text-subtext">
+                  데모에 들어 있는 프로젝트라 지울 수 없어요.
+                </p>
+              )}
+            </div>
+          ) : null}
+        </div>
       </div>
     </article>
   )

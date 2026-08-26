@@ -8,7 +8,8 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
+# dist 는 **일부러 커밋한다.** 배포 담당이 저장소를 받아 그대로 올린다.
+# (자세한 이유는 저장소 최상단 .gitignore 참고)
 dist-ssr
 *.local
 

@@ -61,6 +61,54 @@ class Budget:
         return ""
 
 
+def load_pick(raw: str) -> list[dict]:
+    """--pick 값. 파일 경로면 읽고, 아니면 JSON 문자열로 본다."""
+    if os.path.exists(raw):
+        with open(raw, encoding="utf-8") as f:
+            return json.load(f)
+    return json.loads(raw)
+
+
+def pick_by_mix(people: list[dict], specs: list[dict]) -> list[dict]:
+    """화면에서 정한 연령대·성별 비율대로 사람을 고른다.
+
+    예전에는 `--limit N` 으로 앞에서부터 N명을 집었다. 그러면 화면에서
+    "20대 여성 40명"으로 맞춰도 실제로 도는 사람은 그것과 아무 상관이 없다.
+    묻고서 안 쓰는 값은 없느니만 못하다.
+
+    **모자라면 지어내지 않는다.** 그 칸에 사람이 부족하면 있는 만큼만 넣고,
+    호출부가 몇 명이 빠졌는지 말할 수 있게 그대로 둔다.
+    """
+    by_band: dict = {}
+    for p in people:
+        by_band.setdefault(p.get("age_band"), []).append(p)
+
+    picked, used = [], set()
+    for spec in specs:
+        band = spec.get("age_band")
+        want = int(spec.get("total") or 0)
+        if not want or spec.get("enabled") is False:
+            continue
+        pool = [p for p in by_band.get(band, []) if p["id"] not in used]
+        if spec.get("gender_agnostic"):
+            take = pool[:want]
+        else:
+            # 여성 비율만 주어진다. 반올림해서 나누고 모자라면 반대쪽에서 채운다.
+            fp = float(spec.get("female_percent", 50))
+            n_f = int(round(want * fp / 100))
+            women = [p for p in pool if p.get("gender") == "여성"][:n_f]
+            men = [p for p in pool if p.get("gender") == "남성"][:want - len(women)]
+            take = women + men
+            if len(take) < want:
+                rest = [p for p in pool if p not in take]
+                take += rest[:want - len(take)]
+        used.update(p["id"] for p in take)
+        picked += take
+
+    picked.sort(key=lambda p: p["id"])
+    return picked
+
+
 async def run_persona(browser, person: dict, site_map: dict | None, target: dict,
                       *, client, models: list[str], usage: Usage, budget: Budget,
                       mock: bool, run_id: str, use_map: bool,
@@ -269,7 +317,11 @@ async def main_async(args) -> int:
                 if not ln.startswith("목표: ")]
         p["prompt"] = "\n".join(head + ["목표: %s" % goal])
 
-    if args.only:
+    if args.pick:
+        people = pick_by_mix(people, load_pick(args.pick))
+        if not people:
+            raise SystemExit("명세에 맞는 페르소나가 없습니다. --pick 값을 확인하세요.")
+    elif args.only:
         people = [p for p in people if p["id"] in set(args.only)]
         if not people:
             raise SystemExit("그런 페르소나가 없습니다: %s" % ", ".join(args.only))
@@ -407,6 +459,10 @@ async def main_async(args) -> int:
 def main() -> int:
     ap = argparse.ArgumentParser(description="페르소나 실행기 — 탐색 루프")
     ap.add_argument("--variant", default="buggy", choices=sorted(config.SITE_DIRS))
+    ap.add_argument("--pick", default="",
+                    help="연령대·성별 비율대로 뽑는다. JSON 파일 경로 또는 JSON 문자열. "
+                         "예) [{\"age_band\":\"20대\",\"total\":4,\"female_percent\":60}]. "
+                         "주면 --limit 대신 이 명세가 인원을 정한다.")
     ap.add_argument("--expect", default="",
                     help="달성을 인정할 근거 문자열. 이 글자가 그 사람 화면에 한 번도 "
                          "안 나왔으면 달성으로 세지 않는다(claimed_unverified). "

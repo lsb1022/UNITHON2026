@@ -76,6 +76,19 @@ export function ReviewPage() {
                 expect: review.data?.mission?.expect ?? undefined,
                 personas: total,
                 test_name: review.data?.test?.name ?? undefined,
+                project_id: projectId,
+                project_name: project.data?.name ?? undefined,
+                // 페르소나 화면에서 정한 연령대·성별 비율. 안 보내면 서버가
+                // 앞에서부터 N명을 집어서, 화면에서 맞춘 비율이 버려진다.
+                persona_specs: rows
+                  .filter((r) => r.enabled && r.total > 0)
+                  .map((r) => ({
+                    age_band: r.label,
+                    total: r.total,
+                    female_percent: r.femalePercent,
+                    gender_agnostic: r.genderAgnostic,
+                    enabled: r.enabled,
+                  })),
               })
               if (run) navigate(`/projects/${projectId}/tests/new/running`)
             }}

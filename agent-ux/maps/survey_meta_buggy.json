@@ -1,6 +1,6 @@
 {
   "variant": "buggy",
-  "generated_at": "2026-08-25T22:20:19",
+  "generated_at": "2026-08-26T08:46:19",
   "surveyor": "scout",
   "provider": "gemini",
   "model": "gemini-3.6-flash",
@@ -13,20 +13,22 @@
     "width": 1280,
     "height": 800
   },
-  "steps": 27,
-  "stop_reason": "done",
-  "screenshots": 27,
-  "pages": 6,
-  "unreached": [],
+  "steps": 31,
+  "stop_reason": "dry",
+  "screenshots": 31,
+  "pages": 5,
+  "unreached": [
+    "/complete.html"
+  ],
   "usage": {
-    "calls": 27,
-    "tokens_in": 78484,
-    "tokens_out": 5261,
-    "cost_usd": 0.078592,
+    "calls": 31,
+    "tokens_in": 88871,
+    "tokens_out": 4796,
+    "cost_usd": 0.084638,
     "by_model": {
       "gemini-3.6-flash": {
-        "in": 78484,
-        "out": 5261
+        "in": 88871,
+        "out": 4796
       }
     }
   }

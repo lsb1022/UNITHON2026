@@ -321,8 +321,11 @@ class Handler(BaseHTTPRequestHandler):
             done = done_count(job.run_id)
             return self._send(200, {
                 "run_id": job.id,
-                "project_id": "demo-moji",
-                "project_name": "MOJI STORE",
+                # 프로젝트 이름을 여기서 지어내면 안 된다. 어느 프로젝트를 돌리든
+                # "MOJI STORE" 가 떴다 — 위키백과를 돌려도 그랬다.
+                # 실행을 시작할 때 프론트가 보낸 값을 그대로 되돌려준다.
+                "project_id": getattr(job, "project_id", "") or "",
+                "project_name": getattr(job, "project_name", "") or "실행 중",
                 # ActiveRun 스키마에는 단계 칸이 없다. 답사에만 몇 분이 걸리는데
                 # 그동안 0% 만 보이면 멈춘 것처럼 읽힌다. 이름에 단계를 실어 보낸다.
                 "test_name": "%s · %s" % (job.stage, job.title),
@@ -428,14 +431,32 @@ class Handler(BaseHTTPRequestHandler):
             # 답사자가 본 것을 남긴다. 모델에 보내고 버리면 "무엇을 보고 이 설명서를
             # 썼는가"를 나중에 아무도 확인할 수 없다. 페르소나는 이미지를 안 쓰므로
             # 스크린샷은 여기서만 쌓인다.
-            steps.append({"name": "답사 — 사이트를 돌아보며 설명서 작성",
+            steps.append({"name": "1단계 · 첫 페르소나가 사이트를 둘러보며 설명서를 씁니다",
                           "cmd": [PY, "-u", "survey.py"] + target
                                  + ["--yes", "--max-pages", "6",
                                     "--shots-dir", os.path.join("shots_web", run_id)]
                                  + mock})
 
+        # 화면에서 정한 연령대·성별 비율. 묻고서 안 쓰면 없느니만 못하다 —
+        # 예전에는 앞에서부터 N명을 집어서, "20대 여성 40명"으로 맞춰도 실제로
+        # 도는 사람은 그것과 아무 상관이 없었다.
+        specs = body.get("persona_specs") or []
+        pick_path = ""
+        if isinstance(specs, list) and specs:
+            os.makedirs("logs", exist_ok=True)
+            pick_path = os.path.join("logs", "pick_%s.json" % run_id)
+            with open(pick_path, "w", encoding="utf-8") as f:
+                json.dump(specs, f, ensure_ascii=False)
+            count = sum(int(x.get("total") or 0) for x in specs
+                        if x.get("enabled") is not False)
+            count = max(1, min(count, 100))
+
         run_cmd = [PY, "-u", "run.py"] + target + [
-            "--limit", str(count), "--run-id", run_id, "--max-usd", "2.0"]
+            "--run-id", run_id, "--max-usd", "2.0"]
+        if pick_path:
+            run_cmd += ["--pick", pick_path]
+        else:
+            run_cmd += ["--limit", str(count)]
         # 미션과 근거는 실행할 때만 갈아 끼운다. personas.json 은 건드리지 않는다.
         if goal:
             run_cmd += ["--goal", goal]
@@ -444,13 +465,19 @@ class Handler(BaseHTTPRequestHandler):
         # 지도가 없는 사이트면 답사 없이도 돌 수 있게 한다.
         if not resurvey and url:
             run_cmd += ["--no-map"]
-        steps.append({"name": "페르소나 %d명 탐색" % count, "cmd": run_cmd + mock})
+        steps.append({"name": "2단계 · 페르소나 %d명이 그 설명서를 읽고 미션을 수행합니다" % count,
+                      "cmd": run_cmd + mock})
 
         jid = uuid.uuid4().hex[:12]
         job = Job(jid, steps)
         job.run_id = run_id
         job.total = count
         job.title = title
+        # 화면이 "지금 무엇을 돌리고 있나"를 정확히 말할 수 있게 붙여 둔다.
+        job.project_id = str(body.get("project_id") or "")
+        job.project_name = str(body.get("project_name") or (
+            url.split("//")[-1].split("/")[0] if url else variant))
+        job.target = url or base
         JOBS[jid] = job
 
         def worker():

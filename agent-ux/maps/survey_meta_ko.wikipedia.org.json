@@ -1,7 +1,7 @@
 {
   "variant": "ko.wikipedia.org",
   "target_url": "https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8",
-  "generated_at": "2026-08-26T03:59:39",
+  "generated_at": "2026-08-26T08:51:43",
   "provider": "gemini",
   "model": "gemini-3.6-flash",
   "mock": false,
@@ -9,33 +9,33 @@
     "width": 1280,
     "height": 800
   },
-  "pages": 5,
-  "shots_dir": "shots\\ko.wikipedia.org",
+  "pages": 6,
+  "shots_dir": "shots_web\\web_ko_wikipedia_org_0826_084931",
   "discovery": {
-    "link": 5,
+    "link": 6,
     "dir": 0,
     "extra": 0
   },
   "usage": {
-    "calls": 5,
-    "tokens_in": 18776,
-    "tokens_out": 4021,
-    "cost_usd": 0.029161,
+    "calls": 6,
+    "tokens_in": 22557,
+    "tokens_out": 5280,
+    "cost_usd": 0.036718,
     "by_model": {
       "gemini-3.6-flash": {
-        "in": 18776,
-        "out": 4021
+        "in": 22557,
+        "out": 5280
       }
     }
   },
   "reference_measurements": [
     {
       "path": "/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8",
-      "element_count": 191,
+      "element_count": 217,
       "horizontal_scroll": false,
       "body_contrast": 15.3,
       "body_font_size": 16,
-      "below_fold": 158,
+      "below_fold": 164,
       "occluded": 0,
       "low_contrast": 0,
       "keyboard_unreachable": 0,
@@ -43,11 +43,11 @@
     },
     {
       "path": "/%ED%8A%B9%EC%88%98:%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C",
-      "element_count": 442,
+      "element_count": 507,
       "horizontal_scroll": false,
       "body_contrast": 15.3,
       "body_font_size": 16,
-      "below_fold": 368,
+      "below_fold": 423,
       "occluded": 3,
       "low_contrast": 0,
       "keyboard_unreachable": 11,
@@ -67,15 +67,15 @@
     },
     {
       "path": "/%ED%8A%B9%EC%88%98:%EC%9E%84%EC%9D%98%EB%AC%B8%EC%84%9C",
-      "element_count": 153,
+      "element_count": 126,
       "horizontal_scroll": false,
       "body_contrast": 15.3,
       "body_font_size": 16,
-      "below_fold": 120,
+      "below_fold": 65,
       "occluded": 0,
       "low_contrast": 0,
       "keyboard_unreachable": 0,
-      "missing_alt": 2
+      "missing_alt": 3
     },
     {
       "path": "/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%82%AC%EB%9E%91%EB%B0%A9",
@@ -88,6 +88,18 @@
       "low_contrast": 0,
       "keyboard_unreachable": 0,
       "missing_alt": 13
+    },
+    {
+      "path": "/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%82%AC%EC%9A%A9%EC%9E%90_%EB%AA%A8%EC%9E%84",
+      "element_count": 251,
+      "horizontal_scroll": false,
+      "body_contrast": 15.3,
+      "body_font_size": 16,
+      "below_fold": 212,
+      "occluded": 0,
+      "low_contrast": 0,
+      "keyboard_unreachable": 0,
+      "missing_alt": 18
     }
   ]
 }

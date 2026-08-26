@@ -237,6 +237,11 @@ export type RunRequest = {
   expect?: string
   personas?: number
   test_name?: string
+  /** 진행 화면이 "무엇을 돌리는 중"인지 말할 수 있게 함께 보낸다. */
+  project_id?: string
+  project_name?: string
+  /** 연령대·성별 비율. 이걸 보내면 인원을 이 명세가 정한다. */
+  persona_specs?: PersonaSpecPayload[]
 }
 
 export const startRun = (testId: string, req: RunRequest = {}) =>

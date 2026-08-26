@@ -51,7 +51,11 @@ export function ProjectsPage() {
                   testName: active.data.test_name,
                   done: active.data.done,
                   total: active.data.total,
+                  percent: active.data.percent,
                 }}
+                onOpen={() =>
+                  navigate(`/projects/${active.data?.project_id}/tests/new/running`)
+                }
               />
             </div>
           ) : null}

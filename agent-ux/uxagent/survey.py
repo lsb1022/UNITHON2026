@@ -83,11 +83,18 @@ def validate_page(page_entry: dict) -> list[str]:
             for msg in _lang_issues(value):
                 issues.append(f"{path}.{field}: {msg}")
     for el in page_entry.get("elements") or []:
-        blob = f"{el.get('name', '')} {el.get('where', '')} {el.get('type', '')}"
+        # **요소 '이름'은 검사하지 않는다.**
+        #
+        # 이름은 답사자의 말이 아니라 화면에 적힌 글자를 옮긴 것이다. 위키백과에는
+        # '좋은 글 더 보기' 라는 버튼이 실제로 있는데, 여기에 금칙어 '좋' 이 걸려
+        # 답사가 세 번 재생성한 뒤 통째로 중단됐다. 사이트가 자기 버튼을 뭐라
+        # 부르든 그건 우리가 고칠 수 있는 것이 아니고, 고쳐서도 안 된다 —
+        # 이름을 바꿔 적으면 페르소나가 그 버튼을 못 찾는다.
+        #
+        # 우리가 통제하는 것은 답사자가 **직접 쓴** 서술(where, type)뿐이다.
+        blob = f"{el.get('where', '')} {el.get('type', '')}"
         for w in _scan(blob):
             issues.append(f"{path}.elements[{el.get('name', '?')}]: 판단 표현 '{w}'")
-        # 요소 '이름'은 화면에 적힌 글자를 그대로 옮긴 것일 수 있어 언어 검사에서
-        # 뺀다. 우리가 통제하는 것은 위치 서술(where)이다.
         for msg in _lang_issues(str(el.get("where") or "")):
             issues.append(f"{path}.elements[{el.get('name', '?')}]: {msg}")
     for st in page_entry.get("steps") or []:

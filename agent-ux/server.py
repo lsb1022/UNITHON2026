@@ -19,6 +19,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import subprocess
 import sys
 import threading
@@ -71,8 +72,17 @@ class Job:
         self.lines: list[str] = []
         self.result: dict | None = None
         self.started = time.time()
+        # 답사가 몇 번째 화면을 보고 있는지. 답사만 2분 넘게 걸리는데 그동안
+        # 0% 로 멈춰 있으면 죽은 것처럼 읽힌다.
+        self.scout_at = 0
+        self.scout_of = 0
+
+    _SCOUT = re.compile(r"\[(\d+)/(\d+)\]")
 
     def log(self, line: str) -> None:
+        m = self._SCOUT.search(line)
+        if m:
+            self.scout_at, self.scout_of = int(m.group(1)), int(m.group(2))
         with LOCK:
             self.lines.append(line.rstrip())
             if len(self.lines) > 2000:      # 시연 한 번 분량이면 충분하다
@@ -319,7 +329,17 @@ class Handler(BaseHTTPRequestHandler):
             if job is None:
                 return self._send(200, None)
             done = done_count(job.run_id)
+            # **두 단계를 하나의 눈금으로.**
+            # 답사가 앞의 30%, 페르소나가 나머지 70%. 답사 중에도 화면 하나를
+            # 볼 때마다 조금씩 오른다 — 멈춘 것과 오래 걸리는 것은 다르다.
+            if job.scout_of and not done:
+                pct = round(30 * job.scout_at / job.scout_of)
+            elif job.total:
+                pct = 30 + round(70 * done / job.total)
+            else:
+                pct = 0
             return self._send(200, {
+                "percent": min(100, pct),
                 "run_id": job.id,
                 # 프로젝트 이름을 여기서 지어내면 안 된다. 어느 프로젝트를 돌리든
                 # "MOJI STORE" 가 떴다 — 위키백과를 돌려도 그랬다.

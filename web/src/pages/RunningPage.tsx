@@ -41,7 +41,9 @@ export function RunningPage() {
 
   const done = run?.done ?? 0
   const total = run?.total ?? 0
-  const percent = total > 0 ? Math.round((done / total) * 100) : 0
+  // 서버가 계산해 주면 그것을 쓴다. 답사 단계에도 눈금이 오르기 때문이다 —
+  // done/total 로만 세면 답사 2분 동안 0% 에 멈춰 있어 죽은 것처럼 보인다.
+  const percent = run?.percent ?? (total > 0 ? Math.round((done / total) * 100) : 0)
   const name = run?.test_name ?? testName
   const projectName = run?.project_name ?? project.data?.name ?? ''
 

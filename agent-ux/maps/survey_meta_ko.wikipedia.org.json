@@ -1,7 +1,7 @@
 {
   "variant": "ko.wikipedia.org",
-  "target_url": "https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8",
-  "generated_at": "2026-08-26T08:51:43",
+  "target_url": "https://ko.wikipedia.org/",
+  "generated_at": "2026-08-26T09:34:18",
   "provider": "gemini",
   "model": "gemini-3.6-flash",
   "mock": false,
@@ -10,27 +10,27 @@
     "height": 800
   },
   "pages": 6,
-  "shots_dir": "shots_web\\web_ko_wikipedia_org_0826_084931",
+  "shots_dir": "shots_web\\web_ko_wikipedia_org_0826_093201",
   "discovery": {
     "link": 6,
     "dir": 0,
     "extra": 0
   },
   "usage": {
-    "calls": 6,
-    "tokens_in": 22557,
-    "tokens_out": 5280,
-    "cost_usd": 0.036718,
+    "calls": 7,
+    "tokens_in": 25142,
+    "tokens_out": 5199,
+    "cost_usd": 0.038353,
     "by_model": {
       "gemini-3.6-flash": {
-        "in": 22557,
-        "out": 5280
+        "in": 25142,
+        "out": 5199
       }
     }
   },
   "reference_measurements": [
     {
-      "path": "/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8",
+      "path": "/",
       "element_count": 217,
       "horizontal_scroll": false,
       "body_contrast": 15.3,
@@ -42,19 +42,31 @@
       "missing_alt": 15
     },
     {
-      "path": "/%ED%8A%B9%EC%88%98:%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C",
-      "element_count": 507,
+      "path": "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8",
+      "element_count": 217,
       "horizontal_scroll": false,
       "body_contrast": 15.3,
       "body_font_size": 16,
-      "below_fold": 423,
+      "below_fold": 164,
+      "occluded": 0,
+      "low_contrast": 0,
+      "keyboard_unreachable": 0,
+      "missing_alt": 15
+    },
+    {
+      "path": "/wiki/%ED%8A%B9%EC%88%98:%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C",
+      "element_count": 445,
+      "horizontal_scroll": false,
+      "body_contrast": 15.3,
+      "body_font_size": 16,
+      "below_fold": 366,
       "occluded": 3,
       "low_contrast": 0,
       "keyboard_unreachable": 11,
       "missing_alt": 2
     },
     {
-      "path": "/%ED%8F%AC%ED%84%B8:%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C",
+      "path": "/wiki/%ED%8F%AC%ED%84%B8:%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C",
       "element_count": 356,
       "horizontal_scroll": false,
       "body_contrast": 15.3,
@@ -66,19 +78,19 @@
       "missing_alt": 16
     },
     {
-      "path": "/%ED%8A%B9%EC%88%98:%EC%9E%84%EC%9D%98%EB%AC%B8%EC%84%9C",
-      "element_count": 126,
+      "path": "/wiki/%ED%8A%B9%EC%88%98:%EC%9E%84%EC%9D%98%EB%AC%B8%EC%84%9C",
+      "element_count": 66,
       "horizontal_scroll": false,
       "body_contrast": 15.3,
       "body_font_size": 16,
-      "below_fold": 65,
+      "below_fold": 23,
       "occluded": 0,
       "low_contrast": 0,
       "keyboard_unreachable": 0,
       "missing_alt": 3
     },
     {
-      "path": "/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%82%AC%EB%9E%91%EB%B0%A9",
+      "path": "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%82%AC%EB%9E%91%EB%B0%A9",
       "element_count": 217,
       "horizontal_scroll": false,
       "body_contrast": 15.3,
@@ -88,18 +100,6 @@
       "low_contrast": 0,
       "keyboard_unreachable": 0,
       "missing_alt": 13
-    },
-    {
-      "path": "/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%82%AC%EC%9A%A9%EC%9E%90_%EB%AA%A8%EC%9E%84",
-      "element_count": 251,
-      "horizontal_scroll": false,
-      "body_contrast": 15.3,
-      "body_font_size": 16,
-      "below_fold": 212,
-      "occluded": 0,
-      "low_contrast": 0,
-      "keyboard_unreachable": 0,
-      "missing_alt": 18
     }
   ]
 }

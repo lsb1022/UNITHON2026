@@ -64,7 +64,11 @@ export function ProjectDetailPage() {
                   testName: running.test_name,
                   done: running.done,
                   total: running.total,
+                  percent: running.percent,
                 }}
+                onOpen={() =>
+                  navigate(`/projects/${running.project_id || projectId}/tests/new/running`)
+                }
               />
             </div>
           ) : null}

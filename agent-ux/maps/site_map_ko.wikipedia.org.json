@@ -1,19 +1,19 @@
 {
   "variant": "ko.wikipedia.org",
-  "target_url": "https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8",
+  "target_url": "https://ko.wikipedia.org/",
   "target_kind": "url",
-  "root": "https://ko.wikipedia.org/wiki",
-  "generated_at": "2026-08-26T08:51:43",
+  "root": "https://ko.wikipedia.org",
+  "generated_at": "2026-08-26T09:34:18",
   "pages": [
     {
-      "path": "/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8",
-      "template": "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8",
+      "path": "/",
+      "template": "/",
       "title": "위키백과, 우리 모두의 백과사전",
       "found_by": "link",
-      "layout": "상단 검색 및 상단 메뉴, 중앙의 2열 본문 콘텐츠 영역, 우측의 외관 설정 사이드바로 구성된 레이아웃",
+      "layout": "상단에 브랜드 로고, 검색창, 사용자 메뉴가 위치하며, 중앙 본문은 좌우 2개의 콘텐츠 열로 구성되어 있고 우측 끝에는 외관 설정 사이드바가 배치되어 있습니다.",
       "elements": [
         {
-          "name": "위키백과 검색 입력창",
+          "name": "위키백과 검색",
           "type": "입력",
           "where": "상단 중앙"
         },
@@ -38,84 +38,54 @@
           "where": "상단 우측"
         },
         {
-          "name": "대문",
-          "type": "탭/링크",
-          "where": "상단 좌측 탭 메뉴"
-        },
-        {
-          "name": "토론",
-          "type": "탭/링크",
-          "where": "상단 좌측 탭 메뉴"
-        },
-        {
-          "name": "읽기",
-          "type": "탭/링크",
-          "where": "상단 우측 탭 메뉴"
-        },
-        {
-          "name": "원본 보기",
-          "type": "탭/링크",
-          "where": "상단 우측 탭 메뉴"
-        },
-        {
-          "name": "역사 보기",
-          "type": "탭/링크",
-          "where": "상단 우측 탭 메뉴"
-        },
-        {
-          "name": "외관 숨기기",
-          "type": "버튼",
-          "where": "우측 사이드바 상단"
-        },
-        {
-          "name": "글 크기 선택 (작음/표준/큼)",
-          "type": "선택",
-          "where": "우측 사이드바 글 항목"
-        },
-        {
-          "name": "너비 선택 (표준/넓게)",
-          "type": "선택",
-          "where": "우측 사이드바 너비 항목"
-        },
-        {
-          "name": "색 선택 (자동/라이트/다크)",
-          "type": "선택",
-          "where": "우측 사이드바 색 항목"
-        },
-        {
           "name": "사랑방",
           "type": "링크",
-          "where": "본문 좌측 1열 상단"
+          "where": "본문 좌측 상단 영역"
         },
         {
           "name": "질문방",
           "type": "링크",
-          "where": "본문 좌측 1열 상단"
+          "where": "본문 좌측 영역"
         },
         {
           "name": "사용자 모임",
           "type": "링크",
-          "where": "본문 좌측 1열 상단"
+          "where": "본문 좌측 영역"
         },
         {
           "name": "정책과 지침",
           "type": "링크",
-          "where": "본문 좌측 1열 상단"
+          "where": "본문 좌측 영역"
         },
         {
           "name": "알찬 글 더 보기",
           "type": "버튼",
-          "where": "본문 우측 2열 '알찬 글' 상단 우측"
+          "where": "본문 우측 상단 영역"
         },
         {
-          "name": "오늘의 역사 어제",
+          "name": "어제",
           "type": "버튼",
-          "where": "본문 우측 2열 '오늘의 역사' 상단 우측"
+          "where": "오늘의 역사 섹션 우측 상단"
         },
         {
-          "name": "오늘의 역사 내일",
+          "name": "내일",
           "type": "버튼",
-          "where": "본문 우측 2열 '오늘의 역사' 상단 우측"
+          "where": "오늘의 역사 섹션 우측 상단"
+        },
+        {
+          "name": "글 크기 옵션 (작음/표준/큼)",
+          "type": "라디오 버튼",
+          "where": "우측 사이드바"
+        },
+        {
+          "name": "너비 옵션 (표준/넓게)",
+          "type": "라디오 버튼",
+          "where": "우측 사이드바"
+        },
+        {
+          "name": "색 옵션 (자동/라이트/다크)",
+          "type": "라디오 버튼",
+          "where": "우측 사이드바"
         }
       ],
       "links_to": [
@@ -131,10 +101,21 @@
         "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%A0%95%EC%B1%85%EA%B3%BC_%EC%A7%80%EC%B9%A8",
         "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%A7%88%EB%AC%B8%EB%B0%A9",
         "/wiki/%ED%8A%B9%EC%88%98:%EA%B2%80%EC%83%89",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EA%B3%84%EC%A0%95%EB%A7%8C%EB%93%A4%EA%B8%B0&returnto=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EB%8C%80%EB%AC%B8",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EB%A1%9C%EA%B7%B8%EC%9D%B8&returnto=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EB%8C%80%EB%AC%B8",
         "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%ED%86%A0%EB%A1%A0:%EB%8C%80%EB%AC%B8",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EB%8C%80%EB%AC%B8&action=edit",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EB%8C%80%EB%AC%B8&action=history",
         "/wiki/%ED%8A%B9%EC%88%98:%EA%B0%80%EB%A6%AC%ED%82%A4%EB%8A%94%EB%AC%B8%EC%84%9C/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8",
         "/wiki/%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8",
         "/wiki/위키백과:파일_올리기",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EB%8C%80%EB%AC%B8&oldid=42269255",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EB%8C%80%EB%AC%B8&action=info",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3AUrlShortener&url=https%3A%2F%2Fko.wikipedia.org%2Fwiki%2F%25EC%259C%2584%25ED%2582%25A4%25EB%25B0%25B1%25EA%25B3%25BC%3A%25EB%258C%2580%25EB%25AC%25B8",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EB%8C%80%EB%AC%B8&useparsoid=0",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%B1%85&bookcmd=book_creator&referer=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EB%8C%80%EB%AC%B8",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3ADownloadAsPdf&action=show-download-screen",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EB%8C%80%EB%AC%B8&printable=yes",
         "/wiki/위키백과:소개",
         "/wiki/위키백과:통계",
         "/wiki/위키백과:사랑방",
@@ -289,17 +270,303 @@
         "/wiki/voy:",
         "/wiki/wikt:",
         "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%86%8C%EA%B0%9C",
-        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%A9%B4%EC%B1%85_%EC%A1%B0%ED%95%AD"
+        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%A9%B4%EC%B1%85_%EC%A1%B0%ED%95%AD",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EB%8C%80%EB%AC%B8&mobileaction=toggle_view_mobile"
       ],
       "steps": null
     },
     {
-      "path": "/%ED%8A%B9%EC%88%98:%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C",
+      "path": "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8",
+      "template": "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8",
+      "title": "위키백과, 우리 모두의 백과사전",
+      "found_by": "link",
+      "layout": "상단에 브랜드 로고, 검색창, 사용자 메뉴가 위치하며, 본문은 2개의 주요 콘텐츠 열(좌측/우측)과 최우측 외관 설정 사이드바로 나뉘어 있습니다.",
+      "elements": [
+        {
+          "name": "메뉴 버튼",
+          "type": "버튼",
+          "where": "상단 좌측 끝"
+        },
+        {
+          "name": "위키백과 검색 입력창",
+          "type": "입력",
+          "where": "상단 중앙"
+        },
+        {
+          "name": "검색",
+          "type": "버튼",
+          "where": "상단 중앙 검색 입력창 우측"
+        },
+        {
+          "name": "기부",
+          "type": "링크",
+          "where": "상단 우측"
+        },
+        {
+          "name": "계정 만들기",
+          "type": "링크",
+          "where": "상단 우측"
+        },
+        {
+          "name": "로그인",
+          "type": "링크",
+          "where": "상단 우측"
+        },
+        {
+          "name": "공지 배너 닫기(X)",
+          "type": "버튼",
+          "where": "상단 공지 배너 우측 끝"
+        },
+        {
+          "name": "사랑방",
+          "type": "링크",
+          "where": "본문 좌측 열 상단"
+        },
+        {
+          "name": "질문방",
+          "type": "링크",
+          "where": "본문 좌측 열 상단"
+        },
+        {
+          "name": "사용자 모임",
+          "type": "링크",
+          "where": "본문 좌측 열 상단"
+        },
+        {
+          "name": "정책과 지침",
+          "type": "링크",
+          "where": "본문 좌측 열 상단"
+        },
+        {
+          "name": "알찬 글 더 보기",
+          "type": "버튼",
+          "where": "본문 우측 열 상단"
+        },
+        {
+          "name": "외관 숨기기",
+          "type": "버튼",
+          "where": "최우측 사이드바 상단"
+        },
+        {
+          "name": "글 크기 라디오 버튼(작음/표준/큼)",
+          "type": "선택",
+          "where": "최우측 사이드바 상단"
+        },
+        {
+          "name": "너비 라디오 버튼(표준/넓게)",
+          "type": "선택",
+          "where": "최우측 사이드바 중단"
+        },
+        {
+          "name": "색 라디오 버튼(자동/라이트/다크)",
+          "type": "선택",
+          "where": "최우측 사이드바 하단"
+        }
+      ],
+      "links_to": [
+        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8",
+        "/wiki/%ED%8A%B9%EC%88%98:%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C",
+        "/wiki/%ED%8F%AC%ED%84%B8:%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C",
+        "/wiki/%ED%8A%B9%EC%88%98:%EC%9E%84%EC%9D%98%EB%AC%B8%EC%84%9C",
+        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%82%AC%EB%9E%91%EB%B0%A9",
+        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%82%AC%EC%9A%A9%EC%9E%90_%EB%AA%A8%EC%9E%84",
+        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%9A%94%EC%B2%AD",
+        "/wiki/%EB%8F%84%EC%9B%80%EB%A7%90:%EC%86%8C%EA%B0%9C",
+        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8F%84%EC%9B%80%EB%A7%90",
+        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%A0%95%EC%B1%85%EA%B3%BC_%EC%A7%80%EC%B9%A8",
+        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%A7%88%EB%AC%B8%EB%B0%A9",
+        "/wiki/%ED%8A%B9%EC%88%98:%EA%B2%80%EC%83%89",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EA%B3%84%EC%A0%95%EB%A7%8C%EB%93%A4%EA%B8%B0&returnto=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EB%8C%80%EB%AC%B8",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EB%A1%9C%EA%B7%B8%EC%9D%B8&returnto=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EB%8C%80%EB%AC%B8",
+        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%ED%86%A0%EB%A1%A0:%EB%8C%80%EB%AC%B8",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EB%8C%80%EB%AC%B8&action=edit",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EB%8C%80%EB%AC%B8&action=history",
+        "/wiki/%ED%8A%B9%EC%88%98:%EA%B0%80%EB%A6%AC%ED%82%A4%EB%8A%94%EB%AC%B8%EC%84%9C/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8",
+        "/wiki/%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8",
+        "/wiki/위키백과:파일_올리기",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EB%8C%80%EB%AC%B8&oldid=42269255",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EB%8C%80%EB%AC%B8&action=info",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3AUrlShortener&url=https%3A%2F%2Fko.wikipedia.org%2Fwiki%2F%25EC%259C%2584%25ED%2582%25A4%25EB%25B0%25B1%25EA%25B3%25BC%3A%25EB%258C%2580%25EB%25AC%25B8",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EB%8C%80%EB%AC%B8&useparsoid=0",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%B1%85&bookcmd=book_creator&referer=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EB%8C%80%EB%AC%B8",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3ADownloadAsPdf&action=show-download-screen",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EB%8C%80%EB%AC%B8&printable=yes",
+        "/wiki/위키백과:소개",
+        "/wiki/위키백과:통계",
+        "/wiki/위키백과:사랑방",
+        "/wiki/위키백과:질문방",
+        "/wiki/위키백과:사용자_모임",
+        "/wiki/위키백과:정책과_지침",
+        "/wiki/위키백과:위키백과에_참여하기",
+        "/wiki/위키백과:환영합니다",
+        "/wiki/도움말:소개",
+        "/wiki/도움말:새_문서_만들기",
+        "/wiki/도움말:문서_편집하기",
+        "/wiki/도움말:그림_올리기",
+        "/wiki/위키백과:지원_단체",
+        "/wiki/위키백과",
+        "/wiki/위키",
+        "/wiki/월드_와이드_웹",
+        "/wiki/백과사전",
+        "/wiki/위키백과:중립적_시각",
+        "/wiki/위키백과:확인_가능",
+        "/wiki/자유_콘텐츠",
+        "/wiki/위키백과:다섯_원칙",
+        "/wiki/위키백과:오늘의_그림",
+        "/wiki/파일:The_Burning_of_the_USS_Missouri_in_Gibraltar.jpg",
+        "/wiki/위키백과:오늘의_그림/역사",
+        "/wiki/독일",
+        "/wiki/위키백과:알찬_글",
+        "/wiki/파일:Flag_of_Germany.svg",
+        "/wiki/중앙유럽",
+        "/wiki/국가",
+        "/wiki/발트해",
+        "/wiki/북해",
+        "/wiki/알프스산맥",
+        "/wiki/덴마크",
+        "/wiki/폴란드",
+        "/wiki/체코",
+        "/wiki/오스트리아",
+        "/wiki/스위스",
+        "/wiki/베네룩스",
+        "/wiki/프랑스",
+        "/wiki/제곱킬로미터",
+        "/wiki/기후",
+        "/wiki/온대_기후",
+        "/wiki/공용어",
+        "/wiki/독일어",
+        "/wiki/독일의_인구순_도시_목록",
+        "/wiki/베를린",
+        "/wiki/독일의_경제",
+        "/wiki/강대국",
+        "/wiki/명목_국내_총생산순_나라_목록",
+        "/wiki/구매력_평가_기준_국내_총생산순_나라_목록",
+        "/wiki/수출액순_나라_목록",
+        "/wiki/수입액순_나라_목록",
+        "/wiki/선진국",
+        "/wiki/독일의_사회보장제도",
+        "/wiki/독일의_교육",
+        "/wiki/유엔",
+        "/wiki/유럽_연합",
+        "/wiki/북대서양_조약_기구",
+        "/wiki/유럽_평의회",
+        "/wiki/G7",
+        "/wiki/G20",
+        "/wiki/경제협력개발기구",
+        "/wiki/호흡근",
+        "/wiki/위키백과:좋은_글",
+        "/wiki/3,000안타_클럽",
+        "/wiki/위키백과:알찬_목록",
+        "/wiki/포털:요즘_화제",
+        "/wiki/위키백과:새로_들어온_소식",
+        "/wiki/파일:Hakainde_Hichilema_in_Japan_on_February_6,_2025_(cropped).jpg",
+        "/wiki/8월_20일",
+        "/wiki/로자바",
+        "/wiki/시리아",
+        "/wiki/8월_19일",
+        "/wiki/잠비아",
+        "/wiki/하카인데_히칠레마",
+        "/wiki/8월_15일",
+        "/wiki/2026년_플로레스섬_지진",
+        "/wiki/인도네시아",
+        "/wiki/플로레스섬",
+        "/wiki/8월_12일",
+        "/wiki/유럽",
+        "/wiki/아이슬란드",
+        "/wiki/2026년_8월_12일_일식",
+        "/wiki/8월_10일",
+        "/wiki/콜롬비아",
+        "/wiki/2026년_콜롬비아_지진",
+        "/wiki/2026년_이란_전쟁",
+        "/wiki/러시아의_우크라이나_침공",
+        "/wiki/수단_내전_(2023년~현재)",
+        "/wiki/2026년_죽음",
+        "/wiki/돌리_파튼",
+        "/wiki/오재희_(1932년)",
+        "/wiki/마이클_라이트_(배우)",
+        "/wiki/나은하",
+        "/wiki/낸시_키신저",
+        "/wiki/위키백과:오늘의_역사",
+        "/wiki/위키백과:오늘의_역사/8월_25일",
+        "/wiki/위키백과:오늘의_역사/8월_27일",
+        "/wiki/파일:Battle_of_crecy_froissart.jpg",
+        "/wiki/8월_26일",
+        "/wiki/1071년",
+        "/wiki/비잔티움-셀주크_전쟁?action=edit&redlink=1",
+        "/wiki/만지케르트_전투",
+        "/wiki/알프_아르슬란",
+        "/wiki/셀주크_왕조",
+        "/wiki/로마노스_4세_디오예니스",
+        "/wiki/1346년",
+        "/wiki/백년_전쟁",
+        "/wiki/잉글랜드",
+        "/wiki/크레시_전투",
+        "/wiki/1789년",
+        "/wiki/프랑스_혁명",
+        "/wiki/인간과_시민의_권리선언",
+        "/wiki/1978년",
+        "/wiki/교황_요한_바오로_1세",
+        "/wiki/2008년",
+        "/wiki/2008년_남오세티야_전쟁",
+        "/wiki/러시아",
+        "/wiki/남오세티야",
+        "/wiki/압하지야",
+        "/wiki/위키백과:오늘의_역사/8월",
+        "/wiki/위키백과:알고_계십니까/역사",
+        "/wiki/위키백과:알고_계십니까",
+        "/wiki/파일:Kany_Diabaté_Ahn,_2026.jpg",
+        "/wiki/카니_(무용가)",
+        "/wiki/세계_모기의_날",
+        "/wiki/로널드_로스",
+        "/wiki/얼룩날개모기",
+        "/wiki/모기",
+        "/wiki/말라리아",
+        "/wiki/영월_한반도_지형",
+        "/wiki/영월군",
+        "/wiki/한반도면",
+        "/wiki/무상킹",
+        "/wiki/두리안",
+        "/wiki/에르메스",
+        "/wiki/충청북도",
+        "/wiki/칠성신",
+        "/wiki/백설기",
+        "/wiki/위키백과:자매_프로젝트",
+        "/wiki/위키미디어_재단",
+        "/wiki/commons:대문",
+        "/wiki/mw:MediaWiki/ko",
+        "/wiki/m:대문",
+        "/wiki/b:",
+        "/wiki/d:Wikidata:대문",
+        "/wiki/wikifunctions:",
+        "/wiki/q:",
+        "/wiki/s:",
+        "/wiki/wikispecies:대문",
+        "/wiki/v:",
+        "/wiki/voy:",
+        "/wiki/wikt:",
+        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%86%8C%EA%B0%9C",
+        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%A9%B4%EC%B1%85_%EC%A1%B0%ED%95%AD",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EB%8C%80%EB%AC%B8&mobileaction=toggle_view_mobile"
+      ],
+      "steps": null
+    },
+    {
+      "path": "/wiki/%ED%8A%B9%EC%88%98:%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C",
       "template": "/wiki/%ED%8A%B9%EC%88%98:%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C",
       "title": "최근 바뀜 - 위키백과, 우리 모두의 백과사전",
       "found_by": "link",
-      "layout": "상단 검색 및 사용자 메뉴 영역, 중앙 최근 바뀜 필터 및 내역 목록 영역, 우측 외관 설정 사이드바 영역으로 구성된 구조",
+      "layout": "상단에 로고, 검색창, 사용자 메뉴가 배치되어 있고, 중앙 영역은 상단 필터 설정과 하단 변경 내역 목록으로 구성되며, 우측에는 외관 설정 사이드바 패널이 고정 배치되어 있습니다.",
       "elements": [
+        {
+          "name": "메뉴",
+          "type": "버튼",
+          "where": "상단 좌측"
+        },
+        {
+          "name": "위키백과 로고",
+          "type": "링크",
+          "where": "상단 좌측"
+        },
         {
           "name": "위키백과 검색",
           "type": "입력",
@@ -328,77 +595,57 @@
         {
           "name": "도움말",
           "type": "링크",
-          "where": "최근 바뀜 제목 우측"
+          "where": "본문 제목 '최근 바뀜' 우측"
         },
         {
           "name": "다른 검토 도구",
-          "type": "선택",
-          "where": "본문 상단"
+          "type": "버튼",
+          "where": "사용 중인 필터 상단"
         },
         {
           "name": "필터 변경(메뉴를 사용하거나 필터 이름을 검색하세요)",
           "type": "입력",
-          "where": "사용 중인 필터 영역 하단"
+          "where": "필터 설정 영역 중앙"
         },
         {
           "name": "이름공간",
           "type": "버튼",
-          "where": "필터 입력창 우측"
+          "where": "필터 설정 영역 우측"
         },
         {
           "name": "태그",
           "type": "버튼",
-          "where": "필터 입력창 우측"
+          "where": "필터 설정 영역 우측"
         },
         {
           "name": "실시간 업데이트",
           "type": "버튼",
-          "where": "필터 영역 좌측 하단"
+          "where": "필터 설정 영역 아래 좌측"
         },
         {
           "name": "변경사항 50개, 1일",
           "type": "선택",
-          "where": "필터 영역 우측 하단"
+          "where": "필터 설정 영역 아래 우측"
         },
         {
           "name": "숨기기",
           "type": "버튼",
-          "where": "우측 외관 설정 패널 상단"
+          "where": "우측 외관 패널 상단"
         },
         {
-          "name": "작음",
-          "type": "라디오 버튼",
-          "where": "우측 외관 설정 패널 글 항목"
+          "name": "너비 선택 (표준/넓게)",
+          "type": "선택",
+          "where": "우측 외관 패널 중앙"
         },
         {
-          "name": "표준",
-          "type": "라디오 버튼",
-          "where": "우측 외관 설정 패널 글 및 너비 항목"
+          "name": "색 선택 (자동/라이트/다크)",
+          "type": "선택",
+          "where": "우측 외관 패널 하단"
         },
         {
-          "name": "큼",
-          "type": "라디오 버튼",
-          "where": "우측 외관 설정 패널 글 항목"
-        },
-        {
-          "name": "넓게",
-          "type": "라디오 버튼",
-          "where": "우측 외관 설정 패널 너비 항목"
-        },
-        {
-          "name": "자동",
-          "type": "라디오 버튼",
-          "where": "우측 외관 설정 패널 색 항목"
-        },
-        {
-          "name": "라이트",
-          "type": "라디오 버튼",
-          "where": "우측 외관 설정 패널 색 항목"
-        },
-        {
-          "name": "다크",
-          "type": "라디오 버튼",
-          "where": "우측 외관 설정 패널 색 항목"
+          "name": "맨 위로 이동",
+          "type": "버튼",
+          "where": "화면 우측 하단"
         }
       ],
       "links_to": [
@@ -414,13 +661,19 @@
         "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%A0%95%EC%B1%85%EA%B3%BC_%EC%A7%80%EC%B9%A8",
         "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%A7%88%EB%AC%B8%EB%B0%A9",
         "/wiki/%ED%8A%B9%EC%88%98:%EA%B2%80%EC%83%89",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EA%B3%84%EC%A0%95%EB%A7%8C%EB%93%A4%EA%B8%B0&returnto=%ED%8A%B9%EC%88%98%3A%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EB%A1%9C%EA%B7%B8%EC%9D%B8&returnto=%ED%8A%B9%EC%88%98%3A%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C",
+        "/w/api.php?hidebots=1&hidecategorization=1&hideWikibase=1&urlversion=1&days=1&limit=50&action=feedrecentchanges&feedformat=atom",
         "/wiki/위키백과:파일_올리기",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3AUrlShortener&url=https%3A%2F%2Fko.wikipedia.org%2Fwiki%2F%25ED%258A%25B9%25EC%2588%2598%3A%25EC%25B5%259C%25EA%25B7%25BC%25EB%25B0%2594%25EB%2580%259C",
         "/wiki/%ED%8A%B9%EC%88%98:%ED%86%B5%EA%B3%84",
         "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%9C%84%ED%82%A4%EB%A7%88%EC%9D%84_%EA%B0%95%EA%B2%BD_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8",
         "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:2026%EB%85%84_%EC%95%84%EC%8B%9C%EC%95%88_%EA%B2%8C%EC%9E%84_%EC%97%90%EB%94%94%ED%84%B0%ED%86%A4",
         "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:2026%EB%85%84_%EC%95%84%EC%8B%9C%EC%95%88_%EA%B2%8C%EC%9E%84_%EC%97%90%EB%94%94%ED%84%B0%ED%86%A4/%EB%9F%AD%EB%B9%84_%EC%B1%8C%EB%A6%B0%EC%A7%80",
+        "/w/index.php?title=%ED%8B%80%3A%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC_%EC%86%8C%EC%8B%9D&action=edit",
         "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EB%A1%9D",
         "/wiki/%ED%8A%B9%EC%88%98:%EC%83%88%EB%AC%B8%EC%84%9C",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&hideliu=1&hideanons=0",
         "/wiki/%ED%8A%B9%EC%88%98:%ED%8E%B8%EC%A7%91%ED%95%84%ED%84%B0%EA%B8%B0%EB%A1%9D",
         "/wiki/%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%95%8C%EC%B0%AC_%EA%B8%80/%EB%AA%A9%EB%A1%9D",
         "/wiki/%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%A2%8B%EC%9D%80_%EA%B8%80/%EB%AA%A9%EB%A1%9D",
@@ -459,109 +712,186 @@
         "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8B%A4%EC%A4%91_%EA%B3%84%EC%A0%95_%EA%B2%80%EC%82%AC_%EC%9A%94%EC%B2%AD",
         "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%B4%87/%EB%93%B1%EB%A1%9D_%EC%8B%A0%EC%B2%AD",
         "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%ED%8C%8C%EC%9D%BC_%EC%97%85%EB%A1%9C%EB%93%9C_%EC%9A%94%EC%B2%AD",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&days=1",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&days=3",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&days=7",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&days=14",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&days=30",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&limit=50",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&limit=100",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&limit=250",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&limit=500",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&hideliu=1",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&hideanons=1",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&hidemyself=1",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&hidebots=0",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&hideminor=1",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&hidecategorization=0",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&hideWikibase=0",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&hidenondamaging=1",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&from=20260826003016&fromFormatted=2026%EB%85%84+8%EC%9B%94+26%EC%9D%BC+%28%EC%88%98%29+09%3A30",
         "/wiki/%ED%8A%B9%EC%88%98:%ED%83%9C%EA%B7%B8",
         "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%A3%BC%EC%8B%9C%EB%AC%B8%EC%84%9C",
         "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%9C%84%ED%82%A4%EB%8D%B0%EC%9D%B4%ED%84%B0",
         "/wiki/%EB%8F%84%EC%9B%80%EB%A7%90:%EC%82%AC%EC%86%8C%ED%95%9C_%ED%8E%B8%EC%A7%91",
-        "/wiki/%EA%B8%88%EC%83%88%EB%A1%9D",
-        "/wiki/%EC%82%AC%EC%9A%A9%EC%9E%90%ED%86%A0%EB%A1%A0:Jommy3210",
-        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/Jommy3210",
-        "/wiki/8%EC%9B%94_25%EC%9D%BC",
-        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/~2026-44537-28",
-        "/wiki/%EB%AF%B8%EA%B5%AD_%EB%8C%80%ED%86%B5%EB%A0%B9_%EC%84%A0%EA%B1%B0_%EC%9B%8C%EC%8B%B1%ED%84%B4%EC%A3%BC",
-        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/{id}",
-        "/wiki/%ED%8C%8C%EC%9D%BC:Washington_Presidential_Election_Results_1984.svg",
-        "/wiki/%ED%8C%8C%EC%9D%BC:1984_United_States_presidential_election_in_Washington_results_map_by_county.svg",
-        "/wiki/%EB%94%9C%EB%9E%91_%EB%B8%8C%EB%A1%A0",
-        "/wiki/%EC%82%AC%EC%9A%A9%EC%9E%90%ED%86%A0%EB%A1%A0:%EC%9C%84%ED%82%A4%EC%84%B8%EC%9B%90",
-        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/%EC%9C%84%ED%82%A4%EC%84%B8%EC%9B%90",
-        "/wiki/%EC%95%84%EC%8A%A4%ED%83%80%EB%82%98",
-        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/~2026-46582-23",
-        "/wiki/%ED%95%9C%EA%B5%AD%EC%B2%A0%EB%8F%84%EA%B3%B5%EC%82%AC_311000%ED%98%B8%EB%8C%80_%C2%B7_312000%ED%98%B8%EB%8C%80_%EC%A0%84%EB%8F%99%EC%B0%A8",
-        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/~2026-46432-71",
-        "/wiki/%ED%8C%8C%EC%9D%BC:Washington_Presidential_Election_Results_1988.svg",
-        "/wiki/%ED%8C%8C%EC%9D%BC:1988_United_States_presidential_election_in_Washington_results_map_by_county.svg",
-        "/wiki/%EC%9D%B4%EA%B3%A0%EB%A5%B4_%EB%B6%80%EB%8B%A8",
-        "/wiki/%EB%B8%8C%EB%A0%88%EB%93%9C_%EC%9D%B4%EB%B0%9C%EC%86%8C",
-        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/~2026-46436-76",
-        "/wiki/%EB%B9%85%ED%84%B0_%EB%8B%88%EB%8D%94%ED%98%B8%ED%8D%BC",
-        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/~2026-46519-69",
-        "/wiki/%EB%B3%BC%EB%9F%AC_%EB%B2%A4%EB%8D%B0%EA%B5%AC%EC%A6%88",
-        "/wiki/%ED%8C%8C%EC%9D%BC:Washington_Presidential_Election_Results_1992.svg",
-        "/wiki/%ED%8C%8C%EC%9D%BC:1992_United_States_presidential_election_in_Washington_results_map_by_county.svg",
-        "/wiki/%EC%95%8C%EB%A7%88%ED%8B%B0",
-        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/~2026-45879-24",
-        "/wiki/SM_%EC%97%94%ED%84%B0%ED%85%8C%EC%9D%B8%EB%A8%BC%ED%8A%B8%EC%9D%98_%EC%9D%8C%EB%B0%98",
-        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/~2026-34833-53",
-        "/wiki/%ED%8C%8C%EC%9D%BC:Washington_Presidential_Election_Results_1996.svg",
-        "/wiki/%ED%8C%8C%EC%9D%BC:1996_United_States_presidential_election_in_Washington_results_map_by_county.svg",
-        "/wiki/%EA%B0%95%EC%8A%B9%EB%AF%B8",
-        "/wiki/%EB%B6%84%EB%A5%98:%EC%98%A4%EC%8A%A4%ED%8A%B8%EB%A6%AC%EC%95%84-%EC%BD%9C%EB%A1%AC%EB%B9%84%EC%95%84_%EA%B4%80%EA%B3%84",
-        "/wiki/%EB%B6%84%EB%A5%98:%EC%98%A4%EC%8A%A4%ED%8A%B8%EB%A6%AC%EC%95%84%EC%9D%98_%EC%96%91%EA%B5%AD_%EA%B4%80%EA%B3%84",
-        "/wiki/%EB%B6%84%EB%A5%98:%EC%BD%9C%EB%A1%AC%EB%B9%84%EC%95%84%EC%9D%98_%EC%96%91%EA%B5%AD_%EA%B4%80%EA%B3%84",
-        "/wiki/%ED%8C%8C%EC%9D%BC:Washington_Presidential_Election_Results_2000.svg",
-        "/wiki/%ED%8C%8C%EC%9D%BC:2000_United_States_presidential_election_in_Washington_results_map_by_county.svg",
-        "/wiki/%EB%B6%84%EB%A5%98:%EC%98%A4%EC%8A%A4%ED%8A%B8%EB%A6%AC%EC%95%84%EC%97%90_%EA%B1%B0%EC%A3%BC%ED%95%9C_%EC%BD%9C%EB%A1%AC%EB%B9%84%EC%95%84%EC%9D%B8",
-        "/wiki/%EB%B6%84%EB%A5%98:%EC%98%A4%EC%8A%A4%ED%8A%B8%EB%A6%AC%EC%95%84%EC%9D%98_%EC%99%B8%EA%B5%AD%EC%9D%B8",
-        "/wiki/%EB%B6%84%EB%A5%98:%EC%9E%AC%EC%99%B8_%EC%BD%9C%EB%A1%AC%EB%B9%84%EC%95%84%EC%9D%B8",
-        "/wiki/%EC%9A%94%ED%95%9C_%EB%B3%BC%EB%9E%80%ED%85%90",
-        "/wiki/%ED%8C%8C%EC%9D%BC:Washington_Presidential_Election_Results_2004.svg",
-        "/wiki/%ED%8C%8C%EC%9D%BC:2004_United_States_presidential_election_in_Washington_results_map_by_county.svg",
-        "/wiki/%EA%B3%B5%ED%9A%A8%EC%A7%84",
-        "/wiki/%ED%8C%8C%EC%9D%BC:Washington_Presidential_Election_Results_2008.svg",
-        "/wiki/%ED%8C%8C%EC%9D%BC:2008_United_States_presidential_election_in_Washington_results_map_by_county.svg",
-        "/wiki/%EC%95%84%EB%A5%B4%ED%8A%80%EB%A5%B4_%EB%B3%B4%EC%B9%B4",
-        "/wiki/%EC%97%90%EB%B0%94_%EC%8A%90%EB%A1%9C%EC%8A%A4",
-        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/~2026-39958-75",
-        "/wiki/%EC%98%AC%EB%A6%AC%EB%B2%84_%EB%B3%B4%EC%9E%90%EB%8B%88%EC%B9%98",
-        "/wiki/%ED%8C%8C%EC%9D%BC:Washington_Presidential_Election_Results_2012.svg",
-        "/wiki/%ED%8C%8C%EC%9D%BC:2012_United_States_presidential_election_in_Washington_results_map_by_county.svg",
-        "/wiki/%EC%9E%A5%ED%8F%B4_%EB%B3%B4%EC%97%90%ED%8B%B0%EC%9A%B0%EC%8A%A4",
-        "/wiki/%ED%8C%8C%EC%9D%BC:Washington_Presidential_Election_Results_2024.svg",
-        "/wiki/%ED%8C%8C%EC%9D%BC:2024_United_States_presidential_election_in_Washington_results_map_by_county.svg",
-        "/wiki/2024%EB%85%84_%EB%AF%B8%EA%B5%AD_%EB%8C%80%ED%86%B5%EB%A0%B9_%EC%84%A0%EA%B1%B0_%EC%9B%8C%EC%8B%B1%ED%84%B4%EC%A3%BC",
-        "/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD_%EA%B5%AD%EA%B0%80%EC%9C%A0%EC%82%B0%EC%B2%AD",
-        "/wiki/%EC%82%AC%EC%9A%A9%EC%9E%90%ED%86%A0%EB%A1%A0:%EC%97%BC%ED%99%94%EC%A4%91",
-        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/%EC%97%BC%ED%99%94%EC%A4%91",
+        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EB%A1%9D/move",
+        "/wiki/%EC%82%AC%EC%9A%A9%EC%9E%90:Gray_eyes",
+        "/wiki/%EC%82%AC%EC%9A%A9%EC%9E%90%ED%86%A0%EB%A1%A0:Gray_eyes",
+        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/Gray_eyes",
+        "/w/index.php?title=%EB%B6%84%EB%A5%98%3A%EB%8F%99%EB%82%98%EC%9D%B4%EC%84%B1%EC%9D%98_%EC%A7%80%EB%A6%AC&redirect=no",
+        "/wiki/%EB%B6%84%EB%A5%98:%EB%8F%99%EB%82%98%EC%9D%B4%EC%9D%98_%EC%A7%80%EB%A6%AC",
+        "/w/index.php?title=%EB%9F%AC%EC%8B%9C%EC%95%84_%EC%B6%95%EA%B5%AC_%EA%B5%AD%EA%B0%80%EB%8C%80%ED%91%9C%ED%8C%80&curid=134059&diff=42381756&oldid=42343294",
+        "/w/index.php?title=%EB%9F%AC%EC%8B%9C%EC%95%84_%EC%B6%95%EA%B5%AC_%EA%B5%AD%EA%B0%80%EB%8C%80%ED%91%9C%ED%8C%80&curid=134059&action=history",
+        "/wiki/%EB%9F%AC%EC%8B%9C%EC%95%84_%EC%B6%95%EA%B5%AC_%EA%B5%AD%EA%B0%80%EB%8C%80%ED%91%9C%ED%8C%80",
+        "/w/index.php?title=%EC%82%AC%EC%9A%A9%EC%9E%90%3AHw3535&action=edit&redlink=1",
+        "/wiki/%EC%82%AC%EC%9A%A9%EC%9E%90%ED%86%A0%EB%A1%A0:Hw3535",
+        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/Hw3535",
+        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EB%A1%9D/delete",
+        "/wiki/%EC%82%AC%EC%9A%A9%EC%9E%90:%EC%95%B5%EB%AC%B4",
+        "/wiki/%EC%82%AC%EC%9A%A9%EC%9E%90%ED%86%A0%EB%A1%A0:%EC%95%B5%EB%AC%B4",
+        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/%EC%95%B5%EB%AC%B4",
+        "/w/index.php?title=%EC%82%AC%EC%9A%A9%EC%9E%90%3AAltostratus%2FWikiVault%2F%EC%95%A4%EB%93%9C%EB%A3%A8_%EC%95%84%EC%9A%B0%EC%96%B8%ED%95%98%EC%9D%B4%EB%A8%B8&action=edit&redlink=1",
+        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:U1",
+        "/w/index.php?title=%EC%A4%91%EC%95%99%EA%B7%B8%EB%A6%AC%EC%8A%A4&curid=339976&diff=42381753&oldid=42381750",
+        "/w/index.php?title=%EC%A4%91%EC%95%99%EA%B7%B8%EB%A6%AC%EC%8A%A4&curid=339976&action=history",
+        "/wiki/%EC%A4%91%EC%95%99%EA%B7%B8%EB%A6%AC%EC%8A%A4",
+        "/wiki/%EC%82%AC%EC%9A%A9%EC%9E%90:JinsengTea",
+        "/wiki/%EC%82%AC%EC%9A%A9%EC%9E%90%ED%86%A0%EB%A1%A0:JinsengTea",
+        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/JinsengTea",
         "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%8B%9C%EA%B0%81%ED%8E%B8%EC%A7%91%EA%B8%B0",
-        "/wiki/WHY%3F",
-        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/~2026-46209-20",
-        "/wiki/%EB%AF%B8%EA%B5%AD_%EB%8C%80%ED%86%B5%EB%A0%B9_%EC%84%A0%EA%B1%B0_%EB%B2%84%EB%AA%AC%ED%8A%B8%EC%A3%BC",
-        "/wiki/%ED%8C%8C%EC%9D%BC:Vermont_Presidential_Election_Results_1828.svg",
-        "/wiki/%ED%8C%8C%EC%9D%BC:1828_United_States_presidential_election_in_Vermont_results_map_by_county.svg",
-        "/wiki/2012%EB%85%84_4%EC%9B%94",
-        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/~2026-46406-06",
-        "/wiki/%EB%8F%84%EC%9B%80%EB%A7%90:%EB%90%98%EB%8F%8C%EB%A6%AC%EA%B8%B0",
-        "/wiki/2011%EB%85%84_9%EC%9B%94",
-        "/wiki/%ED%8C%8C%EC%9D%BC:Vermont_Presidential_Election_Results_1832.svg",
-        "/wiki/%ED%8C%8C%EC%9D%BC:1832_United_States_presidential_election_in_Vermont_results_map_by_county.svg",
-        "/wiki/%ED%8C%8C%EC%9D%BC:Vermont_Presidential_Election_Results_1836.svg",
-        "/wiki/%ED%8C%8C%EC%9D%BC:1836_United_States_presidential_election_in_Vermont_results_map_by_county.svg",
-        "/wiki/%EC%A0%84%ED%8C%8C%EC%82%AC",
-        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/~2026-46560-41",
-        "/wiki/%ED%8C%8C%EC%9D%BC:Vermont_Presidential_Election_Results_1840.svg",
-        "/wiki/%ED%8C%8C%EC%9D%BC:1840_United_States_presidential_election_in_Vermont_results_map_by_county.svg",
-        "/wiki/%ED%8C%8C%EC%9D%BC:Vermont_Presidential_Election_Results_1844.svg",
-        "/wiki/%ED%8C%8C%EC%9D%BC:1844_United_States_presidential_election_in_Vermont_results_map_by_county.svg",
-        "/wiki/%EB%B6%80%EC%95%BC%EB%94%98_%EB%B3%B4%EC%8A%88%EC%BD%94%EB%B8%8C",
-        "/wiki/%ED%8C%8C%EC%9D%BC:Vermont_Presidential_Election_Results_1848.svg",
-        "/wiki/%ED%8C%8C%EC%9D%BC:1848_United_States_presidential_election_in_Vermont_results_map_by_county.svg",
-        "/wiki/%ED%8C%8C%EC%9D%BC:Vermont_Presidential_Election_Results_1852.svg",
-        "/wiki/%ED%8C%8C%EC%9D%BC:1852_United_States_presidential_election_in_Vermont_results_map_by_county.svg",
-        "/wiki/%EC%98%81%EA%B4%91%EC%97%AC%EC%9E%90%EA%B3%A0%EB%93%B1%ED%95%99%EA%B5%90",
-        "/wiki/%EC%82%AC%EC%9A%A9%EC%9E%90%ED%86%A0%EB%A1%A0:Ganzi91",
-        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/Ganzi91",
+        "/w/index.php?title=%ED%8B%80%3A%EC%A0%84%EB%82%A8%EA%B4%91%EC%A3%BC%ED%86%B5%ED%95%A9%ED%8A%B9%EB%B3%84%EC%8B%9C_%EA%BC%AC%EB%A6%AC%ED%91%9C_%EC%A7%80%EB%8F%84&curid=661981&diff=42381752&oldid=42381702",
+        "/w/index.php?title=%ED%8B%80%3A%EC%A0%84%EB%82%A8%EA%B4%91%EC%A3%BC%ED%86%B5%ED%95%A9%ED%8A%B9%EB%B3%84%EC%8B%9C_%EA%BC%AC%EB%A6%AC%ED%91%9C_%EC%A7%80%EB%8F%84&curid=661981&action=history",
+        "/wiki/%ED%8B%80:%EC%A0%84%EB%82%A8%EA%B4%91%EC%A3%BC%ED%86%B5%ED%95%A9%ED%8A%B9%EB%B3%84%EC%8B%9C_%EA%BC%AC%EB%A6%AC%ED%91%9C_%EC%A7%80%EB%8F%84",
+        "/w/index.php?title=%EC%82%AC%EC%9A%A9%EC%9E%90%3AGloyacks&action=edit&redlink=1",
+        "/wiki/%EC%82%AC%EC%9A%A9%EC%9E%90%ED%86%A0%EB%A1%A0:Gloyacks",
+        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/Gloyacks",
+        "/w/index.php?title=%EC%A4%91%EC%95%99%EA%B7%B8%EB%A6%AC%EC%8A%A4&curid=339976&diff=42381750&oldid=41547053",
+        "/w/index.php?title=%EC%A1%B0%EB%B3%B5%EB%9E%98&curid=1228946&diff=42381751&oldid=42196405",
+        "/w/index.php?title=%EC%A1%B0%EB%B3%B5%EB%9E%98&curid=1228946&action=history",
+        "/wiki/%EC%A1%B0%EB%B3%B5%EB%9E%98",
+        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/~2026-46351-06",
+        "/w/index.php?title=%EC%82%AC%EC%9A%A9%EC%9E%90%ED%86%A0%EB%A1%A0%3A~2026-46351-06&action=edit&redlink=1",
+        "/w/index.php?title=1924%EB%85%84&curid=8279&diff=42381749&oldid=42218079",
+        "/w/index.php?title=1924%EB%85%84&curid=8279&action=history",
+        "/wiki/1924%EB%85%84",
+        "/w/index.php?title=%EC%82%AC%EC%9A%A9%EC%9E%90%3ADidrkffpajfl&action=edit&redlink=1",
+        "/wiki/%EC%82%AC%EC%9A%A9%EC%9E%90%ED%86%A0%EB%A1%A0:Didrkffpajfl",
+        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/Didrkffpajfl",
+        "/w/index.php?title=%EC%82%AC%EC%9A%A9%EC%9E%90%3AAltostratus%2FWikiVault%2F%EC%95%A1%EC%85%98_%28%EC%8B%A0%EB%AC%B8%29&action=edit&redlink=1",
+        "/w/index.php?title=%EC%82%AC%EC%9A%A9%EC%9E%90%3AAltostratus%2FWikiVault%2F%EC%95%88%ED%8B%B0_%EC%9D%B4%EC%86%8C%ED%83%88%EB%A1%9C_%28%EC%98%88%EA%B1%B0%29&action=edit&redlink=1",
+        "/w/index.php?title=%EC%9D%B4%EB%A7%A4%EB%89%B4%EC%96%BC_%EC%97%90%EB%A9%94%EB%8B%88%EC%BC%80&curid=1404391&diff=42381748&oldid=42381743",
+        "/w/index.php?title=%EC%9D%B4%EB%A7%A4%EB%89%B4%EC%96%BC_%EC%97%90%EB%A9%94%EB%8B%88%EC%BC%80&curid=1404391&action=history",
+        "/wiki/%EC%9D%B4%EB%A7%A4%EB%89%B4%EC%96%BC_%EC%97%90%EB%A9%94%EB%8B%88%EC%BC%80",
+        "/wiki/%EC%82%AC%EC%9A%A9%EC%9E%90:%ED%83%9C%ED%98%84_%EC%A0%95",
+        "/wiki/%EC%82%AC%EC%9A%A9%EC%9E%90%ED%86%A0%EB%A1%A0:%ED%83%9C%ED%98%84_%EC%A0%95",
+        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/%ED%83%9C%ED%98%84_%EC%A0%95",
+        "/w/index.php?title=%EB%B6%84%EB%A5%98%3A%EB%8F%99%EB%82%98%EC%9D%B4_%EC%B6%9C%EC%8B%A0&curid=1840142&diff=42381747&oldid=42381741",
+        "/w/index.php?title=%EB%B6%84%EB%A5%98%3A%EB%8F%99%EB%82%98%EC%9D%B4_%EC%B6%9C%EC%8B%A0&curid=1840142&action=history",
+        "/wiki/%EB%B6%84%EB%A5%98:%EB%8F%99%EB%82%98%EC%9D%B4_%EC%B6%9C%EC%8B%A0",
+        "/w/index.php?title=%EB%B6%84%EB%A5%98%3A%EB%B9%88%ED%94%84%EC%96%B5%EC%84%B1_%EC%B6%9C%EC%8B%A0&curid=1889482&diff=42381744&oldid=41449926",
+        "/w/index.php?title=%EB%B6%84%EB%A5%98%3A%EB%B9%88%ED%94%84%EC%96%B5%EC%84%B1_%EC%B6%9C%EC%8B%A0&curid=1889482&action=history",
+        "/wiki/%EB%B6%84%EB%A5%98:%EB%B9%88%ED%94%84%EC%96%B5%EC%84%B1_%EC%B6%9C%EC%8B%A0",
+        "/w/index.php?title=%EC%9D%B4%EB%A7%A4%EB%89%B4%EC%96%BC_%EC%97%90%EB%A9%94%EB%8B%88%EC%BC%80&curid=1404391&diff=42381743&oldid=42381738",
+        "/w/index.php?title=%EB%B6%84%EB%A5%98%3A%EB%8F%99%EB%82%98%EC%9D%B4%EC%84%B1_%EC%B6%9C%EC%8B%A0&redirect=no",
+        "/w/index.php?title=%ED%99%8D%EC%9D%91%EC%98%A5&curid=1883075&diff=42381740&oldid=40665010",
+        "/w/index.php?title=%ED%99%8D%EC%9D%91%EC%98%A5&curid=1883075&action=history",
+        "/wiki/%ED%99%8D%EC%9D%91%EC%98%A5",
+        "/w/index.php?title=%EB%AA%A8%EB%82%98%EB%AF%B8&curid=132297&diff=42381739&oldid=42381737",
+        "/w/index.php?title=%EB%AA%A8%EB%82%98%EB%AF%B8&curid=132297&action=history",
+        "/wiki/%EB%AA%A8%EB%82%98%EB%AF%B8",
+        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/~2026-41898-74",
+        "/w/index.php?title=%EC%82%AC%EC%9A%A9%EC%9E%90%ED%86%A0%EB%A1%A0%3A~2026-41898-74&action=edit&redlink=1",
+        "/w/index.php?title=%EC%82%AC%EC%9A%A9%EC%9E%90%3AAltostratus%2FWikiVault%2F%EC%95%84%EC%96%80_%EC%88%98%EC%9A%B4%ED%83%80&action=edit&redlink=1",
+        "/w/index.php?title=%EC%9D%B4%EB%A7%A4%EB%89%B4%EC%96%BC_%EC%97%90%EB%A9%94%EB%8B%88%EC%BC%80&curid=1404391&diff=42381738&oldid=42381727",
+        "/w/index.php?title=%EB%AA%A8%EB%82%98%EB%AF%B8&curid=132297&diff=42381737&oldid=42381730",
+        "/w/index.php?title=%EB%B6%84%EB%A5%98%3A%EB%8F%99%EB%82%98%EC%9D%B4%EC%9D%98_%EA%B1%B4%EC%B6%95%EB%AC%BC&curid=2328767&diff=42381736&oldid=42381732",
+        "/w/index.php?title=%EB%B6%84%EB%A5%98%3A%EB%8F%99%EB%82%98%EC%9D%B4%EC%9D%98_%EA%B1%B4%EC%B6%95%EB%AC%BC&curid=2328767&action=history",
+        "/wiki/%EB%B6%84%EB%A5%98:%EB%8F%99%EB%82%98%EC%9D%B4%EC%9D%98_%EA%B1%B4%EC%B6%95%EB%AC%BC",
+        "/w/index.php?title=%EB%A1%B1%ED%83%80%EC%9D%B8_%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD&curid=674086&diff=42381735&oldid=40679073",
+        "/w/index.php?title=%EB%A1%B1%ED%83%80%EC%9D%B8_%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD&curid=674086&action=history",
+        "/wiki/%EB%A1%B1%ED%83%80%EC%9D%B8_%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD",
+        "/w/index.php?title=%EC%97%90%EB%A9%94%EB%8B%88%EC%BC%80&curid=4249045&action=history",
+        "/w/index.php?title=%EC%97%90%EB%A9%94%EB%8B%88%EC%BC%80&redirect=no",
+        "/w/index.php?title=%EB%B6%84%EB%A5%98%3A%EB%8F%99%EB%82%98%EC%9D%B4%EC%84%B1%EC%9D%98_%EA%B1%B4%EC%B6%95%EB%AC%BC&redirect=no",
+        "/w/index.php?title=%EB%AA%A8%EB%82%98%EB%AF%B8&curid=132297&diff=42381730&oldid=42381722",
+        "/w/index.php?title=%EC%82%AC%EC%9A%A9%EC%9E%90%3AAltostratus%2FWikiVault%2F%EC%95%84%EC%84%9C_%EC%9B%B0%EC%A6%90%EB%A6%AC_%EC%A0%9C5%EB%8C%80_%EC%9B%B0%EB%A7%81%ED%84%B4_%EA%B3%B5%EC%9E%91&action=edit&redlink=1",
+        "/w/index.php?title=%EC%9D%B4%EB%A7%A4%EB%89%B4%EC%96%BC_%EC%B9%98%EB%84%A4%EB%8B%88%EC%97%90_%EC%97%90%EB%A9%94%EB%8B%88%EC%BC%80&curid=4249043&action=history",
+        "/w/index.php?title=%EC%9D%B4%EB%A7%A4%EB%89%B4%EC%96%BC_%EC%B9%98%EB%84%A4%EB%8B%88%EC%97%90_%EC%97%90%EB%A9%94%EB%8B%88%EC%BC%80&redirect=no",
+        "/w/index.php?title=%EC%9D%B4%EB%A7%A4%EB%89%B4%EC%96%BC_%EC%97%90%EB%A9%94%EB%8B%88%EC%BC%80&curid=1404391&diff=42381727&oldid=42381723",
+        "/w/index.php?title=%EB%B9%88%ED%94%84%EC%96%B5%EC%84%B1&curid=168766&diff=42381726&oldid=42381725",
+        "/w/index.php?title=%EB%B9%88%ED%94%84%EC%96%B5%EC%84%B1&curid=168766&action=history",
+        "/wiki/%EB%B9%88%ED%94%84%EC%96%B5%EC%84%B1",
+        "/wiki/%EB%B6%84%EB%A5%98:%EB%8F%99%EB%82%98%EC%9D%B4%EC%84%B1%EC%9D%98_%EC%97%AD%EC%82%AC",
+        "/wiki/%EB%B6%84%EB%A5%98:%EB%8F%99%EB%82%98%EC%9D%B4%EC%9D%98_%EC%97%AD%EC%82%AC",
+        "/w/index.php?title=%EB%B9%88%ED%94%84%EC%96%B5%EC%84%B1&curid=168766&diff=42381725&oldid=41449922",
+        "/w/index.php?title=%EB%B6%84%EB%A5%98%3A%EB%B9%88%ED%94%84%EC%96%B5%EC%84%B1%EC%9D%98_%ED%98%84&curid=2653225&diff=42381724&oldid=41449933",
+        "/w/index.php?title=%EB%B6%84%EB%A5%98%3A%EB%B9%88%ED%94%84%EC%96%B5%EC%84%B1%EC%9D%98_%ED%98%84&curid=2653225&action=history",
+        "/wiki/%EB%B6%84%EB%A5%98:%EB%B9%88%ED%94%84%EC%96%B5%EC%84%B1%EC%9D%98_%ED%98%84",
+        "/w/index.php?title=%EC%9D%B4%EB%A7%A4%EB%89%B4%EC%96%BC_%EC%97%90%EB%A9%94%EB%8B%88%EC%BC%80&curid=1404391&diff=42381723&oldid=42381693",
+        "/w/index.php?title=%EB%AA%A8%EB%82%98%EB%AF%B8&curid=132297&diff=42381722&oldid=42381715",
+        "/w/index.php?title=%EB%B6%84%EB%A5%98%3A%EB%8F%99%EB%82%98%EC%9D%B4%EC%9D%98_%EC%97%AD%EC%82%AC&curid=4150819&diff=42381721&oldid=42381718",
+        "/w/index.php?title=%EB%B6%84%EB%A5%98%3A%EB%8F%99%EB%82%98%EC%9D%B4%EC%9D%98_%EC%97%AD%EC%82%AC&curid=4150819&action=history",
+        "/w/index.php?title=%ED%95%98%EC%95%BC%EB%B6%80%EC%82%AC_%28%EC%97%B4%EC%B0%A8%29&curid=819044&diff=42381720&oldid=42369990",
+        "/w/index.php?title=%ED%95%98%EC%95%BC%EB%B6%80%EC%82%AC_%28%EC%97%B4%EC%B0%A8%29&curid=819044&action=history",
+        "/wiki/%ED%95%98%EC%95%BC%EB%B6%80%EC%82%AC_(%EC%97%B4%EC%B0%A8)",
+        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/~2026-46258-53",
+        "/w/index.php?title=%EC%82%AC%EC%9A%A9%EC%9E%90%ED%86%A0%EB%A1%A0%3A~2026-46258-53&action=edit&redlink=1",
+        "/w/index.php?title=%EB%B6%84%EB%A5%98%3A%EB%8F%99%EB%82%98%EC%9D%B4%EC%84%B1%EC%9D%98_%EC%97%AD%EC%82%AC&redirect=no",
+        "/w/index.php?title=%EC%82%AC%EC%9A%A9%EC%9E%90%3AAltostratus%2FWikiVault%2F%EC%95%84%EB%A6%AC%EB%B0%94_%28%EC%8B%A0%EB%AC%B8%29&action=edit&redlink=1",
+        "/w/index.php?title=%ED%8B%80%3A%EC%96%91%EC%82%B0_%EB%8F%84%EC%8B%9C%EC%B2%A0%EB%8F%84_%ED%91%9C&curid=4249040&diff=42381717&oldid=42381698",
+        "/w/index.php?title=%ED%8B%80%3A%EC%96%91%EC%82%B0_%EB%8F%84%EC%8B%9C%EC%B2%A0%EB%8F%84_%ED%91%9C&curid=4249040&action=history",
+        "/wiki/%ED%8B%80:%EC%96%91%EC%82%B0_%EB%8F%84%EC%8B%9C%EC%B2%A0%EB%8F%84_%ED%91%9C",
+        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/~2026-46586-73",
+        "/w/index.php?title=%EC%82%AC%EC%9A%A9%EC%9E%90%ED%86%A0%EB%A1%A0%3A~2026-46586-73&action=edit&redlink=1",
+        "/w/index.php?title=%EC%91%A4%EC%96%B8%EB%A1%9D_%EC%A0%84%ED%88%AC&curid=422710&diff=42381716&oldid=41874772",
+        "/w/index.php?title=%EC%91%A4%EC%96%B8%EB%A1%9D_%EC%A0%84%ED%88%AC&curid=422710&action=history",
+        "/wiki/%EC%91%A4%EC%96%B8%EB%A1%9D_%EC%A0%84%ED%88%AC",
+        "/wiki/%EB%B6%84%EB%A5%98:%EB%8F%99%EB%82%98%EC%9D%B4%EC%84%B1",
+        "/w/index.php?title=%EB%AA%A8%EB%82%98%EB%AF%B8&curid=132297&diff=42381715&oldid=42381686",
+        "/w/index.php?title=%ED%95%9C%EC%95%BD%EC%82%AC&curid=137837&diff=42381713&oldid=42381703",
+        "/w/index.php?title=%ED%95%9C%EC%95%BD%EC%82%AC&curid=137837&action=history",
+        "/wiki/%ED%95%9C%EC%95%BD%EC%82%AC",
+        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/~2026-46380-20",
+        "/w/index.php?title=%EC%82%AC%EC%9A%A9%EC%9E%90%ED%86%A0%EB%A1%A0%3A~2026-46380-20&action=edit&redlink=1",
+        "/w/index.php?title=%EB%8F%99%EB%82%98%EC%9D%B4_%EB%9D%BC%EB%94%94%EC%98%A4_%26_%ED%85%94%EB%A0%88%EB%B9%84%EC%A0%84&curid=1673607&diff=42381714&oldid=39447965",
+        "/w/index.php?title=%EB%8F%99%EB%82%98%EC%9D%B4_%EB%9D%BC%EB%94%94%EC%98%A4_%26_%ED%85%94%EB%A0%88%EB%B9%84%EC%A0%84&curid=1673607&action=history",
+        "/wiki/%EB%8F%99%EB%82%98%EC%9D%B4_%EB%9D%BC%EB%94%94%EC%98%A4_%26_%ED%85%94%EB%A0%88%EB%B9%84%EC%A0%84",
+        "/wiki/%EB%B6%84%EB%A5%98:%EB%8F%99%EB%82%98%EC%9D%B4",
+        "/w/index.php?title=%EB%8F%99%EB%82%98%EC%9D%B4&curid=405205&diff=42381712&oldid=42381706",
+        "/w/index.php?title=%EB%8F%99%EB%82%98%EC%9D%B4&curid=405205&action=history",
+        "/wiki/%EB%8F%99%EB%82%98%EC%9D%B4",
+        "/w/index.php?title=%EB%B6%84%EB%A5%98%3A%EB%8F%99%EB%82%98%EC%9D%B4&curid=405206&diff=42381711&oldid=42381709",
+        "/w/index.php?title=%EB%B6%84%EB%A5%98%3A%EB%8F%99%EB%82%98%EC%9D%B4&curid=405206&action=history",
+        "/w/index.php?title=%EB%B6%84%EB%A5%98%3A%EB%8F%99%EB%82%98%EC%9D%B4%EC%84%B1&redirect=no",
+        "/w/index.php?title=%EB%A5%98%EC%A4%80%EC%97%B4&curid=1308911&diff=42381708&oldid=42376618",
+        "/w/index.php?title=%EB%A5%98%EC%A4%80%EC%97%B4&curid=1308911&action=history",
+        "/wiki/%EB%A5%98%EC%A4%80%EC%97%B4",
+        "/w/index.php?title=%EC%82%AC%EC%9A%A9%EC%9E%90%3AHhw010&action=edit&redlink=1",
+        "/wiki/%EC%82%AC%EC%9A%A9%EC%9E%90%ED%86%A0%EB%A1%A0:Hhw010",
+        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/Hhw010",
+        "/w/index.php?title=%EC%82%AC%EC%9A%A9%EC%9E%90%3AAltostratus%2FWikiVault%2F%EC%8B%9C%EB%8B%88%EB%A6%AC%EC%8A%A4%ED%8B%B0&action=edit&redlink=1",
+        "/w/index.php?title=%EB%AC%B4%EB%94%94_%EC%84%BC%ED%84%B0&curid=3686221&diff=42381707&oldid=41736453",
+        "/w/index.php?title=%EB%AC%B4%EB%94%94_%EC%84%BC%ED%84%B0&curid=3686221&action=history",
+        "/wiki/%EB%AC%B4%EB%94%94_%EC%84%BC%ED%84%B0",
+        "/wiki/%EC%82%AC%EC%9A%A9%EC%9E%90:KiMsM",
+        "/wiki/%EC%82%AC%EC%9A%A9%EC%9E%90%ED%86%A0%EB%A1%A0:KiMsM",
+        "/wiki/%ED%8A%B9%EC%88%98:%EA%B8%B0%EC%97%AC/KiMsM",
+        "/w/index.php?title=%EB%8F%99%EB%82%98%EC%9D%B4&curid=405205&diff=42381706&oldid=42186196",
+        "/wiki/%EB%B6%84%EB%A5%98:%EB%B2%A0%ED%8A%B8%EB%82%A8%EC%9D%98_%EC%84%B1",
+        "/wiki/%EB%B6%84%EB%A5%98:%EB%B2%A0%ED%8A%B8%EB%82%A8%EC%9D%98_%EB%8F%84%EC%8B%9C",
+        "/w/index.php?title=%ED%95%9C%EC%95%BD%EC%82%AC&curid=137837&diff=42381703&oldid=41736319",
         "/wiki/특수:최근바뀜",
-        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%A9%B4%EC%B1%85_%EC%A1%B0%ED%95%AD"
+        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%A9%B4%EC%B1%85_%EC%A1%B0%ED%95%AD",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&mobileaction=toggle_view_mobile"
       ],
       "steps": null
     },
     {
-      "path": "/%ED%8F%AC%ED%84%B8:%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C",
+      "path": "/wiki/%ED%8F%AC%ED%84%B8:%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C",
       "template": "/wiki/%ED%8F%AC%ED%84%B8:%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C",
       "title": "포털:요즘 화제 - 위키백과, 우리 모두의 백과사전",
       "found_by": "link",
-      "layout": "상단에 검색창과 상단 메뉴가 배치되어 있고, 좌측 목차 영역, 중앙 본문 뉴스 및 카테고리 영역, 우측 외관 설정 영역으로 나뉜 3열 구조입니다.",
+      "layout": "상단에 검색창과 사용자 메뉴가 위치하며, 좌측에는 목차 사이드바, 우측에는 외관 설정 사이드바, 중앙 본문에는 주요 뉴스 및 날짜별 화제 목록과 달력, 관련 포털 링크가 배치되어 있습니다.",
       "elements": [
         {
           "name": "위키백과 검색 입력창",
@@ -589,39 +919,39 @@
           "where": "상단 우측"
         },
         {
-          "name": "언어 선택 (120개 언어)",
+          "name": "120개 언어",
           "type": "버튼",
-          "where": "문서 제목 오른쪽"
+          "where": "페이지 제목 '포털:요즘 화제' 우측"
         },
         {
           "name": "목차 숨기기",
           "type": "버튼",
-          "where": "좌측 사이드바 상단"
+          "where": "좌측 목차 영역 상단"
         },
         {
           "name": "외관 숨기기",
           "type": "버튼",
-          "where": "우측 사이드바 상단"
+          "where": "우측 외관 영역 상단"
         },
         {
-          "name": "너비 (표준/넓게)",
-          "type": "선택",
-          "where": "우측 사이드바 외관 영역"
-        },
-        {
-          "name": "색 (자동/라이트/다크)",
-          "type": "선택",
-          "where": "우측 사이드바 외관 영역"
-        },
-        {
-          "name": "주요 뉴스 편집하기",
+          "name": "편집하기",
           "type": "링크",
-          "where": "중앙 주요 뉴스 상자 우하단"
+          "where": "주요 뉴스 상자 하단 우측"
         },
         {
           "name": "새로 고침",
           "type": "링크",
-          "where": "중앙 날짜 상자 우상단"
+          "where": "날짜 및 시간 표시 상자 우측"
+        },
+        {
+          "name": "너비 표준 / 넓게",
+          "type": "선택",
+          "where": "우측 외관 사이드바 내 너비 항목"
+        },
+        {
+          "name": "색 자동 / 라이트 / 다크",
+          "type": "선택",
+          "where": "우측 외관 사이드바 내 색 항목"
         }
       ],
       "links_to": [
@@ -637,10 +967,21 @@
         "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%A0%95%EC%B1%85%EA%B3%BC_%EC%A7%80%EC%B9%A8",
         "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%A7%88%EB%AC%B8%EB%B0%A9",
         "/wiki/%ED%8A%B9%EC%88%98:%EA%B2%80%EC%83%89",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EA%B3%84%EC%A0%95%EB%A7%8C%EB%93%A4%EA%B8%B0&returnto=%ED%8F%AC%ED%84%B8%3A%EC%9A%94%EC%A6%98+%ED%99%94%EC%A0%9C",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EB%A1%9C%EA%B7%B8%EC%9D%B8&returnto=%ED%8F%AC%ED%84%B8%3A%EC%9A%94%EC%A6%98+%ED%99%94%EC%A0%9C",
         "/wiki/%ED%8F%AC%ED%84%B8%ED%86%A0%EB%A1%A0:%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C",
+        "/w/index.php?title=%ED%8F%AC%ED%84%B8%3A%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C&action=edit",
+        "/w/index.php?title=%ED%8F%AC%ED%84%B8%3A%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C&action=history",
         "/wiki/%ED%8A%B9%EC%88%98:%EA%B0%80%EB%A6%AC%ED%82%A4%EB%8A%94%EB%AC%B8%EC%84%9C/%ED%8F%AC%ED%84%B8:%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C",
         "/wiki/%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C/%ED%8F%AC%ED%84%B8:%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C",
         "/wiki/위키백과:파일_올리기",
+        "/w/index.php?title=%ED%8F%AC%ED%84%B8%3A%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C&oldid=41618620",
+        "/w/index.php?title=%ED%8F%AC%ED%84%B8%3A%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C&action=info",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3AUrlShortener&url=https%3A%2F%2Fko.wikipedia.org%2Fwiki%2F%25ED%258F%25AC%25ED%2584%25B8%3A%25EC%259A%2594%25EC%25A6%2598_%25ED%2599%2594%25EC%25A0%259C",
+        "/w/index.php?title=%ED%8F%AC%ED%84%B8%3A%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C&useparsoid=0",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%B1%85&bookcmd=book_creator&referer=%ED%8F%AC%ED%84%B8%3A%EC%9A%94%EC%A6%98+%ED%99%94%EC%A0%9C",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3ADownloadAsPdf&action=show-download-screen",
+        "/w/index.php?title=%ED%8F%AC%ED%84%B8%3A%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C&printable=yes",
         "/wiki/위키백과:포털",
         "/wiki/포털:인문학",
         "/wiki/포털:사회과학",
@@ -648,7 +989,7 @@
         "/wiki/포털:과학",
         "/wiki/포털:예술",
         "/wiki/포털:기술",
-        "/wiki/파일:Hakainde_Hichilema_in_Japan_on_February_6,_2025_(cropped).jpg",
+        "/w/index.php?title=%ED%8B%80%3A%EC%83%88%EB%A1%9C_%EB%93%A4%EC%96%B4%EC%98%A8_%EC%86%8C%EC%8B%9D&action=edit",
         "/wiki/8월_20일",
         "/wiki/로자바",
         "/wiki/시리아",
@@ -676,10 +1017,25 @@
         "/wiki/마이클_라이트_(배우)",
         "/wiki/나은하",
         "/wiki/낸시_키신저",
+        "/w/index.php?title=%ED%8B%80%3A%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C_%EC%B2%98%EC%9D%8C%2F2026%EB%85%84_8%EC%9B%94_25%EC%9D%BC&action=edit&editintro=Template%3ACurrent_events%2FEdit_instructions",
+        "/w/index.php?title=%ED%8B%80%3A%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C_%EC%B2%98%EC%9D%8C%2F2026%EB%85%84_8%EC%9B%94_24%EC%9D%BC&action=edit&editintro=Template%3ACurrent_events%2FEdit_instructions",
+        "/w/index.php?title=%ED%8B%80%3A%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C_%EC%B2%98%EC%9D%8C%2F2026%EB%85%84_8%EC%9B%94_23%EC%9D%BC&action=edit&editintro=Template%3ACurrent_events%2FEdit_instructions",
+        "/w/index.php?title=%ED%8B%80%3A%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C_%EC%B2%98%EC%9D%8C%2F2026%EB%85%84_8%EC%9B%94_22%EC%9D%BC&action=edit&editintro=Template%3ACurrent_events%2FEdit_instructions",
         "/wiki/제주특별자치도",
-        "/wiki/파일:Éclipse_du_12_août_2026_–_Leòn,_Espagne_(1).jpg",
+        "/w/index.php?title=%ED%8B%80%3A%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C_%EC%B2%98%EC%9D%8C%2F2026%EB%85%84_8%EC%9B%94_21%EC%9D%BC&action=edit&editintro=Template%3ACurrent_events%2FEdit_instructions",
+        "/w/index.php?title=%ED%8B%80%3A%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C_%EC%B2%98%EC%9D%8C%2F2026%EB%85%84_8%EC%9B%94_20%EC%9D%BC&action=edit&editintro=Template%3ACurrent_events%2FEdit_instructions",
+        "/w/index.php?title=%ED%8B%80%3A%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C_%EC%B2%98%EC%9D%8C%2F2026%EB%85%84_8%EC%9B%94_19%EC%9D%BC&action=edit&editintro=Template%3ACurrent_events%2FEdit_instructions",
+        "/w/index.php?title=%ED%8B%80%3A%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C_%EC%B2%98%EC%9D%8C%2F2026%EB%85%84_8%EC%9B%94_18%EC%9D%BC&action=edit&editintro=Template%3ACurrent_events%2FEdit_instructions",
+        "/w/index.php?title=%ED%8B%80%3A%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C_%EC%B2%98%EC%9D%8C%2F2026%EB%85%84_8%EC%9B%94_17%EC%9D%BC&action=edit&editintro=Template%3ACurrent_events%2FEdit_instructions",
+        "/w/index.php?title=%ED%8B%80%3A%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C_%EC%B2%98%EC%9D%8C%2F2026%EB%85%84_8%EC%9B%94_16%EC%9D%BC&action=edit&editintro=Template%3ACurrent_events%2FEdit_instructions",
+        "/w/index.php?title=%ED%8B%80%3A%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C_%EC%B2%98%EC%9D%8C%2F2026%EB%85%84_8%EC%9B%94_15%EC%9D%BC&action=edit&editintro=Template%3ACurrent_events%2FEdit_instructions",
+        "/w/index.php?title=%ED%8B%80%3A%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C_%EC%B2%98%EC%9D%8C%2F2026%EB%85%84_8%EC%9B%94_14%EC%9D%BC&action=edit&editintro=Template%3ACurrent_events%2FEdit_instructions",
+        "/w/index.php?title=%ED%8B%80%3A%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C_%EC%B2%98%EC%9D%8C%2F2026%EB%85%84_8%EC%9B%94_13%EC%9D%BC&action=edit&editintro=Template%3ACurrent_events%2FEdit_instructions",
+        "/w/index.php?title=%ED%8B%80%3A%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C_%EC%B2%98%EC%9D%8C%2F2026%EB%85%84_8%EC%9B%94_12%EC%9D%BC&action=edit&editintro=Template%3ACurrent_events%2FEdit_instructions",
+        "/w/index.php?title=%ED%8B%80%3A%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C_%EC%B2%98%EC%9D%8C%2F2026%EB%85%84_8%EC%9B%94_11%EC%9D%BC&action=edit&editintro=Template%3ACurrent_events%2FEdit_instructions",
         "/wiki/2026년",
         "/wiki/8월_26일",
+        "/w/index.php?title=%ED%8F%AC%ED%84%B8%3A%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C&action=purge",
         "/wiki/2026년_7월",
         "/wiki/2026년_8월",
         "/wiki/2026년_9월",
@@ -753,6 +1109,7 @@
         "/wiki/음력_7월_19일",
         "/wiki/정축",
         "/wiki/2026년_선거_목록?action=edit&redlink=1",
+        "/w/index.php?title=%EB%93%A4%EB%A8%B8%EB%A6%AC%3A%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C%2F%EB%8B%AC%EB%A0%A5%2F2026%EB%85%84_8%EC%9B%94&action=edit",
         "/wiki/2026년_1월",
         "/wiki/2026년_2월",
         "/wiki/2026년_3월",
@@ -902,248 +1259,17 @@
         "/wiki/%EB%B6%84%EB%A5%98:%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C_%ED%8F%AC%ED%84%B8",
         "/wiki/%EB%B6%84%EB%A5%98:%EC%97%B0%EB%8F%84%EB%B3%84_%EB%82%A0%EC%A7%9C_%EC%98%A4%EB%A5%98",
         "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%86%8C%EA%B0%9C",
-        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%A9%B4%EC%B1%85_%EC%A1%B0%ED%95%AD"
+        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%A9%B4%EC%B1%85_%EC%A1%B0%ED%95%AD",
+        "/w/index.php?title=%ED%8F%AC%ED%84%B8%3A%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C&mobileaction=toggle_view_mobile"
       ],
       "steps": null
     },
     {
-      "path": "/%ED%8A%B9%EC%88%98:%EC%9E%84%EC%9D%98%EB%AC%B8%EC%84%9C",
+      "path": "/wiki/%ED%8A%B9%EC%88%98:%EC%9E%84%EC%9D%98%EB%AC%B8%EC%84%9C",
       "template": "/wiki/%ED%8A%B9%EC%88%98:%EC%9E%84%EC%9D%98%EB%AC%B8%EC%84%9C",
-      "title": "송금 전투 - 위키백과, 우리 모두의 백과사전",
+      "title": "세네갈 국회 - 위키백과, 우리 모두의 백과사전",
       "found_by": "link",
-      "layout": "상단에 브랜드 로고와 검색창 및 사용자 메뉴가 위치하고, 좌측에는 문서 목차 영역, 중앙에는 문서 제목과 본문 및 정보상자, 우측에는 외관 설정 패널이 배치되어 있습니다.",
-      "elements": [
-        {
-          "name": "메인 메뉴",
-          "type": "버튼",
-          "where": "상단 좌측"
-        },
-        {
-          "name": "위키백과 로고",
-          "type": "링크",
-          "where": "상단 좌측"
-        },
-        {
-          "name": "위키백과 검색",
-          "type": "입력",
-          "where": "상단 중앙"
-        },
-        {
-          "name": "검색",
-          "type": "버튼",
-          "where": "상단 중앙 검색창 우측"
-        },
-        {
-          "name": "기부",
-          "type": "링크",
-          "where": "상단 우측"
-        },
-        {
-          "name": "계정 만들기",
-          "type": "링크",
-          "where": "상단 우측"
-        },
-        {
-          "name": "로그인",
-          "type": "링크",
-          "where": "상단 우측"
-        },
-        {
-          "name": "공지사항 배너 닫기",
-          "type": "버튼",
-          "where": "상단 공지사항 배너 우측 끝"
-        },
-        {
-          "name": "목차 숨기기",
-          "type": "버튼",
-          "where": "좌측 목차 영역 상단"
-        },
-        {
-          "name": "금주 포위전 (목차)",
-          "type": "링크",
-          "where": "좌측 목차 영역"
-        },
-        {
-          "name": "홍승주의 지원 (목차)",
-          "type": "링크",
-          "where": "좌측 목차 영역"
-        },
-        {
-          "name": "송산 포위전 (목차)",
-          "type": "링크",
-          "where": "좌측 목차 영역"
-        },
-        {
-          "name": "결과 (목차)",
-          "type": "링크",
-          "where": "좌측 목차 영역"
-        },
-        {
-          "name": "같이 보기 (목차)",
-          "type": "링크",
-          "where": "좌측 목차 영역"
-        },
-        {
-          "name": "참고문헌 (목차)",
-          "type": "링크",
-          "where": "좌측 목차 영역"
-        },
-        {
-          "name": "각주 (목차)",
-          "type": "링크",
-          "where": "좌측 목차 영역"
-        },
-        {
-          "name": "4개 언어",
-          "type": "버튼",
-          "where": "중앙 문서 제목 우측"
-        },
-        {
-          "name": "문서",
-          "type": "탭",
-          "where": "중앙 문서 제목 하단 좌측"
-        },
-        {
-          "name": "토론",
-          "type": "탭",
-          "where": "중앙 문서 제목 하단 좌측"
-        },
-        {
-          "name": "읽기",
-          "type": "탭",
-          "where": "중앙 문서 제목 하단 우측"
-        },
-        {
-          "name": "편집",
-          "type": "탭",
-          "where": "중앙 문서 제목 하단 우측"
-        },
-        {
-          "name": "역사 보기",
-          "type": "탭",
-          "where": "중앙 문서 제목 하단 우측"
-        },
-        {
-          "name": "더보기 (점 3개)",
-          "type": "버튼",
-          "where": "중앙 문서 제목 하단 우측 끝"
-        },
-        {
-          "name": "금주 포위전 편집",
-          "type": "링크",
-          "where": "중앙 금주 포위전 제목 우측"
-        },
-        {
-          "name": "홍승주의 지원 편집",
-          "type": "링크",
-          "where": "중앙 홍승주의 지원 제목 우측"
-        },
-        {
-          "name": "송산 포위전 편집",
-          "type": "링크",
-          "where": "중앙 송산 포위전 제목 우측"
-        },
-        {
-          "name": "결과 편집",
-          "type": "링크",
-          "where": "중앙 결과 제목 우측"
-        },
-        {
-          "name": "같이 보기 편집",
-          "type": "링크",
-          "where": "중앙 같이 보기 제목 우측"
-        },
-        {
-          "name": "외관 숨기기",
-          "type": "버튼",
-          "where": "우측 외관 설정 영역 상단"
-        },
-        {
-          "name": "글 크기 - 작음",
-          "type": "선택",
-          "where": "우측 외관 설정 영역"
-        },
-        {
-          "name": "글 크기 - 표준",
-          "type": "선택",
-          "where": "우측 외관 설정 영역"
-        },
-        {
-          "name": "글 크기 - 큼",
-          "type": "선택",
-          "where": "우측 외관 설정 영역"
-        },
-        {
-          "name": "너비 - 표준",
-          "type": "선택",
-          "where": "우측 외관 설정 영역"
-        },
-        {
-          "name": "너비 - 넓게",
-          "type": "선택",
-          "where": "우측 외관 설정 영역"
-        },
-        {
-          "name": "색 - 자동",
-          "type": "선택",
-          "where": "우측 외관 설정 영역"
-        },
-        {
-          "name": "색 - 라이트",
-          "type": "선택",
-          "where": "우측 외관 설정 영역"
-        },
-        {
-          "name": "색 - 다크",
-          "type": "선택",
-          "where": "우측 외관 설정 영역"
-        }
-      ],
-      "links_to": [
-        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8",
-        "/wiki/%ED%8A%B9%EC%88%98:%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C",
-        "/wiki/%ED%8F%AC%ED%84%B8:%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C",
-        "/wiki/%ED%8A%B9%EC%88%98:%EC%9E%84%EC%9D%98%EB%AC%B8%EC%84%9C",
-        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%82%AC%EB%9E%91%EB%B0%A9",
-        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%82%AC%EC%9A%A9%EC%9E%90_%EB%AA%A8%EC%9E%84",
-        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%9A%94%EC%B2%AD",
-        "/wiki/%EB%8F%84%EC%9B%80%EB%A7%90:%EC%86%8C%EA%B0%9C",
-        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8F%84%EC%9B%80%EB%A7%90",
-        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%A0%95%EC%B1%85%EA%B3%BC_%EC%A7%80%EC%B9%A8",
-        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%A7%88%EB%AC%B8%EB%B0%A9",
-        "/wiki/%ED%8A%B9%EC%88%98:%EA%B2%80%EC%83%89",
-        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:2026%EB%85%84_%EC%95%84%EC%8B%9C%EC%95%88_%EA%B2%8C%EC%9E%84_%EC%97%90%EB%94%94%ED%84%B0%ED%86%A4/%EB%9F%AD%EB%B9%84_%EC%B1%8C%EB%A6%B0%EC%A7%80",
-        "/wiki/%ED%99%A9%EC%84%9C_(%ED%9B%84%ED%95%9C)",
-        "/wiki/%ED%86%A0%EB%A1%A0:%ED%99%A9%EC%84%9C_(%ED%9B%84%ED%95%9C)",
-        "/wiki/%ED%8A%B9%EC%88%98:%EA%B0%80%EB%A6%AC%ED%82%A4%EB%8A%94%EB%AC%B8%EC%84%9C/%ED%99%A9%EC%84%9C_(%ED%9B%84%ED%95%9C)",
-        "/wiki/%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C/%ED%99%A9%EC%84%9C_(%ED%9B%84%ED%95%9C)",
-        "/wiki/위키백과:파일_올리기",
-        "/wiki/후한",
-        "/wiki/형주",
-        "/wiki/남양군_(중국)",
-        "/wiki/황충",
-        "/wiki/건안",
-        "/wiki/220년",
-        "/wiki/황서",
-        "/wiki/위키백과:토막글",
-        "/wiki/%ED%8A%B9%EC%88%98:%EB%B6%84%EB%A5%98",
-        "/wiki/%EB%B6%84%EB%A5%98:%EC%A4%91%EA%B5%AD_%EC%82%BC%EA%B5%AD_%EC%8B%9C%EB%8C%80_%EC%82%AC%EB%9E%8C",
-        "/wiki/%EB%B6%84%EB%A5%98:%EC%83%9D%EB%AA%B0%EB%85%84_%EB%AF%B8%EC%83%81",
-        "/wiki/%EB%B6%84%EB%A5%98:%ED%95%B4%EA%B2%B0%EB%90%98%EC%A7%80_%EC%95%8A%EC%9D%80_%EC%86%8D%EC%84%B1%EC%9D%B4_%EC%9E%88%EB%8A%94_%EB%AC%B8%EC%84%9C",
-        "/wiki/%EB%B6%84%EB%A5%98:%EC%9C%84%ED%82%A4%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%86%8D%EC%84%B1_P1273%EC%9D%84_%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94_%EB%AC%B8%EC%84%9C",
-        "/wiki/%EB%B6%84%EB%A5%98:%EC%82%BC%EA%B5%AD%EC%A7%80%EC%97%90_%EA%B4%80%ED%95%9C_%ED%86%A0%EB%A7%89%EA%B8%80",
-        "/wiki/%EB%B6%84%EB%A5%98:%EB%AA%A8%EB%93%A0_%ED%86%A0%EB%A7%89%EA%B8%80_%EB%AC%B8%EC%84%9C",
-        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%86%8C%EA%B0%9C",
-        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%A9%B4%EC%B1%85_%EC%A1%B0%ED%95%AD"
-      ],
-      "steps": null
-    },
-    {
-      "path": "/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%82%AC%EB%9E%91%EB%B0%A9",
-      "template": "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%82%AC%EB%9E%91%EB%B0%A9",
-      "title": "위키백과:사랑방 - 위키백과, 우리 모두의 백과사전",
-      "found_by": "link",
-      "layout": "상단 검색 및 로그인 영역, 좌측 목차 내비게이션, 우측 외관 설정 영역, 중앙 본문 및 토론 목록 영역으로 구분되어 있습니다.",
+      "layout": "상단 검색 및 계정 메뉴바, 좌측 목차 영역, 중앙 본문 콘텐츠, 우측 외관 설정 사이드바, 하단 푸터 영역으로 나뉘어 있습니다.",
       "elements": [
         {
           "name": "위키백과 검색",
@@ -1173,42 +1299,42 @@
         {
           "name": "목차 숨기기",
           "type": "버튼",
-          "where": "좌측 영역 상단"
+          "where": "좌측 목차 영역 상단"
+        },
+        {
+          "name": "16개 언어",
+          "type": "버튼",
+          "where": "본문 제목 우측"
+        },
+        {
+          "name": "문서",
+          "type": "탭",
+          "where": "본문 상단 좌측 탭 영역"
+        },
+        {
+          "name": "토론",
+          "type": "탭",
+          "where": "본문 상단 좌측 탭 영역"
+        },
+        {
+          "name": "읽기",
+          "type": "탭",
+          "where": "본문 상단 우측 탭 영역"
+        },
+        {
+          "name": "편집",
+          "type": "탭",
+          "where": "본문 상단 우측 탭 영역"
+        },
+        {
+          "name": "역사 보기",
+          "type": "탭",
+          "where": "본문 상단 우측 탭 영역"
         },
         {
           "name": "외관 숨기기",
           "type": "버튼",
-          "where": "우측 영역 상단"
-        },
-        {
-          "name": "일반",
-          "type": "링크",
-          "where": "본문 상단 탭"
-        },
-        {
-          "name": "기술",
-          "type": "링크",
-          "where": "본문 상단 탭"
-        },
-        {
-          "name": "전체",
-          "type": "링크",
-          "where": "본문 상단 탭"
-        },
-        {
-          "name": "새로운 주제",
-          "type": "버튼",
-          "where": "본문 상단 안내문 하단"
-        },
-        {
-          "name": "과거 토론 검색 입력창",
-          "type": "입력",
-          "where": "본문 오른쪽 사랑방 정보 상자 내"
-        },
-        {
-          "name": "과거 토론 검색",
-          "type": "버튼",
-          "where": "본문 오른쪽 사랑방 정보 상자 내"
+          "where": "우측 외관 설정 영역 상단"
         },
         {
           "name": "글 크기 선택 (작음/표준/큼)",
@@ -1226,14 +1352,19 @@
           "where": "우측 외관 설정 영역"
         },
         {
-          "name": "답변",
+          "name": "세네갈의 역사",
           "type": "링크",
-          "where": "각 토론 의견 작성란 우측"
+          "where": "본문 같이 보기 섹션"
         },
         {
-          "name": "편집",
+          "name": "입법부",
           "type": "링크",
-          "where": "각 토론 소제목 우측"
+          "where": "본문 같이 보기 섹션"
+        },
+        {
+          "name": "세네갈 국회",
+          "type": "링크",
+          "where": "본문 외부 링크 섹션"
         }
       ],
       "links_to": [
@@ -1249,91 +1380,69 @@
         "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%A0%95%EC%B1%85%EA%B3%BC_%EC%A7%80%EC%B9%A8",
         "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%A7%88%EB%AC%B8%EB%B0%A9",
         "/wiki/%ED%8A%B9%EC%88%98:%EA%B2%80%EC%83%89",
-        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%ED%86%A0%EB%A1%A0:%EC%82%AC%EB%9E%91%EB%B0%A9",
-        "/wiki/%ED%8A%B9%EC%88%98:%EA%B0%80%EB%A6%AC%ED%82%A4%EB%8A%94%EB%AC%B8%EC%84%9C/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%82%AC%EB%9E%91%EB%B0%A9",
-        "/wiki/%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%82%AC%EB%9E%91%EB%B0%A9",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EA%B3%84%EC%A0%95%EB%A7%8C%EB%93%A4%EA%B8%B0&returnto=%EC%8B%9C%EB%A7%88%EB%8B%A4+%EB%8B%A4%EC%B9%B4%ED%9E%88%EB%A1%9C",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EB%A1%9C%EA%B7%B8%EC%9D%B8&returnto=%EC%8B%9C%EB%A7%88%EB%8B%A4+%EB%8B%A4%EC%B9%B4%ED%9E%88%EB%A1%9C",
+        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:2026%EB%85%84_%EC%95%84%EC%8B%9C%EC%95%88_%EA%B2%8C%EC%9E%84_%EC%97%90%EB%94%94%ED%84%B0%ED%86%A4/%EB%9F%AD%EB%B9%84_%EC%B1%8C%EB%A6%B0%EC%A7%80",
+        "/wiki/%EC%8B%9C%EB%A7%88%EB%8B%A4_%EB%8B%A4%EC%B9%B4%ED%9E%88%EB%A1%9C",
+        "/wiki/%ED%86%A0%EB%A1%A0:%EC%8B%9C%EB%A7%88%EB%8B%A4_%EB%8B%A4%EC%B9%B4%ED%9E%88%EB%A1%9C",
+        "/w/index.php?title=%EC%8B%9C%EB%A7%88%EB%8B%A4_%EB%8B%A4%EC%B9%B4%ED%9E%88%EB%A1%9C&action=edit",
+        "/w/index.php?title=%EC%8B%9C%EB%A7%88%EB%8B%A4_%EB%8B%A4%EC%B9%B4%ED%9E%88%EB%A1%9C&action=history",
+        "/wiki/%ED%8A%B9%EC%88%98:%EA%B0%80%EB%A6%AC%ED%82%A4%EB%8A%94%EB%AC%B8%EC%84%9C/%EC%8B%9C%EB%A7%88%EB%8B%A4_%EB%8B%A4%EC%B9%B4%ED%9E%88%EB%A1%9C",
+        "/wiki/%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C/%EC%8B%9C%EB%A7%88%EB%8B%A4_%EB%8B%A4%EC%B9%B4%ED%9E%88%EB%A1%9C",
         "/wiki/위키백과:파일_올리기",
-        "/wiki/위키백과:사랑방",
-        "/wiki/위키백과:사랑방_(기술)",
-        "/wiki/위키백과:사랑방_(전체)",
-        "/wiki/위키백과:사랑방/2026년_제34주",
-        "/wiki/위키백과:사랑방/2026년_제35주",
-        "/wiki/위키백과:사랑방/2026년_제36주",
-        "/wiki/위키백과:사랑방/2026년_제31주",
-        "/wiki/위키백과:사랑방/2026년_제32주",
-        "/wiki/위키백과:사랑방/2026년_제33주",
-        "/wiki/위키백과:사랑방/보존문서",
-        "/wiki/위키백과:단축",
-        "/wiki/위키백과",
-        "/wiki/도움말:사랑방",
-        "/wiki/위키백과:질문방",
-        "/wiki/위키백과:방명록",
-        "/wiki/위키백과:위키프로젝트",
-        "/wiki/위키백과:요청",
-        "/wiki/틀:위키백과_소식",
-        "/wiki/위키백과:위키마을_강경_프로젝트",
-        "/wiki/위키백과:2026년_아시안_게임_에디터톤",
-        "/wiki/위키백과:2026년_아시안_게임_에디터톤/럭비_챌린지",
-        "/wiki/위키백과:의견_요청",
-        "/wiki/위키백과토론:업로더",
-        "/wiki/위키백과토론:사용자_권한",
-        "/wiki/위키백과토론:관리자_선거_절차",
-        "/wiki/토론:시원_(가수)",
-        "/wiki/위키백과:함께_검토하기",
-        "/wiki/위키백과:에디터톤/제안",
-        "/wiki/위키백과:문서_후보_재검토_전체",
-        "/wiki/위키백과:삭제_토론",
-        "/wiki/위키백과:복구_토론",
-        "/wiki/위키백과:업로더",
-        "/wiki/사용자:RhapsoDJ",
-        "/wiki/사용자토론:RhapsoDJ",
-        "/wiki/사용자:解浪",
-        "/wiki/사용자토론:解浪",
-        "/wiki/특수:기여/解浪",
-        "/wiki/특수:통합계정관리/解浪",
-        "/wiki/사용자:SarahParkKim",
-        "/wiki/사용자토론:SarahParkKim",
-        "/wiki/특수:기여/SarahParkKim",
-        "/wiki/사용자:Trainholic",
-        "/wiki/사용자토론:Trainholic",
-        "/wiki/특수:기여/Trainholic",
-        "/wiki/사용자:Revi_C.",
-        "/wiki/다람쥐",
-        "/wiki/틀:다른_뜻",
-        "/wiki/위키백과:동음이의어_문서",
-        "/wiki/시베리아_다람쥐",
-        "/wiki/사용자:Kjoonlee",
-        "/wiki/사용자토론:Kjoonlee",
-        "/wiki/모듈:Hatnote/styles.css",
-        "/wiki/사용자:Namoroka",
-        "/wiki/사용자토론:Namoroka",
-        "/wiki/파일:Growth_team_logo_-_Icon_only.svg",
-        "/wiki/파일:Create_account_-_July_2026_updates.png",
-        "/wiki/특수:CommunityConfiguration",
-        "/wiki/특수:멘토관리",
-        "/wiki/파일:Home_designs_labeled.png",
-        "/wiki/라코니지성",
-        "/wiki/특수:기여/~2026-45974-53",
-        "/wiki/사용자토론:~2026-45974-53?action=edit&redlink=1",
-        "/wiki/사용자:Swsmusic/송시웅",
-        "/wiki/사용자:Swsmusic?action=edit&redlink=1",
-        "/wiki/사용자토론:Swsmusic",
-        "/wiki/사용자:Nckboy231?action=edit&redlink=1",
-        "/wiki/사용자토론:Nckboy231",
+        "/w/index.php?title=%EC%8B%9C%EB%A7%88%EB%8B%A4_%EB%8B%A4%EC%B9%B4%ED%9E%88%EB%A1%9C&oldid=40201673",
+        "/w/index.php?title=%EC%8B%9C%EB%A7%88%EB%8B%A4_%EB%8B%A4%EC%B9%B4%ED%9E%88%EB%A1%9C&action=info",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%9D%B4%EB%AC%B8%EC%84%9C%EC%9D%B8%EC%9A%A9&wpFormIdentifier=titleform",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3AUrlShortener&url=https%3A%2F%2Fko.wikipedia.org%2Fwiki%2F%25EC%258B%259C%25EB%25A7%2588%25EB%258B%25A4_%25EB%258B%25A4%25EC%25B9%25B4%25ED%259E%2588%25EB%25A1%259C",
+        "/w/index.php?title=%EC%8B%9C%EB%A7%88%EB%8B%A4_%EB%8B%A4%EC%B9%B4%ED%9E%88%EB%A1%9C&useparsoid=0",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%B1%85&bookcmd=book_creator&referer=%EC%8B%9C%EB%A7%88%EB%8B%A4+%EB%8B%A4%EC%B9%B4%ED%9E%88%EB%A1%9C",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3ADownloadAsPdf&action=show-download-screen",
+        "/w/index.php?title=%EC%8B%9C%EB%A7%88%EB%8B%A4_%EB%8B%A4%EC%B9%B4%ED%9E%88%EB%A1%9C&printable=yes",
+        "/wiki/일본",
+        "/wiki/오사카부",
+        "/wiki/스포츠의_키",
+        "/wiki/축구의_포지션",
+        "/wiki/수비수",
+        "/wiki/감바_오사카",
+        "/wiki/일본어",
+        "/wiki/1965년",
+        "/wiki/2월_9일",
+        "/wiki/축구",
+        "/w/index.php?title=%EC%8B%9C%EB%A7%88%EB%8B%A4_%EB%8B%A4%EC%B9%B4%ED%9E%88%EB%A1%9C&action=edit&section=1",
+        "/wiki/일본_사커_리그",
+        "/wiki/제70회_천황배_전일본_축구_선수권_대회",
+        "/w/index.php?title=%EC%8B%9C%EB%A7%88%EB%8B%A4_%EB%8B%A4%EC%B9%B4%ED%9E%88%EB%A1%9C&action=edit&section=2",
+        "/wiki/J.League",
+        "/wiki/분류:축구인에_관한_토막글",
+        "/wiki/위키백과:토막글",
         "/wiki/%ED%8A%B9%EC%88%98:%EB%B6%84%EB%A5%98",
-        "/wiki/%EB%B6%84%EB%A5%98:%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC_%EC%82%AC%EB%9E%91%EB%B0%A9",
-        "/wiki/%EB%B6%84%EB%A5%98:%EB%A9%94%EC%8B%9C%EC%A7%80_%EC%A0%84%EB%8B%AC%EC%9D%84_%EB%B0%9B%EC%A7%80_%EC%95%8A%EB%8A%94_%EC%82%AC%EC%9A%A9%EC%9E%90",
+        "/wiki/%EB%B6%84%EB%A5%98:1965%EB%85%84_%EC%B6%9C%EC%83%9D",
+        "/wiki/%EB%B6%84%EB%A5%98:%EC%82%B4%EC%95%84%EC%9E%88%EB%8A%94_%EC%82%AC%EB%9E%8C",
+        "/wiki/%EB%B6%84%EB%A5%98:%EC%9D%BC%EB%B3%B8%EC%9D%98_%EB%82%A8%EC%9E%90_%EC%B6%95%EA%B5%AC_%EC%84%A0%EC%88%98",
+        "/wiki/%EB%B6%84%EB%A5%98:%EC%9D%BC%EB%B3%B8_%EC%82%AC%EC%BB%A4_%EB%A6%AC%EA%B7%B8%EC%9D%98_%EC%B6%95%EA%B5%AC_%EC%84%A0%EC%88%98",
+        "/wiki/%EB%B6%84%EB%A5%98:J1%EB%A6%AC%EA%B7%B8%EC%9D%98_%EC%B6%95%EA%B5%AC_%EC%84%A0%EC%88%98",
+        "/wiki/%EB%B6%84%EB%A5%98:%EA%B0%90%EB%B0%94_%EC%98%A4%EC%82%AC%EC%B9%B4%EC%9D%98_%EC%B6%95%EA%B5%AC_%EC%84%A0%EC%88%98",
+        "/wiki/%EB%B6%84%EB%A5%98:%EB%82%A8%EC%9E%90_%EC%B6%95%EA%B5%AC_%EC%88%98%EB%B9%84%EC%88%98",
+        "/wiki/%EB%B6%84%EB%A5%98:%EC%98%A4%EC%82%AC%EC%B9%B4_%EC%B2%B4%EC%9C%A1%EB%8C%80%ED%95%99_%EB%8F%99%EB%AC%B8",
+        "/wiki/%EB%B6%84%EB%A5%98:%EC%98%A4%EC%82%AC%EC%B9%B4%EB%B6%80_%EC%B6%9C%EC%8B%A0_%EC%B6%95%EA%B5%AC_%EC%84%A0%EC%88%98",
+        "/wiki/%EB%B6%84%EB%A5%98:%EC%9D%BC%EB%B3%B8%EC%96%B4_%ED%91%9C%EA%B8%B0%EB%A5%BC_%ED%8F%AC%ED%95%A8%ED%95%9C_%EB%AC%B8%EC%84%9C",
+        "/wiki/%EB%B6%84%EB%A5%98:%EC%9C%84%ED%82%A4%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%97%90_%EC%8A%A4%ED%8F%AC%EC%B8%A0_%EB%A7%81%ED%81%AC%EA%B0%80_%EC%9E%88%EB%8A%94_%EB%AC%B8%EC%84%9C",
+        "/wiki/%EB%B6%84%EB%A5%98:%ED%95%B4%EA%B2%B0%EB%90%98%EC%A7%80_%EC%95%8A%EC%9D%80_%EC%86%8D%EC%84%B1%EC%9D%B4_%EC%9E%88%EB%8A%94_%EB%AC%B8%EC%84%9C",
+        "/wiki/%EB%B6%84%EB%A5%98:%EC%9C%84%ED%82%A4%EB%8D%B0%EC%9D%B4%ED%84%B0_%EC%86%8D%EC%84%B1_P1273%EC%9D%84_%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94_%EB%AC%B8%EC%84%9C",
+        "/wiki/%EB%B6%84%EB%A5%98:%EC%B6%95%EA%B5%AC%EC%9D%B8%EC%97%90_%EA%B4%80%ED%95%9C_%ED%86%A0%EB%A7%89%EA%B8%80",
+        "/wiki/%EB%B6%84%EB%A5%98:%EB%AA%A8%EB%93%A0_%ED%86%A0%EB%A7%89%EA%B8%80_%EB%AC%B8%EC%84%9C",
         "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%86%8C%EA%B0%9C",
-        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%A9%B4%EC%B1%85_%EC%A1%B0%ED%95%AD"
+        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%A9%B4%EC%B1%85_%EC%A1%B0%ED%95%AD",
+        "/w/index.php?title=%EC%8B%9C%EB%A7%88%EB%8B%A4_%EB%8B%A4%EC%B9%B4%ED%9E%88%EB%A1%9C&mobileaction=toggle_view_mobile"
       ],
       "steps": null
     },
     {
-      "path": "/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%82%AC%EC%9A%A9%EC%9E%90_%EB%AA%A8%EC%9E%84",
-      "template": "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%82%AC%EC%9A%A9%EC%9E%90_%EB%AA%A8%EC%9E%84",
-      "title": "위키백과:사용자 모임 - 위키백과, 우리 모두의 백과사전",
+      "path": "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%82%AC%EB%9E%91%EB%B0%A9",
+      "template": "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%82%AC%EB%9E%91%EB%B0%A9",
+      "title": "위키백과:사랑방 - 위키백과, 우리 모두의 백과사전",
       "found_by": "link",
-      "layout": "상단 검색 및 계정 영역, 좌측 메인 콘텐츠 영역, 우측 외관 설정 사이드바로 구성된 2열 레이아웃입니다.",
+      "layout": "상단 검색 및 계정 영역, 좌측 목차 사이드바, 중앙 문서 본문 영역, 우측 외관 설정 사이드바로 구성된 3열 구조",
       "elements": [
         {
           "name": "위키백과 검색",
@@ -1343,7 +1452,7 @@
         {
           "name": "검색",
           "type": "버튼",
-          "where": "상단 중앙 검색창 우측"
+          "where": "상단 중앙 검색 입력창 우측"
         },
         {
           "name": "기부",
@@ -1361,54 +1470,59 @@
           "where": "상단 우측"
         },
         {
-          "name": "221개 언어",
+          "name": "목차 숨기기",
+          "type": "버튼",
+          "where": "좌측 사이드바 상단"
+        },
+        {
+          "name": "269개 언어",
+          "type": "버튼",
+          "where": "본문 제목 우측"
+        },
+        {
+          "name": "일반",
+          "type": "링크",
+          "where": "본문 상단 탭"
+        },
+        {
+          "name": "기술",
+          "type": "링크",
+          "where": "본문 상단 탭"
+        },
+        {
+          "name": "전체",
+          "type": "링크",
+          "where": "본문 상단 탭"
+        },
+        {
+          "name": "과거 토론 검색",
+          "type": "버튼",
+          "where": "본문 오른쪽 사랑방 정보상자 하단"
+        },
+        {
+          "name": "새로운 주제",
+          "type": "버튼",
+          "where": "본문 안내 문단 하단 파란색 상자"
+        },
+        {
+          "name": "외관 숨기기",
+          "type": "버튼",
+          "where": "우측 사이드바 상단"
+        },
+        {
+          "name": "글 크기 선택 (작음/표준/큼)",
           "type": "선택",
-          "where": "문서 제목 우측"
+          "where": "우측 사이드바 글 항목"
         },
         {
-          "name": "도움말",
-          "type": "링크",
-          "where": "본문 상단 아이콘 그리드 첫 번째"
-        },
-        {
-          "name": "사랑방",
-          "type": "링크",
-          "where": "본문 상단 아이콘 그리드 두 번째"
-        },
-        {
-          "name": "질문방",
-          "type": "링크",
-          "where": "본문 상단 아이콘 그리드 세 번째"
-        },
-        {
-          "name": "방명록",
-          "type": "링크",
-          "where": "본문 상단 아이콘 그리드 네 번째"
-        },
-        {
-          "name": "관리 요청",
-          "type": "링크",
-          "where": "본문 상단 아이콘 그리드 다섯 번째"
-        },
-        {
-          "name": "대사관",
-          "type": "링크",
-          "where": "본문 상단 아이콘 그리드 여섯 번째"
-        },
-        {
-          "name": "글 크기 라디오 버튼(작음, 표준, 큼)",
+          "name": "너비 선택 (표준/넓게)",
           "type": "선택",
-          "where": "우측 외관 설정 사이드바"
+          "where": "우측 사이드바 너비 항목"
         },
         {
-          "name": "너비 라디오 버튼(표준, 넓게)",
+          "name": "색 선택 (자동/라이트/다크)",
           "type": "선택",
-          "where": "우측 외관 설정 사이드바"
-        },
-        {
-          "name": "색 라디오 버튼(자동, 라이트, 다크)",
-          "type": "선택",
-          "where": "우측 외관 설정 사이드바"
+          "where": "우측 사이드바 색(베타) 항목"
         }
       ],
       "links_to": [
@@ -1424,210 +1538,117 @@
         "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%A0%95%EC%B1%85%EA%B3%BC_%EC%A7%80%EC%B9%A8",
         "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%A7%88%EB%AC%B8%EB%B0%A9",
         "/wiki/%ED%8A%B9%EC%88%98:%EA%B2%80%EC%83%89",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EA%B3%84%EC%A0%95%EB%A7%8C%EB%93%A4%EA%B8%B0&returnto=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EB%A1%9C%EA%B7%B8%EC%9D%B8&returnto=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9",
         "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:2026%EB%85%84_%EC%95%84%EC%8B%9C%EC%95%88_%EA%B2%8C%EC%9E%84_%EC%97%90%EB%94%94%ED%84%B0%ED%86%A4/%EB%9F%AD%EB%B9%84_%EC%B1%8C%EB%A6%B0%EC%A7%80",
-        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%ED%86%A0%EB%A1%A0:%EC%82%AC%EC%9A%A9%EC%9E%90_%EB%AA%A8%EC%9E%84",
-        "/wiki/%ED%8A%B9%EC%88%98:%EA%B0%80%EB%A6%AC%ED%82%A4%EB%8A%94%EB%AC%B8%EC%84%9C/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%82%AC%EC%9A%A9%EC%9E%90_%EB%AA%A8%EC%9E%84",
-        "/wiki/%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%82%AC%EC%9A%A9%EC%9E%90_%EB%AA%A8%EC%9E%84",
+        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%ED%86%A0%EB%A1%A0:%EC%82%AC%EB%9E%91%EB%B0%A9",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9&action=edit",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9&action=history",
+        "/wiki/%ED%8A%B9%EC%88%98:%EA%B0%80%EB%A6%AC%ED%82%A4%EB%8A%94%EB%AC%B8%EC%84%9C/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%82%AC%EB%9E%91%EB%B0%A9",
+        "/wiki/%ED%8A%B9%EC%88%98:%EB%A7%81%ED%81%AC%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%82%AC%EB%9E%91%EB%B0%A9",
         "/wiki/위키백과:파일_올리기",
-        "/wiki/위키백과:단축",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9&oldid=37370411",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9&action=info",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3AUrlShortener&url=https%3A%2F%2Fko.wikipedia.org%2Fwiki%2F%25EC%259C%2584%25ED%2582%25A4%25EB%25B0%25B1%25EA%25B3%25BC%3A%25EC%2582%25AC%25EB%259E%2591%25EB%25B0%25A9",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9&useparsoid=0",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%B1%85&bookcmd=book_creator&referer=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3ADownloadAsPdf&action=show-download-screen",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9&printable=yes",
         "/wiki/위키백과:사랑방",
+        "/wiki/위키백과:사랑방_(기술)",
+        "/wiki/위키백과:사랑방_(전체)",
+        "/wiki/위키백과:사랑방/2026년_제34주",
+        "/wiki/위키백과:사랑방/2026년_제35주",
+        "/wiki/위키백과:사랑방/2026년_제36주",
+        "/wiki/위키백과:사랑방/2026년_제31주",
+        "/wiki/위키백과:사랑방/2026년_제32주",
+        "/wiki/위키백과:사랑방/2026년_제33주",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9&action=purge",
+        "/wiki/위키백과:사랑방/보존문서",
+        "/wiki/위키백과:단축",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC&redirect=no",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3AVP&redirect=no",
+        "/wiki/위키백과",
+        "/wiki/도움말:사랑방",
         "/wiki/위키백과:질문방",
-        "/wiki/위키백과:도움말",
         "/wiki/위키백과:방명록",
+        "/wiki/위키백과:위키프로젝트",
         "/wiki/위키백과:요청",
-        "/wiki/위키백과:대사관",
+        "/wiki/틀:위키백과_소식",
         "/wiki/위키백과:위키마을_강경_프로젝트",
         "/wiki/위키백과:2026년_아시안_게임_에디터톤",
         "/wiki/위키백과:2026년_아시안_게임_에디터톤/럭비_챌린지",
-        "/wiki/위키백과:KIWI",
-        "/wiki/위키백과:KIWI/2026년_16호/편집자의_말",
-        "/wiki/위키백과:KIWI/2026년_16호/월별핫뷰",
-        "/wiki/위키백과:KIWI/2026년_16호/추천하는_글",
-        "/wiki/위키백과:KIWI/2026년_16호/거버넌스",
-        "/wiki/위키백과:KIWI/2026년_16호/지난_행사",
-        "/wiki/위키백과:KIWI/2026년_16호/위키루키즈",
-        "/wiki/위키백과:KIWI/2026년_16호/절차탁마",
-        "/wiki/위키백과:KIWI/2026년_16호/세계동향",
-        "/wiki/위키백과:KIWI/2026년_16호/일본_협력",
-        "/wiki/위키백과:KIWI/2026년_16호/말레이_협력",
-        "/wiki/위키백과:KIWI/2026년_16호/Diff",
-        "/wiki/위키백과:KIWI/2026년_16호/지원_안내",
-        "/wiki/위키백과:KIWI/2026년_16호/후원_안내",
-        "/wiki/위키백과:KIWI/전체기사/2026년_16호",
-        "/wiki/위키백과:함께_검토하기",
-        "/wiki/위키백과:알찬_글_후보",
-        "/wiki/위키백과:좋은_글_후보",
-        "/wiki/위키백과:알찬_목록_후보",
-        "/wiki/위키백과:삭제_토론",
-        "/wiki/위키백과:복구_토론",
+        "/w/index.php?title=%ED%8B%80%3A%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC_%EC%86%8C%EC%8B%9D&action=edit",
+        "/wiki/위키백과:의견_요청",
         "/wiki/위키백과토론:업로더",
         "/wiki/위키백과토론:사용자_권한",
         "/wiki/위키백과토론:관리자_선거_절차",
         "/wiki/토론:시원_(가수)",
-        "/wiki/위키백과:위키프로젝트",
-        "/wiki/위키백과:위키프로젝트/목차",
-        "/wiki/위키백과:위키프로젝트/제안",
-        "/wiki/위키프로젝트:유지_보수",
-        "/wiki/위키프로젝트:위키백과_유지_보수",
-        "/wiki/위키백과:학생_캠프",
-        "/wiki/위키백과:사랑방_(기술)",
-        "/wiki/위키백과:디스코드_대화방",
-        "/wiki/위키백과:카카오톡_대화방",
-        "/wiki/위키백과:메일링_리스트",
-        "/wiki/위키백과:오프라인_모임",
-        "/wiki/위키백과:에디터톤",
-        "/wiki/위키백과:연락처",
-        "/wiki/위키백과:문서_관리_요청",
-        "/wiki/위키백과:이동_요청",
-        "/wiki/위키백과:파일_업로드_요청",
-        "/wiki/위키백과:사용자_관리_요청",
-        "/wiki/위키백과:사용자_권한_신청",
-        "/wiki/위키백과:다중_계정_검사_요청",
-        "/wiki/위키백과:조정",
-        "/wiki/위키백과:조정_요청",
-        "/wiki/위키백과:봇_편집_요청",
-        "/wiki/위키백과:문서_작성_요청",
-        "/wiki/위키백과:그림_요청",
-        "/wiki/위키백과:데이터베이스_보고서",
-        "/wiki/위키백과:일터",
-        "/wiki/위키백과:마중물",
-        "/wiki/위키백과:키다리_아저씨",
-        "/wiki/위키백과:편집_공유",
-        "/wiki/위키백과:반스타",
-        "/wiki/위키백과:참_잘했어요_도장",
-        "/wiki/분류:정리가_필요한_모든_글",
-        "/wiki/이자람",
-        "/wiki/1997_K리그_드래프트",
-        "/wiki/메스토르",
-        "/wiki/철학박사",
-        "/wiki/파발제",
-        "/wiki/장례_예술",
-        "/wiki/신영자_(1954년)",
-        "/wiki/분류:중립성에_이의가_제기된_모든_문서",
-        "/wiki/하이코_젭킨",
-        "/wiki/명성교회",
-        "/wiki/OOZ&mates",
-        "/wiki/아산정책연구원",
-        "/wiki/니콜로_파가니니",
-        "/wiki/이유립",
-        "/wiki/유니버시티_칼리지_런던",
-        "/wiki/분류:문서_등재_기준에_부합하는지_입증이_요구되는_모든_문서",
-        "/wiki/미스터_미라클",
-        "/wiki/트레버스_컴퍼니",
-        "/wiki/메타위키_(웹사이트)?action=edit&redlink=1",
-        "/wiki/국민안전체험센터",
-        "/wiki/청남정맥",
-        "/wiki/케이트_레싱",
-        "/wiki/포앤비?action=edit&redlink=1",
-        "/wiki/분류:모든_독자_연구_의심_문서?action=edit&redlink=1",
-        "/wiki/분류:일부_지역만을_다루는_모든_글",
-        "/wiki/단식",
-        "/wiki/앙리할아버지와_나",
-        "/wiki/아파치_플렉스",
-        "/wiki/특선영화",
-        "/wiki/산림철도",
-        "/wiki/액티브X",
-        "/wiki/다문화_가정",
-        "/wiki/분류:모든_외톨이_글",
-        "/wiki/임혜지",
-        "/wiki/화원_야시장",
-        "/wiki/타이베이_충칭_국민중학교",
-        "/wiki/진먼마쭈다천_전용지폐",
-        "/wiki/젠탸오",
-        "/wiki/주민등록_지문정보DB_사건",
-        "/wiki/타이베이_북경찰서",
-        "/wiki/분류:합쳐야_할_문서",
-        "/wiki/행위_규범",
-        "/wiki/관리_(기업)",
-        "/wiki/후루이치역_(히로시마현)",
-        "/wiki/클로즈업_현대+",
-        "/wiki/청소년_범죄",
-        "/wiki/제3영화채널",
-        "/wiki/한국형_고체연료_발사체",
-        "/wiki/분류:분할이_필요한_문서",
-        "/wiki/대한민국_국가정보원",
-        "/wiki/메디아셋",
-        "/wiki/백상예술대상_수상_목록",
-        "/wiki/아시안_하이웨이_1호선",
-        "/wiki/분류:옮겨야_할_문서",
-        "/wiki/집게손가락_음모론",
-        "/wiki/주식회사_나스카",
-        "/wiki/고대디",
-        "/wiki/하티_샤리프_칙령",
-        "/wiki/우크라이나_육군",
-        "/wiki/카이손폼비한_(도시)",
-        "/wiki/고덕토평대교",
-        "/wiki/분류:번역되지_않은_문장이_포함된_문서",
-        "/wiki/오우치_요시나가",
-        "/wiki/국제_과학_올림피아드",
-        "/wiki/플록_포르스터",
-        "/wiki/랜디_오턴",
-        "/wiki/로저_아녤리",
-        "/wiki/퉁구스_공화국",
-        "/wiki/2014년_세계_남자_컬링_선수권_대회",
-        "/wiki/분류:모든_기계_번역_의심_문서",
-        "/wiki/위키백과:포털",
-        "/wiki/포털:인문학",
-        "/wiki/포털:국가",
-        "/wiki/포털:기독교",
-        "/wiki/포털:네덜란드",
-        "/wiki/포털:문학",
-        "/wiki/포털:신화",
-        "/wiki/포털:언어",
-        "/wiki/포털:역사",
-        "/wiki/포털:영국",
-        "/wiki/포털:영어",
-        "/wiki/포털:오스트레일리아",
-        "/wiki/포털:우크라이나",
-        "/wiki/포털:일본",
-        "/wiki/포털:중국",
-        "/wiki/포털:철학",
-        "/wiki/포털:한국",
-        "/wiki/포털:사회과학",
-        "/wiki/포털:교육",
-        "/wiki/포털:성소수자",
-        "/wiki/포털:요즘_화제",
-        "/wiki/포털:화폐",
-        "/wiki/포털:과학",
-        "/wiki/포털:공룡",
-        "/wiki/포털:날씨",
-        "/wiki/포털:물리학",
-        "/wiki/포털:생물학",
-        "/wiki/포털:수학",
-        "/wiki/포털:우주_개발",
-        "/wiki/포털:천문학",
-        "/wiki/포털:태풍",
-        "/wiki/포털:화학",
-        "/wiki/포털:예술",
-        "/wiki/포털:닌텐도",
-        "/wiki/포털:만화",
-        "/wiki/포털:문화유산",
-        "/wiki/포털:비디오_게임",
-        "/wiki/포털:빵",
-        "/wiki/포털:스포츠",
-        "/wiki/포털:야구",
-        "/wiki/포털:애니메이션",
-        "/wiki/포털:영화",
-        "/wiki/포털:올림픽",
-        "/wiki/포털:음료",
-        "/wiki/포털:음식",
-        "/wiki/포털:음악",
-        "/wiki/포털:일본의_만화와_애니메이션",
-        "/wiki/포털:축구",
-        "/wiki/포털:텔레비전",
-        "/wiki/포털:힙합",
-        "/wiki/포털:K-pop",
+        "/wiki/위키백과:함께_검토하기",
+        "/wiki/위키백과:에디터톤/제안",
+        "/wiki/위키백과:문서_후보_재검토_전체",
+        "/wiki/위키백과:삭제_토론",
+        "/wiki/위키백과:복구_토론",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9%2F2026%EB%85%84_%EC%A0%9C35%EC%A3%BC&action=edit&section=new",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9%2F2026%EB%85%84_%EC%A0%9C33%EC%A3%BC&action=edit&section=T-1",
+        "/wiki/위키백과:업로더",
+        "/wiki/사용자:RhapsoDJ",
+        "/wiki/사용자토론:RhapsoDJ",
+        "/wiki/사용자:解浪",
+        "/wiki/사용자토론:解浪",
+        "/wiki/특수:기여/解浪",
+        "/wiki/특수:통합계정관리/解浪",
+        "/wiki/사용자:SarahParkKim",
+        "/wiki/사용자토론:SarahParkKim",
+        "/wiki/특수:기여/SarahParkKim",
+        "/wiki/사용자:Trainholic",
+        "/wiki/사용자토론:Trainholic",
+        "/wiki/특수:기여/Trainholic",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9%2F2026%EB%85%84_%EC%A0%9C33%EC%A3%BC&action=edit&section=T-2",
+        "/wiki/사용자:Revi_C.",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9%2F2026%EB%85%84_%EC%A0%9C34%EC%A3%BC&action=edit&section=T-1",
+        "/wiki/다람쥐",
+        "/wiki/틀:다른_뜻",
+        "/wiki/위키백과:동음이의어_문서",
+        "/wiki/시베리아_다람쥐",
+        "/wiki/사용자:Kjoonlee",
+        "/wiki/사용자토론:Kjoonlee",
+        "/wiki/모듈:Hatnote/styles.css",
+        "/wiki/사용자:Namoroka",
+        "/wiki/사용자토론:Namoroka",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9%2F2026%EB%85%84_%EC%A0%9C34%EC%A3%BC&action=edit&section=T-2",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9%2F2026%EB%85%84_%EC%A0%9C34%EC%A3%BC&action=edit&section=T-3",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9%2F2026%EB%85%84_%EC%A0%9C34%EC%A3%BC&action=edit&section=T-4",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9%2F2026%EB%85%84_%EC%A0%9C34%EC%A3%BC&action=edit&section=T-5",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9%2F2026%EB%85%84_%EC%A0%9C34%EC%A3%BC&action=edit&section=T-6",
+        "/wiki/특수:CommunityConfiguration",
+        "/wiki/특수:멘토관리",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9%2F2026%EB%85%84_%EC%A0%9C34%EC%A3%BC&action=edit&section=T-7",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9%2F2026%EB%85%84_%EC%A0%9C34%EC%A3%BC&action=edit&section=T-8",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9%2F2026%EB%85%84_%EC%A0%9C34%EC%A3%BC&action=edit&section=T-9",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9%2F2026%EB%85%84_%EC%A0%9C34%EC%A3%BC&action=edit&section=T-10",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9%2F2026%EB%85%84_%EC%A0%9C34%EC%A3%BC&action=edit&section=T-11",
+        "/wiki/라코니지성",
+        "/w/index.php?title=%ED%8A%B9%EC%88%98%3A%EC%83%88%EB%AC%B8%EC%84%9C&limit=250",
+        "/wiki/특수:기여/~2026-45974-53",
+        "/wiki/사용자토론:~2026-45974-53?action=edit&redlink=1",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9%2F2026%EB%85%84_%EC%A0%9C34%EC%A3%BC&action=edit&section=T-12",
+        "/wiki/사용자:Swsmusic/송시웅",
+        "/wiki/사용자:Swsmusic?action=edit&redlink=1",
+        "/wiki/사용자토론:Swsmusic",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9%2F2026%EB%85%84_%EC%A0%9C35%EC%A3%BC&action=edit&section=T-1",
+        "/wiki/사용자:Nckboy231?action=edit&redlink=1",
+        "/wiki/사용자토론:Nckboy231",
         "/wiki/%ED%8A%B9%EC%88%98:%EB%B6%84%EB%A5%98",
-        "/wiki/%EB%B6%84%EB%A5%98:%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC_%EC%82%AC%EC%9A%A9%EC%9E%90_%EB%AA%A8%EC%9E%84",
-        "/wiki/%EB%B6%84%EB%A5%98:%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC_%EA%B8%B0%EB%B3%B8_%EC%A0%95%EB%B3%B4",
-        "/wiki/%EB%B6%84%EB%A5%98:%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC_%ED%86%A0%EB%A1%A0",
-        "/wiki/%EB%B6%84%EB%A5%98:%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC_%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC",
+        "/wiki/%EB%B6%84%EB%A5%98:%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC_%EC%82%AC%EB%9E%91%EB%B0%A9",
+        "/wiki/%EB%B6%84%EB%A5%98:%EB%A9%94%EC%8B%9C%EC%A7%80_%EC%A0%84%EB%8B%AC%EC%9D%84_%EB%B0%9B%EC%A7%80_%EC%95%8A%EB%8A%94_%EC%82%AC%EC%9A%A9%EC%9E%90",
         "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%86%8C%EA%B0%9C",
-        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%A9%B4%EC%B1%85_%EC%A1%B0%ED%95%AD"
+        "/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%A9%B4%EC%B1%85_%EC%A1%B0%ED%95%AD",
+        "/w/index.php?title=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EC%82%AC%EB%9E%91%EB%B0%A9&mobileaction=toggle_view_mobile"
       ],
       "steps": null
     }
   ],
   "unreached": [],
-  "structure": "위키백과, 우리 모두의 백과사전 → 최근 바뀜 - 위키백과, 우리 모두의 백과사전 → 포털:요즘 화제 - 위키백과, 우리 모두의 백과사전 → 송금 전투 - 위키백과, 우리 모두의 백과사전 → 위키백과:사랑방 - 위키백과, 우리 모두의 백과사전 → 위키백과:사용자 모임 - 위키백과, 우리 모두의 백과사전"
+  "structure": "위키백과, 우리 모두의 백과사전 → 위키백과, 우리 모두의 백과사전 → 최근 바뀜 - 위키백과, 우리 모두의 백과사전 → 포털:요즘 화제 - 위키백과, 우리 모두의 백과사전 → 세네갈 국회 - 위키백과, 우리 모두의 백과사전 → 위키백과:사랑방 - 위키백과, 우리 모두의 백과사전"
 }

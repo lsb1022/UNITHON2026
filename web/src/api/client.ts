@@ -264,6 +264,9 @@ export const startRun = (testId: string, req: RunRequest = {}) =>
 // --------------------------------------------------------------------------- //
 
 export type ActiveRun = {
+  /** 두 단계를 합친 진행률. 답사가 앞의 30%, 페르소나가 나머지 70%.
+   *  없으면 화면이 done/total 로 계산한다(옛 서버 호환). */
+  percent?: number
   run_id: string
   project_id: string
   project_name: string
@@ -583,18 +586,23 @@ export type CreditsPayload = {
 export type PlanTier = {
   id: string
   name: string
-  tagline: string
+  /** 월 요금 */
   price: string
-  cta: string
+  /** 이 요금제에 들어 있는 크레딧 */
+  credits: number
+  /** 이 요금제에서 열리는 것 한 가지 */
+  unlock: string
   featured: boolean
-  badge: string | null
-  features: string[]
 }
+
+/** 추가로 살 수 있는 크레딧 묶음 */
+export type CreditPack = { credits: number; price: string }
 
 export const getAccount = () => request<Account>('/api/account')
 export const getPlan = () => request<PlanPayload>('/api/billing/plan')
 export const getCredits = () => request<CreditsPayload>('/api/billing/credits')
-export const getPlanTiers = () => request<{ tiers: PlanTier[] }>('/api/billing/tiers')
+export const getPlanTiers = () =>
+  request<{ tiers: PlanTier[]; packs: CreditPack[] }>('/api/billing/tiers')
 
 // --------------------------------------------------------------------------- //
 // A/B 테스트

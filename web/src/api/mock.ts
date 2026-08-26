@@ -167,6 +167,8 @@ const state = {
    */
   created: loadCreated(),
   targetUrl: SITES[0].url as string,
+  /** 마법사에서 사용자가 붙인 테스트 이름. 없으면 사이트의 기본 미션 이름을 쓴다. */
+  testName: '',
 }
 
 const nameOf = (site: Site) => site.name
@@ -431,53 +433,37 @@ const CREDITS = {
 const PLAN_TIERS = [
   {
     id: 'free',
-    name: '무료',
-    tagline: '작게 시작하고 기능을 확인해보세요.',
-    price: '₩0',
-    cta: '무료로 시작하기',
+    name: 'FREE',
+    price: '0원',
+    credits: 3,
+    // 요금제마다 열리는 것 한 가지씩. 있는 그대로만 적는다 — 없는 기능을
+    // 목록에 채우면 눌러본 사람이 바로 안다.
+    unlock: '로그확인 불가',
     featured: false,
-    badge: null,
-    features: [
-      '프로젝트 1개',
-      '월 3회 테스트 실행',
-      'AI 페르소나 최대 5명',
-      '기본 행동 로그 및 성공률 리포트',
-    ],
   },
   {
     id: 'standard',
-    name: '스탠다드',
-    tagline: '팀의 반복 UX 테스트를 자동화해요.',
-    price: '₩14,900',
-    cta: '스탠다드 시작하기',
+    name: 'Standard',
+    price: '14,900원',
+    credits: 100,
+    unlock: 'A/B 테스트 기능 오픈',
     featured: true,
-    badge: '가장 많이 선택해요',
-    features: [
-      '프로젝트 10개',
-      '월 30회 테스트 실행',
-      'AI 페르소나 최대 30명',
-      'Navigation Flow · Replay',
-      '감정/내면 독백 분석',
-      '팀원 3명',
-    ],
   },
   {
     id: 'pro',
-    name: '프로',
-    tagline: '고빈도 테스트와 상세 분석이 필요한 팀.',
-    price: '₩39,900',
-    cta: '프로 시작하기',
+    name: 'PRO',
+    price: '39,900원',
+    credits: 300,
+    unlock: '감정내면 독백 분석',
     featured: false,
-    badge: null,
-    features: [
-      '프로젝트 무제한',
-      '월 120회 테스트 실행',
-      'AI 페르소나 최대 100명',
-      '고급 리포트 · CSV/PDF 내보내기',
-      '우선 테스트 실행',
-      '팀원 10명',
-    ],
   },
+]
+
+/** 추가로 살 수 있는 크레딧. */
+const CREDIT_PACKS = [
+  { credits: 50, price: '11,000원' },
+  { credits: 100, price: '19,800원' },
+  { credits: 300, price: '42,800원' },
 ]
 
 // --------------------------------------------------------------------------- //
@@ -688,7 +674,12 @@ export function mockResponse(rawPath: string, init?: RequestInit): unknown {
 
   const listing = allSites().find((s) => path === `/api/projects/${s.id}/tests`)
   if (listing) {
-    if (method === 'POST') return { id: listing.testId }
+    if (method === 'POST') {
+      // 사용자가 붙인 이름을 버리면 진행 화면과 검토 화면이 엉뚱한 미션 이름을
+      // 띄운다 — "위치 찾기"로 만들었는데 "표어 확인"이 뜨는 식이다.
+      if (body?.name) state.testName = String(body.name)
+      return { id: listing.testId }
+    }
     return [
       {
         test_id: listing.testId,
@@ -727,7 +718,13 @@ export function mockResponse(rawPath: string, init?: RequestInit): unknown {
       const n = state.personaTotal
       return {
         project: { id: site.id },
-        test: { id: site.testId, name: missionOf(site.variant).name, device: 'desktop' },
+        test: {
+          id: site.testId,
+          // 검토 화면은 **지금 돌리려는 것**을 보여준다. 결과 화면은 그 기록을
+          // 만든 미션을 보여준다 — 둘을 같은 값으로 묶으면 한쪽이 반드시 거짓이 된다.
+          name: state.testName || missionOf(site.variant).name,
+          device: 'desktop',
+        },
         mission: { prompt: state.missionPrompt,
                    success_criteria: state.successCriteria,
                    expect: state.expect },
@@ -917,7 +914,7 @@ function stepsPayload(variant: string) {
   if (path === '/api/account') return ACCOUNT
   if (path === '/api/billing/plan') return PLAN
   if (path === '/api/billing/credits') return CREDITS
-  if (path === '/api/billing/tiers') return { tiers: PLAN_TIERS }
+  if (path === '/api/billing/tiers') return { tiers: PLAN_TIERS, packs: CREDIT_PACKS }
 
   // 실행 시작.
   //

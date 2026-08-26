@@ -586,12 +586,21 @@ export type CreditsPayload = {
 export type PlanTier = {
   id: string
   name: string
+  /** 카드 제목 밑 한 줄 */
+  tagline: string
   /** 월 요금 */
   price: string
+  /** 버튼에 적히는 말 */
+  cta: string
+  /** 카드 오른쪽 위 딱지. 없으면 null */
+  badge: string | null
   /** 이 요금제에 들어 있는 크레딧 */
   credits: number
-  /** 이 요금제에서 열리는 것 한 가지 */
-  unlock: string
+  /** 체크 표시가 붙는 항목 — 이 요금제에서 되는 것 */
+  features: string[]
+  /** 체크가 아니라 빗금이 붙는 항목 — 이 요금제에서 안 되는 것.
+   *  못 하는 것에 파란 체크를 달면 되는 것처럼 읽힌다. */
+  limits: string[]
   featured: boolean
 }
 

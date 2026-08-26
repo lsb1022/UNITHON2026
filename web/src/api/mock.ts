@@ -422,9 +422,9 @@ const CREDITS = {
     { label: '고급 감정 분석', value: '+1 credit / persona', highlight: false },
   ],
   packs: [
-    { credits: 50, price: '₩12,000', featured: false },
-    { credits: 100, price: '₩22,000', featured: true },
-    { credits: 500, price: '₩95,000', featured: false },
+    { credits: 50, price: '₩11,000', featured: false },
+    { credits: 100, price: '₩19,800', featured: true },
+    { credits: 300, price: '₩42,800', featured: false },
   ],
   history: [
     { at: '오늘 01:14', label: '결제 화면 테스트', delta: -18 },
@@ -434,30 +434,42 @@ const CREDITS = {
 }
 
 const PLAN_TIERS = [
+  // 표에 있는 것만 적는다. 요금제 화면의 목록은 약속으로 읽히고,
+  // 없는 기능을 채워 두면 눌러본 사람이 바로 알아챈다.
   {
     id: 'free',
-    name: 'FREE',
-    price: '0원',
+    name: '무료',
+    tagline: '작게 시작하고 기능을 확인해보세요.',
+    price: '₩0',
+    cta: '무료로 시작하기',
+    badge: null,
     credits: 3,
-    // 요금제마다 열리는 것 한 가지씩. 있는 그대로만 적는다 — 없는 기능을
-    // 목록에 채우면 눌러본 사람이 바로 안다.
-    unlock: '로그확인 불가',
+    features: ['3크레딧'],
+    limits: ['로그 확인 불가'],
     featured: false,
   },
   {
     id: 'standard',
-    name: 'Standard',
-    price: '14,900원',
+    name: '스탠다드',
+    tagline: '팀의 반복 UX 테스트를 자동화해요.',
+    price: '₩14,900',
+    cta: '스탠다드 시작하기',
+    badge: '가장 많이 선택해요',
     credits: 100,
-    unlock: 'A/B 테스트 기능 오픈',
+    features: ['100크레딧', 'A/B 테스트 기능 오픈'],
+    limits: [],
     featured: true,
   },
   {
     id: 'pro',
-    name: 'PRO',
-    price: '39,900원',
+    name: '프로',
+    tagline: '고인도 테스트와 상세 분석이 필요한 팀.',
+    price: '₩39,900',
+    cta: '프로 시작하기',
+    badge: null,
     credits: 300,
-    unlock: '감정내면 독백 분석',
+    features: ['300크레딧', '감정내면 독백 분석'],
+    limits: [],
     featured: false,
   },
 ]

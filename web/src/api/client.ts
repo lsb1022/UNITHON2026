@@ -275,6 +275,9 @@ export type ActiveRun = {
   total: number
   /** 끝났을 때 어느 결과로 데려갈지. */
   test_id?: string
+  /** 결과를 읽어올 기록 폴더 이름 (agent-ux/logs/<run_log>).
+   *  로컬에서 진짜로 돌렸을 때만 온다. */
+  run_log?: string
   /** 지금 새로 도는 것이 아니라 **이미 돌려 둔 실행을 다시 재생**하는 중.
    *  배포본에는 파이프라인이 붙어 있지 않아 이 값이 켜진다. */
   replay?: boolean
@@ -447,17 +450,26 @@ export type PersonaRow = {
 export type Variant = 'clean' | 'buggy'
 
 /** ?variant= 를 붙인다. 고른 것이 없으면 서버가 기본값을 고른다. */
+/**
+ * 결과를 어디서 읽을지 정한다.
+ *
+ * `runId` 가 있으면 **방금 로컬에서 돌린 그 실행**(agent-ux/logs/<run_id>)을 읽는다.
+ * 없으면 예전처럼 테스트 id 로 묻고, 데모에서는 번들된 기록이 답한다.
+ */
+const src = (runId: string | undefined, testId: string, tail = '') =>
+  runId ? `/api/live/${runId}${tail}` : `/api/tests/${testId}${tail}`
+
 const withVariant = (path: string, variant?: Variant) =>
   variant ? `${path}?variant=${variant}` : path
 
-export const getTest = (testId: string, variant?: Variant) =>
-  request<TestDetail>(withVariant(`/api/tests/${testId}`, variant))
+export const getTest = (testId: string, variant?: Variant, runId?: string) =>
+  request<TestDetail>(withVariant(src(runId, testId), variant))
 
-export const getTestPaths = (testId: string, variant?: Variant) =>
-  request<PathsPayload>(withVariant(`/api/tests/${testId}/paths`, variant))
+export const getTestPaths = (testId: string, variant?: Variant, runId?: string) =>
+  request<PathsPayload>(withVariant(src(runId, testId, '/paths'), variant))
 
-export const getTestDiagram = (testId: string, variant?: Variant) =>
-  request<DiagramPayload>(withVariant(`/api/tests/${testId}/diagram`, variant))
+export const getTestDiagram = (testId: string, variant?: Variant, runId?: string) =>
+  request<DiagramPayload>(withVariant(src(runId, testId, '/diagram'), variant))
 
 export type PersonasPayload = {
   total: number
@@ -470,8 +482,8 @@ export type PersonasPayload = {
   axes?: Record<string, string>
 }
 
-export const getTestPersonas = (testId: string, variant?: Variant) =>
-  request<PersonasPayload>(withVariant(`/api/tests/${testId}/personas`, variant))
+export const getTestPersonas = (testId: string, variant?: Variant, runId?: string) =>
+  request<PersonasPayload>(withVariant(src(runId, testId, '/personas'), variant))
 
 /** 한 사람의 여정 한 장면. 화면은 사진을 이 스크롤 위치로 밀고 표시만 얹는다. */
 export type ReplayFrame = {
@@ -519,8 +531,8 @@ export type StepsPayload = {
   replay?: Record<string, PersonaReplay>
 }
 
-export const getTestSteps = (testId: string, variant?: Variant) =>
-  request<StepsPayload>(withVariant(`/api/tests/${testId}/steps`, variant))
+export const getTestSteps = (testId: string, variant?: Variant, runId?: string) =>
+  request<StepsPayload>(withVariant(src(runId, testId, '/steps'), variant))
 
 
 // --------------------------------------------------------------------------- //

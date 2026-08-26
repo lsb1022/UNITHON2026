@@ -8,6 +8,7 @@ import {
   getTestPersonas,
   type MissionPath,
 } from '../api/client'
+import { useRunId } from '../lib/useRunId'
 import { useQuery } from '../api/hooks'
 import backArrow from '../assets/icons/back-arrow.svg'
 import { Emoji, type EmojiName } from '../components/Emoji'
@@ -43,7 +44,8 @@ export function TestDetailPage() {
   const { projectId = '', testId = '' } = useParams()
   const navigate = useNavigate()
 
-  const test = useQuery(() => getTest(testId), [testId])
+  const runId = useRunId()
+  const test = useQuery(() => getTest(testId, undefined, runId), [testId, runId])
 
   return (
     <div className="flex h-full min-h-screen flex-col bg-bg">
@@ -147,7 +149,8 @@ function MissionPathSection({ testId }: { testId: string }) {
 // --------------------------------------------------------------------------- //
 
 function PathView({ testId }: { testId: string }) {
-  const paths = useQuery(() => getTestPaths(testId), [testId])
+  const runId = useRunId()
+  const paths = useQuery(() => getTestPaths(testId, undefined, runId), [testId, runId])
   const [outcome, setOutcome] = useState<Outcome>('success')
   const [heatmap, setHeatmap] = useState<MissionPath | null>(null)
 
@@ -307,10 +310,11 @@ function HeatmapModal({ path, onClose }: { path: MissionPath | null; onClose: ()
 // --------------------------------------------------------------------------- //
 
 function DiagramView({ testId }: { testId: string }) {
-  const diagram = useQuery(() => getTestDiagram(testId), [testId])
+  const runId = useRunId()
+  const diagram = useQuery(() => getTestDiagram(testId, undefined, runId), [testId, runId])
   // 단계 상세는 흐름도와 같은 실행에서 나온 것이라 함께 받아둔다. 막대를 누른
   // 뒤에 받으면 창이 빈 채로 먼저 뜬다.
-  const steps = useQuery(() => getTestSteps(testId), [testId])
+  const steps = useQuery(() => getTestSteps(testId, undefined, runId), [testId, runId])
   const [picked, setPicked] = useState<string | null>(null)
   const detail = picked ? steps.data?.steps[picked] : null
   const replay = steps.data?.replay
@@ -379,10 +383,11 @@ function Legend({ color, label }: { color: string; label: string }) {
  * 견주는 일은 A/B 테스트(/ab)에서만 한다 — 데이터는 그대로 남아 있다.
  */
 function PersonaView({ testId }: { testId: string }) {
-  const personas = useQuery(() => getTestPersonas(testId), [testId])
+  const runId = useRunId()
+  const personas = useQuery(() => getTestPersonas(testId, undefined, runId), [testId, runId])
   // 재생 자료는 단계 상세와 같은 곳에서 온다. 표를 누르는 순간 받으면
   // 창이 빈 채로 먼저 뜬다.
-  const steps = useQuery(() => getTestSteps(testId), [testId])
+  const steps = useQuery(() => getTestSteps(testId, undefined, runId), [testId, runId])
   const [replayId, setReplayId] = useState<string | null>(null)
   const label = usePersonaLabel()
   const replay = steps.data?.replay

@@ -52,7 +52,10 @@ export function RunningPage() {
   useEffect(() => {
     if (sent.current || !run || (run.percent ?? 0) < 100 || !run.test_id) return
     sent.current = true
-    const to = `/projects/${run.project_id || projectId}/tests/${run.test_id}`
+    // 로컬에서 진짜로 돌렸으면 그 실행의 기록을 읽으라고 알려준다. 안 붙이면
+    // 방금 30명을 돌리고도 화면에는 번들된 예전 기록이 뜬다.
+    const q = run.run_log ? `?run=${encodeURIComponent(run.run_log)}` : ''
+    const to = `/projects/${run.project_id || projectId}/tests/${run.test_id}${q}`
     // 정리 함수를 두지 않는다. 폴링이 run 을 새로 물어올 때마다 정리가 돌아
     // 타이머를 지우는데, sent 가 막아서 새 타이머는 걸리지 않는다 — 그러면
     // 100% 에 도달하고도 영영 넘어가지 않는다. 중복은 sent 하나로 막는다.

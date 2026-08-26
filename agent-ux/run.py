@@ -436,6 +436,11 @@ async def main_async(args) -> int:
         "model": None if args.mock else model,
         "usage": u,
         "source_personas": data.get("generated_at"),
+        # 무엇을 시켰는지 기록에 함께 남긴다. 이게 없으면 나중에 이 폴더만 보고
+        # 결과 화면을 그릴 때 미션 문구를 사람의 지시문에서 되짚어야 한다.
+        "goal": args.goal or data.get("goal") or "",
+        "expect": args.expect or "",
+        "test_name": args.test_name or "",
     })
 
     print("\n" + "-" * 62)
@@ -463,6 +468,8 @@ def main() -> int:
                     help="연령대·성별 비율대로 뽑는다. JSON 파일 경로 또는 JSON 문자열. "
                          "예) [{\"age_band\":\"20대\",\"total\":4,\"female_percent\":60}]. "
                          "주면 --limit 대신 이 명세가 인원을 정한다.")
+    ap.add_argument("--test-name", default="",
+                    help="이 실행의 이름. 결과 화면이 그대로 쓴다")
     ap.add_argument("--expect", default="",
                     help="달성을 인정할 근거 문자열. 이 글자가 그 사람 화면에 한 번도 "
                          "안 나왔으면 달성으로 세지 않는다(claimed_unverified). "

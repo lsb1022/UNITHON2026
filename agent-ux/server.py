@@ -188,6 +188,82 @@ def read_trace(run_id: str, persona: str) -> dict:
 SHOTS_ROOT = os.path.join(HERE, "shots_web")
 
 
+# ── 방금 돌린 실행을 결과 화면에 그대로 ─────────────────────────
+#
+# 실행은 진짜로 돌고 logs/<run_id>/ 에 사람별 기록이 쌓이는데, 결과 화면은
+# 프론트에 번들된 데모 기록만 읽고 있었다. 그래서 새로 30명을 돌려도 화면의
+# 숫자는 예전 그대로였다 — 파일은 쌓이는데 아무도 안 봤다.
+#
+# 변환은 **데모 데이터를 만들 때 쓰는 export_web_mock.py 의 것을 그대로 쓴다.**
+# 같은 코드가 만들어야 데모와 실측이 서로 다른 규칙으로 계산되는 일이 없다.
+import export_web_mock as _ex          # noqa: E402
+
+_VIEWS: dict[str, tuple] = {}
+
+
+def live_views(run_id: str):
+    """logs/<run_id> → 결과 화면이 묻는 모양. 없으면 None."""
+    if run_id in _VIEWS:
+        return _VIEWS[run_id]
+    if not run_id or "/" in run_id or "\\" in run_id:
+        return None
+    if _ex.BOOK is None:
+        _ex.BOOK = _ex.persona_book()
+    run = _ex.load_run(run_id)
+    if not run:
+        return None
+    _VIEWS[run_id] = (run, _ex.build_views(run))
+    return _VIEWS[run_id]
+
+
+def _axes() -> dict:
+    """축 id → 사람이 읽는 이름. 페르소나 규격에 적힌 그대로 쓴다."""
+    try:
+        with open(os.path.join("personas", "personas.json"), encoding="utf-8") as f:
+            return json.load(f).get("axes", {})
+    except Exception:  # noqa: BLE001
+        return {}
+
+
+def run_meta(run_id: str) -> dict:
+    """이 실행이 무엇이었나 — 이름·프로젝트·미션.
+
+    돌린 직후에는 JOBS 에 남아 있고, 서버를 다시 띄운 뒤에는 index.json 에서
+    읽는다. 둘 다 없으면 사람의 지시문에 박힌 '목표:' 줄을 되짚는다.
+    """
+    job = next((j for j in JOBS.values() if getattr(j, "run_id", "") == run_id), None)
+    idx = {}
+    path = os.path.join("logs", run_id, "index.json")
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as f:
+            idx = json.load(f)
+
+    goal = idx.get("goal") or ""
+    if not goal and idx.get("personas"):
+        try:
+            with open(os.path.join("logs", run_id, idx["personas"][0]["file"]),
+                      encoding="utf-8") as f:
+                prompt = json.load(f)["persona"].get("prompt", "")
+            for line in prompt.splitlines():
+                if line.startswith("목표:"):
+                    goal = line.split(":", 1)[1].strip()
+        except Exception:  # noqa: BLE001
+            pass
+
+    title = (getattr(job, "title", "") if job else "") or idx.get("test_name") or ""
+    return {
+        "name": title or (goal[:28] if goal else run_id),
+        "project_id": (getattr(job, "project_id", "") if job else "") or "",
+        "project_name": (getattr(job, "project_name", "") if job else "")
+                        or idx.get("variant") or "",
+        "url": (getattr(job, "target", "") if job else "") or idx.get("target_url") or "",
+        "goal": goal,
+        "expect": idx.get("expect") or "",
+        "created_at": idx.get("generated_at") or "",
+    }
+
+
+
 def shot_runs() -> list[str]:
     """스크린샷이 남은 실행들. 최근 것이 앞에 온다."""
     if not os.path.isdir(SHOTS_ROOT):
@@ -351,7 +427,54 @@ class Handler(BaseHTTPRequestHandler):
                 "test_name": "%s · %s" % (job.stage, job.title),
                 "done": done,
                 "total": job.total,
+                # 끝난 뒤 결과를 어디서 읽을지. run_id 칸은 예전부터 작업 id 라
+                # 뜻을 바꾸지 않고 기록 폴더 이름을 따로 싣는다.
+                "run_log": job.run_id,
+                "test_id": getattr(job, "test_id", "") or "",
             })
+
+        # 방금 돌린 실행의 결과. 프론트의 결과 화면이 데모 대신 이것을 읽는다.
+        if path.startswith("/api/live/"):
+            parts = path.split("/")
+            run_id = parts[3] if len(parts) > 3 else ""
+            tail = parts[4] if len(parts) > 4 else ""
+            got = live_views(run_id)
+            if not got:
+                return self._send(404, {
+                    "error": "그 실행의 기록이 아직 없습니다: %s" % run_id})
+            run, v = got
+            if tail == "paths":
+                return self._send(200, v["paths"])
+            if tail == "diagram":
+                return self._send(200, v["diagram"])
+            if tail == "personas":
+                return self._send(200, v["personas"])
+            if tail == "steps":
+                return self._send(200, {
+                    "steps": v["steps"], "filmstrip": v["filmstrip"],
+                    "replay": v["replay"],
+                    "sentences": _ex.persona_sentences(),
+                    "axes": _axes(),
+                    "test_name": run_meta(run_id)["name"],
+                })
+            if not tail:
+                m = run_meta(run_id)
+                return self._send(200, {
+                    "id": run_id,
+                    "name": m["name"],
+                    "device": "desktop",
+                    "created_at": m["created_at"],
+                    "project": {"id": m["project_id"], "name": m["project_name"],
+                                "preview_url": m["url"]},
+                    "mission": {"prompt": m["goal"],
+                                "success_criteria": (
+                                    '화면에 "%s" 가 실제로 보였을 때만 달성으로 셉니다'
+                                    % m["expect"]) if m["expect"] else
+                                    "페르소나가 목표를 끝냈다고 판단했을 때 달성으로 셉니다",
+                                "expect": m["expect"]},
+                    **v["detail"],
+                })
+            return self._send(404, {"error": "없는 주소입니다"})
 
         if path.startswith("/api/traces/"):
             parts = path.split("/")
@@ -371,6 +494,8 @@ class Handler(BaseHTTPRequestHandler):
 
         # 프론트의 '테스트 하기' 버튼. 답사부터 실제로 돌린다.
         if path.startswith("/api/tests/") and path.endswith("/runs"):
+            # /api/tests/{test_id}/runs — 끝난 뒤 화면이 어디로 돌아갈지 알아야 한다.
+            body.setdefault("test_id", path.split("/")[3])
             return self._start(body, from_web=True)
 
         # 미션 검증. 규칙으로 먼저 거르고 남은 것만 Gemini 에게 묻는다.
@@ -482,6 +607,8 @@ class Handler(BaseHTTPRequestHandler):
             run_cmd += ["--goal", goal]
         if expect:
             run_cmd += ["--expect", expect]
+        if title:
+            run_cmd += ["--test-name", title]
         # 지도가 없는 사이트면 답사 없이도 돌 수 있게 한다.
         if not resurvey and url:
             run_cmd += ["--no-map"]
@@ -498,6 +625,7 @@ class Handler(BaseHTTPRequestHandler):
         job.project_name = str(body.get("project_name") or (
             url.split("//")[-1].split("/")[0] if url else variant))
         job.target = url or base
+        job.test_id = str(body.get("test_id") or "")
         JOBS[jid] = job
 
         def worker():
@@ -506,6 +634,7 @@ class Handler(BaseHTTPRequestHandler):
 
         threading.Thread(target=worker, daemon=True).start()
         return self._send(202, {"job_id": jid, "run_id": run_id,
+                                "run_log": run_id, "test_id": job.test_id,
                                 "stages": [s["name"] for s in steps]})
 
 

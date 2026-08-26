@@ -950,24 +950,88 @@ function stepsPayload(variant: string) {
   if (path.endsWith('/runs') && method === 'POST') {
     // 진짜로 돌리기로 했으면 여기서 답하지 않는다. 서버가 파이프라인을 띄운다.
     if (LIVE_RUN) return MOCK_MISS
-    const site = siteByTest(path.split('/')[3] ?? '')
-    if (!site) return MOCK_MISS
+    const testId = path.split('/')[3] ?? ''
+    const site = siteByTest(testId)
+    if (!site) {
+      // 사용자가 직접 만든 프로젝트다. 재생할 기록도, 돌릴 파이프라인도 없다.
+      throw new Error(
+        '배포된 데모에는 실행할 서버가 붙어 있지 않아요. ' +
+          '새로 만든 프로젝트는 로컬에서 돌려야 합니다.',
+      )
+    }
     const run = runs[site.variant]
+    const total = run?.personas.length ?? state.personaTotal
+    replay = {
+      runId: run?.runId ?? `${site.testId}-run`,
+      testId: site.testId,
+      projectId: site.id,
+      projectName: site.name,
+      testName: MISSION[site.variant]?.name ?? site.name,
+      total,
+      startedAt: Date.now(),
+      durationMs: Math.min(30_000, 11_000 + total * 320),
+    }
     return {
-      run_id: run?.runId ?? `${site.testId}-run`,
-      persona_count: run?.personas.length ?? state.personaTotal,
-      status: 'done',
+      run_id: replay.runId,
+      persona_count: total,
+      status: 'running',
       test_id: site.testId,
       project_id: site.id,
     }
   }
 
-  // 돌고 있는 실행이 없다. 진행률은 logs/ 에 쌓인 기록 파일 수에서 나오는데
-  // 데모에는 그 파이프라인이 붙어 있지 않다. 없는 진행률을 지어내지 않는다.
-  if (path === '/api/runs/active') return LIVE_RUN ? MOCK_MISS : null
+  if (path === '/api/runs/active') {
+    if (LIVE_RUN) return MOCK_MISS
+    return activeReplay()
+  }
 
   // 썸네일은 <img src> 로 직접 불려서 이 경로를 타지 않는다. 흉내 내지 않는다.
   return MOCK_MISS
+}
+
+/**
+ * 배포본의 "돌리는 중" 화면.
+ *
+ * 배포된 데모에는 파이프라인이 붙어 있지 않다. 예전에는 그래서 시작 버튼이
+ * 곧바로 결과로 튕겼는데, 누른 사람 눈에는 테스트가 순식간에 끝난 것처럼 보였다.
+ *
+ * 대신 **이미 돌려 둔 실행을 다시 재생한다.** 인원 수와 도착 순서는 그 기록에
+ * 있는 실제 값이고, 재생되는 것은 시간뿐이다. 화면에도 재생 중이라고 적는다 —
+ * 지금 새로 도는 것처럼 보이게 두면 그건 없는 실행을 지어내는 것이다.
+ */
+type Replay = {
+  runId: string
+  testId: string
+  projectId: string
+  projectName: string
+  testName: string
+  total: number
+  startedAt: number
+  durationMs: number
+}
+
+let replay: Replay | null = null
+
+/** 답사가 앞의 30%, 페르소나가 나머지 70%. 서버가 실제로 쓰는 배분과 같다. */
+function activeReplay() {
+  if (!replay) return null
+  const elapsed = Date.now() - replay.startedAt
+  const ratio = Math.min(1, elapsed / replay.durationMs)
+  const percent = Math.round(ratio * 100)
+  // 답사(0~30%) 동안에는 아직 아무도 끝나지 않았다.
+  const done =
+    ratio <= 0.3 ? 0 : Math.min(replay.total, Math.floor(((ratio - 0.3) / 0.7) * replay.total))
+  return {
+    percent,
+    run_id: replay.runId,
+    project_id: replay.projectId,
+    project_name: replay.projectName,
+    test_name: replay.testName,
+    test_id: replay.testId,
+    done,
+    total: replay.total,
+    replay: true,
+  }
 }
 
 /** 화면이 결과를 더 자세히 보여주고 싶을 때 쓰라고 열어둔다. */

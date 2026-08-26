@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { API_BASE, getActiveRun, getProject, type ActiveRun } from '../api/client'
 import { useQuery } from '../api/hooks'
@@ -11,6 +11,9 @@ import { useWizard } from '../state/WizardContext'
 /** 진행 상황을 얼마나 자주 다시 물을지. 파이프라인이 여정을 채우는 속도 기준. */
 const POLL_MS = 3000
 
+/** 재생 중 눈금 갱신 주기. 값이 시간에서 나오므로 촘촘히 물어야 부드럽다. */
+const REPLAY_POLL_MS = 400
+
 export function RunningPage() {
   const { projectId = '' } = useParams()
   const navigate = useNavigate()
@@ -18,6 +21,7 @@ export function RunningPage() {
 
   const project = useQuery(() => getProject(projectId), [projectId])
   const [run, setRun] = useState<ActiveRun | null>(null)
+  const replaying = run?.replay ?? false
 
   useEffect(() => {
     let alive = true
@@ -32,12 +36,28 @@ export function RunningPage() {
     }
 
     void tick()
-    const timer = window.setInterval(tick, POLL_MS)
+    // 재생 중에는 눈금이 초 단위로 움직인다. 3초마다 물으면 막대가 뚝뚝 끊긴다.
+    const timer = window.setInterval(tick, replaying ? REPLAY_POLL_MS : POLL_MS)
     return () => {
       alive = false
       window.clearInterval(timer)
     }
-  }, [])
+  }, [replaying])
+
+  // 다 돌면 결과로 데려간다. 100% 에서 멈춰 선 막대를 계속 보여줄 이유가 없다.
+  //
+  // 한 번만 건다. run 객체는 폴링마다 새로 오는데 그것을 의존성에 걸면
+  // 타이머가 매번 지워졌다 다시 걸려서 **영영 터지지 않는다.**
+  const sent = useRef(false)
+  useEffect(() => {
+    if (sent.current || !run || (run.percent ?? 0) < 100 || !run.test_id) return
+    sent.current = true
+    const to = `/projects/${run.project_id || projectId}/tests/${run.test_id}`
+    // 정리 함수를 두지 않는다. 폴링이 run 을 새로 물어올 때마다 정리가 돌아
+    // 타이머를 지우는데, sent 가 막아서 새 타이머는 걸리지 않는다 — 그러면
+    // 100% 에 도달하고도 영영 넘어가지 않는다. 중복은 sent 하나로 막는다.
+    window.setTimeout(() => navigate(to), 900)
+  }, [run, navigate, projectId])
 
   const done = run?.done ?? 0
   const total = run?.total ?? 0
@@ -67,6 +87,14 @@ export function RunningPage() {
             </span>
           </p>
 
+          {/* 배포본에는 파이프라인이 붙어 있지 않다. 지금 새로 도는 것처럼
+              보이게 두면 없는 실행을 지어내는 것이라서, 재생 중이라고 적는다. */}
+          {replaying ? (
+            <p className="mt-[10px] text-[14px] text-subtext">
+              이미 돌려 둔 실행을 다시 재생하고 있어요. 인원과 결과는 그때 기록 그대로예요.
+            </p>
+          ) : null}
+
           <div className="mt-[28px] w-full">
             <p className="text-[36px] leading-[1.45] font-bold text-ink tabular-nums">{percent}%</p>
             <div
@@ -85,7 +113,9 @@ export function RunningPage() {
               <span>
                 {done} / {total}명이 테스트를 마쳤어요
               </span>
-              {remaining !== null ? <span>예상 {remaining}분 남음</span> : null}
+              {/* 재생 중에는 남은 시간을 적지 않는다. 공식이 낸 "63분"이
+                  20초 만에 끝나는 막대 옆에 붙으면 고장 난 것처럼 보인다. */}
+              {remaining !== null && !replaying ? <span>예상 {remaining}분 남음</span> : null}
             </div>
           </div>
 
@@ -103,14 +133,17 @@ export function RunningPage() {
               페르소나들은 이미지 없이 그 설명서와 계산된 수치만 읽는다.
               그 차이를 눈으로 확인하라고 열어둔 통로다. 결과 화면이 생기면
               그쪽으로 옮긴다. */}
-          <a
-            href={`${API_BASE}/shots`}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-[14px] text-[15px] text-subtext underline underline-offset-4 hover:text-ink"
-          >
-            답사자가 본 화면 보기 (스크린샷)
-          </a>
+          {/* 재생 중에는 띄우지 않는다. 배포본에는 그 스크린샷을 내줄 서버가 없다. */}
+          {replaying ? null : (
+            <a
+              href={`${API_BASE}/shots`}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-[14px] text-[15px] text-subtext underline underline-offset-4 hover:text-ink"
+            >
+              답사자가 본 화면 보기 (스크린샷)
+            </a>
+          )}
         </div>
       </PageBody>
     </AppLayout>

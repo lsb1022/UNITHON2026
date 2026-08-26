@@ -273,6 +273,11 @@ export type ActiveRun = {
   test_name: string
   done: number
   total: number
+  /** 끝났을 때 어느 결과로 데려갈지. */
+  test_id?: string
+  /** 지금 새로 도는 것이 아니라 **이미 돌려 둔 실행을 다시 재생**하는 중.
+   *  배포본에는 파이프라인이 붙어 있지 않아 이 값이 켜진다. */
+  replay?: boolean
 }
 
 export const getActiveRun = () => request<ActiveRun | null>('/api/runs/active')
